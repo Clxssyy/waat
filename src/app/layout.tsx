@@ -1,5 +1,6 @@
 import "~/styles/globals.css";
 
+import Header from "~/app/_components/header";
 import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 
@@ -22,7 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable}`}>
       <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <TRPCReactProvider>
+          <div className="flex min-h-screen flex-col bg-stone-900 text-white">
+            <Header />
+            {children}
+          </div>
+        </TRPCReactProvider>
       </body>
     </html>
   );
