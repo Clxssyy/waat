@@ -19,13 +19,15 @@ const geist = Geist({
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  createModal,
+}: Readonly<{ children: React.ReactNode; createModal: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geist.variable}`}>
       <body>
         <TRPCReactProvider>
-          <div className="flex min-h-screen flex-col bg-stone-900 text-white">
+          <div className="flex min-h-screen flex-col items-center bg-stone-900 text-white">
             <Header />
+            {createModal}
             {children}
           </div>
         </TRPCReactProvider>

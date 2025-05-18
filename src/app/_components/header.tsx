@@ -1,6 +1,7 @@
 import { auth } from "~/server/auth";
 import Image from "next/image";
 import Link from "next/link";
+import { PiSignOutBold } from "react-icons/pi";
 
 const Header = async () => {
   const session = await auth();
@@ -8,25 +9,27 @@ const Header = async () => {
   return (
     <header className="flex h-16 w-full items-center justify-between bg-white/[1%] px-5">
       <div className="">
-        <Link href="" className="">
+        <Link href="/" className="">
           WAA Builder
         </Link>
       </div>
       <div className="flex gap-8">
-        <Link href={""}>Builds</Link>
-        <Link href={""}>Guides</Link>
+        <Link href={"/builds"}>Builds</Link>
+        <Link href={"/guides"}>Guides</Link>
       </div>
       <div className="flex items-center gap-2">
         {/* add default pfp image */}
-        <Image
-          src={session?.user.image || ""}
-          alt="pfp"
-          width={100}
-          height={100}
-          className="h-8 w-8 rounded-full"
-        />
+        {session ? (
+          <Image
+            src={session?.user.image || ""}
+            alt="pfp"
+            width={100}
+            height={100}
+            className="h-8 w-8 rounded-full"
+          />
+        ) : null}
         <Link href={session ? "/api/auth/signout" : "/api/auth/signin"}>
-          {session ? "Sign out" : "Sign in"}
+          {session ? <PiSignOutBold className="text-lg" /> : "Sign in"}
         </Link>
       </div>
     </header>
