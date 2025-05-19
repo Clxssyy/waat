@@ -2,10 +2,20 @@
 
 import { useRouter } from "next/navigation";
 import { IoClose } from "react-icons/io5";
+import { api } from "~/trpc/react";
 
 const Create = () => {
   const router = useRouter();
-  const id = "1";
+
+  const characterCreate = api.character.create.useMutation({
+    onSuccess: async (data) => {
+      await router.push(`/builds/${data.id}`);
+    },
+    onError: (err) => {
+      console.error(err);
+    },
+  });
+
   return (
     <div className="absolute flex h-full w-full items-center justify-center bg-black/20">
       <div className="relative rounded bg-stone-800 p-4">
@@ -22,6 +32,7 @@ const Create = () => {
           <input
             type="text"
             placeholder="Name"
+            id="character_name_input"
             className="rounded bg-white/5 px-2 py-1 text-stone-500"
           />
           <select
@@ -36,13 +47,18 @@ const Create = () => {
             <option value="healer">Healer</option>
             <option value="tank">Tank</option>
           </select>
+          {/* Add input fields */}
           <button
             className="rounded bg-green-600 px-2 py-1"
             onClick={() => {
-              router.push(`/builds/${id}`);
+              characterCreate.mutate({
+                name: "",
+                role: "",
+              });
             }}
+            disabled={characterCreate.isPending}
           >
-            Create
+            {characterCreate.isPending ? "Creating..." : "Create"}
           </button>
         </div>
       </div>

@@ -1,7 +1,8 @@
-const Builds = () => {
+const Builds = async ({ params }: { params: { id: string } }) => {
+  const { id } = await params;
   return (
     <div>
-      <div>main builds</div>
+      <div>{id}</div>
     </div>
   );
 };

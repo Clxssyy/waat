@@ -50,6 +50,31 @@ model User {
     image         String?
     accounts      Account[]
     sessions      Session[]
+    characters    Character[]
+}
+
+model Build {
+    id        String   @id @default(cuid())
+    name      String?
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    characterId String
+    data     Json
+
+    character Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+}
+
+model Character {
+    id        String   @id @default(cuid())
+    name      String?
+    role      String?
+    description String?
+    userId    String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    builds   Build[]
+
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model VerificationToken {
