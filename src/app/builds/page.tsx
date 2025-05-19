@@ -24,7 +24,7 @@ export default async function Builds() {
               href={session ? "/builds/create" : "/api/auth/signin"}
               className="rounded bg-green-600 px-4 py-2 font-bold text-shadow-black text-shadow-xs"
             >
-              Get Started
+              Create
             </Link>
             <Link
               href={session ? "/" : "/api/auth/signin"}

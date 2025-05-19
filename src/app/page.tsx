@@ -25,16 +25,16 @@ export default async function Home() {
           </div>
           <div className="flex gap-2">
             <Link
-              href={session ? "/builds/create" : "/api/auth/signin"}
+              href={session ? "/builds" : "/api/auth/signin"}
               className="rounded bg-green-600 px-4 py-2 font-bold text-shadow-black text-shadow-xs"
             >
               Get Started
             </Link>
             <Link
-              href={"/builds"}
+              href={"/guides"}
               className="rounded bg-white/10 px-4 py-2 font-bold text-shadow-2xs text-shadow-black"
             >
-              Builds
+              Explore
             </Link>
           </div>
         </div>
