@@ -16,6 +16,7 @@ const Header = async () => {
       <div className="flex gap-8">
         <Link href={"/builds"}>Builds</Link>
         <Link href={"/guides"}>Guides</Link>
+        <Link href={"/news"}>News</Link>
       </div>
       <div className="flex items-center gap-2">
         {/* add default pfp image */}
