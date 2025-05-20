@@ -1,0 +1,685 @@
+{
+  "drifters": {
+    "shadowseer": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "kyra": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "overdrive": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "varnax": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "hive_queen": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "raven": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "sirokos": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "stormblade": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "durion": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "helix": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "illusarch": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "draknor": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "elektrix": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "firestorm": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "zero": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "nyxa": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "veska": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "solenne": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "aegis": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "revelation": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "vryssia": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "mole": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "astral_magnus": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "auri": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "izzy": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "sanguor": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "umbra": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    },
+    "moonveil": {
+      "strMultiplier": 0,
+      "agiMultiplier": 0,
+      "intMultiplier": 0,
+      "activeSkill": {
+        "name": "sdsada",
+        "description": "sdasd"
+      },
+      "passiveSkill": {
+        "name": "asdasda",
+        "description": "dsdsad"
+      },
+      "type": "sdasda",
+      "role": "sdasda",
+      "supportEffects": {
+        "positiveEffect": {
+          "description": "sadsdad"
+        },
+        "negativeEffect": {
+          "description": "sdasda"
+        }
+      }
+    }
+  },
+  "weapons": {
+    "types": {
+      "intelligence": {
+        "withermaul": {
+          "rarity": "legendary"
+        },
+        "necromist": { "rarity": "legendary" },
+        "sol_protector": {},
+        "celestial_redeemer": {},
+        "frosts_caller": {},
+        "glacier_spark": {}
+      },
+      "strength": {},
+      "agility": {}
+    }
+  },
+  "helmets": {
+    "types": {
+      "intelligence": {},
+      "strength": {},
+      "agility": {}
+    }
+  },
+  "chests": {
+    "types": {
+      "intelligence": {},
+      "strength": {},
+      "agility": {}
+    }
+  },
+  "boots": {
+    "types": {
+      "intelligence": {},
+      "strength": {},
+      "agility": {}
+    }
+  }
+}
