@@ -9,7 +9,7 @@ const Create = () => {
 
   const characterCreate = api.character.create.useMutation({
     onSuccess: async (data) => {
-      await router.push(`/builds/${data.id}`);
+      await router.push(`/builds/${data.characterId}`);
     },
     onError: (err) => {
       console.error(err);
@@ -33,27 +33,38 @@ const Create = () => {
             type="text"
             placeholder="Name"
             id="character_name_input"
+            defaultValue=""
+            maxLength={20}
             className="rounded bg-white/5 px-2 py-1 text-stone-500"
           />
           <select
             name=""
-            id=""
+            id="character_role_input"
+            defaultValue=""
             className="rounded bg-white/5 px-2 py-1 text-stone-500"
           >
             <option value="" hidden>
               Role
             </option>
-            <option value="dps">DPS</option>
-            <option value="healer">Healer</option>
-            <option value="tank">Tank</option>
+            <option value="DPS">DPS</option>
+            <option value="Healer">Healer</option>
+            <option value="Tank">Tank</option>
           </select>
           {/* Add input fields */}
           <button
             className="rounded bg-green-600 px-2 py-1"
             onClick={() => {
               characterCreate.mutate({
-                name: "",
-                role: "",
+                name: (
+                  document.getElementById(
+                    "character_name_input",
+                  ) as HTMLInputElement
+                ).value,
+                role: (
+                  document.getElementById(
+                    "character_role_input",
+                  ) as HTMLSelectElement
+                ).value,
               });
             }}
             disabled={characterCreate.isPending}
