@@ -14,8 +14,8 @@ export const characterRouter = createTRPCRouter({
       return ctx.db.character
         .create({
           data: {
-            name: input.name,
-            role: input.role,
+            name: input.name || "Unnamed Character",
+            role: input.role || "Unknown Role",
             userId: ctx.session.user.id,
             builds: {},
           },
@@ -26,10 +26,92 @@ export const characterRouter = createTRPCRouter({
               data: {
                 name: "Default Build",
                 characterId: character.id,
-                data: {},
+                data: {
+                  equipment: {
+                    helmet: "",
+                    chest: "",
+                    boots: "",
+                    weapon: "",
+                  },
+                  stats: {
+                    strength: 0,
+                    agility: 0,
+                    intelligence: 0,
+                  },
+                  drifter: "",
+                },
               },
             })
             .then((build) => build);
         });
+    }),
+
+  addBuild: protectedProcedure
+    .input(
+      z.object({
+        characterId: z.string(),
+      }),
+    )
+    .mutation(async ({ ctx, input }) => {
+      return ctx.db.build
+        .create({
+          data: {
+            name: "Default Build",
+            characterId: input.characterId,
+            data: {
+              equipment: {
+                helmet: "",
+                chest: "",
+                boots: "",
+                weapon: "",
+              },
+              stats: {
+                strength: 0,
+                agility: 0,
+                intelligence: 0,
+              },
+              drifter: "",
+            },
+          },
+        })
+        .then((build) => build);
+    }),
+
+  getByBuildId: publicProcedure
+    .input(
+      z.object({
+        buildId: z.string(),
+      }),
+    )
+    .query(async ({ ctx, input }) => {
+      return ctx.db.character.findFirst({
+        where: {
+          builds: {
+            some: {
+              id: input.buildId,
+            },
+          },
+        },
+        include: {
+          builds: true,
+        },
+      });
+    }),
+
+  getById: publicProcedure
+    .input(
+      z.object({
+        characterId: z.string(),
+      }),
+    )
+    .query(async ({ ctx, input }) => {
+      return ctx.db.character.findFirst({
+        where: {
+          id: input.characterId,
+        },
+        include: {
+          builds: true,
+        },
+      });
     }),
 });
