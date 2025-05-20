@@ -55,7 +55,6 @@ model User {
 
 model Build {
     id        String   @id @default(cuid())
-    name      String?
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
     characterId String
@@ -73,8 +72,7 @@ model Character {
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
     builds   Build[]
-
-    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+    createdBy User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model VerificationToken {
