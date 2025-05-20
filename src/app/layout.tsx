@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en" className={`${geist.variable}`}>
       <body>
         <TRPCReactProvider>
-          <div className="flex min-h-screen flex-col items-center bg-stone-900 text-white">
+          <div className="flex min-h-screen flex-col items-center bg-stone-800 text-white">
             <Header />
             {createModal}
             {children}

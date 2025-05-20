@@ -8,7 +8,7 @@ export default async function Builds() {
 
   return (
     <HydrateClient>
-      <main className="flex w-4/5 grow flex-col items-center divide-y divide-white/10">
+      <main className="flex w-4/5 grow flex-col items-center divide-y divide-white/10 bg-stone-800">
         <div className="flex w-full flex-col gap-2 p-4">
           <div className="flex flex-col">
             <h1 className="text-5xl font-bold">Character Builds</h1>
@@ -27,7 +27,7 @@ export default async function Builds() {
               Create
             </Link>
             <Link
-              href={session ? "/" : "/api/auth/signin"}
+              href={session ? `/users/${session.user.id}` : "/api/auth/signin"}
               className="rounded bg-white/10 px-4 py-2 font-bold text-shadow-2xs text-shadow-black"
             >
               Your Builds
