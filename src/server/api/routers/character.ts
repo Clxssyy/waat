@@ -24,7 +24,6 @@ export const characterRouter = createTRPCRouter({
           return ctx.db.build
             .create({
               data: {
-                name: "Default Build",
                 characterId: character.id,
                 data: {
                   equipment: {
@@ -56,7 +55,6 @@ export const characterRouter = createTRPCRouter({
       return ctx.db.build
         .create({
           data: {
-            name: "Default Build",
             characterId: input.characterId,
             data: {
               equipment: {
@@ -111,6 +109,36 @@ export const characterRouter = createTRPCRouter({
         },
         include: {
           builds: true,
+        },
+      });
+    }),
+
+  getAll: publicProcedure.query(async ({ ctx }) => {
+    return ctx.db.character.findMany({
+      where: {
+        private: false,
+      },
+      include: {
+        builds: true,
+        createdBy: true,
+      },
+    });
+  }),
+
+  getAllByUserId: publicProcedure
+    .input(
+      z.object({
+        userId: z.string(),
+      }),
+    )
+    .query(async ({ ctx, input }) => {
+      return ctx.db.character.findMany({
+        where: {
+          userId: input.userId,
+        },
+        include: {
+          builds: true,
+          createdBy: true,
         },
       });
     }),

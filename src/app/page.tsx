@@ -7,8 +7,8 @@ export default async function Home() {
 
   return (
     <HydrateClient>
-      <main className="flex w-4/5 grow flex-col divide-y divide-white/10">
-        <div className="flex h-96 flex-col items-center justify-center gap-8 bg-gray-700/10">
+      <main className="flex w-4/5 grow flex-col divide-y divide-white/10 bg-gray-700/10">
+        <div className="flex h-96 flex-col items-center justify-center gap-8">
           <div className="flex flex-col items-center gap-2">
             <h1 className="text-5xl font-bold text-shadow-black text-shadow-sm">
               {session

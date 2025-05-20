@@ -8,10 +8,8 @@ const Header = async () => {
 
   return (
     <header className="flex h-16 w-full items-center justify-between bg-stone-900 px-5">
-      <div className="">
-        <Link href="/" className="">
-          WAA Builder
-        </Link>
+      <div>
+        <Link href="/">WAA Builder</Link>
       </div>
       <div className="flex gap-8">
         <Link href={"/builds"}>Builds</Link>

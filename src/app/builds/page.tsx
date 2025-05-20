@@ -1,43 +1,46 @@
 import Link from "next/link";
 import { auth } from "~/server/auth";
-import { HydrateClient } from "~/trpc/server";
+import { api, HydrateClient } from "~/trpc/server";
 import { IoClose } from "react-icons/io5";
+import data from "public/data.json";
 
 export default async function Builds() {
   const session = await auth();
+  const characters = await api.character.getAll();
 
   return (
     <HydrateClient>
-      <main className="flex w-4/5 grow flex-col items-center divide-y divide-white/10 bg-stone-800">
-        <div className="flex w-full flex-col gap-2 p-4">
-          <div className="flex flex-col">
-            <h1 className="text-5xl font-bold">Character Builds</h1>
-            <p className="w-1/2 text-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Reprehenderit at ad cumque consequatur soluta labore atque,
-              praesentium voluptatibus tempore rerum, saepe eaque. Animi nisi,
-              eos facere eius ea nostrum nobis.
+      <main className="flex w-4/5 grow flex-col divide-y divide-white/10 bg-gray-700/10">
+        <div className="flex h-96 flex-col items-center justify-center gap-8">
+          <div className="flex flex-col items-center gap-2">
+            <h1 className="text-5xl font-bold text-shadow-black text-shadow-sm">
+              Character Builds
+            </h1>
+            <p className="w-1/2 text-sm text-stone-400">
+              Create and share your character builds with the community or
+              browse through the builds of others to find inspiration for your
+              own character!
             </p>
           </div>
           <div className="flex gap-2">
             <Link
               href={session ? "/builds/create" : "/api/auth/signin"}
-              className="rounded bg-green-600 px-4 py-2 font-bold text-shadow-black text-shadow-xs"
+              className="rounded bg-green-600 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-105 hover:bg-green-700 active:scale-95"
             >
               Create
             </Link>
             <Link
               href={session ? `/users/${session.user.id}` : "/api/auth/signin"}
-              className="rounded bg-white/10 px-4 py-2 font-bold text-shadow-2xs text-shadow-black"
+              className="rounded bg-stone-600 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-105 hover:bg-stone-700 active:scale-95"
             >
               Your Builds
             </Link>
           </div>
         </div>
-        <div className="w-full p-4">
-          <form action="" className="flex w-fit flex-col gap-2">
+        <div className="flex justify-center">
+          <form action="" className="flex w-2/5 flex-col gap-2 p-4">
             <div className="flex gap-2">
-              <select className="rounded bg-white/5 px-4 py-1 text-lg text-stone-500">
+              <select className="w-1/5 rounded bg-white/5 px-4 py-1 text-lg text-stone-500">
                 <option value="" hidden>
                   Role
                 </option>
@@ -45,38 +48,16 @@ export default async function Builds() {
                 <option value="healer">Healer</option>
                 <option value="tank">Tank</option>
               </select>
-              <select className="rounded bg-white/5 px-4 py-1 text-lg text-stone-500">
+              <select className="grow rounded bg-white/5 px-4 py-1 text-lg text-stone-500">
                 <option value="" hidden>
                   Drifter
                 </option>
-                <option value="shadowseer">Shadowseer</option>
-                <option value="kyra">Kyra</option>
-                <option value="overdrive">Overdrive</option>
-                <option value="varnax">Varnax</option>
-                <option value="hive_queen">Hive Queen</option>
-                <option value="raven">Raven</option>
-                <option value="sirokos">Sirokos</option>
-                <option value="stormblade">Stormblade</option>
-                <option value="durion">Durion</option>
-                <option value="helix">Helix</option>
-                <option value="illusarch">Illusarch</option>
-                <option value="draknor">Draknor</option>
-                <option value="elektrix">Elektrix</option>
-                <option value="firestorm">Firestorm</option>
-                <option value="zero">Zero</option>
-                <option value="nyxa">Nyxa</option>
-                <option value="veska">Veska</option>
-                <option value="solenne">Solenne</option>
-                <option value="aegis">Aegis</option>
-                <option value="revelation">Revelation</option>
-                <option value="vryssia">Vryssia</option>
-                <option value="mole">Mole</option>
-                <option value="astral_magnus">Astral Magnus</option>
-                <option value="auri">Auri</option>
-                <option value="izzy">Izzy</option>
-                <option value="sanguor">Sanguor</option>
-                <option value="umbra">Umbra</option>
-                <option value="moonveil">Moonveil</option>
+                {Object.entries(data.drifters).map(([drifterId, drifter]) => (
+                  <option key={drifterId} value={drifterId}>
+                    {drifterId.charAt(0).toUpperCase() +
+                      drifterId.slice(1).replaceAll("_", " ")}
+                  </option>
+                ))}
               </select>
               <button
                 type="reset"
@@ -96,12 +77,20 @@ export default async function Builds() {
             </div>
           </form>
         </div>
-        <div className="flex w-full flex-col p-4">
-          <h2>Builds</h2>
+        <div className="flex flex-col gap-2 p-4">
+          <h2 className="text-lg font-bold">Builds</h2>
           <div className="grid grid-cols-3 gap-2">
-            <div className="rounded bg-white/5 p-2">
-              <h2>Name</h2>
-            </div>
+            {characters.map((build) => (
+              <Link
+                key={build.id}
+                href={`/builds/${build.id}`}
+                className="flex h-48 flex-col items-center justify-center rounded bg-stone-900 p-2 text-center text-sm font-bold transition-all hover:scale-105 hover:bg-stone-800 active:scale-95"
+              >
+                <div className="flex h-full w-full items-center justify-center">
+                  {build.name}
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </main>
