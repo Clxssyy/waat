@@ -9,7 +9,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 export const metadata: Metadata = {
   title: "WAA Builder",
   description: "Warborne Above Ashes Character Builder",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: "/WT_Favicon.ico" }],
 };
 
 const geist = Geist({
