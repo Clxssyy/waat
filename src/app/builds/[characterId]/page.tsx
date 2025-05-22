@@ -5,8 +5,16 @@ import Builder from "./_components/builder";
 import { useBuildForm } from "./_components/buildFormContext";
 
 const Builds = () => {
-  const { character, isCreator, save, isSaving, clone, isCloning } =
-    useBuildForm();
+  const {
+    character,
+    isCreator,
+    save,
+    isSaving,
+    clone,
+    isCloning,
+    formData,
+    setFormData,
+  } = useBuildForm();
 
   if (!character) {
     return <div>Character not found.</div>;
@@ -14,10 +22,25 @@ const Builds = () => {
 
   return (
     <div className="flex grow flex-col bg-stone-950">
-      <div className="flex justify-between p-2 text-lg">
-        <div className="flex gap-4">
-          <h2>{character.name}</h2>
-          <h2>{character.role}</h2>
+      <div className="mx-14 my-3 flex justify-between">
+        <div className="flex items-center gap-4">
+          <h2 className="text-2xl">{character.name}</h2>
+          <select
+            name=""
+            id=""
+            className="rounded bg-stone-800 px-2 py-1"
+            defaultValue={formData.role}
+            onChange={(e) => {
+              setFormData({ ...formData, role: e.target.value });
+            }}
+          >
+            <option value="" hidden>
+              Role
+            </option>
+            <option value="dps">DPS</option>
+            <option value="healer">Healer</option>
+            <option value="tank">Tank</option>
+          </select>
         </div>
         <div className="flex items-center gap-2">
           <button

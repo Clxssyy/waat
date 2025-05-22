@@ -52,7 +52,7 @@ export const characterSchema = z.object({
   updatedAt: z.date(),
   id: z.string(),
   name: z.string(),
-  role: z.string().nullish(),
+  role: z.string().optional(),
   private: z.boolean(),
   description: z.string(),
   clonedFrom: z.string().nullish(),

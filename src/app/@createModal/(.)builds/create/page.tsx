@@ -46,9 +46,9 @@ const Create = () => {
             <option value="" hidden>
               Role
             </option>
-            <option value="DPS">DPS</option>
-            <option value="Healer">Healer</option>
-            <option value="Tank">Tank</option>
+            <option value="dps">DPS</option>
+            <option value="healer">Healer</option>
+            <option value="tank">Tank</option>
           </select>
           {/* Add input fields */}
           <button
