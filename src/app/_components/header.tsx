@@ -8,8 +8,8 @@ const Header = async () => {
 
   return (
     <header className="flex h-16 w-full items-center justify-between bg-stone-900 px-5">
-      <div>
-        <Link href="/">WAA Builder</Link>
+      <div className="text-lg font-bold">
+        <Link href="/">WAAT</Link>
       </div>
       <div className="flex gap-8">
         <Link href={"/builds"}>Builds</Link>
@@ -17,10 +17,12 @@ const Header = async () => {
         <Link href={"/news"}>News</Link>
       </div>
       <div className="flex items-center gap-2">
-        {/* add default pfp image */}
         {session ? (
           <Image
-            src={session?.user.image || ""}
+            src={
+              session?.user.image ??
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1024px-Default_pfp.svg.png"
+            }
             alt="pfp"
             width={100}
             height={100}

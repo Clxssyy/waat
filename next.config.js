@@ -7,7 +7,10 @@ import "./src/env.js";
 /** @type {import("next").NextConfig} */
 const config = {
   images: {
-    remotePatterns: [new URL("https://cdn.discordapp.com/**")],
+    remotePatterns: [
+      new URL("https://cdn.discordapp.com/**"),
+      new URL("https://upload.wikimedia.org/**"),
+    ],
   },
 };
 

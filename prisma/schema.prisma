@@ -65,9 +65,9 @@ model Build {
 
 model Character {
     id        String   @id @default(cuid())
-    name      String?
+    name      String @default("Default Character")
     role      String?
-    description String?
+    description String @default("No Description")
     userId    String
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
