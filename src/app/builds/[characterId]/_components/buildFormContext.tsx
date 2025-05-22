@@ -17,6 +17,8 @@ type BuildFormContextType = {
   isSaving: boolean;
   character: Character;
   isCreator: boolean;
+  clone: () => void;
+  isCloning: boolean;
 };
 
 const BuildFormContext = createContext<BuildFormContextType | null>(null);
@@ -38,14 +40,15 @@ export const BuildFormProvider = ({
 
   const router = useRouter();
 
-  const { mutate: saveMutation, status } = api.character.update.useMutation({
-    onSuccess: () => {
-      router.refresh();
-    },
-    onError: (err) => {
-      alert("Save failed: " + err.message);
-    },
-  });
+  const { mutate: saveMutation, status: saveStatus } =
+    api.character.update.useMutation({
+      onSuccess: () => {
+        router.refresh();
+      },
+      onError: (err) => {
+        alert("Save failed: " + err.message);
+      },
+    });
 
   const save = () => {
     if (!formData) return;
@@ -55,11 +58,39 @@ export const BuildFormProvider = ({
     });
   };
 
-  const isSaving = status === "pending";
+  const { mutate: cloneMutation, status: cloneStatus } =
+    api.character.clone.useMutation({
+      onSuccess: (data) => {
+        router.push(`/builds/${data.id}`);
+      },
+      onError: (err) => {
+        alert("Clone failed: " + err.message);
+      },
+    });
+
+  const clone = () => {
+    if (!formData) return;
+    cloneMutation({
+      ...formData,
+      role: formData.role ?? null,
+    });
+  };
+
+  const isSaving = saveStatus === "pending";
+  const isCloning = cloneStatus === "pending";
 
   return (
     <BuildFormContext.Provider
-      value={{ formData, setFormData, save, isSaving, character, isCreator }}
+      value={{
+        formData,
+        setFormData,
+        save,
+        isSaving,
+        character,
+        isCreator,
+        clone,
+        isCloning,
+      }}
     >
       {children}
     </BuildFormContext.Provider>

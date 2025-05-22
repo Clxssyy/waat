@@ -42,17 +42,18 @@ export const buildSchema = z.object({
 export const characterSchema = z.object({
   builds: z.array(buildSchema),
   createdBy: z.object({
-    name: z.string().nullable(),
+    name: z.string().nullish(),
     id: z.string(),
-    email: z.string().nullable(),
-    emailVerified: z.date().nullable(),
-    image: z.string().nullable(),
+    email: z.string().nullish(),
+    emailVerified: z.date().nullish(),
+    image: z.string().nullish(),
   }),
   createdAt: z.date(),
   updatedAt: z.date(),
   id: z.string(),
   name: z.string(),
-  role: z.string().nullable(),
+  role: z.string().nullish(),
   private: z.boolean(),
   description: z.string(),
+  clonedFrom: z.string().nullish(),
 });

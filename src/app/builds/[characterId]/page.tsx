@@ -5,7 +5,8 @@ import Builder from "./_components/builder";
 import { useBuildForm } from "./_components/buildFormContext";
 
 const Builds = () => {
-  const { character, isCreator, save, isSaving } = useBuildForm();
+  const { character, isCreator, save, isSaving, clone, isCloning } =
+    useBuildForm();
 
   if (!character) {
     return <div>Character not found.</div>;
@@ -21,9 +22,12 @@ const Builds = () => {
         <div className="flex items-center gap-2">
           <button
             className={`cursor-pointer rounded px-2 py-1 ${isCreator ? "bg-green-600 hover:bg-green-700" : "bg-cyan-500 hover:bg-cyan-600"}`}
-            onClick={save}
+            onClick={isCreator ? save : clone}
+            disabled={isSaving || isCloning}
           >
-            {isCreator ? `${isSaving ? "Saving..." : "Save"}` : "Clone"}
+            {isCreator
+              ? `${isSaving ? "Saving..." : "Save"}`
+              : `${isCloning ? "Cloning..." : "Clone"}`}
           </button>
           {isCreator ? (
             ""

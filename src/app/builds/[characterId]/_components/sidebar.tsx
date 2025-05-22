@@ -14,8 +14,8 @@ const Sidebar = () => {
   const pathSplit = pathname.split("/");
   const characterId = pathSplit[2];
   const activePage = pathSplit[3];
-  const { data: session, status } = useSession();
-  const { character, isCreator, save, isSaving } = useBuildForm();
+  const { character, isCreator, save, isSaving, clone, isCloning } =
+    useBuildForm();
 
   if (!character) {
     return <div>Character not found.</div>;
@@ -73,10 +73,12 @@ const Sidebar = () => {
         <div className="texl-lg flex items-center justify-center p-4">
           <button
             className={`w-11/12 cursor-pointer rounded p-2 ${isCreator ? "bg-green-600 hover:bg-green-700" : "bg-cyan-500 hover:bg-cyan-600"}`}
-            onClick={save}
-            disabled={isSaving}
+            onClick={isCreator ? save : clone}
+            disabled={isSaving || isCloning}
           >
-            {isCreator ? `${isSaving ? "Saving..." : "Save"}` : "Clone"}
+            {isCreator
+              ? `${isSaving ? "Saving..." : "Save"}`
+              : `${isCloning ? "Cloning..." : "Clone"}`}
           </button>
         </div>
       </div>

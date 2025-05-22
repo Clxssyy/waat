@@ -180,4 +180,28 @@ export const characterRouter = createTRPCRouter({
         },
       });
     }),
+
+  clone: protectedProcedure
+    .input(characterSchema)
+    .mutation(async ({ ctx, input }) => {
+      return ctx.db.character.create({
+        data: {
+          name: input.name || undefined,
+          role: input.role || undefined,
+          private: input.private || undefined,
+          description: input.description || undefined,
+          userId: ctx.session.user.id,
+          clonedFrom: input.id,
+          builds: {
+            create: input.builds.map((build) => ({
+              data: {
+                equipment: build.data.equipment,
+                stats: build.data.stats,
+                drifter: build.data.drifter,
+              },
+            })),
+          },
+        },
+      });
+    }),
 });

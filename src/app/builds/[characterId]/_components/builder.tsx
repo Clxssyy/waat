@@ -12,6 +12,7 @@ import type { inferRouterOutputs } from "@trpc/server";
 import type { AppRouter } from "~/server/api/root";
 import type { ActiveTab, BuildNumber } from "~/app/_utils/types";
 import { useBuildForm } from "./buildFormContext";
+import { useRouter } from "next/navigation";
 
 type EquipmentSlot = "helmet" | "chest" | "boots" | "weapon" | "drifter";
 type RouterOutput = inferRouterOutputs<AppRouter>;
@@ -37,6 +38,7 @@ const Builder = ({
   const { formData, setFormData } = useBuildForm();
 
   const addBuild = api.character.addBuild.useMutation();
+  const router = useRouter();
 
   return (
     <div className="flex grow">
@@ -55,6 +57,7 @@ const Builder = ({
                       onSuccess: async () => {
                         setActiveBuildIndex(0);
                         setActiveSlot("weapon");
+                        router.refresh();
                       },
                     },
                   );
@@ -82,6 +85,7 @@ const Builder = ({
                       onSuccess: async () => {
                         setActiveBuildIndex(1);
                         setActiveSlot("weapon");
+                        router.refresh();
                       },
                     },
                   );
@@ -109,6 +113,7 @@ const Builder = ({
                       onSuccess: async () => {
                         setActiveBuildIndex(2);
                         setActiveSlot("weapon");
+                        router.refresh();
                       },
                     },
                   );
