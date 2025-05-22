@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { characterSchema } from "~/app/_utils/types";
 import {
   createTRPCRouter,
   protectedProcedure,
@@ -14,10 +15,12 @@ export const characterRouter = createTRPCRouter({
       return ctx.db.character
         .create({
           data: {
-            name: input.name || "Unnamed Character",
-            role: input.role || "Unknown Role",
+            name: input.name || "Default Character",
+            role: input.role,
             userId: ctx.session.user.id,
             builds: {},
+            private: false,
+            description: "No description.",
           },
         })
         .then((character) => {
@@ -99,18 +102,25 @@ export const characterRouter = createTRPCRouter({
   getById: publicProcedure
     .input(
       z.object({
-        characterId: z.string(),
+        id: z.string(),
       }),
     )
     .query(async ({ ctx, input }) => {
-      return ctx.db.character.findFirst({
+      const character = await ctx.db.character.findUnique({
         where: {
-          id: input.characterId,
+          id: input.id,
         },
         include: {
-          builds: true,
+          builds: {
+            orderBy: {
+              createdAt: "asc",
+            },
+          },
+          createdBy: true,
         },
       });
+
+      return characterSchema.parse(character);
     }),
 
   getAll: publicProcedure.query(async ({ ctx }) => {
@@ -139,6 +149,34 @@ export const characterRouter = createTRPCRouter({
         include: {
           builds: true,
           createdBy: true,
+        },
+      });
+    }),
+
+  update: protectedProcedure
+    .input(characterSchema)
+    .mutation(async ({ ctx, input }) => {
+      return ctx.db.character.update({
+        where: {
+          id: input.id,
+        },
+        data: {
+          name: input.name || undefined,
+          role: input.role || undefined,
+          private: input.private || undefined,
+          description: input.description || undefined,
+          builds: {
+            update: input.builds.map((build) => ({
+              where: { id: build.id },
+              data: {
+                data: {
+                  equipment: build.data.equipment,
+                  stats: build.data.stats,
+                  drifter: build.data.drifter,
+                },
+              },
+            })),
+          },
         },
       });
     }),

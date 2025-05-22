@@ -1,20 +1,23 @@
+import Image from "next/image";
 import Link from "next/link";
+import { FiEyeOff } from "react-icons/fi";
 import { auth } from "~/server/auth";
 import { api } from "~/trpc/server";
 
-const User = async ({ params }: { params: { id: string } }) => {
-  const { id } = await params;
+const User = async (props: { params: { id: string } }) => {
+  const { id } = await props.params;
   const session = await auth();
 
   const isCurrentUser = session?.user.id === id;
 
-  const user = await api.user.getById({
-    userId: id,
-  });
-
-  const characters = await api.character.getAllByUserId({
-    userId: id,
-  });
+  const [user, characters] = await Promise.all([
+    api.user.getById({
+      userId: id,
+    }),
+    api.character.getAllByUserId({
+      userId: id,
+    }),
+  ]);
 
   const filteredCharacters = characters.filter((character) => {
     if (isCurrentUser) {
@@ -24,22 +27,45 @@ const User = async ({ params }: { params: { id: string } }) => {
   });
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-col">
-        <h1>{user?.name}</h1>
-        <p>Details about the user will be displayed here.</p>
+    <main className="flex w-4/5 grow gap-2 bg-gray-700/10 p-2">
+      <div className="flex flex-col items-center gap-2 p-2">
+        <Image
+          src={
+            user?.image ??
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1024px-Default_pfp.svg.png"
+          }
+          alt="User profile picture"
+          width={360}
+          height={360}
+          quality={100}
+          className="h-72 w-72 rounded-full outline-4 outline-white"
+        />
+        <h1 className="text-4xl font-bold">{user?.name}</h1>
+        <div className="rounded bg-stone-900 p-2">
+          <h3 className="text-center">About</h3>
+          <p>Details about the user will be displayed here.</p>
+        </div>
       </div>
-      <div className="flex flex-col gap-2">
-        <h2 className="text-lg">Characters</h2>
-        <ul className="flex flex-col">
+      <div className="flex grow flex-col gap-2">
+        <h2 className="text-3xl font-bold">Characters</h2>
+        <ul className="grid grid-cols-2 gap-2">
           {filteredCharacters.map((character) => (
-            <Link key={character.id} href={`/builds/${character.id}`}>
-              {character.name}
+            <Link
+              key={character.id}
+              href={`/builds/${character.id}`}
+              className="flex h-48 flex-col items-center justify-center rounded bg-stone-900 p-2 text-center text-sm font-bold transition-all hover:scale-105 hover:bg-stone-800 active:scale-95"
+            >
+              <div className="flex h-full w-full items-center justify-center">
+                <div className="flex items-center justify-between">
+                  <h3>{character.name}</h3>
+                  {character.private ? <FiEyeOff /> : null}
+                </div>
+              </div>
             </Link>
           ))}
         </ul>
       </div>
-    </div>
+    </main>
   );
 };
 export default User;

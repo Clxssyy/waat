@@ -8,37 +8,35 @@ import Equipment from "./equipment";
 import data from "public/data.json";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { api } from "~/trpc/react";
-import { useRouter } from "next/navigation";
+import type { inferRouterOutputs } from "@trpc/server";
+import type { AppRouter } from "~/server/api/root";
+import type { ActiveTab, BuildNumber } from "~/app/_utils/types";
+import { useBuildForm } from "./buildFormContext";
+
+type EquipmentSlot = "helmet" | "chest" | "boots" | "weapon" | "drifter";
+type RouterOutput = inferRouterOutputs<AppRouter>;
+type Character = RouterOutput["character"]["getById"];
 
 const Builder = ({
   props,
 }: {
   props: {
-    character: any;
+    character: Character;
     isCreator: Boolean;
   };
 }) => {
   const { character, isCreator } = props;
-  const [activeTab, setActiveTab] = useState<String>("equipment");
-  const [activeSlot, setActiveSlot] = useState<String>("");
-  const [activeBuild, setActiveBuild] = useState<number>(0);
-  const [buildData, setBuildData] = useState<any>(
-    character.builds[activeBuild]?.data,
-  );
 
-  const testJson = {
-    drifter: "",
-    weapon: "",
-    helmet: "",
-    chest: "",
-    boots: "",
-  };
+  if (!character) {
+    return <div>Character not found.</div>;
+  }
+
+  const [activeTab, setActiveTab] = useState<ActiveTab>("equipment");
+  const [activeSlot, setActiveSlot] = useState<EquipmentSlot>("weapon");
+  const [activeBuildIndex, setActiveBuildIndex] = useState<BuildNumber>(0);
+  const { formData, setFormData } = useBuildForm();
 
   const addBuild = api.character.addBuild.useMutation();
-  const getCharacter = api.character.getByBuildId.useQuery({
-    buildId: character.builds[0].id,
-  });
-  const router = useRouter();
 
   return (
     <div className="flex grow">
@@ -47,29 +45,26 @@ const Builder = ({
           <div className="flex gap-1 rounded-full bg-stone-800 p-2">
             <button
               onClick={() => {
-                if (activeBuild != 0 && character.builds[0]) {
-                  setActiveBuild(0);
+                if (activeBuildIndex != 0 && character!.builds[0]) {
+                  setActiveBuildIndex(0);
                   setActiveSlot("weapon");
-                } else if (!character.builds[0] && isCreator) {
+                } else if (!character!.builds[0] && isCreator) {
                   addBuild.mutate(
-                    { characterId: character.id },
+                    { characterId: character!.id },
                     {
                       onSuccess: async () => {
-                        const refetchResult = await getCharacter.refetch();
-                        setActiveBuild(0);
+                        setActiveBuildIndex(0);
                         setActiveSlot("weapon");
-                        setBuildData(refetchResult.data?.builds[0]?.data);
-                        router.refresh();
                       },
                     },
                   );
                 }
               }}
               className={`relative h-4 w-4 cursor-pointer rounded-full hover:outline-2 hover:outline-cyan-600 ${
-                character.builds[0] ? "bg-cyan-400" : "bg-white/10"
+                character!.builds[0] ? "bg-cyan-400" : "bg-white/10"
               }`}
             >
-              {activeBuild === 0 ? (
+              {activeBuildIndex === 0 ? (
                 <div className="absolute -bottom-1.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-cyan-600"></div>
               ) : (
                 ""
@@ -77,29 +72,26 @@ const Builder = ({
             </button>
             <button
               onClick={() => {
-                if (activeBuild != 1 && character.builds[1]) {
-                  setActiveBuild(1);
+                if (activeBuildIndex != 1 && character!.builds[1]) {
+                  setActiveBuildIndex(1);
                   setActiveSlot("weapon");
-                } else if (!character.builds[1] && isCreator) {
+                } else if (!character!.builds[1] && isCreator) {
                   addBuild.mutate(
-                    { characterId: character.id },
+                    { characterId: character!.id },
                     {
                       onSuccess: async () => {
-                        const refetchResult = await getCharacter.refetch();
-                        setActiveBuild(1);
+                        setActiveBuildIndex(1);
                         setActiveSlot("weapon");
-                        setBuildData(refetchResult.data?.builds[1]?.data);
-                        router.refresh();
                       },
                     },
                   );
                 }
               }}
               className={`relative h-4 w-4 cursor-pointer rounded-full hover:outline-2 hover:outline-cyan-600 ${
-                character.builds[1] ? "bg-cyan-400" : "bg-white/10"
+                character!.builds[1] ? "bg-cyan-400" : "bg-white/10"
               } `}
             >
-              {activeBuild === 1 ? (
+              {activeBuildIndex === 1 ? (
                 <div className="absolute -bottom-1.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-cyan-600"></div>
               ) : (
                 ""
@@ -107,29 +99,26 @@ const Builder = ({
             </button>
             <button
               onClick={() => {
-                if (activeBuild != 2 && character.builds[2]) {
-                  setActiveBuild(2);
+                if (activeBuildIndex != 2 && character!.builds[2]) {
+                  setActiveBuildIndex(2);
                   setActiveSlot("weapon");
-                } else if (!character.builds[2] && isCreator) {
+                } else if (!character!.builds[2] && isCreator) {
                   addBuild.mutate(
-                    { characterId: character.id },
+                    { characterId: character!.id },
                     {
                       onSuccess: async () => {
-                        const refetchResult = await getCharacter.refetch();
-                        setActiveBuild(2);
+                        setActiveBuildIndex(2);
                         setActiveSlot("weapon");
-                        setBuildData(refetchResult.data?.builds[2]?.data);
-                        router.refresh();
                       },
                     },
                   );
                 }
               }}
               className={`relative h-4 w-4 cursor-pointer rounded-full hover:outline-2 hover:outline-cyan-600 ${
-                character.builds[2] ? "bg-cyan-400" : "bg-white/10"
-              } ${activeBuild === 2 ? "outline-1 outline-cyan-600" : ""}`}
+                character!.builds[2] ? "bg-cyan-400" : "bg-white/10"
+              } ${activeBuildIndex === 2 ? "outline-1 outline-cyan-600" : ""}`}
             >
-              {activeBuild === 2 ? (
+              {activeBuildIndex === 2 ? (
                 <div className="absolute -bottom-1.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-cyan-600"></div>
               ) : (
                 ""
@@ -145,8 +134,10 @@ const Builder = ({
               if (activeTab != "equipment") setActiveTab("equipment");
             }}
           >
-            {testJson.weapon ? (
-              testJson.weapon
+            {formData?.builds?.[activeBuildIndex]?.data?.equipment.weapon ? (
+              <div>
+                {formData?.builds?.[activeBuildIndex]?.data?.equipment.weapon}
+              </div>
             ) : (
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-stone-900 text-stone-500">
                 <FaPlus />
@@ -162,8 +153,10 @@ const Builder = ({
                 if (activeTab != "equipment") setActiveTab("equipment");
               }}
             >
-              {testJson.helmet ? (
-                testJson.helmet
+              {formData?.builds?.[activeBuildIndex]?.data?.equipment.helmet ? (
+                <div>
+                  {formData?.builds?.[activeBuildIndex]?.data?.equipment.helmet}
+                </div>
               ) : (
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-stone-900 text-stone-500">
                   <FaPlus />
@@ -178,8 +171,10 @@ const Builder = ({
                 if (activeTab != "equipment") setActiveTab("equipment");
               }}
             >
-              {buildData.equipment.chest ? (
-                <div>{buildData.equipment.chest}</div>
+              {formData?.builds?.[activeBuildIndex]?.data?.equipment.chest ? (
+                <div>
+                  {formData?.builds?.[activeBuildIndex]?.data?.equipment.chest}
+                </div>
               ) : (
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-stone-900 text-stone-500">
                   <FaPlus />
@@ -194,8 +189,10 @@ const Builder = ({
                 if (activeTab != "equipment") setActiveTab("equipment");
               }}
             >
-              {testJson.boots ? (
-                testJson.boots
+              {formData?.builds?.[activeBuildIndex]?.data?.equipment.boots ? (
+                <div>
+                  {formData?.builds?.[activeBuildIndex]?.data?.equipment.boots}
+                </div>
               ) : (
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-stone-900 text-stone-500">
                   <FaPlus />
@@ -212,9 +209,13 @@ const Builder = ({
             if (activeTab != "drifter") setActiveTab("drifter");
           }}
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-stone-900 text-stone-500">
-            <FaPlus />
-          </div>
+          {formData?.builds?.[activeBuildIndex]?.data?.drifter ? (
+            <div>{formData?.builds?.[activeBuildIndex]?.data?.drifter}</div>
+          ) : (
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-stone-900 text-stone-500">
+              <FaPlus />
+            </div>
+          )}
         </button>
         <div className="flex w-66 grow flex-col divide-y divide-white/10 bg-stone-800">
           <h2 className="w-full p-2 text-center">Stats</h2>
@@ -262,7 +263,7 @@ const Builder = ({
                 className="h-full w-full cursor-pointer rounded-t-lg hover:bg-white/5"
                 onClick={() => {
                   if (activeTab != "equipment") setActiveTab("equipment");
-                  if (activeSlot === "drifter" || activeSlot === "")
+                  if (activeSlot === "drifter" || activeSlot === undefined)
                     setActiveSlot("weapon");
                 }}
               >
@@ -276,8 +277,7 @@ const Builder = ({
                 className="h-full w-full cursor-pointer rounded-t-lg hover:bg-white/5"
                 onClick={() => {
                   if (activeTab != "drifter") setActiveTab("drifter");
-                  if (activeSlot != "drifter" || activeSlot === "")
-                    setActiveSlot("drifter");
+                  if (activeSlot != "drifter") setActiveSlot("drifter");
                 }}
               >
                 Drifter
@@ -308,11 +308,15 @@ const Builder = ({
               </button>
             </div>
           </div>
-          <div className="relative flex w-full grow flex-col bg-stone-800">
+          <div className="relative flex w-full flex-col rounded bg-stone-800">
             {activeTab === "equipment" && (
-              <Equipment props={{ slot: activeSlot }} />
+              <Equipment
+                props={{ slot: activeSlot, buildNumber: activeBuildIndex }}
+              />
             )}
-            {activeTab === "drifter" && <Drifter />}
+            {activeTab === "drifter" && (
+              <Drifter props={{ buildNumber: activeBuildIndex }} />
+            )}
             {activeTab === "description" && <DescriptionPage />}
             {activeTab === "comments" && <Comments />}
           </div>
