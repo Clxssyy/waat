@@ -1,703 +1,1889 @@
 {
   "drifter": {
-    "strength": {
-      "kyra": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
+    "kyra": {
+      "strBonus": 2,
+      "agiBonus": 1,
+      "intBonus": 1.1,
+      "activeSkill": {
+        "name": "Frozen Maelstorm",
+        "description": ""
       },
-      "varnax": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
+      "passiveSkill": {
+        "name": "Fractured Ice",
+        "description": ""
       },
-      "sirokos": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
+      "role": "",
+      "type": "strength",
+      "supportEffects": {
+        "positive": {
+          "name": "Armor"
         },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
-      },
-      "durion": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
-      },
-      "draknor": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
-      },
-      "firestorm": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
-      },
-      "aegis": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
-      },
-      "auri": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
-      },
-      "izzy": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
+        "negative": {
+          "name": "Physical Damage Bonus"
         }
       }
     },
-    "agility": {
-      "overdrive": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
+    "varnax": {
+      "strBonus": 2.4,
+      "agiBonus": 1.5,
+      "intBonus": 0.8,
+      "activeSkill": {
+        "name": "Magma Slam",
+        "description": ""
       },
-      "stormblade": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
+      "passiveSkill": {
+        "name": "Seismic Impact",
+        "description": ""
       },
-      "illusarch": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
+      "role": "",
+      "type": "strength",
+      "supportEffects": {
+        "positive": {
+          "name": "Damage Bonus (PvE)"
         },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
+        "negative": {
+          "name": "Damage Resistance (PvE)"
         }
+      }
+    },
+    "sirokos": {
+      "strBonus": 2.5,
+      "agiBonus": 1,
+      "intBonus": 1,
+      "activeSkill": {
+        "name": "Sandstorm Dominion",
+        "description": ""
       },
-      "elektrix": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
+      "passiveSkill": {
+        "name": "Sand Veil",
+        "description": ""
+      },
+      "role": "",
+      "type": "strength",
+      "supportEffects": {
+        "positive": {
+          "name": "Base Control Resistance"
         },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
+        "negative": {
+          "name": "Damage Boost"
         }
+      }
+    },
+    "durion": {
+      "strBonus": 2.4,
+      "agiBonus": 0.7,
+      "intBonus": 1,
+      "activeSkill": {
+        "name": "Protector's Radiance",
+        "description": ""
       },
-      "zero": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
+      "passiveSkill": {
+        "name": "Reflective Shield",
+        "description": ""
+      },
+      "role": "",
+      "type": "strength",
+      "supportEffects": {
+        "positive": {
+          "name": "Max HP Bonus"
         },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
+        "negative": {
+          "name": "Max MP Bonus"
         }
+      }
+    },
+    "draknor": {
+      "strBonus": 2.4,
+      "agiBonus": 1,
+      "intBonus": 1.1,
+      "activeSkill": {
+        "name": "Shackled Grip",
+        "description": ""
       },
-      "nyxa": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
+      "passiveSkill": {
+        "name": "Imprisonment",
+        "description": ""
+      },
+      "role": "",
+      "type": "strength",
+      "supportEffects": {
+        "positive": {
+          "name": "Gathering Yield Bonus"
         },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
+        "negative": {
+          "name": "None"
         }
+      }
+    },
+    "firestorm": {
+      "strBonus": 1.8,
+      "agiBonus": 1.5,
+      "intBonus": 0.8,
+      "activeSkill": {
+        "name": "Cannonade",
+        "description": ""
       },
-      "vryssia": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
+      "passiveSkill": {
+        "name": "Resolve",
+        "description": ""
+      },
+      "role": "",
+      "type": "strength",
+      "supportEffects": {
+        "positive": {
+          "name": "Ranged Damage"
         },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
+        "negative": {
+          "name": "Damage Resistance"
         }
+      }
+    },
+    "aegis": {
+      "strBonus": 2.2,
+      "agiBonus": 0.5,
+      "intBonus": 1.4,
+      "activeSkill": {
+        "name": "Shield of Conviction",
+        "description": ""
       },
+      "passiveSkill": {
+        "name": "Defiant Resolve",
+        "description": ""
+      },
+      "role": "",
+      "type": "strength",
+      "supportEffects": {
+        "positive": {
+          "name": "Damage Resistance (PvE)"
+        },
+        "negative": {
+          "name": "Damage Bonus (PvE)"
+        }
+      }
+    },
+    "auri": {
+      "strBonus": 2.1,
+      "agiBonus": 0.7,
+      "intBonus": 1.3,
+      "activeSkill": {
+        "name": "Skyward Leap",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Healing Guardian",
+        "description": ""
+      },
+      "role": "",
+      "type": "strength",
+      "supportEffects": {
+        "positive": {
+          "name": "Healing Received"
+        },
+        "negative": {
+          "name": "Healing Bonus"
+        }
+      }
+    },
+    "izzy": {
+      "strBonus": 3.1,
+      "agiBonus": 0.5,
+      "intBonus": 0.5,
+      "activeSkill": {
+        "name": "Acid Blast",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Corrosion Barrier",
+        "description": ""
+      },
+      "role": "",
+      "type": "strength",
+      "supportEffects": {
+        "positive": {
+          "name": "Control Boost (PvP)"
+        },
+        "negative": {
+          "name": "Damage Resistance"
+        }
+      }
+    },
+    "overdrive": {
+      "strBonus": 1.5,
+      "agiBonus": 1.8,
+      "intBonus": 0.8,
+      "activeSkill": {
+        "name": "Flamecore Rampage",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Hell Salvo's Embrace",
+        "description": ""
+      },
+      "role": "",
+      "type": "agility",
+      "supportEffects": {
+        "positive": {
+          "name": "Critical Rate"
+        },
+        "negative": {
+          "name": "Critical Damage"
+        }
+      }
+    },
+    "stormblade": {
+      "strBonus": 1,
+      "agiBonus": 2.4,
+      "intBonus": 0.7,
+      "activeSkill": {
+        "name": "Tempest Slash",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Cyclone Reap",
+        "description": ""
+      },
+      "role": "",
+      "type": "agility",
+      "supportEffects": {
+        "positive": {
+          "name": "Starfall Token Acquisition Bonus"
+        },
+        "negative": {
+          "name": "None"
+        }
+      }
+    },
+    "illusarch": {
+      "strBonus": 1,
+      "agiBonus": 2,
+      "intBonus": 1.1,
+      "activeSkill": {
+        "name": "Spectral Disquise",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Echo Reflection",
+        "description": ""
+      },
+      "role": "",
+      "type": "agility",
+      "supportEffects": {
+        "positive": {
+          "name": "Experience Bonus"
+        },
+        "negative": {
+          "name": "None"
+        }
+      }
+    },
+    "elektrix": {
+      "strBonus": 1,
+      "agiBonus": 2.2,
+      "intBonus": 0.9,
+      "activeSkill": {
+        "name": "Storm Pulse",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Static Overdrive",
+        "description": ""
+      },
+      "role": "",
+      "type": "agility",
+      "supportEffects": {
+        "positive": {
+          "name": "Attack Speed"
+        },
+        "negative": {
+          "name": "Basic Attack Bonus"
+        }
+      }
+    },
+    "zero": {
+      "strBonus": 1.2,
+      "agiBonus": 2,
+      "intBonus": 0.9,
+      "activeSkill": {
+        "name": "Null Pulse",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Overclocking Reflex",
+        "description": ""
+      },
+      "role": "",
+      "type": "agility",
+      "supportEffects": {
+        "positive": {
+          "name": "Basic Attack Bonus"
+        },
+        "negative": {
+          "name": "Critical Rate"
+        }
+      }
+    },
+    "nyxa": {
+      "strBonus": 1,
+      "agiBonus": 2.1,
+      "intBonus": 1,
+      "activeSkill": {
+        "name": "Soul Feast",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Umbra Guardian",
+        "description": ""
+      },
+      "role": "",
+      "type": "agility",
+      "supportEffects": {
+        "positive": {
+          "name": "Physical Damage Bonus"
+        },
+        "negative": {
+          "name": "Armor"
+        }
+      }
+    },
+    "vryssia": {
+      "strBonus": 0.6,
+      "agiBonus": 2.3,
+      "intBonus": 0.8,
+      "activeSkill": {
+        "name": "Shadow Dive",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Healing Bloom Hunter",
+        "description": ""
+      },
+      "role": "",
+      "type": "agility",
+      "supportEffects": {
+        "positive": {
+          "name": "Dodge Rate"
+        },
+        "negative": {
+          "name": "Basic Attack Bonus"
+        }
+      }
+    },
 
-      "sanguor": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
+    "sanguor": {
+      "strBonus": 1.2,
+      "agiBonus": 2.2,
+      "intBonus": 0.7,
+      "activeSkill": {
+        "name": "Hemophage",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Blood Contract",
+        "description": ""
+      },
+      "role": "",
+      "type": "agility",
+      "supportEffects": {
+        "positive": {
+          "name": "Gathering Rate Bonus"
         },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
+        "negative": {
+          "name": "None"
         }
       },
       "umbra": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
+        "strBonus": 0.8,
+        "agiBonus": 2.3,
+        "intBonus": 1,
         "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
+          "name": "Shadow Rift",
+          "description": ""
         },
         "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
+          "name": "Umbra Kinetics",
+          "description": ""
         },
-        "role": "sdasda",
+        "role": "",
+        "type": "agility",
         "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
+          "positive": {
+            "name": "Melee Damage"
           },
-          "negativeEffect": {
-            "description": "sdasda"
+          "negative": {
+            "name": "Damage Resistance"
           }
         }
       }
     },
-    "intelligence": {
-      "moonveil": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
+    "moonveil": {
+      "strBonus": 1,
+      "agiBonus": 0.7,
+      "intBonus": 2.4,
+      "activeSkill": {
+        "name": "Twinlance Infusion",
+        "description": ""
       },
-      "shadowseer": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
+      "passiveSkill": {
+        "name": "Lunar Rebirth",
+        "description": ""
       },
-      "hive_queen": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
+      "role": "",
+      "type": "intelligence",
+      "supportEffects": {
+        "positive": {
+          "name": "Damage Bonus (PvP)"
         },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
-      },
-      "raven": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
-      },
-      "helix": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
-      },
-      "veska": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
-      },
-      "solenne": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
-      },
-      "revelation": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
-        }
-      },
-      "astral_magnus": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
-        },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
-        },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
+        "negative": {
+          "name": "Damage Resistance (PvP)"
         }
       }
     },
-    "logistics": {
-      "mole": {
-        "strMultiplier": 0,
-        "agiMultiplier": 0,
-        "intMultiplier": 0,
-        "activeSkill": {
-          "name": "sdsada",
-          "description": "sdasd"
+    "shadowseer": {
+      "strBonus": 0.5,
+      "agiBonus": 0.5,
+      "intBonus": 3.1,
+      "activeSkill": {
+        "name": "Shadow Cascade",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Umbra Resonance",
+        "description": ""
+      },
+      "role": "",
+      "type": "intelligence",
+      "supportEffects": {
+        "positive": {
+          "name": "Magic Damage Bonus"
         },
-        "passiveSkill": {
-          "name": "asdasda",
-          "description": "dsdsad"
+        "negative": {
+          "name": "Magic Resistance"
+        }
+      }
+    },
+    "hive_queen": {
+      "strBonus": 1.1,
+      "agiBonus": 1,
+      "intBonus": 2,
+      "activeSkill": {
+        "name": "Abyssal Sovereignty",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Hive Exaltation",
+        "description": ""
+      },
+      "role": "",
+      "type": "intelligence",
+      "supportEffects": {
+        "positive": {
+          "name": "Magic Resistance"
         },
-        "role": "sdasda",
-        "supportEffects": {
-          "positiveEffect": {
-            "description": "sadsdad"
-          },
-          "negativeEffect": {
-            "description": "sdasda"
-          }
+        "negative": {
+          "name": "Magic Damage Bonus"
+        }
+      }
+    },
+    "raven": {
+      "strBonus": 1.2,
+      "agiBonus": 0.8,
+      "intBonus": 2.1,
+      "activeSkill": {
+        "name": "Raven's Gaze",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Summon Raven",
+        "description": ""
+      },
+      "role": "",
+      "type": "intelligence",
+      "supportEffects": {
+        "positive": {
+          "name": "Max MP Bonus"
+        },
+        "negative": {
+          "name": "Max HP Bonus"
+        }
+      }
+    },
+    "helix": {
+      "strBonus": 1,
+      "agiBonus": 0.8,
+      "intBonus": 2.3,
+      "activeSkill": {
+        "name": "Genetic Cascade",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Helical Convergence",
+        "description": ""
+      },
+      "role": "",
+      "type": "intelligence",
+      "supportEffects": {
+        "positive": {
+          "name": "Skill Cooldown Rate"
+        },
+        "negative": {
+          "name": "Skill Bonus"
+        }
+      }
+    },
+    "veska": {
+      "strBonus": 1,
+      "agiBonus": 0.7,
+      "intBonus": 2.1,
+      "activeSkill": {
+        "name": "Serpent's Whisper",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Shedskin",
+        "description": ""
+      },
+      "role": "",
+      "type": "intelligence",
+      "supportEffects": {
+        "positive": {
+          "name": "Damage Resistance (PvP)"
+        },
+        "negative": {
+          "name": "Damage Bonus (PvP)"
+        }
+      }
+    },
+    "solenne": {
+      "strBonus": 1,
+      "agiBonus": 1.1,
+      "intBonus": 2,
+      "activeSkill": {
+        "name": "Bond of Light",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Light's Echo",
+        "description": ""
+      },
+      "role": "",
+      "type": "intelligence",
+      "supportEffects": {
+        "positive": {
+          "name": "Healing Bonus"
+        },
+        "negative": {
+          "name": "Healing Received"
+        }
+      }
+    },
+    "revelation": {
+      "strBonus": 0.8,
+      "agiBonus": 1,
+      "intBonus": 2.3,
+      "activeSkill": {
+        "name": "Sanctification",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Holy Covenant",
+        "description": ""
+      },
+      "role": "",
+      "type": "intelligence",
+      "supportEffects": {
+        "positive": {
+          "name": "Loot Bonus"
+        },
+        "negative": {
+          "name": "None"
+        }
+      }
+    },
+    "astral_magnus": {
+      "strBonus": 1,
+      "agiBonus": 1,
+      "intBonus": 2.1,
+      "activeSkill": {
+        "name": "Astral Gate",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Celestial Rotation",
+        "description": ""
+      },
+      "role": "",
+      "type": "intelligence",
+      "supportEffects": {
+        "positive": {
+          "name": "Gathering Experience Bonus"
+        },
+        "negative": {
+          "name": "None"
+        }
+      }
+    },
+    "mole": {
+      "strBonus": 1.3,
+      "agiBonus": 1.3,
+      "intBonus": 1.3,
+      "activeSkill": {
+        "name": "Mole's Escape",
+        "description": ""
+      },
+      "passiveSkill": {
+        "name": "Survivability Resilience",
+        "description": ""
+      },
+      "role": "",
+      "type": "intelligence",
+      "supportEffects": {
+        "positive": {
+          "name": "Carry Weight"
+        },
+        "negative": {
+          "name": "None"
         }
       }
     }
   },
   "weapon": {
-    "intelligence": {
-      "withermaul": { "rarity": "legendary" },
-      "necromist": { "rarity": "legendary" },
-      "sol_protector": { "rarity": "legendary" },
-      "celestial_redeemer": { "rarity": "legendary" },
-      "frost's_caller": { "rarity": "legendary" },
-      "glacier_spark": { "rarity": "legendary" },
-      "molten_mortar": { "rarity": "legendary" },
-      "solarflare": { "rarity": "legendary" }
+    "withermaul": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Bloom of Malice",
+        "description": ""
+      },
+      "type": "intelligence"
     },
-    "strength": {
-      "prism_cloak": { "rarity": "legendary" },
-      "voideye": { "rarity": "legendary" },
-      "thunderlord's_wrath": { "rarity": "legendary" },
-      "abyssal_conduit": { "rarity": "legendary" },
-      "windblade": { "rarity": "legendary" },
-      "wreckingsaw": { "rarity": "legendary" },
-      "sovereign's_radiance": { "rarity": "legendary" },
-      "judicator": { "rarity": "legendary" }
+    "necromist": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Necrotic Eruption",
+        "description": ""
+      },
+      "type": "intelligence"
     },
-    "agility": {
-      "sanctuary_of_growth": { "rarity": "legendary" },
-      "spirit's_call": { "rarity": "legendary" },
-      "scarlet_hunger": { "rarity": "legendary" },
-      "bloodthirst": { "rarity": "legendary" },
-      "phantom_spear": { "rarity": "legendary" },
-      "corrosive_piercer": { "rarity": "legendary" },
-      "eclipse_bow": { "rarity": "legendary" },
-      "mender's_ruin": { "rarity": "legendary" }
+    "sol_protector": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Sanctuary",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "celestial_redeemer": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Blessed Halo",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "frost's_caller": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Frost's Caller",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "glacier_spark": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Ice Blast",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "molten_mortar": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Molten Volley",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "solarflare": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Starforge Beam",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "nihilstaff": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Crippling Curse",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "infestor's_staff": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Parasitic Swarm",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "plaguespread": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Pestilence",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "hexlock": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Hexbound Malice",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "radiant_nova": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Sacred Flare",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "divine_resonator": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Sanctified Domain",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "luminous_ward": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Sanctum Arc",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "guardian's_embrace": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Divine Vault",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "frozen_conduit": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Frozen Phase",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "iceshard_comet": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Frost Nova",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "cryoshard_mask": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Frostbound Echo",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "frost_matrix": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Frostbite",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "blazruptor": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Hell Salvo",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "inferno_core": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Core Flare",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "doomfire": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Scorching Surge",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "flame_maw": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Molten Blast",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "rotten_breath": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Rot Manifest",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "judgement's_staff": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Aegisflare",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "glacier_prism": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Frost Torrent",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "blazing_catalyst": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Hellfire",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "novice_flame_blaster": {
+      "rarity": "common",
+      "core_skill": {
+        "name": "Hellfire",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "prism_cloak": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Photon Activation",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "voideye": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Deadshot",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "thunderlord's_wrath": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Thunderclap Impact",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "abyssal_conduit": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Void Devour",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "windblade": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Twinstorm",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "wreckingsaw": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Bladewheel Throw",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "sovereign's_radiance": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Thousandfold Strike",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "judicator": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Obliteration",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "luminet_cannon": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Snipe",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "blightspitter": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Toxic Shroud",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "spectral_assault": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Rapid Fire",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "sentinel_barrage": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Sentinel Barrage",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "bulwark_core": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Shield Slam",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "ripper's_grasp": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Grappling Strike",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "voidbreaker": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Void Slam",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "gravity_hammer": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Pulverizing Slam",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "cyclone_cleave": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Vortex Toss",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "bonefang_reaper": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Bonecrusher Leap",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "ravager's_cleave": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Execution",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "emerald_edge": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Runic Rebound",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "titan's_spineblade": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Titan's Stride",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "lordbreaker": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Sovereign Strike",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "voidblade": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Force Pierce",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "hellcore_cleaver": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Overload Slash",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "shattercoil": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Scatterblast",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "breaker's_resolve": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Unyielding Smash",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "berserker's_fury": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Whirlwind Slash",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "storm_cleaver": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Tempest Slash",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "novice_cleaver": {
+      "rarity": "common",
+      "core_skill": {
+        "name": "Tempest Slash",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "sanctuary_of_growth": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Divine Rootfall",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "spirit's_call": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Breeze of Resurgence",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "scarlet_hunger": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Bloodeye Burst",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "bloodthirst": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Sanguine Pounce",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "phantom_spear": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Shadow Dash",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "corrosive_piercer": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Blightfall",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "eclipse_bow": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Shadow Vortex",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "mender's_ruin": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Severance Shot",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "tendril's_grasp": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Entangling Growth",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "verdant_embrace": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Healing Bloom",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "harmony's_staff": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Rain of Serenity",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "thornward_staff": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Thorn Barrier",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "bloodfury_blades": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Crimson Frenzy",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "bloodpiercers": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Rupture Thrust",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "soulfangs": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Soul Snare",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "twilight_blades": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Blade Dance",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "drakespike": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Rapid Thrust",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "storm_spear": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Sweeping Tempest",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "stormfang_lance": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Surging Throw",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "sentinel's_lance": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Banner of Justice",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "windbreaker": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Windrend Splitters",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "thunderstrike": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Arcbolt",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "kinetic_arc": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Powershot",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "predator's_splitbow": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Splintershot",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "eclipse_conduit": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Crater Surge",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "hemoblades": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Rend and Reap",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "shardspike": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Bloodeye Burst",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "hailfire": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Barrage",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "novice_longbow": {
+      "rarity": "common",
+      "core_skill": {
+        "name": "Barrage",
+        "description": ""
+      },
+      "type": "agility"
     }
   },
   "helmet": {
-    "intelligence": {
-      "sanctum_shroud": { "rarity": "legendary" },
-      "twilight_mantle": { "rarity": "legendary" }
+    "sanctum_shroud": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Repulsion",
+        "description": ""
+      },
+      "type": "intelligence"
     },
-    "strength": {
-      "stormveil_mask": { "rarity": "legendary" },
-      "warden's_gaze": { "rarity": "legendary" }
+    "twilight_mantle": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Last Stand",
+        "description": ""
+      },
+      "type": "intelligence"
     },
-    "agility": {
-      "ironwill_veil": { "rarity": "legendary" },
-      "folly_helm": { "rarity": "legendary" }
+    "mystic_surge": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Overflow",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "healer's_hood": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Swift Aid",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "earth_vein_hood": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Venom",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "crimson_breeze": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Grievous Wounds",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "breezeweaver_hood": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Amplify",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "stormveil_mask": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Sandstorm",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "warden's_gaze": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Forward Guard",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "ironclad_helm": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Iron Wall",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "hellfire_visor": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Flame Star",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "reptilian_helm": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Scale Armor",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "savage_helm": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "EMP Blast",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "furor's_helm": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Enrage",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "ironwill_veil": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Defiance",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "folly_helm": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Break Free",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "stormcaller's_hood": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Electrified Strike",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "shadeveil_mask": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Fade Out",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "wrathveil_shade": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Rage",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "purifier's_shroud": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Dodge",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "vital_mantle": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Life Flash",
+        "description": ""
+      },
+      "type": "agility"
     }
   },
   "chest": {
-    "intelligence": {
-      "dreadcloak": { "rarity": "legendary" },
-      "warding_shroud": { "rarity": "legendary" }
+    "dreadcloak": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Panic",
+        "description": ""
+      },
+      "type": "intelligence"
     },
-    "strength": {
-      "warden's_shell": { "rarity": "legendary" },
-      "magsurge_armor": { "rarity": "legendary" }
+    "warding_shroud": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Barrier",
+        "description": ""
+      },
+      "type": "intelligence"
     },
-    "agility": {
-      "hero's_embrace": { "rarity": "legendary" },
-      "ranger's_hide": { "rarity": "legendary" }
+    "archaneweaver": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Mana Font",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "repulsor_mantle": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Repulse",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "exorcist's_robe": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Dispel",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "cleansing_robe": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Purify",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "vigorcloak": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Heal",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "novice_robe": {
+      "rarity": "common",
+      "core_skill": {
+        "name": "Heal",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "warden's_shell": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Vulnerability",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "magsurge_armor": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Converge",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "aegis_plate": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Shield",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "dazzling_guard": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Stun",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "tempest_charge": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Charge",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "tangle_guard": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Root Grip",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "guardian's_blessing": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Block",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "novice_heavy_armor": {
+      "rarity": "common",
+      "core_skill": {
+        "name": "Block",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "hero's_embrace": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Rally",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "ranger's_hide": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Armor Breaker",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "beastcaller's_coat": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Snarl",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "deathmantle": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Finisher",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "retaliation_coat": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Reflect",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "mistshroud": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Smoke Screen",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "recovery_vest": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Bandage",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "novice_medium_armor": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Bandage",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "scavenger's_vest": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Shield",
+        "description": ""
+      },
+      "type": "logistics"
     }
   },
   "boots": {
-    "intelligence": {
-      "savagefoot_boots": { "rarity": "legendary" },
-      "phantomstep_boots": { "rarity": "legendary" }
+    "savagefoot_boots": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Berserk",
+        "description": ""
+      },
+      "type": "intelligence"
     },
-    "strength": {
-      "impact_heavy_boots": { "rarity": "legendary" },
-      "avalanche_boots": { "rarity": "legendary" }
+    "phantomstep_boots": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Ghost",
+        "description": ""
+      },
+      "type": "intelligence"
     },
-    "agility": {
-      "evasion_striders": { "rarity": "legendary" },
-      "exodrift_slippers": { "rarity": "legendary" }
+    "blinkstep_boots": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Flash Step",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "frostwalker_boots": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Frost",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "miasma_stompers": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Decay",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "shifter's_strides": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Displacement",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "arcaneflow_boots": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Abundance",
+        "description": ""
+      },
+      "type": "intelligence"
+    },
+    "impact_heavy_boots": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Lunge",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "avalanche_boots": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Mountain Crash",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "wrathstep": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Vengeance",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "bulwark_striders": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Guardian",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "titan_walkers": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Titanic Growth",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "vanguard's_march": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Vanguard",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "energizer_boots": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Vitality",
+        "description": ""
+      },
+      "type": "strength"
+    },
+    "evasion_striders": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Escape",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "exodrift_slippers": {
+      "rarity": "legendary",
+      "core_skill": {
+        "name": "Phase Shift",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "swiftstride_boots": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Attack Speed",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "fleeting_steps": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Grace",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "deathwalker_boots": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Assassinate",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "shadeveil_slippers": {
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Vanish",
+        "description": ""
+      },
+      "type": "agility"
+    },
+    "rallystep_boots": {
+      "rarity": "rare",
+      "core_skill": {
+        "name": "Sidestep",
+        "description": ""
+      },
+      "type": "agility"
     }
   }
 }
