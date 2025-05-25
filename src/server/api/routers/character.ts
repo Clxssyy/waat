@@ -202,10 +202,10 @@ export const characterRouter = createTRPCRouter({
     .mutation(async ({ ctx, input }) => {
       return ctx.db.character.create({
         data: {
-          name: input.name || undefined,
-          role: input.role || undefined,
-          private: input.private || undefined,
-          description: input.description || undefined,
+          name: input.name,
+          role: input.role ?? undefined,
+          private: input.private,
+          description: input.description,
           userId: ctx.session.user.id,
           clonedFrom: input.id,
           builds: {
