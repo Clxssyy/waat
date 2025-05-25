@@ -26,13 +26,13 @@ export default async function Builds() {
         <div className="flex gap-2">
           <Link
             href={session ? "/builds/create" : "/api/auth/signin"}
-            className="rounded bg-green-600 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-105 hover:bg-green-700 active:scale-95"
+            className="rounded border border-green-600 bg-green-700 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-105 hover:brightness-125 active:scale-95"
           >
             Create
           </Link>
           <Link
             href={session ? `/users/${session.user.id}` : "/api/auth/signin"}
-            className="rounded bg-neutral-600 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-105 hover:bg-neutral-700 active:scale-95"
+            className="rounded border border-neutral-600 bg-neutral-700 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-105 hover:brightness-125 active:scale-95"
           >
             Your Builds
           </Link>
@@ -41,7 +41,7 @@ export default async function Builds() {
       <div className="flex justify-center">
         <form action="" className="flex w-2/5 flex-col gap-2 p-4">
           <div className="flex gap-2">
-            <select className="w-1/5 rounded bg-white/5 px-4 py-1 text-lg text-neutral-500">
+            <select className="w-1/5 rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg">
               <option value="" hidden>
                 Role
               </option>
@@ -49,7 +49,7 @@ export default async function Builds() {
               <option value="healer">Healer</option>
               <option value="tank">Tank</option>
             </select>
-            <select className="grow rounded bg-white/5 px-4 py-1 text-lg text-neutral-500">
+            <select className="grow rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg">
               <option value="" hidden>
                 Drifter
               </option>
@@ -62,7 +62,7 @@ export default async function Builds() {
             </select>
             <button
               type="reset"
-              className="rounded bg-white/5 px-2 text-lg text-neutral-500"
+              className="rounded border border-neutral-600 bg-neutral-700 px-2 text-lg"
             >
               <IoClose />
             </button>
@@ -73,7 +73,7 @@ export default async function Builds() {
               name=""
               id="build_search_box"
               placeholder="Search..."
-              className="w-full rounded bg-white/5 p-1 text-lg text-neutral-500"
+              className="w-full rounded border border-neutral-600 bg-neutral-700 p-1 text-lg"
             />
           </div>
         </form>

@@ -15,6 +15,7 @@ const Builds = () => {
     formData,
     setFormData,
     hasChanges,
+    setHasChanges,
   } = useBuildForm();
 
   if (!character) {
@@ -29,7 +30,7 @@ const Builds = () => {
           <select
             name=""
             id=""
-            className="rounded bg-neutral-800 px-2 py-1"
+            className="cursor-pointer rounded border border-neutral-700 bg-neutral-800 px-2 py-1"
             defaultValue={formData.role ?? ""}
             onChange={(e) => {
               setFormData({ ...formData, role: e.target.value });
@@ -45,23 +46,28 @@ const Builds = () => {
         </div>
         <div className="flex items-center gap-2">
           <button
-            className={`cursor-pointer rounded px-2 py-1 hover:brightness-125 disabled:cursor-not-allowed disabled:bg-neutral-700 disabled:opacity-40 ${hasChanges && isCreator && "bg-green-600 hover:bg-green-700"} ${!isCreator && "bg-cyan-500 hover:bg-cyan-600"}`}
-            onClick={isCreator ? save : clone}
+            className={`cursor-pointer rounded border px-2 py-1 transition-all hover:brightness-125 not-disabled:hover:scale-105 not-disabled:active:scale-95 disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40 ${hasChanges && isCreator && "border-green-600 bg-green-700"} ${!isCreator && "border-cyan-500 bg-cyan-600"}`}
+            onClick={
+              isCreator
+                ? () => {
+                    setHasChanges(!hasChanges);
+                    save();
+                  }
+                : clone
+            }
             disabled={isSaving || isCloning || (!hasChanges && isCreator)}
           >
-            {isCreator
-              ? `${isSaving ? "Saving..." : "Save"}`
-              : `${isCloning ? "Cloning..." : "Clone"}`}
+            {isCreator ? `Save` : `${isCloning ? "Cloning..." : "Clone"}`}
           </button>
           {isCreator ? (
             ""
           ) : (
-            <div className="flex items-center justify-center gap-1 rounded bg-neutral-800 px-2 py-1">
+            <div className="flex items-center justify-center gap-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95">
               <IoIosStarOutline />
               Rate
             </div>
           )}
-          <div className="flex aspect-square h-full items-center justify-center rounded bg-neutral-800 p-1">
+          <div className="flex aspect-square h-full items-center justify-center rounded border border-neutral-700 bg-neutral-800 p-1">
             <IoMdShare />
           </div>
         </div>

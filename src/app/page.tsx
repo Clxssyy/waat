@@ -19,13 +19,13 @@ export default async function Home() {
         <div className="flex gap-2">
           <Link
             href={session ? "/builds" : "/api/auth/signin"}
-            className="rounded bg-green-600 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-105 hover:bg-green-700 active:scale-95"
+            className="rounded border border-green-600 bg-green-700 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-105 hover:brightness-125 active:scale-95"
           >
             Get Started
           </Link>
           <Link
             href={"/guides"}
-            className="rounded bg-neutral-600 px-4 py-2 font-bold transition-all text-shadow-2xs text-shadow-black hover:scale-105 hover:bg-neutral-700 active:scale-95"
+            className="rounded border border-neutral-600 bg-neutral-700 px-4 py-2 font-bold transition-all text-shadow-2xs text-shadow-black hover:scale-105 hover:brightness-125 active:scale-95"
           >
             Explore
           </Link>
@@ -42,7 +42,7 @@ export default async function Home() {
           <div className="flex items-center">
             <Link
               href={"/news"}
-              className="rounded bg-neutral-600 px-2 py-1 font-bold transition-all hover:scale-105 hover:bg-neutral-700 active:scale-95"
+              className="rounded border border-neutral-600 bg-neutral-700 px-2 py-1 font-bold transition-all hover:scale-105 hover:brightness-125 active:scale-95"
             >
               View All
             </Link>
@@ -77,7 +77,7 @@ export default async function Home() {
           <div className="flex items-center">
             <Link
               href={"/guides"}
-              className="rounded bg-neutral-600 px-2 py-1 font-bold transition-all hover:scale-105 hover:bg-neutral-700 active:scale-95"
+              className="rounded border border-neutral-600 bg-neutral-700 px-2 py-1 font-bold transition-all hover:scale-105 hover:brightness-125 active:scale-95"
             >
               View All
             </Link>

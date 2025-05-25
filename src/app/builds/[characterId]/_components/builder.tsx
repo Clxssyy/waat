@@ -54,7 +54,7 @@ const Builder = ({
                 if (activeBuildIndex != 0 && formData!.builds[0]) {
                   setActiveBuildIndex(0);
                   setActiveSlot("weapon");
-                } else if (!formData!.builds[0] && isCreator) {
+                } else if (!formData!.builds[0]) {
                   setFormData((prev) => {
                     if (!prev) return prev;
                     return {
@@ -100,11 +100,7 @@ const Builder = ({
                 if (activeBuildIndex != 1 && formData!.builds[1]) {
                   setActiveBuildIndex(1);
                   setActiveSlot("weapon");
-                } else if (
-                  !formData!.builds[1] &&
-                  formData!.builds[0] &&
-                  isCreator
-                ) {
+                } else if (!formData!.builds[1] && formData!.builds[0]) {
                   setFormData((prev) => {
                     if (!prev) return prev;
                     return {
@@ -150,11 +146,7 @@ const Builder = ({
                 if (activeBuildIndex != 2 && formData!.builds[2]) {
                   setActiveBuildIndex(2);
                   setActiveSlot("weapon");
-                } else if (
-                  !formData!.builds[2] &&
-                  formData!.builds[1] &&
-                  isCreator
-                ) {
+                } else if (!formData!.builds[2] && formData!.builds[1]) {
                   setFormData((prev) => {
                     if (!prev) return prev;
                     return {

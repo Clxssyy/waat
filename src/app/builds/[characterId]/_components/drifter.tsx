@@ -21,7 +21,7 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
     <div className="flex flex-col gap-2 p-2">
       <div className="flex gap-2">
         <button
-          className={`cursor-pointer rounded border border-neutral-500 px-3 py-1 ${activeFilter === "all" ? "bg-neutral-700 hover:bg-neutral-600" : "bg-neutral-600 hover:bg-neutral-500"}`}
+          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-125 ${activeFilter === "all" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
           onClick={() => {
             setActiveFilter("all");
           }}
@@ -29,7 +29,7 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
           All
         </button>
         <button
-          className={`cursor-pointer rounded border border-neutral-500 px-3 py-1 ${activeFilter === "strength" ? "bg-neutral-700 hover:bg-neutral-600" : "bg-neutral-600 hover:bg-neutral-500"}`}
+          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-125 ${activeFilter === "strength" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
           onClick={() => {
             setActiveFilter("strength");
           }}
@@ -37,7 +37,7 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
           Strength
         </button>
         <button
-          className={`cursor-pointer rounded border border-neutral-500 px-3 py-1 ${activeFilter === "agility" ? "bg-neutral-700 hover:bg-neutral-600" : "bg-neutral-600 hover:bg-neutral-500"}`}
+          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-125 ${activeFilter === "agility" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
           onClick={() => {
             setActiveFilter("agility");
           }}
@@ -45,7 +45,7 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
           Agility
         </button>
         <button
-          className={`cursor-pointer rounded border border-neutral-500 px-3 py-1 ${activeFilter === "intelligence" ? "bg-neutral-700 hover:bg-neutral-600" : "bg-neutral-600 hover:bg-neutral-500"}`}
+          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-125 ${activeFilter === "intelligence" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
           onClick={() => {
             setActiveFilter("intelligence");
           }}
@@ -53,7 +53,7 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
           Intelligence
         </button>
         <button
-          className={`cursor-pointer rounded border border-neutral-500 px-3 py-1 ${activeFilter === "logistics" ? "bg-neutral-700 hover:bg-neutral-600" : "bg-neutral-600 hover:bg-neutral-500"}`}
+          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-125 ${activeFilter === "logistics" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
           onClick={() => {
             setActiveFilter("logistics");
           }}
@@ -62,10 +62,10 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
         </button>
       </div>
       <div className="flex gap-2">
-        <div className="h-12 w-12 rounded bg-neutral-700"></div>
+        <div className="h-12 w-12 rounded border border-neutral-600 bg-neutral-700"></div>
         <div className="h-12 grow rounded bg-neutral-700">
           <select
-            className="h-full w-full rounded bg-neutral-700 px-2 text-lg"
+            className="h-full w-full rounded border border-neutral-600 bg-neutral-700 px-2 text-lg"
             id={"drifter"}
             name={"drifter"}
             ref={selectInput}
@@ -134,7 +134,7 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
         <>
           <hr className="border-neutral-700" />
           <div className="flex flex-col gap-2">
-            <div className="flex flex-col gap-2 rounded bg-neutral-700 p-2">
+            <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
               <h2>Mastery</h2>
               <div className="flex gap-2">
                 <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
@@ -163,8 +163,8 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-2 rounded bg-neutral-700 p-2">
-              <h2>Equipment Info</h2>
+            <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+              <h2>Info</h2>
               <div className="flex flex-col rounded bg-neutral-800 p-2">
                 <p>
                   Active Skill:{" "}
@@ -182,21 +182,27 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col gap-2 rounded bg-neutral-700 p-2">
+            <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
               <h2>Support Bonuses</h2>
               <div className="flex justify-between gap-2">
-                <div className="flex flex-1 flex-col items-center rounded bg-neutral-800 p-2">
-                  <span>Negative</span>
-                  <span>
-                    {
-                      data.drifter[
-                        formData?.builds?.[buildNumber]?.data?.drifter
-                      ].supportEffects.negative.name
-                    }
-                  </span>
-                </div>
-                <div className="flex flex-1 flex-col items-center rounded bg-neutral-800 p-2">
-                  <span>Positive</span>
+                {data.drifter[formData?.builds?.[buildNumber]?.data?.drifter]
+                  .supportEffects.negative.name === "None" ? (
+                  ""
+                ) : (
+                  <div className="flex flex-1 justify-center gap-2 rounded bg-neutral-800 p-2">
+                    <span className="text-red-400">-</span>
+                    <span>
+                      {
+                        data.drifter[
+                          formData?.builds?.[buildNumber]?.data?.drifter
+                        ].supportEffects.negative.name
+                      }
+                    </span>
+                  </div>
+                )}
+
+                <div className="flex flex-1 justify-center gap-2 rounded bg-neutral-800 p-2">
+                  <span className="text-green-400">+</span>
                   <span>
                     {
                       data.drifter[

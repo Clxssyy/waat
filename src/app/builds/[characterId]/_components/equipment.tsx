@@ -81,10 +81,10 @@ const Equipment = ({
         )}
       </div>
       <div className="flex gap-2">
-        <div className="h-12 w-12 rounded bg-neutral-700"></div>
+        <div className="h-12 w-12 rounded border border-neutral-600 bg-neutral-700"></div>
         <div className="h-12 grow rounded bg-neutral-700">
           <select
-            className="h-full w-full rounded bg-neutral-700 px-2 text-lg"
+            className="h-full w-full rounded border border-neutral-600 bg-neutral-700 px-2 text-lg"
             ref={selectInput}
             value={formData?.builds?.[buildNumber]?.data?.equipment[slot]}
             onChange={(e) => {
@@ -126,7 +126,7 @@ const Equipment = ({
           </select>
         </div>
         <button
-          className={`flex h-12 w-12 items-center justify-center rounded border border-neutral-600 bg-neutral-700 hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40`}
+          className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700 hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40`}
           disabled={!formData?.builds?.[buildNumber]?.data?.equipment[slot]}
           onClick={() => {
             setFormData((prev) => {
@@ -158,37 +158,52 @@ const Equipment = ({
         <>
           <hr className="border-neutral-700" />
           <div className="flex flex-col gap-2">
-            <div className="flex flex-col gap-2 rounded bg-neutral-700 p-2">
+            <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
               <h2>Mastery</h2>
-              <div className="flex gap-2">
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+              <div className="flex flex-wrap gap-2">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
                   <span>0</span>
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
                   <span>10</span>
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
                   <span>20</span>
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
                   <span>30</span>
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
                   <span>40</span>
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>45</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>46</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>47</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>48</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>49</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
                   <span>50</span>
                 </div>
-                <div className="flex h-12 grow items-center justify-center rounded bg-neutral-800 text-lg">
+                <div className="flex h-12 grow items-center justify-center rounded bg-neutral-800 p-2 px-2 text-lg">
                   <span>Custom</span>
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
                   <IoClose className="h-6 w-6" />
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-2 rounded bg-neutral-700 p-2">
-              <h2>Equipment Info</h2>
+            <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+              <h2>Info</h2>
               <div className="rounded bg-neutral-800 p-2">
                 <p>
                   Active Skill:{" "}
@@ -200,7 +215,7 @@ const Equipment = ({
                 </p>
               </div>
             </div>
-            <div className="flex flex-col gap-2 rounded bg-neutral-700 p-2">
+            <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
               <h2>Mods</h2>
               <div className="flex gap-2">
                 <div className="h-12 w-12 rounded bg-neutral-800"></div>
@@ -211,7 +226,7 @@ const Equipment = ({
                   <option value="">Mod</option>
                 </select>
                 <button
-                  className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 hover:text-red-600"
+                  className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 hover:text-red-500"
                   disabled
                 >
                   <IoClose className="h-6 w-6" />
@@ -221,13 +236,11 @@ const Equipment = ({
             {modPlaceholder && (
               <>
                 <hr className="border-neutral-700" />
-                <div className="flex flex-col gap-2 rounded bg-neutral-700 p-2">
-                  <h2>Mod Info</h2>
-                  <div className="rounded bg-neutral-800 p-2">placeholder</div>
-                </div>
-                <div className="flex flex-col gap-2 rounded bg-neutral-700 p-2">
-                  <h2>Percentages</h2>
-                  <div className="rounded bg-neutral-800 p-2">placeholder</div>
+                <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+                  <h2>Info</h2>
+                  <div className="rounded bg-neutral-800 p-2">
+                    Coming soon...
+                  </div>
                 </div>
               </>
             )}

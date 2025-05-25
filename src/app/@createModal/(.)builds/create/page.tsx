@@ -17,8 +17,8 @@ const Create = () => {
   });
 
   return (
-    <div className="absolute flex h-full w-full items-center justify-center bg-black/20">
-      <div className="relative rounded bg-neutral-800 p-4">
+    <div className="absolute flex h-full w-full items-center justify-center bg-black/30">
+      <div className="relative rounded border border-neutral-700 bg-neutral-800 p-4">
         <button
           onClick={() => {
             router.back();
@@ -35,13 +35,13 @@ const Create = () => {
             id="character_name_input"
             defaultValue=""
             maxLength={20}
-            className="rounded bg-white/5 px-2 py-1 text-neutral-500"
+            className="rounded border border-neutral-600 bg-neutral-700 px-2 py-1"
           />
           <select
             name=""
             id="character_role_input"
             defaultValue=""
-            className="rounded bg-white/5 px-2 py-1 text-neutral-500"
+            className="rounded border border-neutral-600 bg-neutral-700 px-2 py-1"
           >
             <option value="" hidden>
               Role
@@ -50,9 +50,8 @@ const Create = () => {
             <option value="healer">Healer</option>
             <option value="tank">Tank</option>
           </select>
-          {/* Add input fields */}
           <button
-            className="rounded bg-green-600 px-2 py-1"
+            className="rounded border border-green-600 bg-green-700 px-2 py-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95 disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40"
             onClick={() => {
               characterCreate.mutate({
                 name: (
@@ -67,7 +66,7 @@ const Create = () => {
                 ).value,
               });
             }}
-            disabled={characterCreate.isPending}
+            disabled={characterCreate.isPending || characterCreate.isSuccess}
           >
             {characterCreate.isPending ? "Creating..." : "Create"}
           </button>

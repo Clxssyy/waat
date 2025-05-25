@@ -1,8 +1,10 @@
 const DescriptionPage = () => {
   return (
-    <div className="flex flex-col gap-4">
-      <h1 className="text-2xl font-bold">description</h1>
-      <p>description page for the character.</p>
+    <div className="grow p-2">
+      <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+        <h1 className="text-2xl font-bold">Header</h1>
+        <p>Text</p>
+      </div>
     </div>
   );
 };
