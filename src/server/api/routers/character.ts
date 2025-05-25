@@ -132,6 +132,9 @@ export const characterRouter = createTRPCRouter({
         builds: true,
         createdBy: true,
       },
+      orderBy: {
+        createdAt: "desc",
+      },
     });
   }),
 
@@ -161,7 +164,7 @@ export const characterRouter = createTRPCRouter({
           id: input.id,
         },
         data: {
-          name: input.name,
+          name: input.name || undefined,
           role: input.role,
           private: input.private,
           description: input.description,

@@ -11,7 +11,7 @@ const SettingsPage = () => {
         <input
           type="text"
           placeholder="Name"
-          value={formData.name}
+          value={formData?.name}
           onChange={(e) => {
             setFormData({
               ...formData,
@@ -24,7 +24,7 @@ const SettingsPage = () => {
           name=""
           id=""
           className="rounded bg-neutral-800 p-2"
-          value={formData.role}
+          value={formData?.role}
           onChange={(e) => {
             setFormData({
               ...formData,
@@ -41,7 +41,7 @@ const SettingsPage = () => {
           name=""
           id=""
           className="rounded bg-neutral-800 p-2"
-          value={formData.private.toString()}
+          value={formData?.private.toString()}
           onChange={(e) => {
             setFormData({
               ...formData,
