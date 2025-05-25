@@ -1,6 +1,5 @@
 "use client";
 
-import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -14,8 +13,16 @@ const Sidebar = () => {
   const pathSplit = pathname.split("/");
   const characterId = pathSplit[2];
   const activePage = pathSplit[3];
-  const { character, isCreator, save, isSaving, clone, isCloning } =
-    useBuildForm();
+  const {
+    character,
+    isCreator,
+    save,
+    isSaving,
+    clone,
+    isCloning,
+    hasChanges,
+    setHasChanges,
+  } = useBuildForm();
 
   if (!character) {
     return <div>Character not found.</div>;
@@ -24,7 +31,7 @@ const Sidebar = () => {
   const creator = character.createdBy;
 
   return (
-    <div className="flex w-1/8 flex-col justify-between bg-stone-800">
+    <div className="flex min-w-1/6 flex-col justify-between bg-neutral-800">
       <div className="flex flex-col divide-y divide-white/10">
         <Link
           href="/builds"
@@ -72,9 +79,16 @@ const Sidebar = () => {
         </div>
         <div className="texl-lg flex items-center justify-center p-4">
           <button
-            className={`w-11/12 cursor-pointer rounded p-2 ${isCreator ? "bg-green-600 hover:bg-green-700" : "bg-cyan-500 hover:bg-cyan-600"}`}
-            onClick={isCreator ? save : clone}
-            disabled={isSaving || isCloning}
+            className={`w-11/12 cursor-pointer rounded border border-neutral-600 px-2 py-1 hover:brightness-125 disabled:cursor-not-allowed disabled:bg-neutral-700 disabled:opacity-40 ${hasChanges && isCreator && "bg-green-600 hover:bg-green-700"} ${!isCreator && "bg-cyan-500 hover:bg-cyan-600"}`}
+            onClick={
+              isCreator
+                ? () => {
+                    setHasChanges(!hasChanges);
+                    save();
+                  }
+                : clone
+            }
+            disabled={isSaving || isCloning || (!hasChanges && isCreator)}
           >
             {isCreator
               ? `${isSaving ? "Saving..." : "Save"}`
@@ -92,13 +106,27 @@ const Sidebar = () => {
             width={100}
             height={100}
             alt="creator pfp"
-            className="h-8 w-8 rounded-full"
+            className="h-10 w-10 rounded-full"
           />
-          <Link href={`/users/${creator.id}`}>
-            By <span className="underline">{character?.createdBy.name}</span>
-          </Link>
+          <div>
+            <Link
+              href={`/users/${creator.id}`}
+              className="text-sm hover:underline"
+            >
+              By {character?.createdBy.name}
+            </Link>
+            {character.clonedFrom ? (
+              <Link
+                href={`/builds/${character.clonedFrom}`}
+                className="text-cyan-400 underline"
+              >
+                Cloned from
+              </Link>
+            ) : (
+              <p className={"text-xs text-neutral-600"}>{characterId}</p>
+            )}
+          </div>
         </div>
-        <p className="text-xs text-stone-600">{characterId}</p>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ const Header = async () => {
   const session = await auth();
 
   return (
-    <header className="flex h-16 w-full items-center justify-between bg-stone-900 px-5">
+    <header className="flex h-16 w-full items-center justify-between bg-neutral-900 px-5">
       <div className="text-lg font-bold">
         <Link href="/">WAAT</Link>
       </div>

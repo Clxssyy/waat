@@ -1,20 +1,54 @@
+import type { User } from "@prisma/client";
 import { z } from "zod";
 
 export type ActiveSlots = "helmet" | "chest" | "boots" | "weapon" | "drifter";
-export type BuildNumber = 0 | 1 | 2;
+export type ActiveBuildIndex = 0 | 1 | 2;
 
-export type ActiveTab = "description" | "drifter" | "equipment" | "comments";
-export type ActiveEquipmentFilter =
-  | "all"
-  | "strength"
-  | "agility"
-  | "intelligence";
-export type ActiveDrifterFilter =
+export type ActiveTab =
+  | "description"
+  | "drifter"
+  | "equipment"
+  | "comments"
+  | "support";
+export type ActiveFilter =
   | "all"
   | "strength"
   | "agility"
   | "intelligence"
   | "logistics";
+
+export type BuildData = {
+  equipment: {
+    helmet: string;
+    chest: string;
+    boots: string;
+    weapon: string;
+  };
+  stats: {
+    strength: number;
+    agility: number;
+    intelligence: number;
+  };
+  drifter: string;
+};
+
+export type Build = {
+  id: string;
+  characterId: string;
+  createdAt: Date;
+  updatedAt: Date;
+  data: BuildData;
+};
+
+export type editFields = {
+  builds: Build[];
+  id: string;
+  name: string;
+  role: string | undefined;
+  private: boolean;
+  description: string;
+  clonedFrom: string | undefined;
+};
 
 export const buildDataSchema = z.object({
   equipment: z.object({
@@ -34,13 +68,11 @@ export const buildDataSchema = z.object({
 export const buildSchema = z.object({
   id: z.string(),
   characterId: z.string(),
-  createdAt: z.date(),
-  updatedAt: z.date(),
   data: buildDataSchema,
 });
 
 export const characterSchema = z.object({
-  builds: z.array(buildSchema),
+  builds: z.array(buildSchema).max(3),
   createdBy: z.object({
     name: z.string().nullish(),
     id: z.string(),
@@ -48,8 +80,6 @@ export const characterSchema = z.object({
     emailVerified: z.date().nullish(),
     image: z.string().nullish(),
   }),
-  createdAt: z.date(),
-  updatedAt: z.date(),
   id: z.string(),
   name: z.string(),
   role: z.string().optional(),

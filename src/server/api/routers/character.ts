@@ -161,22 +161,38 @@ export const characterRouter = createTRPCRouter({
           id: input.id,
         },
         data: {
-          name: input.name || undefined,
-          role: input.role || undefined,
-          private: input.private || undefined,
-          description: input.description || undefined,
+          name: input.name,
+          role: input.role,
+          private: input.private,
+          description: input.description,
           builds: {
-            update: input.builds.map((build) => ({
-              where: { id: build.id },
-              data: {
+            create: input.builds
+              .filter((b) => b.id === "")
+              .map((build) => ({
                 data: {
+                  characterId: input.id,
                   equipment: build.data.equipment,
                   stats: build.data.stats,
                   drifter: build.data.drifter,
                 },
-              },
-            })),
+              })),
+            update: input.builds
+              .filter((b) => b.id !== "")
+              .map((build) => ({
+                where: { id: build.id },
+                data: {
+                  data: {
+                    equipment: build.data.equipment,
+                    stats: build.data.stats,
+                    drifter: build.data.drifter,
+                  },
+                },
+              })),
           },
+        },
+        include: {
+          builds: true,
+          createdBy: true,
         },
       });
     }),

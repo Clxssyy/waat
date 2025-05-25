@@ -11,7 +11,7 @@ export default async function Home() {
           <h1 className="text-5xl font-bold text-shadow-black text-shadow-sm">
             {session ? `Welcome ${session.user.name}!` : "Login to get started"}
           </h1>
-          <p className="w-1/2 text-sm text-stone-300">
+          <p className="w-1/2 text-sm text-neutral-300">
             Create and share character builds, keep up to date with the latest
             news, or view the latest guides from creators!
           </p>
@@ -25,7 +25,7 @@ export default async function Home() {
           </Link>
           <Link
             href={"/guides"}
-            className="rounded bg-stone-600 px-4 py-2 font-bold transition-all text-shadow-2xs text-shadow-black hover:scale-105 hover:bg-stone-700 active:scale-95"
+            className="rounded bg-neutral-600 px-4 py-2 font-bold transition-all text-shadow-2xs text-shadow-black hover:scale-105 hover:bg-neutral-700 active:scale-95"
           >
             Explore
           </Link>
@@ -35,33 +35,33 @@ export default async function Home() {
         <div className="flex justify-between">
           <div className="flex flex-col">
             <h2 className="text-lg font-bold">News</h2>
-            <p className="text-sm text-stone-300">
+            <p className="text-sm text-neutral-300">
               Check out the latest updates!
             </p>
           </div>
           <div className="flex items-center">
             <Link
               href={"/news"}
-              className="rounded bg-stone-600 px-2 py-1 font-bold transition-all hover:scale-105 hover:bg-stone-700 active:scale-95"
+              className="rounded bg-neutral-600 px-2 py-1 font-bold transition-all hover:scale-105 hover:bg-neutral-700 active:scale-95"
             >
               View All
             </Link>
           </div>
         </div>
         <div className="grid w-full grid-cols-5 gap-2 rounded">
-          <div className="flex aspect-square items-center justify-center rounded bg-stone-900 p-2 text-3xl font-bold text-stone-600">
+          <div className="flex aspect-square items-center justify-center rounded bg-neutral-900 p-2 text-3xl font-bold text-neutral-600">
             <h3>Placeholder</h3>
           </div>
-          <div className="flex aspect-square items-center justify-center rounded bg-stone-900 p-2 text-3xl font-bold text-stone-600">
+          <div className="flex aspect-square items-center justify-center rounded bg-neutral-900 p-2 text-3xl font-bold text-neutral-600">
             <h3>Placeholder</h3>
           </div>
-          <div className="flex aspect-square items-center justify-center rounded bg-stone-900 p-2 text-3xl font-bold text-stone-600">
+          <div className="flex aspect-square items-center justify-center rounded bg-neutral-900 p-2 text-3xl font-bold text-neutral-600">
             <h3>Placeholder</h3>
           </div>
-          <div className="flex aspect-square items-center justify-center rounded bg-stone-900 p-2 text-3xl font-bold text-stone-600">
+          <div className="flex aspect-square items-center justify-center rounded bg-neutral-900 p-2 text-3xl font-bold text-neutral-600">
             <h3>Placeholder</h3>
           </div>
-          <div className="flex aspect-square items-center justify-center rounded bg-stone-900 p-2 text-3xl font-bold text-stone-600">
+          <div className="flex aspect-square items-center justify-center rounded bg-neutral-900 p-2 text-3xl font-bold text-neutral-600">
             <h3>Placeholder</h3>
           </div>
         </div>
@@ -70,33 +70,33 @@ export default async function Home() {
         <div className="flex justify-between">
           <div className="flex flex-col">
             <h2 className="text-lg font-bold">Guides</h2>
-            <p className="text-sm text-stone-300">
+            <p className="text-sm text-neutral-300">
               Check out the latest guides from players!
             </p>
           </div>
           <div className="flex items-center">
             <Link
               href={"/guides"}
-              className="rounded bg-stone-600 px-2 py-1 font-bold transition-all hover:scale-105 hover:bg-stone-700 active:scale-95"
+              className="rounded bg-neutral-600 px-2 py-1 font-bold transition-all hover:scale-105 hover:bg-neutral-700 active:scale-95"
             >
               View All
             </Link>
           </div>
         </div>
         <div className="grid w-full grid-cols-5 gap-2 rounded">
-          <div className="flex aspect-square items-center justify-center rounded bg-stone-900 p-2 text-3xl font-bold text-stone-600">
+          <div className="flex aspect-square items-center justify-center rounded bg-neutral-900 p-2 text-3xl font-bold text-neutral-600">
             <h3>Placeholder</h3>
           </div>
-          <div className="flex aspect-square items-center justify-center rounded bg-stone-900 p-2 text-3xl font-bold text-stone-600">
+          <div className="flex aspect-square items-center justify-center rounded bg-neutral-900 p-2 text-3xl font-bold text-neutral-600">
             <h3>Placeholder</h3>
           </div>
-          <div className="flex aspect-square items-center justify-center rounded bg-stone-900 p-2 text-3xl font-bold text-stone-600">
+          <div className="flex aspect-square items-center justify-center rounded bg-neutral-900 p-2 text-3xl font-bold text-neutral-600">
             <h3>Placeholder</h3>
           </div>
-          <div className="flex aspect-square items-center justify-center rounded bg-stone-900 p-2 text-3xl font-bold text-stone-600">
+          <div className="flex aspect-square items-center justify-center rounded bg-neutral-900 p-2 text-3xl font-bold text-neutral-600">
             <h3>Placeholder</h3>
           </div>
-          <div className="flex aspect-square items-center justify-center rounded bg-stone-900 p-2 text-3xl font-bold text-stone-600">
+          <div className="flex aspect-square items-center justify-center rounded bg-neutral-900 p-2 text-3xl font-bold text-neutral-600">
             <h3>Placeholder</h3>
           </div>
         </div>

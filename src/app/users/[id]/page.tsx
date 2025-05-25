@@ -41,7 +41,7 @@ const User = async (props: { params: { id: string } }) => {
           className="h-72 w-72 rounded-full outline-4 outline-white"
         />
         <h1 className="text-4xl font-bold">{user?.name}</h1>
-        <div className="rounded bg-stone-900 p-2">
+        <div className="rounded bg-neutral-900 p-2">
           <h3 className="text-center">About</h3>
           <p>Details about the user will be displayed here.</p>
         </div>
@@ -53,7 +53,7 @@ const User = async (props: { params: { id: string } }) => {
             <Link
               key={character.id}
               href={`/builds/${character.id}`}
-              className="flex h-48 flex-col items-center justify-center rounded bg-stone-900 p-2 text-center text-sm font-bold transition-all hover:scale-105 hover:bg-stone-800 active:scale-95"
+              className="flex h-48 flex-col items-center justify-center rounded bg-neutral-900 p-2 text-center text-sm font-bold transition-all hover:scale-105 hover:bg-neutral-800 active:scale-95"
             >
               <div className="flex h-full w-full items-center justify-center">
                 <div className="flex items-center justify-between">

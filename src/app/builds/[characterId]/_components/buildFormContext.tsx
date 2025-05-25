@@ -1,10 +1,11 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { api } from "~/trpc/react";
 
 import type { ReactNode } from "react";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 import type { inferRouterOutputs } from "@trpc/server";
 import type { AppRouter } from "~/server/api/root";
 
@@ -19,6 +20,8 @@ type BuildFormContextType = {
   isCreator: boolean;
   clone: () => void;
   isCloning: boolean;
+  hasChanges: boolean;
+  setHasChanges: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const BuildFormContext = createContext<BuildFormContextType | null>(null);
@@ -39,6 +42,15 @@ export const BuildFormProvider = ({
   const [formData, setFormData] = useState<Character>(character);
 
   const router = useRouter();
+  const { data: session } = useSession();
+
+  const [hasChanges, setHasChanges] = useState<boolean>(
+    JSON.stringify(formData) !== JSON.stringify(character),
+  );
+
+  useEffect(() => {
+    setHasChanges(JSON.stringify(formData) !== JSON.stringify(character));
+  }, [formData]);
 
   const { mutate: saveMutation, status: saveStatus } =
     api.character.update.useMutation({
@@ -46,16 +58,14 @@ export const BuildFormProvider = ({
         router.refresh();
       },
       onError: (err) => {
-        alert("Save failed: " + err.message);
+        console.error("Save failed: " + err.message);
       },
     });
 
   const save = () => {
     if (!formData) return;
-    saveMutation({
-      ...formData,
-      role: formData.role ?? null,
-    });
+    if (!session?.user.id) return;
+    saveMutation({ ...formData, createdBy: character.createdBy });
   };
 
   const { mutate: cloneMutation, status: cloneStatus } =
@@ -64,16 +74,17 @@ export const BuildFormProvider = ({
         router.push(`/builds/${data.id}`);
       },
       onError: (err) => {
-        alert("Clone failed: " + err.message);
+        console.error("Clone failed: " + err.message);
       },
     });
 
   const clone = () => {
     if (!formData) return;
-    cloneMutation({
-      ...formData,
-      role: formData.role ?? null,
-    });
+    if (!session?.user.id) {
+      router.push("/api/auth/signin");
+      return;
+    }
+    cloneMutation({ ...formData, createdBy: character.createdBy });
   };
 
   const isSaving = saveStatus === "pending";
@@ -90,6 +101,8 @@ export const BuildFormProvider = ({
         isCreator,
         clone,
         isCloning,
+        hasChanges,
+        setHasChanges,
       }}
     >
       {children}

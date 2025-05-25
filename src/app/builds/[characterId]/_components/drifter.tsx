@@ -2,18 +2,18 @@ import { useRef, useState } from "react";
 import { useBuildForm } from "./buildFormContext";
 import data from "public/data.json";
 import { IoClose } from "react-icons/io5";
-import type { ActiveDrifterFilter } from "~/app/_utils/types";
+import type { ActiveFilter } from "~/app/_utils/types";
 
 const Drifter = ({ props }: { props: { buildNumber: number } }) => {
   const { buildNumber } = props;
   const { formData, setFormData } = useBuildForm();
-  const [activeFilter, setActiveFilter] = useState<ActiveDrifterFilter>("all");
+  const [activeFilter, setActiveFilter] = useState<ActiveFilter>("all");
   const selectInput = useRef<HTMLSelectElement>(null);
 
   const drifters = data.drifter;
   const filteredWeapons = Object.entries(drifters).filter(([key, drifter]) => {
     if (activeFilter === "all") return true;
-    if (activeFilter === key) return true;
+    if (activeFilter === drifter.type) return true;
     return false;
   });
 
@@ -21,7 +21,7 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
     <div className="flex flex-col gap-2 p-2">
       <div className="flex gap-2">
         <button
-          className={`cursor-pointer rounded bg-stone-600 px-3 py-1 ${activeFilter === "all" ? "bg-stone-700" : ""}`}
+          className={`cursor-pointer rounded border border-neutral-500 px-3 py-1 ${activeFilter === "all" ? "bg-neutral-700 hover:bg-neutral-600" : "bg-neutral-600 hover:bg-neutral-500"}`}
           onClick={() => {
             setActiveFilter("all");
           }}
@@ -29,7 +29,7 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
           All
         </button>
         <button
-          className={`cursor-pointer rounded bg-stone-600 px-3 py-1 ${activeFilter === "strength" ? "bg-stone-700" : ""}`}
+          className={`cursor-pointer rounded border border-neutral-500 px-3 py-1 ${activeFilter === "strength" ? "bg-neutral-700 hover:bg-neutral-600" : "bg-neutral-600 hover:bg-neutral-500"}`}
           onClick={() => {
             setActiveFilter("strength");
           }}
@@ -37,7 +37,7 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
           Strength
         </button>
         <button
-          className={`cursor-pointer rounded bg-stone-600 px-3 py-1 ${activeFilter === "agility" ? "bg-stone-700" : ""}`}
+          className={`cursor-pointer rounded border border-neutral-500 px-3 py-1 ${activeFilter === "agility" ? "bg-neutral-700 hover:bg-neutral-600" : "bg-neutral-600 hover:bg-neutral-500"}`}
           onClick={() => {
             setActiveFilter("agility");
           }}
@@ -45,7 +45,7 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
           Agility
         </button>
         <button
-          className={`cursor-pointer rounded bg-stone-600 px-3 py-1 ${activeFilter === "intelligence" ? "bg-stone-700" : ""}`}
+          className={`cursor-pointer rounded border border-neutral-500 px-3 py-1 ${activeFilter === "intelligence" ? "bg-neutral-700 hover:bg-neutral-600" : "bg-neutral-600 hover:bg-neutral-500"}`}
           onClick={() => {
             setActiveFilter("intelligence");
           }}
@@ -53,7 +53,7 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
           Intelligence
         </button>
         <button
-          className={`cursor-pointer rounded bg-stone-600 px-3 py-1 ${activeFilter === "logistics" ? "bg-stone-700" : ""}`}
+          className={`cursor-pointer rounded border border-neutral-500 px-3 py-1 ${activeFilter === "logistics" ? "bg-neutral-700 hover:bg-neutral-600" : "bg-neutral-600 hover:bg-neutral-500"}`}
           onClick={() => {
             setActiveFilter("logistics");
           }}
@@ -62,10 +62,10 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
         </button>
       </div>
       <div className="flex gap-2">
-        <div className="h-12 w-12 rounded bg-stone-700"></div>
-        <div className="h-12 grow rounded bg-stone-700">
+        <div className="h-12 w-12 rounded bg-neutral-700"></div>
+        <div className="h-12 grow rounded bg-neutral-700">
           <select
-            className="h-full w-full rounded bg-stone-700 px-2 text-lg"
+            className="h-full w-full rounded bg-neutral-700 px-2 text-lg"
             id={"drifter"}
             name={"drifter"}
             ref={selectInput}
@@ -90,48 +90,126 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
               });
             }}
           >
-            <option value="" hidden id={"No " + "drifter"}>
-              {"Drifter"}
+            <option value="" hidden>
+              Drifter
             </option>
-            {filteredWeapons.map(([typeKey, type]) =>
-              Object.entries(type).map(([weaponKey, weapon]) => (
-                <option key={weaponKey} value={weaponKey}>
-                  {weaponKey.charAt(0).toUpperCase() +
-                    weaponKey
-                      .slice(1)
-                      .replace(/_/g, " ")
-                      .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
-                </option>
-              )),
-            )}
+            {filteredWeapons.map(([drifterKey, drifter]) => (
+              <option key={drifterKey} value={drifterKey}>
+                {drifterKey.charAt(0).toUpperCase() +
+                  drifterKey
+                    .slice(1)
+                    .replace(/_/g, " ")
+                    .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
+              </option>
+            ))}
           </select>
         </div>
         <button
-          className={`flex h-12 w-12 items-center justify-center rounded bg-stone-700 hover:text-red-600`}
+          className={`flex h-12 w-12 items-center justify-center rounded border border-neutral-600 bg-neutral-700 hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40`}
+          disabled={!formData?.builds?.[buildNumber]?.data?.drifter}
           onClick={() => {
-            if (selectInput.current!.value !== "")
-              setFormData((prev) => {
-                if (!prev) return prev;
-                return {
-                  ...prev,
-                  builds: prev.builds.map((b, idx) =>
-                    idx === buildNumber
-                      ? {
-                          ...b,
-                          data: {
-                            ...b.data,
-                            drifter: "",
-                          },
-                        }
-                      : b,
-                  ),
-                };
-              });
+            setFormData((prev) => {
+              if (!prev) return prev;
+              return {
+                ...prev,
+                builds: prev.builds.map((b, idx) =>
+                  idx === buildNumber
+                    ? {
+                        ...b,
+                        data: {
+                          ...b.data,
+                          drifter: "",
+                        },
+                      }
+                    : b,
+                ),
+              };
+            });
           }}
         >
           <IoClose className="h-6 w-6" />
         </button>
       </div>
+      {formData?.builds?.[buildNumber]?.data?.drifter && (
+        <>
+          <hr className="border-neutral-700" />
+          <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 rounded bg-neutral-700 p-2">
+              <h2>Mastery</h2>
+              <div className="flex gap-2">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                  <span>0</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                  <span>10</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                  <span>20</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                  <span>30</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                  <span>40</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                  <span>50</span>
+                </div>
+                <div className="flex h-12 grow items-center justify-center rounded bg-neutral-800 text-lg">
+                  <span>Custom</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                  <IoClose className="h-6 w-6" />
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col gap-2 rounded bg-neutral-700 p-2">
+              <h2>Equipment Info</h2>
+              <div className="flex flex-col rounded bg-neutral-800 p-2">
+                <p>
+                  Active Skill:{" "}
+                  {
+                    data.drifter[formData?.builds?.[buildNumber]?.data?.drifter]
+                      .activeSkill.name
+                  }
+                </p>
+                <p>
+                  Passive Skill:{" "}
+                  {
+                    data.drifter[formData?.builds?.[buildNumber]?.data?.drifter]
+                      .passiveSkill.name
+                  }
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-2 rounded bg-neutral-700 p-2">
+              <h2>Support Bonuses</h2>
+              <div className="flex justify-between gap-2">
+                <div className="flex flex-1 flex-col items-center rounded bg-neutral-800 p-2">
+                  <span>Negative</span>
+                  <span>
+                    {
+                      data.drifter[
+                        formData?.builds?.[buildNumber]?.data?.drifter
+                      ].supportEffects.negative.name
+                    }
+                  </span>
+                </div>
+                <div className="flex flex-1 flex-col items-center rounded bg-neutral-800 p-2">
+                  <span>Positive</span>
+                  <span>
+                    {
+                      data.drifter[
+                        formData?.builds?.[buildNumber]?.data?.drifter
+                      ].supportEffects.positive.name
+                    }
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

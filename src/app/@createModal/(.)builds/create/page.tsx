@@ -18,7 +18,7 @@ const Create = () => {
 
   return (
     <div className="absolute flex h-full w-full items-center justify-center bg-black/20">
-      <div className="relative rounded bg-stone-800 p-4">
+      <div className="relative rounded bg-neutral-800 p-4">
         <button
           onClick={() => {
             router.back();
@@ -35,13 +35,13 @@ const Create = () => {
             id="character_name_input"
             defaultValue=""
             maxLength={20}
-            className="rounded bg-white/5 px-2 py-1 text-stone-500"
+            className="rounded bg-white/5 px-2 py-1 text-neutral-500"
           />
           <select
             name=""
             id="character_role_input"
             defaultValue=""
-            className="rounded bg-white/5 px-2 py-1 text-stone-500"
+            className="rounded bg-white/5 px-2 py-1 text-neutral-500"
           >
             <option value="" hidden>
               Role
