@@ -120,7 +120,7 @@ export const characterRouter = createTRPCRouter({
         },
       });
 
-      return characterSchema.parse(character);
+      if (character) return characterSchema.parse(character);
     }),
 
   getAll: publicProcedure.query(async ({ ctx }) => {

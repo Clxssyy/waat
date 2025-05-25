@@ -31,7 +31,7 @@ const Builds = () => {
             name=""
             id=""
             className="cursor-pointer rounded border border-neutral-700 bg-neutral-800 px-2 py-1"
-            defaultValue={formData.role ?? ""}
+            value={formData.role}
             onChange={(e) => {
               setFormData({ ...formData, role: e.target.value });
             }}

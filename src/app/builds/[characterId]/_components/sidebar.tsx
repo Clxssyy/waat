@@ -108,7 +108,7 @@ const Sidebar = () => {
             alt="creator pfp"
             className="h-10 w-10 rounded-full"
           />
-          <div>
+          <div className="flex flex-col">
             <Link
               href={`/users/${creator.id}`}
               className="text-sm hover:underline"
@@ -118,12 +118,12 @@ const Sidebar = () => {
             {character.clonedFrom ? (
               <Link
                 href={`/builds/${character.clonedFrom}`}
-                className="text-cyan-400 underline"
+                className="text-xs text-cyan-400 underline"
               >
                 Cloned from
               </Link>
             ) : (
-              <p className={"text-xs text-neutral-600"}>{characterId}</p>
+              <p className="text-xs text-neutral-600">{characterId}</p>
             )}
           </div>
         </div>

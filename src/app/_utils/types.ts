@@ -81,7 +81,7 @@ export const characterSchema = z.object({
     image: z.string().nullish(),
   }),
   id: z.string(),
-  name: z.string(),
+  name: z.string().min(1),
   role: z.string().optional(),
   private: z.boolean(),
   description: z.string(),
