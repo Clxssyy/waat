@@ -12,7 +12,7 @@ const Header = async () => {
         <Link href="/">WAAT</Link>
       </div>
       <div className="flex gap-8">
-        <Link href={"/builds"}>Builds</Link>
+        <Link href={"/characters"}>Builds</Link>
         <Link href={"/guides"}>Guides</Link>
         <Link href={"/news"}>News</Link>
       </div>

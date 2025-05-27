@@ -2,10 +2,12 @@
 
 import { IoClose } from "react-icons/io5";
 import data from "public/data.json";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import CharacterCard from "~/app/_components/characterCard";
 import type { characterSchema } from "~/app/_utils/types";
 import type { z } from "zod";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 type Character = z.infer<typeof characterSchema>;
 
@@ -16,10 +18,12 @@ type Filter = {
 };
 
 const Search = ({ characters }: { characters: Character[] }) => {
+  const searchParams = useSearchParams();
+
   const [filter, setFilter] = useState<Filter>({
-    roleFilter: "",
-    drifterFilter: "",
-    nameFilter: "",
+    roleFilter: searchParams.get("role") ?? "",
+    drifterFilter: searchParams.get("drifter") ?? "",
+    nameFilter: searchParams.get("q") ?? "",
   });
   const [filteredCharacters, setFilteredCharacters] =
     useState<Character[]>(characters);
@@ -40,7 +44,24 @@ const Search = ({ characters }: { characters: Character[] }) => {
         return roleCondition && drifterCondition && nameCondition;
       }),
     );
-  }, [filter, characters]);
+  }, [searchParams, characters]);
+
+  const router = useRouter();
+
+  const updateParams = useCallback(() => {
+    const p = new URLSearchParams(searchParams.toString());
+    if (filter.drifterFilter) p.set("drifter", filter.drifterFilter);
+    else p.delete("drifter");
+    if (filter.roleFilter) p.set("role", filter.roleFilter);
+    else p.delete("role");
+    if (filter.nameFilter) p.set("q", filter.nameFilter);
+    else p.delete("q");
+
+    router.replace(`/characters?${p.toString()}`);
+  }, [router, filter]);
+
+  useEffect(updateParams, [updateParams]);
+
   return (
     <>
       <div className="flex justify-center">

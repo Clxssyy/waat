@@ -25,7 +25,7 @@ export default async function Builds() {
         </div>
         <div className="flex gap-2">
           <Link
-            href={session ? "/builds/create" : "/api/auth/signin"}
+            href={session ? "/characters/create" : "/api/auth/signin"}
             className="rounded border border-green-600 bg-green-700 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-105 hover:brightness-125 active:scale-95"
           >
             Create

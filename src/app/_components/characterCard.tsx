@@ -11,7 +11,7 @@ const CharacterCard = ({ character }: { character: Character }) => {
   return (
     <Link
       key={character.id}
-      href={`/builds/${character.id}`}
+      href={`/characters/${character.id}`}
       className="flex h-48 flex-col justify-between gap-2 rounded border border-neutral-800 bg-neutral-900 p-2 transition-all hover:scale-105 hover:brightness-125 active:scale-95"
     >
       <div className="flex flex-col gap-2">

@@ -34,7 +34,7 @@ const Sidebar = () => {
     <div className="flex min-w-1/6 flex-col justify-between border-r border-neutral-700 bg-neutral-800">
       <div className="flex flex-col divide-y divide-neutral-700">
         <Link
-          href="/builds"
+          href="/characters"
           className="flex w-full items-center justify-between bg-neutral-800 p-4 text-lg hover:brightness-125"
         >
           <span>Return</span>
@@ -55,21 +55,21 @@ const Sidebar = () => {
           </div>
           <div className="flex flex-col gap-2 p-2">
             <Link
-              href={`/builds/${characterId}`}
+              href={`/characters/${characterId}`}
               className={`texl-lg flex cursor-pointer items-center gap-2 rounded ${activePage === undefined ? "bg-neutral-700" : "bg-neutral-800"} p-2 hover:brightness-125`}
             >
               <FaHammer />
               Builder
             </Link>
             <Link
-              href={`/builds/${characterId}/description`}
+              href={`/characters/${characterId}/description`}
               className={`texl-lg flex cursor-pointer items-center gap-2 rounded p-2 hover:brightness-125 ${activePage === "description" ? "bg-neutral-700" : "bg-neutral-800"}`}
             >
               <FaPencil />
               Description
             </Link>
             <Link
-              href={`/builds/${characterId}/settings`}
+              href={`/characters/${characterId}/settings`}
               className={`texl-lg flex cursor-pointer items-center gap-2 rounded p-2 hover:brightness-125 ${activePage === "settings" ? "bg-neutral-700" : "bg-neutral-800"}`}
             >
               <FaCog />
@@ -117,7 +117,7 @@ const Sidebar = () => {
             </Link>
             {character.clonedFrom ? (
               <Link
-                href={`/builds/${character.clonedFrom}`}
+                href={`/characters/${character.clonedFrom}`}
                 className="text-xs text-cyan-400 underline"
               >
                 Cloned from

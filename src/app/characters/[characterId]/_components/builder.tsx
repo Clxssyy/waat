@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Comments from "./comments";
 import DescriptionPage from "../description/page";
 import Drifter from "./drifter";
@@ -16,14 +16,41 @@ import { useBuildForm } from "./buildFormContext";
 import Support from "./support";
 import type { inferRouterOutputs } from "@trpc/server";
 import type { AppRouter } from "~/server/api/root";
+import { useRouter, useSearchParams } from "next/navigation";
 
 type Character = inferRouterOutputs<AppRouter>["character"]["getById"];
 
 const Builder = ({ character }: { character: Character }) => {
+  const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState<ActiveTab>("equipment");
   const [activeSlot, setActiveSlot] = useState<ActiveSlots>("weapon");
-  const [activeBuildIndex, setActiveBuildIndex] = useState<ActiveBuildIndex>(0);
   const { formData, setFormData } = useBuildForm();
+
+  const _ = formData.builds.findIndex((build) => {
+    return build.id === searchParams.get("build");
+  });
+  const buildIndex = _ === -1 ? 0 : _;
+
+  const [activeBuildIndex, setActiveBuildIndex] = useState<ActiveBuildIndex>(
+    buildIndex as ActiveBuildIndex,
+  );
+
+  if (!character) {
+    return <div>Character not found.</div>;
+  }
+
+  const router = useRouter();
+
+  const updateParams = useCallback(() => {
+    const p = new URLSearchParams(searchParams.toString());
+    if (formData?.builds[activeBuildIndex]?.id)
+      p.set("build", formData?.builds[activeBuildIndex]?.id);
+    else p.delete("build");
+
+    router.replace(`/characters/${character.id}?${p.toString()}`);
+  }, [router, activeBuildIndex]);
+
+  useEffect(updateParams, [updateParams]);
 
   let drifterData;
   if (formData?.builds[activeBuildIndex]?.data.drifter) {
@@ -32,10 +59,6 @@ const Builder = ({ character }: { character: Character }) => {
       drifterKey && drifterKey in data.drifter
         ? data.drifter[drifterKey as keyof typeof data.drifter]
         : undefined;
-  }
-
-  if (!character) {
-    return <div>Character not found.</div>;
   }
 
   return (

@@ -84,7 +84,7 @@ export const BuildFormProvider = ({
   const { mutate: cloneMutation, status: cloneStatus } =
     api.character.clone.useMutation({
       onSuccess: (data) => {
-        router.push(`/builds/${data.id}`);
+        router.push(`/characters/${data.id}`);
       },
       onError: (err) => {
         console.error("Clone failed: " + err.message);

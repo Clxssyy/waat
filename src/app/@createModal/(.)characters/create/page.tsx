@@ -9,7 +9,7 @@ const Create = () => {
 
   const characterCreate = api.character.create.useMutation({
     onSuccess: (data) => {
-      router.push(`/builds/${data.characterId}`);
+      router.push(`/characters/${data.characterId}`);
     },
     onError: (err) => {
       console.error(err);
