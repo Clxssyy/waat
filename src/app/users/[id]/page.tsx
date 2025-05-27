@@ -1,10 +1,11 @@
 import Image from "next/image";
 import CharacterCard from "~/app/_components/characterCard";
+import type { Character } from "~/app/_utils/types";
 import { auth } from "~/server/auth";
 import { api } from "~/trpc/server";
 
-const User = async (props: { params: { id: string } }) => {
-  const { id } = props.params;
+const User = async ({ params }: { params: { id: string } }) => {
+  const { id } = await params;
   const session = await auth();
 
   const isCurrentUser = session?.user.id === id;
@@ -23,7 +24,7 @@ const User = async (props: { params: { id: string } }) => {
       return true;
     }
     return character.private === false;
-  });
+  }) as Character[];
 
   return (
     <main className="flex w-4/5 grow gap-2 bg-gray-700/10 p-2">

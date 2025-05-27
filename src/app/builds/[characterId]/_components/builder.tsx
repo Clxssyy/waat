@@ -19,15 +19,7 @@ import type { AppRouter } from "~/server/api/root";
 
 type Character = inferRouterOutputs<AppRouter>["character"]["getById"];
 
-const Builder = ({
-  props,
-}: {
-  props: {
-    character: Character;
-  };
-}) => {
-  const { character } = props;
-
+const Builder = ({ character }: { character: Character }) => {
   const [activeTab, setActiveTab] = useState<ActiveTab>("equipment");
   const [activeSlot, setActiveSlot] = useState<ActiveSlots>("weapon");
   const [activeBuildIndex, setActiveBuildIndex] = useState<ActiveBuildIndex>(0);
@@ -574,14 +566,12 @@ const Builder = ({
           <div className="flex w-full flex-col rounded border border-neutral-700 bg-neutral-800">
             {activeTab === "equipment" && (
               <Equipment
-                props={{
-                  slot: activeSlot as Exclude<ActiveSlots, "drifter">,
-                  activeBuildIndex: activeBuildIndex,
-                }}
+                slot={activeSlot as Exclude<ActiveSlots, "drifter">}
+                activeBuildIndex={activeBuildIndex}
               />
             )}
             {activeTab === "drifter" && (
-              <Drifter props={{ activeBuildIndex: activeBuildIndex }} />
+              <Drifter activeBuildIndex={activeBuildIndex} />
             )}
             {activeTab === "support" && <Support />}
             {activeTab === "description" && <DescriptionPage />}

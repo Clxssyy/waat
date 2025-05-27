@@ -11,11 +11,12 @@ import type {
 type slots = Exclude<ActiveSlots, "drifter">;
 
 const Equipment = ({
-  props,
+  slot,
+  activeBuildIndex,
 }: {
-  props: { slot: slots; activeBuildIndex: ActiveBuildIndex };
+  slot: slots;
+  activeBuildIndex: ActiveBuildIndex;
 }) => {
-  const { slot, activeBuildIndex } = props;
   const { formData, setFormData } = useBuildForm();
   const [activeFilter, setActiveFilter] = useState<ActiveFilter>("all");
   const selectInput = useRef<HTMLSelectElement>(null);

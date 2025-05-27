@@ -5,11 +5,10 @@ import { IoClose } from "react-icons/io5";
 import type { ActiveBuildIndex, ActiveFilter } from "~/app/_utils/types";
 
 const Drifter = ({
-  props,
+  activeBuildIndex,
 }: {
-  props: { activeBuildIndex: ActiveBuildIndex };
+  activeBuildIndex: ActiveBuildIndex;
 }) => {
-  const { activeBuildIndex } = props;
   const { formData, setFormData } = useBuildForm();
   const [activeFilter, setActiveFilter] = useState<ActiveFilter>("all");
   const selectInput = useRef<HTMLSelectElement>(null);

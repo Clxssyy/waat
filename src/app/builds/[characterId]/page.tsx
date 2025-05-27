@@ -70,7 +70,7 @@ const Builds = () => {
           </div>
         </div>
       </div>
-      <Builder props={{ character }} />
+      <Builder character={character} />
     </div>
   );
 };

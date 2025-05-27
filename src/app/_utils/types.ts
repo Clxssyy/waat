@@ -71,3 +71,5 @@ export const formDataSchema = characterSchema
       )
       .max(3),
   });
+
+export type Character = z.infer<typeof characterSchema>;

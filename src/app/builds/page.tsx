@@ -2,6 +2,7 @@ import Link from "next/link";
 import { auth } from "~/server/auth";
 import { api } from "~/trpc/server";
 import Search from "./[characterId]/_components/search";
+import type { Character } from "../_utils/types";
 
 export default async function Builds() {
   const [session, characters] = await Promise.all([
@@ -37,7 +38,7 @@ export default async function Builds() {
           </Link>
         </div>
       </div>
-      <Search characters={characters} />
+      <Search characters={characters as Character[]} />
     </main>
   );
 }
