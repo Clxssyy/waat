@@ -29,15 +29,12 @@ const Builder = ({ character }: { character: Character }) => {
   const _ = formData.builds.findIndex((build) => {
     return build.id === searchParams.get("build");
   });
+
   const buildIndex = _ === -1 ? 0 : _;
 
   const [activeBuildIndex, setActiveBuildIndex] = useState<ActiveBuildIndex>(
     buildIndex as ActiveBuildIndex,
   );
-
-  if (!character) {
-    return <div>Character not found.</div>;
-  }
 
   const router = useRouter();
 
@@ -47,8 +44,10 @@ const Builder = ({ character }: { character: Character }) => {
       p.set("build", formData?.builds[activeBuildIndex]?.id);
     else p.delete("build");
 
-    router.replace(`/characters/${character.id}?${p.toString()}`);
-  }, [router, activeBuildIndex]);
+    console.log("test2");
+
+    router.replace(`/characters/${character?.id}?${p.toString()}`);
+  }, [router, activeBuildIndex, formData, searchParams, character]);
 
   useEffect(updateParams, [updateParams]);
 
@@ -59,6 +58,10 @@ const Builder = ({ character }: { character: Character }) => {
       drifterKey && drifterKey in data.drifter
         ? data.drifter[drifterKey as keyof typeof data.drifter]
         : undefined;
+  }
+
+  if (!character) {
+    return <div>Character not found.</div>;
   }
 
   return (

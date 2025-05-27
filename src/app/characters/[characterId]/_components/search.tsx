@@ -44,7 +44,7 @@ const Search = ({ characters }: { characters: Character[] }) => {
         return roleCondition && drifterCondition && nameCondition;
       }),
     );
-  }, [searchParams, characters]);
+  }, [searchParams, characters, filter]);
 
   const router = useRouter();
 
@@ -58,7 +58,7 @@ const Search = ({ characters }: { characters: Character[] }) => {
     else p.delete("q");
 
     router.replace(`/characters?${p.toString()}`);
-  }, [router, filter]);
+  }, [router, filter, searchParams]);
 
   useEffect(updateParams, [updateParams]);
 
