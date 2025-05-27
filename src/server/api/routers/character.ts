@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { characterSchema } from "~/app/_utils/types";
+import { formDataSchema } from "~/app/_utils/types";
 import {
   createTRPCRouter,
   protectedProcedure,
@@ -8,9 +8,7 @@ import {
 
 export const characterRouter = createTRPCRouter({
   create: protectedProcedure
-    .input(
-      z.object({ name: z.string().optional(), role: z.string().optional() }),
-    )
+    .input(z.object({ name: z.string(), role: z.string() }))
     .mutation(async ({ ctx, input }) => {
       return ctx.db.character
         .create({
@@ -155,7 +153,7 @@ export const characterRouter = createTRPCRouter({
     }),
 
   update: protectedProcedure
-    .input(characterSchema)
+    .input(formDataSchema)
     .mutation(async ({ ctx, input }) => {
       return ctx.db.character.update({
         where: {
@@ -199,7 +197,7 @@ export const characterRouter = createTRPCRouter({
     }),
 
   clone: protectedProcedure
-    .input(characterSchema)
+    .input(formDataSchema)
     .mutation(async ({ ctx, input }) => {
       return ctx.db.character.create({
         data: {

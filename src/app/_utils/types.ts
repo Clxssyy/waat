@@ -1,4 +1,3 @@
-import type { User } from "@prisma/client";
 import { z } from "zod";
 
 export type ActiveSlots = "helmet" | "chest" | "boots" | "weapon" | "drifter";
@@ -17,39 +16,6 @@ export type ActiveFilter =
   | "intelligence"
   | "logistics";
 
-export type BuildData = {
-  equipment: {
-    helmet: string;
-    chest: string;
-    boots: string;
-    weapon: string;
-  };
-  stats: {
-    strength: number;
-    agility: number;
-    intelligence: number;
-  };
-  drifter: string;
-};
-
-export type Build = {
-  id: string;
-  characterId: string;
-  createdAt: Date;
-  updatedAt: Date;
-  data: BuildData;
-};
-
-export type editFields = {
-  builds: Build[];
-  id: string;
-  name: string;
-  role: string | undefined;
-  private: boolean;
-  description: string;
-  clonedFrom: string | undefined;
-};
-
 export const buildDataSchema = z.object({
   equipment: z.object({
     helmet: z.string(),
@@ -67,11 +33,22 @@ export const buildDataSchema = z.object({
 
 export const buildSchema = z.object({
   id: z.string(),
+  createdAt: z.date(),
+  updatedAt: z.date(),
   characterId: z.string(),
   data: buildDataSchema,
 });
 
 export const characterSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  role: z.string().nullish(),
+  description: z.string(),
+  userId: z.string(),
+  createdAt: z.date(),
+  updatedAt: z.date(),
+  private: z.boolean(),
+  clonedFrom: z.string().nullish(),
   builds: z.array(buildSchema).max(3),
   createdBy: z.object({
     name: z.string().nullish(),
@@ -80,10 +57,17 @@ export const characterSchema = z.object({
     emailVerified: z.date().nullish(),
     image: z.string().nullish(),
   }),
-  id: z.string(),
-  name: z.string(),
-  role: z.string().optional(),
-  private: z.boolean(),
-  description: z.string(),
-  clonedFrom: z.string().nullish(),
 });
+
+export const formDataSchema = characterSchema
+  .omit({ createdAt: true, updatedAt: true, userId: true })
+  .extend({
+    builds: z
+      .array(
+        buildSchema.omit({
+          createdAt: true,
+          updatedAt: true,
+        }),
+      )
+      .max(3),
+  });

@@ -2,20 +2,33 @@ import { useRef, useState } from "react";
 import { useBuildForm } from "./buildFormContext";
 import data from "public/data.json";
 import { IoClose } from "react-icons/io5";
-import type { ActiveFilter } from "~/app/_utils/types";
+import type { ActiveBuildIndex, ActiveFilter } from "~/app/_utils/types";
 
-const Drifter = ({ props }: { props: { buildNumber: number } }) => {
-  const { buildNumber } = props;
+const Drifter = ({
+  props,
+}: {
+  props: { activeBuildIndex: ActiveBuildIndex };
+}) => {
+  const { activeBuildIndex } = props;
   const { formData, setFormData } = useBuildForm();
   const [activeFilter, setActiveFilter] = useState<ActiveFilter>("all");
   const selectInput = useRef<HTMLSelectElement>(null);
 
   const drifters = data.drifter;
-  const filteredWeapons = Object.entries(drifters).filter(([key, drifter]) => {
+  const filteredWeapons = Object.entries(drifters).filter(([, drifter]) => {
     if (activeFilter === "all") return true;
     if (activeFilter === drifter.type) return true;
     return false;
   });
+
+  let drifterData;
+  if (formData?.builds[activeBuildIndex]?.data.drifter) {
+    const drifterKey = formData.builds[activeBuildIndex]?.data.drifter;
+    drifterData =
+      drifterKey && drifterKey in data.drifter
+        ? data.drifter[drifterKey as keyof typeof data.drifter]
+        : undefined;
+  }
 
   return (
     <div className="flex flex-col gap-2 p-2">
@@ -69,14 +82,14 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
             id={"drifter"}
             name={"drifter"}
             ref={selectInput}
-            value={formData?.builds?.[buildNumber]?.data?.drifter}
+            value={formData?.builds?.[activeBuildIndex]?.data?.drifter}
             onChange={(e) => {
               setFormData((prev) => {
                 if (!prev) return prev;
                 return {
                   ...prev,
                   builds: prev.builds.map((b, idx) =>
-                    idx === buildNumber
+                    idx === activeBuildIndex
                       ? {
                           ...b,
                           data: {
@@ -93,7 +106,7 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
             <option value="" hidden>
               Drifter
             </option>
-            {filteredWeapons.map(([drifterKey, drifter]) => (
+            {filteredWeapons.map(([drifterKey]) => (
               <option key={drifterKey} value={drifterKey}>
                 {drifterKey.charAt(0).toUpperCase() +
                   drifterKey
@@ -106,14 +119,14 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
         </div>
         <button
           className={`flex h-12 w-12 items-center justify-center rounded border border-neutral-600 bg-neutral-700 hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40`}
-          disabled={!formData?.builds?.[buildNumber]?.data?.drifter}
+          disabled={!formData?.builds?.[activeBuildIndex]?.data?.drifter}
           onClick={() => {
             setFormData((prev) => {
               if (!prev) return prev;
               return {
                 ...prev,
                 builds: prev.builds.map((b, idx) =>
-                  idx === buildNumber
+                  idx === activeBuildIndex
                     ? {
                         ...b,
                         data: {
@@ -130,7 +143,7 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
           <IoClose className="h-6 w-6" />
         </button>
       </div>
-      {formData?.builds?.[buildNumber]?.data?.drifter && (
+      {formData?.builds?.[activeBuildIndex]?.data?.drifter && (
         <>
           <hr className="border-neutral-700" />
           <div className="flex flex-col gap-2">
@@ -166,50 +179,25 @@ const Drifter = ({ props }: { props: { buildNumber: number } }) => {
             <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
               <h2>Info</h2>
               <div className="flex flex-col rounded bg-neutral-800 p-2">
-                <p>
-                  Active Skill:{" "}
-                  {
-                    data.drifter[formData?.builds?.[buildNumber]?.data?.drifter]
-                      .activeSkill.name
-                  }
-                </p>
-                <p>
-                  Passive Skill:{" "}
-                  {
-                    data.drifter[formData?.builds?.[buildNumber]?.data?.drifter]
-                      .passiveSkill.name
-                  }
-                </p>
+                <p>Active Skill: {drifterData?.activeSkill.name}</p>
+                <p>Passive Skill: {drifterData?.passiveSkill.name}</p>
               </div>
             </div>
             <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
               <h2>Support Bonuses</h2>
               <div className="flex justify-between gap-2">
-                {data.drifter[formData?.builds?.[buildNumber]?.data?.drifter]
-                  .supportEffects.negative.name === "None" ? (
+                {drifterData?.supportEffects.negative.name === "None" ? (
                   ""
                 ) : (
                   <div className="flex flex-1 justify-center gap-2 rounded bg-neutral-800 p-2">
                     <span className="text-red-400">-</span>
-                    <span>
-                      {
-                        data.drifter[
-                          formData?.builds?.[buildNumber]?.data?.drifter
-                        ].supportEffects.negative.name
-                      }
-                    </span>
+                    <span>{drifterData?.supportEffects.negative.name}</span>
                   </div>
                 )}
 
                 <div className="flex flex-1 justify-center gap-2 rounded bg-neutral-800 p-2">
                   <span className="text-green-400">+</span>
-                  <span>
-                    {
-                      data.drifter[
-                        formData?.builds?.[buildNumber]?.data?.drifter
-                      ].supportEffects.positive.name
-                    }
-                  </span>
+                  <span>{drifterData?.supportEffects.positive.name}</span>
                 </div>
               </div>
             </div>

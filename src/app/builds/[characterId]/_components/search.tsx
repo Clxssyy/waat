@@ -1,16 +1,13 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { IoIosStarOutline } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import data from "public/data.json";
-import type { inferRouterOutputs } from "@trpc/server";
-import type { AppRouter } from "~/server/api/root";
 import { useEffect, useState } from "react";
 import CharacterCard from "~/app/_components/characterCard";
+import type { characterSchema } from "~/app/_utils/types";
+import type { z } from "zod";
 
-type Characters = inferRouterOutputs<AppRouter>["character"]["getAll"];
+type Character = z.infer<typeof characterSchema>;
 
 type Filter = {
   roleFilter: string;
@@ -18,14 +15,14 @@ type Filter = {
   nameFilter: string;
 };
 
-const Search = ({ characters }: { characters: Characters }) => {
+const Search = ({ characters }: { characters: Character[] }) => {
   const [filter, setFilter] = useState<Filter>({
     roleFilter: "",
     drifterFilter: "",
     nameFilter: "",
   });
   const [filteredCharacters, setFilteredCharacters] =
-    useState<Characters>(characters);
+    useState<Character[]>(characters);
 
   useEffect(() => {
     setFilteredCharacters(
@@ -34,7 +31,7 @@ const Search = ({ characters }: { characters: Characters }) => {
           character.role === filter.roleFilter || filter.roleFilter === "";
         const drifterCondition =
           character.builds.filter((build) => {
-            build.data?.drifter === filter.drifterFilter;
+            return build.data?.drifter === filter.drifterFilter;
           }).length >= 1 || filter.drifterFilter === "";
         const nameCondition =
           character.name.toLowerCase().includes(filter.nameFilter) ||
@@ -43,7 +40,7 @@ const Search = ({ characters }: { characters: Characters }) => {
         return roleCondition && drifterCondition && nameCondition;
       }),
     );
-  }, [filter]);
+  }, [filter, characters]);
   return (
     <>
       <div className="flex justify-center">
@@ -76,7 +73,7 @@ const Search = ({ characters }: { characters: Characters }) => {
               <option value="" hidden>
                 Drifter
               </option>
-              {Object.entries(data.drifter).map(([drifterId, drifter]) => (
+              {Object.entries(data.drifter).map(([drifterId]) => (
                 <option key={drifterId} value={drifterId}>
                   {drifterId.charAt(0).toUpperCase() +
                     drifterId.slice(1).replaceAll("_", " ")}
@@ -88,7 +85,7 @@ const Search = ({ characters }: { characters: Characters }) => {
               className="cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40"
               disabled={
                 filter.drifterFilter === "" &&
-                filter.nameFilter === "" &&
+                filter.roleFilter === "" &&
                 filter.nameFilter === ""
               }
               onClick={() => {

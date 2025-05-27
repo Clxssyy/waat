@@ -31,14 +31,12 @@ const Builds = () => {
             name=""
             id=""
             className="cursor-pointer rounded border border-neutral-700 bg-neutral-800 px-2 py-1"
-            value={formData.role}
+            value={formData?.role ?? ""}
             onChange={(e) => {
               setFormData({ ...formData, role: e.target.value });
             }}
           >
-            <option value="" hidden>
-              Role
-            </option>
+            <option value="">Role</option>
             <option value="dps">DPS</option>
             <option value="healer">Healer</option>
             <option value="tank">Tank</option>
@@ -72,7 +70,7 @@ const Builds = () => {
           </div>
         </div>
       </div>
-      <Builder props={{ character, isCreator }} />
+      <Builder props={{ character }} />
     </div>
   );
 };

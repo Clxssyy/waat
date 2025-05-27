@@ -7,7 +7,6 @@ import type {
   ActiveBuildIndex,
   ActiveSlots,
 } from "~/app/_utils/types";
-import { FaMinus, FaPlus } from "react-icons/fa6";
 
 type slots = Exclude<ActiveSlots, "drifter">;
 
@@ -16,12 +15,12 @@ const Equipment = ({
 }: {
   props: { slot: slots; activeBuildIndex: ActiveBuildIndex };
 }) => {
-  const { slot, activeBuildIndex: buildNumber } = props;
+  const { slot, activeBuildIndex } = props;
   const { formData, setFormData } = useBuildForm();
   const [activeFilter, setActiveFilter] = useState<ActiveFilter>("all");
   const selectInput = useRef<HTMLSelectElement>(null);
   const [dataPool, setDataPool] = useState(data[slot]);
-  const filteredData = Object.entries(dataPool).filter(([key, equipment]) => {
+  const filteredData = Object.entries(dataPool).filter(([, equipment]) => {
     if (activeFilter === "all") return true;
     if (activeFilter === equipment.type) return true;
     return false;
@@ -33,6 +32,26 @@ const Equipment = ({
   }, [slot]);
 
   const modPlaceholder = true;
+  type EquipmentData = {
+    rarity: string;
+    core_skill: {
+      name: string;
+      description: string;
+    };
+    type: string;
+  };
+
+  let equipmentData: EquipmentData | undefined;
+  if (formData?.builds[activeBuildIndex]?.data.equipment) {
+    const equipmentKey =
+      formData.builds[activeBuildIndex]?.data.equipment[slot];
+    equipmentData =
+      equipmentKey && equipmentKey in data[slot]
+        ? (data[slot][
+            equipmentKey as keyof (typeof data)[typeof slot]
+          ] as EquipmentData)
+        : undefined;
+  }
 
   return (
     <div className="flex flex-col gap-2 rounded p-2">
@@ -86,15 +105,14 @@ const Equipment = ({
           <select
             className="h-full w-full rounded border border-neutral-600 bg-neutral-700 px-2 text-lg"
             ref={selectInput}
-            value={formData?.builds?.[buildNumber]?.data?.equipment[slot]}
+            value={formData.builds?.[activeBuildIndex]?.data?.equipment[slot]}
             onChange={(e) => {
-              console.log(selectInput.current?.value);
               setFormData((prev) => {
                 if (!prev) return prev;
                 return {
                   ...prev,
                   builds: prev.builds.map((b, idx) =>
-                    idx === buildNumber
+                    idx === activeBuildIndex
                       ? {
                           ...b,
                           data: {
@@ -114,7 +132,7 @@ const Equipment = ({
             <option value="" hidden>
               {slot.charAt(0).toUpperCase() + slot.slice(1)}
             </option>
-            {filteredData.map(([equipmentKey, equipment]) => (
+            {filteredData.map(([equipmentKey]) => (
               <option key={equipmentKey} value={equipmentKey}>
                 {equipmentKey.charAt(0).toUpperCase() +
                   equipmentKey
@@ -127,14 +145,16 @@ const Equipment = ({
         </div>
         <button
           className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700 hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40`}
-          disabled={!formData?.builds?.[buildNumber]?.data?.equipment[slot]}
+          disabled={
+            !formData?.builds?.[activeBuildIndex]?.data?.equipment[slot]
+          }
           onClick={() => {
             setFormData((prev) => {
               if (!prev) return prev;
               return {
                 ...prev,
                 builds: prev.builds.map((b, idx) =>
-                  idx === buildNumber
+                  idx === activeBuildIndex
                     ? {
                         ...b,
                         data: {
@@ -154,7 +174,7 @@ const Equipment = ({
           <IoClose className="h-6 w-6" />
         </button>
       </div>
-      {formData?.builds?.[buildNumber]?.data?.equipment[slot] && (
+      {formData?.builds?.[activeBuildIndex]?.data?.equipment[slot] && (
         <>
           <hr className="border-neutral-700" />
           <div className="flex flex-col gap-2">
@@ -205,14 +225,7 @@ const Equipment = ({
             <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
               <h2>Info</h2>
               <div className="rounded bg-neutral-800 p-2">
-                <p>
-                  Active Skill:{" "}
-                  {
-                    data[slot][
-                      formData?.builds?.[buildNumber]?.data?.equipment[slot]
-                    ].core_skill.name
-                  }
-                </p>
+                <p>Active Skill: {equipmentData?.core_skill.name}</p>
               </div>
             </div>
             <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">

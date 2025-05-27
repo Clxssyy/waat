@@ -8,12 +8,15 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import type { inferRouterOutputs } from "@trpc/server";
 import type { AppRouter } from "~/server/api/root";
+import { formDataSchema } from "~/app/_utils/types";
+import type { z } from "zod";
 
 type Character = inferRouterOutputs<AppRouter>["character"]["getById"];
+type FormDataCharacter = z.infer<typeof formDataSchema>;
 
 type BuildFormContextType = {
-  formData: Character;
-  setFormData: React.Dispatch<React.SetStateAction<Character>>;
+  formData: FormDataCharacter;
+  setFormData: React.Dispatch<React.SetStateAction<FormDataCharacter>>;
   save: () => void;
   isSaving: boolean;
   character: Character;
@@ -39,18 +42,28 @@ export const BuildFormProvider = ({
     throw new Error("BuildFormProvider requires a character prop");
   }
 
-  const [formData, setFormData] = useState<Character>(character);
+  const [formData, setFormData] = useState<FormDataCharacter>(
+    formDataSchema.parse(character),
+  );
 
   const router = useRouter();
   const { data: session } = useSession();
 
   const [hasChanges, setHasChanges] = useState<boolean>(
-    JSON.stringify(formData) !== JSON.stringify(character),
+    JSON.stringify(formData) !==
+      JSON.stringify(formDataSchema.parse(character)),
   );
 
   useEffect(() => {
-    setHasChanges(JSON.stringify(formData) !== JSON.stringify(character));
-  }, [formData]);
+    setFormData(formDataSchema.parse(character));
+  }, [character]);
+
+  useEffect(() => {
+    setHasChanges(
+      JSON.stringify(formData) !==
+        JSON.stringify(formDataSchema.parse(character)),
+    );
+  }, [formData, character]);
 
   const { mutate: saveMutation, status: saveStatus } =
     api.character.update.useMutation({
@@ -65,7 +78,7 @@ export const BuildFormProvider = ({
   const save = () => {
     if (!formData) return;
     if (!session?.user.id) return;
-    saveMutation({ ...formData, createdBy: character.createdBy });
+    saveMutation(formDataSchema.parse(formData));
   };
 
   const { mutate: cloneMutation, status: cloneStatus } =
@@ -84,7 +97,7 @@ export const BuildFormProvider = ({
       router.push("/api/auth/signin");
       return;
     }
-    cloneMutation({ ...formData, createdBy: character.createdBy });
+    cloneMutation(formDataSchema.parse(formData));
   };
 
   const isSaving = saveStatus === "pending";

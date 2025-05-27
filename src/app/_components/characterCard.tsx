@@ -1,10 +1,10 @@
-import type { inferRouterOutputs } from "@trpc/server";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosStarOutline } from "react-icons/io";
-import type { AppRouter } from "~/server/api/root";
+import type { characterSchema } from "../_utils/types";
+import type { z } from "zod";
 
-type Character = inferRouterOutputs<AppRouter>["character"]["getById"];
+type Character = z.infer<typeof characterSchema>;
 
 const CharacterCard = ({ character }: { character: Character }) => {
   if (!character) return null;
@@ -45,13 +45,15 @@ const CharacterCard = ({ character }: { character: Character }) => {
             />
             <h4 className="text-sm">{character.createdBy.name}</h4>
           </div>
-          <div className="flex items-center text-sm">
+          <div className="flex items-center gap-1 text-sm">
             <span>(0 Votes)</span>
-            <IoIosStarOutline className="h-4 w-4" />
-            <IoIosStarOutline className="h-4 w-4" />
-            <IoIosStarOutline className="h-4 w-4" />
-            <IoIosStarOutline className="h-4 w-4" />
-            <IoIosStarOutline className="h-4 w-4" />
+            <div className="flex">
+              <IoIosStarOutline className="h-4 w-4" />
+              <IoIosStarOutline className="h-4 w-4" />
+              <IoIosStarOutline className="h-4 w-4" />
+              <IoIosStarOutline className="h-4 w-4" />
+              <IoIosStarOutline className="h-4 w-4" />
+            </div>
           </div>
         </div>
       </div>

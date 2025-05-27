@@ -4,7 +4,7 @@ import { auth } from "~/server/auth";
 import { api } from "~/trpc/server";
 
 const User = async (props: { params: { id: string } }) => {
-  const { id } = await props.params;
+  const { id } = props.params;
   const session = await auth();
 
   const isCurrentUser = session?.user.id === id;

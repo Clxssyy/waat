@@ -8,8 +8,8 @@ const Create = () => {
   const router = useRouter();
 
   const characterCreate = api.character.create.useMutation({
-    onSuccess: async (data) => {
-      await router.push(`/builds/${data.characterId}`);
+    onSuccess: (data) => {
+      router.push(`/builds/${data.characterId}`);
     },
     onError: (err) => {
       console.error(err);

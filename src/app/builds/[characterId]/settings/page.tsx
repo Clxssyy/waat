@@ -55,7 +55,7 @@ const SettingsPage = () => {
               prev
                 ? {
                     ...prev,
-                    private: JSON.parse(e.target.value),
+                    private: !!JSON.parse(e.target.value),
                   }
                 : prev,
             );

@@ -18,30 +18,32 @@ import type { inferRouterOutputs } from "@trpc/server";
 import type { AppRouter } from "~/server/api/root";
 
 type Character = inferRouterOutputs<AppRouter>["character"]["getById"];
-type EquipmentSlot = "helmet" | "chest" | "boots" | "weapon" | "drifter";
 
 const Builder = ({
   props,
 }: {
   props: {
     character: Character;
-    isCreator: Boolean;
   };
 }) => {
-  const { character, isCreator } = props;
-
-  if (!character) {
-    return <div>Character not found.</div>;
-  }
+  const { character } = props;
 
   const [activeTab, setActiveTab] = useState<ActiveTab>("equipment");
-  const [activeSlot, setActiveSlot] = useState<EquipmentSlot>("weapon");
+  const [activeSlot, setActiveSlot] = useState<ActiveSlots>("weapon");
   const [activeBuildIndex, setActiveBuildIndex] = useState<ActiveBuildIndex>(0);
   const { formData, setFormData } = useBuildForm();
 
   let drifterData;
-  if (formData.builds[activeBuildIndex]?.data.drifter) {
-    drifterData = data.drifter[formData.builds[activeBuildIndex]?.data.drifter];
+  if (formData?.builds[activeBuildIndex]?.data.drifter) {
+    const drifterKey = formData.builds[activeBuildIndex]?.data.drifter;
+    drifterData =
+      drifterKey && drifterKey in data.drifter
+        ? data.drifter[drifterKey as keyof typeof data.drifter]
+        : undefined;
+  }
+
+  if (!character) {
+    return <div>Character not found.</div>;
   }
 
   return (
@@ -51,10 +53,10 @@ const Builder = ({
           <div className="relative flex gap-1 rounded-full border border-neutral-600 bg-neutral-700 p-2 shadow-lg">
             <button
               onClick={() => {
-                if (activeBuildIndex != 0 && formData!.builds[0]) {
+                if (activeBuildIndex != 0 && formData.builds[0]) {
                   setActiveBuildIndex(0);
                   setActiveSlot("weapon");
-                } else if (!formData!.builds[0]) {
+                } else if (!formData.builds[0]) {
                   setFormData((prev) => {
                     if (!prev) return prev;
                     return {
@@ -87,9 +89,8 @@ const Builder = ({
                 }
               }}
               className={`h-4 w-4 cursor-pointer rounded-full hover:outline-2 hover:outline-cyan-600 ${
-                formData!.builds[0] ? "bg-cyan-400" : "bg-neutral-800"
-              } ${!character.builds[0] && formData!.builds[0] ? "animate-pulse" : ""}`}
-              disabled={(formData?.builds?.length ?? 0) >= 1}
+                formData.builds[0] ? "bg-cyan-400" : "bg-neutral-800"
+              } ${!character.builds[0] && formData.builds[0] ? "animate-pulse" : ""}`}
             ></button>
             {activeBuildIndex === 0 ? (
               <div className="absolute bottom-0.5 left-[21%] h-1 w-1 -translate-x-1/2 rounded-full bg-cyan-400"></div>
@@ -98,10 +99,10 @@ const Builder = ({
             )}
             <button
               onClick={() => {
-                if (activeBuildIndex != 1 && formData!.builds[1]) {
+                if (activeBuildIndex != 1 && formData.builds[1]) {
                   setActiveBuildIndex(1);
                   setActiveSlot("weapon");
-                } else if (!formData!.builds[1] && formData!.builds[0]) {
+                } else if (!formData.builds[1] && formData.builds[0]) {
                   setFormData((prev) => {
                     if (!prev) return prev;
                     return {
@@ -134,9 +135,8 @@ const Builder = ({
                 }
               }}
               className={`h-4 w-4 rounded-full ${
-                formData!.builds[1] ? "bg-cyan-400" : "bg-neutral-800"
-              } ${!character.builds[1] && formData!.builds[1] ? "animate-pulse" : ""} ${!character.builds[1] ? "animate-bounce" : ""} ${!formData!.builds[0] ? "cursor-not-allowed" : "cursor-pointer hover:outline-2 hover:outline-cyan-600"}`}
-              disabled={(formData?.builds?.length ?? 0) >= 2}
+                formData.builds[1] ? "bg-cyan-400" : "bg-neutral-800"
+              } ${!character.builds[1] && formData.builds[1] ? "animate-pulse" : ""} ${!character.builds[1] ? "animate-bounce" : ""} ${!formData.builds[0] ? "cursor-not-allowed" : "cursor-pointer hover:outline-2 hover:outline-cyan-600"}`}
             ></button>
             {activeBuildIndex === 1 ? (
               <div className="absolute bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-cyan-400"></div>
@@ -145,10 +145,10 @@ const Builder = ({
             )}
             <button
               onClick={() => {
-                if (activeBuildIndex != 2 && formData!.builds[2]) {
+                if (activeBuildIndex != 2 && formData.builds[2]) {
                   setActiveBuildIndex(2);
                   setActiveSlot("weapon");
-                } else if (!formData!.builds[2] && formData!.builds[1]) {
+                } else if (!formData.builds[2] && formData.builds[1]) {
                   setFormData((prev) => {
                     if (!prev) return prev;
                     return {
@@ -181,9 +181,8 @@ const Builder = ({
                 }
               }}
               className={`h-4 w-4 rounded-full ${
-                formData!.builds[2] ? "bg-cyan-400" : "bg-neutral-800"
-              } ${!character.builds[2] && formData!.builds[2] ? "animate-pulse" : ""} ${(!character.builds[2] && character.builds[1]) || (formData.builds[1] && !character.builds[2]) ? "animate-bounce" : ""} ${!formData!.builds[1] ? "cursor-not-allowed" : "cursor-pointer hover:outline-2 hover:outline-cyan-600"}`}
-              disabled={(formData?.builds?.length ?? 0) >= 3}
+                formData.builds[2] ? "bg-cyan-400" : "bg-neutral-800"
+              } ${!character.builds[2] && formData.builds[2] ? "animate-pulse" : ""} ${(!character.builds[2] && character.builds[1]) || (formData.builds[1] && !character.builds[2]) ? "animate-bounce" : ""} ${!formData.builds[1] ? "cursor-not-allowed" : "cursor-pointer hover:outline-2 hover:outline-cyan-600"}`}
             ></button>
             {activeBuildIndex === 2 ? (
               <div className="absolute right-1/6 bottom-0.5 h-1 w-1 -translate-x-1/2 rounded-full bg-cyan-400"></div>
@@ -291,9 +290,70 @@ const Builder = ({
                 Strength <span>({drifterData?.strBonus ?? "0.0"})</span>
               </h3>
               <div className="flex items-center justify-center gap-2">
-                <FaMinus />
-                <p>000</p>
-                <FaPlus />
+                <button
+                  onClick={() => {
+                    setFormData((prev) => {
+                      if (!prev) return prev;
+                      if (
+                        formData?.builds[activeBuildIndex]?.data.stats
+                          .strength === 0
+                      )
+                        return prev;
+                      return {
+                        ...prev,
+                        builds: prev.builds.map((b, idx) =>
+                          idx === activeBuildIndex
+                            ? {
+                                ...b,
+                                data: {
+                                  ...b.data,
+                                  stats: {
+                                    ...b.data.stats,
+                                    ["strength"]:
+                                      (formData?.builds[activeBuildIndex]?.data
+                                        .stats.strength ?? 0) - 1,
+                                  },
+                                },
+                              }
+                            : b,
+                        ),
+                      };
+                    });
+                  }}
+                >
+                  <FaMinus />
+                </button>
+                <p>
+                  {formData?.builds?.[activeBuildIndex]?.data?.stats?.strength}
+                </p>
+                <button
+                  onClick={() => {
+                    setFormData((prev) => {
+                      if (!prev) return prev;
+                      return {
+                        ...prev,
+                        builds: prev.builds.map((b, idx) =>
+                          idx === activeBuildIndex
+                            ? {
+                                ...b,
+                                data: {
+                                  ...b.data,
+                                  stats: {
+                                    ...b.data.stats,
+                                    ["strength"]:
+                                      (formData?.builds[activeBuildIndex]?.data
+                                        .stats.strength ?? 0) + 1,
+                                  },
+                                },
+                              }
+                            : b,
+                        ),
+                      };
+                    });
+                  }}
+                >
+                  <FaPlus />
+                </button>
               </div>
             </div>
             <div className="mx-4 flex flex-col gap-1 rounded-lg bg-neutral-800 p-2 text-center shadow-lg">
@@ -301,9 +361,70 @@ const Builder = ({
                 Agility <span>({drifterData?.agiBonus ?? "0.0"})</span>
               </h3>
               <div className="flex items-center justify-center gap-2">
-                <FaMinus />
-                <p>000</p>
-                <FaPlus />
+                <button
+                  onClick={() => {
+                    setFormData((prev) => {
+                      if (!prev) return prev;
+                      if (
+                        formData?.builds[activeBuildIndex]?.data.stats
+                          .agility === 0
+                      )
+                        return prev;
+                      return {
+                        ...prev,
+                        builds: prev.builds.map((b, idx) =>
+                          idx === activeBuildIndex
+                            ? {
+                                ...b,
+                                data: {
+                                  ...b.data,
+                                  stats: {
+                                    ...b.data.stats,
+                                    ["agility"]:
+                                      (formData?.builds[activeBuildIndex]?.data
+                                        .stats.agility ?? 0) - 1,
+                                  },
+                                },
+                              }
+                            : b,
+                        ),
+                      };
+                    });
+                  }}
+                >
+                  <FaMinus />
+                </button>
+                <p>
+                  {formData?.builds?.[activeBuildIndex]?.data?.stats?.agility}
+                </p>
+                <button
+                  onClick={() => {
+                    setFormData((prev) => {
+                      if (!prev) return prev;
+                      return {
+                        ...prev,
+                        builds: prev.builds.map((b, idx) =>
+                          idx === activeBuildIndex
+                            ? {
+                                ...b,
+                                data: {
+                                  ...b.data,
+                                  stats: {
+                                    ...b.data.stats,
+                                    ["agility"]:
+                                      (formData?.builds[activeBuildIndex]?.data
+                                        .stats.agility ?? 0) + 1,
+                                  },
+                                },
+                              }
+                            : b,
+                        ),
+                      };
+                    });
+                  }}
+                >
+                  <FaPlus />
+                </button>
               </div>
             </div>
             <div className="mx-4 flex flex-col gap-1 rounded-lg bg-neutral-800 p-2 text-center shadow-lg">
@@ -311,9 +432,73 @@ const Builder = ({
                 Intelligence <span>({drifterData?.intBonus ?? "0.0"})</span>
               </h3>
               <div className="flex items-center justify-center gap-2">
-                <FaMinus />
-                <p>000</p>
-                <FaPlus />
+                <button
+                  onClick={() => {
+                    setFormData((prev) => {
+                      if (!prev) return prev;
+                      if (
+                        formData?.builds[activeBuildIndex]?.data.stats
+                          .intelligence === 0
+                      )
+                        return prev;
+                      return {
+                        ...prev,
+                        builds: prev.builds.map((b, idx) =>
+                          idx === activeBuildIndex
+                            ? {
+                                ...b,
+                                data: {
+                                  ...b.data,
+                                  stats: {
+                                    ...b.data.stats,
+                                    ["intelligence"]:
+                                      (formData?.builds[activeBuildIndex]?.data
+                                        .stats.intelligence ?? 0) - 1,
+                                  },
+                                },
+                              }
+                            : b,
+                        ),
+                      };
+                    });
+                  }}
+                >
+                  <FaMinus />
+                </button>
+                <p>
+                  {
+                    formData?.builds?.[activeBuildIndex]?.data?.stats
+                      ?.intelligence
+                  }
+                </p>
+                <button
+                  onClick={() => {
+                    setFormData((prev) => {
+                      if (!prev) return prev;
+                      return {
+                        ...prev,
+                        builds: prev.builds.map((b, idx) =>
+                          idx === activeBuildIndex
+                            ? {
+                                ...b,
+                                data: {
+                                  ...b.data,
+                                  stats: {
+                                    ...b.data.stats,
+                                    ["intelligence"]:
+                                      (formData?.builds[activeBuildIndex]?.data
+                                        .stats.intelligence ?? 0) + 1,
+                                  },
+                                },
+                              }
+                            : b,
+                        ),
+                      };
+                    });
+                  }}
+                >
+                  <FaPlus />
+                </button>
               </div>
             </div>
           </div>
@@ -396,7 +581,7 @@ const Builder = ({
               />
             )}
             {activeTab === "drifter" && (
-              <Drifter props={{ buildNumber: activeBuildIndex }} />
+              <Drifter props={{ activeBuildIndex: activeBuildIndex }} />
             )}
             {activeTab === "support" && <Support />}
             {activeTab === "description" && <DescriptionPage />}
