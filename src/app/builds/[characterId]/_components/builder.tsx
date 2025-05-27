@@ -89,6 +89,7 @@ const Builder = ({
               className={`h-4 w-4 cursor-pointer rounded-full hover:outline-2 hover:outline-cyan-600 ${
                 formData!.builds[0] ? "bg-cyan-400" : "bg-neutral-800"
               } ${!character.builds[0] && formData!.builds[0] ? "animate-pulse" : ""}`}
+              disabled={(formData?.builds?.length ?? 0) >= 1}
             ></button>
             {activeBuildIndex === 0 ? (
               <div className="absolute bottom-0.5 left-[21%] h-1 w-1 -translate-x-1/2 rounded-full bg-cyan-400"></div>
@@ -135,6 +136,7 @@ const Builder = ({
               className={`h-4 w-4 rounded-full ${
                 formData!.builds[1] ? "bg-cyan-400" : "bg-neutral-800"
               } ${!character.builds[1] && formData!.builds[1] ? "animate-pulse" : ""} ${!character.builds[1] ? "animate-bounce" : ""} ${!formData!.builds[0] ? "cursor-not-allowed" : "cursor-pointer hover:outline-2 hover:outline-cyan-600"}`}
+              disabled={(formData?.builds?.length ?? 0) >= 2}
             ></button>
             {activeBuildIndex === 1 ? (
               <div className="absolute bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-cyan-400"></div>
@@ -181,6 +183,7 @@ const Builder = ({
               className={`h-4 w-4 rounded-full ${
                 formData!.builds[2] ? "bg-cyan-400" : "bg-neutral-800"
               } ${!character.builds[2] && formData!.builds[2] ? "animate-pulse" : ""} ${(!character.builds[2] && character.builds[1]) || (formData.builds[1] && !character.builds[2]) ? "animate-bounce" : ""} ${!formData!.builds[1] ? "cursor-not-allowed" : "cursor-pointer hover:outline-2 hover:outline-cyan-600"}`}
+              disabled={(formData?.builds?.length ?? 0) >= 3}
             ></button>
             {activeBuildIndex === 2 ? (
               <div className="absolute right-1/6 bottom-0.5 h-1 w-1 -translate-x-1/2 rounded-full bg-cyan-400"></div>

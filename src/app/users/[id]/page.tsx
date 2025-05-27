@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { FiEyeOff } from "react-icons/fi";
+import CharacterCard from "~/app/_components/characterCard";
 import { auth } from "~/server/auth";
 import { api } from "~/trpc/server";
 
@@ -50,18 +49,7 @@ const User = async (props: { params: { id: string } }) => {
         <h2 className="text-3xl font-bold">Characters</h2>
         <ul className="grid grid-cols-2 gap-2">
           {filteredCharacters.map((character) => (
-            <Link
-              key={character.id}
-              href={`/builds/${character.id}`}
-              className="flex h-48 flex-col items-center justify-center rounded bg-neutral-900 p-2 text-center text-sm font-bold transition-all hover:scale-105 hover:bg-neutral-800 active:scale-95"
-            >
-              <div className="flex h-full w-full items-center justify-center">
-                <div className="flex items-center justify-between">
-                  <h3>{character.name}</h3>
-                  {character.private ? <FiEyeOff /> : null}
-                </div>
-              </div>
-            </Link>
+            <CharacterCard key={character.id} character={character} />
           ))}
         </ul>
       </div>

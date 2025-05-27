@@ -106,7 +106,7 @@ export const characterRouter = createTRPCRouter({
       }),
     )
     .query(async ({ ctx, input }) => {
-      const character = await ctx.db.character.findUnique({
+      return ctx.db.character.findUnique({
         where: {
           id: input.id,
         },
@@ -119,8 +119,6 @@ export const characterRouter = createTRPCRouter({
           createdBy: true,
         },
       });
-
-      if (character) return characterSchema.parse(character);
     }),
 
   getAll: publicProcedure.query(async ({ ctx }) => {

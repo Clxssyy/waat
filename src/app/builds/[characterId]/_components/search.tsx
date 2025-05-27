@@ -8,6 +8,7 @@ import data from "public/data.json";
 import type { inferRouterOutputs } from "@trpc/server";
 import type { AppRouter } from "~/server/api/root";
 import { useEffect, useState } from "react";
+import CharacterCard from "~/app/_components/characterCard";
 
 type Characters = inferRouterOutputs<AppRouter>["character"]["getAll"];
 
@@ -33,7 +34,7 @@ const Search = ({ characters }: { characters: Characters }) => {
           character.role === filter.roleFilter || filter.roleFilter === "";
         const drifterCondition =
           character.builds.filter((build) => {
-            build.data.drifter === filter.drifterFilter;
+            build.data?.drifter === filter.drifterFilter;
           }).length >= 1 || filter.drifterFilter === "";
         const nameCondition =
           character.name.toLowerCase().includes(filter.nameFilter) ||
@@ -84,7 +85,12 @@ const Search = ({ characters }: { characters: Characters }) => {
             </select>
             <button
               type="reset"
-              className="rounded border border-neutral-600 bg-neutral-700 px-2 text-lg"
+              className="cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40"
+              disabled={
+                filter.drifterFilter === "" &&
+                filter.nameFilter === "" &&
+                filter.nameFilter === ""
+              }
               onClick={() => {
                 setFilter({
                   roleFilter: "",
@@ -114,54 +120,8 @@ const Search = ({ characters }: { characters: Characters }) => {
       <div className="flex flex-col gap-2 p-4">
         <h2 className="text-lg font-bold">Builds</h2>
         <div className="grid grid-cols-3 gap-2">
-          {filteredCharacters.map((build) => (
-            <Link
-              key={build.id}
-              href={`/builds/${build.id}`}
-              className="flex h-48 flex-col justify-between gap-2 rounded border border-neutral-800 bg-neutral-900 p-2 transition-all hover:scale-105 hover:brightness-125 active:scale-95"
-            >
-              <div className="flex flex-col gap-2">
-                <h3>{build.name}</h3>
-                <span className="rounded border border-neutral-700 bg-neutral-800 p-1">
-                  {build.builds.length} / 3 Drifters
-                </span>
-              </div>
-              <div className="flex justify-between">
-                <div className="flex items-center gap-2">
-                  {build.role ? (
-                    <span className="rounded border border-neutral-700 bg-neutral-800 p-1">
-                      {build.role.charAt(0).toUpperCase() + build.role.slice(1)}
-                    </span>
-                  ) : null}
-                  <span className="text-xs">
-                    {build.createdAt.toLocaleDateString()}
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <div className="flex items-center gap-2">
-                    <Image
-                      src={
-                        build.createdBy.image ??
-                        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1024px-Default_pfp.svg.png"
-                      }
-                      width={100}
-                      height={100}
-                      alt="creator pfp"
-                      className="h-6 w-6 rounded-full"
-                    />
-                    <h4 className="text-sm">{build.createdBy.name}</h4>
-                  </div>
-                  <div className="flex items-center text-sm">
-                    <span>(0 Votes)</span>
-                    <IoIosStarOutline className="h-4 w-4" />
-                    <IoIosStarOutline className="h-4 w-4" />
-                    <IoIosStarOutline className="h-4 w-4" />
-                    <IoIosStarOutline className="h-4 w-4" />
-                    <IoIosStarOutline className="h-4 w-4" />
-                  </div>
-                </div>
-              </div>
-            </Link>
+          {filteredCharacters.map((character) => (
+            <CharacterCard key={character.id} character={character} />
           ))}
         </div>
       </div>

@@ -13,10 +13,14 @@ const SettingsPage = () => {
           placeholder="Name"
           value={formData?.name}
           onChange={(e) => {
-            setFormData({
-              ...formData,
-              name: e.target.value,
-            });
+            setFormData((prev) =>
+              prev
+                ? {
+                    ...prev,
+                    name: e.target.value,
+                  }
+                : prev,
+            );
           }}
           className="w-full rounded border bg-neutral-800 p-2"
         />
@@ -24,12 +28,16 @@ const SettingsPage = () => {
           name=""
           id=""
           className="rounded bg-neutral-800 p-2"
-          value={formData?.role}
+          value={formData?.role ?? ""}
           onChange={(e) => {
-            setFormData({
-              ...formData,
-              role: e.target.value,
-            });
+            setFormData((prev) =>
+              prev
+                ? {
+                    ...prev,
+                    role: e.target.value,
+                  }
+                : prev,
+            );
           }}
         >
           <option value="">Role</option>
@@ -43,13 +51,16 @@ const SettingsPage = () => {
           className="rounded bg-neutral-800 p-2"
           value={formData?.private.toString()}
           onChange={(e) => {
-            setFormData({
-              ...formData,
-              private: JSON.parse(e.target.value),
-            });
+            setFormData((prev) =>
+              prev
+                ? {
+                    ...prev,
+                    private: JSON.parse(e.target.value),
+                  }
+                : prev,
+            );
           }}
         >
-          <option value="">Privacy</option>
           <option value="true">Private</option>
           <option value="false">Public</option>
         </select>
