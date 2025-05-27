@@ -123,7 +123,7 @@ const Sidebar = () => {
                 Cloned from
               </Link>
             ) : (
-              <p className="text-xs text-neutral-600">{characterId}</p>
+              <p className="text-xs text-neutral-500">{characterId}</p>
             )}
           </div>
         </div>

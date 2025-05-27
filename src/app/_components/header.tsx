@@ -29,7 +29,10 @@ const Header = async () => {
             className="h-8 w-8 rounded-full"
           />
         ) : null}
-        <Link href={session ? "/api/auth/signout" : "/api/auth/signin"}>
+        <Link
+          href={session ? "/api/auth/signout" : "/api/auth/signin"}
+          aria-label="Sign out"
+        >
           {session ? <PiSignOutBold className="text-lg" /> : "Sign in"}
         </Link>
       </div>

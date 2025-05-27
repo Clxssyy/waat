@@ -69,6 +69,7 @@ const Builder = ({ character }: { character: Character }) => {
         <div className="flex w-66 justify-center">
           <div className="relative flex gap-1 rounded-full border border-neutral-600 bg-neutral-700 p-2 shadow-lg">
             <button
+              aria-label="Build 1"
               onClick={() => {
                 if (activeBuildIndex != 0 && formData.builds[0]) {
                   setActiveBuildIndex(0);
@@ -115,6 +116,7 @@ const Builder = ({ character }: { character: Character }) => {
               ""
             )}
             <button
+              aria-label="Build 2"
               onClick={() => {
                 if (activeBuildIndex != 1 && formData.builds[1]) {
                   setActiveBuildIndex(1);
@@ -161,6 +163,7 @@ const Builder = ({ character }: { character: Character }) => {
               ""
             )}
             <button
+              aria-label="Build 3"
               onClick={() => {
                 if (activeBuildIndex != 2 && formData.builds[2]) {
                   setActiveBuildIndex(2);
@@ -211,6 +214,7 @@ const Builder = ({ character }: { character: Character }) => {
         <div className="flex gap-2">
           <button
             className={`relative flex h-82 w-36 cursor-pointer items-center justify-center border border-neutral-600 bg-neutral-700 shadow-lg hover:outline-2 hover:outline-cyan-600 ${activeSlot === "weapon" ? "outline-1 outline-cyan-600" : ""}`}
+            aria-label="Weapon Slot"
             onClick={() => {
               if (activeSlot != "weapon") setActiveSlot("weapon");
               if (activeTab != "equipment") setActiveTab("equipment");
@@ -230,6 +234,7 @@ const Builder = ({ character }: { character: Character }) => {
           <div className="flex flex-col gap-2">
             <button
               className={`relative flex h-26 w-28 cursor-pointer items-center justify-center border border-neutral-600 bg-neutral-700 shadow-lg hover:outline-2 hover:outline-cyan-600 ${activeSlot === "helmet" ? "outline-1 outline-cyan-600" : ""}`}
+              aria-label="Helmet Slot"
               onClick={() => {
                 if (activeSlot != "helmet") setActiveSlot("helmet");
                 if (activeTab != "equipment") setActiveTab("equipment");
@@ -248,6 +253,7 @@ const Builder = ({ character }: { character: Character }) => {
             </button>
             <button
               className={`relative flex h-26 w-28 cursor-pointer items-center justify-center border border-neutral-600 bg-neutral-700 shadow-lg hover:outline-2 hover:outline-cyan-600 ${activeSlot === "chest" ? "outline-1 outline-cyan-600" : ""}`}
+              aria-label="Chest Slot"
               onClick={() => {
                 if (activeSlot != "chest") setActiveSlot("chest");
                 if (activeTab != "equipment") setActiveTab("equipment");
@@ -266,6 +272,7 @@ const Builder = ({ character }: { character: Character }) => {
             </button>
             <button
               className={`relative flex h-26 w-28 cursor-pointer items-center justify-center border border-neutral-600 bg-neutral-700 shadow-lg hover:outline-2 hover:outline-cyan-600 ${activeSlot === "boots" ? "outline-1 outline-cyan-600" : ""}`}
+              aria-label="Boots Slot"
               onClick={() => {
                 if (activeSlot != "boots") setActiveSlot("boots");
                 if (activeTab != "equipment") setActiveTab("equipment");
@@ -286,6 +293,7 @@ const Builder = ({ character }: { character: Character }) => {
         </div>
         <button
           className={`relative flex h-20 w-66 cursor-pointer items-center justify-center border border-neutral-600 bg-neutral-700 shadow-lg hover:outline-2 hover:outline-cyan-600 ${activeSlot === "drifter" ? "outline-1 outline-cyan-600" : ""}`}
+          aria-label="Drifter Slot"
           onClick={() => {
             if (activeSlot != "drifter") setActiveSlot("drifter");
             if (activeTab != "drifter") setActiveTab("drifter");
@@ -308,6 +316,7 @@ const Builder = ({ character }: { character: Character }) => {
               </h3>
               <div className="flex items-center justify-center gap-2">
                 <button
+                  aria-label="Decrease Strength"
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
@@ -344,6 +353,7 @@ const Builder = ({ character }: { character: Character }) => {
                   {formData?.builds?.[activeBuildIndex]?.data?.stats?.strength}
                 </p>
                 <button
+                  aria-label="Increase Strength"
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
@@ -379,6 +389,7 @@ const Builder = ({ character }: { character: Character }) => {
               </h3>
               <div className="flex items-center justify-center gap-2">
                 <button
+                  aria-label="Decrease Agility"
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
@@ -415,6 +426,7 @@ const Builder = ({ character }: { character: Character }) => {
                   {formData?.builds?.[activeBuildIndex]?.data?.stats?.agility}
                 </p>
                 <button
+                  aria-label="Increase Agility"
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
@@ -450,6 +462,7 @@ const Builder = ({ character }: { character: Character }) => {
               </h3>
               <div className="flex items-center justify-center gap-2">
                 <button
+                  aria-label="Decrease Intelligence"
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
@@ -489,6 +502,7 @@ const Builder = ({ character }: { character: Character }) => {
                   }
                 </p>
                 <button
+                  aria-label="Increase Intelligence"
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
@@ -529,6 +543,7 @@ const Builder = ({ character }: { character: Character }) => {
             >
               <button
                 className="h-full w-full cursor-pointer rounded-t-lg hover:bg-white/5"
+                aria-label="Equipment Tab"
                 onClick={() => {
                   if (activeTab != "equipment") setActiveTab("equipment");
                   if (activeSlot === "drifter" || activeSlot === undefined)
@@ -543,6 +558,7 @@ const Builder = ({ character }: { character: Character }) => {
             >
               <button
                 className="h-full w-full cursor-pointer rounded-t-lg hover:bg-white/5"
+                aria-label="Drifter Tab"
                 onClick={() => {
                   if (activeTab != "drifter") setActiveTab("drifter");
                   if (activeSlot != "drifter") setActiveSlot("drifter");
@@ -556,6 +572,7 @@ const Builder = ({ character }: { character: Character }) => {
             >
               <button
                 className="h-full w-full cursor-pointer rounded-t-lg hover:bg-white/5"
+                aria-label="Support Tab"
                 onClick={() => {
                   if (activeTab != "support") setActiveTab("support");
                 }}
@@ -568,6 +585,7 @@ const Builder = ({ character }: { character: Character }) => {
             >
               <button
                 className="h-full w-full cursor-pointer rounded-t-lg hover:bg-white/5"
+                aria-label="Description Tab"
                 onClick={() => {
                   if (activeTab != "description") setActiveTab("description");
                 }}
@@ -580,6 +598,7 @@ const Builder = ({ character }: { character: Character }) => {
             >
               <button
                 className="h-full w-full cursor-pointer rounded-t-lg hover:bg-white/5"
+                aria-label="Comments Tab"
                 onClick={() => {
                   if (activeTab != "comments") setActiveTab("comments");
                 }}

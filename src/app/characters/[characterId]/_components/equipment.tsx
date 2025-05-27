@@ -105,6 +105,7 @@ const Equipment = ({
         <div className="h-12 grow rounded bg-neutral-700">
           <select
             className="h-full w-full rounded border border-neutral-600 bg-neutral-700 px-2 text-lg"
+            aria-label={slot}
             ref={selectInput}
             value={formData.builds?.[activeBuildIndex]?.data?.equipment[slot]}
             onChange={(e) => {
@@ -146,6 +147,7 @@ const Equipment = ({
         </div>
         <button
           className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700 hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40`}
+          aria-label={`Clear`}
           disabled={
             !formData?.builds?.[activeBuildIndex]?.data?.equipment[slot]
           }

@@ -28,9 +28,8 @@ const Builds = () => {
         <div className="flex items-center gap-2">
           <h2 className="text-2xl">{character.name}</h2>
           <select
-            name=""
-            id=""
             className="cursor-pointer rounded border border-neutral-700 bg-neutral-800 px-2 py-1"
+            aria-label="Role"
             value={formData?.role ?? ""}
             onChange={(e) => {
               setFormData({ ...formData, role: e.target.value });
@@ -65,9 +64,15 @@ const Builds = () => {
               Rate
             </div>
           )}
-          <div className="flex aspect-square h-full items-center justify-center rounded border border-neutral-700 bg-neutral-800 p-1">
+          <button
+            className="flex aspect-square h-full items-center justify-center rounded border border-neutral-700 bg-neutral-800 p-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95"
+            aria-label="Share"
+            onClick={async () => {
+              await navigator.clipboard.writeText(window.location.href);
+            }}
+          >
             <IoMdShare />
-          </div>
+          </button>
         </div>
       </div>
       <Builder character={character} />
