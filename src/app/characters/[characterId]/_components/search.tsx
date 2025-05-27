@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 import CharacterCard from "~/app/_components/characterCard";
 import type { characterSchema } from "~/app/_utils/types";
 import type { z } from "zod";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 
 type Character = z.infer<typeof characterSchema>;
@@ -19,6 +19,7 @@ type Filter = {
 
 const Search = ({ characters }: { characters: Character[] }) => {
   const searchParams = useSearchParams();
+  const pathname = usePathname();
 
   const [filter, setFilter] = useState<Filter>({
     roleFilter: searchParams.get("role") ?? "",
@@ -44,7 +45,7 @@ const Search = ({ characters }: { characters: Character[] }) => {
         return roleCondition && drifterCondition && nameCondition;
       }),
     );
-  }, [searchParams, characters, filter]);
+  }, [characters, filter]);
 
   const router = useRouter();
 
@@ -57,8 +58,8 @@ const Search = ({ characters }: { characters: Character[] }) => {
     if (filter.nameFilter) p.set("q", filter.nameFilter);
     else p.delete("q");
 
-    router.replace(`/characters?${p.toString()}`);
-  }, [router, filter, searchParams]);
+    router.replace(`${pathname}?${p.toString()}`);
+  }, [router, filter, searchParams, pathname]);
 
   useEffect(updateParams, [updateParams]);
 

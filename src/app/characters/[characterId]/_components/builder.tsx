@@ -16,12 +16,13 @@ import { useBuildForm } from "./buildFormContext";
 import Support from "./support";
 import type { inferRouterOutputs } from "@trpc/server";
 import type { AppRouter } from "~/server/api/root";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 type Character = inferRouterOutputs<AppRouter>["character"]["getById"];
 
 const Builder = ({ character }: { character: Character }) => {
   const searchParams = useSearchParams();
+  const pathname = usePathname();
   const [activeTab, setActiveTab] = useState<ActiveTab>("equipment");
   const [activeSlot, setActiveSlot] = useState<ActiveSlots>("weapon");
   const { formData, setFormData } = useBuildForm();
@@ -44,9 +45,7 @@ const Builder = ({ character }: { character: Character }) => {
       p.set("build", formData?.builds[activeBuildIndex]?.id);
     else p.delete("build");
 
-    console.log("test2");
-
-    router.replace(`/characters/${character?.id}?${p.toString()}`);
+    router.replace(`${pathname}?${p.toString()}`);
   }, [router, activeBuildIndex, formData, searchParams, character]);
 
   useEffect(updateParams, [updateParams]);
