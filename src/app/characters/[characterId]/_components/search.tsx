@@ -69,7 +69,7 @@ const Search = ({ characters }: { characters: Character[] }) => {
         <form action="" className="flex w-2/5 flex-col gap-2 p-4">
           <div className="flex gap-2">
             <select
-              className="w-1/5 rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg"
+              className="w-1/5 cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg"
               value={filter.roleFilter}
               onChange={(e) => {
                 setFilter({
@@ -86,7 +86,7 @@ const Search = ({ characters }: { characters: Character[] }) => {
               <option value="tank">Tank</option>
             </select>
             <select
-              className="grow rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg"
+              className="grow cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg"
               value={filter.drifterFilter}
               onChange={(e) => {
                 setFilter({ ...filter, drifterFilter: e.currentTarget.value });

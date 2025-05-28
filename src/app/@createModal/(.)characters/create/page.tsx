@@ -23,7 +23,7 @@ const Create = () => {
           onClick={() => {
             router.back();
           }}
-          className="absolute -top-8 -right-8 p-2 text-2xl"
+          className="absolute -top-8 -right-8 cursor-pointer p-2 text-2xl hover:text-red-500"
         >
           <IoClose />
         </button>
@@ -51,7 +51,7 @@ const Create = () => {
             <option value="tank">Tank</option>
           </select>
           <button
-            className="rounded border border-green-600 bg-green-700 px-2 py-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95 disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40"
+            className="cursor-pointer rounded border border-green-600 bg-green-700 px-2 py-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95 disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40"
             onClick={() => {
               characterCreate.mutate({
                 name: (

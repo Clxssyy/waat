@@ -23,10 +23,10 @@ const Builds = () => {
   }
 
   return (
-    <div className="flex grow flex-col bg-neutral-950">
+    <div className="flex grow flex-col overflow-hidden bg-neutral-950">
       <div className="mx-14 my-4 flex justify-between">
-        <div className="flex items-center gap-2">
-          <h2 className="text-2xl">{character.name}</h2>
+        <div className="flex max-w-1/3 items-center gap-2">
+          <h2 className="truncate text-2xl">{character.name}</h2>
           <select
             className="cursor-pointer rounded border border-neutral-700 bg-neutral-800 px-2 py-1"
             aria-label="Role"
@@ -59,13 +59,13 @@ const Builds = () => {
           {isCreator ? (
             ""
           ) : (
-            <div className="flex items-center justify-center gap-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95">
+            <div className="flex cursor-pointer items-center justify-center gap-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95">
               <IoIosStarOutline />
               Rate
             </div>
           )}
           <button
-            className="flex aspect-square h-full items-center justify-center rounded border border-neutral-700 bg-neutral-800 p-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95"
+            className="flex aspect-square h-full cursor-pointer items-center justify-center rounded border border-neutral-700 bg-neutral-800 p-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95"
             aria-label="Share"
             onClick={async () => {
               await navigator.clipboard.writeText(window.location.href);

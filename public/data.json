@@ -12,7 +12,6 @@
         "name": "Fractured Ice",
         "description": ""
       },
-      "role": "",
       "type": "strength",
       "supportEffects": {
         "positive": {
@@ -35,7 +34,6 @@
         "name": "Seismic Impact",
         "description": ""
       },
-      "role": "",
       "type": "strength",
       "supportEffects": {
         "positive": {
@@ -58,7 +56,6 @@
         "name": "Sand Veil",
         "description": ""
       },
-      "role": "",
       "type": "strength",
       "supportEffects": {
         "positive": {
@@ -81,7 +78,6 @@
         "name": "Reflective Shield",
         "description": ""
       },
-      "role": "",
       "type": "strength",
       "supportEffects": {
         "positive": {
@@ -104,7 +100,6 @@
         "name": "Imprisonment",
         "description": ""
       },
-      "role": "",
       "type": "strength",
       "supportEffects": {
         "positive": {
@@ -127,7 +122,6 @@
         "name": "Resolve",
         "description": ""
       },
-      "role": "",
       "type": "strength",
       "supportEffects": {
         "positive": {
@@ -150,7 +144,6 @@
         "name": "Defiant Resolve",
         "description": ""
       },
-      "role": "",
       "type": "strength",
       "supportEffects": {
         "positive": {
@@ -173,7 +166,6 @@
         "name": "Healing Guardian",
         "description": ""
       },
-      "role": "",
       "type": "strength",
       "supportEffects": {
         "positive": {
@@ -196,7 +188,6 @@
         "name": "Corrosion Barrier",
         "description": ""
       },
-      "role": "",
       "type": "strength",
       "supportEffects": {
         "positive": {
@@ -219,7 +210,6 @@
         "name": "Hell Salvo's Embrace",
         "description": ""
       },
-      "role": "",
       "type": "agility",
       "supportEffects": {
         "positive": {
@@ -242,7 +232,6 @@
         "name": "Cyclone Reap",
         "description": ""
       },
-      "role": "",
       "type": "agility",
       "supportEffects": {
         "positive": {
@@ -265,7 +254,6 @@
         "name": "Echo Reflection",
         "description": ""
       },
-      "role": "",
       "type": "agility",
       "supportEffects": {
         "positive": {
@@ -288,7 +276,6 @@
         "name": "Static Overdrive",
         "description": ""
       },
-      "role": "",
       "type": "agility",
       "supportEffects": {
         "positive": {
@@ -311,7 +298,6 @@
         "name": "Overclocking Reflex",
         "description": ""
       },
-      "role": "",
       "type": "agility",
       "supportEffects": {
         "positive": {
@@ -334,7 +320,6 @@
         "name": "Umbra Guardian",
         "description": ""
       },
-      "role": "",
       "type": "agility",
       "supportEffects": {
         "positive": {
@@ -357,7 +342,6 @@
         "name": "Healing Bloom Hunter",
         "description": ""
       },
-      "role": "",
       "type": "agility",
       "supportEffects": {
         "positive": {
@@ -381,7 +365,6 @@
         "name": "Blood Contract",
         "description": ""
       },
-      "role": "",
       "type": "agility",
       "supportEffects": {
         "positive": {
@@ -403,7 +386,7 @@
           "name": "Umbra Kinetics",
           "description": ""
         },
-        "role": "",
+
         "type": "agility",
         "supportEffects": {
           "positive": {
@@ -427,7 +410,6 @@
         "name": "Lunar Rebirth",
         "description": ""
       },
-      "role": "",
       "type": "intelligence",
       "supportEffects": {
         "positive": {
@@ -450,7 +432,6 @@
         "name": "Umbra Resonance",
         "description": ""
       },
-      "role": "",
       "type": "intelligence",
       "supportEffects": {
         "positive": {
@@ -473,7 +454,6 @@
         "name": "Hive Exaltation",
         "description": ""
       },
-      "role": "",
       "type": "intelligence",
       "supportEffects": {
         "positive": {
@@ -496,7 +476,6 @@
         "name": "Summon Raven",
         "description": ""
       },
-      "role": "",
       "type": "intelligence",
       "supportEffects": {
         "positive": {
@@ -519,7 +498,6 @@
         "name": "Helical Convergence",
         "description": ""
       },
-      "role": "",
       "type": "intelligence",
       "supportEffects": {
         "positive": {
@@ -542,7 +520,6 @@
         "name": "Shedskin",
         "description": ""
       },
-      "role": "",
       "type": "intelligence",
       "supportEffects": {
         "positive": {
@@ -565,7 +542,6 @@
         "name": "Light's Echo",
         "description": ""
       },
-      "role": "",
       "type": "intelligence",
       "supportEffects": {
         "positive": {
@@ -588,7 +564,6 @@
         "name": "Holy Covenant",
         "description": ""
       },
-      "role": "",
       "type": "intelligence",
       "supportEffects": {
         "positive": {
@@ -611,7 +586,6 @@
         "name": "Celestial Rotation",
         "description": ""
       },
-      "role": "",
       "type": "intelligence",
       "supportEffects": {
         "positive": {
@@ -634,8 +608,7 @@
         "name": "Survivability Resilience",
         "description": ""
       },
-      "role": "",
-      "type": "intelligence",
+      "type": "logistics",
       "supportEffects": {
         "positive": {
           "name": "Carry Weight"
@@ -1700,7 +1673,7 @@
       "type": "agility"
     },
     "novice_medium_armor": {
-      "rarity": "epic",
+      "rarity": "common",
       "core_skill": {
         "name": "Bandage",
         "description": ""

@@ -18,16 +18,21 @@ const Header = async () => {
       </div>
       <div className="flex items-center gap-2">
         {session ? (
-          <Image
-            src={
-              session?.user.image ??
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1024px-Default_pfp.svg.png"
-            }
-            alt="pfp"
-            width={100}
-            height={100}
-            className="h-8 w-8 rounded-full"
-          />
+          <Link
+            href={`/users/${session.user.id}`}
+            className="rounded-full transition-all hover:scale-105 active:scale-95"
+          >
+            <Image
+              src={
+                session?.user.image ??
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1024px-Default_pfp.svg.png"
+              }
+              alt="pfp"
+              width={100}
+              height={100}
+              className="h-8 w-8 rounded-full"
+            />
+          </Link>
         ) : null}
         <Link
           href={session ? "/api/auth/signout" : "/api/auth/signin"}

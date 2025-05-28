@@ -147,39 +147,92 @@ const Drifter = ({
           <hr className="border-neutral-700" />
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+              <h2>Info</h2>
+              <div className="flex flex-col rounded bg-neutral-800 p-2">
+                <p>Active Skill: {drifterData?.activeSkill.name}</p>
+                <p>Passive Skill: {drifterData?.passiveSkill.name}</p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
               <h2>Mastery</h2>
-              <div className="flex gap-2">
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+              <div className="flex flex-wrap gap-2">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
                   <span>0</span>
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
                   <span>10</span>
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
                   <span>20</span>
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
                   <span>30</span>
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
                   <span>40</span>
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>45</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>46</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>47</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>48</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>49</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
                   <span>50</span>
                 </div>
-                <div className="flex h-12 grow items-center justify-center rounded bg-neutral-800 text-lg">
+                <div className="flex h-12 grow items-center justify-center rounded bg-neutral-800 p-2 px-2 text-lg">
                   <span>Custom</span>
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 text-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
                   <IoClose className="h-6 w-6" />
                 </div>
               </div>
             </div>
             <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-              <h2>Info</h2>
-              <div className="flex flex-col rounded bg-neutral-800 p-2">
-                <p>Active Skill: {drifterData?.activeSkill.name}</p>
-                <p>Passive Skill: {drifterData?.passiveSkill.name}</p>
+              <h2>Tier</h2>
+              <div className="flex flex-wrap justify-evenly gap-2">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>I</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>II</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>III</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>IV</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>V</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>VI</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>VII</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>VIII</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>IX</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>X</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>XI</span>
+                </div>
               </div>
             </div>
             <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">

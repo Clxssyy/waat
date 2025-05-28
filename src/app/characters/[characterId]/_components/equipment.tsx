@@ -134,8 +134,12 @@ const Equipment = ({
             <option value="" hidden>
               {slot.charAt(0).toUpperCase() + slot.slice(1)}
             </option>
-            {filteredData.map(([equipmentKey]) => (
-              <option key={equipmentKey} value={equipmentKey}>
+            {filteredData.map(([equipmentKey, equipment]) => (
+              <option
+                key={equipmentKey}
+                value={equipmentKey}
+                className={`${equipment.rarity === "legendary" ? "bg-yellow-600/20" : `${equipment.rarity === "epic" ? "bg-purple-600/20" : `${equipment.rarity === "rare" ? "bg-blue-600/20" : `${equipment.rarity === "common" ? "bg-green-600/20" : ""}`}`}`}`}
+              >
                 {equipmentKey.charAt(0).toUpperCase() +
                   equipmentKey
                     .slice(1)
@@ -182,6 +186,12 @@ const Equipment = ({
           <hr className="border-neutral-700" />
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+              <h2>Info</h2>
+              <div className="rounded bg-neutral-800 p-2">
+                <p>Active Skill: {equipmentData?.core_skill.name}</p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
               <h2>Mastery</h2>
               <div className="flex flex-wrap gap-2">
                 <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
@@ -226,9 +236,41 @@ const Equipment = ({
               </div>
             </div>
             <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-              <h2>Info</h2>
-              <div className="rounded bg-neutral-800 p-2">
-                <p>Active Skill: {equipmentData?.core_skill.name}</p>
+              <h2>Tier</h2>
+              <div className="flex flex-wrap justify-evenly gap-2">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>I</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>II</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>III</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>IV</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>V</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>VI</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>VII</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>VIII</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>IX</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>X</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  <span>XI</span>
+                </div>
               </div>
             </div>
             <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
