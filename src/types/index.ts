@@ -1,4 +1,4 @@
-import { z } from "zod";
+import type { z } from "zod";
 import type { characterSchema } from "~/schemas";
 
 export type ActiveSlots = "helmet" | "chest" | "boots" | "weapon" | "drifter";
