@@ -1,8 +1,11 @@
+import Footer from "../_components/footer";
+
 const Guides = () => {
   return (
-    <div>
-      <div>guides</div>
-    </div>
+    <>
+      <main className="grow">Guides</main>
+      <Footer />
+    </>
   );
 };
 

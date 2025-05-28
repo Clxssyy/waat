@@ -1,8 +1,8 @@
 "use client";
 
 import { IoIosStarOutline, IoMdShare } from "react-icons/io";
-import Builder from "./_components/builder";
-import { useBuildForm } from "./_components/buildFormContext";
+import Builder from "~/app/_components/builder";
+import { useBuildForm } from "~/app/_components/buildFormContext";
 
 const Builds = () => {
   const {

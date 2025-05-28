@@ -4,12 +4,9 @@ import { IoClose } from "react-icons/io5";
 import data from "public/data.json";
 import { useCallback, useEffect, useState } from "react";
 import CharacterCard from "~/app/_components/characterCard";
-import type { characterSchema } from "~/app/_utils/types";
-import type { z } from "zod";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
-
-type Character = z.infer<typeof characterSchema>;
+import type { Character } from "~/types";
 
 type Filter = {
   roleFilter: string;
@@ -20,6 +17,7 @@ type Filter = {
 const Search = ({ characters }: { characters: Character[] }) => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
+  const router = useRouter();
 
   const [filter, setFilter] = useState<Filter>({
     roleFilter: searchParams.get("role") ?? "",
@@ -28,26 +26,6 @@ const Search = ({ characters }: { characters: Character[] }) => {
   });
   const [filteredCharacters, setFilteredCharacters] =
     useState<Character[]>(characters);
-
-  useEffect(() => {
-    setFilteredCharacters(
-      characters.filter((character) => {
-        const roleCondition =
-          character.role === filter.roleFilter || filter.roleFilter === "";
-        const drifterCondition =
-          character.builds.filter((build) => {
-            return build.data?.drifter === filter.drifterFilter;
-          }).length >= 1 || filter.drifterFilter === "";
-        const nameCondition =
-          character.name.toLowerCase().includes(filter.nameFilter) ||
-          character.createdBy.name?.toLowerCase().includes(filter.nameFilter);
-
-        return roleCondition && drifterCondition && nameCondition;
-      }),
-    );
-  }, [characters, filter]);
-
-  const router = useRouter();
 
   const updateParams = useCallback(() => {
     const p = new URLSearchParams(searchParams.toString());
@@ -61,16 +39,35 @@ const Search = ({ characters }: { characters: Character[] }) => {
     router.replace(`${pathname}?${p.toString()}`);
   }, [router, filter, searchParams, pathname]);
 
+  useEffect(() => {
+    const filterCharacters = characters.filter((character) => {
+      const roleCondition =
+        character.role === filter.roleFilter || filter.roleFilter === "";
+      const drifterCondition =
+        character.builds.filter((build) => {
+          return build.data?.drifter === filter.drifterFilter;
+        }).length >= 1 || filter.drifterFilter === "";
+      const nameCondition =
+        character.name.toLowerCase().includes(filter.nameFilter) ||
+        character.createdBy.name?.toLowerCase().includes(filter.nameFilter);
+
+      return roleCondition && drifterCondition && nameCondition;
+    });
+
+    setFilteredCharacters(filterCharacters);
+  }, [characters, filter]);
+
   useEffect(updateParams, [updateParams]);
 
   return (
     <>
       <div className="flex justify-center">
-        <form action="" className="flex w-2/5 flex-col gap-2 p-4">
+        <form className="flex w-3/5 flex-col gap-2 p-4">
           <div className="flex gap-2">
             <select
               className="w-1/5 cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg"
               value={filter.roleFilter}
+              aria-label="Role Filter"
               onChange={(e) => {
                 setFilter({
                   ...filter,
@@ -104,7 +101,8 @@ const Search = ({ characters }: { characters: Character[] }) => {
             </select>
             <button
               type="reset"
-              className="cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40"
+              aria-label="Clear Filters"
+              className="cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40"
               disabled={
                 filter.drifterFilter === "" &&
                 filter.roleFilter === "" &&
@@ -118,22 +116,19 @@ const Search = ({ characters }: { characters: Character[] }) => {
                 });
               }}
             >
-              <IoClose />
+              <IoClose className="text-lg" />
             </button>
           </div>
-          <div>
-            <input
-              type="search"
-              name=""
-              id="build_search_box"
-              placeholder="Search..."
-              className="w-full rounded border border-neutral-600 bg-neutral-700 p-1 text-lg"
-              value={filter.nameFilter}
-              onChange={(e) => {
-                setFilter({ ...filter, nameFilter: e.currentTarget.value });
-              }}
-            />
-          </div>
+          <input
+            type="search"
+            aria-label="Search Input"
+            placeholder="Search..."
+            className="w-full rounded border border-neutral-600 bg-neutral-700 p-1 text-lg"
+            value={filter.nameFilter}
+            onChange={(e) => {
+              setFilter({ ...filter, nameFilter: e.currentTarget.value });
+            }}
+          />
         </form>
       </div>
       <div className="flex flex-col gap-2 p-4">

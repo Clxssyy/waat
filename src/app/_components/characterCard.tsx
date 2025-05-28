@@ -1,14 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosStarOutline } from "react-icons/io";
-import type { characterSchema } from "../_utils/types";
-import type { z } from "zod";
 import { FaEyeSlash } from "react-icons/fa6";
-
-type Character = z.infer<typeof characterSchema>;
+import data from "public/data.json";
+import type { Character } from "~/types";
 
 const CharacterCard = ({ character }: { character: Character }) => {
   if (!character) return null;
+
+  const drifterData = character.builds.map((build) => ({
+    drifter: build.data.drifter,
+    data: Object.entries(data.drifter).find(
+      ([key]) => key === build.data.drifter,
+    ),
+  }));
 
   return (
     <Link
@@ -25,14 +30,14 @@ const CharacterCard = ({ character }: { character: Character }) => {
           {character.builds.length} / 3 Drifters
         </p>
         <div className="flex gap-1 text-sm">
-          {Object.entries(character.builds).map(([buildKey, build]) =>
-            build.data.drifter != "" ? (
+          {Object.entries(drifterData).map(([key, entry]) =>
+            entry.drifter !== "" ? (
               <div
-                key={buildKey}
-                className={`rounded border p-1 ${character.role === "tank" ? "border-red-300 bg-red-300/20" : ""} ${character.role === "dps" ? "border-green-300 bg-green-300/20" : ""} ${character.role === "healer" ? "border-cyan-300 bg-cyan-300/20" : ""}`}
+                key={key + entry.drifter}
+                className={`rounded border p-1 ${entry.data?.[1].type === "strength" ? "border-red-400 bg-red-400/20" : `${entry.data?.[1].type === "agility" ? "border-green-300 bg-green-300/20" : `${entry.data?.[1].type === "intelligence" ? "border-blue-300 bg-blue-300/20" : `${entry.data?.[1].type === "logistics" ? "border-yellow-200 bg-yellow-200/20" : "border-neutral-700 bg-neutral-800"}`}`}`}`}
               >
-                {build.data.drifter.charAt(0).toUpperCase() +
-                  build.data.drifter
+                {entry.drifter.charAt(0).toUpperCase() +
+                  entry.drifter
                     .slice(1)
                     .replace(/_/g, " ")
                     .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}

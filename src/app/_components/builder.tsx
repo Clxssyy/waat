@@ -2,21 +2,17 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Comments from "./comments";
-import DescriptionPage from "../description/page";
 import Drifter from "./drifter";
 import Equipment from "./equipment";
 import data from "public/data.json";
 import { FaMinus, FaPlus } from "react-icons/fa6";
-import type {
-  ActiveTab,
-  ActiveBuildIndex,
-  ActiveSlots,
-} from "~/app/_utils/types";
+import type { ActiveTab, ActiveBuildIndex, ActiveSlots } from "~/types";
 import { useBuildForm } from "./buildFormContext";
 import Support from "./support";
 import type { inferRouterOutputs } from "@trpc/server";
 import type { AppRouter } from "~/server/api/root";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import Description from "../characters/[characterId]/description/page";
 
 type Character = inferRouterOutputs<AppRouter>["character"]["getById"];
 
@@ -101,7 +97,7 @@ const Builder = ({ character }: { character: Character }) => {
 
   return (
     <div className="mx-14 flex grow gap-14">
-      <div className="mb-4 flex h-fit min-w-1/3 flex-col items-center gap-2 rounded-lg border border-neutral-700 bg-neutral-800 p-4">
+      <div className="flex h-fit min-w-1/3 flex-col items-center gap-2 rounded-lg border border-neutral-700 bg-neutral-800 p-4">
         <div className="flex w-66 justify-center">
           <div className="relative flex gap-1 rounded-full border border-neutral-600 bg-neutral-700 p-2 shadow-lg">
             <button
@@ -249,7 +245,7 @@ const Builder = ({ character }: { character: Character }) => {
         </div>
         <div className="flex gap-2">
           <button
-            className={`active:scale-95 ${weaponData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 shadow-yellow-600 hover:border-yellow-600" : `${weaponData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 shadow-blue-600 hover:border-blue-600" : `${weaponData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 shadow-green-600 hover:border-green-600" : `${weaponData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 shadow-purple-600 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-82 w-36 cursor-pointer items-center justify-center border transition-all ${activeSlot === "weapon" ? `border-2 ${weaponData?.rarity === "legendary" ? "border-yellow-600" : `${weaponData?.rarity === "epic" ? "border-purple-600" : `${weaponData?.rarity === "rare" ? "border-blue-600" : `${weaponData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
+            className={`active:scale-[98%] ${weaponData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 shadow-yellow-600 hover:border-yellow-600" : `${weaponData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 shadow-blue-600 hover:border-blue-600" : `${weaponData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 shadow-green-600 hover:border-green-600" : `${weaponData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 shadow-purple-600 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-82 w-36 cursor-pointer items-center justify-center border transition-all ${activeSlot === "weapon" ? `border-2 ${weaponData?.rarity === "legendary" ? "border-yellow-600" : `${weaponData?.rarity === "epic" ? "border-purple-600" : `${weaponData?.rarity === "rare" ? "border-blue-600" : `${weaponData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
             aria-label="Weapon Slot"
             onClick={() => {
               if (activeSlot != "weapon") setActiveSlot("weapon");
@@ -656,7 +652,7 @@ const Builder = ({ character }: { character: Character }) => {
               <Drifter activeBuildIndex={activeBuildIndex} />
             )}
             {activeTab === "support" && <Support />}
-            {activeTab === "description" && <DescriptionPage />}
+            {activeTab === "description" && <Description />}
             {activeTab === "comments" && <Comments />}
           </div>
         </div>

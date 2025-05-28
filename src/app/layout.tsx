@@ -8,7 +8,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 
 export const metadata: Metadata = {
   title: "WAAT",
-  description: "Warborne Above Ashes Tools",
+  description: "Warborne Above Ashes Tools: Character Creator",
   icons: [{ rel: "icon", url: "/WT_Favicon.ico" }],
 };
 

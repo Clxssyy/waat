@@ -1,9 +1,9 @@
 import "~/styles/globals.css";
 import { SessionProvider } from "next-auth/react";
-import { BuildFormProvider } from "./_components/buildFormContext";
-import Sidebar from "./_components/sidebar";
 import { api } from "~/trpc/server";
 import { auth } from "~/server/auth";
+import { BuildFormProvider } from "~/app/_components/buildFormContext";
+import Sidebar from "~/app/_components/sidebar";
 
 export default async function BuildLayout({
   children,

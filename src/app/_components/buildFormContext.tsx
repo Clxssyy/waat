@@ -8,8 +8,8 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import type { inferRouterOutputs } from "@trpc/server";
 import type { AppRouter } from "~/server/api/root";
-import { formDataSchema } from "~/app/_utils/types";
 import type { z } from "zod";
+import { formDataSchema } from "~/schemas";
 
 type Character = inferRouterOutputs<AppRouter>["character"]["getById"];
 type FormDataCharacter = z.infer<typeof formDataSchema>;

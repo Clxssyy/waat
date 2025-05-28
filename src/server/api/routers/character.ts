@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { formDataSchema } from "~/app/_utils/types";
+import { formDataSchema } from "~/schemas";
 import {
   createTRPCRouter,
   protectedProcedure,

@@ -1,21 +1,5 @@
 import { z } from "zod";
 
-export type ActiveSlots = "helmet" | "chest" | "boots" | "weapon" | "drifter";
-export type ActiveBuildIndex = 0 | 1 | 2;
-
-export type ActiveTab =
-  | "description"
-  | "drifter"
-  | "equipment"
-  | "comments"
-  | "support";
-export type ActiveFilter =
-  | "all"
-  | "strength"
-  | "agility"
-  | "intelligence"
-  | "logistics";
-
 export const buildDataSchema = z.object({
   equipment: z.object({
     helmet: z.string(),
@@ -71,5 +55,3 @@ export const formDataSchema = characterSchema
       )
       .max(3),
   });
-
-export type Character = z.infer<typeof characterSchema>;

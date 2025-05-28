@@ -1,8 +1,11 @@
+import Footer from "../_components/footer";
+
 const News = () => {
   return (
-    <div>
-      <div>News</div>
-    </div>
+    <>
+      <main className="grow">News</main>
+      <Footer />
+    </>
   );
 };
 
