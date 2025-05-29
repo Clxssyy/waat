@@ -244,83 +244,101 @@ const Builder = ({ character }: { character: Character }) => {
           </div>
         </div>
         <div className="flex gap-2">
-          <button
-            className={`active:scale-[98%] ${weaponData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 shadow-yellow-600 hover:border-yellow-600" : `${weaponData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 shadow-blue-600 hover:border-blue-600" : `${weaponData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 shadow-green-600 hover:border-green-600" : `${weaponData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 shadow-purple-600 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-82 w-36 cursor-pointer items-center justify-center border transition-all ${activeSlot === "weapon" ? `border-2 ${weaponData?.rarity === "legendary" ? "border-yellow-600" : `${weaponData?.rarity === "epic" ? "border-purple-600" : `${weaponData?.rarity === "rare" ? "border-blue-600" : `${weaponData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
-            aria-label="Weapon Slot"
-            onClick={() => {
-              if (activeSlot != "weapon") setActiveSlot("weapon");
-              if (activeTab != "equipment") setActiveTab("equipment");
-            }}
-          >
-            {formData?.builds?.[activeBuildIndex]?.data?.equipment.weapon ? (
-              <div className="truncate p-1 text-sm">
-                {formData?.builds?.[activeBuildIndex]?.data?.equipment.weapon}
-              </div>
-            ) : (
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
-                <FaPlus />
-              </div>
-            )}
-            <div className="absolute -left-12 h-8 w-8 rounded border border-neutral-600 bg-neutral-700 shadow-lg"></div>
-          </button>
+          <div className="bg-neutral-700">
+            <button
+              className={`active:scale-[98%] ${weaponData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 shadow-yellow-600 hover:border-yellow-600" : `${weaponData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 shadow-blue-600 hover:border-blue-600" : `${weaponData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 shadow-green-600 hover:border-green-600" : `${weaponData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 shadow-purple-600 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-82 w-36 cursor-pointer items-center justify-center border transition-all ${activeSlot === "weapon" ? `border-2 ${weaponData?.rarity === "legendary" ? "border-yellow-600" : `${weaponData?.rarity === "epic" ? "border-purple-600" : `${weaponData?.rarity === "rare" ? "border-blue-600" : `${weaponData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
+              aria-label="Weapon Slot"
+              onClick={() => {
+                if (activeSlot != "weapon") setActiveSlot("weapon");
+                if (activeTab != "equipment") setActiveTab("equipment");
+              }}
+            >
+              {formData?.builds?.[activeBuildIndex]?.data?.equipment.weapon ? (
+                <div className="truncate p-1 text-sm">
+                  {formData?.builds?.[activeBuildIndex]?.data?.equipment.weapon}
+                </div>
+              ) : (
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
+                  <FaPlus />
+                </div>
+              )}
+              <div className="absolute -left-12 h-8 w-8 rounded border border-neutral-600 bg-neutral-700 shadow-lg"></div>
+            </button>
+          </div>
           <div className="flex flex-col gap-2">
-            <button
-              className={`active:scale-95 ${helmetData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 shadow-yellow-600 hover:border-yellow-600" : `${helmetData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 shadow-blue-600 hover:border-blue-600" : `${helmetData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 shadow-green-600 hover:border-green-600" : `${helmetData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 shadow-purple-600 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-26 w-28 cursor-pointer items-center justify-center border transition-all ${activeSlot === "helmet" ? `border-2 ${helmetData?.rarity === "legendary" ? "border-yellow-600" : `${helmetData?.rarity === "epic" ? "border-purple-600" : `${helmetData?.rarity === "rare" ? "border-blue-600" : `${helmetData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
-              aria-label="Helmet Slot"
-              onClick={() => {
-                if (activeSlot != "helmet") setActiveSlot("helmet");
-                if (activeTab != "equipment") setActiveTab("equipment");
-              }}
-            >
-              {formData?.builds?.[activeBuildIndex]?.data?.equipment.helmet ? (
-                <div className="truncate p-1 text-sm">
-                  {formData?.builds?.[activeBuildIndex]?.data?.equipment.helmet}
-                </div>
-              ) : (
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
-                  <FaPlus />
-                </div>
-              )}
-              <div className="absolute -right-12 h-8 w-8 rounded border border-neutral-600 bg-neutral-700 shadow-lg"></div>
-            </button>
-            <button
-              className={`active:scale-95 ${chestData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 shadow-yellow-600 hover:border-yellow-600" : `${chestData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 shadow-blue-600 hover:border-blue-600" : `${chestData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 shadow-green-600 hover:border-green-600" : `${chestData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 shadow-purple-600 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-26 w-28 cursor-pointer items-center justify-center border transition-all ${activeSlot === "chest" ? `border-2 ${chestData?.rarity === "legendary" ? "border-yellow-600" : `${chestData?.rarity === "epic" ? "border-purple-600" : `${chestData?.rarity === "rare" ? "border-blue-600" : `${chestData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
-              aria-label="Chest Slot"
-              onClick={() => {
-                if (activeSlot != "chest") setActiveSlot("chest");
-                if (activeTab != "equipment") setActiveTab("equipment");
-              }}
-            >
-              {formData?.builds?.[activeBuildIndex]?.data?.equipment.chest ? (
-                <div className="truncate p-1 text-sm">
-                  {formData?.builds?.[activeBuildIndex]?.data?.equipment.chest}
-                </div>
-              ) : (
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
-                  <FaPlus />
-                </div>
-              )}
-              <div className="absolute -right-12 h-8 w-8 rounded border border-neutral-600 bg-neutral-700 shadow-lg"></div>
-            </button>
-            <button
-              className={`active:scale-95 ${bootData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 shadow-yellow-600 hover:border-yellow-600" : `${bootData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 shadow-blue-600 hover:border-blue-600" : `${bootData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 shadow-green-600 hover:border-green-600" : `${bootData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 shadow-purple-600 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-26 w-28 cursor-pointer items-center justify-center border transition-all ${activeSlot === "boots" ? `border-2 ${bootData?.rarity === "legendary" ? "border-yellow-600" : `${bootData?.rarity === "epic" ? "border-purple-600" : `${bootData?.rarity === "rare" ? "border-blue-600" : `${bootData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
-              aria-label="Boots Slot"
-              onClick={() => {
-                if (activeSlot != "boots") setActiveSlot("boots");
-                if (activeTab != "equipment") setActiveTab("equipment");
-              }}
-            >
-              {formData?.builds?.[activeBuildIndex]?.data?.equipment.boots ? (
-                <div className="truncate p-1 text-sm">
-                  {formData?.builds?.[activeBuildIndex]?.data?.equipment.boots}
-                </div>
-              ) : (
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
-                  <FaPlus />
-                </div>
-              )}
-              <div className="absolute -right-12 h-8 w-8 rounded border border-neutral-600 bg-neutral-700 shadow-lg"></div>
-            </button>
+            <div className="bg-neutral-700">
+              <button
+                className={`active:scale-95 ${helmetData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 shadow-yellow-600 hover:border-yellow-600" : `${helmetData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 shadow-blue-600 hover:border-blue-600" : `${helmetData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 shadow-green-600 hover:border-green-600" : `${helmetData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 shadow-purple-600 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-26 w-28 cursor-pointer items-center justify-center border transition-all ${activeSlot === "helmet" ? `border-2 ${helmetData?.rarity === "legendary" ? "border-yellow-600" : `${helmetData?.rarity === "epic" ? "border-purple-600" : `${helmetData?.rarity === "rare" ? "border-blue-600" : `${helmetData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
+                aria-label="Helmet Slot"
+                onClick={() => {
+                  if (activeSlot != "helmet") setActiveSlot("helmet");
+                  if (activeTab != "equipment") setActiveTab("equipment");
+                }}
+              >
+                {formData?.builds?.[activeBuildIndex]?.data?.equipment
+                  .helmet ? (
+                  <div className="truncate p-1 text-sm">
+                    {
+                      formData?.builds?.[activeBuildIndex]?.data?.equipment
+                        .helmet
+                    }
+                  </div>
+                ) : (
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
+                    <FaPlus />
+                  </div>
+                )}
+                <div className="absolute -right-12 h-8 w-8 rounded border border-neutral-600 bg-neutral-700 shadow-lg"></div>
+              </button>
+            </div>
+            <div className="bg-neutral-700">
+              <button
+                className={`active:scale-95 ${chestData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 shadow-yellow-600 hover:border-yellow-600" : `${chestData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 shadow-blue-600 hover:border-blue-600" : `${chestData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 shadow-green-600 hover:border-green-600" : `${chestData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 shadow-purple-600 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-26 w-28 cursor-pointer items-center justify-center border transition-all ${activeSlot === "chest" ? `border-2 ${chestData?.rarity === "legendary" ? "border-yellow-600" : `${chestData?.rarity === "epic" ? "border-purple-600" : `${chestData?.rarity === "rare" ? "border-blue-600" : `${chestData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
+                aria-label="Chest Slot"
+                onClick={() => {
+                  if (activeSlot != "chest") setActiveSlot("chest");
+                  if (activeTab != "equipment") setActiveTab("equipment");
+                }}
+              >
+                {formData?.builds?.[activeBuildIndex]?.data?.equipment.chest ? (
+                  <div className="truncate p-1 text-sm">
+                    {
+                      formData?.builds?.[activeBuildIndex]?.data?.equipment
+                        .chest
+                    }
+                  </div>
+                ) : (
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
+                    <FaPlus />
+                  </div>
+                )}
+                <div className="absolute -right-12 h-8 w-8 rounded border border-neutral-600 bg-neutral-700 shadow-lg"></div>
+              </button>
+            </div>
+            <div className="bg-neutral-700">
+              <button
+                className={`active:scale-95 ${bootData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 shadow-yellow-600 hover:border-yellow-600" : `${bootData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 shadow-blue-600 hover:border-blue-600" : `${bootData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 shadow-green-600 hover:border-green-600" : `${bootData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 shadow-purple-600 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-26 w-28 cursor-pointer items-center justify-center border transition-all ${activeSlot === "boots" ? `border-2 ${bootData?.rarity === "legendary" ? "border-yellow-600" : `${bootData?.rarity === "epic" ? "border-purple-600" : `${bootData?.rarity === "rare" ? "border-blue-600" : `${bootData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
+                aria-label="Boots Slot"
+                onClick={() => {
+                  if (activeSlot != "boots") setActiveSlot("boots");
+                  if (activeTab != "equipment") setActiveTab("equipment");
+                }}
+              >
+                {formData?.builds?.[activeBuildIndex]?.data?.equipment.boots ? (
+                  <div className="truncate p-1 text-sm">
+                    {
+                      formData?.builds?.[activeBuildIndex]?.data?.equipment
+                        .boots
+                    }
+                  </div>
+                ) : (
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
+                    <FaPlus />
+                  </div>
+                )}
+                <div className="absolute -right-12 h-8 w-8 rounded border border-neutral-600 bg-neutral-700 shadow-lg"></div>
+              </button>
+            </div>
           </div>
         </div>
         <button

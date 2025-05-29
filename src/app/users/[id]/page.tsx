@@ -40,7 +40,7 @@ const User = async ({ params }: { params: Promise<{ id: string }> }) => {
             width={100}
             height={100}
             quality={100}
-            className="h-72 w-72 rounded-full outline-2 outline-white"
+            className="h-60 w-60 rounded-full border-2 border-white"
           />
           <h1 className="text-4xl font-bold">{user?.name}</h1>
           <div className="rounded bg-neutral-900 p-2">

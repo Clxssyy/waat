@@ -1,5 +1,7 @@
+import { redirect } from "next/navigation";
+
 const Page = () => {
-  return null;
+  redirect("/characters");
 };
 
 export default Page;
