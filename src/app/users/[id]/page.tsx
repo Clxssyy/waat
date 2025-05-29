@@ -5,8 +5,8 @@ import { auth } from "~/server/auth";
 import { api } from "~/trpc/server";
 import Footer from "~/app/_components/footer";
 
-const User = async ({ params }: { params: { id: string } }) => {
-  const { id } = params;
+const User = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;
   const session = await auth();
 
   const isCurrentUser = session?.user.id === id;
