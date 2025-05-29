@@ -12,7 +12,7 @@ export default async function BuildLayout({
   children: React.ReactNode;
   params: { characterId: string };
 }) {
-  const { characterId } = await params;
+  const { characterId } = params;
   const [character, session] = await Promise.all([
     api.character.getById({ id: characterId }),
     auth(),

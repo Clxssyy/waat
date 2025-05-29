@@ -42,7 +42,7 @@ const Builder = ({ character }: { character: Character }) => {
     else p.delete("build");
 
     router.replace(`${pathname}?${p.toString()}`);
-  }, [router, activeBuildIndex, formData, searchParams, character, pathname]);
+  }, [router, activeBuildIndex, formData, searchParams, pathname]);
 
   useEffect(updateParams, [updateParams]);
 
