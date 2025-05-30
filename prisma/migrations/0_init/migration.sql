@@ -66,19 +66,6 @@ CREATE TABLE "Character" (
 );
 
 -- CreateTable
-CREATE TABLE "Comment" (
-    "id" TEXT NOT NULL,
-    "content" TEXT NOT NULL,
-    "characterId" TEXT NOT NULL,
-    "userId" TEXT NOT NULL,
-    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
-    "replyToId" TEXT,
-
-    CONSTRAINT "Comment_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
 CREATE TABLE "VerificationToken" (
     "identifier" TEXT NOT NULL,
     "token" TEXT NOT NULL,
@@ -111,13 +98,4 @@ ALTER TABLE "Build" ADD CONSTRAINT "Build_characterId_fkey" FOREIGN KEY ("charac
 
 -- AddForeignKey
 ALTER TABLE "Character" ADD CONSTRAINT "Character_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "Comment" ADD CONSTRAINT "Comment_replyToId_fkey" FOREIGN KEY ("replyToId") REFERENCES "Comment"("id") ON DELETE CASCADE ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "Comment" ADD CONSTRAINT "Comment_characterId_fkey" FOREIGN KEY ("characterId") REFERENCES "Character"("id") ON DELETE CASCADE ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "Comment" ADD CONSTRAINT "Comment_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
