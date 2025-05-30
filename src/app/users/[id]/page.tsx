@@ -1,6 +1,5 @@
 import Image from "next/image";
 import CharacterCard from "~/app/_components/CharacterCard";
-import type { CharacterCardInfo } from "~/types";
 import { auth } from "~/server/auth";
 import { api } from "~/trpc/server";
 import Footer from "~/app/_components/Footer";

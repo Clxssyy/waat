@@ -294,4 +294,17 @@ export const characterRouter = createTRPCRouter({
         },
       });
     }),
+
+  addComment: protectedProcedure
+    .input(
+      z.object({
+        characterId: z.string(),
+        userId: z.string(),
+        replyId: z.string().optional(),
+        content: z.string(),
+      }),
+    )
+    .mutation(({ ctx, input }) => {
+      return;
+    }),
 });

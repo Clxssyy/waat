@@ -9,9 +9,9 @@ import type { SearchParams } from "~/types";
 export default async function Characters({
   searchParams,
 }: {
-  searchParams: SearchParams;
+  searchParams: Promise<SearchParams>;
 }) {
-  const { q, role, drifter } = searchParams;
+  const { q, role, drifter } = await searchParams;
   const [session, characters] = await Promise.all([
     auth(),
     api.character.getCharacterCardInfo({

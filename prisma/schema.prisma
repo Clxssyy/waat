@@ -48,9 +48,11 @@ model User {
     email         String?   @unique
     emailVerified DateTime?
     image         String?
+    createdAt     DateTime  @default(now())
     accounts      Account[]
     sessions      Session[]
     characters    Character[]
+    comments      Comment[]
 }
 
 model Build {
@@ -74,7 +76,23 @@ model Character {
     private   Boolean @default(false)
     clonedFrom String?
     builds   Build[]
+    comments Comment[]
     createdBy User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Comment {
+    id        String   @id @default(cuid())
+    content   String
+    characterId String
+    userId    String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    replyToId String? // Nullable for top-level comments
+    replyTo   Comment? @relation("CommentReplies", fields: [replyToId], references: [id], onDelete: Cascade)
+    replies   Comment[] @relation("CommentReplies")
+
+    character Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+    user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model VerificationToken {
