@@ -155,6 +155,12 @@ export const characterRouter = createTRPCRouter({
   update: protectedProcedure
     .input(formDataSchema)
     .mutation(async ({ ctx, input }) => {
+      const character = await ctx.db.character.findUnique({
+        where: { id: input.id },
+      });
+      if (!character) {
+        throw new Error("Character not found");
+      }
       return ctx.db.character.update({
         where: {
           id: input.id,
@@ -216,6 +222,22 @@ export const characterRouter = createTRPCRouter({
               },
             })),
           },
+        },
+      });
+    }),
+
+  delete: protectedProcedure
+    .input(z.object({ id: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      const character = await ctx.db.character.findUnique({
+        where: { id: input.id },
+      });
+      if (!character) {
+        throw new Error("Character not found");
+      }
+      return ctx.db.character.delete({
+        where: {
+          id: input.id,
         },
       });
     }),

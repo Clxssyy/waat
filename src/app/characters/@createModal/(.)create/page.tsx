@@ -21,8 +21,8 @@ const Create = () => {
   });
 
   return (
-    <div className="absolute flex h-full w-full items-center justify-center bg-black/40">
-      <div className="relative z-20 w-1/4 rounded border border-neutral-700 bg-neutral-800 p-4">
+    <div className="absolute z-20 flex h-full w-full items-center justify-center bg-black/70">
+      <div className="relative w-1/4 rounded border border-neutral-700 bg-neutral-800 p-4">
         <button
           onClick={() => {
             router.back();

@@ -1,9 +1,11 @@
 "use client";
 
+import Link from "next/link";
+import { FaTrash } from "react-icons/fa6";
 import { useBuildForm } from "~/app/_components/buildFormContext";
 
 const SettingsPage = () => {
-  const { formData, setFormData } = useBuildForm();
+  const { formData, setFormData, isCreator } = useBuildForm();
 
   return (
     <div className="m-2 flex grow flex-col gap-4 rounded border border-neutral-600 bg-neutral-700 p-2">
@@ -55,27 +57,40 @@ const SettingsPage = () => {
             <option value="tank">Tank</option>
           </select>
         </div>
-        <div>
-          <label htmlFor="privacy_select">Privacy</label>
-          <select
-            className="w-full rounded bg-neutral-800 p-2"
-            id="privacy_select"
-            value={formData?.private.toString()}
-            onChange={(e) => {
-              setFormData((prev) =>
-                prev
-                  ? {
-                      ...prev,
-                      private: !!JSON.parse(e.target.value),
-                    }
-                  : prev,
-              );
-            }}
-          >
-            <option value="true">Private</option>
-            <option value="false">Public</option>
-          </select>
-        </div>
+        {isCreator ? (
+          <>
+            <div>
+              <label htmlFor="privacy_select">Privacy</label>
+              <select
+                className="w-full rounded bg-neutral-800 p-2"
+                id="privacy_select"
+                value={formData?.private.toString()}
+                onChange={(e) => {
+                  setFormData((prev) =>
+                    prev
+                      ? {
+                          ...prev,
+                          private: !!JSON.parse(e.target.value),
+                        }
+                      : prev,
+                  );
+                }}
+              >
+                <option value="true">Private</option>
+                <option value="false">Public</option>
+              </select>
+            </div>
+            <div className="flex justify-center">
+              <Link
+                className="flex cursor-pointer items-center justify-center gap-1 rounded border border-red-400 bg-red-500 p-2 font-bold transition-all hover:scale-105 hover:brightness-125 active:scale-95"
+                href={`/characters/${formData.id}/delete`}
+              >
+                <FaTrash />
+                Delete
+              </Link>
+            </div>
+          </>
+        ) : null}
       </div>
     </div>
   );

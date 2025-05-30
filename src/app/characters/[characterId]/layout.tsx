@@ -8,8 +8,10 @@ import Sidebar from "~/app/_components/sidebar";
 export default async function BuildLayout({
   children,
   params,
+  deleteModal,
 }: {
   children: React.ReactNode;
+  deleteModal: React.ReactNode;
   params: Promise<{ characterId: string }>;
 }) {
   const { characterId } = await params;
@@ -25,13 +27,17 @@ export default async function BuildLayout({
   const isCreator = character.createdBy.id === session?.user.id;
 
   return (
-    <main className="flex w-full grow">
+    <>
       <SessionProvider>
         <BuildFormProvider character={character} isCreator={isCreator}>
-          <Sidebar />
-          {children}
+          {deleteModal}
+          <main className="flex w-full grow">
+            <Sidebar />
+
+            {children}
+          </main>
         </BuildFormProvider>
       </SessionProvider>
-    </main>
+    </>
   );
 }

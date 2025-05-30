@@ -131,13 +131,21 @@ const Search = ({ characters }: { characters: Character[] }) => {
           />
         </form>
       </div>
-      <div className="flex flex-col gap-2 p-4">
+      <div className="flex grow flex-col gap-2 p-4">
         <h2 className="text-lg font-bold">Builds</h2>
-        <div className="grid grid-cols-3 gap-2">
-          {filteredCharacters.map((character) => (
-            <CharacterCard key={character.id} character={character} />
-          ))}
-        </div>
+        {filteredCharacters ? (
+          <div className="grid grid-cols-3 gap-2">
+            {filteredCharacters.map((character) => (
+              <CharacterCard key={character.id} character={character} />
+            ))}
+          </div>
+        ) : (
+          <div className="flex grow items-center justify-center">
+            <p className="text-6xl font-bold text-neutral-700">
+              No Characters!
+            </p>
+          </div>
+        )}
       </div>
     </>
   );

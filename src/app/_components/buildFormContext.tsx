@@ -72,6 +72,7 @@ export const BuildFormProvider = ({
       },
       onError: (err) => {
         console.error("Save failed: " + err.message);
+        router.refresh();
       },
     });
 
@@ -88,6 +89,7 @@ export const BuildFormProvider = ({
       },
       onError: (err) => {
         console.error("Clone failed: " + err.message);
+        router.refresh();
       },
     });
 
