@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { useBuildForm } from "./buildFormContext";
 import data from "public/data.json";

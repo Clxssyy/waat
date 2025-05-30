@@ -3,21 +3,23 @@ import Link from "next/link";
 import { IoIosStarOutline } from "react-icons/io";
 import { FaEyeSlash } from "react-icons/fa6";
 import data from "public/data.json";
-import type { Character } from "~/types";
+import type { BuildData, CharacterCardInfo } from "~/types";
 
-const CharacterCard = ({ character }: { character: Character }) => {
+const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
   if (!character) return null;
 
-  const drifterData = character.builds.map((build) => ({
-    drifter: build.data.drifter,
-    data: Object.entries(data.drifter).find(
-      ([key]) => key === build.data.drifter,
-    ),
-  }));
+  const drifterData = character.builds.map((build) => {
+    const buildData = build.data as BuildData;
+    return {
+      drifter: buildData?.drifter,
+      data: Object.entries(data.drifter).find(
+        ([key]) => key === buildData?.drifter,
+      ),
+    };
+  });
 
   return (
     <Link
-      key={character.id}
       href={`/characters/${character.id}`}
       className="flex h-48 flex-col justify-between gap-2 rounded border border-neutral-800 bg-neutral-900 p-2 transition-all hover:scale-105 hover:brightness-125 active:scale-95"
     >

@@ -1,14 +1,24 @@
 import Link from "next/link";
 import { auth } from "~/server/auth";
 import { api } from "~/trpc/server";
-import type { Character } from "../../types";
 import Search from "../_components/search";
-import Footer from "../_components/footer";
+import Footer from "../_components/Footer";
+import CharacterCard from "../_components/CharacterCard";
+import type { SearchParams } from "~/types";
 
-export default async function Characters() {
+export default async function Characters({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}) {
+  const { q, role, drifter } = searchParams;
   const [session, characters] = await Promise.all([
     auth(),
-    api.character.getAll(),
+    api.character.getCharacterCardInfo({
+      role: role,
+      drifter: drifter,
+      q: q,
+    }),
   ]);
 
   return (
@@ -40,7 +50,23 @@ export default async function Characters() {
             </Link>
           </div>
         </div>
-        <Search characters={characters as Character[]} />
+        <Search />
+        <div className="flex grow flex-col gap-2 p-4">
+          <h2 className="text-lg font-bold">Builds</h2>
+          {characters ? (
+            <div className="grid grid-cols-3 gap-2">
+              {characters.map((character) => (
+                <CharacterCard key={character.id} character={character} />
+              ))}
+            </div>
+          ) : (
+            <div className="flex grow items-center justify-center">
+              <p className="text-6xl font-bold text-neutral-700">
+                No Characters!
+              </p>
+            </div>
+          )}
+        </div>
       </main>
       <Footer />
     </>

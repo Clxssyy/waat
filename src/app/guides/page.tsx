@@ -1,4 +1,4 @@
-import Footer from "../_components/footer";
+import Footer from "../_components/Footer";
 
 const Guides = () => {
   return (

@@ -6,12 +6,13 @@ import { IoClose } from "react-icons/io5";
 import { useBuildForm } from "~/app/_components/buildFormContext";
 import { api } from "~/trpc/react";
 
-const Delete = () => {
+const DeleteModal = () => {
   const { formData } = useBuildForm();
   const router = useRouter();
   const deleteCharacter = api.character.delete.useMutation({
     onSuccess: () => {
       router.replace("/characters");
+      router.refresh();
     },
     onError: (err) => {
       console.error("Delete failed: ", err.message);
@@ -62,4 +63,4 @@ const Delete = () => {
   );
 };
 
-export default Delete;
+export default DeleteModal;

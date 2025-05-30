@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { boolean, z } from "zod";
 import { formDataSchema } from "~/schemas";
 import {
   createTRPCRouter,
@@ -148,6 +148,59 @@ export const characterRouter = createTRPCRouter({
         include: {
           builds: true,
           createdBy: true,
+        },
+      });
+    }),
+
+  getCharacterCardInfo: publicProcedure
+    .input(
+      z
+        .object({
+          role: z.string().optional(),
+          drifter: z.string().optional(),
+          q: z.string().optional(),
+          includePrivate: boolean().optional(),
+          id: z.string().optional(),
+        })
+        .optional(),
+    )
+    .query(({ ctx, input }) => {
+      return ctx.db.character.findMany({
+        where: {
+          userId: input?.id ?? undefined,
+          private: input?.includePrivate ? undefined : false,
+          role: input?.role ?? undefined,
+          builds: input?.drifter
+            ? {
+                some: {
+                  data: {
+                    path: ["drifter"],
+                    equals: input.drifter,
+                  },
+                },
+              }
+            : undefined,
+          ...(input?.q && {
+            OR: [
+              { name: { contains: input.q, mode: "insensitive" } },
+              {
+                createdBy: { name: { contains: input.q, mode: "insensitive" } },
+              },
+            ],
+          }),
+        },
+        select: {
+          id: true,
+          name: true,
+          _count: { select: { builds: true } },
+          builds: { select: { data: true } },
+          role: true,
+          createdAt: true,
+          createdBy: true,
+          private: true,
+        },
+        orderBy: {
+          updatedAt: "desc",
         },
       });
     }),

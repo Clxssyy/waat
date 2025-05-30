@@ -1,15 +1,22 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { api } from "~/trpc/react";
 
 import type { ReactNode } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useSession } from "next-auth/react";
 import type { inferRouterOutputs } from "@trpc/server";
 import type { AppRouter } from "~/server/api/root";
 import type { z } from "zod";
 import { formDataSchema } from "~/schemas";
+import type { ActiveBuildIndex, ActiveSlots, ActiveTab } from "~/types";
 
 type Character = inferRouterOutputs<AppRouter>["character"]["getById"];
 type FormDataCharacter = z.infer<typeof formDataSchema>;
@@ -25,6 +32,12 @@ type BuildFormContextType = {
   isCloning: boolean;
   hasChanges: boolean;
   setHasChanges: React.Dispatch<React.SetStateAction<boolean>>;
+  activeBuildIndex: ActiveBuildIndex;
+  setActiveBuildIndex: React.Dispatch<React.SetStateAction<ActiveBuildIndex>>;
+  activeSlot: ActiveSlots;
+  setActiveSlot: React.Dispatch<React.SetStateAction<ActiveSlots>>;
+  activeTab: ActiveTab;
+  setActiveTab: React.Dispatch<React.SetStateAction<ActiveTab>>;
 };
 
 const BuildFormContext = createContext<BuildFormContextType | null>(null);
@@ -42,11 +55,39 @@ export const BuildFormProvider = ({
     throw new Error("BuildFormProvider requires a character prop");
   }
 
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+
+  const router = useRouter();
+
   const [formData, setFormData] = useState<FormDataCharacter>(
     formDataSchema.parse(character),
   );
 
-  const router = useRouter();
+  const _ = formData.builds.findIndex((build) => {
+    return build.id === searchParams.get("build");
+  });
+
+  const buildIndex = _ === -1 ? 0 : _;
+
+  const [activeBuildIndex, setActiveBuildIndex] = useState<ActiveBuildIndex>(
+    buildIndex as ActiveBuildIndex,
+  );
+
+  const updateParams = useCallback(() => {
+    const p = new URLSearchParams(searchParams.toString());
+    if (formData?.builds[activeBuildIndex]?.id)
+      p.set("build", formData?.builds[activeBuildIndex]?.id);
+    else p.delete("build");
+
+    router.replace(`${pathname}?${p.toString()}`);
+  }, [router, activeBuildIndex, formData, searchParams, pathname]);
+
+  useEffect(updateParams, [updateParams]);
+
+  const [activeTab, setActiveTab] = useState<ActiveTab>("equipment");
+  const [activeSlot, setActiveSlot] = useState<ActiveSlots>("weapon");
+
   const { data: session } = useSession();
 
   const [hasChanges, setHasChanges] = useState<boolean>(
@@ -118,6 +159,12 @@ export const BuildFormProvider = ({
         isCloning,
         hasChanges,
         setHasChanges,
+        activeBuildIndex,
+        setActiveBuildIndex,
+        activeSlot,
+        setActiveSlot,
+        activeTab,
+        setActiveTab,
       }}
     >
       {children}

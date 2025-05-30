@@ -2,152 +2,90 @@
 
 import { IoClose } from "react-icons/io5";
 import data from "public/data.json";
-import { useCallback, useEffect, useState } from "react";
-import CharacterCard from "~/app/_components/characterCard";
-import { usePathname, useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
-import type { Character } from "~/types";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useState, useEffect, useTransition } from "react";
 
-type Filter = {
-  roleFilter: string;
-  drifterFilter: string;
-  nameFilter: string;
-};
-
-const Search = ({ characters }: { characters: Character[] }) => {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
+const Search = () => {
   const router = useRouter();
+  const params = useSearchParams();
+  const [, startTransition] = useTransition();
 
-  const [filter, setFilter] = useState<Filter>({
-    roleFilter: searchParams.get("role") ?? "",
-    drifterFilter: searchParams.get("drifter") ?? "",
-    nameFilter: searchParams.get("q") ?? "",
-  });
-  const [filteredCharacters, setFilteredCharacters] =
-    useState<Character[]>(characters);
-
-  const updateParams = useCallback(() => {
-    const p = new URLSearchParams(searchParams.toString());
-    if (filter.drifterFilter) p.set("drifter", filter.drifterFilter);
-    else p.delete("drifter");
-    if (filter.roleFilter) p.set("role", filter.roleFilter);
-    else p.delete("role");
-    if (filter.nameFilter) p.set("q", filter.nameFilter);
-    else p.delete("q");
-
-    router.replace(`${pathname}?${p.toString()}`);
-  }, [router, filter, searchParams, pathname]);
+  const [q, setQ] = useState(params.get("q") ?? "");
+  const [role, setRole] = useState(params.get("role") ?? "");
+  const [drifter, setDrifter] = useState(params.get("drifter") ?? "");
 
   useEffect(() => {
-    const filterCharacters = characters.filter((character) => {
-      const roleCondition =
-        character.role === filter.roleFilter || filter.roleFilter === "";
-      const drifterCondition =
-        character.builds.filter((build) => {
-          return build.data?.drifter === filter.drifterFilter;
-        }).length >= 1 || filter.drifterFilter === "";
-      const nameCondition =
-        character.name.toLowerCase().includes(filter.nameFilter) ||
-        character.createdBy.name?.toLowerCase().includes(filter.nameFilter);
+    const id = setTimeout(() => {
+      const next = new URLSearchParams();
+      if (q) next.set("q", q);
+      if (role) next.set("role", role);
+      if (drifter) next.set("drifter", drifter);
 
-      return roleCondition && drifterCondition && nameCondition;
-    });
+      startTransition(() => {
+        router.replace(`/characters?${next.toString()}`);
+      });
+    }, 300);
+    return () => clearTimeout(id);
+  }, [q, role, drifter, router, startTransition]);
 
-    setFilteredCharacters(filterCharacters);
-  }, [characters, filter]);
-
-  useEffect(updateParams, [updateParams]);
+  const clearAll = () => {
+    setQ("");
+    setRole("");
+    setDrifter("");
+  };
 
   return (
-    <>
-      <div className="flex justify-center">
-        <form className="flex w-3/5 flex-col gap-2 p-4">
-          <div className="flex gap-2">
-            <select
-              className="w-1/5 cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg"
-              value={filter.roleFilter}
-              aria-label="Role Filter"
-              onChange={(e) => {
-                setFilter({
-                  ...filter,
-                  roleFilter: e.currentTarget.value,
-                });
-              }}
-            >
-              <option value="" hidden>
-                Role
+    <div className="flex justify-center">
+      <form className="flex w-3/5 flex-col gap-2 p-4">
+        <div className="flex gap-2">
+          <select
+            className="w-1/5 cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+            aria-label="Role Filter"
+          >
+            <option value="" hidden>
+              Role
+            </option>
+            <option value="dps">DPS</option>
+            <option value="healer">Healer</option>
+            <option value="tank">Tank</option>
+          </select>
+          <select
+            className="grow cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg"
+            value={drifter}
+            onChange={(e) => setDrifter(e.target.value)}
+          >
+            <option value="" hidden>
+              Drifter
+            </option>
+            {Object.entries(data.drifter).map(([drifterId]) => (
+              <option key={drifterId} value={drifterId}>
+                {drifterId.charAt(0).toUpperCase() +
+                  drifterId.slice(1).replaceAll("_", " ")}
               </option>
-              <option value="dps">DPS</option>
-              <option value="healer">Healer</option>
-              <option value="tank">Tank</option>
-            </select>
-            <select
-              className="grow cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg"
-              value={filter.drifterFilter}
-              onChange={(e) => {
-                setFilter({ ...filter, drifterFilter: e.currentTarget.value });
-              }}
-            >
-              <option value="" hidden>
-                Drifter
-              </option>
-              {Object.entries(data.drifter).map(([drifterId]) => (
-                <option key={drifterId} value={drifterId}>
-                  {drifterId.charAt(0).toUpperCase() +
-                    drifterId.slice(1).replaceAll("_", " ")}
-                </option>
-              ))}
-            </select>
-            <button
-              type="reset"
-              aria-label="Clear Filters"
-              className="cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40"
-              disabled={
-                filter.drifterFilter === "" &&
-                filter.roleFilter === "" &&
-                filter.nameFilter === ""
-              }
-              onClick={() => {
-                setFilter({
-                  roleFilter: "",
-                  nameFilter: "",
-                  drifterFilter: "",
-                });
-              }}
-            >
-              <IoClose className="text-lg" />
-            </button>
-          </div>
-          <input
-            type="search"
-            aria-label="Search Input"
-            placeholder="Search..."
-            className="w-full rounded border border-neutral-600 bg-neutral-700 p-1 text-lg"
-            value={filter.nameFilter}
-            onChange={(e) => {
-              setFilter({ ...filter, nameFilter: e.currentTarget.value });
-            }}
-          />
-        </form>
-      </div>
-      <div className="flex grow flex-col gap-2 p-4">
-        <h2 className="text-lg font-bold">Builds</h2>
-        {filteredCharacters ? (
-          <div className="grid grid-cols-3 gap-2">
-            {filteredCharacters.map((character) => (
-              <CharacterCard key={character.id} character={character} />
             ))}
-          </div>
-        ) : (
-          <div className="flex grow items-center justify-center">
-            <p className="text-6xl font-bold text-neutral-700">
-              No Characters!
-            </p>
-          </div>
-        )}
-      </div>
-    </>
+          </select>
+          <button
+            type="reset"
+            aria-label="Clear Filters"
+            className="cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40"
+            disabled={!drifter && !q && !role}
+            onClick={clearAll}
+          >
+            <IoClose className="text-lg" />
+          </button>
+        </div>
+        <input
+          type="search"
+          aria-label="Search Input"
+          placeholder="Search..."
+          className="w-full rounded border border-neutral-600 bg-neutral-700 p-1 text-lg"
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+        />
+      </form>
+    </div>
   );
 };
 

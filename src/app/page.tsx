@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { auth } from "~/server/auth";
-import Footer from "./_components/footer";
+import Footer from "./_components/Footer";
 
 export default async function Home() {
   const session = await auth();

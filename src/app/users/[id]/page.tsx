@@ -1,9 +1,9 @@
 import Image from "next/image";
-import CharacterCard from "~/app/_components/characterCard";
-import type { Character } from "~/types";
+import CharacterCard from "~/app/_components/CharacterCard";
+import type { CharacterCardInfo } from "~/types";
 import { auth } from "~/server/auth";
 import { api } from "~/trpc/server";
-import Footer from "~/app/_components/footer";
+import Footer from "~/app/_components/Footer";
 
 const User = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
@@ -15,17 +15,11 @@ const User = async ({ params }: { params: Promise<{ id: string }> }) => {
     api.user.getById({
       userId: id,
     }),
-    api.character.getAllByUserId({
-      userId: id,
+    api.character.getCharacterCardInfo({
+      id: id,
+      includePrivate: isCurrentUser,
     }),
   ]);
-
-  const filteredCharacters = characters.filter((character) => {
-    if (isCurrentUser) {
-      return true;
-    }
-    return character.private === false;
-  }) as Character[];
 
   return (
     <>
@@ -53,12 +47,10 @@ const User = async ({ params }: { params: Promise<{ id: string }> }) => {
         <div className="flex grow flex-col gap-2 divide-y divide-neutral-700">
           <h2 className="text-3xl font-bold">
             Characters{" "}
-            <span className="text-neutral-400">
-              ({filteredCharacters.length})
-            </span>
+            <span className="text-neutral-400">({characters.length})</span>
           </h2>
           <ul className="grid grid-cols-2 gap-2">
-            {filteredCharacters.map((character) => (
+            {characters.map((character) => (
               <li key={character.id}>
                 <CharacterCard character={character} />
               </li>

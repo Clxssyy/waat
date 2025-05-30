@@ -3,7 +3,8 @@ import { SessionProvider } from "next-auth/react";
 import { api } from "~/trpc/server";
 import { auth } from "~/server/auth";
 import { BuildFormProvider } from "~/app/_components/buildFormContext";
-import Sidebar from "~/app/_components/sidebar";
+import Sidebar from "~/app/_components/Sidebar";
+import { notFound } from "next/navigation";
 
 export default async function BuildLayout({
   children,
@@ -20,9 +21,7 @@ export default async function BuildLayout({
     auth(),
   ]);
 
-  if (!character) {
-    return <div>Character not found.</div>;
-  }
+  if (!character) notFound();
 
   const isCreator = character.createdBy.id === session?.user.id;
 
@@ -33,7 +32,6 @@ export default async function BuildLayout({
           {deleteModal}
           <main className="flex w-full grow">
             <Sidebar />
-
             {children}
           </main>
         </BuildFormProvider>
