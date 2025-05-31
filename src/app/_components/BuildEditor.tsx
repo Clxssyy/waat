@@ -18,7 +18,7 @@ const BuildEditor = () => {
   } = useBuildForm();
 
   return (
-    <div className="flex grow flex-col items-center">
+    <div className="flex w-full flex-col items-center overflow-hidden">
       <div className="grid h-8 w-11/12 grid-cols-5 gap-2">
         <div
           className={`flex items-center justify-center rounded-t-lg ${activeTab === "equipment" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}

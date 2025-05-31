@@ -30,3 +30,8 @@ export type SearchParams = {
 export type CharacterCardInfo = inferProcedureOutput<
   AppRouter["character"]["getCharacterCardInfo"]
 >[number];
+export type CommentType = inferProcedureOutput<AppRouter["comment"]["getById"]>;
+
+export type CommentWithReplies = CommentType & {
+  replies: CommentWithReplies[];
+};

@@ -1,4 +1,4 @@
-import { boolean, z } from "zod";
+import { z } from "zod";
 import { formDataSchema } from "~/schemas";
 import {
   createTRPCRouter,
@@ -115,6 +115,14 @@ export const characterRouter = createTRPCRouter({
             },
           },
           createdBy: true,
+          comments: {
+            include: {
+              user: true,
+            },
+            orderBy: {
+              createdAt: "desc",
+            },
+          },
         },
       });
     }),
@@ -159,7 +167,7 @@ export const characterRouter = createTRPCRouter({
           role: z.string().optional(),
           drifter: z.string().optional(),
           q: z.string().optional(),
-          includePrivate: boolean().optional(),
+          includePrivate: z.boolean().optional(),
           id: z.string().optional(),
         })
         .optional(),
@@ -300,11 +308,28 @@ export const characterRouter = createTRPCRouter({
       z.object({
         characterId: z.string(),
         userId: z.string(),
-        replyId: z.string().optional(),
-        content: z.string(),
+        parentId: z.string().nullable(),
+        content: z.string().min(1).max(360),
       }),
     )
-    .mutation(({ ctx, input }) => {
-      return;
+    .mutation(async ({ ctx, input }) => {
+      if (input.parentId) {
+        const parent = await ctx.db.comment.findUnique({
+          where: {
+            id: input.parentId,
+          },
+        });
+
+        if (!parent) return;
+      }
+
+      return ctx.db.comment.create({
+        data: {
+          content: input.content,
+          characterId: input.characterId,
+          userId: input.userId,
+          parentId: input.parentId ?? null,
+        },
+      });
     }),
 });

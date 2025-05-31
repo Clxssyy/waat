@@ -103,8 +103,8 @@ model Comment {
     userId    String
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-    replyToId String? // Nullable for top-level comments
-    replyTo   Comment? @relation("CommentReplies", fields: [replyToId], references: [id], onDelete: Cascade)
+    parentId String? // Nullable for top-level comments
+    parent   Comment? @relation("CommentReplies", fields: [parentId], references: [id], onDelete: Cascade)
     replies   Comment[] @relation("CommentReplies")
 
     character Character @relation(fields: [characterId], references: [id], onDelete: Cascade)

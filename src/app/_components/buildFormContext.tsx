@@ -97,14 +97,14 @@ export const BuildFormProvider = ({
 
   useEffect(() => {
     setFormData(formDataSchema.parse(character));
-  }, [character]);
+  }, []);
 
   useEffect(() => {
     setHasChanges(
       JSON.stringify(formData) !==
         JSON.stringify(formDataSchema.parse(character)),
     );
-  }, [formData, character]);
+  }, [formData]);
 
   const { mutate: saveMutation, status: saveStatus } =
     api.character.update.useMutation({
