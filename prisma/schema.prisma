@@ -53,6 +53,7 @@ model User {
     sessions      Session[]
     characters    Character[]
     comments      Comment[]
+    // ratings       Rating[]
 }
 
 model Build {
@@ -77,8 +78,23 @@ model Character {
     clonedFrom String?
     builds   Build[]
     comments Comment[]
+    // ratings  Rating[]
     createdBy User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
+
+// model Rating {
+//     id        String   @id @default(cuid())
+//     value     Int
+//     characterId String
+//     userId    String
+//     createdAt DateTime @default(now())
+//     updatedAt DateTime @updatedAt
+
+//     character Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+//     user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+//     @@unique([characterId, userId])
+// }
 
 model Comment {
     id        String   @id @default(cuid())
