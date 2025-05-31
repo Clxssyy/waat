@@ -23,30 +23,33 @@ const CommentCard = ({ comment }: { comment: CommentWithReplies }) => {
     (vote) => vote.userId === session.data?.user.id,
   )[0];
 
-  const ellipsisMenu = useRef<HTMLDivElement>(null);
-  const [voteValue, setVoteValue] = useState<number>(hasVoted?.value ?? 0);
+  const [voteValue, setVoteValue] = useState<-1 | 0 | 1>(
+    (hasVoted?.value as -1 | 1 | 0) ?? 0,
+  );
   const [voteTotalValue, setVoteTotalValue] = useState<number>(voteTotal);
   const [isReplying, setIsReplying] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  const didInitialize = useRef(false);
+  const lastDesiredVote = useRef<-1 | 0 | 1>(voteValue);
+  const debounceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const ellipsisMenu = useRef<HTMLDivElement>(null);
 
   const deleteComment = api.comment.delete.useMutation({
     onSuccess: () => {
       router.refresh();
     },
   });
-
   const createVote = api.comment.createVote.useMutation({
     onSuccess: () => {
       router.refresh();
     },
   });
-
   const updateVote = api.comment.updateVote.useMutation({
     onSuccess: () => {
       router.refresh();
     },
   });
-
   const deleteVote = api.comment.deleteVote.useMutation({
     onSuccess: () => {
       router.refresh();
@@ -73,6 +76,70 @@ const CommentCard = ({ comment }: { comment: CommentWithReplies }) => {
   useEffect(() => {
     setVoteTotalValue(voteTotal + voteValue - (hasVoted?.value ?? 0));
   }, [voteValue, voteTotal, hasVoted]);
+
+  useEffect(() => {
+    if (!didInitialize.current) {
+      setVoteValue((hasVoted?.value ?? 0) as -1 | 0 | 1);
+      didInitialize.current = true;
+    }
+  }, [hasVoted]);
+
+  useEffect(() => {
+    lastDesiredVote.current = voteValue;
+  }, [voteValue]);
+
+  useEffect(() => {
+    return () => {
+      if (debounceTimer.current) {
+        clearTimeout(debounceTimer.current);
+      }
+    };
+  }, []);
+
+  const flushMutation = () => {
+    const finalValue = lastDesiredVote.current;
+    if (finalValue === 0 && hasVoted) {
+      deleteVote.mutate({ id: hasVoted.id });
+    } else if (finalValue === 1 && hasVoted && hasVoted.value !== 1) {
+      updateVote.mutate({ id: hasVoted.id, value: 1 });
+    } else if (finalValue === 1 && !hasVoted) {
+      createVote.mutate({ commentId: comment.id, value: 1 });
+    } else if (finalValue === -1 && hasVoted && hasVoted.value !== -1) {
+      updateVote.mutate({ id: hasVoted.id, value: -1 });
+    } else if (finalValue === -1 && !hasVoted) {
+      createVote.mutate({ commentId: comment.id, value: -1 });
+    }
+  };
+
+  const mutationPending =
+    createVote.isPending || updateVote.isPending || deleteVote.isPending;
+
+  const onUpvoteClick = () => {
+    const newValue: -1 | 0 | 1 = voteValue === 1 ? 0 : 1;
+    setVoteValue(newValue);
+
+    if (debounceTimer.current) {
+      clearTimeout(debounceTimer.current);
+    }
+
+    debounceTimer.current = setTimeout(() => {
+      flushMutation();
+      debounceTimer.current = null;
+    }, 500);
+  };
+
+  const onDownvoteClick = () => {
+    const newValue: -1 | 0 | 1 = voteValue === -1 ? 0 : -1;
+    setVoteValue(newValue);
+
+    if (debounceTimer.current) {
+      clearTimeout(debounceTimer.current);
+    }
+    debounceTimer.current = setTimeout(() => {
+      flushMutation();
+      debounceTimer.current = null;
+    }, 500);
+  };
 
   return (
     <div className="flex flex-col gap-1">
@@ -131,62 +198,16 @@ const CommentCard = ({ comment }: { comment: CommentWithReplies }) => {
           <div className="flex gap-1">
             <button
               className="cursor-pointer"
-              disabled={
-                deleteVote.isPending ||
-                updateVote.isPending ||
-                createVote.isPending
-              }
-              onClick={() => {
-                if (hasVoted) {
-                  if (voteValue === 1) {
-                    setVoteValue(0);
-                    return deleteVote.mutate({ id: hasVoted.id });
-                  }
-
-                  setVoteValue(1);
-                  return updateVote.mutate({
-                    id: hasVoted.id,
-                    value: 1,
-                  });
-                }
-
-                setVoteValue(1);
-                return createVote.mutate({
-                  commentId: comment.id,
-                  value: 1,
-                });
-              }}
+              disabled={mutationPending}
+              onClick={onUpvoteClick}
             >
               {voteValue === 1 ? <BiSolidUpvote /> : <BiUpvote />}
             </button>
             <p className="text-sm">{voteTotalValue}</p>
             <button
               className="cursor-pointer"
-              disabled={
-                deleteVote.isPending ||
-                updateVote.isPending ||
-                createVote.isPending
-              }
-              onClick={() => {
-                if (hasVoted) {
-                  if (voteValue === -1) {
-                    setVoteValue(0);
-                    return deleteVote.mutate({ id: hasVoted.id });
-                  }
-
-                  setVoteValue(-1);
-                  return updateVote.mutate({
-                    id: hasVoted.id,
-                    value: -1,
-                  });
-                }
-
-                setVoteValue(-1);
-                return createVote.mutate({
-                  commentId: comment.id,
-                  value: -1,
-                });
-              }}
+              disabled={mutationPending}
+              onClick={onDownvoteClick}
             >
               {voteValue === -1 ? <BiSolidDownvote /> : <BiDownvote />}
             </button>
