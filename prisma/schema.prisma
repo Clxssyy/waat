@@ -54,6 +54,7 @@ model User {
     characters    Character[]
     comments      Comment[]
     ratings       Rating[]
+    votes         Vote[]
 }
 
 model Build {
@@ -96,6 +97,20 @@ model Rating {
     @@unique([characterId, userId])
 }
 
+model Vote {
+    id        String   @id @default(cuid())
+    value     Int
+    commentId String
+    userId    String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    comment   Comment @relation(fields: [commentId], references: [id], onDelete: Cascade)
+    user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@unique([commentId, userId])
+}
+
 model Comment {
     id        String   @id @default(cuid())
     content   String
@@ -106,6 +121,7 @@ model Comment {
     parentId String? // Nullable for top-level comments
     parent   Comment? @relation("CommentReplies", fields: [parentId], references: [id], onDelete: Cascade)
     replies   Comment[] @relation("CommentReplies")
+    votes     Vote[]
 
     character Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
     user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)

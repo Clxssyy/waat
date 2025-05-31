@@ -6,16 +6,48 @@ import { FaEllipsisVertical, FaReply } from "react-icons/fa6";
 import { api } from "~/trpc/react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { BiDownvote, BiUpvote } from "react-icons/bi";
+import {
+  BiDownvote,
+  BiSolidDownvote,
+  BiSolidUpvote,
+  BiUpvote,
+} from "react-icons/bi";
 
 const CommentCard = ({ comment }: { comment: CommentWithReplies }) => {
   const session = useSession();
   const router = useRouter();
+
+  const voteTotal = comment.votes.reduce((prev, vote) => prev + vote.value, 0);
+  const isAuthor = comment.userId === session.data?.user.id;
+  const hasVoted = comment.votes.filter(
+    (vote) => vote.userId === session.data?.user.id,
+  )[0];
+
   const ellipsisMenu = useRef<HTMLDivElement>(null);
+  const [voteValue, setVoteValue] = useState<number>(hasVoted?.value ?? 0);
+  const [voteTotalValue, setVoteTotalValue] = useState<number>(voteTotal);
   const [isReplying, setIsReplying] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const deleteComment = api.comment.delete.useMutation({
+    onSuccess: () => {
+      router.refresh();
+    },
+  });
+
+  const createVote = api.comment.createVote.useMutation({
+    onSuccess: () => {
+      router.refresh();
+    },
+  });
+
+  const updateVote = api.comment.updateVote.useMutation({
+    onSuccess: () => {
+      router.refresh();
+    },
+  });
+
+  const deleteVote = api.comment.deleteVote.useMutation({
     onSuccess: () => {
       router.refresh();
     },
@@ -38,7 +70,9 @@ const CommentCard = ({ comment }: { comment: CommentWithReplies }) => {
     };
   }, [isMenuOpen]);
 
-  const isAuthor = comment.userId === session.data?.user.id;
+  useEffect(() => {
+    setVoteTotalValue(voteTotal + voteValue - (hasVoted?.value ?? 0));
+  }, [voteValue, voteTotal, hasVoted]);
 
   return (
     <div className="flex flex-col gap-1">
@@ -57,7 +91,7 @@ const CommentCard = ({ comment }: { comment: CommentWithReplies }) => {
             />
             <h2 className="text-sm">{comment?.user.name}</h2>
           </div>
-          <div className="h-3/5 rounded border border-neutral-400" />
+          <div className="h-3/5 rounded border border-neutral-600" />
           <p className="text-sm">{comment?.createdAt.toLocaleDateString()}</p>
         </div>
         <div className="relative" ref={ellipsisMenu}>
@@ -95,12 +129,66 @@ const CommentCard = ({ comment }: { comment: CommentWithReplies }) => {
             {comment?.content}
           </p>
           <div className="flex gap-1">
-            <button>
-              <BiUpvote />
+            <button
+              className="cursor-pointer"
+              disabled={
+                deleteVote.isPending ||
+                updateVote.isPending ||
+                createVote.isPending
+              }
+              onClick={() => {
+                if (hasVoted) {
+                  if (voteValue === 1) {
+                    setVoteValue(0);
+                    return deleteVote.mutate({ id: hasVoted.id });
+                  }
+
+                  setVoteValue(1);
+                  return updateVote.mutate({
+                    id: hasVoted.id,
+                    value: 1,
+                  });
+                }
+
+                setVoteValue(1);
+                return createVote.mutate({
+                  commentId: comment.id,
+                  value: 1,
+                });
+              }}
+            >
+              {voteValue === 1 ? <BiSolidUpvote /> : <BiUpvote />}
             </button>
-            <p className="text-sm">0</p>
-            <button>
-              <BiDownvote />
+            <p className="text-sm">{voteTotalValue}</p>
+            <button
+              className="cursor-pointer"
+              disabled={
+                deleteVote.isPending ||
+                updateVote.isPending ||
+                createVote.isPending
+              }
+              onClick={() => {
+                if (hasVoted) {
+                  if (voteValue === -1) {
+                    setVoteValue(0);
+                    return deleteVote.mutate({ id: hasVoted.id });
+                  }
+
+                  setVoteValue(-1);
+                  return updateVote.mutate({
+                    id: hasVoted.id,
+                    value: -1,
+                  });
+                }
+
+                setVoteValue(-1);
+                return createVote.mutate({
+                  commentId: comment.id,
+                  value: -1,
+                });
+              }}
+            >
+              {voteValue === -1 ? <BiSolidDownvote /> : <BiDownvote />}
             </button>
             <button
               className="flex cursor-pointer items-center gap-1 text-sm"

@@ -60,7 +60,6 @@ const CommentInput = ({
               if (!newComment) return;
 
               addComment.mutate({
-                userId: session.data?.user.id,
                 content: newComment,
                 characterId: formData.id,
                 parentId: parentId,
@@ -78,7 +77,6 @@ const CommentInput = ({
             if (!newComment) return;
 
             addComment.mutate({
-              userId: session.data?.user.id,
               content: newComment,
               characterId: formData.id,
               parentId: parentId,

@@ -118,6 +118,7 @@ export const characterRouter = createTRPCRouter({
           comments: {
             include: {
               user: true,
+              votes: true,
             },
             orderBy: {
               createdAt: "desc",
@@ -307,7 +308,6 @@ export const characterRouter = createTRPCRouter({
     .input(
       z.object({
         characterId: z.string(),
-        userId: z.string(),
         parentId: z.string().nullable(),
         content: z.string().min(1).max(360),
       }),
@@ -327,7 +327,7 @@ export const characterRouter = createTRPCRouter({
         data: {
           content: input.content,
           characterId: input.characterId,
-          userId: input.userId,
+          userId: ctx.session.user.id,
           parentId: input.parentId ?? null,
         },
       });
