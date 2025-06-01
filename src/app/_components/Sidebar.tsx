@@ -5,12 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaCog } from "react-icons/fa";
 import { FaHammer, FaPencil } from "react-icons/fa6";
-import {
-  IoIosStar,
-  IoIosStarHalf,
-  IoIosStarOutline,
-  IoMdArrowRoundBack,
-} from "react-icons/io";
+import { IoIosStar, IoIosStarHalf, IoMdArrowRoundBack } from "react-icons/io";
 import { useBuildForm } from "./buildFormContext";
 
 const Sidebar = () => {

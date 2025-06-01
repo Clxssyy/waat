@@ -19,9 +19,9 @@ const CommentCard = ({ comment }: { comment: CommentWithReplies }) => {
 
   const voteTotal = comment.votes.reduce((prev, vote) => prev + vote.value, 0);
   const isAuthor = comment.userId === session.data?.user.id;
-  const hasVoted = comment.votes.filter(
+  const hasVoted = comment.votes.find(
     (vote) => vote.userId === session.data?.user.id,
-  )[0];
+  );
 
   const [voteValue, setVoteValue] = useState<-1 | 0 | 1>(
     (hasVoted?.value as -1 | 1 | 0) ?? 0,
