@@ -10,9 +10,11 @@ export default async function BuildLayout({
   children,
   params,
   deleteModal,
+  rateModal,
 }: {
   children: React.ReactNode;
   deleteModal: React.ReactNode;
+  rateModal: React.ReactNode;
   params: Promise<{ characterId: string }>;
 }) {
   const { characterId } = await params;
@@ -30,6 +32,7 @@ export default async function BuildLayout({
       <SessionProvider>
         <BuildFormProvider character={character} isCreator={isCreator}>
           {deleteModal}
+          {rateModal}
           <main className="flex w-full grow">
             <Sidebar />
             {children}

@@ -114,6 +114,12 @@ export const characterRouter = createTRPCRouter({
               createdAt: "asc",
             },
           },
+          ratings: true,
+          _count: {
+            select: {
+              ratings: true,
+            },
+          },
           createdBy: true,
           comments: {
             include: {
@@ -329,6 +335,56 @@ export const characterRouter = createTRPCRouter({
           characterId: input.characterId,
           userId: ctx.session.user.id,
           parentId: input.parentId ?? null,
+        },
+      });
+    }),
+
+  addRating: protectedProcedure
+    .input(
+      z.object({
+        characterId: z.string(),
+        value: z.number(),
+      }),
+    )
+    .mutation(async ({ ctx, input }) => {
+      const character = await ctx.db.character.findUnique({
+        where: {
+          id: input.characterId,
+        },
+      });
+
+      if (!character) return;
+
+      if (character.id === ctx.session.user.id) return;
+
+      const hasRated = await ctx.db.rating.findUnique({
+        where: {
+          characterId_userId: {
+            userId: ctx.session.user.id,
+            characterId: input.characterId,
+          },
+        },
+      });
+
+      if (hasRated) {
+        return ctx.db.rating.update({
+          where: {
+            characterId_userId: {
+              userId: ctx.session.user.id,
+              characterId: input.characterId,
+            },
+          },
+          data: {
+            value: input.value,
+          },
+        });
+      }
+
+      return ctx.db.rating.create({
+        data: {
+          value: input.value,
+          characterId: input.characterId,
+          userId: ctx.session.user.id,
         },
       });
     }),

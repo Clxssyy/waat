@@ -5,7 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaCog } from "react-icons/fa";
 import { FaHammer, FaPencil } from "react-icons/fa6";
-import { IoIosStarOutline, IoMdArrowRoundBack } from "react-icons/io";
+import {
+  IoIosStar,
+  IoIosStarHalf,
+  IoIosStarOutline,
+  IoMdArrowRoundBack,
+} from "react-icons/io";
 import { useBuildForm } from "./buildFormContext";
 
 const Sidebar = () => {
@@ -30,6 +35,13 @@ const Sidebar = () => {
 
   const creator = character.createdBy;
 
+  const totalRating = character.ratings.reduce(
+    (prev, rate) => prev + rate.value,
+    0,
+  );
+
+  const averageRating = totalRating / character._count.ratings;
+
   return (
     <div className="flex min-w-1/6 flex-col justify-between border-r border-neutral-700 bg-neutral-800">
       <div className="flex flex-col divide-y divide-neutral-700">
@@ -41,18 +53,63 @@ const Sidebar = () => {
           <IoMdArrowRoundBack />
         </Link>
         <div className="flex flex-col divide-y divide-neutral-700">
-          <div className="texl-lg flex items-center justify-center gap-4 py-4">
-            <div className="flex">
-              <IoIosStarOutline className="h-5 w-5" />
-              <IoIosStarOutline className="h-5 w-5" />
-              <IoIosStarOutline className="h-5 w-5" />
-              <IoIosStarOutline className="h-5 w-5" />
-              <IoIosStarOutline className="h-5 w-5" />
+          <Link
+            className="texl-lg flex cursor-pointer items-center justify-center gap-4 bg-neutral-800 py-4 hover:brightness-125"
+            href={isCreator ? "" : `/characters/${character.id}/rate`}
+          >
+            <div className="flex text-2xl">
+              {averageRating > 0 && averageRating < 1 ? (
+                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
+              ) : (
+                <IoIosStar
+                  className={`${
+                    averageRating >= 1 ? "text-yellow-300" : "text-transparent"
+                  } stroke-yellow-300 stroke-20`}
+                />
+              )}
+              {averageRating > 1 && averageRating < 2 ? (
+                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
+              ) : (
+                <IoIosStar
+                  className={`${
+                    averageRating >= 2 ? "text-yellow-300" : "text-transparent"
+                  } stroke-yellow-300 stroke-20`}
+                />
+              )}
+              {averageRating > 2 && averageRating < 3 ? (
+                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
+              ) : (
+                <IoIosStar
+                  className={`${
+                    averageRating >= 3 ? "text-yellow-300" : "text-transparent"
+                  } stroke-yellow-300 stroke-20`}
+                />
+              )}
+
+              {averageRating > 3 && averageRating < 4 ? (
+                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
+              ) : (
+                <IoIosStar
+                  className={`${
+                    averageRating >= 4 ? "text-yellow-300" : "text-transparent"
+                  } stroke-yellow-300 stroke-20`}
+                />
+              )}
+              {averageRating > 4 && averageRating < 5 ? (
+                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
+              ) : (
+                <IoIosStar
+                  className={`${
+                    averageRating >= 5 ? "text-yellow-300" : "text-transparent"
+                  } stroke-yellow-300 stroke-20`}
+                />
+              )}
             </div>
             <p className="text-neutral-400">
-              <span className="text-white">0.0</span> out of 5 (0)
+              <span className="text-white">{averageRating || 0}</span> out of 5
+              ({character._count.ratings})
             </p>
-          </div>
+          </Link>
           <div className="flex flex-col gap-2 p-2">
             <Link
               href={`/characters/${characterId}`}

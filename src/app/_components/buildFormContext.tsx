@@ -96,8 +96,9 @@ export const BuildFormProvider = ({
   );
 
   useEffect(() => {
+    if (hasChanges) return;
     setFormData(formDataSchema.parse(character));
-  }, []);
+  }, [character]);
 
   useEffect(() => {
     setHasChanges(

@@ -3,6 +3,7 @@
 import { IoIosStarOutline, IoMdShare } from "react-icons/io";
 import { useBuildForm } from "./buildFormContext";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 const BuilderHeader = () => {
   const {
@@ -56,13 +57,16 @@ const BuilderHeader = () => {
         {isCreator ? (
           ""
         ) : (
-          <button className="flex cursor-pointer items-center justify-center gap-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95">
+          <Link
+            className="flex cursor-pointer items-center justify-center gap-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95"
+            href={`/characters/${character.id}/rate`}
+          >
             <IoIosStarOutline />
             Rate
-          </button>
+          </Link>
         )}
         <button
-          className="flex aspect-square h-full cursor-pointer items-center justify-center rounded border border-neutral-700 bg-neutral-800 p-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95"
+          className="flex aspect-square h-[34px] cursor-pointer items-center justify-center rounded border border-neutral-700 bg-neutral-800 p-1 transition-all hover:brightness-125 active:scale-95"
           aria-label="Share"
           onClick={async () => {
             await navigator.clipboard.writeText(window.location.href);

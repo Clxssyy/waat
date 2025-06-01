@@ -27,9 +27,9 @@ const Create = () => {
           onClick={() => {
             router.back();
           }}
-          className="absolute -top-6 -right-6 cursor-pointer p-1"
+          className="absolute -top-7 -right-7 cursor-pointer p-1"
         >
-          <IoClose className="text-xl hover:text-red-400" />
+          <IoClose className="text-2xl hover:text-red-400" />
         </button>
         <div className="flex flex-col items-center gap-2">
           <h2 className="text-lg font-bold">Create Character</h2>
