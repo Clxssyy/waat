@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { IoIosStarOutline } from "react-icons/io";
 import { FaEyeSlash } from "react-icons/fa6";
 import data from "public/data.json";
 import type { BuildData, CharacterCardInfo } from "~/types";
+import { IoIosStar, IoIosStarHalf } from "react-icons/io";
 
 const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
   if (!character) return null;
@@ -17,6 +17,13 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
       ),
     };
   });
+
+  const totalRating = character.ratings.reduce(
+    (prev, rate) => prev + rate.value,
+    0,
+  );
+
+  const averageRating = totalRating / character._count.ratings;
 
   return (
     <Link
@@ -49,7 +56,7 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
         </div>
       </div>
       <div className="flex justify-between">
-        <div className="flex items-center gap-2">
+        <div className="flex items-end gap-2">
           {character.role ? (
             <span className="rounded border border-neutral-700 bg-neutral-800 p-1">
               {character.role === "dps"
@@ -76,14 +83,57 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
             />
             <h4 className="text-sm">{character.createdBy.name}</h4>
           </div>
-          <div className="flex items-center gap-1 text-sm">
-            <span>(0 Votes)</span>
-            <div className="flex">
-              <IoIosStarOutline className="h-4 w-4" />
-              <IoIosStarOutline className="h-4 w-4" />
-              <IoIosStarOutline className="h-4 w-4" />
-              <IoIosStarOutline className="h-4 w-4" />
-              <IoIosStarOutline className="h-4 w-4" />
+          <div className="flex items-center gap-1">
+            <span className="text-sm text-neutral-400">
+              ({character._count.ratings})
+            </span>
+            <div className="flex text-lg">
+              {averageRating > 0 && averageRating < 1 ? (
+                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
+              ) : (
+                <IoIosStar
+                  className={`${
+                    averageRating >= 1 ? "text-yellow-300" : "text-transparent"
+                  } stroke-yellow-300 stroke-20`}
+                />
+              )}
+              {averageRating > 1 && averageRating < 2 ? (
+                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
+              ) : (
+                <IoIosStar
+                  className={`${
+                    averageRating >= 2 ? "text-yellow-300" : "text-transparent"
+                  } stroke-yellow-300 stroke-20`}
+                />
+              )}
+              {averageRating > 2 && averageRating < 3 ? (
+                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
+              ) : (
+                <IoIosStar
+                  className={`${
+                    averageRating >= 3 ? "text-yellow-300" : "text-transparent"
+                  } stroke-yellow-300 stroke-20`}
+                />
+              )}
+
+              {averageRating > 3 && averageRating < 4 ? (
+                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
+              ) : (
+                <IoIosStar
+                  className={`${
+                    averageRating >= 4 ? "text-yellow-300" : "text-transparent"
+                  } stroke-yellow-300 stroke-20`}
+                />
+              )}
+              {averageRating > 4 && averageRating < 5 ? (
+                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
+              ) : (
+                <IoIosStar
+                  className={`${
+                    averageRating >= 5 ? "text-yellow-300" : "text-transparent"
+                  } stroke-yellow-300 stroke-20`}
+                />
+              )}
             </div>
           </div>
         </div>

@@ -207,8 +207,13 @@ export const characterRouter = createTRPCRouter({
         select: {
           id: true,
           name: true,
-          _count: { select: { builds: true } },
+          _count: { select: { builds: true, ratings: true } },
           builds: { select: { data: true } },
+          ratings: {
+            select: {
+              value: true,
+            },
+          },
           role: true,
           createdAt: true,
           createdBy: true,
