@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { FaCog } from "react-icons/fa";
 import { FaHammer, FaPencil } from "react-icons/fa6";
 import { IoIosStar, IoIosStarHalf, IoMdArrowRoundBack } from "react-icons/io";
@@ -10,6 +10,7 @@ import { useBuildForm } from "./buildFormContext";
 
 const Sidebar = () => {
   const pathname = usePathname();
+  const router = useRouter();
   const pathSplit = pathname.split("/");
   const characterId = pathSplit[2];
   const activePage = pathSplit[3];
@@ -40,13 +41,15 @@ const Sidebar = () => {
   return (
     <div className="flex min-w-1/6 flex-col justify-between border-r border-neutral-700 bg-neutral-800">
       <div className="flex flex-col divide-y divide-neutral-700">
-        <Link
-          href="/characters"
+        <button
+          onClick={() => router.back()}
+          type="button"
+          aria-label="Return to previous page"
           className="flex w-full items-center justify-between bg-neutral-800 p-4 text-lg hover:brightness-125"
         >
           <span>Return</span>
           <IoMdArrowRoundBack />
-        </Link>
+        </button>
         <div className="flex flex-col divide-y divide-neutral-700">
           <Link
             className="texl-lg flex cursor-pointer items-center justify-center gap-4 bg-neutral-800 py-4 hover:brightness-125"

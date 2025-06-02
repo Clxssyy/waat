@@ -3,22 +3,34 @@ import CharacterCard from "~/app/_components/CharacterCard";
 import { auth } from "~/server/auth";
 import { api } from "~/trpc/server";
 import Footer from "~/app/_components/Footer";
+import type { SearchParams } from "~/types";
 
-const User = async ({ params }: { params: Promise<{ id: string }> }) => {
+const User = async ({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<SearchParams>;
+}) => {
   const { id } = await params;
+  const { page, sort } = await searchParams;
   const session = await auth();
 
   const isCurrentUser = session?.user.id === id;
 
-  const [user, characters] = await Promise.all([
+  const [user, cardInfo] = await Promise.all([
     api.user.getById({
       userId: id,
     }),
     api.character.getCharacterCardInfo({
-      id: id,
+      userId: id,
       includePrivate: isCurrentUser,
+      page: page,
+      sort: sort,
     }),
   ]);
+
+  const characters = cardInfo.characters;
 
   return (
     <>

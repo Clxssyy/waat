@@ -169,60 +169,104 @@ export const characterRouter = createTRPCRouter({
 
   getCharacterCardInfo: publicProcedure
     .input(
-      z
-        .object({
-          role: z.string().optional(),
-          drifter: z.string().optional(),
-          q: z.string().optional(),
-          includePrivate: z.boolean().optional(),
-          id: z.string().optional(),
-        })
-        .optional(),
+      z.object({
+        role: z.string().optional(),
+        drifter: z.string().optional(),
+        q: z.string().optional(),
+        includePrivate: z.boolean().optional(),
+        userId: z.string().optional(),
+        page: z.string().default("1"),
+        sort: z.enum(["popular", "updated"]).default("popular"),
+      }),
     )
-    .query(({ ctx, input }) => {
-      return ctx.db.character.findMany({
-        where: {
-          userId: input?.id ?? undefined,
-          private: input?.includePrivate ? undefined : false,
-          role: input?.role ?? undefined,
-          builds: input?.drifter
-            ? {
-                some: {
-                  data: {
-                    path: ["drifter"],
-                    equals: input.drifter,
-                  },
+    .query(async ({ ctx, input }) => {
+      const page = parseInt(input.page, 10);
+      const pageSize = 18;
+      const skip = (page - 1) * pageSize;
+      const where: {
+        userId?: string;
+        private?: boolean;
+        role?: string;
+        builds?: {
+          some: {
+            data: {
+              path: string[];
+              equals: string | undefined;
+            };
+          };
+        };
+        OR?: Array<{
+          name?: { contains: string; mode: "insensitive" };
+          createdBy?: { name: { contains: string; mode: "insensitive" } };
+        }>;
+      } = {
+        userId: input.userId ?? undefined,
+        private: input.includePrivate ? undefined : false,
+        role: input.role ?? undefined,
+        builds: input.drifter
+          ? {
+              some: {
+                data: {
+                  path: ["drifter"],
+                  equals: input.drifter || undefined,
                 },
-              }
-            : undefined,
-          ...(input?.q && {
-            OR: [
-              { name: { contains: input.q, mode: "insensitive" } },
-              {
-                createdBy: { name: { contains: input.q, mode: "insensitive" } },
               },
-            ],
-          }),
-        },
-        select: {
-          id: true,
-          name: true,
-          _count: { select: { builds: true, ratings: true } },
-          builds: { select: { data: true } },
+            }
+          : undefined,
+        ...(input.q && {
+          OR: [
+            { name: { contains: input.q, mode: "insensitive" } },
+            {
+              createdBy: { name: { contains: input.q, mode: "insensitive" } },
+            },
+          ],
+        }),
+      };
+
+      const characters = await ctx.db.character.findMany({
+        where,
+        include: {
           ratings: {
             select: {
               value: true,
             },
           },
-          role: true,
-          createdAt: true,
-          createdBy: true,
-          private: true,
+          builds: {
+            select: {
+              data: true,
+            },
+          },
+          createdBy: {
+            select: {
+              name: true,
+              image: true,
+            },
+          },
+          _count: {
+            select: {
+              ratings: true,
+              builds: true,
+            },
+          },
         },
-        orderBy: {
-          updatedAt: "desc",
-        },
+        orderBy:
+          input.sort === "updated"
+            ? { updatedAt: "desc" }
+            : { ratings: { _count: "desc" } },
+        take: pageSize,
+        skip,
       });
+
+      const totalCount = await ctx.db.character.count({
+        where,
+      });
+      const totalPages = Math.ceil(totalCount / pageSize);
+
+      return {
+        characters,
+        totalPages,
+        currentPage: page,
+      };
     }),
 
   update: protectedProcedure

@@ -5,21 +5,28 @@ import Search from "../_components/search";
 import Footer from "../_components/Footer";
 import CharacterCard from "../_components/CharacterCard";
 import type { SearchParams } from "~/types";
+import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
 export default async function Characters({
   searchParams,
 }: {
   searchParams: Promise<SearchParams>;
 }) {
-  const { q, role, drifter } = await searchParams;
-  const [session, characters] = await Promise.all([
+  const { q, role, drifter, page, sort } = await searchParams;
+  const [session, cardInfo] = await Promise.all([
     auth(),
     api.character.getCharacterCardInfo({
       role: role,
       drifter: drifter,
       q: q,
+      page: page,
+      sort: sort,
     }),
   ]);
+
+  const characters = cardInfo.characters;
+  const totalPages = cardInfo.totalPages;
+  const currentPage = parseInt(page ?? "1", 10);
 
   return (
     <>
@@ -38,6 +45,7 @@ export default async function Characters({
           <div className="flex gap-2">
             <Link
               href={session ? "/characters/create" : "/api/auth/signin"}
+              replace
               className="rounded border border-green-600 bg-green-700 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-105 hover:brightness-125 active:scale-95"
             >
               Create
@@ -53,12 +61,68 @@ export default async function Characters({
         <Search />
         <div className="flex grow flex-col gap-2 p-4">
           <h2 className="text-lg font-bold">Builds</h2>
-          {characters ? (
-            <div className="grid grid-cols-3 gap-2">
-              {characters.map((character) => (
-                <CharacterCard key={character.id} character={character} />
-              ))}
-            </div>
+          {characters.length >= 1 ? (
+            <>
+              <div className="grid grid-cols-3 gap-2">
+                {characters.map((character) => (
+                  <CharacterCard key={character.id} character={character} />
+                ))}
+              </div>
+              <div className="flex h-16 items-center justify-center">
+                {currentPage > 1 ? (
+                  <Link
+                    href={`/characters?${new URLSearchParams({
+                      ...(q ? { q } : {}),
+                      ...(role ? { role } : {}),
+                      ...(drifter ? { drifter } : {}),
+                      page: (currentPage - 1).toString(),
+                    }).toString()}`}
+                    className="mx-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95"
+                  >
+                    <IoChevronBack />
+                  </Link>
+                ) : (
+                  <span className="mx-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1">
+                    <IoChevronBack />
+                  </span>
+                )}
+                {Array.from({ length: totalPages }).map((_, index) => (
+                  <Link
+                    key={index}
+                    href={`/characters?${new URLSearchParams({
+                      ...(q ? { q } : {}),
+                      ...(role ? { role } : {}),
+                      ...(drifter ? { drifter } : {}),
+                      page: (index + 1).toString(),
+                    }).toString()}`}
+                    className={`${parseInt(page ?? "1") === index + 1 ? "brightness-125" : ""} mx-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95 ${
+                      page === (index + 1).toString()
+                        ? "bg-neutral-700 text-white"
+                        : "text-neutral-300"
+                    }`}
+                  >
+                    {index + 1}
+                  </Link>
+                ))}
+                {currentPage < totalPages ? (
+                  <Link
+                    href={`/characters?${new URLSearchParams({
+                      ...(q ? { q } : {}),
+                      ...(role ? { role } : {}),
+                      ...(drifter ? { drifter } : {}),
+                      page: (currentPage + 1).toString(),
+                    }).toString()}`}
+                    className="mx-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95"
+                  >
+                    <IoChevronForward />
+                  </Link>
+                ) : (
+                  <span className="mx-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1">
+                    <IoChevronForward />
+                  </span>
+                )}
+              </div>
+            </>
           ) : (
             <div className="flex grow items-center justify-center">
               <p className="text-6xl font-bold text-neutral-700">

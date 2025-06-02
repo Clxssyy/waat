@@ -13,6 +13,7 @@ const Search = () => {
   const [q, setQ] = useState(params.get("q") ?? "");
   const [role, setRole] = useState(params.get("role") ?? "");
   const [drifter, setDrifter] = useState(params.get("drifter") ?? "");
+  const [page, setPage] = useState(params.get("page") ?? "1");
 
   useEffect(() => {
     const id = setTimeout(() => {
@@ -20,18 +21,20 @@ const Search = () => {
       if (q) next.set("q", q);
       if (role) next.set("role", role);
       if (drifter) next.set("drifter", drifter);
+      if (q || role || drifter) next.set("page", page);
 
       startTransition(() => {
         router.replace(`/characters?${next.toString()}`);
       });
     }, 300);
     return () => clearTimeout(id);
-  }, [q, role, drifter, router, startTransition]);
+  }, [q, role, drifter, router, startTransition, page]);
 
   const clearAll = () => {
     setQ("");
     setRole("");
     setDrifter("");
+    setPage("1");
   };
 
   return (

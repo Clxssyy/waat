@@ -26,10 +26,14 @@ export type SearchParams = {
   q?: string;
   role?: characterRoles;
   drifter?: string;
+  page?: string;
+  sort?: "popular" | "updated";
 };
-export type CharacterCardInfo = inferProcedureOutput<
+export type CharacterCardInfoRes = inferProcedureOutput<
   AppRouter["character"]["getCharacterCardInfo"]
->[number];
+>;
+export type CharacterCardInfo = CharacterCardInfoRes["characters"][number];
+
 export type CommentType = inferProcedureOutput<AppRouter["comment"]["getById"]>;
 
 export type CommentWithReplies = CommentType & {

@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { api } from "~/trpc/react";
 
 import type { ReactNode } from "react";
@@ -57,33 +51,36 @@ export const BuildFormProvider = ({
 
   const searchParams = useSearchParams();
   const pathname = usePathname();
-
   const router = useRouter();
 
   const [formData, setFormData] = useState<FormDataCharacter>(
     formDataSchema.parse(character),
   );
 
-  const _ = formData.builds.findIndex((build) => {
-    return build.id === searchParams.get("build");
-  });
+  const raw = searchParams.get("build");
+  const initialBuildIndex = parseInt(raw ?? "0", 10);
 
-  const buildIndex = _ === -1 ? 0 : _;
+  const validIndex =
+    initialBuildIndex >= 0 && initialBuildIndex < formData.builds.length
+      ? (initialBuildIndex as ActiveBuildIndex)
+      : 0;
 
-  const [activeBuildIndex, setActiveBuildIndex] = useState<ActiveBuildIndex>(
-    buildIndex as ActiveBuildIndex,
-  );
+  const [activeBuildIndex, setActiveBuildIndex] =
+    useState<ActiveBuildIndex>(validIndex);
 
-  const updateParams = useCallback(() => {
-    const p = new URLSearchParams(searchParams.toString());
-    if (formData?.builds[activeBuildIndex]?.id)
-      p.set("build", formData?.builds[activeBuildIndex]?.id);
-    else p.delete("build");
+  useEffect(() => {
+    const hasBuildParam = searchParams.has("build");
+    if (!hasBuildParam && activeBuildIndex === 0) {
+      return;
+    }
+    const parsed = parseInt(raw ?? "0", 10);
+    if (hasBuildParam && parsed === activeBuildIndex) {
+      return;
+    }
 
-    router.replace(`${pathname}?${p.toString()}`);
-  }, [router, activeBuildIndex, formData, searchParams, pathname]);
-
-  useEffect(updateParams, [updateParams]);
+    const next = new URLSearchParams({ build: activeBuildIndex.toString() });
+    router.replace(`${pathname}?${next.toString()}`);
+  }, [activeBuildIndex, raw, searchParams, pathname, router]);
 
   const [activeTab, setActiveTab] = useState<ActiveTab>("equipment");
   const [activeSlot, setActiveSlot] = useState<ActiveSlots>("weapon");
