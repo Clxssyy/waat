@@ -136,7 +136,15 @@ const Equipment = ({
               <option
                 key={equipmentKey}
                 value={equipmentKey}
-                className={`${equipment.rarity === "legendary" ? "bg-yellow-600/20" : `${equipment.rarity === "epic" ? "bg-purple-600/20" : `${equipment.rarity === "rare" ? "bg-blue-600/20" : `${equipment.rarity === "common" ? "bg-green-600/20" : ""}`}`}`}`}
+                className={`${
+                  formData?.builds?.some(
+                    (build) =>
+                      build.data.equipment[slot] === equipmentKey &&
+                      build.id !== formData.builds[activeBuildIndex]?.id,
+                  )
+                    ? "text-neutral-500"
+                    : "text-white"
+                } ${equipment.rarity === "legendary" ? "bg-yellow-600/20" : `${equipment.rarity === "epic" ? "bg-purple-600/20" : `${equipment.rarity === "rare" ? "bg-blue-600/20" : `${equipment.rarity === "common" ? "bg-green-600/20" : ""}`}`}`}`}
               >
                 {equipmentKey.charAt(0).toUpperCase() +
                   equipmentKey

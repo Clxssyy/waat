@@ -108,7 +108,19 @@ const Drifter = ({
               Drifter
             </option>
             {filteredWeapons.map(([drifterKey]) => (
-              <option key={drifterKey} value={drifterKey}>
+              <option
+                key={drifterKey}
+                value={drifterKey}
+                className={`${
+                  formData?.builds?.some(
+                    (build) =>
+                      build.data.drifter === drifterKey &&
+                      build.id !== formData.builds[activeBuildIndex]?.id,
+                  )
+                    ? "text-neutral-500"
+                    : "text-white"
+                }`}
+              >
                 {drifterKey.charAt(0).toUpperCase() +
                   drifterKey
                     .slice(1)

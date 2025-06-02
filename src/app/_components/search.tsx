@@ -47,9 +47,7 @@ const Search = () => {
             onChange={(e) => setRole(e.target.value)}
             aria-label="Role Filter"
           >
-            <option value="" hidden>
-              Role
-            </option>
+            <option value="">Role</option>
             <option value="dps">DPS</option>
             <option value="healer">Healer</option>
             <option value="tank">Tank</option>
@@ -58,10 +56,9 @@ const Search = () => {
             className="grow cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg"
             value={drifter}
             onChange={(e) => setDrifter(e.target.value)}
+            aria-label="Drifter Filter"
           >
-            <option value="" hidden>
-              Drifter
-            </option>
+            <option value="">Drifter</option>
             {Object.entries(data.drifter).map(([drifterId]) => (
               <option key={drifterId} value={drifterId}>
                 {drifterId.charAt(0).toUpperCase() +
