@@ -5,6 +5,8 @@ import { useBuildForm } from "./buildFormContext";
 import data from "public/data.json";
 import { IoClose } from "react-icons/io5";
 import type { ActiveFilter, ActiveBuildIndex, ActiveSlots } from "~/types";
+import { FaMinus, FaPlus } from "react-icons/fa6";
+import { MASTERY_OPTIONS, TIER_LEVELS } from "~/utils";
 
 type slots = Exclude<ActiveSlots, "drifter">;
 
@@ -191,92 +193,121 @@ const Equipment = ({
         <>
           <hr className="border-neutral-700" />
           <div className="flex flex-col gap-2">
-            <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-              <h2>Info</h2>
-              <div className="rounded bg-neutral-800 p-2">
-                <p>Active Skill: {equipmentData?.core_skill.name}</p>
+            <div className="flex gap-2">
+              <div className="flex flex-1 flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+                <h2 className="text-lg">Details</h2>
+                <div className="flex grow items-center justify-center rounded bg-neutral-800 p-2">
+                  <p className="text-center text-sm">
+                    WIP - All build features are not complete and will not
+                    reflect the stats in-game.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-1 flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+                <h2 className="text-lg">Skills</h2>
+                {slot === "weapon" ? (
+                  <>
+                    <div className="flex flex-col">
+                      <h3 className="text-sm">Basic Attacks</h3>
+                      <div className="flex gap-2">
+                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
+                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
+                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col">
+                      <h3 className="text-sm">Skill 1</h3>
+                      <div className="flex gap-2">
+                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
+                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
+                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
+                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
+                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col">
+                      <h3 className="text-sm">Skill 2 (Weapon Skill)</h3>
+                      <div className="flex gap-2">
+                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
+                        <div className="flex items-center rounded bg-neutral-800 p-2">
+                          <p className="text-sm">
+                            {equipmentData?.core_skill.name}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <div className="flex flex-col">
+                    <h3 className="text-sm">
+                      {slot.charAt(0).toUpperCase() + slot.slice(1)} Skill
+                    </h3>
+                    <div className="flex gap-2">
+                      <div className="h-12 w-12 rounded bg-neutral-800"></div>
+                      <div className="flex items-center rounded bg-neutral-800 p-2">
+                        <p className="text-sm">
+                          {equipmentData?.core_skill.name}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
               <h2>Mastery</h2>
               <div className="flex flex-wrap gap-2">
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>0</span>
+                {MASTERY_OPTIONS.map((option) => (
+                  <div
+                    key={option}
+                    className={
+                      "flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg"
+                    }
+                  >
+                    <span>{option}</span>
+                  </div>
+                ))}
+                <div className="flex h-12 grow items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                  Custom
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>10</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>20</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>30</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>40</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>45</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>46</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>47</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>48</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>49</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>50</span>
-                </div>
-                <div className="flex h-12 grow items-center justify-center rounded bg-neutral-800 p-2 px-2 text-lg">
-                  <span>Custom</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
+                <button
+                  className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 hover:text-red-500"
+                  disabled
+                >
                   <IoClose className="h-6 w-6" />
-                </div>
+                </button>
               </div>
             </div>
-            <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-              <h2>Tier</h2>
-              <div className="flex flex-wrap justify-evenly gap-2">
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>I</span>
+            <div className="flex gap-2">
+              <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+                  <h2>Tier</h2>
+                  <div className="flex flex-wrap gap-2">
+                    {TIER_LEVELS.map((tier) => (
+                      <div
+                        key={tier}
+                        className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg"
+                      >
+                        <span>{tier}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>II</span>
+                <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+                  <h2>Battle Infusion</h2>
+                  <div className="flex items-center justify-center gap-2">
+                    <button>
+                      <FaMinus />
+                    </button>
+                    <p>0</p>
+                    <button>
+                      <FaPlus />
+                    </button>
+                  </div>
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>III</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>IV</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>V</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>VI</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>VII</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>VIII</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>IX</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>X</span>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  <span>XI</span>
-                </div>
+              </div>
+              <div className="grow rounded border-neutral-600 bg-neutral-700 p-2">
+                <h2>Supercharge</h2>
               </div>
             </div>
             <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
@@ -301,7 +332,7 @@ const Equipment = ({
               <>
                 <hr className="border-neutral-700" />
                 <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-                  <h2>Info</h2>
+                  <h2>Details</h2>
                   <div className="rounded bg-neutral-800 p-2">
                     Coming soon...
                   </div>

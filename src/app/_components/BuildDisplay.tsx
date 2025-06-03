@@ -21,39 +21,35 @@ const BuildDisplay = () => {
 
   if (!character) notFound();
 
+  const boots = formData.builds[activeBuildIndex]?.data.equipment.boots;
+  const helmet = formData.builds[activeBuildIndex]?.data.equipment.helmet;
+  const chest = formData.builds[activeBuildIndex]?.data.equipment.chest;
+  const weapon = formData.builds[activeBuildIndex]?.data.equipment.weapon;
+  const drifter = formData.builds[activeBuildIndex]?.data.drifter;
+
   const drifterData = useItemData(
     "drifter",
-    formData.builds[activeBuildIndex]?.data.drifter as
-      | keyof typeof data.drifter
-      | undefined,
+    drifter as keyof typeof data.drifter | undefined,
   );
 
   const weaponData = useItemData(
     "weapon",
-    formData.builds[activeBuildIndex]?.data.equipment.weapon as
-      | keyof typeof data.weapon
-      | undefined,
+    weapon as keyof typeof data.weapon | undefined,
   );
 
   const chestData = useItemData(
     "chest",
-    formData.builds[activeBuildIndex]?.data.equipment.chest as
-      | keyof typeof data.chest
-      | undefined,
+    chest as keyof typeof data.chest | undefined,
   );
 
   const helmetData = useItemData(
     "helmet",
-    formData.builds[activeBuildIndex]?.data.equipment.helmet as
-      | keyof typeof data.helmet
-      | undefined,
+    helmet as keyof typeof data.helmet | undefined,
   );
 
   const bootsData = useItemData(
     "boots",
-    formData.builds[activeBuildIndex]?.data.equipment.boots as
-      | keyof typeof data.boots
-      | undefined,
+    boots as keyof typeof data.boots | undefined,
   );
 
   return (
@@ -207,8 +203,7 @@ const BuildDisplay = () => {
         <div className="relative bg-neutral-700">
           {formData?.builds?.some(
             (build) =>
-              build.data.equipment.weapon ===
-                formData.builds[activeBuildIndex]?.data.equipment.weapon &&
+              build.data.equipment.weapon === weapon &&
               build.id !== formData.builds[activeBuildIndex]?.id &&
               build.data.equipment.weapon !== "",
           ) ? (
@@ -224,9 +219,13 @@ const BuildDisplay = () => {
               if (activeTab != "equipment") setActiveTab("equipment");
             }}
           >
-            {formData?.builds?.[activeBuildIndex]?.data?.equipment.weapon ? (
-              <div className="truncate p-1 text-sm">
-                {formData?.builds?.[activeBuildIndex]?.data?.equipment.weapon}
+            {weapon ? (
+              <div className="truncate p-1 text-sm text-wrap">
+                {weapon.charAt(0).toUpperCase() +
+                  weapon
+                    .slice(1)
+                    .replace(/_/g, " ")
+                    .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
               </div>
             ) : (
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
@@ -240,8 +239,7 @@ const BuildDisplay = () => {
           <div className="relative bg-neutral-700">
             {formData?.builds?.some(
               (build) =>
-                build.data.equipment.helmet ===
-                  formData.builds[activeBuildIndex]?.data.equipment.helmet &&
+                build.data.equipment.helmet === helmet &&
                 build.id !== formData.builds[activeBuildIndex]?.id &&
                 build.data.equipment.helmet !== "",
             ) ? (
@@ -257,9 +255,13 @@ const BuildDisplay = () => {
                 if (activeTab != "equipment") setActiveTab("equipment");
               }}
             >
-              {formData?.builds?.[activeBuildIndex]?.data?.equipment.helmet ? (
-                <div className="truncate p-1 text-sm">
-                  {formData?.builds?.[activeBuildIndex]?.data?.equipment.helmet}
+              {helmet ? (
+                <div className="truncate p-1 text-sm text-wrap">
+                  {helmet.charAt(0).toUpperCase() +
+                    helmet
+                      .slice(1)
+                      .replace(/_/g, " ")
+                      .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
                 </div>
               ) : (
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
@@ -272,8 +274,7 @@ const BuildDisplay = () => {
           <div className="relative bg-neutral-700">
             {formData?.builds?.some(
               (build) =>
-                build.data.equipment.chest ===
-                  formData.builds[activeBuildIndex]?.data.equipment.chest &&
+                build.data.equipment.chest === chest &&
                 build.id !== formData.builds[activeBuildIndex]?.id &&
                 build.data.equipment.chest !== "",
             ) ? (
@@ -289,9 +290,13 @@ const BuildDisplay = () => {
                 if (activeTab != "equipment") setActiveTab("equipment");
               }}
             >
-              {formData?.builds?.[activeBuildIndex]?.data?.equipment.chest ? (
-                <div className="truncate p-1 text-sm">
-                  {formData?.builds?.[activeBuildIndex]?.data?.equipment.chest}
+              {chest ? (
+                <div className="truncate p-1 text-sm text-wrap">
+                  {chest.charAt(0).toUpperCase() +
+                    chest
+                      .slice(1)
+                      .replace(/_/g, " ")
+                      .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
                 </div>
               ) : (
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
@@ -304,8 +309,7 @@ const BuildDisplay = () => {
           <div className="relative bg-neutral-700">
             {formData?.builds?.some(
               (build) =>
-                build.data.equipment.boots ===
-                  formData.builds[activeBuildIndex]?.data.equipment.boots &&
+                build.data.equipment.boots === boots &&
                 build.id !== formData.builds[activeBuildIndex]?.id &&
                 build.data.equipment.boots !== "",
             ) ? (
@@ -321,9 +325,13 @@ const BuildDisplay = () => {
                 if (activeTab != "equipment") setActiveTab("equipment");
               }}
             >
-              {formData?.builds?.[activeBuildIndex]?.data?.equipment.boots ? (
-                <div className="truncate p-1 text-sm">
-                  {formData?.builds?.[activeBuildIndex]?.data?.equipment.boots}
+              {boots ? (
+                <div className="truncate p-1 text-sm text-wrap">
+                  {boots.charAt(0).toUpperCase() +
+                    boots
+                      .slice(1)
+                      .replace(/_/g, " ")
+                      .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
                 </div>
               ) : (
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
@@ -338,8 +346,7 @@ const BuildDisplay = () => {
       <div className="relative">
         {formData?.builds?.some(
           (build) =>
-            build.data.drifter ===
-              formData.builds[activeBuildIndex]?.data.drifter &&
+            build.data.drifter === drifter &&
             build.id !== formData.builds[activeBuildIndex]?.id &&
             build.data.drifter !== "",
         ) ? (
@@ -355,9 +362,13 @@ const BuildDisplay = () => {
             if (activeTab != "drifter") setActiveTab("drifter");
           }}
         >
-          {formData?.builds?.[activeBuildIndex]?.data?.drifter ? (
-            <div className="truncate p-1 text-sm">
-              {formData?.builds?.[activeBuildIndex]?.data?.drifter}
+          {drifter ? (
+            <div className="truncate p-1 text-sm text-wrap">
+              {drifter.charAt(0).toUpperCase() +
+                drifter
+                  .slice(1)
+                  .replace(/_/g, " ")
+                  .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
             </div>
           ) : (
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
@@ -367,7 +378,9 @@ const BuildDisplay = () => {
         </button>
       </div>
       <div className="flex h-72 w-66 flex-col divide-y divide-white/10 border border-neutral-600 bg-neutral-700 shadow-lg">
-        <h2 className="w-full p-2 text-center">Stats</h2>
+        <h2 className="w-full p-2 text-center">
+          Stats <span className="text-neutral-400">(0)</span>
+        </h2>
         <div className="flex w-full grow flex-col justify-evenly">
           <div className="mx-4 flex flex-col gap-1 rounded-lg bg-neutral-800 p-2 text-center shadow-lg">
             <h3 className="text-sm">

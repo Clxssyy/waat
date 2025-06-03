@@ -4,7 +4,7 @@ import BuildEditor from "./BuildEditor";
 
 const Builder = () => {
   return (
-    <div className="flex grow flex-col overflow-hidden bg-neutral-950">
+    <div className="flex grow flex-col overflow-hidden bg-gradient-to-br from-neutral-900 via-neutral-950 to-neutral-900">
       <BuilderHeader />
       <div className="mx-14 mb-4 flex grow gap-14">
         <BuildDisplay />

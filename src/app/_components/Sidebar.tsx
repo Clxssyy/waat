@@ -45,7 +45,7 @@ const Sidebar = () => {
           onClick={() => router.back()}
           type="button"
           aria-label="Return to previous page"
-          className="flex w-full items-center justify-between bg-neutral-800 p-4 text-lg hover:brightness-125"
+          className="flex w-full cursor-pointer items-center justify-between bg-neutral-800 p-4 text-lg hover:brightness-125"
         >
           <span>Return</span>
           <IoMdArrowRoundBack />

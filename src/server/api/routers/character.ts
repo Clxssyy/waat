@@ -225,7 +225,12 @@ export const characterRouter = createTRPCRouter({
 
       const characters = await ctx.db.character.findMany({
         where,
-        include: {
+        select: {
+          id: true,
+          createdAt: true,
+          name: true,
+          private: true,
+          role: true,
           ratings: {
             select: {
               value: true,

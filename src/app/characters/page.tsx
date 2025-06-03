@@ -68,7 +68,7 @@ export default async function Characters({
                   <CharacterCard key={character.id} character={character} />
                 ))}
               </div>
-              <div className="flex h-16 items-center justify-center">
+              <div className="flex h-16 items-center justify-center gap-1">
                 {currentPage > 1 ? (
                   <Link
                     href={`/characters?${new URLSearchParams({
@@ -77,12 +77,12 @@ export default async function Characters({
                       ...(drifter ? { drifter } : {}),
                       page: (currentPage - 1).toString(),
                     }).toString()}`}
-                    className="mx-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95"
+                    className="rounded border border-neutral-700 bg-neutral-800 p-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95"
                   >
                     <IoChevronBack />
                   </Link>
                 ) : (
-                  <span className="mx-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1">
+                  <span className="rounded border border-neutral-700 bg-neutral-800 p-1">
                     <IoChevronBack />
                   </span>
                 )}
@@ -95,7 +95,7 @@ export default async function Characters({
                       ...(drifter ? { drifter } : {}),
                       page: (index + 1).toString(),
                     }).toString()}`}
-                    className={`${parseInt(page ?? "1") === index + 1 ? "brightness-125" : ""} mx-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95 ${
+                    className={`${parseInt(page ?? "1") === index + 1 ? "brightness-125" : ""} rounded border border-neutral-700 bg-neutral-800 px-2 py-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95 ${
                       page === (index + 1).toString()
                         ? "bg-neutral-700 text-white"
                         : "text-neutral-300"
@@ -112,12 +112,12 @@ export default async function Characters({
                       ...(drifter ? { drifter } : {}),
                       page: (currentPage + 1).toString(),
                     }).toString()}`}
-                    className="mx-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95"
+                    className="rounded border border-neutral-700 bg-neutral-800 p-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95"
                   >
                     <IoChevronForward />
                   </Link>
                 ) : (
-                  <span className="mx-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1">
+                  <span className="rounded border border-neutral-700 bg-neutral-800 p-1">
                     <IoChevronForward />
                   </span>
                 )}
