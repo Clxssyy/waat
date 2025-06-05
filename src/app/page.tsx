@@ -53,31 +53,16 @@ export default async function Home() {
             </div>
           </div>
           <div className="grid grid-cols-5 gap-2">
-            <div className="flex aspect-square items-center justify-center rounded bg-neutral-900">
-              <h3 className="text-3xl font-bold text-neutral-600">
-                Placeholder
-              </h3>
-            </div>
-            <div className="flex aspect-square items-center justify-center rounded bg-neutral-900">
-              <h3 className="text-3xl font-bold text-neutral-600">
-                Placeholder
-              </h3>
-            </div>
-            <div className="flex aspect-square items-center justify-center rounded bg-neutral-900">
-              <h3 className="text-3xl font-bold text-neutral-600">
-                Placeholder
-              </h3>
-            </div>
-            <div className="flex aspect-square items-center justify-center rounded bg-neutral-900">
-              <h3 className="text-3xl font-bold text-neutral-600">
-                Placeholder
-              </h3>
-            </div>
-            <div className="flex aspect-square items-center justify-center rounded bg-neutral-900">
-              <h3 className="text-3xl font-bold text-neutral-600">
-                Placeholder
-              </h3>
-            </div>
+            {Array.from({ length: 5 }).map((_, index) => (
+              <div
+                key={index}
+                className="flex aspect-square items-center justify-center rounded bg-neutral-900"
+              >
+                <h3 className="font-bold text-neutral-600 2xl:text-3xl">
+                  Placeholder
+                </h3>
+              </div>
+            ))}
           </div>
         </div>
         <div className="flex flex-col gap-2 p-4">
@@ -98,31 +83,16 @@ export default async function Home() {
             </div>
           </div>
           <div className="grid grid-cols-5 gap-2">
-            <div className="flex aspect-square items-center justify-center rounded bg-neutral-900">
-              <h3 className="text-3xl font-bold text-neutral-600">
-                Placeholder
-              </h3>
-            </div>
-            <div className="flex aspect-square items-center justify-center rounded bg-neutral-900">
-              <h3 className="text-3xl font-bold text-neutral-600">
-                Placeholder
-              </h3>
-            </div>
-            <div className="flex aspect-square items-center justify-center rounded bg-neutral-900">
-              <h3 className="text-3xl font-bold text-neutral-600">
-                Placeholder
-              </h3>
-            </div>
-            <div className="flex aspect-square items-center justify-center rounded bg-neutral-900">
-              <h3 className="text-3xl font-bold text-neutral-600">
-                Placeholder
-              </h3>
-            </div>
-            <div className="flex aspect-square items-center justify-center rounded bg-neutral-900">
-              <h3 className="text-3xl font-bold text-neutral-600">
-                Placeholder
-              </h3>
-            </div>
+            {Array.from({ length: 5 }).map((_, index) => (
+              <div
+                key={index}
+                className="flex aspect-square items-center justify-center rounded bg-neutral-900"
+              >
+                <h3 className="font-bold text-neutral-600 2xl:text-3xl">
+                  Placeholder
+                </h3>
+              </div>
+            ))}
           </div>
         </div>
       </main>

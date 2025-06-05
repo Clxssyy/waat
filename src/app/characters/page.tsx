@@ -20,7 +20,9 @@ export default async function Characters({
       drifter: drifter,
       q: q,
       page: page,
-      sort: sort,
+      sort: !["updated", "popular"].includes(sort ?? "popular")
+        ? "popular"
+        : sort,
     }),
   ]);
 

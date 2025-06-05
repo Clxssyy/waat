@@ -1,5 +1,6 @@
 "use client";
 
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { IoIosStar } from "react-icons/io";
@@ -9,6 +10,7 @@ import { api } from "~/trpc/react";
 
 const RateModal = () => {
   const { character } = useBuildForm();
+  const { data: session } = useSession();
   const router = useRouter();
   const [rating, setRating] = useState<0 | 1 | 2 | 3 | 4 | 5>(0);
   const addRating = api.character.addRating.useMutation({
@@ -87,7 +89,7 @@ const RateModal = () => {
             className={`cursor-pointer rounded border border-green-600 bg-green-700 px-2 py-1 transition-all hover:brightness-125 not-disabled:hover:scale-105 not-disabled:active:scale-95 disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40`}
             disabled={addRating.isPending || addRating.isSuccess}
             onClick={() => {
-              if (rating === 0) return;
+              if (rating === 0 || !session?.user.id) return;
               addRating.mutate({
                 characterId: character!.id,
                 value: rating,
