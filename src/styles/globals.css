@@ -10,3 +10,7 @@
   -webkit-appearance: none;
   appearance: none;
 }
+
+.scrollbar {
+  scrollbar-color: rgb(90, 90, 90) transparent;
+}
