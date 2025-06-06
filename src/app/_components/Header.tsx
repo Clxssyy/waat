@@ -8,7 +8,7 @@ const Header = async () => {
   const session = await auth();
 
   return (
-    <header className="flex h-16 w-full justify-center border-b border-neutral-800 bg-neutral-900">
+    <header className="flex min-h-16 w-full justify-center border-b border-neutral-800 bg-neutral-900">
       <div className="flex w-4/5 items-center justify-between bg-neutral-900 px-5">
         <h1>
           <Link

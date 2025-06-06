@@ -889,7 +889,7 @@ export default function Page() {
                   className={`flex items-center justify-center rounded-t-lg ${activeTab === "equipment" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
                 >
                   <button
-                    className="h-full w-full cursor-pointer rounded-t-lg bg-neutral-800 hover:brightness-125"
+                    className="h-full w-full cursor-pointer rounded-t-lg hover:brightness-125"
                     aria-label="Equipment Tab"
                     onClick={() => {
                       if (activeTab != "equipment") setActiveTab("equipment");
@@ -904,7 +904,7 @@ export default function Page() {
                   className={`flex items-center justify-center rounded-t-lg ${activeTab === "drifter" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
                 >
                   <button
-                    className="h-full w-full cursor-pointer rounded-t-lg hover:bg-white/5"
+                    className="h-full w-full cursor-pointer rounded-t-lg hover:brightness-125"
                     aria-label="Drifter Tab"
                     onClick={() => {
                       if (activeTab != "drifter") setActiveTab("drifter");
@@ -918,7 +918,7 @@ export default function Page() {
                   className={`flex items-center justify-center rounded-t-lg ${activeTab === "support" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
                 >
                   <button
-                    className="h-full w-full cursor-pointer rounded-t-lg hover:bg-white/5"
+                    className="h-full w-full cursor-pointer rounded-t-lg hover:brightness-125"
                     aria-label="Support Tab"
                     onClick={() => {
                       if (activeTab != "support") setActiveTab("support");
@@ -931,7 +931,7 @@ export default function Page() {
                   className={`flex items-center justify-center rounded-t-lg ${activeTab === "description" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
                 >
                   <button
-                    className="h-full w-full cursor-pointer rounded-t-lg hover:bg-white/5"
+                    className="h-full w-full cursor-pointer rounded-t-lg hover:brightness-125"
                     aria-label="Description Tab"
                     onClick={() => {
                       if (activeTab != "description")
@@ -945,7 +945,7 @@ export default function Page() {
                   className={`flex items-center justify-center rounded-t-lg ${activeTab === "comments" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
                 >
                   <button
-                    className="h-full w-full cursor-pointer rounded-t-lg hover:bg-white/5"
+                    className="h-full w-full cursor-pointer rounded-t-lg hover:brightness-125"
                     aria-label="Comments Tab"
                     onClick={() => {
                       if (activeTab != "comments") setActiveTab("comments");
