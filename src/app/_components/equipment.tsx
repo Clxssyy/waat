@@ -307,7 +307,7 @@ const Equipment = ({
                 </div>
               </div>
               <div className="grow rounded border-neutral-600 bg-neutral-700 p-2">
-                <h2>Supercharge</h2>
+                <h2>Hypercharge</h2>
               </div>
             </div>
             <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">

@@ -7,6 +7,7 @@ import { FaCog } from "react-icons/fa";
 import { FaHammer, FaPencil } from "react-icons/fa6";
 import { IoIosStar, IoIosStarHalf, IoMdArrowRoundBack } from "react-icons/io";
 import { useBuildForm } from "./buildFormContext";
+import clsx from "clsx";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -37,104 +38,115 @@ const Sidebar = () => {
   );
 
   const averageRating = totalRating / character._count.ratings;
+  const SECONDARY = "bg-neutral-800";
 
   return (
-    <div className="flex min-w-1/6 flex-col justify-between border-r border-neutral-700 bg-neutral-800">
+    <div
+      id="sidebar"
+      className={clsx(
+        "flex w-1/6 grow flex-col justify-between border-r border-neutral-700",
+        SECONDARY,
+      )}
+    >
       <div className="flex flex-col divide-y divide-neutral-700">
         <button
           onClick={() => router.back()}
           type="button"
           aria-label="Return to previous page"
-          className="flex w-full cursor-pointer items-center justify-between bg-neutral-800 p-4 text-lg hover:brightness-125"
+          className={clsx(
+            "flex cursor-pointer items-center justify-between p-4 text-lg hover:brightness-125",
+            SECONDARY,
+          )}
         >
           <span>Return</span>
           <IoMdArrowRoundBack />
         </button>
-        <div className="flex flex-col divide-y divide-neutral-700">
-          <Link
-            className="texl-lg flex cursor-pointer items-center justify-center gap-4 bg-neutral-800 py-4 hover:brightness-125"
-            href={isCreator ? "" : `/characters/${character.id}/rate`}
-          >
-            <div className="flex text-2xl">
-              {averageRating > 0 && averageRating < 1 ? (
-                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
-              ) : (
-                <IoIosStar
-                  className={`${
-                    averageRating >= 1 ? "text-yellow-300" : "text-transparent"
-                  } stroke-yellow-300 stroke-20`}
-                />
-              )}
-              {averageRating > 1 && averageRating < 2 ? (
-                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
-              ) : (
-                <IoIosStar
-                  className={`${
-                    averageRating >= 2 ? "text-yellow-300" : "text-transparent"
-                  } stroke-yellow-300 stroke-20`}
-                />
-              )}
-              {averageRating > 2 && averageRating < 3 ? (
-                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
-              ) : (
-                <IoIosStar
-                  className={`${
-                    averageRating >= 3 ? "text-yellow-300" : "text-transparent"
-                  } stroke-yellow-300 stroke-20`}
-                />
-              )}
+        <Link
+          className={clsx(
+            "flex cursor-pointer items-center justify-center gap-4 p-4 text-lg not-2xl:flex-col hover:brightness-125",
+            SECONDARY,
+          )}
+          href={isCreator ? "" : `/characters/${character.id}/rate`}
+        >
+          <div className="flex text-2xl">
+            {averageRating > 0 && averageRating < 1 ? (
+              <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
+            ) : (
+              <IoIosStar
+                className={`${
+                  averageRating >= 1 ? "text-yellow-300" : "text-transparent"
+                } stroke-yellow-300 stroke-20`}
+              />
+            )}
+            {averageRating > 1 && averageRating < 2 ? (
+              <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
+            ) : (
+              <IoIosStar
+                className={`${
+                  averageRating >= 2 ? "text-yellow-300" : "text-transparent"
+                } stroke-yellow-300 stroke-20`}
+              />
+            )}
+            {averageRating > 2 && averageRating < 3 ? (
+              <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
+            ) : (
+              <IoIosStar
+                className={`${
+                  averageRating >= 3 ? "text-yellow-300" : "text-transparent"
+                } stroke-yellow-300 stroke-20`}
+              />
+            )}
 
-              {averageRating > 3 && averageRating < 4 ? (
-                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
-              ) : (
-                <IoIosStar
-                  className={`${
-                    averageRating >= 4 ? "text-yellow-300" : "text-transparent"
-                  } stroke-yellow-300 stroke-20`}
-                />
-              )}
-              {averageRating > 4 && averageRating < 5 ? (
-                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
-              ) : (
-                <IoIosStar
-                  className={`${
-                    averageRating >= 5 ? "text-yellow-300" : "text-transparent"
-                  } stroke-yellow-300 stroke-20`}
-                />
-              )}
-            </div>
-            <p className="text-neutral-400">
-              <span className="text-white">{averageRating || 0}</span> out of 5
-              ({character._count.ratings})
-            </p>
-          </Link>
-          <div className="flex flex-col gap-2 p-2">
-            <Link
-              href={`/characters/${characterId}`}
-              className={`texl-lg flex cursor-pointer items-center gap-2 rounded ${activePage === undefined ? "bg-neutral-700" : "bg-neutral-800"} p-2 hover:brightness-125`}
-            >
-              <FaHammer />
-              Builder
-            </Link>
-            <Link
-              href={`/characters/${characterId}/description`}
-              className={`texl-lg flex cursor-pointer items-center gap-2 rounded p-2 hover:brightness-125 ${activePage === "description" ? "bg-neutral-700" : "bg-neutral-800"}`}
-            >
-              <FaPencil />
-              Description
-            </Link>
-            <Link
-              href={`/characters/${characterId}/settings`}
-              className={`texl-lg flex cursor-pointer items-center gap-2 rounded p-2 hover:brightness-125 ${activePage === "settings" ? "bg-neutral-700" : "bg-neutral-800"}`}
-            >
-              <FaCog />
-              Settings
-            </Link>
+            {averageRating > 3 && averageRating < 4 ? (
+              <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
+            ) : (
+              <IoIosStar
+                className={`${
+                  averageRating >= 4 ? "text-yellow-300" : "text-transparent"
+                } stroke-yellow-300 stroke-20`}
+              />
+            )}
+            {averageRating > 4 && averageRating < 5 ? (
+              <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
+            ) : (
+              <IoIosStar
+                className={`${
+                  averageRating >= 5 ? "text-yellow-300" : "text-transparent"
+                } stroke-yellow-300 stroke-20`}
+              />
+            )}
           </div>
+          <p className="text-neutral-400">
+            <span className="text-white">{averageRating || 0}</span> out of 5 (
+            {character._count.ratings})
+          </p>
+        </Link>
+        <div className="flex flex-col gap-2 p-2">
+          <Link
+            href={`/characters/${characterId}`}
+            className={`flex cursor-pointer items-center gap-2 rounded bg-neutral-800 p-2 hover:brightness-125 ${activePage === undefined ? "brightness-125" : ""}`}
+          >
+            <FaHammer />
+            Builder
+          </Link>
+          <Link
+            href={`/characters/${characterId}/description`}
+            className={`flex cursor-pointer items-center gap-2 rounded bg-neutral-800 p-2 hover:brightness-125 ${activePage === "description" ? "brightness-125" : ""}`}
+          >
+            <FaPencil />
+            Description
+          </Link>
+          <Link
+            href={`/characters/${characterId}/settings`}
+            className={`flex cursor-pointer items-center gap-2 rounded bg-neutral-800 p-2 hover:brightness-125 ${activePage === "settings" ? "brightness-125" : ""}`}
+          >
+            <FaCog />
+            Settings
+          </Link>
         </div>
-        <div className="texl-lg flex items-center justify-center p-4">
+        <div className="flex justify-center p-4">
           <button
-            className={`w-11/12 cursor-pointer rounded border px-2 py-1 transition-all hover:brightness-125 not-disabled:hover:scale-105 not-disabled:active:scale-95 disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40 ${(hasChanges && isCreator && "border-green-600 bg-green-700") || ""} ${(!isCreator && "border-cyan-500 bg-cyan-600") || ""}`}
+            className={`w-11/12 cursor-pointer rounded border px-2 py-1 text-lg transition-all hover:brightness-125 not-disabled:hover:scale-105 not-disabled:active:scale-95 disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40 ${(hasChanges && isCreator && "border-green-600 bg-green-700") || ""} ${(!isCreator && "border-cyan-500 bg-cyan-600") || ""}`}
             onClick={
               isCreator
                 ? () => {
@@ -151,36 +163,34 @@ const Sidebar = () => {
           </button>
         </div>
       </div>
-      <div className="texl-lg flex flex-col items-center border-t-1 border-white/10 p-4">
-        <div className="flex items-center gap-2">
-          <Image
-            src={
-              character?.createdBy.image ??
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1024px-Default_pfp.svg.png"
-            }
-            width={100}
-            height={100}
-            alt="creator pfp"
-            className="h-10 w-10 rounded-full"
-          />
-          <div className="flex flex-col">
+      <div className="flex justify-center gap-2 border-t border-neutral-700 p-4">
+        <Image
+          src={
+            character?.createdBy.image ??
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1024px-Default_pfp.svg.png"
+          }
+          width={100}
+          height={100}
+          alt="creator pfp"
+          className="h-10 w-10 rounded-full"
+        />
+        <div className="flex flex-col">
+          <Link
+            href={`/users/${creator.id}`}
+            className="text-sm hover:underline"
+          >
+            By {character?.createdBy.name}
+          </Link>
+          {character.clonedFrom ? (
             <Link
-              href={`/users/${creator.id}`}
-              className="text-sm hover:underline"
+              href={`/characters/${character.clonedFrom}`}
+              className="text-xs text-cyan-400 underline"
             >
-              By {character?.createdBy.name}
+              Cloned from
             </Link>
-            {character.clonedFrom ? (
-              <Link
-                href={`/characters/${character.clonedFrom}`}
-                className="text-xs text-cyan-400 underline"
-              >
-                Cloned from
-              </Link>
-            ) : (
-              <p className="text-xs text-neutral-500">{characterId}</p>
-            )}
-          </div>
+          ) : (
+            <p className="text-xs text-neutral-700">{characterId}</p>
+          )}
         </div>
       </div>
     </div>

@@ -18,90 +18,92 @@ const BuildEditor = () => {
   } = useBuildForm();
 
   return (
-    <div className="flex w-full flex-col items-center overflow-hidden">
-      <div className="grid h-8 w-11/12 grid-cols-5 gap-2">
-        <div
-          className={`flex items-center justify-center rounded-t-lg ${activeTab === "equipment" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
-        >
-          <button
-            className="h-full w-full cursor-pointer rounded-t-lg hover:bg-white/5"
-            aria-label="Equipment Tab"
-            onClick={() => {
-              if (activeTab != "equipment") setActiveTab("equipment");
-              if (activeSlot === "drifter" || activeSlot === undefined)
-                setActiveSlot("weapon");
-            }}
+    <div id="editor" className="w-2/3">
+      <div className="flex flex-col items-center">
+        <div className="grid h-10 w-11/12 grid-cols-5 gap-2">
+          <div
+            className={`flex items-center justify-center rounded-t-lg ${activeTab === "equipment" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
           >
-            Equipment
-          </button>
-        </div>
-        <div
-          className={`flex items-center justify-center rounded-t-lg ${activeTab === "drifter" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
-        >
-          <button
-            className="h-full w-full cursor-pointer rounded-t-lg hover:bg-white/5"
-            aria-label="Drifter Tab"
-            onClick={() => {
-              if (activeTab != "drifter") setActiveTab("drifter");
-              if (activeSlot != "drifter") setActiveSlot("drifter");
-            }}
+            <button
+              className="h-full w-full cursor-pointer rounded-t-lg hover:brightness-125"
+              aria-label="Equipment Tab"
+              onClick={() => {
+                if (activeTab != "equipment") setActiveTab("equipment");
+                if (activeSlot === "drifter" || activeSlot === undefined)
+                  setActiveSlot("weapon");
+              }}
+            >
+              Equipment
+            </button>
+          </div>
+          <div
+            className={`flex items-center justify-center rounded-t-lg ${activeTab === "drifter" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
           >
-            Drifter
-          </button>
-        </div>
-        <div
-          className={`flex items-center justify-center rounded-t-lg ${activeTab === "support" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
-        >
-          <button
-            className="h-full w-full cursor-pointer rounded-t-lg hover:bg-white/5"
-            aria-label="Support Tab"
-            onClick={() => {
-              if (activeTab != "support") setActiveTab("support");
-            }}
+            <button
+              className="h-full w-full cursor-pointer rounded-t-lg hover:brightness-125"
+              aria-label="Drifter Tab"
+              onClick={() => {
+                if (activeTab != "drifter") setActiveTab("drifter");
+                if (activeSlot != "drifter") setActiveSlot("drifter");
+              }}
+            >
+              Drifter
+            </button>
+          </div>
+          <div
+            className={`flex items-center justify-center rounded-t-lg ${activeTab === "support" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
           >
-            Support
-          </button>
-        </div>
-        <div
-          className={`flex items-center justify-center rounded-t-lg ${activeTab === "description" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
-        >
-          <button
-            className="h-full w-full cursor-pointer rounded-t-lg hover:bg-white/5"
-            aria-label="Description Tab"
-            onClick={() => {
-              if (activeTab != "description") setActiveTab("description");
-            }}
+            <button
+              className="h-full w-full cursor-pointer rounded-t-lg hover:brightness-125"
+              aria-label="Support Tab"
+              onClick={() => {
+                if (activeTab != "support") setActiveTab("support");
+              }}
+            >
+              Support
+            </button>
+          </div>
+          <div
+            className={`flex items-center justify-center rounded-t-lg ${activeTab === "description" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
           >
-            Description
-          </button>
-        </div>
-        <div
-          className={`flex items-center justify-center rounded-t-lg ${activeTab === "comments" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
-        >
-          <button
-            className="h-full w-full cursor-pointer rounded-t-lg hover:bg-white/5"
-            aria-label="Comments Tab"
-            onClick={() => {
-              if (activeTab != "comments") setActiveTab("comments");
-            }}
+            <button
+              className="h-full w-full cursor-pointer rounded-t-lg hover:brightness-125"
+              aria-label="Description Tab"
+              onClick={() => {
+                if (activeTab != "description") setActiveTab("description");
+              }}
+            >
+              Description
+            </button>
+          </div>
+          <div
+            className={`flex items-center justify-center rounded-t-lg ${activeTab === "comments" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
           >
-            Comments
-          </button>
+            <button
+              className="h-full w-full cursor-pointer rounded-t-lg hover:brightness-125"
+              aria-label="Comments Tab"
+              onClick={() => {
+                if (activeTab != "comments") setActiveTab("comments");
+              }}
+            >
+              Comments
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="flex w-full flex-col rounded border border-neutral-700 bg-neutral-800">
-        {activeTab === "equipment" && (
-          <Equipment
-            slot={activeSlot as Exclude<ActiveSlots, "drifter">}
-            activeBuildIndex={activeBuildIndex}
-          />
-        )}
-        {activeTab === "drifter" && (
-          <Drifter activeBuildIndex={activeBuildIndex} />
-        )}
-        {activeTab === "support" && <Support />}
-        {activeTab === "description" && <Description />}
-        {activeTab === "comments" && <CommentSection />}
+        <div className="h-fit w-full rounded border border-neutral-700 bg-neutral-800 break-all">
+          {activeTab === "equipment" && (
+            <Equipment
+              slot={activeSlot as Exclude<ActiveSlots, "drifter">}
+              activeBuildIndex={activeBuildIndex}
+            />
+          )}
+          {activeTab === "drifter" && (
+            <Drifter activeBuildIndex={activeBuildIndex} />
+          )}
+          {activeTab === "support" && <Support />}
+          {activeTab === "description" && <Description />}
+          {activeTab === "comments" && <CommentSection />}
+        </div>
       </div>
     </div>
   );

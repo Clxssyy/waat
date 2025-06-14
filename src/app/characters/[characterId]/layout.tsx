@@ -5,6 +5,7 @@ import { auth } from "~/server/auth";
 import { BuildFormProvider } from "~/app/_components/buildFormContext";
 import Sidebar from "~/app/_components/Sidebar";
 import { notFound } from "next/navigation";
+import clsx from "clsx";
 
 export default async function BuildLayout({
   children,
@@ -26,6 +27,7 @@ export default async function BuildLayout({
   if (!character) notFound();
 
   const isCreator = character.createdBy.id === session?.user.id;
+  const GAP_COLOR = "bg-neutral-950";
 
   return (
     <>
@@ -33,9 +35,13 @@ export default async function BuildLayout({
         <BuildFormProvider character={character} isCreator={isCreator}>
           {deleteModal}
           {rateModal}
-          <main className="flex w-full grow">
-            <Sidebar />
-            {children}
+          <main className="flex w-full grow overflow-hidden">
+            <div
+              className={clsx("flex w-full grow overflow-hidden", GAP_COLOR)}
+            >
+              <Sidebar />
+              {children}
+            </div>
           </main>
         </BuildFormProvider>
       </SessionProvider>

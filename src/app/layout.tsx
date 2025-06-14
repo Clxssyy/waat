@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en" className={`${geist.variable}`}>
       <body>
         <TRPCReactProvider>
-          <div className="scrollbar flex h-screen flex-col items-center overflow-y-scroll bg-neutral-800 text-white">
+          <div className="scrollbar flex h-screen flex-col items-center overflow-auto bg-neutral-800 text-white">
             <Header />
             {children}
           </div>
