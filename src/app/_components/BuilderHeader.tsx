@@ -4,7 +4,6 @@ import { IoIosStarOutline, IoMdShare } from "react-icons/io";
 import { useBuildForm } from "./buildFormContext";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import clsx from "clsx";
 
 const BuilderHeader = () => {
   const {
@@ -21,7 +20,6 @@ const BuilderHeader = () => {
   } = useBuildForm();
 
   if (!character) notFound();
-  const GAP_COLOR = "bg-neutral-950";
 
   return (
     <div
@@ -73,8 +71,8 @@ const BuilderHeader = () => {
         <button
           className="flex cursor-pointer items-center justify-center rounded border border-neutral-700 bg-neutral-800 p-1 transition-all hover:brightness-125 active:scale-95"
           aria-label="Share"
-          onClick={() => {
-            navigator.clipboard.writeText(window.location.href);
+          onClick={async () => {
+            await navigator.clipboard.writeText(window.location.href);
           }}
         >
           <IoMdShare />
