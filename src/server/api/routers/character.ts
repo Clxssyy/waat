@@ -288,7 +288,7 @@ export const characterRouter = createTRPCRouter({
           id: input.id,
         },
         data: {
-          name: input.name || undefined,
+          name: input.name || "Default Character",
           role: input.role,
           private: input.private,
           description: input.description,
@@ -329,7 +329,7 @@ export const characterRouter = createTRPCRouter({
     .mutation(async ({ ctx, input }) => {
       return ctx.db.character.create({
         data: {
-          name: input.name,
+          name: input.name || "Default Character",
           role: input.role ?? undefined,
           private: input.private,
           description: input.description,
