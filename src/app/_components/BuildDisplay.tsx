@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { useItemData } from "~/utils";
 import type data from "public/data.json";
 import clsx from "clsx";
-import Image from "next/image";
+import ImageHelper from "./ImageHelper";
 
 const BuildDisplay = () => {
   const {
@@ -222,7 +222,7 @@ const BuildDisplay = () => {
             >
               {weapon ? (
                 weaponData?.image ? (
-                  <Image
+                  <ImageHelper
                     src={weaponData.image}
                     alt={weapon}
                     width={800}
@@ -266,7 +266,7 @@ const BuildDisplay = () => {
               >
                 {helmet ? (
                   helmetData?.image ? (
-                    <Image
+                    <ImageHelper
                       src={helmetData.image}
                       alt={helmet}
                       width={800}
@@ -311,7 +311,7 @@ const BuildDisplay = () => {
               >
                 {chest ? (
                   chestData?.image ? (
-                    <Image
+                    <ImageHelper
                       src={chestData.image}
                       alt={chest}
                       width={800}
@@ -356,7 +356,7 @@ const BuildDisplay = () => {
               >
                 {boots ? (
                   bootsData?.image ? (
-                    <Image
+                    <ImageHelper
                       src={bootsData.image}
                       alt={boots}
                       width={800}
@@ -403,7 +403,7 @@ const BuildDisplay = () => {
           >
             {drifter ? (
               drifterData?.image ? (
-                <Image
+                <ImageHelper
                   src={drifterData.image}
                   alt={drifter}
                   width={2436}

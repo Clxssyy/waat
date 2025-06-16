@@ -7,7 +7,7 @@ import { IoClose } from "react-icons/io5";
 import type { ActiveFilter, ActiveBuildIndex, ActiveSlots } from "~/types";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { MASTERY_OPTIONS, TIER_LEVELS } from "~/utils";
-import Image from "next/image";
+import ImageHelper from "./ImageHelper";
 
 type slots = Exclude<ActiveSlots, "drifter">;
 
@@ -39,6 +39,7 @@ const Equipment = ({
     core_skill: {
       name: string;
       description: string;
+      image: string;
     };
     type: string;
     set: string;
@@ -46,6 +47,8 @@ const Equipment = ({
   };
 
   let equipmentData: EquipmentData | undefined;
+  let skillData;
+
   if (formData?.builds[activeBuildIndex]?.data.equipment) {
     const equipmentKey =
       formData.builds[activeBuildIndex]?.data.equipment[slot];
@@ -55,6 +58,10 @@ const Equipment = ({
             equipmentKey as keyof (typeof data)[typeof slot]
           ] as EquipmentData)
         : undefined;
+
+    if (equipmentData) {
+      skillData = data.skills[equipmentData?.set as keyof typeof data.skills];
+    }
   }
 
   return (
@@ -106,7 +113,7 @@ const Equipment = ({
       <div className="flex gap-2">
         <div className="h-12 w-12 rounded border border-neutral-600 bg-neutral-700">
           {equipmentData?.image ? (
-            <Image
+            <ImageHelper
               src={equipmentData.image}
               alt={
                 formData.builds?.[activeBuildIndex]?.data?.equipment[slot] ?? ""
@@ -224,29 +231,85 @@ const Equipment = ({
                     <div className="flex flex-col">
                       <h3 className="text-sm">Basic Attacks</h3>
                       <div className="flex gap-2">
-                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
-                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
-                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
+                        {skillData &&
+                          Object.entries(skillData.basic_attacks).map(
+                            ([key, skill]) => {
+                              return (
+                                <div
+                                  key={key}
+                                  className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black"
+                                >
+                                  {skill.image ? (
+                                    <ImageHelper
+                                      src={skill.image}
+                                      width={256}
+                                      height={256}
+                                      alt={key}
+                                    />
+                                  ) : null}
+                                </div>
+                              );
+                            },
+                          )}
                       </div>
                     </div>
                     <div className="flex flex-col">
                       <h3 className="text-sm">Skill 1</h3>
                       <div className="flex gap-2">
-                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
-                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
-                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
-                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
-                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
+                        {skillData &&
+                          Object.entries(skillData.common_skills).map(
+                            ([key, skill]) => {
+                              return (
+                                <div
+                                  key={key}
+                                  className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black"
+                                >
+                                  {skill.image ? (
+                                    <ImageHelper
+                                      src={skill.image}
+                                      width={256}
+                                      height={256}
+                                      alt={key}
+                                    />
+                                  ) : null}
+                                </div>
+                              );
+                            },
+                          )}
                       </div>
                     </div>
                     <div className="flex flex-col">
                       <h3 className="text-sm">Skill 2 (Weapon Skill)</h3>
                       <div className="flex gap-2">
-                        <div className="h-12 w-12 rounded bg-neutral-800"></div>
+                        <div className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black">
+                          {equipmentData?.core_skill.image ? (
+                            <ImageHelper
+                              src={equipmentData.core_skill.image}
+                              width={256}
+                              height={256}
+                              alt={equipmentData.core_skill.name}
+                            />
+                          ) : null}
+                        </div>
                         <div className="flex items-center rounded bg-neutral-800 p-2">
                           <p className="text-sm">
                             {equipmentData?.core_skill.name}
                           </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col">
+                      <h3 className="text-sm">Passive Skill</h3>
+                      <div className="flex gap-2">
+                        <div className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black">
+                          {skillData?.passive_skill.image ? (
+                            <ImageHelper
+                              src={skillData.passive_skill.image}
+                              width={256}
+                              height={256}
+                              alt={skillData.passive_skill.name}
+                            />
+                          ) : null}
                         </div>
                       </div>
                     </div>
@@ -257,7 +320,16 @@ const Equipment = ({
                       {slot.charAt(0).toUpperCase() + slot.slice(1)} Skill
                     </h3>
                     <div className="flex gap-2">
-                      <div className="h-12 w-12 rounded bg-neutral-800"></div>
+                      <div className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black">
+                        {equipmentData?.core_skill.image ? (
+                          <ImageHelper
+                            src={equipmentData.core_skill.image}
+                            width={256}
+                            height={256}
+                            alt={equipmentData.core_skill.name}
+                          />
+                        ) : null}
+                      </div>
                       <div className="flex items-center rounded bg-neutral-800 p-2">
                         <p className="text-sm">
                           {equipmentData?.core_skill.name}

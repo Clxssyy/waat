@@ -7,11 +7,13 @@
       "intBonus": 1.1,
       "activeSkill": {
         "name": "Frozen Maelstorm",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCTeArWhdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
       },
       "passiveSkill": {
         "name": "Fractured Ice",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCb3KkXQWbBOnPELSmCrNGjQoAcKtW4k0pX3uy"
       },
       "type": "strength",
       "supportEffects": {
@@ -30,11 +32,13 @@
       "intBonus": 0.8,
       "activeSkill": {
         "name": "Magma Slam",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCxggIumFTM9kdEWPFiXUfzcS5mwtbKTRDjIYn"
       },
       "passiveSkill": {
         "name": "Seismic Impact",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCa3RsI1gcw3rXNJW4OjAURKLo0dxMTBEhliY1"
       },
       "type": "strength",
       "supportEffects": {
@@ -53,11 +57,13 @@
       "intBonus": 1,
       "activeSkill": {
         "name": "Sandstorm Dominion",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCqtxfkUv0DrPOVUwARFb2Ggj9MuYvQ0JiBK7e"
       },
       "passiveSkill": {
         "name": "Sand Veil",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC69DlWI0XA1L3EneUzdbVD7B49OSsGvWFcaH6"
       },
       "type": "strength",
       "supportEffects": {
@@ -76,11 +82,13 @@
       "intBonus": 1,
       "activeSkill": {
         "name": "Protector's Radiance",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCaVIHCegcw3rXNJW4OjAURKLo0dxMTBEhliY1"
       },
       "passiveSkill": {
         "name": "Reflective Shield",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCrs10Zv3ZrcpGNj0mROVHQMXP4oWtnswev9gJ"
       },
       "type": "strength",
       "supportEffects": {
@@ -99,11 +107,13 @@
       "intBonus": 1.1,
       "activeSkill": {
         "name": "Shackled Grip",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7BDeUrlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p"
       },
       "passiveSkill": {
         "name": "Imprisonment",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyY0gEI9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
       },
       "type": "strength",
       "supportEffects": {
@@ -122,11 +132,13 @@
       "intBonus": 0.8,
       "activeSkill": {
         "name": "Cannonade",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCTo1f2ANatISq1hbFsvaBAxlu3r4fejycwL2U"
       },
       "passiveSkill": {
         "name": "Resolve",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6nnB3HXA1L3EneUzdbVD7B49OSsGvWFcaH6P"
       },
       "type": "strength",
       "supportEffects": {
@@ -145,11 +157,13 @@
       "intBonus": 1.4,
       "activeSkill": {
         "name": "Shield of Conviction",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClyIg5Tv6oygh7mMGDItxK38196fS4eZ2ATUa"
       },
       "passiveSkill": {
         "name": "Defiant Resolve",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC90OSzbD7PCifcs12oSdBru3GbU5JnO6IXZap"
       },
       "type": "strength",
       "supportEffects": {
@@ -168,11 +182,13 @@
       "intBonus": 1.3,
       "activeSkill": {
         "name": "Skyward Leap",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJzBdkwUtiPWS4l8JEHns6v3kTN10rCyUZXMo"
       },
       "passiveSkill": {
         "name": "Healing Guardian",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCt8CTHJjhOKtpPs7M4Sir1gLFqkd2GlRWUDjf"
       },
       "type": "strength",
       "supportEffects": {
@@ -191,11 +207,13 @@
       "intBonus": 0.5,
       "activeSkill": {
         "name": "Acid Blast",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6GHsycXA1L3EneUzdbVD7B49OSsGvWFcaH6P"
       },
       "passiveSkill": {
         "name": "Corrosion Barrier",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiuCisOJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2"
       },
       "type": "strength",
       "supportEffects": {
@@ -214,11 +232,13 @@
       "intBonus": 0.8,
       "activeSkill": {
         "name": "Flamecore Rampage",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0Q7jWBGnMSAK5VBw2xylROtGWiDZQcgjTNJE"
       },
       "passiveSkill": {
         "name": "Hell Salvo's Embrace",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHbyL85K4EOAC1uZm8KvoQgpyDTSnlbFxk6L5"
       },
       "type": "agility",
       "supportEffects": {
@@ -237,11 +257,13 @@
       "intBonus": 0.7,
       "activeSkill": {
         "name": "Tempest Slash",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXe5EjzynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
       },
       "passiveSkill": {
         "name": "Cyclone Reap",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCEl28MjYw01AKmPBrlgjRL2yDc3ZvtVMXJNh6"
       },
       "type": "agility",
       "supportEffects": {
@@ -260,11 +282,13 @@
       "intBonus": 1.1,
       "activeSkill": {
         "name": "Spectral Disquise",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKEY8xDwIWoRmwnVDpPJKx9SMZFLG1TkAQU2e"
       },
       "passiveSkill": {
         "name": "Echo Reflection",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQTm4fc7z9VydsAL2D3hoSNGWrlcw7ZuBgfXi"
       },
       "type": "agility",
       "supportEffects": {
@@ -283,11 +307,13 @@
       "intBonus": 0.9,
       "activeSkill": {
         "name": "Storm Pulse",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyqCRsA9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
       },
       "passiveSkill": {
         "name": "Static Overdrive",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCMPW7TCLzbs6par1jMWHioyOVkIlgte5vRAf3"
       },
       "type": "agility",
       "supportEffects": {
@@ -306,11 +332,13 @@
       "intBonus": 0.9,
       "activeSkill": {
         "name": "Null Pulse",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClalM096oygh7mMGDItxK38196fS4eZ2ATUak"
       },
       "passiveSkill": {
         "name": "Overclocking Reflex",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSRu11BVwJHd9VeDNGoX6KrO7F2zbawu5I3AU"
       },
       "type": "agility",
       "supportEffects": {
@@ -329,11 +357,13 @@
       "intBonus": 1,
       "activeSkill": {
         "name": "Soul Feast",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQZ92457z9VydsAL2D3hoSNGWrlcw7ZuBgfXi"
       },
       "passiveSkill": {
         "name": "Umbra Guardian",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyFMLYw9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
       },
       "type": "agility",
       "supportEffects": {
@@ -352,11 +382,13 @@
       "intBonus": 0.8,
       "activeSkill": {
         "name": "Shadow Dive",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCX6pVnCynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
       },
       "passiveSkill": {
         "name": "Healing Bloom Hunter",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbYFcZfWbBOnPELSmCrNGjQoAcKtW4k0pX3uy"
       },
       "type": "agility",
       "supportEffects": {
@@ -376,11 +408,13 @@
       "intBonus": 0.7,
       "activeSkill": {
         "name": "Hemophage",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCEXSrOdYw01AKmPBrlgjRL2yDc3ZvtVMXJNh6"
       },
       "passiveSkill": {
         "name": "Blood Contract",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXYD4NiynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
       },
       "type": "agility",
       "supportEffects": {
@@ -398,11 +432,13 @@
         "intBonus": 1,
         "activeSkill": {
           "name": "Shadow Rift",
-          "description": ""
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCx9Wvt6TM9kdEWPFiXUfzcS5mwtbKTRDjIYnV"
         },
         "passiveSkill": {
           "name": "Umbra Kinetics",
-          "description": ""
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCvfaRNr1px4UQA1RsqcaXnj7NfHlgpBFLTCie"
         },
 
         "type": "agility",
@@ -423,11 +459,13 @@
       "intBonus": 2.4,
       "activeSkill": {
         "name": "Twinlance Infusion",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdgbxHfirOfwbCID83Tpm1Hv24gWoyBiFXVxk"
       },
       "passiveSkill": {
         "name": "Lunar Rebirth",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCjrCzgwBPFTRAJm6yIQ43qr1OD7LeK2tWUYab"
       },
       "type": "intelligence",
       "supportEffects": {
@@ -446,11 +484,13 @@
       "intBonus": 3.1,
       "activeSkill": {
         "name": "Shadow Cascade",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiCE18uJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2"
       },
       "passiveSkill": {
         "name": "Umbra Resonance",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCGMMkj8tMHmL1NBfDRpSE6XKr3hOJ9jnoQAWF"
       },
       "type": "intelligence",
       "supportEffects": {
@@ -469,11 +509,13 @@
       "intBonus": 2,
       "activeSkill": {
         "name": "Abyssal Sovereignty",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCywHKrw9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
       },
       "passiveSkill": {
         "name": "Hive Exaltation",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCMWPYTXLzbs6par1jMWHioyOVkIlgte5vRAf3"
       },
       "type": "intelligence",
       "supportEffects": {
@@ -492,11 +534,13 @@
       "intBonus": 2.1,
       "activeSkill": {
         "name": "Raven's Gaze",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOui47CIRLFieDIdC9aNjtX2G4mY7JVxlbfyu"
       },
       "passiveSkill": {
         "name": "Summon Raven",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyMLCQz9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
       },
       "type": "intelligence",
       "supportEffects": {
@@ -515,11 +559,13 @@
       "intBonus": 2.3,
       "activeSkill": {
         "name": "Genetic Cascade",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCEPHiEZYw01AKmPBrlgjRL2yDc3ZvtVMXJNh6"
       },
       "passiveSkill": {
         "name": "Helical Convergence",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCzNOiTtEqOA7HxjVDm05p8UIgRTs6lBdvNGSt"
       },
       "type": "intelligence",
       "supportEffects": {
@@ -538,11 +584,13 @@
       "intBonus": 2.1,
       "activeSkill": {
         "name": "Serpent's Whisper",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnq1UylBfGe93BVSk5hzTrQ6UPaMygj2Nq4Cd"
       },
       "passiveSkill": {
         "name": "Shedskin",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7X6vnCblo6BUDrlxFQ9LiOPeT8H0CW2hnsR4"
       },
       "type": "intelligence",
       "supportEffects": {
@@ -561,11 +609,13 @@
       "intBonus": 2,
       "activeSkill": {
         "name": "Bond of Light",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCX38T9DynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
       },
       "passiveSkill": {
         "name": "Light's Echo",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6QwVy7XA1L3EneUzdbVD7B49OSsGvWFcaH6P"
       },
       "type": "intelligence",
       "supportEffects": {
@@ -584,11 +634,13 @@
       "intBonus": 2.3,
       "activeSkill": {
         "name": "Sanctification",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXBNZzuynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
       },
       "passiveSkill": {
         "name": "Holy Covenant",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7kbMfIlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p"
       },
       "type": "intelligence",
       "supportEffects": {
@@ -607,11 +659,13 @@
       "intBonus": 2.1,
       "activeSkill": {
         "name": "Astral Gate",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsFd2ICuZjhbCUk9y6YA2VESc8mnvDqMf5LGu"
       },
       "passiveSkill": {
         "name": "Celestial Rotation",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCr8IEtN3ZrcpGNj0mROVHQMXP4oWtnswev9gJ"
       },
       "type": "intelligence",
       "supportEffects": {
@@ -630,11 +684,13 @@
       "intBonus": 1.3,
       "activeSkill": {
         "name": "Mole's Escape",
-        "description": ""
+        "description": "",
+        "image": ""
       },
       "passiveSkill": {
         "name": "Survivability Resilience",
-        "description": ""
+        "description": "",
+        "image": ""
       },
       "type": "logistics",
       "supportEffects": {
@@ -652,7 +708,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Bloom of Malice",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCxccgrVTM9kdEWPFiXUfzcS5mwtbKTRDjIYnV"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCRiU9oqAnJqIWpK8HPuraCOUN2mQSd4gxcDYv",
       "type": "intelligence",
@@ -662,7 +719,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Necrotic Eruption",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCL6uxy6dNqMVOnfP9XToUGW20hvxp7K6IgYDy"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLKjLlrdNqMVOnfP9XToUGW20hvxp7K6IgYDy",
       "type": "intelligence",
@@ -672,7 +730,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Sanctuary",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCqtpHwi0DrPOVUwARFb2Ggj9MuYvQ0JiBK7el"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCGBTiGUetMHmL1NBfDRpSE6XKr3hOJ9jnoQAW",
       "type": "intelligence",
@@ -682,7 +741,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Blessed Halo",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCTJHYHYatISq1hbFsvaBAxlu3r4fejycwL2UW"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCjKIyYoBPFTRAJm6yIQ43qr1OD7LeK2tWUYab",
       "type": "intelligence",
@@ -692,7 +752,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Frost's Caller",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCploQ7Fnl5Y2OXNwHZ403tR8CeJdUmEagVSLf"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJc4tFLUtiPWS4l8JEHns6v3kTN10rCyUZXMo",
       "type": "intelligence",
@@ -702,7 +763,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Ice Blast",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCvfqa1lDpx4UQA1RsqcaXnj7NfHlgpBFLTCie"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbNKGjZWbBOnPELSmCrNGjQoAcKtW4k0pX3uy",
       "type": "intelligence",
@@ -712,7 +774,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Molten Volley",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgxmI3foDsTbni1kQWjq2ZIY9X53xfLVaKF8G"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCKmtSlqhdRK6zgEJNaAl8QbjHpe3GBMqcoSW",
       "type": "intelligence",
@@ -722,7 +785,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Starforge Beam",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCMOfuTlLzbs6par1jMWHioyOVkIlgte5vRAf3"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCxeERrkTM9kdEWPFiXUfzcS5mwtbKTRDjIYnV",
       "type": "intelligence",
@@ -732,7 +796,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Crippling Curse",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC3wshBubFGQ0IUDOkSBpMKthngLxwV6sCENTj"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJwyiLZUtiPWS4l8JEHns6v3kTN10rCyUZXMo",
       "type": "intelligence",
@@ -742,7 +807,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Parasitic Swarm",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJkxW2WUtiPWS4l8JEHns6v3kTN10rCyUZXMo"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCvLL4lSpx4UQA1RsqcaXnj7NfHlgpBFLTCie5",
       "type": "intelligence",
@@ -752,7 +818,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Pestilence",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCc5J5J7rsHkruNlYIJ7Uz8OBA3pRwfhmdCoS4"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYzBMx5rGRsurykYnU8tjQL0iwWeACKo4E5aZ",
       "type": "intelligence",
@@ -762,7 +829,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Hexbound Malice",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiYTWEXJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC3hki4HbFGQ0IUDOkSBpMKthngLxwV6sCENTj",
       "type": "intelligence",
@@ -772,7 +840,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Sacred Flare",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCUlrZKypQ16DWLsJmnqFyb2XvNroZuiz5flAI"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCymE7NT9J3IVna9mA2PgkFluvzcOS7xYQdGTN",
       "type": "intelligence",
@@ -782,7 +851,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Sanctified Domain",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6VLI9IXA1L3EneUzdbVD7B49OSsGvWFcaH6P"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOu69HUlRLFieDIdC9aNjtX2G4mY7JVxlbfyu",
       "type": "intelligence",
@@ -792,7 +862,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Sanctum Arc",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXoq6DnynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCW02wbiVDaGSCpnbx189YilBew0cJzoMPdNAR",
       "type": "intelligence",
@@ -802,7 +873,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Divine Vault",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJ3plERUtiPWS4l8JEHns6v3kTN10rCyUZXMo"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCew7sn6qi02s7T6FOxAtHYlBmI8h3odqkzGaJ",
       "type": "intelligence",
@@ -812,7 +884,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Frozen Phase",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCySXGn9J3IVna9mA2PgkFluvzcOS7xYQdGTNE"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCY0CHQCrGRsurykYnU8tjQL0iwWeACKo4E5aZ",
       "type": "intelligence",
@@ -822,7 +895,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Frost Nova",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQ0Is6k7z9VydsAL2D3hoSNGWrlcw7ZuBgfXi"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdC7TXxirOfwbCID83Tpm1Hv24gWoyBiFXVxk",
       "type": "intelligence",
@@ -832,7 +906,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Frostbound Echo",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCeVvD3mqi02s7T6FOxAtHYlBmI8h3odqkzGaJ"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHYPLNhK4EOAC1uZm8KvoQgpyDTSnlbFxk6L5",
       "type": "intelligence",
@@ -842,7 +917,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Frostbite",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDEKUaHynA1HpuOTqiN0gK7cldavVYGk9WLZ"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCRCT9JrAnJqIWpK8HPuraCOUN2mQSd4gxcDYv",
       "type": "intelligence",
@@ -852,7 +928,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Hell Salvo",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZKf82v5Gd5rIR1B8NCZt3wcWfDJgQSipVkE0"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOu7TnTLRLFieDIdC9aNjtX2G4mY7JVxlbfyu",
       "type": "intelligence",
@@ -862,7 +939,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Core Flare",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCUMrsOmQ16DWLsJmnqFyb2XvNroZuiz5flAIC"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7UxrNilo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p",
       "type": "intelligence",
@@ -872,7 +950,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Scorching Surge",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0UU6jmGnMSAK5VBw2xylROtGWiDZQcgjTNJE"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgcOWNjVoDsTbni1kQWjq2ZIY9X53xfLVaKF8",
       "type": "intelligence",
@@ -882,7 +961,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Molten Blast",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwEAkEGOhGMgoOJLYrd3qpCvNxRc5QFZ9am6y"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKNX8DjIWoRmwnVDpPJKx9SMZFLG1TkAQU2eE",
       "type": "intelligence",
@@ -892,7 +972,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Rot Manifest",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiexw8FJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCIokiAyzzmQPwNigqxUdB1eOyCYbWln78fpDF",
       "type": "intelligence",
@@ -902,7 +983,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Aegisflare",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSIQqAZwJHd9VeDNGoX6KrO7F2zbawu5I3AU0"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCqQ3SUL0DrPOVUwARFb2Ggj9MuYvQ0JiBK7el",
       "type": "intelligence",
@@ -912,7 +994,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Frost Torrent",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCtxsqgQOjhOKtpPs7M4Sir1gLFqkd2GlRWUDj"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCEKi6htYw01AKmPBrlgjRL2yDc3ZvtVMXJNh6",
       "type": "intelligence",
@@ -922,7 +1005,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Hellfire",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCws2BqHOhGMgoOJLYrd3qpCvNxRc5QFZ9am6y"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJyl1IUtiPWS4l8JEHns6v3kTN10rCyUZXMoq",
       "type": "intelligence",
@@ -932,36 +1016,41 @@
       "rarity": "common",
       "core_skill": {
         "name": "Hellfire",
-        "description": ""
+        "description": "",
+        "image": ""
       },
       "image": "",
-      "type": "intelligence"
+      "type": "intelligence",
+      "set": "fire"
     },
     "prism_cloak": {
       "rarity": "legendary",
       "core_skill": {
         "name": "Photon Activation",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCTLILw3atISq1hbFsvaBAxlu3r4fejycwL2UW"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCX1Mwf0ynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
       "type": "strength",
-      "set": "gun"
+      "set": "guns"
     },
     "voideye": {
       "rarity": "legendary",
       "core_skill": {
         "name": "Deadshot",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXc72zsynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9hhAriMD7PCifcs12oSdBru3GbU5JnO6IXZa",
       "type": "strength",
-      "set": "gun"
+      "set": "guns"
     },
     "thunderlord's_wrath": {
       "rarity": "legendary",
       "core_skill": {
         "name": "Thunderclap Impact",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC1dNz2rcM75luO6aJUWEridRBzN8ILQ4K0hvk"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwGmcutOhGMgoOJLYrd3qpCvNxRc5QFZ9am6y",
       "type": "strength",
@@ -971,7 +1060,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Void Devour",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiQhAaZBJuLA8ofy7IC6JlZmUbr1WQBsg3SnO"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDYJSWRynA1HpuOTqiN0gK7cldavVYGk9WLZ",
       "type": "strength",
@@ -981,7 +1071,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Twinstorm",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOIJ9prRLFieDIdC9aNjtX2G4mY7JVxlbfyuv"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdscj6ZirOfwbCID83Tpm1Hv24gWoyBiFXVxk",
       "type": "strength",
@@ -991,7 +1082,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Bladewheel Throw",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCl9LlJn6oygh7mMGDItxK38196fS4eZ2ATUak"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnjU0RlfGe93BVSk5hzTrQ6UPaMygj2Nq4Cdi",
       "type": "strength",
@@ -1001,7 +1093,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Thousandfold Strike",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6FlTNFXA1L3EneUzdbVD7B49OSsGvWFcaH6P"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCa1k4puXgcw3rXNJW4OjAURKLo0dxMTBEhliY",
       "type": "strength",
@@ -1011,7 +1104,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Obliteration",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC92piFpD7PCifcs12oSdBru3GbU5JnO6IXZap"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJ7hp00AUtiPWS4l8JEHns6v3kTN10rCyUZXM",
       "type": "strength",
@@ -1021,47 +1115,52 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Snipe",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCE3qRrVyYw01AKmPBrlgjRL2yDc3ZvtVMXJNh"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC5IwRQ1F5c2dtDWx1eQAKHl76khLrMiGg9fXy",
       "type": "strength",
-      "set": "gun"
+      "set": "guns"
     },
     "blightspitter": {
       "rarity": "epic",
       "core_skill": {
         "name": "Toxic Shroud",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKfjUNoIWoRmwnVDpPJKx9SMZFLG1TkAQU2eE"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCvVdlngpx4UQA1RsqcaXnj7NfHlgpBFLTCie5",
       "type": "strength",
-      "set": "gun"
+      "set": "guns"
     },
     "spectral_assault": {
       "rarity": "epic",
       "core_skill": {
         "name": "Rapid Fire",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCy4FXE29J3IVna9mA2PgkFluvzcOS7xYQdGTN"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClybVLW06oygh7mMGDItxK38196fS4eZ2ATUa",
       "type": "strength",
-      "set": "gun"
+      "set": "guns"
     },
     "sentinel_barrage": {
       "rarity": "epic",
       "core_skill": {
         "name": "Sentinel Barrage",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCBe6royxxayJATSI4luXcVpj2MeUKF7r9D5gn"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCxA5nCbTM9kdEWPFiXUfzcS5mwtbKTRDjIYnV",
       "type": "strength",
-      "set": "gun"
+      "set": "guns"
     },
     "bulwark_core": {
       "rarity": "epic",
       "core_skill": {
         "name": "Shield Slam",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCFjgjvPSY0xU7AZSWvtlJFd3OmV2ub1ajiEye"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHyhr3xK4EOAC1uZm8KvoQgpyDTSnlbFxk6L5",
       "type": "strength",
@@ -1071,7 +1170,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Grappling Strike",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyM8U5t9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC3Nl0OvbFGQ0IUDOkSBpMKthngLxwV6sCENTj",
       "type": "strength",
@@ -1081,7 +1181,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Void Slam",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCWFq9C2VDaGSCpnbx189YilBew0cJzoMPdNAR"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnSnwrnfGe93BVSk5hzTrQ6UPaMygj2Nq4Cdi",
       "type": "strength",
@@ -1091,7 +1192,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Pulverizing Slam",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9E7nJOD7PCifcs12oSdBru3GbU5JnO6IXZap"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsOQmI0ZjhbCUk9y6YA2VESc8mnvDqMf5LGu1",
       "type": "strength",
@@ -1101,7 +1203,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Vortex Toss",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0ozu9TGnMSAK5VBw2xylROtGWiDZQcgjTNJE"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSFJRXlwJHd9VeDNGoX6KrO7F2zbawu5I3AU0",
       "type": "strength",
@@ -1111,7 +1214,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Bonecrusher Leap",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC5nhNPBF5c2dtDWx1eQAKHl76khLrMiGg9fXy"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOEAOgxRLFieDIdC9aNjtX2G4mY7JVxlbfyuv",
       "type": "strength",
@@ -1121,7 +1225,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Execution",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCTP8w8oatISq1hbFsvaBAxlu3r4fejycwL2UW"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSt7pjKwJHd9VeDNGoX6KrO7F2zbawu5I3AU0",
       "type": "strength",
@@ -1131,7 +1236,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Runic Rebound",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSChYe6boHx7HuMjzKPR6SGg1BFUfEidcZ2JoDr"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0mwevzGnMSAK5VBw2xylROtGWiDZQcgjTNJE",
       "type": "strength",
@@ -1141,7 +1247,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Titan's Stride",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9sUZ5uD7PCifcs12oSdBru3GbU5JnO6IXZap"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCaWD09hdRK6zgEJNaAl8QbjHpe3GBMqcoSW1",
       "type": "strength",
@@ -1151,7 +1258,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Sovereign Strike",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCMtHGU1Lzbs6par1jMWHioyOVkIlgte5vRAf3"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbmVdt77WbBOnPELSmCrNGjQoAcKtW4k0pX3u",
       "type": "strength",
@@ -1161,7 +1269,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Force Pierce",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCg3XGMOoDsTbni1kQWjq2ZIY9X53xfLVaKF8G"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgt9shaoDsTbni1kQWjq2ZIY9X53xfLVaKF8G",
       "type": "strength",
@@ -1171,7 +1280,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Overload Slash",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsT4Au5ZjhbCUk9y6YA2VESc8mnvDqMf5LGu1"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyC3W4dp9J3IVna9mA2PgkFluvzcOS7xYQdGT",
       "type": "strength",
@@ -1181,17 +1291,19 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Scatterblast",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHmI3CEK4EOAC1uZm8KvoQgpyDTSnlbFxk6L5"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCx3sVvYTM9kdEWPFiXUfzcS5mwtbKTRDjIYnV",
       "type": "strength",
-      "set": "gun"
+      "set": "guns"
     },
     "breaker's_resolve": {
       "rarity": "rare",
       "core_skill": {
         "name": "Unyielding Smash",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiQyffnHJuLA8ofy7IC6JlZmUbr1WQBsg3SnO"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9Uvrx3D7PCifcs12oSdBru3GbU5JnO6IXZap",
       "type": "strength",
@@ -1201,7 +1313,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Whirlwind Slash",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKEpd57dIWoRmwnVDpPJKx9SMZFLG1TkAQU2e"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCaEQtq2gcw3rXNJW4OjAURKLo0dxMTBEhliY1",
       "type": "strength",
@@ -1211,7 +1324,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Tempest Slash",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZiyQZJ5Gd5rIR1B8NCZt3wcWfDJgQSipVkE0"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOS9ySHRLFieDIdC9aNjtX2G4mY7JVxlbfyuv",
       "type": "strength",
@@ -1221,16 +1335,19 @@
       "rarity": "common",
       "core_skill": {
         "name": "Tempest Slash",
-        "description": ""
+        "description": "",
+        "image": ""
       },
       "image": "",
-      "type": "strength"
+      "type": "strength",
+      "set": "swords"
     },
     "sanctuary_of_growth": {
       "rarity": "legendary",
       "core_skill": {
         "name": "Divine Rootfall",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC1D0CyUcM75luO6aJUWEridRBzN8ILQ4K0hvk"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCIYpjXLJzzmQPwNigqxUdB1eOyCYbWln78fpD",
       "type": "agility",
@@ -1240,7 +1357,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Breeze of Resurgence",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClbEw1M6oygh7mMGDItxK38196fS4eZ2ATUak"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHzpq6YwK4EOAC1uZm8KvoQgpyDTSnlbFxk6L",
       "type": "agility",
@@ -1250,7 +1368,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Bloodeye Burst",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC69rCt4MXA1L3EneUzdbVD7B49OSsGvWFcaH6"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCFAVZlYSY0xU7AZSWvtlJFd3OmV2ub1ajiEye",
       "type": "agility",
@@ -1260,7 +1379,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Sanguine Pounce",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiOprLXJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgNDfP3oDsTbni1kQWjq2ZIY9X53xfLVaKF8G",
       "type": "agility",
@@ -1270,7 +1390,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Shadow Dash",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCqcN5ek0DrPOVUwARFb2Ggj9MuYvQ0JiBK7el"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsHpY1KZjhbCUk9y6YA2VESc8mnvDqMf5LGu1",
       "type": "agility",
@@ -1280,7 +1401,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Blightfall",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQ6I0GYv7z9VydsAL2D3hoSNGWrlcw7ZuBgfX"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZIAwgT5Gd5rIR1B8NCZt3wcWfDJgQSipVkE0",
       "type": "agility",
@@ -1290,7 +1412,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Shadow Vortex",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCtZYQVejhOKtpPs7M4Sir1gLFqkd2GlRWUDjf"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC1ZOjUyqcM75luO6aJUWEridRBzN8ILQ4K0hv",
       "type": "agility",
@@ -1300,7 +1423,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Severance Shot",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHz8bcUFK4EOAC1uZm8KvoQgpyDTSnlbFxk6L"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJBfu1YUtiPWS4l8JEHns6v3kTN10rCyUZXMo",
       "type": "agility",
@@ -1310,7 +1434,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Entangling Growth",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCcDBoYfsHkruNlYIJ7Uz8OBA3pRwfhmdCoS4i"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC5NTR4HF5c2dtDWx1eQAKHl76khLrMiGg9fXy",
       "type": "agility",
@@ -1320,7 +1445,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Healing Bloom",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC5g3qBTF5c2dtDWx1eQAKHl76khLrMiGg9fXy"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClyE79Hi6oygh7mMGDItxK38196fS4eZ2ATUa",
       "type": "agility",
@@ -1330,7 +1456,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Rain of Serenity",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJ7DG0SEUtiPWS4l8JEHns6v3kTN10rCyUZXM"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCxRrrMwTM9kdEWPFiXUfzcS5mwtbKTRDjIYnV",
       "type": "agility",
@@ -1340,7 +1467,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Thorn Barrier",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC5wOLfrRF5c2dtDWx1eQAKHl76khLrMiGg9fX"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLJCWlmrdNqMVOnfP9XToUGW20hvxp7K6IgYD",
       "type": "agility",
@@ -1350,7 +1478,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Crimson Frenzy",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7Fc2JFlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDz3nNsCTsc4uPVzehvMnktCEqAJKoZQISF65",
       "type": "agility",
@@ -1360,7 +1489,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Rupture Thrust",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJj8RjXUtiPWS4l8JEHns6v3kTN10rCyUZXMo"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCftn8zAeFwJm2B1vRUSOualKLCDGIfT0g4Esp",
       "type": "agility",
@@ -1370,7 +1500,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Soul Snare",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOH4l2IRLFieDIdC9aNjtX2G4mY7JVxlbfyuv"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyCYIn4Z9J3IVna9mA2PgkFluvzcOS7xYQdGT",
       "type": "agility",
@@ -1380,7 +1511,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Blade Dance",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCaEQvffgcw3rXNJW4OjAURKLo0dxMTBEhliY1"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC5TYjbrF5c2dtDWx1eQAKHl76khLrMiGg9fXy",
       "type": "agility",
@@ -1390,7 +1522,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Rapid Thrust",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCxYSIrWTM9kdEWPFiXUfzcS5mwtbKTRDjIYnV"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDhgO3xynA1HpuOTqiN0gK7cldavVYGk9WLZ",
       "type": "agility",
@@ -1400,7 +1533,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Sweeping Tempest",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyF3D4x9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyXVpHW9J3IVna9mA2PgkFluvzcOS7xYQdGTN",
       "type": "agility",
@@ -1410,7 +1544,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Surging Throw",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCU9soLQ16DWLsJmnqFyb2XvNroZuiz5flAICt"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC69z0CvXA1L3EneUzdbVD7B49OSsGvWFcaH6P",
       "type": "agility",
@@ -1420,7 +1555,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Banner of Justice",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCzOlYeiEqOA7HxjVDm05p8UIgRTs6lBdvNGSt"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCW8tzFNLVDaGSCpnbx189YilBew0cJzoMPdNA",
       "type": "agility",
@@ -1430,7 +1566,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Windrend Splitters",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbhhjtMWbBOnPELSmCrNGjQoAcKtW4k0pX3uy"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCc5ZeHY3sHkruNlYIJ7Uz8OBA3pRwfhmdCoS4",
       "type": "agility",
@@ -1440,7 +1577,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Arcbolt",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCpbhypVnl5Y2OXNwHZ403tR8CeJdUmEagVSLf"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClMOCZB6oygh7mMGDItxK38196fS4eZ2ATUak",
       "type": "agility",
@@ -1450,7 +1588,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Powershot",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSbkoNLwJHd9VeDNGoX6KrO7F2zbawu5I3AU0"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC69CFHmbXA1L3EneUzdbVD7B49OSsGvWFcaH6",
       "type": "agility",
@@ -1460,7 +1599,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Splintershot",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCMAIVuqLzbs6par1jMWHioyOVkIlgte5vRAf3"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCGhvOYPtMHmL1NBfDRpSE6XKr3hOJ9jnoQAWF",
       "type": "agility",
@@ -1470,7 +1610,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Crater Surge",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbmj1oMbWbBOnPELSmCrNGjQoAcKtW4k0pX3u"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDASx76CTsc4uPVzehvMnktCEqAJKoZQISF65",
       "type": "agility",
@@ -1480,7 +1621,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Rend and Reap",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCecahMSqi02s7T6FOxAtHYlBmI8h3odqkzGaJ"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6A5jHIXA1L3EneUzdbVD7B49OSsGvWFcaH6P",
       "type": "agility",
@@ -1490,7 +1632,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Bloodeye Burst",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCBzA6ZvxxayJATSI4luXcVpj2MeUKF7r9D5gn"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCaRDqIagcw3rXNJW4OjAURKLo0dxMTBEhliY1",
       "type": "agility",
@@ -1500,7 +1643,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Barrage",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXe676zynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwttyQqOhGMgoOJLYrd3qpCvNxRc5QFZ9am6y",
       "type": "agility",
@@ -1510,10 +1654,12 @@
       "rarity": "common",
       "core_skill": {
         "name": "Barrage",
-        "description": ""
+        "description": "",
+        "image": ""
       },
       "image": "",
-      "type": "agility"
+      "type": "agility",
+      "set": "bows"
     }
   },
   "helmet": {
@@ -1521,7 +1667,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Repulsion",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCcFNktZsHkruNlYIJ7Uz8OBA3pRwfhmdCoS4i"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCIaXoXOzzmQPwNigqxUdB1eOyCYbWln78fpDF",
       "type": "intelligence"
@@ -1530,7 +1677,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Last Stand",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKcmh8QIWoRmwnVDpPJKx9SMZFLG1TkAQU2eE"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClIzDjH6oygh7mMGDItxK38196fS4eZ2ATUak",
       "type": "intelligence"
@@ -1539,7 +1687,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Overflow",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYNMZb5rGRsurykYnU8tjQL0iwWeACKo4E5aZ"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYjdBO3rGRsurykYnU8tjQL0iwWeACKo4E5aZ",
       "type": "intelligence"
@@ -1548,7 +1697,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Swift Aid",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiZCqCOJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCr6SLFO3ZrcpGNj0mROVHQMXP4oWtnswev9gJ",
       "type": "intelligence"
@@ -1557,7 +1707,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Venom",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsGnjQRZjhbCUk9y6YA2VESc8mnvDqMf5LGu1"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCH98AULK4EOAC1uZm8KvoQgpyDTSnlbFxk6L5",
       "type": "intelligence"
@@ -1566,7 +1717,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Grievous Wounds",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCl29sj36oygh7mMGDItxK38196fS4eZ2ATUak"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYt1xaArGRsurykYnU8tjQL0iwWeACKo4E5aZ",
       "type": "intelligence"
@@ -1575,7 +1727,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Amplify",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCTwMpCdatISq1hbFsvaBAxlu3r4fejycwL2UW"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXYsPcVynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
       "type": "intelligence"
@@ -1584,7 +1737,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Sandstorm",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCEGU0QTYw01AKmPBrlgjRL2yDc3ZvtVMXJNh6"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdzDvUZirOfwbCID83Tpm1Hv24gWoyBiFXVxk",
       "type": "strength"
@@ -1593,7 +1747,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Forward Guard",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgcM9SEWoDsTbni1kQWjq2ZIY9X53xfLVaKF8"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDbWw0WynA1HpuOTqiN0gK7cldavVYGk9WLZ",
       "type": "strength"
@@ -1602,7 +1757,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Iron Wall",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9hWU0VXD7PCifcs12oSdBru3GbU5JnO6IXZa"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZWAvMC5Gd5rIR1B8NCZt3wcWfDJgQSipVkE0",
       "type": "strength"
@@ -1611,7 +1767,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Flame Star",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCID6kagzzmQPwNigqxUdB1eOyCYbWln78fpDF"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdafYTfirOfwbCID83Tpm1Hv24gWoyBiFXVxk",
       "type": "strength"
@@ -1620,7 +1777,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Scale Armor",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwLrHb6OhGMgoOJLYrd3qpCvNxRc5QFZ9am6y"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJkM9rsUtiPWS4l8JEHns6v3kTN10rCyUZXMo",
       "type": "strength"
@@ -1629,7 +1787,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "EMP Blast",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7QKGqlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4pt"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCpjkXYTnl5Y2OXNwHZ403tR8CeJdUmEagVSLf",
       "type": "strength"
@@ -1638,7 +1797,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Enrage",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCaM2F3agcw3rXNJW4OjAURKLo0dxMTBEhliY1"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0xymnvGnMSAK5VBw2xylROtGWiDZQcgjTNJE",
       "type": "strength"
@@ -1647,7 +1807,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Defiance",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0aPmcdGnMSAK5VBw2xylROtGWiDZQcgjTNJE"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZbsSYQ5Gd5rIR1B8NCZt3wcWfDJgQSipVkE0",
       "type": "agility"
@@ -1656,7 +1817,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Break Free",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6mhCkrXA1L3EneUzdbVD7B49OSsGvWFcaH6P"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsIdwArZjhbCUk9y6YA2VESc8mnvDqMf5LGu1",
       "type": "agility"
@@ -1665,7 +1827,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Electrified Strike",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXN3u3AynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCoKcrs215DWbhNtFdU6qgYeZKnHE9poiCJ0z2",
       "type": "agility"
@@ -1674,7 +1837,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Fade Out",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCTVxj6katISq1hbFsvaBAxlu3r4fejycwL2UW"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOCC0cVRLFieDIdC9aNjtX2G4mY7JVxlbfyuv",
       "type": "agility"
@@ -1683,7 +1847,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Rage",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCB6949PxxayJATSI4luXcVpj2MeUKF7r9D5gn"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwDP7fWOhGMgoOJLYrd3qpCvNxRc5QFZ9am6y",
       "type": "agility"
@@ -1692,7 +1857,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Dodge",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQ6XDJ8R7z9VydsAL2D3hoSNGWrlcw7ZuBgfX"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSZLmMmwJHd9VeDNGoX6KrO7F2zbawu5I3AU0",
       "type": "agility"
@@ -1701,7 +1867,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Life Flash",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCG7CZfGtMHmL1NBfDRpSE6XKr3hOJ9jnoQAWF"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9If1SD7PCifcs12oSdBru3GbU5JnO6IXZapz",
       "type": "agility"
@@ -1712,7 +1879,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Panic",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCydgWT89J3IVna9mA2PgkFluvzcOS7xYQdGTN"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCi4iT5UJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2",
       "type": "intelligence"
@@ -1721,7 +1889,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Barrier",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDNpP78CTsc4uPVzehvMnktCEqAJKoZQISF65"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCeTw1ISqi02s7T6FOxAtHYlBmI8h3odqkzGaJ",
       "type": "intelligence"
@@ -1730,7 +1899,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Mana Font",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCrW0nNzQ3ZrcpGNj0mROVHQMXP4oWtnswev9g"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLTq4vIdNqMVOnfP9XToUGW20hvxp7K6IgYDy",
       "type": "intelligence"
@@ -1739,7 +1909,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Repulse",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJ7DL1tHUtiPWS4l8JEHns6v3kTN10rCyUZXM"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCtlo2zhdRK6zgEJNaAl8QbjHpe3GBMqcoSW1",
       "type": "intelligence"
@@ -1748,7 +1919,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Dispel",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9hxlx0D7PCifcs12oSdBru3GbU5JnO6IXZap"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCieWIzLJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2",
       "type": "intelligence"
@@ -1757,7 +1929,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Purify",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7GWiu4lo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOuM0bk2RLFieDIdC9aNjtX2G4mY7JVxlbfyu",
       "type": "intelligence"
@@ -1766,7 +1939,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Heal",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCUlzzYWCQ16DWLsJmnqFyb2XvNroZuiz5flAI"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCozMBG615DWbhNtFdU6qgYeZKnHE9poiCJ0z2",
       "type": "intelligence"
@@ -1775,7 +1949,8 @@
       "rarity": "common",
       "core_skill": {
         "name": "Heal",
-        "description": ""
+        "description": "",
+        "image": ""
       },
       "image": "",
       "type": "intelligence"
@@ -1784,7 +1959,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Vulnerability",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQ16OS7z9VydsAL2D3hoSNGWrlcw7ZuBgfXiF"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCWkmAtFVDaGSCpnbx189YilBew0cJzoMPdNAR",
       "type": "strength"
@@ -1793,7 +1969,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Converge",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCa1ZUyyLgcw3rXNJW4OjAURKLo0dxMTBEhliY"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCBaTfNBHxxayJATSI4luXcVpj2MeUKF7r9D5g",
       "type": "strength"
@@ -1802,7 +1979,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Shield",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClc4xUg6oygh7mMGDItxK38196fS4eZ2ATUak"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbmNdRKRWbBOnPELSmCrNGjQoAcKtW4k0pX3u",
       "type": "strength"
@@ -1811,7 +1989,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Stun",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCUjTJwQ16DWLsJmnqFyb2XvNroZuiz5flAICt"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCD9aNKQCTsc4uPVzehvMnktCEqAJKoZQISF65",
       "type": "strength"
@@ -1820,7 +1999,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Charge",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCru9VKm3ZrcpGNj0mROVHQMXP4oWtnswev9gJ"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbyo1NEWbBOnPELSmCrNGjQoAcKtW4k0pX3uy",
       "type": "strength"
@@ -1829,7 +2009,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Root Grip",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKEPoVvGIWoRmwnVDpPJKx9SMZFLG1TkAQU2e"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyk0ye89J3IVna9mA2PgkFluvzcOS7xYQdGTN",
       "type": "strength"
@@ -1838,7 +2019,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Block",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyCVb3KE9J3IVna9mA2PgkFluvzcOS7xYQdGT"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC3K761JbFGQ0IUDOkSBpMKthngLxwV6sCENTj",
       "type": "strength"
@@ -1847,7 +2029,8 @@
       "rarity": "common",
       "core_skill": {
         "name": "Block",
-        "description": ""
+        "description": "",
+        "image": ""
       },
       "image": "",
       "type": "strength"
@@ -1856,7 +2039,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Rally",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYhHUIMrGRsurykYnU8tjQL0iwWeACKo4E5aZ"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCRP7Hh0AnJqIWpK8HPuraCOUN2mQSd4gxcDYv",
       "type": "agility"
@@ -1865,7 +2049,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Armor Breaker",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClUTYCz6oygh7mMGDItxK38196fS4eZ2ATUak"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsFRlC2dZjhbCUk9y6YA2VESc8mnvDqMf5LGu",
       "type": "agility"
@@ -1874,7 +2059,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Snarl",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZmlvrg5Gd5rIR1B8NCZt3wcWfDJgQSipVkE0"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCqBU1jZ0DrPOVUwARFb2Ggj9MuYvQ0JiBK7el",
       "type": "agility"
@@ -1883,7 +2069,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Finisher",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCepxZE5qi02s7T6FOxAtHYlBmI8h3odqkzGaJ"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDhf6qNynA1HpuOTqiN0gK7cldavVYGk9WLZ",
       "type": "agility"
@@ -1892,7 +2079,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Reflect",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCRBe9phAnJqIWpK8HPuraCOUN2mQSd4gxcDYv"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQvM5LG7z9VydsAL2D3hoSNGWrlcw7ZuBgfXi",
       "type": "agility"
@@ -1901,7 +2089,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Smoke Screen",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCE9RsgmYw01AKmPBrlgjRL2yDc3ZvtVMXJNh6"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCc5AUOLcsHkruNlYIJ7Uz8OBA3pRwfhmdCoS4",
       "type": "agility"
@@ -1910,7 +2099,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Bandage",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLJ6MQHwdNqMVOnfP9XToUGW20hvxp7K6IgYD"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgc5ytg9oDsTbni1kQWjq2ZIY9X53xfLVaKF8",
       "type": "agility"
@@ -1919,7 +2109,8 @@
       "rarity": "common",
       "core_skill": {
         "name": "Bandage",
-        "description": ""
+        "description": "",
+        "image": ""
       },
       "image": "",
       "type": "agility"
@@ -1928,7 +2119,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Shield",
-        "description": ""
+        "description": "",
+        "image": ""
       },
       "image": "",
       "type": "logistics"
@@ -1939,7 +2131,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Berserk",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9hHnyceD7PCifcs12oSdBru3GbU5JnO6IXZa"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCjwu88tBPFTRAJm6yIQ43qr1OD7LeK2tWUYab",
       "type": "intelligence"
@@ -1948,7 +2141,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Ghost",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOxMLj9RLFieDIdC9aNjtX2G4mY7JVxlbfyuv"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC5wudPxzF5c2dtDWx1eQAKHl76khLrMiGg9fX",
       "type": "intelligence"
@@ -1957,7 +2151,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Flash Step",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCc5k52DlsHkruNlYIJ7Uz8OBA3pRwfhmdCoS4"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCcAMLBhsHkruNlYIJ7Uz8OBA3pRwfhmdCoS4i",
       "type": "intelligence"
@@ -1966,7 +2161,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Frost",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCxbnZ20TM9kdEWPFiXUfzcS5mwtbKTRDjIYnV"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCcmAi4AsHkruNlYIJ7Uz8OBA3pRwfhmdCoS4i",
       "type": "intelligence"
@@ -1975,7 +2171,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Decay",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCBeMiiGxxayJATSI4luXcVpj2MeUKF7r9D5gn"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYSBWj5rGRsurykYnU8tjQL0iwWeACKo4E5aZ",
       "type": "intelligence"
@@ -1984,7 +2181,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Displacement",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQ6YRKhd7z9VydsAL2D3hoSNGWrlcw7ZuBgfX"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCGBSJpaytMHmL1NBfDRpSE6XKr3hOJ9jnoQAW",
       "type": "intelligence"
@@ -1993,7 +2191,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Abundance",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCUlXf4v7Q16DWLsJmnqFyb2XvNroZuiz5flAI"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC69rECLfXA1L3EneUzdbVD7B49OSsGvWFcaH6",
       "type": "intelligence"
@@ -2002,7 +2201,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Lunge",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCGBTCRb1tMHmL1NBfDRpSE6XKr3hOJ9jnoQAW"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCUlrZ6zcQ16DWLsJmnqFyb2XvNroZuiz5flAI",
       "type": "strength"
@@ -2011,7 +2211,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Mountain Crash",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCethXEAqi02s7T6FOxAtHYlBmI8h3odqkzGaJ"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCppElbHnl5Y2OXNwHZ403tR8CeJdUmEagVSLf",
       "type": "strength"
@@ -2020,7 +2221,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Vengeance",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyqAWGM9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCr2Cujs3ZrcpGNj0mROVHQMXP4oWtnswev9gJ",
       "type": "strength"
@@ -2029,7 +2231,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Guardian",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCpefQEVnl5Y2OXNwHZ403tR8CeJdUmEagVSLf"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCxggAwh3TM9kdEWPFiXUfzcS5mwtbKTRDjIYn",
       "type": "strength"
@@ -2038,7 +2241,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Titanic Growth",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbi8IcRWbBOnPELSmCrNGjQoAcKtW4k0pX3uy"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC1qT9rMcM75luO6aJUWEridRBzN8ILQ4K0hvk",
       "type": "strength"
@@ -2047,7 +2251,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Vanguard",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9L5YOiD7PCifcs12oSdBru3GbU5JnO6IXZap"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCl5QUCe6oygh7mMGDItxK38196fS4eZ2ATUak",
       "type": "strength"
@@ -2056,7 +2261,8 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Vitality",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQw0gch7z9VydsAL2D3hoSNGWrlcw7ZuBgfXi"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJtVcR2UtiPWS4l8JEHns6v3kTN10rCyUZXMo",
       "type": "strength"
@@ -2065,7 +2271,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Escape",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOu4K5UsRLFieDIdC9aNjtX2G4mY7JVxlbfyu"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQaRTh97z9VydsAL2D3hoSNGWrlcw7ZuBgfXi",
       "type": "agility"
@@ -2074,7 +2281,8 @@
       "rarity": "legendary",
       "core_skill": {
         "name": "Phase Shift",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCH9OdvsK4EOAC1uZm8KvoQgpyDTSnlbFxk6L5"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSChMrZIQHx7HuMjzKPR6SGg1BFUfEidcZ2JoDr",
       "type": "agility"
@@ -2083,7 +2291,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Attack Speed",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKENFkbLIWoRmwnVDpPJKx9SMZFLG1TkAQU2e"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCRRan8TAnJqIWpK8HPuraCOUN2mQSd4gxcDYv",
       "type": "agility"
@@ -2092,7 +2301,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Grace",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCKIIyiMhdRK6zgEJNaAl8QbjHpe3GBMqcoSW"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCMlizgJLzbs6par1jMWHioyOVkIlgte5vRAf3",
       "type": "agility"
@@ -2101,7 +2311,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Assassinate",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCRFwjDeAnJqIWpK8HPuraCOUN2mQSd4gxcDYv"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHz8cH1PK4EOAC1uZm8KvoQgpyDTSnlbFxk6L",
       "type": "agility"
@@ -2110,7 +2321,8 @@
       "rarity": "epic",
       "core_skill": {
         "name": "Vanish",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCzvyV1qEqOA7HxjVDm05p8UIgRTs6lBdvNGSt"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCi4NFO8JuLA8ofy7IC6JlZmUbr1WQBsg3SnO2",
       "type": "agility"
@@ -2119,10 +2331,529 @@
       "rarity": "rare",
       "core_skill": {
         "name": "Sidestep",
-        "description": ""
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCqNO42m0DrPOVUwARFb2Ggj9MuYvQ0JiBK7el"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCv0fMVUpx4UQA1RsqcaXnj7NfHlgpBFLTCie5",
       "type": "agility"
+    }
+  },
+  "skills": {
+    "axes": {
+      "basic_attacks": {
+        "jump_cleave": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCaZGtePgcw3rXNJW4OjAURKLo0dxMTBEhliY1"
+        },
+        "cleaving_strike": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCfat4XIeFwJm2B1vRUSOualKLCDGIfT0g4Esp"
+        },
+        "cyclone_slash": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC69hunDuXA1L3EneUzdbVD7B49OSsGvWFcaH6"
+        }
+      },
+      "common_skills": {
+        "tempest_strike": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCizRIOWJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2"
+        },
+        "rock_smash": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCSpkDMhdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
+        },
+        "primal_rush": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZT8ASw5Gd5rIR1B8NCZt3wcWfDJgQSipVkE0"
+        },
+        "axehook": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSGpqF5wJHd9VeDNGoX6KrO7F2zbawu5I3AU0"
+        },
+        "rage": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCy5TMEG9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
+        }
+      },
+      "passive_skill": {
+        "name": "Bloodthrist",
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCilG9QKJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2"
+      }
+    },
+    "bows": {
+      "basic_attacks": {
+        "split_arrow": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCp75pf4nl5Y2OXNwHZ403tR8CeJdUmEagVSLf"
+        },
+        "piercing_arrow": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCe7nHiWqi02s7T6FOxAtHYlBmI8h3odqkzGaJ"
+        },
+        "venom_arrow": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCcaxmchdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
+        }
+      },
+      "common_skills": {
+        "blast_arrow": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYKOl0wrGRsurykYnU8tjQL0iwWeACKo4E5aZ"
+        },
+        "frost_arrow": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCToZowdEatISq1hbFsvaBAxlu3r4fejycwL2U"
+        },
+        "backflip_shot": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCenJeU9qi02s7T6FOxAtHYlBmI8h3odqkzGaJ"
+        },
+        "silencing_arrow": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLgP0WbdNqMVOnfP9XToUGW20hvxp7K6IgYDy"
+        },
+        "binding_arrow": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKAe2WZIWoRmwnVDpPJKx9SMZFLG1TkAQU2eE"
+        }
+      },
+      "passive_skill": {
+        "name": "Target Mark",
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJ4OPiJUtiPWS4l8JEHns6v3kTN10rCyUZXMo"
+      }
+    },
+    "curse": {
+      "basic_attacks": {
+        "touch_of_plague": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgphvwZoDsTbni1kQWjq2ZIY9X53xfLVaKF8G"
+        },
+        "plague_strike": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCW8BzpQOVDaGSCpnbx189YilBew0cJzoMPdNA"
+        },
+        "venom_pool": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCUa4s2wQ16DWLsJmnqFyb2XvNroZuiz5flAIC"
+        }
+      },
+      "common_skills": {
+        "scourge": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSChqGqdgHx7HuMjzKPR6SGg1BFUfEidcZ2JoDr"
+        },
+        "plague_surge": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC66u3xxXA1L3EneUzdbVD7B49OSsGvWFcaH6P"
+        },
+        "spread_plague": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdUEIu2FirOfwbCID83Tpm1Hv24gWoyBiFXVx"
+        },
+        "exhaustion": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgc1AFYWoDsTbni1kQWjq2ZIY9X53xfLVaKF8"
+        },
+        "toxic_matter": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCrRFWbH3ZrcpGNj0mROVHQMXP4oWtnswev9gJ"
+        }
+      },
+      "passive_skill": {
+        "name": "Plague Outbreak",
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCd1vbnHirOfwbCID83Tpm1Hv24gWoyBiFXVxk"
+      }
+    },
+    "daggers": {
+      "basic_attacks": {
+        "bleeding_thrust": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyeko8v9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
+        },
+        "ricocheting_blades": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLp30ejdNqMVOnfP9XToUGW20hvxp7K6IgYDy"
+        },
+        "armor_breaker": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDbilKqCTsc4uPVzehvMnktCEqAJKoZQISF65"
+        }
+      },
+      "common_skills": {
+        "whirling_blades": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnGJNjMfGe93BVSk5hzTrQ6UPaMygj2Nq4Cdi"
+        },
+        "phase_blade": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC79cuMAlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p"
+        },
+        "crippling_strike": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCRCWOBuAnJqIWpK8HPuraCOUN2mQSd4gxcDYv"
+        },
+        "smoke_grenade": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXOiQMxynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
+        },
+        "shadow_move": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7XEtyJvlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4"
+        }
+      },
+      "passive_skill": {
+        "name": "Bleed",
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyTgEnB9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
+      }
+    },
+    "fire": {
+      "basic_attacks": {
+        "magma_burst": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0joE9TLGnMSAK5VBw2xylROtGWiDZQcgjTNJ"
+        },
+        "scorching_shard": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCoi9mLC15DWbhNtFdU6qgYeZKnHE9poiCJ0z2"
+        },
+        "wildfire_shard": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCv0AA2fpx4UQA1RsqcaXnj7NfHlgpBFLTCie5"
+        }
+      },
+      "common_skills": {
+        "inferno_blast": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwAAJNi3OhGMgoOJLYrd3qpCvNxRc5QFZ9am6"
+        },
+        "molten_orb": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9m8hnkD7PCifcs12oSdBru3GbU5JnO6IXZap"
+        },
+        "blast_jump": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCz82McbEqOA7HxjVDm05p8UIgRTs6lBdvNGSt"
+        },
+        "oil_blast": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6Z0DuQXA1L3EneUzdbVD7B49OSsGvWFcaH6P"
+        },
+        "overdrive_mode": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDVp5BBynA1HpuOTqiN0gK7cldavVYGk9WLZ"
+        }
+      },
+      "passive_skill": {
+        "name": "Burst",
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQbcvtN7z9VydsAL2D3hoSNGWrlcw7ZuBgfXi"
+      }
+    },
+    "frost": {
+      "basic_attacks": {
+        "ice_burst": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6zBrRaXA1L3EneUzdbVD7B49OSsGvWFcaH6P"
+        },
+        "frostbite_zone": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCEw4TyEYw01AKmPBrlgjRL2yDc3ZvtVMXJNh6"
+        },
+        "frost_burst": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwAJnlPpOhGMgoOJLYrd3qpCvNxRc5QFZ9am6"
+        }
+      },
+      "common_skills": {
+        "frost_beam": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHNXEL4K4EOAC1uZm8KvoQgpyDTSnlbFxk6L5"
+        },
+        "crystal_frost": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDHKuiiPCTsc4uPVzehvMnktCEqAJKoZQISF6"
+        },
+        "frost": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCpeaQQMNnl5Y2OXNwHZ403tR8CeJdUmEagVSL"
+        },
+        "frost_wall": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDEq6GVynA1HpuOTqiN0gK7cldavVYGk9WLZ"
+        },
+        "frost_roar": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYhm7UArGRsurykYnU8tjQL0iwWeACKo4E5aZ"
+        }
+      },
+      "passive_skill": {
+        "name": "Passive",
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCehXwA6qi02s7T6FOxAtHYlBmI8h3odqkzGaJ"
+      }
+    },
+    "guns": {
+      "basic_attacks": {
+        "headshot": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiQKv1mQJuLA8ofy7IC6JlZmUbr1WQBsg3SnO"
+        },
+        "ricochet": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXZfM2FynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
+        },
+        "armor_break": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsAf8C4ZjhbCUk9y6YA2VESc8mnvDqMf5LGu1"
+        }
+      },
+      "common_skills": {
+        "trap": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXMZxzUynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
+        },
+        "quick_load": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbBzQozWbBOnPELSmCrNGjQoAcKtW4k0pX3uy"
+        },
+        "concussion_grenade": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCX34gDTynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
+        },
+        "blinding_flash": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCd0k2BAirOfwbCID83Tpm1Hv24gWoyBiFXVxk"
+        },
+        "aim": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYwXafwrGRsurykYnU8tjQL0iwWeACKo4E5aZ"
+        }
+      },
+      "passive_skill": {
+        "name": "Reload",
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQml0f07z9VydsAL2D3hoSNGWrlcw7ZuBgfXi"
+      }
+    },
+    "holy": {
+      "basic_attacks": {
+        "holy_feather": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCffcqvEeFwJm2B1vRUSOualKLCDGIfT0g4Esp"
+        },
+        "holy_smite": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiMc4QQJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2"
+        },
+        "holy_heal": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClBDnGc6oygh7mMGDItxK38196fS4eZ2ATUak"
+        }
+      },
+      "common_skills": {
+        "holy_wave": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCvPefJhdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
+        },
+        "divine_link": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCFhnEHcSY0xU7AZSWvtlJFd3OmV2ub1ajiEye"
+        },
+        "holy_energy": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHzvqpj5K4EOAC1uZm8KvoQgpyDTSnlbFxk6L"
+        },
+        "holy_wall": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC1PRJPecM75luO6aJUWEridRBzN8ILQ4K0hvk"
+        },
+        "holy_baptism": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC65U9r4XA1L3EneUzdbVD7B49OSsGvWFcaH6P"
+        }
+      },
+      "passive_skill": {
+        "name": "Divine Ward",
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCw0QFqhdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
+      }
+    },
+    "mace": {
+      "basic_attacks": {
+        "swing": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCvVN2drpx4UQA1RsqcaXnj7NfHlgpBFLTCie5"
+        },
+        "smash": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC3JWWU0bFGQ0IUDOkSBpMKthngLxwV6sCENTj"
+        },
+        "crushing_smash": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKfPqw8IWoRmwnVDpPJKx9SMZFLG1TkAQU2eE"
+        }
+      },
+      "common_skills": {
+        "frenzied_smash": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9sVETjD7PCifcs12oSdBru3GbU5JnO6IXZap"
+        },
+        "binding_smash": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDzuz0gCTsc4uPVzehvMnktCEqAJKoZQISF65"
+        },
+        "guardian_field": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSbd17jwJHd9VeDNGoX6KrO7F2zbawu5I3AU0"
+        },
+        "field_of_silence": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6O7Dk1XA1L3EneUzdbVD7B49OSsGvWFcaH6P"
+        },
+        "vengeful_thunder": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC75s6z8lo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p"
+        }
+      },
+      "passive_skill": {
+        "name": "Guardian",
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJKnripUtiPWS4l8JEHns6v3kTN10rCyUZXMo"
+      }
+    },
+    "nature": {
+      "basic_attacks": {
+        "evil_seed": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCo2q3qF15DWbhNtFdU6qgYeZKnHE9poiCJ0z2"
+        },
+        "soothing_mist": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCLeZSahdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
+        },
+        "healing_seed": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCeGapD0Wqi02s7T6FOxAtHYlBmI8h3odqkzGa"
+        }
+      },
+      "common_skills": {
+        "winding_vines": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLDzCoPdNqMVOnfP9XToUGW20hvxp7K6IgYDy"
+        },
+        "energize": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCC0ZUC2hdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
+        },
+        "vitality_seed": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCvfjIdZ6px4UQA1RsqcaXnj7NfHlgpBFLTCie"
+        },
+        "freshness": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7ijn2Zlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p"
+        },
+        "regenerate": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCFjHaLmSY0xU7AZSWvtlJFd3OmV2ub1ajiEye"
+        }
+      },
+      "passive_skill": {
+        "name": "Natural Armor",
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOqmFesRLFieDIdC9aNjtX2G4mY7JVxlbfyuv"
+      }
+    },
+    "spears": {
+      "basic_attacks": {
+        "leap_strike": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyWy3Xk9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
+        },
+        "javelin_throw": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9hVu1W5D7PCifcs12oSdBru3GbU5JnO6IXZa"
+        },
+        "sweeping_strike": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9a5fSLD7PCifcs12oSdBru3GbU5JnO6IXZap"
+        }
+      },
+      "common_skills": {
+        "lance_thrust": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCX5SAC4ynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
+        },
+        "lance_impale": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCosFoXWj15DWbhNtFdU6qgYeZKnHE9poiCJ0z"
+        },
+        "warding_flourish": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXprF6ZynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
+        },
+        "skyward_lance": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCIZem3ozzmQPwNigqxUdB1eOyCYbWln78fpDF"
+        },
+        "lance_recall": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCqtS5Xyp0DrPOVUwARFb2Ggj9MuYvQ0JiBK7e"
+        }
+      },
+      "passive_skill": {
+        "name": "Spear Scar",
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCF0RhkqSY0xU7AZSWvtlJFd3OmV2ub1ajiEye"
+      }
+    },
+    "swords": {
+      "basic_attacks": {
+        "sword_slash": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQbnxzg7z9VydsAL2D3hoSNGWrlcw7ZuBgfXi"
+        },
+        "sword_cleave": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJXJlAYUtiPWS4l8JEHns6v3kTN10rCyUZXMo"
+        },
+        "sword_energy": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyy4x7G9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
+        }
+      },
+      "common_skills": {
+        "vacuum_slash": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSChTh46kHx7HuMjzKPR6SGg1BFUfEidcZ2JoDr"
+        },
+        "crippling_strike": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0mxffyGnMSAK5VBw2xylROtGWiDZQcgjTNJE"
+        },
+        "power_slash": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCla1YcB6oygh7mMGDItxK38196fS4eZ2ATUak"
+        },
+        "defensive_slash": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnqBqiF6fGe93BVSk5hzTrQ6UPaMygj2Nq4Cd"
+        },
+        "heart_of_steel": {
+          "description": "",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCGBBHEFOtMHmL1NBfDRpSE6XKr3hOJ9jnoQAW"
+        }
+      },
+      "passive_skill": {
+        "name": "Aura and Blade",
+        "description": "",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDfoMJiCTsc4uPVzehvMnktCEqAJKoZQISF65"
+      }
     }
   }
 }

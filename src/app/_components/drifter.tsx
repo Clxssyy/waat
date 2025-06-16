@@ -7,7 +7,7 @@ import { IoClose } from "react-icons/io5";
 import type { ActiveBuildIndex, ActiveFilter } from "~/types";
 import { MASTERY_OPTIONS, TIER_LEVELS } from "~/utils";
 import { FaMinus, FaPlus } from "react-icons/fa6";
-import Image from "next/image";
+import ImageHelper from "./ImageHelper";
 
 const Drifter = ({
   activeBuildIndex,
@@ -81,7 +81,7 @@ const Drifter = ({
       <div className="flex gap-2">
         <div className="flex h-12 w-12 items-center rounded border border-neutral-600 bg-neutral-700">
           {drifterData?.image ? (
-            <Image
+            <ImageHelper
               src={drifterData.image}
               alt={formData?.builds?.[activeBuildIndex]?.data?.drifter ?? ""}
               width={2436}
@@ -187,7 +187,16 @@ const Drifter = ({
                 <div className="flex flex-col">
                   <h3 className="text-sm">Active Skill</h3>
                   <div className="flex gap-2">
-                    <div className="h-12 w-12 rounded bg-neutral-800"></div>
+                    <div className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black">
+                      {drifterData?.activeSkill.image ? (
+                        <ImageHelper
+                          src={drifterData.activeSkill.image}
+                          width={256}
+                          height={256}
+                          alt={drifterData.activeSkill.name}
+                        />
+                      ) : null}
+                    </div>
                     <div className="flex items-center rounded bg-neutral-800 p-2">
                       <p className="text-sm">{drifterData?.activeSkill.name}</p>
                     </div>
@@ -196,7 +205,16 @@ const Drifter = ({
                 <div className="flex flex-col">
                   <h3 className="text-sm">Passive Skill</h3>
                   <div className="flex gap-2">
-                    <div className="h-12 w-12 rounded bg-neutral-800"></div>
+                    <div className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black">
+                      {drifterData?.passiveSkill.image ? (
+                        <ImageHelper
+                          src={drifterData.passiveSkill.image}
+                          width={256}
+                          height={256}
+                          alt={drifterData.passiveSkill.name}
+                        />
+                      ) : null}
+                    </div>
                     <div className="flex items-center rounded bg-neutral-800 p-2">
                       <p className="text-sm">
                         {drifterData?.passiveSkill.name}
