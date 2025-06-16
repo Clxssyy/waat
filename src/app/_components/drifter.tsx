@@ -7,6 +7,7 @@ import { IoClose } from "react-icons/io5";
 import type { ActiveBuildIndex, ActiveFilter } from "~/types";
 import { MASTERY_OPTIONS, TIER_LEVELS } from "~/utils";
 import { FaMinus, FaPlus } from "react-icons/fa6";
+import Image from "next/image";
 
 const Drifter = ({
   activeBuildIndex,
@@ -78,7 +79,16 @@ const Drifter = ({
         </button>
       </div>
       <div className="flex gap-2">
-        <div className="h-12 w-12 rounded border border-neutral-600 bg-neutral-700"></div>
+        <div className="flex h-12 w-12 items-center rounded border border-neutral-600 bg-neutral-700">
+          {drifterData?.image ? (
+            <Image
+              src={drifterData.image}
+              alt={formData?.builds?.[activeBuildIndex]?.data?.drifter ?? ""}
+              width={2436}
+              height={1440}
+            />
+          ) : null}
+        </div>
         <div className="h-12 grow rounded bg-neutral-700">
           <select
             className="h-full w-full rounded border border-neutral-600 bg-neutral-700 px-2 text-lg"

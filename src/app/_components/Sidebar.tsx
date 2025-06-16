@@ -67,7 +67,6 @@ const Sidebar = () => {
             SECONDARY,
           )}
           href={isCreator ? "" : `/characters/${character.id}/rate`}
-          replace
         >
           <div className="flex text-2xl">
             {averageRating > 0 && averageRating < 1 ? (

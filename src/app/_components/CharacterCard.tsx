@@ -43,7 +43,7 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
             entry.drifter !== "" ? (
               <div
                 key={key + entry.drifter}
-                className={`rounded border p-1 ${entry.data?.[1].type === "strength" ? "border-red-400 bg-red-400/20" : `${entry.data?.[1].type === "agility" ? "border-green-300 bg-green-300/20" : `${entry.data?.[1].type === "intelligence" ? "border-blue-300 bg-blue-300/20" : `${entry.data?.[1].type === "logistics" ? "border-yellow-200 bg-yellow-200/20" : "border-neutral-700 bg-neutral-800"}`}`}`}`}
+                className={`rounded border p-1 ${entry.data?.[1].type === "strength" ? "border-red-400 bg-red-400/20" : `${entry.data?.[1].type === "agility" ? "border-green-400 bg-green-400/20" : `${entry.data?.[1].type === "intelligence" ? "border-blue-400 bg-blue-400/20" : `${entry.data?.[1].type === "logistics" ? "border-yellow-400 bg-yellow-400/20" : "border-neutral-700 bg-neutral-800"}`}`}`}`}
               >
                 {entry.drifter.charAt(0).toUpperCase() +
                   entry.drifter

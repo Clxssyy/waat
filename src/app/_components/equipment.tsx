@@ -7,6 +7,7 @@ import { IoClose } from "react-icons/io5";
 import type { ActiveFilter, ActiveBuildIndex, ActiveSlots } from "~/types";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { MASTERY_OPTIONS, TIER_LEVELS } from "~/utils";
+import Image from "next/image";
 
 type slots = Exclude<ActiveSlots, "drifter">;
 
@@ -40,6 +41,8 @@ const Equipment = ({
       description: string;
     };
     type: string;
+    set: string;
+    image: string;
   };
 
   let equipmentData: EquipmentData | undefined;
@@ -101,7 +104,18 @@ const Equipment = ({
         )}
       </div>
       <div className="flex gap-2">
-        <div className="h-12 w-12 rounded border border-neutral-600 bg-neutral-700"></div>
+        <div className="h-12 w-12 rounded border border-neutral-600 bg-neutral-700">
+          {equipmentData?.image ? (
+            <Image
+              src={equipmentData.image}
+              alt={
+                formData.builds?.[activeBuildIndex]?.data?.equipment[slot] ?? ""
+              }
+              width={800}
+              height={800}
+            />
+          ) : null}
+        </div>
         <div className="h-12 grow rounded bg-neutral-700">
           <select
             className="h-full w-full rounded border border-neutral-600 bg-neutral-700 px-2 text-lg"

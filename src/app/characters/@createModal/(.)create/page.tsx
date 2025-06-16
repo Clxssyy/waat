@@ -13,7 +13,7 @@ const Create = () => {
 
   const characterCreate = api.character.create.useMutation({
     onSuccess: (data) => {
-      router.push(`/characters/${data.characterId}`);
+      router.replace(`/characters/${data.characterId}`);
     },
     onError: (err) => {
       console.error(err);

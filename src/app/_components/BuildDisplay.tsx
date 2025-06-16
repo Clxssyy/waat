@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { useItemData } from "~/utils";
 import type data from "public/data.json";
 import clsx from "clsx";
+import Image from "next/image";
 
 const BuildDisplay = () => {
   const {
@@ -220,13 +221,22 @@ const BuildDisplay = () => {
               }}
             >
               {weapon ? (
-                <div className="truncate p-1 text-sm text-wrap">
-                  {weapon.charAt(0).toUpperCase() +
-                    weapon
-                      .slice(1)
-                      .replace(/_/g, " ")
-                      .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
-                </div>
+                weaponData?.image ? (
+                  <Image
+                    src={weaponData.image}
+                    alt={weapon}
+                    width={800}
+                    height={800}
+                  />
+                ) : (
+                  <div className="truncate p-1 text-sm text-wrap">
+                    {weapon.charAt(0).toUpperCase() +
+                      weapon
+                        .slice(1)
+                        .replace(/_/g, " ")
+                        .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
+                  </div>
+                )
               ) : (
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
                   <FaPlus />
@@ -255,13 +265,24 @@ const BuildDisplay = () => {
                 }}
               >
                 {helmet ? (
-                  <div className="truncate p-1 text-sm text-wrap">
-                    {helmet.charAt(0).toUpperCase() +
-                      helmet
-                        .slice(1)
-                        .replace(/_/g, " ")
-                        .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
-                  </div>
+                  helmetData?.image ? (
+                    <Image
+                      src={helmetData.image}
+                      alt={helmet}
+                      width={800}
+                      height={800}
+                    />
+                  ) : (
+                    <div className="truncate p-1 text-sm text-wrap">
+                      {helmet.charAt(0).toUpperCase() +
+                        helmet
+                          .slice(1)
+                          .replace(/_/g, " ")
+                          .replace(/(\s[a-z])/g, (match) =>
+                            match.toUpperCase(),
+                          )}
+                    </div>
+                  )
                 ) : (
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
                     <FaPlus />
@@ -289,13 +310,24 @@ const BuildDisplay = () => {
                 }}
               >
                 {chest ? (
-                  <div className="truncate p-1 text-sm text-wrap">
-                    {chest.charAt(0).toUpperCase() +
-                      chest
-                        .slice(1)
-                        .replace(/_/g, " ")
-                        .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
-                  </div>
+                  chestData?.image ? (
+                    <Image
+                      src={chestData.image}
+                      alt={chest}
+                      width={800}
+                      height={800}
+                    />
+                  ) : (
+                    <div className="truncate p-1 text-sm text-wrap">
+                      {chest.charAt(0).toUpperCase() +
+                        chest
+                          .slice(1)
+                          .replace(/_/g, " ")
+                          .replace(/(\s[a-z])/g, (match) =>
+                            match.toUpperCase(),
+                          )}
+                    </div>
+                  )
                 ) : (
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
                     <FaPlus />
@@ -323,13 +355,24 @@ const BuildDisplay = () => {
                 }}
               >
                 {boots ? (
-                  <div className="truncate p-1 text-sm text-wrap">
-                    {boots.charAt(0).toUpperCase() +
-                      boots
-                        .slice(1)
-                        .replace(/_/g, " ")
-                        .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
-                  </div>
+                  bootsData?.image ? (
+                    <Image
+                      src={bootsData.image}
+                      alt={boots}
+                      width={800}
+                      height={800}
+                    />
+                  ) : (
+                    <div className="truncate p-1 text-sm text-wrap">
+                      {boots.charAt(0).toUpperCase() +
+                        boots
+                          .slice(1)
+                          .replace(/_/g, " ")
+                          .replace(/(\s[a-z])/g, (match) =>
+                            match.toUpperCase(),
+                          )}
+                    </div>
+                  )
                 ) : (
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
                     <FaPlus />
@@ -351,7 +394,7 @@ const BuildDisplay = () => {
             </div>
           ) : null}
           <button
-            className={`relative flex h-24 w-60 cursor-pointer items-center justify-center border bg-neutral-700 transition-all hover:border-cyan-600 active:scale-95 ${activeSlot === "drifter" ? "border-2 border-cyan-600" : "border-neutral-600"}`}
+            className={`relative flex h-24 w-60 cursor-pointer items-center justify-center overflow-hidden border bg-neutral-700 transition-all hover:border-cyan-600 active:scale-95 ${activeSlot === "drifter" ? "border-2 border-cyan-600" : "border-neutral-600"}`}
             aria-label="Drifter Slot"
             onClick={() => {
               if (activeSlot != "drifter") setActiveSlot("drifter");
@@ -359,13 +402,22 @@ const BuildDisplay = () => {
             }}
           >
             {drifter ? (
-              <div className="truncate p-1 text-sm text-wrap">
-                {drifter.charAt(0).toUpperCase() +
-                  drifter
-                    .slice(1)
-                    .replace(/_/g, " ")
-                    .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
-              </div>
+              drifterData?.image ? (
+                <Image
+                  src={drifterData.image}
+                  alt={drifter}
+                  width={2436}
+                  height={1440}
+                />
+              ) : (
+                <div className="truncate p-1 text-sm text-wrap">
+                  {drifter.charAt(0).toUpperCase() +
+                    drifter
+                      .slice(1)
+                      .replace(/_/g, " ")
+                      .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
+                </div>
+              )
             ) : (
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
                 <FaPlus />

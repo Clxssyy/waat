@@ -10,6 +10,7 @@ const config = {
     remotePatterns: [
       new URL("https://cdn.discordapp.com/**"),
       new URL("https://upload.wikimedia.org/**"),
+      new URL("https://jv9d42ys1c.ufs.sh/f/**"),
     ],
   },
 };

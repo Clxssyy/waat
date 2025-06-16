@@ -1,6 +1,7 @@
 {
   "drifter": {
     "kyra": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZSLKMI15Gd5rIR1B8NCZt3wcWfDJgQSipVkE",
       "strBonus": 2,
       "agiBonus": 1,
       "intBonus": 1.1,
@@ -23,6 +24,7 @@
       }
     },
     "varnax": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCK3ETKoIWoRmwnVDpPJKx9SMZFLG1TkAQU2eE",
       "strBonus": 2.4,
       "agiBonus": 1.5,
       "intBonus": 0.8,
@@ -45,6 +47,7 @@
       }
     },
     "sirokos": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCUZiArcQ16DWLsJmnqFyb2XvNroZuiz5flAIC",
       "strBonus": 2.5,
       "agiBonus": 1,
       "intBonus": 1,
@@ -67,6 +70,7 @@
       }
     },
     "durion": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCROO8elAnJqIWpK8HPuraCOUN2mQSd4gxcDYv",
       "strBonus": 2.4,
       "agiBonus": 0.7,
       "intBonus": 1,
@@ -89,6 +93,7 @@
       }
     },
     "draknor": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9ywJWtD7PCifcs12oSdBru3GbU5JnO6IXZap",
       "strBonus": 2.4,
       "agiBonus": 1,
       "intBonus": 1.1,
@@ -111,6 +116,7 @@
       }
     },
     "firestorm": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCevHiGNqi02s7T6FOxAtHYlBmI8h3odqkzGaJ",
       "strBonus": 1.8,
       "agiBonus": 1.5,
       "intBonus": 0.8,
@@ -133,6 +139,7 @@
       }
     },
     "aegis": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLbKipCdNqMVOnfP9XToUGW20hvxp7K6IgYDy",
       "strBonus": 2.2,
       "agiBonus": 0.5,
       "intBonus": 1.4,
@@ -155,6 +162,7 @@
       }
     },
     "auri": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCGszBcbtMHmL1NBfDRpSE6XKr3hOJ9jnoQAWF",
       "strBonus": 2.1,
       "agiBonus": 0.7,
       "intBonus": 1.3,
@@ -177,6 +185,7 @@
       }
     },
     "izzy": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCfwS3NIeFwJm2B1vRUSOualKLCDGIfT0g4Esp",
       "strBonus": 3.1,
       "agiBonus": 0.5,
       "intBonus": 0.5,
@@ -199,6 +208,7 @@
       }
     },
     "overdrive": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyCCYQ2R9J3IVna9mA2PgkFluvzcOS7xYQdGT",
       "strBonus": 1.5,
       "agiBonus": 1.8,
       "intBonus": 0.8,
@@ -221,6 +231,7 @@
       }
     },
     "stormblade": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCFmvvtoSY0xU7AZSWvtlJFd3OmV2ub1ajiEye",
       "strBonus": 1,
       "agiBonus": 2.4,
       "intBonus": 0.7,
@@ -243,6 +254,7 @@
       }
     },
     "illusarch": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCKGG5BhdRK6zgEJNaAl8QbjHpe3GBMqcoSW1",
       "strBonus": 1,
       "agiBonus": 2,
       "intBonus": 1.1,
@@ -265,6 +277,7 @@
       }
     },
     "elektrix": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCFnXXJJSY0xU7AZSWvtlJFd3OmV2ub1ajiEye",
       "strBonus": 1,
       "agiBonus": 2.2,
       "intBonus": 0.9,
@@ -287,6 +300,7 @@
       }
     },
     "zero": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCWePRhRVDaGSCpnbx189YilBew0cJzoMPdNAR",
       "strBonus": 1.2,
       "agiBonus": 2,
       "intBonus": 0.9,
@@ -309,6 +323,7 @@
       }
     },
     "nyxa": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCR4ucgVpAnJqIWpK8HPuraCOUN2mQSd4gxcDY",
       "strBonus": 1,
       "agiBonus": 2.1,
       "intBonus": 1,
@@ -331,6 +346,7 @@
       }
     },
     "vryssia": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9h8rCU3D7PCifcs12oSdBru3GbU5JnO6IXZa",
       "strBonus": 0.6,
       "agiBonus": 2.3,
       "intBonus": 0.8,
@@ -354,6 +370,7 @@
     },
 
     "sanguor": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZ61hZV5Gd5rIR1B8NCZt3wcWfDJgQSipVkE0",
       "strBonus": 1.2,
       "agiBonus": 2.2,
       "intBonus": 0.7,
@@ -375,6 +392,7 @@
         }
       },
       "umbra": {
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXH0rcNynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
         "strBonus": 0.8,
         "agiBonus": 2.3,
         "intBonus": 1,
@@ -399,6 +417,7 @@
       }
     },
     "moonveil": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7X6YHXWlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4",
       "strBonus": 1,
       "agiBonus": 0.7,
       "intBonus": 2.4,
@@ -421,6 +440,7 @@
       }
     },
     "shadowseer": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0Yp5zeGnMSAK5VBw2xylROtGWiDZQcgjTNJE",
       "strBonus": 0.5,
       "agiBonus": 0.5,
       "intBonus": 3.1,
@@ -443,6 +463,7 @@
       }
     },
     "hive_queen": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCx9hryBTM9kdEWPFiXUfzcS5mwtbKTRDjIYnV",
       "strBonus": 1.1,
       "agiBonus": 1,
       "intBonus": 2,
@@ -465,6 +486,7 @@
       }
     },
     "raven": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwAJM77GOhGMgoOJLYrd3qpCvNxRc5QFZ9am6",
       "strBonus": 1.2,
       "agiBonus": 0.8,
       "intBonus": 2.1,
@@ -487,6 +509,7 @@
       }
     },
     "helix": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCh0W9IXHx7HuMjzKPR6SGg1BFUfEidcZ2JoDr",
       "strBonus": 1,
       "agiBonus": 0.8,
       "intBonus": 2.3,
@@ -509,6 +532,7 @@
       }
     },
     "veska": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbEE7UkWbBOnPELSmCrNGjQoAcKtW4k0pX3uy",
       "strBonus": 1,
       "agiBonus": 0.7,
       "intBonus": 2.1,
@@ -531,6 +555,7 @@
       }
     },
     "solenne": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCf0TU7tQeFwJm2B1vRUSOualKLCDGIfT0g4Es",
       "strBonus": 1,
       "agiBonus": 1.1,
       "intBonus": 2,
@@ -553,6 +578,7 @@
       }
     },
     "revelation": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCv43eNdpx4UQA1RsqcaXnj7NfHlgpBFLTCie5",
       "strBonus": 0.8,
       "agiBonus": 1,
       "intBonus": 2.3,
@@ -575,6 +601,7 @@
       }
     },
     "astral_magnus": {
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCeFPM41qi02s7T6FOxAtHYlBmI8h3odqkzGaJ",
       "strBonus": 1,
       "agiBonus": 1,
       "intBonus": 2.1,
@@ -597,6 +624,7 @@
       }
     },
     "mole": {
+      "image": "",
       "strBonus": 1.3,
       "agiBonus": 1.3,
       "intBonus": 1.3,
@@ -626,7 +654,9 @@
         "name": "Bloom of Malice",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCRiU9oqAnJqIWpK8HPuraCOUN2mQSd4gxcDYv",
+      "type": "intelligence",
+      "set": "curse"
     },
     "necromist": {
       "rarity": "legendary",
@@ -634,7 +664,9 @@
         "name": "Necrotic Eruption",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLKjLlrdNqMVOnfP9XToUGW20hvxp7K6IgYDy",
+      "type": "intelligence",
+      "set": "curse"
     },
     "sol_protector": {
       "rarity": "legendary",
@@ -642,7 +674,9 @@
         "name": "Sanctuary",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCGBTiGUetMHmL1NBfDRpSE6XKr3hOJ9jnoQAW",
+      "type": "intelligence",
+      "set": "holy"
     },
     "celestial_redeemer": {
       "rarity": "legendary",
@@ -650,7 +684,9 @@
         "name": "Blessed Halo",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCjKIyYoBPFTRAJm6yIQ43qr1OD7LeK2tWUYab",
+      "type": "intelligence",
+      "set": "holy"
     },
     "frost's_caller": {
       "rarity": "legendary",
@@ -658,7 +694,9 @@
         "name": "Frost's Caller",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJc4tFLUtiPWS4l8JEHns6v3kTN10rCyUZXMo",
+      "type": "intelligence",
+      "set": "frost"
     },
     "glacier_spark": {
       "rarity": "legendary",
@@ -666,7 +704,9 @@
         "name": "Ice Blast",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbNKGjZWbBOnPELSmCrNGjQoAcKtW4k0pX3uy",
+      "type": "intelligence",
+      "set": "frost"
     },
     "molten_mortar": {
       "rarity": "legendary",
@@ -674,7 +714,9 @@
         "name": "Molten Volley",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCKmtSlqhdRK6zgEJNaAl8QbjHpe3GBMqcoSW",
+      "type": "intelligence",
+      "set": "fire"
     },
     "solarflare": {
       "rarity": "legendary",
@@ -682,7 +724,9 @@
         "name": "Starforge Beam",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCxeERrkTM9kdEWPFiXUfzcS5mwtbKTRDjIYnV",
+      "type": "intelligence",
+      "set": "fire"
     },
     "nihilstaff": {
       "rarity": "epic",
@@ -690,7 +734,9 @@
         "name": "Crippling Curse",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJwyiLZUtiPWS4l8JEHns6v3kTN10rCyUZXMo",
+      "type": "intelligence",
+      "set": "curse"
     },
     "infestor's_staff": {
       "rarity": "epic",
@@ -698,7 +744,9 @@
         "name": "Parasitic Swarm",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCvLL4lSpx4UQA1RsqcaXnj7NfHlgpBFLTCie5",
+      "type": "intelligence",
+      "set": "curse"
     },
     "plaguespread": {
       "rarity": "epic",
@@ -706,7 +754,9 @@
         "name": "Pestilence",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYzBMx5rGRsurykYnU8tjQL0iwWeACKo4E5aZ",
+      "type": "intelligence",
+      "set": "curse"
     },
     "hexlock": {
       "rarity": "epic",
@@ -714,7 +764,9 @@
         "name": "Hexbound Malice",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC3hki4HbFGQ0IUDOkSBpMKthngLxwV6sCENTj",
+      "type": "intelligence",
+      "set": "curse"
     },
     "radiant_nova": {
       "rarity": "epic",
@@ -722,7 +774,9 @@
         "name": "Sacred Flare",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCymE7NT9J3IVna9mA2PgkFluvzcOS7xYQdGTN",
+      "type": "intelligence",
+      "set": "holy"
     },
     "divine_resonator": {
       "rarity": "epic",
@@ -730,7 +784,9 @@
         "name": "Sanctified Domain",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOu69HUlRLFieDIdC9aNjtX2G4mY7JVxlbfyu",
+      "type": "intelligence",
+      "set": "holy"
     },
     "luminous_ward": {
       "rarity": "epic",
@@ -738,7 +794,9 @@
         "name": "Sanctum Arc",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCW02wbiVDaGSCpnbx189YilBew0cJzoMPdNAR",
+      "type": "intelligence",
+      "set": "holy"
     },
     "guardian's_embrace": {
       "rarity": "epic",
@@ -746,7 +804,9 @@
         "name": "Divine Vault",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCew7sn6qi02s7T6FOxAtHYlBmI8h3odqkzGaJ",
+      "type": "intelligence",
+      "set": "holy"
     },
     "frozen_conduit": {
       "rarity": "epic",
@@ -754,7 +814,9 @@
         "name": "Frozen Phase",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCY0CHQCrGRsurykYnU8tjQL0iwWeACKo4E5aZ",
+      "type": "intelligence",
+      "set": "frost"
     },
     "iceshard_comet": {
       "rarity": "epic",
@@ -762,7 +824,9 @@
         "name": "Frost Nova",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdC7TXxirOfwbCID83Tpm1Hv24gWoyBiFXVxk",
+      "type": "intelligence",
+      "set": "frost"
     },
     "cryoshard_mask": {
       "rarity": "epic",
@@ -770,7 +834,9 @@
         "name": "Frostbound Echo",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHYPLNhK4EOAC1uZm8KvoQgpyDTSnlbFxk6L5",
+      "type": "intelligence",
+      "set": "frost"
     },
     "frost_matrix": {
       "rarity": "epic",
@@ -778,7 +844,9 @@
         "name": "Frostbite",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCRCT9JrAnJqIWpK8HPuraCOUN2mQSd4gxcDYv",
+      "type": "intelligence",
+      "set": "frost"
     },
     "blazruptor": {
       "rarity": "epic",
@@ -786,7 +854,9 @@
         "name": "Hell Salvo",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOu7TnTLRLFieDIdC9aNjtX2G4mY7JVxlbfyu",
+      "type": "intelligence",
+      "set": "fire"
     },
     "inferno_core": {
       "rarity": "epic",
@@ -794,7 +864,9 @@
         "name": "Core Flare",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7UxrNilo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p",
+      "type": "intelligence",
+      "set": "fire"
     },
     "doomfire": {
       "rarity": "epic",
@@ -802,7 +874,9 @@
         "name": "Scorching Surge",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgcOWNjVoDsTbni1kQWjq2ZIY9X53xfLVaKF8",
+      "type": "intelligence",
+      "set": "fire"
     },
     "flame_maw": {
       "rarity": "epic",
@@ -810,7 +884,9 @@
         "name": "Molten Blast",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKNX8DjIWoRmwnVDpPJKx9SMZFLG1TkAQU2eE",
+      "type": "intelligence",
+      "set": "fire"
     },
     "rotten_breath": {
       "rarity": "rare",
@@ -818,7 +894,9 @@
         "name": "Rot Manifest",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCIokiAyzzmQPwNigqxUdB1eOyCYbWln78fpDF",
+      "type": "intelligence",
+      "set": "curse"
     },
     "judgement's_staff": {
       "rarity": "rare",
@@ -826,7 +904,9 @@
         "name": "Aegisflare",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCqQ3SUL0DrPOVUwARFb2Ggj9MuYvQ0JiBK7el",
+      "type": "intelligence",
+      "set": "holy"
     },
     "glacier_prism": {
       "rarity": "rare",
@@ -834,7 +914,9 @@
         "name": "Frost Torrent",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCEKi6htYw01AKmPBrlgjRL2yDc3ZvtVMXJNh6",
+      "type": "intelligence",
+      "set": "frost"
     },
     "blazing_catalyst": {
       "rarity": "rare",
@@ -842,7 +924,9 @@
         "name": "Hellfire",
         "description": ""
       },
-      "type": "intelligence"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJyl1IUtiPWS4l8JEHns6v3kTN10rCyUZXMoq",
+      "type": "intelligence",
+      "set": "fire"
     },
     "novice_flame_blaster": {
       "rarity": "common",
@@ -850,6 +934,7 @@
         "name": "Hellfire",
         "description": ""
       },
+      "image": "",
       "type": "intelligence"
     },
     "prism_cloak": {
@@ -858,7 +943,9 @@
         "name": "Photon Activation",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCX1Mwf0ynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
+      "type": "strength",
+      "set": "gun"
     },
     "voideye": {
       "rarity": "legendary",
@@ -866,7 +953,9 @@
         "name": "Deadshot",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9hhAriMD7PCifcs12oSdBru3GbU5JnO6IXZa",
+      "type": "strength",
+      "set": "gun"
     },
     "thunderlord's_wrath": {
       "rarity": "legendary",
@@ -874,7 +963,9 @@
         "name": "Thunderclap Impact",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwGmcutOhGMgoOJLYrd3qpCvNxRc5QFZ9am6y",
+      "type": "strength",
+      "set": "mace"
     },
     "abyssal_conduit": {
       "rarity": "legendary",
@@ -882,15 +973,19 @@
         "name": "Void Devour",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDYJSWRynA1HpuOTqiN0gK7cldavVYGk9WLZ",
+      "type": "strength",
+      "set": "mace"
     },
-    "windblade": {
+    "wingblade": {
       "rarity": "legendary",
       "core_skill": {
         "name": "Twinstorm",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdscj6ZirOfwbCID83Tpm1Hv24gWoyBiFXVxk",
+      "type": "strength",
+      "set": "axes"
     },
     "wreckingsaw": {
       "rarity": "legendary",
@@ -898,7 +993,9 @@
         "name": "Bladewheel Throw",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnjU0RlfGe93BVSk5hzTrQ6UPaMygj2Nq4Cdi",
+      "type": "strength",
+      "set": "axes"
     },
     "sovereign's_radiance": {
       "rarity": "legendary",
@@ -906,7 +1003,9 @@
         "name": "Thousandfold Strike",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCa1k4puXgcw3rXNJW4OjAURKLo0dxMTBEhliY",
+      "type": "strength",
+      "set": "swords"
     },
     "judicator": {
       "rarity": "legendary",
@@ -914,7 +1013,9 @@
         "name": "Obliteration",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJ7hp00AUtiPWS4l8JEHns6v3kTN10rCyUZXM",
+      "type": "strength",
+      "set": "swords"
     },
     "luminet_cannon": {
       "rarity": "epic",
@@ -922,7 +1023,9 @@
         "name": "Snipe",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC5IwRQ1F5c2dtDWx1eQAKHl76khLrMiGg9fXy",
+      "type": "strength",
+      "set": "gun"
     },
     "blightspitter": {
       "rarity": "epic",
@@ -930,7 +1033,9 @@
         "name": "Toxic Shroud",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCvVdlngpx4UQA1RsqcaXnj7NfHlgpBFLTCie5",
+      "type": "strength",
+      "set": "gun"
     },
     "spectral_assault": {
       "rarity": "epic",
@@ -938,7 +1043,9 @@
         "name": "Rapid Fire",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClybVLW06oygh7mMGDItxK38196fS4eZ2ATUa",
+      "type": "strength",
+      "set": "gun"
     },
     "sentinel_barrage": {
       "rarity": "epic",
@@ -946,7 +1053,9 @@
         "name": "Sentinel Barrage",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCxA5nCbTM9kdEWPFiXUfzcS5mwtbKTRDjIYnV",
+      "type": "strength",
+      "set": "gun"
     },
     "bulwark_core": {
       "rarity": "epic",
@@ -954,7 +1063,9 @@
         "name": "Shield Slam",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHyhr3xK4EOAC1uZm8KvoQgpyDTSnlbFxk6L5",
+      "type": "strength",
+      "set": "mace"
     },
     "ripper's_grasp": {
       "rarity": "epic",
@@ -962,7 +1073,9 @@
         "name": "Grappling Strike",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC3Nl0OvbFGQ0IUDOkSBpMKthngLxwV6sCENTj",
+      "type": "strength",
+      "set": "mace"
     },
     "voidbreaker": {
       "rarity": "epic",
@@ -970,7 +1083,9 @@
         "name": "Void Slam",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnSnwrnfGe93BVSk5hzTrQ6UPaMygj2Nq4Cdi",
+      "type": "strength",
+      "set": "mace"
     },
     "gravity_hammer": {
       "rarity": "epic",
@@ -978,7 +1093,9 @@
         "name": "Pulverizing Slam",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsOQmI0ZjhbCUk9y6YA2VESc8mnvDqMf5LGu1",
+      "type": "strength",
+      "set": "mace"
     },
     "cyclone_cleave": {
       "rarity": "epic",
@@ -986,7 +1103,9 @@
         "name": "Vortex Toss",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSFJRXlwJHd9VeDNGoX6KrO7F2zbawu5I3AU0",
+      "type": "strength",
+      "set": "axes"
     },
     "bonefang_reaper": {
       "rarity": "epic",
@@ -994,7 +1113,9 @@
         "name": "Bonecrusher Leap",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOEAOgxRLFieDIdC9aNjtX2G4mY7JVxlbfyuv",
+      "type": "strength",
+      "set": "axes"
     },
     "ravager's_cleave": {
       "rarity": "epic",
@@ -1002,7 +1123,9 @@
         "name": "Execution",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSt7pjKwJHd9VeDNGoX6KrO7F2zbawu5I3AU0",
+      "type": "strength",
+      "set": "axes"
     },
     "emerald_edge": {
       "rarity": "epic",
@@ -1010,7 +1133,9 @@
         "name": "Runic Rebound",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0mwevzGnMSAK5VBw2xylROtGWiDZQcgjTNJE",
+      "type": "strength",
+      "set": "axes"
     },
     "titan's_spineblade": {
       "rarity": "epic",
@@ -1018,7 +1143,9 @@
         "name": "Titan's Stride",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCaWD09hdRK6zgEJNaAl8QbjHpe3GBMqcoSW1",
+      "type": "strength",
+      "set": "swords"
     },
     "lordbreaker": {
       "rarity": "epic",
@@ -1026,7 +1153,9 @@
         "name": "Sovereign Strike",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbmVdt77WbBOnPELSmCrNGjQoAcKtW4k0pX3u",
+      "type": "strength",
+      "set": "swords"
     },
     "voidblade": {
       "rarity": "epic",
@@ -1034,7 +1163,9 @@
         "name": "Force Pierce",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgt9shaoDsTbni1kQWjq2ZIY9X53xfLVaKF8G",
+      "type": "strength",
+      "set": "swords"
     },
     "hellcore_cleaver": {
       "rarity": "epic",
@@ -1042,7 +1173,9 @@
         "name": "Overload Slash",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyC3W4dp9J3IVna9mA2PgkFluvzcOS7xYQdGT",
+      "type": "strength",
+      "set": "swords"
     },
     "shattercoil": {
       "rarity": "rare",
@@ -1050,7 +1183,9 @@
         "name": "Scatterblast",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCx3sVvYTM9kdEWPFiXUfzcS5mwtbKTRDjIYnV",
+      "type": "strength",
+      "set": "gun"
     },
     "breaker's_resolve": {
       "rarity": "rare",
@@ -1058,7 +1193,9 @@
         "name": "Unyielding Smash",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9Uvrx3D7PCifcs12oSdBru3GbU5JnO6IXZap",
+      "type": "strength",
+      "set": "mace"
     },
     "berserker's_fury": {
       "rarity": "rare",
@@ -1066,7 +1203,9 @@
         "name": "Whirlwind Slash",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCaEQtq2gcw3rXNJW4OjAURKLo0dxMTBEhliY1",
+      "type": "strength",
+      "set": "axes"
     },
     "storm_cleaver": {
       "rarity": "rare",
@@ -1074,7 +1213,9 @@
         "name": "Tempest Slash",
         "description": ""
       },
-      "type": "strength"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOS9ySHRLFieDIdC9aNjtX2G4mY7JVxlbfyuv",
+      "type": "strength",
+      "set": "swords"
     },
     "novice_cleaver": {
       "rarity": "common",
@@ -1082,6 +1223,7 @@
         "name": "Tempest Slash",
         "description": ""
       },
+      "image": "",
       "type": "strength"
     },
     "sanctuary_of_growth": {
@@ -1090,7 +1232,9 @@
         "name": "Divine Rootfall",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCIYpjXLJzzmQPwNigqxUdB1eOyCYbWln78fpD",
+      "type": "agility",
+      "set": "nature"
     },
     "spirit's_call": {
       "rarity": "legendary",
@@ -1098,7 +1242,9 @@
         "name": "Breeze of Resurgence",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHzpq6YwK4EOAC1uZm8KvoQgpyDTSnlbFxk6L",
+      "type": "agility",
+      "set": "nature"
     },
     "scarlet_hunger": {
       "rarity": "legendary",
@@ -1106,7 +1252,9 @@
         "name": "Bloodeye Burst",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCFAVZlYSY0xU7AZSWvtlJFd3OmV2ub1ajiEye",
+      "type": "agility",
+      "set": "daggers"
     },
     "bloodthirst": {
       "rarity": "legendary",
@@ -1114,7 +1262,9 @@
         "name": "Sanguine Pounce",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgNDfP3oDsTbni1kQWjq2ZIY9X53xfLVaKF8G",
+      "type": "agility",
+      "set": "daggers"
     },
     "phantom_spear": {
       "rarity": "legendary",
@@ -1122,7 +1272,9 @@
         "name": "Shadow Dash",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsHpY1KZjhbCUk9y6YA2VESc8mnvDqMf5LGu1",
+      "type": "agility",
+      "set": "spears"
     },
     "corrosive_piercer": {
       "rarity": "legendary",
@@ -1130,7 +1282,9 @@
         "name": "Blightfall",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZIAwgT5Gd5rIR1B8NCZt3wcWfDJgQSipVkE0",
+      "type": "agility",
+      "set": "spears"
     },
     "eclipse_bow": {
       "rarity": "legendary",
@@ -1138,7 +1292,9 @@
         "name": "Shadow Vortex",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC1ZOjUyqcM75luO6aJUWEridRBzN8ILQ4K0hv",
+      "type": "agility",
+      "set": "bows"
     },
     "mender's_ruin": {
       "rarity": "legendary",
@@ -1146,7 +1302,9 @@
         "name": "Severance Shot",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJBfu1YUtiPWS4l8JEHns6v3kTN10rCyUZXMo",
+      "type": "agility",
+      "set": "bows"
     },
     "tendril's_grasp": {
       "rarity": "epic",
@@ -1154,7 +1312,9 @@
         "name": "Entangling Growth",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC5NTR4HF5c2dtDWx1eQAKHl76khLrMiGg9fXy",
+      "type": "agility",
+      "set": "nature"
     },
     "verdant_embrace": {
       "rarity": "epic",
@@ -1162,7 +1322,9 @@
         "name": "Healing Bloom",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClyE79Hi6oygh7mMGDItxK38196fS4eZ2ATUa",
+      "type": "agility",
+      "set": "nature"
     },
     "harmony's_staff": {
       "rarity": "epic",
@@ -1170,7 +1332,9 @@
         "name": "Rain of Serenity",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCxRrrMwTM9kdEWPFiXUfzcS5mwtbKTRDjIYnV",
+      "type": "agility",
+      "set": "nature"
     },
     "thornward_staff": {
       "rarity": "epic",
@@ -1178,7 +1342,9 @@
         "name": "Thorn Barrier",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLJCWlmrdNqMVOnfP9XToUGW20hvxp7K6IgYD",
+      "type": "agility",
+      "set": "nature"
     },
     "bloodfury_blades": {
       "rarity": "epic",
@@ -1186,7 +1352,9 @@
         "name": "Crimson Frenzy",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDz3nNsCTsc4uPVzehvMnktCEqAJKoZQISF65",
+      "type": "agility",
+      "set": "daggers"
     },
     "bloodpiercers": {
       "rarity": "epic",
@@ -1194,7 +1362,9 @@
         "name": "Rupture Thrust",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCftn8zAeFwJm2B1vRUSOualKLCDGIfT0g4Esp",
+      "type": "agility",
+      "set": "daggers"
     },
     "soulfangs": {
       "rarity": "epic",
@@ -1202,7 +1372,9 @@
         "name": "Soul Snare",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyCYIn4Z9J3IVna9mA2PgkFluvzcOS7xYQdGT",
+      "type": "agility",
+      "set": "daggers"
     },
     "twilight_blades": {
       "rarity": "epic",
@@ -1210,7 +1382,9 @@
         "name": "Blade Dance",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC5TYjbrF5c2dtDWx1eQAKHl76khLrMiGg9fXy",
+      "type": "agility",
+      "set": "daggers"
     },
     "drakespike": {
       "rarity": "epic",
@@ -1218,7 +1392,9 @@
         "name": "Rapid Thrust",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDhgO3xynA1HpuOTqiN0gK7cldavVYGk9WLZ",
+      "type": "agility",
+      "set": "spears"
     },
     "storm_spear": {
       "rarity": "epic",
@@ -1226,7 +1402,9 @@
         "name": "Sweeping Tempest",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyXVpHW9J3IVna9mA2PgkFluvzcOS7xYQdGTN",
+      "type": "agility",
+      "set": "spears"
     },
     "stormfang_lance": {
       "rarity": "epic",
@@ -1234,7 +1412,9 @@
         "name": "Surging Throw",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC69z0CvXA1L3EneUzdbVD7B49OSsGvWFcaH6P",
+      "type": "agility",
+      "set": "spears"
     },
     "sentinel's_lance": {
       "rarity": "epic",
@@ -1242,7 +1422,9 @@
         "name": "Banner of Justice",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCW8tzFNLVDaGSCpnbx189YilBew0cJzoMPdNA",
+      "type": "agility",
+      "set": "spears"
     },
     "windbreaker": {
       "rarity": "epic",
@@ -1250,7 +1432,9 @@
         "name": "Windrend Splitters",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCc5ZeHY3sHkruNlYIJ7Uz8OBA3pRwfhmdCoS4",
+      "type": "agility",
+      "set": "bows"
     },
     "thunderstrike": {
       "rarity": "epic",
@@ -1258,7 +1442,9 @@
         "name": "Arcbolt",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClMOCZB6oygh7mMGDItxK38196fS4eZ2ATUak",
+      "type": "agility",
+      "set": "bows"
     },
     "kinetic_arc": {
       "rarity": "epic",
@@ -1266,7 +1452,9 @@
         "name": "Powershot",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC69CFHmbXA1L3EneUzdbVD7B49OSsGvWFcaH6",
+      "type": "agility",
+      "set": "bows"
     },
     "predator's_splitbow": {
       "rarity": "epic",
@@ -1274,7 +1462,9 @@
         "name": "Splintershot",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCGhvOYPtMHmL1NBfDRpSE6XKr3hOJ9jnoQAWF",
+      "type": "agility",
+      "set": "bows"
     },
     "eclipse_conduit": {
       "rarity": "rare",
@@ -1282,7 +1472,9 @@
         "name": "Crater Surge",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDASx76CTsc4uPVzehvMnktCEqAJKoZQISF65",
+      "type": "agility",
+      "set": "nature"
     },
     "hemoblades": {
       "rarity": "rare",
@@ -1290,7 +1482,9 @@
         "name": "Rend and Reap",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6A5jHIXA1L3EneUzdbVD7B49OSsGvWFcaH6P",
+      "type": "agility",
+      "set": "daggers"
     },
     "shardspike": {
       "rarity": "rare",
@@ -1298,7 +1492,9 @@
         "name": "Bloodeye Burst",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCaRDqIagcw3rXNJW4OjAURKLo0dxMTBEhliY1",
+      "type": "agility",
+      "set": "spears"
     },
     "hailfire": {
       "rarity": "rare",
@@ -1306,7 +1502,9 @@
         "name": "Barrage",
         "description": ""
       },
-      "type": "agility"
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwttyQqOhGMgoOJLYrd3qpCvNxRc5QFZ9am6y",
+      "type": "agility",
+      "set": "bows"
     },
     "novice_longbow": {
       "rarity": "common",
@@ -1314,6 +1512,7 @@
         "name": "Barrage",
         "description": ""
       },
+      "image": "",
       "type": "agility"
     }
   },
@@ -1324,6 +1523,7 @@
         "name": "Repulsion",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCIaXoXOzzmQPwNigqxUdB1eOyCYbWln78fpDF",
       "type": "intelligence"
     },
     "twilight_mantle": {
@@ -1332,6 +1532,7 @@
         "name": "Last Stand",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClIzDjH6oygh7mMGDItxK38196fS4eZ2ATUak",
       "type": "intelligence"
     },
     "mystic_surge": {
@@ -1340,6 +1541,7 @@
         "name": "Overflow",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYjdBO3rGRsurykYnU8tjQL0iwWeACKo4E5aZ",
       "type": "intelligence"
     },
     "healer's_hood": {
@@ -1348,6 +1550,7 @@
         "name": "Swift Aid",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCr6SLFO3ZrcpGNj0mROVHQMXP4oWtnswev9gJ",
       "type": "intelligence"
     },
     "earth_vein_hood": {
@@ -1356,6 +1559,7 @@
         "name": "Venom",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCH98AULK4EOAC1uZm8KvoQgpyDTSnlbFxk6L5",
       "type": "intelligence"
     },
     "crimson_breeze": {
@@ -1364,6 +1568,7 @@
         "name": "Grievous Wounds",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYt1xaArGRsurykYnU8tjQL0iwWeACKo4E5aZ",
       "type": "intelligence"
     },
     "breezeweaver_hood": {
@@ -1372,6 +1577,7 @@
         "name": "Amplify",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXYsPcVynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
       "type": "intelligence"
     },
     "stormveil_mask": {
@@ -1380,6 +1586,7 @@
         "name": "Sandstorm",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdzDvUZirOfwbCID83Tpm1Hv24gWoyBiFXVxk",
       "type": "strength"
     },
     "warden's_gaze": {
@@ -1388,6 +1595,7 @@
         "name": "Forward Guard",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDbWw0WynA1HpuOTqiN0gK7cldavVYGk9WLZ",
       "type": "strength"
     },
     "ironclad_helm": {
@@ -1396,6 +1604,7 @@
         "name": "Iron Wall",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZWAvMC5Gd5rIR1B8NCZt3wcWfDJgQSipVkE0",
       "type": "strength"
     },
     "hellfire_visor": {
@@ -1404,6 +1613,7 @@
         "name": "Flame Star",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdafYTfirOfwbCID83Tpm1Hv24gWoyBiFXVxk",
       "type": "strength"
     },
     "reptilian_helm": {
@@ -1412,6 +1622,7 @@
         "name": "Scale Armor",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJkM9rsUtiPWS4l8JEHns6v3kTN10rCyUZXMo",
       "type": "strength"
     },
     "savage_helm": {
@@ -1420,6 +1631,7 @@
         "name": "EMP Blast",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCpjkXYTnl5Y2OXNwHZ403tR8CeJdUmEagVSLf",
       "type": "strength"
     },
     "furor's_helm": {
@@ -1428,6 +1640,7 @@
         "name": "Enrage",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0xymnvGnMSAK5VBw2xylROtGWiDZQcgjTNJE",
       "type": "strength"
     },
     "ironwill_veil": {
@@ -1436,6 +1649,7 @@
         "name": "Defiance",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZbsSYQ5Gd5rIR1B8NCZt3wcWfDJgQSipVkE0",
       "type": "agility"
     },
     "folly_helm": {
@@ -1444,6 +1658,7 @@
         "name": "Break Free",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsIdwArZjhbCUk9y6YA2VESc8mnvDqMf5LGu1",
       "type": "agility"
     },
     "stormcaller's_hood": {
@@ -1452,6 +1667,7 @@
         "name": "Electrified Strike",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCoKcrs215DWbhNtFdU6qgYeZKnHE9poiCJ0z2",
       "type": "agility"
     },
     "shadeveil_mask": {
@@ -1460,6 +1676,7 @@
         "name": "Fade Out",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOCC0cVRLFieDIdC9aNjtX2G4mY7JVxlbfyuv",
       "type": "agility"
     },
     "wrathveil_shade": {
@@ -1468,6 +1685,7 @@
         "name": "Rage",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwDP7fWOhGMgoOJLYrd3qpCvNxRc5QFZ9am6y",
       "type": "agility"
     },
     "purifier's_shroud": {
@@ -1476,6 +1694,7 @@
         "name": "Dodge",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSZLmMmwJHd9VeDNGoX6KrO7F2zbawu5I3AU0",
       "type": "agility"
     },
     "vital_mantle": {
@@ -1484,6 +1703,7 @@
         "name": "Life Flash",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9If1SD7PCifcs12oSdBru3GbU5JnO6IXZapz",
       "type": "agility"
     }
   },
@@ -1494,6 +1714,7 @@
         "name": "Panic",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCi4iT5UJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2",
       "type": "intelligence"
     },
     "warding_shroud": {
@@ -1502,6 +1723,7 @@
         "name": "Barrier",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCeTw1ISqi02s7T6FOxAtHYlBmI8h3odqkzGaJ",
       "type": "intelligence"
     },
     "archaneweaver": {
@@ -1510,6 +1732,7 @@
         "name": "Mana Font",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLTq4vIdNqMVOnfP9XToUGW20hvxp7K6IgYDy",
       "type": "intelligence"
     },
     "repulsor_mantle": {
@@ -1518,6 +1741,7 @@
         "name": "Repulse",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCtlo2zhdRK6zgEJNaAl8QbjHpe3GBMqcoSW1",
       "type": "intelligence"
     },
     "exorcist's_robe": {
@@ -1526,6 +1750,7 @@
         "name": "Dispel",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCieWIzLJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2",
       "type": "intelligence"
     },
     "cleansing_robe": {
@@ -1534,6 +1759,7 @@
         "name": "Purify",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOuM0bk2RLFieDIdC9aNjtX2G4mY7JVxlbfyu",
       "type": "intelligence"
     },
     "vigorcloak": {
@@ -1542,6 +1768,7 @@
         "name": "Heal",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCozMBG615DWbhNtFdU6qgYeZKnHE9poiCJ0z2",
       "type": "intelligence"
     },
     "novice_robe": {
@@ -1550,6 +1777,7 @@
         "name": "Heal",
         "description": ""
       },
+      "image": "",
       "type": "intelligence"
     },
     "warden's_shell": {
@@ -1558,6 +1786,7 @@
         "name": "Vulnerability",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCWkmAtFVDaGSCpnbx189YilBew0cJzoMPdNAR",
       "type": "strength"
     },
     "magsurge_armor": {
@@ -1566,6 +1795,7 @@
         "name": "Converge",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCBaTfNBHxxayJATSI4luXcVpj2MeUKF7r9D5g",
       "type": "strength"
     },
     "aegis_plate": {
@@ -1574,6 +1804,7 @@
         "name": "Shield",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbmNdRKRWbBOnPELSmCrNGjQoAcKtW4k0pX3u",
       "type": "strength"
     },
     "dazzling_guard": {
@@ -1582,6 +1813,7 @@
         "name": "Stun",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCD9aNKQCTsc4uPVzehvMnktCEqAJKoZQISF65",
       "type": "strength"
     },
     "tempest_charge": {
@@ -1590,6 +1822,7 @@
         "name": "Charge",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbyo1NEWbBOnPELSmCrNGjQoAcKtW4k0pX3uy",
       "type": "strength"
     },
     "tangle_guard": {
@@ -1598,6 +1831,7 @@
         "name": "Root Grip",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyk0ye89J3IVna9mA2PgkFluvzcOS7xYQdGTN",
       "type": "strength"
     },
     "guardian's_blessing": {
@@ -1606,6 +1840,7 @@
         "name": "Block",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC3K761JbFGQ0IUDOkSBpMKthngLxwV6sCENTj",
       "type": "strength"
     },
     "novice_heavy_armor": {
@@ -1614,6 +1849,7 @@
         "name": "Block",
         "description": ""
       },
+      "image": "",
       "type": "strength"
     },
     "hero's_embrace": {
@@ -1622,6 +1858,7 @@
         "name": "Rally",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCRP7Hh0AnJqIWpK8HPuraCOUN2mQSd4gxcDYv",
       "type": "agility"
     },
     "ranger's_hide": {
@@ -1630,6 +1867,7 @@
         "name": "Armor Breaker",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsFRlC2dZjhbCUk9y6YA2VESc8mnvDqMf5LGu",
       "type": "agility"
     },
     "beastcaller's_coat": {
@@ -1638,6 +1876,7 @@
         "name": "Snarl",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCqBU1jZ0DrPOVUwARFb2Ggj9MuYvQ0JiBK7el",
       "type": "agility"
     },
     "deathmantle": {
@@ -1646,6 +1885,7 @@
         "name": "Finisher",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDhf6qNynA1HpuOTqiN0gK7cldavVYGk9WLZ",
       "type": "agility"
     },
     "retaliation_coat": {
@@ -1654,6 +1894,7 @@
         "name": "Reflect",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQvM5LG7z9VydsAL2D3hoSNGWrlcw7ZuBgfXi",
       "type": "agility"
     },
     "mistshroud": {
@@ -1662,6 +1903,7 @@
         "name": "Smoke Screen",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCc5AUOLcsHkruNlYIJ7Uz8OBA3pRwfhmdCoS4",
       "type": "agility"
     },
     "recovery_vest": {
@@ -1670,6 +1912,7 @@
         "name": "Bandage",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgc5ytg9oDsTbni1kQWjq2ZIY9X53xfLVaKF8",
       "type": "agility"
     },
     "novice_medium_armor": {
@@ -1678,6 +1921,7 @@
         "name": "Bandage",
         "description": ""
       },
+      "image": "",
       "type": "agility"
     },
     "scavenger's_vest": {
@@ -1686,6 +1930,7 @@
         "name": "Shield",
         "description": ""
       },
+      "image": "",
       "type": "logistics"
     }
   },
@@ -1696,6 +1941,7 @@
         "name": "Berserk",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCjwu88tBPFTRAJm6yIQ43qr1OD7LeK2tWUYab",
       "type": "intelligence"
     },
     "phantomstep_boots": {
@@ -1704,6 +1950,7 @@
         "name": "Ghost",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC5wudPxzF5c2dtDWx1eQAKHl76khLrMiGg9fX",
       "type": "intelligence"
     },
     "blinkstep_boots": {
@@ -1712,6 +1959,7 @@
         "name": "Flash Step",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCcAMLBhsHkruNlYIJ7Uz8OBA3pRwfhmdCoS4i",
       "type": "intelligence"
     },
     "frostwalker_boots": {
@@ -1720,6 +1968,7 @@
         "name": "Frost",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCcmAi4AsHkruNlYIJ7Uz8OBA3pRwfhmdCoS4i",
       "type": "intelligence"
     },
     "miasma_stompers": {
@@ -1728,6 +1977,7 @@
         "name": "Decay",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYSBWj5rGRsurykYnU8tjQL0iwWeACKo4E5aZ",
       "type": "intelligence"
     },
     "shifter's_strides": {
@@ -1736,6 +1986,7 @@
         "name": "Displacement",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCGBSJpaytMHmL1NBfDRpSE6XKr3hOJ9jnoQAW",
       "type": "intelligence"
     },
     "arcaneflow_boots": {
@@ -1744,6 +1995,7 @@
         "name": "Abundance",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC69rECLfXA1L3EneUzdbVD7B49OSsGvWFcaH6",
       "type": "intelligence"
     },
     "impact_heavy_boots": {
@@ -1752,6 +2004,7 @@
         "name": "Lunge",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCUlrZ6zcQ16DWLsJmnqFyb2XvNroZuiz5flAI",
       "type": "strength"
     },
     "avalanche_boots": {
@@ -1760,6 +2013,7 @@
         "name": "Mountain Crash",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCppElbHnl5Y2OXNwHZ403tR8CeJdUmEagVSLf",
       "type": "strength"
     },
     "wrathstep": {
@@ -1768,6 +2022,7 @@
         "name": "Vengeance",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCr2Cujs3ZrcpGNj0mROVHQMXP4oWtnswev9gJ",
       "type": "strength"
     },
     "bulwark_striders": {
@@ -1776,6 +2031,7 @@
         "name": "Guardian",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCxggAwh3TM9kdEWPFiXUfzcS5mwtbKTRDjIYn",
       "type": "strength"
     },
     "titan_walkers": {
@@ -1784,6 +2040,7 @@
         "name": "Titanic Growth",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC1qT9rMcM75luO6aJUWEridRBzN8ILQ4K0hvk",
       "type": "strength"
     },
     "vanguard's_march": {
@@ -1792,6 +2049,7 @@
         "name": "Vanguard",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCl5QUCe6oygh7mMGDItxK38196fS4eZ2ATUak",
       "type": "strength"
     },
     "energizer_boots": {
@@ -1800,6 +2058,7 @@
         "name": "Vitality",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJtVcR2UtiPWS4l8JEHns6v3kTN10rCyUZXMo",
       "type": "strength"
     },
     "evasion_striders": {
@@ -1808,6 +2067,7 @@
         "name": "Escape",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQaRTh97z9VydsAL2D3hoSNGWrlcw7ZuBgfXi",
       "type": "agility"
     },
     "exodrift_slippers": {
@@ -1816,6 +2076,7 @@
         "name": "Phase Shift",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSChMrZIQHx7HuMjzKPR6SGg1BFUfEidcZ2JoDr",
       "type": "agility"
     },
     "swiftstride_boots": {
@@ -1824,6 +2085,7 @@
         "name": "Attack Speed",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCRRan8TAnJqIWpK8HPuraCOUN2mQSd4gxcDYv",
       "type": "agility"
     },
     "fleeting_steps": {
@@ -1832,6 +2094,7 @@
         "name": "Grace",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCMlizgJLzbs6par1jMWHioyOVkIlgte5vRAf3",
       "type": "agility"
     },
     "deathwalker_boots": {
@@ -1840,6 +2103,7 @@
         "name": "Assassinate",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHz8cH1PK4EOAC1uZm8KvoQgpyDTSnlbFxk6L",
       "type": "agility"
     },
     "shadeveil_slippers": {
@@ -1848,6 +2112,7 @@
         "name": "Vanish",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCi4NFO8JuLA8ofy7IC6JlZmUbr1WQBsg3SnO2",
       "type": "agility"
     },
     "rallystep_boots": {
@@ -1856,6 +2121,7 @@
         "name": "Sidestep",
         "description": ""
       },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCv0fMVUpx4UQA1RsqcaXnj7NfHlgpBFLTCie5",
       "type": "agility"
     }
   }
