@@ -44,7 +44,7 @@ const Sidebar = () => {
     <div
       id="sidebar"
       className={clsx(
-        "flex w-1/6 grow flex-col justify-between border-r border-neutral-700",
+        "flex min-w-1/6 flex-col justify-between border-r border-neutral-700",
         SECONDARY,
       )}
     >
@@ -67,6 +67,7 @@ const Sidebar = () => {
             SECONDARY,
           )}
           href={isCreator ? "" : `/characters/${character.id}/rate`}
+          replace
         >
           <div className="flex text-2xl">
             {averageRating > 0 && averageRating < 1 ? (
@@ -125,6 +126,7 @@ const Sidebar = () => {
           <Link
             href={`/characters/${characterId}`}
             className={`flex cursor-pointer items-center gap-2 rounded bg-neutral-800 p-2 hover:brightness-125 ${activePage === undefined ? "brightness-125" : ""}`}
+            replace
           >
             <FaHammer />
             Builder
@@ -132,6 +134,7 @@ const Sidebar = () => {
           <Link
             href={`/characters/${characterId}/description`}
             className={`flex cursor-pointer items-center gap-2 rounded bg-neutral-800 p-2 hover:brightness-125 ${activePage === "description" ? "brightness-125" : ""}`}
+            replace
           >
             <FaPencil />
             Description
@@ -139,6 +142,7 @@ const Sidebar = () => {
           <Link
             href={`/characters/${characterId}/settings`}
             className={`flex cursor-pointer items-center gap-2 rounded bg-neutral-800 p-2 hover:brightness-125 ${activePage === "settings" ? "brightness-125" : ""}`}
+            replace
           >
             <FaCog />
             Settings

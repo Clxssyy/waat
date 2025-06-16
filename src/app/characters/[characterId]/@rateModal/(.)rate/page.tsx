@@ -15,7 +15,7 @@ const RateModal = () => {
   const [rating, setRating] = useState<0 | 1 | 2 | 3 | 4 | 5>(0);
   const addRating = api.character.addRating.useMutation({
     onSuccess: () => {
-      router.push(`/characters/${character!.id}`);
+      router.replace(`/characters/${character!.id}`);
       router.refresh();
     },
     onError: (err) => {
