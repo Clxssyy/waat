@@ -19,7 +19,6 @@ export const buildDataSchema = z.object({
     })
     .optional(),
   drifter: z.string(),
-  support: z.array(z.string()).length(5).optional(),
 });
 
 export const buildSchema = z.object({

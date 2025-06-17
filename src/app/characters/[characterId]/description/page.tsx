@@ -1,8 +1,27 @@
+"use client";
+
+import { useBuildForm } from "~/app/_components/buildFormContext";
+
 const Description = () => {
+  const { formData, setFormData } = useBuildForm();
   return (
-    <div className="m-2 flex min-w-5/6 flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-      <h1 className="text-2xl font-bold">Header</h1>
-      <p>Text</p>
+    <div className="flex h-full grow flex-col gap-2">
+      <textarea
+        className="m-2 h-full rounded border border-neutral-600 bg-neutral-700 p-1 outline-none"
+        value={formData.description}
+        placeholder="Add a description here."
+        spellCheck={false}
+        maxLength={3000}
+        onChange={(e) => {
+          setFormData((prev) => {
+            if (!prev) return prev;
+            return {
+              ...prev,
+              description: e.target.value,
+            };
+          });
+        }}
+      />
     </div>
   );
 };

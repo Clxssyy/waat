@@ -19,7 +19,7 @@ const Drifter = ({
   const selectInput = useRef<HTMLSelectElement>(null);
 
   const drifters = data.drifter;
-  const filteredWeapons = Object.entries(drifters).filter(([, drifter]) => {
+  const filteredDrifters = Object.entries(drifters).filter(([, drifter]) => {
     if (activeFilter === "all") return true;
     if (activeFilter === drifter.type) return true;
     return false;
@@ -121,7 +121,7 @@ const Drifter = ({
             <option value="" hidden>
               Drifter
             </option>
-            {filteredWeapons.map(([drifterKey]) => (
+            {filteredDrifters.map(([drifterKey]) => (
               <option
                 key={drifterKey}
                 value={drifterKey}

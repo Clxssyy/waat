@@ -19,7 +19,7 @@ const BuildEditor = () => {
 
   return (
     <div id="editor" className="w-2/3">
-      <div className="flex flex-col items-center">
+      <div className="flex h-full flex-col items-center">
         <div className="grid h-10 w-11/12 grid-cols-5 gap-2">
           <div
             className={`flex items-center justify-center rounded-t-lg ${activeTab === "equipment" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
@@ -90,7 +90,9 @@ const BuildEditor = () => {
             </button>
           </div>
         </div>
-        <div className="h-fit w-full rounded border border-neutral-700 bg-neutral-800 break-all">
+        <div
+          className={`${activeTab === "description" ? "h-full" : ""} h-fit w-full rounded border border-neutral-700 bg-neutral-800 break-all`}
+        >
           {activeTab === "equipment" && (
             <Equipment
               slot={activeSlot as Exclude<ActiveSlots, "drifter">}
