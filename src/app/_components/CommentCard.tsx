@@ -143,7 +143,7 @@ const CommentCard = ({ comment }: { comment: CommentWithReplies }) => {
 
   return (
     <div className="flex flex-col gap-1">
-      <div className="flex justify-between">
+      <div className="relative flex justify-between">
         <div className="flex items-center gap-2">
           <div className="flex items-center gap-1">
             <Image
@@ -161,7 +161,7 @@ const CommentCard = ({ comment }: { comment: CommentWithReplies }) => {
           <div className="h-3/5 rounded border border-neutral-600" />
           <p className="text-sm">{comment?.createdAt.toLocaleDateString()}</p>
         </div>
-        <div className="relative" ref={ellipsisMenu}>
+        <div ref={ellipsisMenu}>
           <button
             className="cursor-pointer rounded bg-neutral-800 p-1 hover:brightness-125"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
