@@ -43,46 +43,17 @@ const RateModal = () => {
           </p>
           <div className="flex justify-center">
             <div className="flex flex-row-reverse rounded border border-neutral-600 bg-neutral-700 p-2">
-              <button
-                onClick={() => {
-                  setRating(5);
-                }}
-                className={`${rating >= 5 ? "text-yellow-300" : ""} peer cursor-pointer text-4xl text-transparent transition peer-hover:text-yellow-300 hover:text-yellow-300`}
-              >
-                <IoIosStar className="stroke-yellow-300 stroke-35" />
-              </button>
-              <button
-                onClick={() => {
-                  setRating(4);
-                }}
-                className={`${rating >= 4 ? "text-yellow-300" : ""} peer cursor-pointer text-4xl text-transparent transition peer-hover:text-yellow-300 hover:text-yellow-300`}
-              >
-                <IoIosStar className="stroke-yellow-300 stroke-35" />
-              </button>
-              <button
-                onClick={() => {
-                  setRating(3);
-                }}
-                className={`${rating >= 3 ? "text-yellow-300" : ""} peer cursor-pointer text-4xl text-transparent transition peer-hover:text-yellow-300 hover:text-yellow-300`}
-              >
-                <IoIosStar className="stroke-yellow-300 stroke-35" />
-              </button>
-              <button
-                onClick={() => {
-                  setRating(2);
-                }}
-                className={`${rating >= 2 ? "text-yellow-300" : ""} peer cursor-pointer text-4xl text-transparent transition peer-hover:text-yellow-300 hover:text-yellow-300`}
-              >
-                <IoIosStar className="stroke-yellow-300 stroke-35" />
-              </button>
-              <button
-                onClick={() => {
-                  setRating(1);
-                }}
-                className={`${rating >= 1 ? "text-yellow-300" : ""} peer cursor-pointer text-4xl text-transparent transition peer-hover:text-yellow-300 hover:text-yellow-300`}
-              >
-                <IoIosStar className="stroke-yellow-300 stroke-35" />
-              </button>
+              {Array.from({ length: 5 }, (_, i) => (
+                <button
+                  key={i}
+                  onClick={() => {
+                    setRating((5 - i) as 0 | 1 | 2 | 3 | 4 | 5);
+                  }}
+                  className={`${rating >= 5 - i ? "text-yellow-300" : ""} peer cursor-pointer text-4xl text-transparent transition peer-hover:text-yellow-300 hover:text-yellow-300`}
+                >
+                  <IoIosStar className="stroke-yellow-300 stroke-35" />
+                </button>
+              ))}
             </div>
           </div>
           <button

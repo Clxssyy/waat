@@ -7,7 +7,6 @@ import { FaCog, FaSave } from "react-icons/fa";
 import { FaClone, FaHammer, FaPencil } from "react-icons/fa6";
 import { IoIosStar, IoIosStarHalf, IoMdArrowRoundBack } from "react-icons/io";
 import { useBuildForm } from "./buildFormContext";
-import clsx from "clsx";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -38,83 +37,47 @@ const Sidebar = () => {
   );
 
   const averageRating = totalRating / character._count.ratings;
-  const SECONDARY = "bg-neutral-800";
 
   return (
     <div
       id="sidebar"
-      className={clsx(
-        "flex w-1/6 flex-col justify-between border-r border-neutral-700",
-        SECONDARY,
-      )}
+      className="flex w-1/6 flex-col justify-between border-r border-neutral-700 bg-neutral-800"
     >
       <div className="hidden-scrollbar flex flex-col divide-y divide-neutral-700 overflow-y-scroll">
         <button
           onClick={() => router.back()}
           type="button"
           aria-label="Return to previous page"
-          className={clsx(
-            "flex cursor-pointer items-center p-4 text-lg not-sm:justify-center hover:brightness-125 sm:justify-between",
-            SECONDARY,
-          )}
+          className="flex cursor-pointer items-center bg-neutral-800 p-4 text-lg not-sm:justify-center hover:brightness-125 sm:justify-between"
         >
           <p className="not-sm:hidden">Return</p>
           <IoMdArrowRoundBack />
         </button>
         <Link
-          className={clsx(
-            "flex cursor-pointer items-center justify-center gap-4 p-4 text-lg not-2xl:flex-col hover:brightness-125",
-            SECONDARY,
-          )}
+          className="flex cursor-pointer items-center justify-center gap-4 bg-neutral-800 p-4 text-lg not-2xl:flex-col hover:brightness-125"
           href={isCreator ? "" : `/characters/${character.id}/rate`}
         >
           <div className="flex text-2xl not-lg:hidden">
-            {averageRating > 0 && averageRating < 1 ? (
-              <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
-            ) : (
-              <IoIosStar
-                className={`${
-                  averageRating >= 1 ? "text-yellow-300" : "text-transparent"
-                } stroke-yellow-300 stroke-20`}
-              />
-            )}
-            {averageRating > 1 && averageRating < 2 ? (
-              <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
-            ) : (
-              <IoIosStar
-                className={`${
-                  averageRating >= 2 ? "text-yellow-300" : "text-transparent"
-                } stroke-yellow-300 stroke-20`}
-              />
-            )}
-            {averageRating > 2 && averageRating < 3 ? (
-              <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
-            ) : (
-              <IoIosStar
-                className={`${
-                  averageRating >= 3 ? "text-yellow-300" : "text-transparent"
-                } stroke-yellow-300 stroke-20`}
-              />
-            )}
-
-            {averageRating > 3 && averageRating < 4 ? (
-              <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
-            ) : (
-              <IoIosStar
-                className={`${
-                  averageRating >= 4 ? "text-yellow-300" : "text-transparent"
-                } stroke-yellow-300 stroke-20`}
-              />
-            )}
-            {averageRating > 4 && averageRating < 5 ? (
-              <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
-            ) : (
-              <IoIosStar
-                className={`${
-                  averageRating >= 5 ? "text-yellow-300" : "text-transparent"
-                } stroke-yellow-300 stroke-20`}
-              />
-            )}
+            {Array.from({ length: 5 }).map((_, index) => {
+              if (averageRating > index && averageRating < index + 1) {
+                return (
+                  <IoIosStarHalf
+                    key={index}
+                    className="stroke-yellow-300 stroke-20 text-yellow-300"
+                  />
+                );
+              }
+              return (
+                <IoIosStar
+                  key={index}
+                  className={`${
+                    averageRating >= index + 1
+                      ? "text-yellow-300"
+                      : "text-transparent"
+                  } stroke-yellow-300 stroke-20`}
+                />
+              );
+            })}
           </div>
           <p className="text-neutral-400 not-lg:hidden">
             <span className="text-white">{averageRating || 0}</span> out of 5 (
@@ -173,17 +136,22 @@ const Sidebar = () => {
           </button>
         </div>
       </div>
-      <div className="flex h-16 justify-center gap-2 border-t border-neutral-700 p-4">
-        <Image
-          src={
-            character?.createdBy.image ??
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1024px-Default_pfp.svg.png"
-          }
-          width={100}
-          height={100}
-          alt="creator pfp"
-          className="h-10 w-10 rounded-full"
-        />
+      <div className="flex h-16 justify-center gap-2 border-t border-neutral-700 p-2">
+        <Link
+          href={`/users/${creator.id}`}
+          className="flex cursor-pointer items-center"
+        >
+          <Image
+            src={
+              character?.createdBy.image ??
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1024px-Default_pfp.svg.png"
+            }
+            width={100}
+            height={100}
+            alt="creator pfp"
+            className="h-10 w-10 rounded-full"
+          />
+        </Link>
         <div className="flex flex-col justify-center">
           <Link
             href={`/users/${creator.id}`}

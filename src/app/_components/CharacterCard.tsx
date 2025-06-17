@@ -88,52 +88,26 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
               ({character._count.ratings})
             </span>
             <div className="flex text-lg">
-              {averageRating > 0 && averageRating < 1 ? (
-                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
-              ) : (
-                <IoIosStar
-                  className={`${
-                    averageRating >= 1 ? "text-yellow-300" : "text-transparent"
-                  } stroke-yellow-300 stroke-20`}
-                />
-              )}
-              {averageRating > 1 && averageRating < 2 ? (
-                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
-              ) : (
-                <IoIosStar
-                  className={`${
-                    averageRating >= 2 ? "text-yellow-300" : "text-transparent"
-                  } stroke-yellow-300 stroke-20`}
-                />
-              )}
-              {averageRating > 2 && averageRating < 3 ? (
-                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
-              ) : (
-                <IoIosStar
-                  className={`${
-                    averageRating >= 3 ? "text-yellow-300" : "text-transparent"
-                  } stroke-yellow-300 stroke-20`}
-                />
-              )}
-
-              {averageRating > 3 && averageRating < 4 ? (
-                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
-              ) : (
-                <IoIosStar
-                  className={`${
-                    averageRating >= 4 ? "text-yellow-300" : "text-transparent"
-                  } stroke-yellow-300 stroke-20`}
-                />
-              )}
-              {averageRating > 4 && averageRating < 5 ? (
-                <IoIosStarHalf className="stroke-yellow-300 stroke-20 text-yellow-300" />
-              ) : (
-                <IoIosStar
-                  className={`${
-                    averageRating >= 5 ? "text-yellow-300" : "text-transparent"
-                  } stroke-yellow-300 stroke-20`}
-                />
-              )}
+              {Array.from({ length: 5 }).map((_, index) => {
+                if (averageRating > index && averageRating < index + 1) {
+                  return (
+                    <IoIosStarHalf
+                      key={index}
+                      className="stroke-yellow-300 stroke-20 text-yellow-300"
+                    />
+                  );
+                }
+                return (
+                  <IoIosStar
+                    key={index}
+                    className={`${
+                      averageRating >= index + 1
+                        ? "text-yellow-300"
+                        : "text-transparent"
+                    } stroke-yellow-300 stroke-20`}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>

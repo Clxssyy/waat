@@ -53,9 +53,9 @@ export default async function Home() {
             </div>
           </div>
           <div className="grid grid-cols-5 gap-2">
-            {Array.from({ length: 5 }).map((_, index) => (
+            {Array.from({ length: 5 }).map((_, i) => (
               <div
-                key={index}
+                key={i}
                 className="flex aspect-square items-center justify-center rounded bg-neutral-900"
               >
                 <h3 className="font-bold text-neutral-600 2xl:text-3xl">
@@ -83,9 +83,9 @@ export default async function Home() {
             </div>
           </div>
           <div className="grid grid-cols-5 gap-2">
-            {Array.from({ length: 5 }).map((_, index) => (
+            {Array.from({ length: 5 }).map((_, i) => (
               <div
-                key={index}
+                key={i}
                 className="flex aspect-square items-center justify-center rounded bg-neutral-900"
               >
                 <h3 className="font-bold text-neutral-600 2xl:text-3xl">

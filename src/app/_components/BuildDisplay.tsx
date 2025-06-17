@@ -5,8 +5,8 @@ import { useBuildForm } from "./buildFormContext";
 import { notFound } from "next/navigation";
 import { useItemData } from "~/utils";
 import type data from "public/data.json";
-import clsx from "clsx";
 import ImageHelper from "./ImageHelper";
+import type { ActiveBuildIndex } from "~/types";
 
 const BuildDisplay = () => {
   const {
@@ -58,150 +58,56 @@ const BuildDisplay = () => {
     <div id="display" className="min-w-1/3">
       <div className="flex flex-col items-center gap-2 rounded border border-neutral-700 bg-neutral-800 p-2">
         <div className="relative flex gap-1 rounded-full border border-neutral-600 bg-neutral-700 p-2">
-          <button
-            aria-label="Build 1"
-            onClick={() => {
-              if (activeBuildIndex != 0 && formData.builds[0]) {
-                setActiveBuildIndex(0);
-                setActiveSlot("weapon");
-              } else if (!formData.builds[0]) {
-                setFormData((prev) => {
-                  if (!prev) return prev;
-                  return {
-                    ...prev,
-                    builds: [
-                      ...prev.builds,
-                      {
-                        id: "",
-                        characterId: prev.id,
-                        data: {
-                          equipment: {
-                            helmet: "",
-                            chest: "",
-                            boots: "",
-                            weapon: "",
+          {Array.from({ length: 3 }, (_, i) => (
+            <button
+              key={i}
+              aria-label={`Build ${i + 1}`}
+              onClick={() => {
+                if (activeBuildIndex != i && formData.builds[i]) {
+                  setActiveBuildIndex(i as ActiveBuildIndex);
+                  setActiveSlot("weapon");
+                  setActiveTab("equipment");
+                } else if (!formData.builds[i]) {
+                  setFormData((prev) => {
+                    if (!prev) return prev;
+                    return {
+                      ...prev,
+                      builds: [
+                        ...prev.builds,
+                        {
+                          id: "",
+                          characterId: prev.id,
+                          data: {
+                            equipment: {
+                              helmet: "",
+                              chest: "",
+                              boots: "",
+                              weapon: "",
+                            },
+                            stats: {
+                              strength: 0,
+                              agility: 0,
+                              intelligence: 0,
+                            },
+                            drifter: "",
                           },
-                          stats: {
-                            strength: 0,
-                            agility: 0,
-                            intelligence: 0,
-                          },
-                          drifter: "",
                         },
-                      },
-                    ],
-                  };
-                });
-                setActiveBuildIndex(0);
-                setActiveSlot("weapon");
-              }
-            }}
-            className={`h-4 w-4 cursor-pointer rounded-full hover:outline-2 hover:outline-cyan-600 ${
-              formData.builds[0] ? "bg-cyan-400" : "bg-neutral-800"
-            } ${!character.builds[0] && formData.builds[0] ? "animate-pulse" : ""}`}
-          ></button>
-          {activeBuildIndex === 0 ? (
-            <div className="absolute bottom-0.5 left-[21%] h-1 w-1 -translate-x-1/2 rounded-full bg-cyan-400"></div>
-          ) : (
-            ""
-          )}
-          <button
-            aria-label="Build 2"
-            onClick={() => {
-              if (activeBuildIndex != 1 && formData.builds[1]) {
-                setActiveBuildIndex(1);
-                setActiveSlot("weapon");
-              } else if (!formData.builds[1] && formData.builds[0]) {
-                setFormData((prev) => {
-                  if (!prev) return prev;
-                  return {
-                    ...prev,
-                    builds: [
-                      ...prev.builds,
-                      {
-                        id: "",
-                        characterId: prev.id,
-                        data: {
-                          equipment: {
-                            helmet: "",
-                            chest: "",
-                            boots: "",
-                            weapon: "",
-                          },
-                          stats: {
-                            strength: 0,
-                            agility: 0,
-                            intelligence: 0,
-                          },
-                          drifter: "",
-                        },
-                      },
-                    ],
-                  };
-                });
-                setActiveBuildIndex(1);
-                setActiveSlot("weapon");
-              }
-            }}
-            className={`h-4 w-4 rounded-full ${
-              formData.builds[1] ? "bg-cyan-400" : "bg-neutral-800"
-            } ${!character.builds[1] && formData.builds[1] ? "animate-pulse" : ""} ${!character.builds[1] ? "animate-bounce" : ""} ${!formData.builds[0] ? "cursor-not-allowed" : "cursor-pointer hover:outline-2 hover:outline-cyan-600"}`}
-          ></button>
-          {activeBuildIndex === 1 ? (
-            <div className="absolute bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-cyan-400"></div>
-          ) : (
-            ""
-          )}
-          <button
-            aria-label="Build 3"
-            onClick={() => {
-              if (activeBuildIndex != 2 && formData.builds[2]) {
-                setActiveBuildIndex(2);
-                setActiveSlot("weapon");
-              } else if (!formData.builds[2] && formData.builds[1]) {
-                setFormData((prev) => {
-                  if (!prev) return prev;
-                  return {
-                    ...prev,
-                    builds: [
-                      ...prev.builds,
-                      {
-                        id: "",
-                        characterId: prev.id,
-                        data: {
-                          equipment: {
-                            helmet: "",
-                            chest: "",
-                            boots: "",
-                            weapon: "",
-                          },
-                          stats: {
-                            strength: 0,
-                            agility: 0,
-                            intelligence: 0,
-                          },
-                          drifter: "",
-                        },
-                      },
-                    ],
-                  };
-                });
-                setActiveBuildIndex(2);
-                setActiveSlot("weapon");
-              }
-            }}
-            className={`h-4 w-4 rounded-full ${
-              formData.builds[2] ? "bg-cyan-400" : "bg-neutral-800"
-            } ${!character.builds[2] && formData.builds[2] ? "animate-pulse" : ""} ${(!character.builds[2] && character.builds[1]) || (formData.builds[1] && !character.builds[2]) ? "animate-bounce" : ""} ${!formData.builds[1] ? "cursor-not-allowed" : "cursor-pointer hover:outline-2 hover:outline-cyan-600"}`}
-          ></button>
-          {activeBuildIndex === 2 ? (
-            <div className="absolute right-1/6 bottom-0.5 h-1 w-1 -translate-x-1/2 rounded-full bg-cyan-400"></div>
-          ) : (
-            ""
-          )}
+                      ],
+                    };
+                  });
+                  setActiveBuildIndex(i as ActiveBuildIndex);
+                  setActiveSlot("weapon");
+                  setActiveTab("equipment");
+                }
+              }}
+              className={`h-4 w-4 cursor-pointer rounded-full hover:outline-2 hover:outline-cyan-600 ${activeBuildIndex === i ? "outline-2 outline-cyan-600" : ""} ${
+                formData.builds[i] ? "bg-cyan-400" : "bg-neutral-800"
+              } ${!character.builds[i] && formData.builds[i] ? "animate-pulse" : ""}`}
+            />
+          ))}
         </div>
         <div className="flex flex-wrap justify-center gap-2">
-          <div className={clsx("relative h-82 w-32")}>
+          <div className="relative h-82 w-32">
             {formData?.builds?.some(
               (build) =>
                 build.data.equipment.weapon === weapon &&
@@ -245,7 +151,7 @@ const BuildDisplay = () => {
             </button>
           </div>
           <div className="flex flex-col gap-2">
-            <div className={clsx("relative h-26 w-26")}>
+            <div className="relative h-26 w-26">
               {formData?.builds?.some(
                 (build) =>
                   build.data.equipment.helmet === helmet &&
@@ -290,7 +196,7 @@ const BuildDisplay = () => {
                 )}
               </button>
             </div>
-            <div className={clsx("relative h-26 w-26")}>
+            <div className="relative h-26 w-26">
               {formData?.builds?.some(
                 (build) =>
                   build.data.equipment.chest === chest &&
@@ -335,7 +241,7 @@ const BuildDisplay = () => {
                 )}
               </button>
             </div>
-            <div className={clsx("relative h-26 w-26")}>
+            <div className="relative h-26 w-26">
               {formData?.builds?.some(
                 (build) =>
                   build.data.equipment.boots === boots &&
