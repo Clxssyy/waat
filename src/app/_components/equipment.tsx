@@ -111,7 +111,9 @@ const Equipment = ({
         )}
       </div>
       <div className="flex gap-2">
-        <div className="h-12 w-12 rounded border border-neutral-600 bg-neutral-700">
+        <div
+          className={`h-12 w-12 rounded border border-neutral-600 ${formData?.builds[activeBuildIndex]?.data.equipment ? `${equipmentData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30" : `${equipmentData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30" : `${equipmentData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30" : `${equipmentData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30" : "bg-neutral-700"}`}`}`}` : "bg-neutral-700"}`}
+        >
           {equipmentData?.image ? (
             <ImageHelper
               src={equipmentData.image}
@@ -125,7 +127,7 @@ const Equipment = ({
         </div>
         <div className="h-12 grow rounded bg-neutral-700">
           <select
-            className="h-full w-full rounded border border-neutral-600 bg-neutral-700 px-2 text-lg"
+            className="h-full w-full cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg"
             aria-label={slot}
             ref={selectInput}
             value={formData.builds?.[activeBuildIndex]?.data?.equipment[slot]}
@@ -235,9 +237,38 @@ const Equipment = ({
                           Object.entries(skillData.basic_attacks).map(
                             ([key, skill]) => {
                               return (
-                                <div
+                                <button
                                   key={key}
-                                  className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black"
+                                  onClick={() => {
+                                    let newSkill = key;
+                                    if (
+                                      newSkill ===
+                                      formData?.builds?.[activeBuildIndex]?.data
+                                        ?.skills?.basic
+                                    )
+                                      newSkill = "";
+                                    setFormData((prev) => {
+                                      if (!prev) return prev;
+                                      return {
+                                        ...prev,
+                                        builds: prev.builds.map((b, idx) =>
+                                          idx === activeBuildIndex
+                                            ? {
+                                                ...b,
+                                                data: {
+                                                  ...b.data,
+                                                  skills: {
+                                                    ...b.data.skills,
+                                                    basic: newSkill,
+                                                  },
+                                                },
+                                              }
+                                            : b,
+                                        ),
+                                      };
+                                    });
+                                  }}
+                                  className={`flex h-12 w-12 cursor-pointer flex-col items-center justify-center overflow-hidden rounded bg-neutral-800 ${key === formData?.builds?.[activeBuildIndex]?.data?.skills?.basic ? "border-2 border-green-300" : "border border-neutral-600"} shadow-sm shadow-black`}
                                 >
                                   {skill.image ? (
                                     <ImageHelper
@@ -247,7 +278,7 @@ const Equipment = ({
                                       alt={key}
                                     />
                                   ) : null}
-                                </div>
+                                </button>
                               );
                             },
                           )}
@@ -260,9 +291,38 @@ const Equipment = ({
                           Object.entries(skillData.common_skills).map(
                             ([key, skill]) => {
                               return (
-                                <div
+                                <button
                                   key={key}
-                                  className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black"
+                                  onClick={() => {
+                                    let newSkill = key;
+                                    if (
+                                      newSkill ===
+                                      formData?.builds?.[activeBuildIndex]?.data
+                                        ?.skills?.common
+                                    )
+                                      newSkill = "";
+                                    setFormData((prev) => {
+                                      if (!prev) return prev;
+                                      return {
+                                        ...prev,
+                                        builds: prev.builds.map((b, idx) =>
+                                          idx === activeBuildIndex
+                                            ? {
+                                                ...b,
+                                                data: {
+                                                  ...b.data,
+                                                  skills: {
+                                                    ...b.data.skills,
+                                                    common: newSkill,
+                                                  },
+                                                },
+                                              }
+                                            : b,
+                                        ),
+                                      };
+                                    });
+                                  }}
+                                  className={`flex h-12 w-12 cursor-pointer flex-col items-center justify-center overflow-hidden rounded ${key === formData?.builds?.[activeBuildIndex]?.data?.skills?.common ? "border-2 border-green-300" : "border border-neutral-600"} bg-neutral-800 shadow-sm shadow-black`}
                                 >
                                   {skill.image ? (
                                     <ImageHelper
@@ -272,7 +332,7 @@ const Equipment = ({
                                       alt={key}
                                     />
                                   ) : null}
-                                </div>
+                                </button>
                               );
                             },
                           )}

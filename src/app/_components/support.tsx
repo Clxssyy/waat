@@ -30,6 +30,7 @@ const Support = () => {
           </div>
         </div>
       </div>
+      <div className="rounded bg-neutral-700">test</div>
     </div>
   );
 };

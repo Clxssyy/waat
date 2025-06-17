@@ -79,7 +79,9 @@ const Drifter = ({
         </button>
       </div>
       <div className="flex gap-2">
-        <div className="flex h-12 w-12 items-center rounded border border-neutral-600 bg-neutral-700">
+        <div
+          className={`flex h-12 w-12 items-center rounded border border-neutral-600 ${formData?.builds[activeBuildIndex]?.data.drifter ? "bg-radial from-neutral-700 from-10% to-black/30" : "bg-neutral-700"}`}
+        >
           {drifterData?.image ? (
             <ImageHelper
               src={drifterData.image}

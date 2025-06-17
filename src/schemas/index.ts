@@ -12,7 +12,14 @@ export const buildDataSchema = z.object({
     agility: z.number(),
     intelligence: z.number(),
   }),
+  skills: z
+    .object({
+      basic: z.string().optional(),
+      common: z.string().optional(),
+    })
+    .optional(),
   drifter: z.string(),
+  support: z.array(z.string()).length(5).optional(),
 });
 
 export const buildSchema = z.object({
