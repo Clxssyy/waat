@@ -283,6 +283,18 @@ const Equipment = ({
                             },
                           )}
                       </div>
+                      {formData?.builds?.[activeBuildIndex]?.data?.skills
+                        ?.basic ? (
+                        <div className="mt-1 flex items-center rounded bg-neutral-800 p-2">
+                          <p className="text-sm">
+                            {formData.builds?.[
+                              activeBuildIndex
+                            ].data.skills.basic
+                              ?.replace(/_/g, " ")
+                              .replace(/\b\w/g, (c) => c.toUpperCase())}
+                          </p>
+                        </div>
+                      ) : null}
                     </div>
                     <div className="flex flex-col">
                       <h3 className="text-sm">Skill 1</h3>
@@ -337,6 +349,18 @@ const Equipment = ({
                             },
                           )}
                       </div>
+                      {formData?.builds?.[activeBuildIndex]?.data?.skills
+                        ?.common ? (
+                        <div className="mt-1 flex items-center rounded bg-neutral-800 p-2">
+                          <p className="text-sm">
+                            {formData.builds?.[
+                              activeBuildIndex
+                            ].data.skills.common
+                              ?.replace(/_/g, " ")
+                              .replace(/\b\w/g, (c) => c.toUpperCase())}
+                          </p>
+                        </div>
+                      ) : null}
                     </div>
                     <div className="flex flex-col">
                       <h3 className="text-sm">Skill 2 (Weapon Skill)</h3>
@@ -370,6 +394,11 @@ const Equipment = ({
                               alt={skillData.passive_skill.name}
                             />
                           ) : null}
+                        </div>
+                        <div className="flex items-center rounded bg-neutral-800 p-2">
+                          <p className="text-sm">
+                            {skillData?.passive_skill.name}
+                          </p>
                         </div>
                       </div>
                     </div>
