@@ -138,16 +138,31 @@ const Equipment = ({
                   ...prev,
                   builds: prev.builds.map((b, idx) =>
                     idx === activeBuildIndex
-                      ? {
-                          ...b,
-                          data: {
-                            ...b.data,
-                            equipment: {
-                              ...b.data.equipment,
-                              [slot]: e.target.value,
+                      ? slot === "weapon"
+                        ? {
+                            ...b,
+                            data: {
+                              ...b.data,
+                              equipment: {
+                                ...b.data.equipment,
+                                [slot]: e.target.value,
+                              },
+                              skills: {
+                                basic: "",
+                                common: "",
+                              },
                             },
-                          },
-                        }
+                          }
+                        : {
+                            ...b,
+                            data: {
+                              ...b.data,
+                              equipment: {
+                                ...b.data.equipment,
+                                [slot]: e.target.value,
+                              },
+                            },
+                          }
                       : b,
                   ),
                 };
