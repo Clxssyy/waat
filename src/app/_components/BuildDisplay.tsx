@@ -55,7 +55,7 @@ const BuildDisplay = () => {
   );
 
   return (
-    <div id="display" className="w-1/3">
+    <div id="display" className="min-w-1/3">
       <div className="flex flex-col items-center gap-2 rounded border border-neutral-700 bg-neutral-800 p-2">
         <div className="relative flex gap-1 rounded-full border border-neutral-600 bg-neutral-700 p-2">
           <button
@@ -200,7 +200,7 @@ const BuildDisplay = () => {
             ""
           )}
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap justify-center gap-2">
           <div className={clsx("relative h-82 w-32")}>
             {formData?.builds?.some(
               (build) =>
@@ -213,7 +213,7 @@ const BuildDisplay = () => {
               </div>
             ) : null}
             <button
-              className={`active:scale-[98%] ${weaponData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${weaponData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${weaponData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${weaponData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-82 w-32 cursor-pointer items-center justify-center border transition-all ${activeSlot === "weapon" ? `border-2 ${weaponData?.rarity === "legendary" ? "border-yellow-600" : `${weaponData?.rarity === "epic" ? "border-purple-600" : `${weaponData?.rarity === "rare" ? "border-blue-600" : `${weaponData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
+              className={`active:scale-[98%] ${weaponData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${weaponData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${weaponData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${weaponData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-full w-full cursor-pointer items-center justify-center border transition-all ${activeSlot === "weapon" ? `border-2 ${weaponData?.rarity === "legendary" ? "border-yellow-600" : `${weaponData?.rarity === "epic" ? "border-purple-600" : `${weaponData?.rarity === "rare" ? "border-blue-600" : `${weaponData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
               aria-label="Weapon Slot"
               onClick={() => {
                 if (activeSlot != "weapon") setActiveSlot("weapon");
@@ -257,7 +257,7 @@ const BuildDisplay = () => {
                 </div>
               ) : null}
               <button
-                className={`active:scale-95 ${helmetData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${helmetData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${helmetData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${helmetData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all ${activeSlot === "helmet" ? `border-2 ${helmetData?.rarity === "legendary" ? "border-yellow-600" : `${helmetData?.rarity === "epic" ? "border-purple-600" : `${helmetData?.rarity === "rare" ? "border-blue-600" : `${helmetData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
+                className={`active:scale-95 ${helmetData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${helmetData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${helmetData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${helmetData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-full w-full cursor-pointer items-center justify-center border transition-all ${activeSlot === "helmet" ? `border-2 ${helmetData?.rarity === "legendary" ? "border-yellow-600" : `${helmetData?.rarity === "epic" ? "border-purple-600" : `${helmetData?.rarity === "rare" ? "border-blue-600" : `${helmetData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
                 aria-label="Helmet Slot"
                 onClick={() => {
                   if (activeSlot != "helmet") setActiveSlot("helmet");
@@ -302,7 +302,7 @@ const BuildDisplay = () => {
                 </div>
               ) : null}
               <button
-                className={`active:scale-95 ${chestData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${chestData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${chestData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${chestData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all ${activeSlot === "chest" ? `border-2 ${chestData?.rarity === "legendary" ? "border-yellow-600" : `${chestData?.rarity === "epic" ? "border-purple-600" : `${chestData?.rarity === "rare" ? "border-blue-600" : `${chestData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
+                className={`active:scale-95 ${chestData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${chestData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${chestData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${chestData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-full w-full cursor-pointer items-center justify-center border transition-all ${activeSlot === "chest" ? `border-2 ${chestData?.rarity === "legendary" ? "border-yellow-600" : `${chestData?.rarity === "epic" ? "border-purple-600" : `${chestData?.rarity === "rare" ? "border-blue-600" : `${chestData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
                 aria-label="Chest Slot"
                 onClick={() => {
                   if (activeSlot != "chest") setActiveSlot("chest");
@@ -347,7 +347,7 @@ const BuildDisplay = () => {
                 </div>
               ) : null}
               <button
-                className={`active:scale-95 ${bootsData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${bootsData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${bootsData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${bootsData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all ${activeSlot === "boots" ? `border-2 ${bootsData?.rarity === "legendary" ? "border-yellow-600" : `${bootsData?.rarity === "epic" ? "border-purple-600" : `${bootsData?.rarity === "rare" ? "border-blue-600" : `${bootsData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
+                className={`active:scale-95 ${bootsData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${bootsData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${bootsData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${bootsData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-full w-full cursor-pointer items-center justify-center border transition-all ${activeSlot === "boots" ? `border-2 ${bootsData?.rarity === "legendary" ? "border-yellow-600" : `${bootsData?.rarity === "epic" ? "border-purple-600" : `${bootsData?.rarity === "rare" ? "border-blue-600" : `${bootsData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
                 aria-label="Boots Slot"
                 onClick={() => {
                   if (activeSlot != "boots") setActiveSlot("boots");

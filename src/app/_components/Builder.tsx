@@ -14,7 +14,12 @@ const Builder = () => {
       )}
     >
       <BuilderHeader />
-      <div className={clsx("mx-12 mb-2 flex grow gap-12", GAP_COLOR)}>
+      <div
+        className={clsx(
+          "mb-2 flex grow gap-12 not-lg:flex-col not-lg:place-items-center lg:mx-12",
+          GAP_COLOR,
+        )}
+      >
         <BuildDisplay />
         <BuildEditor />
       </div>

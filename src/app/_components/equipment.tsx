@@ -66,7 +66,7 @@ const Equipment = ({
 
   return (
     <div className="flex flex-col gap-2 rounded p-2">
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         <button
           className={`cursor-pointer rounded border px-3 py-1 hover:brightness-125 ${activeFilter === "all" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
           onClick={() => {

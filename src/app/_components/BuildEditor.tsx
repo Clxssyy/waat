@@ -7,6 +7,10 @@ import Support from "./support";
 import Drifter from "./drifter";
 import Description from "../characters/[characterId]/description/page";
 import CommentSection from "./CommentSection";
+import { GiAbdominalArmor } from "react-icons/gi";
+import { IoPerson } from "react-icons/io5";
+import { MdOutlineDescription, MdOutlineHealthAndSafety } from "react-icons/md";
+import { FaRegComments } from "react-icons/fa6";
 
 const BuildEditor = () => {
   const {
@@ -25,7 +29,7 @@ const BuildEditor = () => {
             className={`flex items-center justify-center rounded-t-lg ${activeTab === "equipment" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
           >
             <button
-              className="h-full w-full cursor-pointer rounded-t-lg hover:brightness-125"
+              className="flex h-full w-full cursor-pointer items-center justify-center gap-1 rounded-t-lg hover:brightness-125"
               aria-label="Equipment Tab"
               onClick={() => {
                 if (activeTab != "equipment") setActiveTab("equipment");
@@ -33,60 +37,65 @@ const BuildEditor = () => {
                   setActiveSlot("weapon");
               }}
             >
-              Equipment
+              <GiAbdominalArmor />
+              <p className="hidden xl:block">Equipment</p>
             </button>
           </div>
           <div
             className={`flex items-center justify-center rounded-t-lg ${activeTab === "drifter" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
           >
             <button
-              className="h-full w-full cursor-pointer rounded-t-lg hover:brightness-125"
+              className="flex h-full w-full cursor-pointer items-center justify-center gap-1 rounded-t-lg hover:brightness-125"
               aria-label="Drifter Tab"
               onClick={() => {
                 if (activeTab != "drifter") setActiveTab("drifter");
                 if (activeSlot != "drifter") setActiveSlot("drifter");
               }}
             >
-              Drifter
+              <IoPerson />
+              <p className="hidden xl:block">Drifter</p>
             </button>
           </div>
           <div
             className={`flex items-center justify-center rounded-t-lg ${activeTab === "support" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
           >
             <button
-              className="h-full w-full cursor-pointer rounded-t-lg hover:brightness-125"
+              className="flex h-full w-full cursor-pointer items-center justify-center gap-1 rounded-t-lg hover:brightness-125"
               aria-label="Support Tab"
               onClick={() => {
                 if (activeTab != "support") setActiveTab("support");
               }}
             >
-              Support
+              <MdOutlineHealthAndSafety />
+              <p className="hidden xl:block">Support</p>
             </button>
           </div>
           <div
             className={`flex items-center justify-center rounded-t-lg ${activeTab === "description" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
           >
             <button
-              className="h-full w-full cursor-pointer rounded-t-lg hover:brightness-125"
+              className="flex h-full w-full cursor-pointer items-center justify-center gap-1 rounded-t-lg hover:brightness-125"
               aria-label="Description Tab"
               onClick={() => {
                 if (activeTab != "description") setActiveTab("description");
               }}
             >
-              Description
+              <MdOutlineDescription />
+              <p className="hidden xl:block">Description</p>
             </button>
           </div>
           <div
             className={`flex items-center justify-center rounded-t-lg ${activeTab === "comments" ? "scale-105 border border-b-0 border-neutral-700 bg-neutral-800" : "bg-neutral-900"}`}
           >
             <button
-              className="h-full w-full cursor-pointer rounded-t-lg hover:brightness-125"
+              className="flex h-full w-full cursor-pointer items-center justify-center gap-1 rounded-t-lg hover:brightness-125"
               aria-label="Comments Tab"
               onClick={() => {
                 if (activeTab != "comments") setActiveTab("comments");
               }}
             >
-              Comments
+              <FaRegComments />
+              <p className="hidden xl:block">Comments</p>
             </button>
           </div>
         </div>
