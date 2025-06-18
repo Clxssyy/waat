@@ -11,7 +11,9 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
   const drifterData = character.builds.map((build) => {
     const buildData = build.data as BuildData;
 
-    return data.drifters.find((drifter) => drifter.name === buildData?.drifter);
+    return data.drifters.find(
+      (drifter) => drifter.name === buildData?.drifter.name,
+    );
   });
 
   const totalRating = character.ratings.reduce(
