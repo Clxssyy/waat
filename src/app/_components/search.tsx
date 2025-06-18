@@ -59,10 +59,9 @@ const Search = () => {
             aria-label="Drifter Filter"
           >
             <option value="">Drifter</option>
-            {Object.entries(data.drifter).map(([drifterId]) => (
-              <option key={drifterId} value={drifterId}>
-                {drifterId.charAt(0).toUpperCase() +
-                  drifterId.slice(1).replaceAll("_", " ")}
+            {data.drifters.map((drifter) => (
+              <option key={drifter.name} value={drifter.name}>
+                {drifter.name}
               </option>
             ))}
           </select>

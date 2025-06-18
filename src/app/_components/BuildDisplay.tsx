@@ -3,8 +3,7 @@
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { useBuildForm } from "./buildFormContext";
 import { notFound } from "next/navigation";
-import { useItemData } from "~/utils";
-import type data from "public/data.json";
+import data from "public/data.json";
 import ImageHelper from "./ImageHelper";
 import type { ActiveBuildIndex } from "~/types";
 
@@ -23,36 +22,23 @@ const BuildDisplay = () => {
 
   if (!character) notFound();
 
-  const boots = formData.builds[activeBuildIndex]?.data.equipment.boots;
-  const helmet = formData.builds[activeBuildIndex]?.data.equipment.helmet;
-  const chest = formData.builds[activeBuildIndex]?.data.equipment.chest;
-  const weapon = formData.builds[activeBuildIndex]?.data.equipment.weapon;
-  const drifter = formData.builds[activeBuildIndex]?.data.drifter;
+  const bootsKey = formData.builds[activeBuildIndex]?.data.equipment.boots;
+  const helmetKey = formData.builds[activeBuildIndex]?.data.equipment.helmet;
+  const chestKey = formData.builds[activeBuildIndex]?.data.equipment.chest;
+  const weaponKey = formData.builds[activeBuildIndex]?.data.equipment.weapon;
+  const drifterKey = formData.builds[activeBuildIndex]?.data.drifter;
 
-  const drifterData = useItemData(
-    "drifter",
-    drifter as keyof typeof data.drifter | undefined,
+  const drifterData = data.drifters.find(
+    (drifter) => drifter.name === drifterKey,
   );
 
-  const weaponData = useItemData(
-    "weapon",
-    weapon as keyof typeof data.weapon | undefined,
-  );
+  const weaponData = data.weapon.find((weapon) => weapon.name === weaponKey);
 
-  const chestData = useItemData(
-    "chest",
-    chest as keyof typeof data.chest | undefined,
-  );
+  const chestData = data.chest.find((chest) => chest.name === chestKey);
 
-  const helmetData = useItemData(
-    "helmet",
-    helmet as keyof typeof data.helmet | undefined,
-  );
+  const helmetData = data.helmet.find((helmet) => helmet.name === helmetKey);
 
-  const bootsData = useItemData(
-    "boots",
-    boots as keyof typeof data.boots | undefined,
-  );
+  const bootsData = data.boots.find((boots) => boots.name === bootsKey);
 
   return (
     <div id="display" className="min-w-1/3">
@@ -110,7 +96,7 @@ const BuildDisplay = () => {
           <div className="relative h-82 w-32">
             {formData?.builds?.some(
               (build) =>
-                build.data.equipment.weapon === weapon &&
+                build.data.equipment.weapon === weaponKey &&
                 build.id !== formData.builds[activeBuildIndex]?.id &&
                 build.data.equipment.weapon !== "",
             ) ? (
@@ -126,18 +112,18 @@ const BuildDisplay = () => {
                 if (activeTab != "equipment") setActiveTab("equipment");
               }}
             >
-              {weapon ? (
+              {weaponKey ? (
                 weaponData?.image ? (
                   <ImageHelper
                     src={weaponData.image}
-                    alt={weapon}
+                    alt={weaponKey}
                     width={800}
                     height={800}
                   />
                 ) : (
                   <div className="truncate p-1 text-sm text-wrap">
-                    {weapon.charAt(0).toUpperCase() +
-                      weapon
+                    {weaponKey.charAt(0).toUpperCase() +
+                      weaponKey
                         .slice(1)
                         .replace(/_/g, " ")
                         .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
@@ -154,7 +140,7 @@ const BuildDisplay = () => {
             <div className="relative h-26 w-26">
               {formData?.builds?.some(
                 (build) =>
-                  build.data.equipment.helmet === helmet &&
+                  build.data.equipment.helmet === helmetKey &&
                   build.id !== formData.builds[activeBuildIndex]?.id &&
                   build.data.equipment.helmet !== "",
               ) ? (
@@ -170,18 +156,18 @@ const BuildDisplay = () => {
                   if (activeTab != "equipment") setActiveTab("equipment");
                 }}
               >
-                {helmet ? (
+                {helmetKey ? (
                   helmetData?.image ? (
                     <ImageHelper
                       src={helmetData.image}
-                      alt={helmet}
+                      alt={helmetKey}
                       width={800}
                       height={800}
                     />
                   ) : (
                     <div className="truncate p-1 text-sm text-wrap">
-                      {helmet.charAt(0).toUpperCase() +
-                        helmet
+                      {helmetKey.charAt(0).toUpperCase() +
+                        helmetKey
                           .slice(1)
                           .replace(/_/g, " ")
                           .replace(/(\s[a-z])/g, (match) =>
@@ -199,7 +185,7 @@ const BuildDisplay = () => {
             <div className="relative h-26 w-26">
               {formData?.builds?.some(
                 (build) =>
-                  build.data.equipment.chest === chest &&
+                  build.data.equipment.chest === chestKey &&
                   build.id !== formData.builds[activeBuildIndex]?.id &&
                   build.data.equipment.chest !== "",
               ) ? (
@@ -215,18 +201,18 @@ const BuildDisplay = () => {
                   if (activeTab != "equipment") setActiveTab("equipment");
                 }}
               >
-                {chest ? (
+                {chestKey ? (
                   chestData?.image ? (
                     <ImageHelper
                       src={chestData.image}
-                      alt={chest}
+                      alt={chestKey}
                       width={800}
                       height={800}
                     />
                   ) : (
                     <div className="truncate p-1 text-sm text-wrap">
-                      {chest.charAt(0).toUpperCase() +
-                        chest
+                      {chestKey.charAt(0).toUpperCase() +
+                        chestKey
                           .slice(1)
                           .replace(/_/g, " ")
                           .replace(/(\s[a-z])/g, (match) =>
@@ -244,7 +230,7 @@ const BuildDisplay = () => {
             <div className="relative h-26 w-26">
               {formData?.builds?.some(
                 (build) =>
-                  build.data.equipment.boots === boots &&
+                  build.data.equipment.boots === bootsKey &&
                   build.id !== formData.builds[activeBuildIndex]?.id &&
                   build.data.equipment.boots !== "",
               ) ? (
@@ -260,18 +246,18 @@ const BuildDisplay = () => {
                   if (activeTab != "equipment") setActiveTab("equipment");
                 }}
               >
-                {boots ? (
+                {bootsKey ? (
                   bootsData?.image ? (
                     <ImageHelper
                       src={bootsData.image}
-                      alt={boots}
+                      alt={bootsKey}
                       width={800}
                       height={800}
                     />
                   ) : (
                     <div className="truncate p-1 text-sm text-wrap">
-                      {boots.charAt(0).toUpperCase() +
-                        boots
+                      {bootsKey.charAt(0).toUpperCase() +
+                        bootsKey
                           .slice(1)
                           .replace(/_/g, " ")
                           .replace(/(\s[a-z])/g, (match) =>
@@ -291,7 +277,7 @@ const BuildDisplay = () => {
         <div className="relative h-24 w-60">
           {formData?.builds?.some(
             (build) =>
-              build.data.drifter === drifter &&
+              build.data.drifter === drifterKey &&
               build.id !== formData.builds[activeBuildIndex]?.id &&
               build.data.drifter !== "",
           ) ? (
@@ -300,25 +286,25 @@ const BuildDisplay = () => {
             </div>
           ) : null}
           <button
-            className={`${drifter ? "bg-radial from-neutral-700 from-10% to-black/30" : ""} relative flex h-24 w-60 cursor-pointer items-center justify-center overflow-hidden border bg-neutral-700 transition-all hover:border-cyan-600 active:scale-95 ${activeSlot === "drifter" ? "border-2 border-cyan-600" : "border-neutral-600"}`}
+            className={`${drifterKey ? "bg-radial from-neutral-700 from-10% to-black/30" : ""} relative flex h-24 w-60 cursor-pointer items-center justify-center overflow-hidden border bg-neutral-700 transition-all hover:border-cyan-600 active:scale-95 ${activeSlot === "drifter" ? "border-2 border-cyan-600" : "border-neutral-600"}`}
             aria-label="Drifter Slot"
             onClick={() => {
               if (activeSlot != "drifter") setActiveSlot("drifter");
               if (activeTab != "drifter") setActiveTab("drifter");
             }}
           >
-            {drifter ? (
+            {drifterKey ? (
               drifterData?.image ? (
                 <ImageHelper
                   src={drifterData.image}
-                  alt={drifter}
+                  alt={drifterKey}
                   width={2436}
                   height={1440}
                 />
               ) : (
                 <div className="truncate p-1 text-sm text-wrap">
-                  {drifter.charAt(0).toUpperCase() +
-                    drifter
+                  {drifterKey.charAt(0).toUpperCase() +
+                    drifterKey
                       .slice(1)
                       .replace(/_/g, " ")
                       .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}

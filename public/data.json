@@ -1,6 +1,7 @@
 {
-  "drifter": {
-    "kyra": {
+  "drifters": [
+    {
+      "name": "Kyra",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZSLKMI15Gd5rIR1B8NCZt3wcWfDJgQSipVkE",
       "strBonus": 2,
       "agiBonus": 1,
@@ -25,7 +26,8 @@
         }
       }
     },
-    "varnax": {
+    {
+      "name": "Varnax",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCK3ETKoIWoRmwnVDpPJKx9SMZFLG1TkAQU2eE",
       "strBonus": 2.4,
       "agiBonus": 1.5,
@@ -50,7 +52,8 @@
         }
       }
     },
-    "sirokos": {
+    {
+      "name": "Sirokos",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCUZiArcQ16DWLsJmnqFyb2XvNroZuiz5flAIC",
       "strBonus": 2.5,
       "agiBonus": 1,
@@ -75,7 +78,8 @@
         }
       }
     },
-    "durion": {
+    {
+      "name": "Durion",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCROO8elAnJqIWpK8HPuraCOUN2mQSd4gxcDYv",
       "strBonus": 2.4,
       "agiBonus": 0.7,
@@ -100,7 +104,8 @@
         }
       }
     },
-    "draknor": {
+    {
+      "name": "Draknor",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9ywJWtD7PCifcs12oSdBru3GbU5JnO6IXZap",
       "strBonus": 2.4,
       "agiBonus": 1,
@@ -125,7 +130,8 @@
         }
       }
     },
-    "firestorm": {
+    {
+      "name": "Firestorm",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCevHiGNqi02s7T6FOxAtHYlBmI8h3odqkzGaJ",
       "strBonus": 1.8,
       "agiBonus": 1.5,
@@ -150,7 +156,8 @@
         }
       }
     },
-    "aegis": {
+    {
+      "name": "Aegis",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLbKipCdNqMVOnfP9XToUGW20hvxp7K6IgYDy",
       "strBonus": 2.2,
       "agiBonus": 0.5,
@@ -175,7 +182,8 @@
         }
       }
     },
-    "auri": {
+    {
+      "name": "Auri",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCGszBcbtMHmL1NBfDRpSE6XKr3hOJ9jnoQAWF",
       "strBonus": 2.1,
       "agiBonus": 0.7,
@@ -200,7 +208,8 @@
         }
       }
     },
-    "izzy": {
+    {
+      "name": "Izzy",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCfwS3NIeFwJm2B1vRUSOualKLCDGIfT0g4Esp",
       "strBonus": 3.1,
       "agiBonus": 0.5,
@@ -225,7 +234,8 @@
         }
       }
     },
-    "overdrive": {
+    {
+      "name": "Overdrive",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyCCYQ2R9J3IVna9mA2PgkFluvzcOS7xYQdGT",
       "strBonus": 1.5,
       "agiBonus": 1.8,
@@ -250,7 +260,8 @@
         }
       }
     },
-    "stormblade": {
+    {
+      "name": "Stormblade",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCFmvvtoSY0xU7AZSWvtlJFd3OmV2ub1ajiEye",
       "strBonus": 1,
       "agiBonus": 2.4,
@@ -275,7 +286,8 @@
         }
       }
     },
-    "illusarch": {
+    {
+      "name": "Illusarch",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCKGG5BhdRK6zgEJNaAl8QbjHpe3GBMqcoSW1",
       "strBonus": 1,
       "agiBonus": 2,
@@ -300,7 +312,8 @@
         }
       }
     },
-    "elektrix": {
+    {
+      "name": "Elektrix",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCFnXXJJSY0xU7AZSWvtlJFd3OmV2ub1ajiEye",
       "strBonus": 1,
       "agiBonus": 2.2,
@@ -325,7 +338,8 @@
         }
       }
     },
-    "zero": {
+    {
+      "name": "Zero",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCWePRhRVDaGSCpnbx189YilBew0cJzoMPdNAR",
       "strBonus": 1.2,
       "agiBonus": 2,
@@ -350,7 +364,8 @@
         }
       }
     },
-    "nyxa": {
+    {
+      "name": "Nyxa",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCR4ucgVpAnJqIWpK8HPuraCOUN2mQSd4gxcDY",
       "strBonus": 1,
       "agiBonus": 2.1,
@@ -375,7 +390,8 @@
         }
       }
     },
-    "vryssia": {
+    {
+      "name": "Vryssia",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9h8rCU3D7PCifcs12oSdBru3GbU5JnO6IXZa",
       "strBonus": 0.6,
       "agiBonus": 2.3,
@@ -400,8 +416,8 @@
         }
       }
     },
-
-    "sanguor": {
+    {
+      "name": "Sangour",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZ61hZV5Gd5rIR1B8NCZt3wcWfDJgQSipVkE0",
       "strBonus": 1.2,
       "agiBonus": 2.2,
@@ -424,35 +440,37 @@
         "negative": {
           "name": "None"
         }
+      }
+    },
+    {
+      "name": "Umbra",
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXH0rcNynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
+      "strBonus": 0.8,
+      "agiBonus": 2.3,
+      "intBonus": 1,
+      "activeSkill": {
+        "name": "Shadow Rift",
+        "description": "Creates a field around the caster, lasting 20s. Then\nscatter 8 Shadow Clones, each dealing [Damage Rate:\n200%] Physical Damage to those hit. Damage reduces to\n15% for subsequent hits on the same target. While in the\nfield, skill changes to [Shadow Swap]. Touching a\nShadow Clone reduces Shadow Swap's cooldown by 5s,\ngrants [Target-based Max HP 10%] Shield and +20%\nMovement Speed for 4s.\nField disappears when leaving range.\n[Shadow Swap]: Dash forward and increase the Attack\nSpeed of the next 5 basic attacks within 6s by 60%.",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCx9Wvt6TM9kdEWPFiXUfzcS5mwtbKTRDjIYnV"
       },
-      "umbra": {
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXH0rcNynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
-        "strBonus": 0.8,
-        "agiBonus": 2.3,
-        "intBonus": 1,
-        "activeSkill": {
-          "name": "Shadow Rift",
-          "description": "Creates a field around the caster, lasting 20s. Then\nscatter 8 Shadow Clones, each dealing [Damage Rate:\n200%] Physical Damage to those hit. Damage reduces to\n15% for subsequent hits on the same target. While in the\nfield, skill changes to [Shadow Swap]. Touching a\nShadow Clone reduces Shadow Swap's cooldown by 5s,\ngrants [Target-based Max HP 10%] Shield and +20%\nMovement Speed for 4s.\nField disappears when leaving range.\n[Shadow Swap]: Dash forward and increase the Attack\nSpeed of the next 5 basic attacks within 6s by 60%.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCx9Wvt6TM9kdEWPFiXUfzcS5mwtbKTRDjIYnV"
-        },
-        "passiveSkill": {
-          "name": "Umbra Kinetics",
-          "description": "Grants Basic Attacks a 30% chance to trigger a shadow\nstrike for 6s, dealing [Damage Rate: 100%] Physical\nDamage (Cooldown: 0.8s).\nBasic Attack Damage Bonuses affect damage and basic\nattack critical hits can cause the damage to crit.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCvfaRNr1px4UQA1RsqcaXnj7NfHlgpBFLTCie"
-        },
+      "passiveSkill": {
+        "name": "Umbra Kinetics",
+        "description": "Grants Basic Attacks a 30% chance to trigger a shadow\nstrike for 6s, dealing [Damage Rate: 100%] Physical\nDamage (Cooldown: 0.8s).\nBasic Attack Damage Bonuses affect damage and basic\nattack critical hits can cause the damage to crit.",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCvfaRNr1px4UQA1RsqcaXnj7NfHlgpBFLTCie"
+      },
 
-        "type": "agility",
-        "supportEffects": {
-          "positive": {
-            "name": "Melee Damage"
-          },
-          "negative": {
-            "name": "Damage Resistance"
-          }
+      "type": "agility",
+      "supportEffects": {
+        "positive": {
+          "name": "Melee Damage"
+        },
+        "negative": {
+          "name": "Damage Resistance"
         }
       }
     },
-    "moonveil": {
+    {
+      "name": "Moonveil",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7X6YHXWlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4",
       "strBonus": 1,
       "agiBonus": 0.7,
@@ -477,7 +495,8 @@
         }
       }
     },
-    "shadowseer": {
+    {
+      "name": "Shadowseer",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0Yp5zeGnMSAK5VBw2xylROtGWiDZQcgjTNJE",
       "strBonus": 0.5,
       "agiBonus": 0.5,
@@ -502,7 +521,8 @@
         }
       }
     },
-    "hive_queen": {
+    {
+      "name": "Hive Queen",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCx9hryBTM9kdEWPFiXUfzcS5mwtbKTRDjIYnV",
       "strBonus": 1.1,
       "agiBonus": 1,
@@ -527,7 +547,8 @@
         }
       }
     },
-    "raven": {
+    {
+      "name": "Raven",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwAJM77GOhGMgoOJLYrd3qpCvNxRc5QFZ9am6",
       "strBonus": 1.2,
       "agiBonus": 0.8,
@@ -552,7 +573,8 @@
         }
       }
     },
-    "helix": {
+    {
+      "name": "Helix",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCh0W9IXHx7HuMjzKPR6SGg1BFUfEidcZ2JoDr",
       "strBonus": 1,
       "agiBonus": 0.8,
@@ -577,7 +599,8 @@
         }
       }
     },
-    "veska": {
+    {
+      "name": "Veska",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbEE7UkWbBOnPELSmCrNGjQoAcKtW4k0pX3uy",
       "strBonus": 1,
       "agiBonus": 0.7,
@@ -602,7 +625,8 @@
         }
       }
     },
-    "solenne": {
+    {
+      "name": "Solenne",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCf0TU7tQeFwJm2B1vRUSOualKLCDGIfT0g4Es",
       "strBonus": 1,
       "agiBonus": 1.1,
@@ -627,7 +651,8 @@
         }
       }
     },
-    "revelation": {
+    {
+      "name": "Revelation",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCv43eNdpx4UQA1RsqcaXnj7NfHlgpBFLTCie5",
       "strBonus": 0.8,
       "agiBonus": 1,
@@ -652,7 +677,8 @@
         }
       }
     },
-    "astral_magnus": {
+    {
+      "name": "Astral Magnus",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCeFPM41qi02s7T6FOxAtHYlBmI8h3odqkzGaJ",
       "strBonus": 1,
       "agiBonus": 1,
@@ -677,7 +703,8 @@
         }
       }
     },
-    "mole": {
+    {
+      "name": "Mole",
       "image": "",
       "strBonus": 1.3,
       "agiBonus": 1.3,
@@ -702,9 +729,10 @@
         }
       }
     }
-  },
-  "weapon": {
-    "withermaul": {
+  ],
+  "weapon": [
+    {
+      "name": "Withermaul",
       "rarity": "legendary",
       "core_skill": {
         "name": "Bloom of Malice",
@@ -715,7 +743,8 @@
       "type": "intelligence",
       "set": "curse"
     },
-    "necromist": {
+    {
+      "name": "Necromist",
       "rarity": "legendary",
       "core_skill": {
         "name": "Necrotic Eruption",
@@ -726,7 +755,8 @@
       "type": "intelligence",
       "set": "curse"
     },
-    "sol_protector": {
+    {
+      "name": "Sol Protector",
       "rarity": "legendary",
       "core_skill": {
         "name": "Sanctuary",
@@ -737,7 +767,8 @@
       "type": "intelligence",
       "set": "holy"
     },
-    "celestial_redeemer": {
+    {
+      "name": "Celestial Redeemer",
       "rarity": "legendary",
       "core_skill": {
         "name": "Blessed Halo",
@@ -748,7 +779,8 @@
       "type": "intelligence",
       "set": "holy"
     },
-    "frost's_caller": {
+    {
+      "name": "Frost's Caller",
       "rarity": "legendary",
       "core_skill": {
         "name": "Frost's Caller",
@@ -759,7 +791,8 @@
       "type": "intelligence",
       "set": "frost"
     },
-    "glacier_spark": {
+    {
+      "name": "Glacier Spark",
       "rarity": "legendary",
       "core_skill": {
         "name": "Ice Blast",
@@ -770,7 +803,8 @@
       "type": "intelligence",
       "set": "frost"
     },
-    "molten_mortar": {
+    {
+      "name": "Molten Mortar",
       "rarity": "legendary",
       "core_skill": {
         "name": "Molten Volley",
@@ -781,7 +815,8 @@
       "type": "intelligence",
       "set": "fire"
     },
-    "solarflare": {
+    {
+      "name": "Solarflare",
       "rarity": "legendary",
       "core_skill": {
         "name": "Starforge Beam",
@@ -792,7 +827,8 @@
       "type": "intelligence",
       "set": "fire"
     },
-    "nihilstaff": {
+    {
+      "name": "Nihilstaff",
       "rarity": "epic",
       "core_skill": {
         "name": "Crippling Curse",
@@ -803,7 +839,8 @@
       "type": "intelligence",
       "set": "curse"
     },
-    "infestor's_staff": {
+    {
+      "name": "Infestor's Staff",
       "rarity": "epic",
       "core_skill": {
         "name": "Parasitic Swarm",
@@ -814,7 +851,8 @@
       "type": "intelligence",
       "set": "curse"
     },
-    "plaguespread": {
+    {
+      "name": "Plaguespread",
       "rarity": "epic",
       "core_skill": {
         "name": "Pestilence",
@@ -825,7 +863,8 @@
       "type": "intelligence",
       "set": "curse"
     },
-    "hexlock": {
+    {
+      "name": "Hexlock",
       "rarity": "epic",
       "core_skill": {
         "name": "Hexbound Malice",
@@ -836,7 +875,8 @@
       "type": "intelligence",
       "set": "curse"
     },
-    "radiant_nova": {
+    {
+      "name": "Radiant Nova",
       "rarity": "epic",
       "core_skill": {
         "name": "Sacred Flare",
@@ -847,7 +887,8 @@
       "type": "intelligence",
       "set": "holy"
     },
-    "divine_resonator": {
+    {
+      "name": "Divine Resonator",
       "rarity": "epic",
       "core_skill": {
         "name": "Sanctified Domain",
@@ -858,7 +899,8 @@
       "type": "intelligence",
       "set": "holy"
     },
-    "luminous_ward": {
+    {
+      "name": "Luminous Ward",
       "rarity": "epic",
       "core_skill": {
         "name": "Sanctum Arc",
@@ -869,7 +911,8 @@
       "type": "intelligence",
       "set": "holy"
     },
-    "guardian's_embrace": {
+    {
+      "name": "Guardian's Embrace",
       "rarity": "epic",
       "core_skill": {
         "name": "Divine Vault",
@@ -880,7 +923,8 @@
       "type": "intelligence",
       "set": "holy"
     },
-    "frozen_conduit": {
+    {
+      "name": "Frozen Conduit",
       "rarity": "epic",
       "core_skill": {
         "name": "Frozen Phase",
@@ -891,7 +935,8 @@
       "type": "intelligence",
       "set": "frost"
     },
-    "iceshard_comet": {
+    {
+      "name": "Iceshard Comet",
       "rarity": "epic",
       "core_skill": {
         "name": "Frost Nova",
@@ -902,7 +947,8 @@
       "type": "intelligence",
       "set": "frost"
     },
-    "cryoshard_mask": {
+    {
+      "name": "Cryoshard Mask",
       "rarity": "epic",
       "core_skill": {
         "name": "Frostbound Echo",
@@ -913,7 +959,8 @@
       "type": "intelligence",
       "set": "frost"
     },
-    "frost_matrix": {
+    {
+      "name": "Frost Matrix",
       "rarity": "epic",
       "core_skill": {
         "name": "Frostbite",
@@ -924,7 +971,8 @@
       "type": "intelligence",
       "set": "frost"
     },
-    "blazruptor": {
+    {
+      "name": "Blazruptor",
       "rarity": "epic",
       "core_skill": {
         "name": "Hell Salvo",
@@ -935,7 +983,8 @@
       "type": "intelligence",
       "set": "fire"
     },
-    "inferno_core": {
+    {
+      "name": "Inferno Core",
       "rarity": "epic",
       "core_skill": {
         "name": "Core Flare",
@@ -946,7 +995,8 @@
       "type": "intelligence",
       "set": "fire"
     },
-    "doomfire": {
+    {
+      "name": "Doomfire",
       "rarity": "epic",
       "core_skill": {
         "name": "Scorching Surge",
@@ -957,7 +1007,8 @@
       "type": "intelligence",
       "set": "fire"
     },
-    "flame_maw": {
+    {
+      "name": "Flame Maw",
       "rarity": "epic",
       "core_skill": {
         "name": "Molten Blast",
@@ -968,7 +1019,8 @@
       "type": "intelligence",
       "set": "fire"
     },
-    "rotten_breath": {
+    {
+      "name": "Rotten Breath",
       "rarity": "rare",
       "core_skill": {
         "name": "Rot Manifest",
@@ -979,7 +1031,8 @@
       "type": "intelligence",
       "set": "curse"
     },
-    "judgement's_staff": {
+    {
+      "name": "Judgement's Staff",
       "rarity": "rare",
       "core_skill": {
         "name": "Aegisflare",
@@ -990,7 +1043,8 @@
       "type": "intelligence",
       "set": "holy"
     },
-    "glacier_prism": {
+    {
+      "name": "Glacier Prism",
       "rarity": "rare",
       "core_skill": {
         "name": "Frost Torrent",
@@ -1001,7 +1055,8 @@
       "type": "intelligence",
       "set": "frost"
     },
-    "blazing_catalyst": {
+    {
+      "name": "Blazing Catalyst",
       "rarity": "rare",
       "core_skill": {
         "name": "Hellfire",
@@ -1012,7 +1067,8 @@
       "type": "intelligence",
       "set": "fire"
     },
-    "novice_flame_blaster": {
+    {
+      "name": "Novice Flame Blaster",
       "rarity": "common",
       "core_skill": {
         "name": "Hellfire",
@@ -1023,7 +1079,8 @@
       "type": "intelligence",
       "set": "fire"
     },
-    "prism_cloak": {
+    {
+      "name": "Prism Cloak",
       "rarity": "legendary",
       "core_skill": {
         "name": "Photon Activation",
@@ -1034,7 +1091,8 @@
       "type": "strength",
       "set": "guns"
     },
-    "voideye": {
+    {
+      "name": "Voideye",
       "rarity": "legendary",
       "core_skill": {
         "name": "Deadshot",
@@ -1045,7 +1103,8 @@
       "type": "strength",
       "set": "guns"
     },
-    "thunderlord's_wrath": {
+    {
+      "name": "Thunderlord's Wrath",
       "rarity": "legendary",
       "core_skill": {
         "name": "Thunderclap Impact",
@@ -1056,7 +1115,8 @@
       "type": "strength",
       "set": "mace"
     },
-    "abyssal_conduit": {
+    {
+      "name": "Abyssal Conduit",
       "rarity": "legendary",
       "core_skill": {
         "name": "Void Devour",
@@ -1067,7 +1127,8 @@
       "type": "strength",
       "set": "mace"
     },
-    "wingblade": {
+    {
+      "name": "Wingblade",
       "rarity": "legendary",
       "core_skill": {
         "name": "Twinstorm",
@@ -1078,7 +1139,8 @@
       "type": "strength",
       "set": "axes"
     },
-    "wreckingsaw": {
+    {
+      "name": "Wreckingsaw",
       "rarity": "legendary",
       "core_skill": {
         "name": "Bladewheel Throw",
@@ -1089,7 +1151,8 @@
       "type": "strength",
       "set": "axes"
     },
-    "sovereign's_radiance": {
+    {
+      "name": "Sovereign's Radiance",
       "rarity": "legendary",
       "core_skill": {
         "name": "Thousandfold Strike",
@@ -1100,7 +1163,8 @@
       "type": "strength",
       "set": "swords"
     },
-    "judicator": {
+    {
+      "name": "Judicator",
       "rarity": "legendary",
       "core_skill": {
         "name": "Obliteration",
@@ -1111,7 +1175,8 @@
       "type": "strength",
       "set": "swords"
     },
-    "luminet_cannon": {
+    {
+      "name": "Luminet Cannon",
       "rarity": "epic",
       "core_skill": {
         "name": "Snipe",
@@ -1122,7 +1187,8 @@
       "type": "strength",
       "set": "guns"
     },
-    "blightspitter": {
+    {
+      "name": "Blightspitter",
       "rarity": "epic",
       "core_skill": {
         "name": "Toxic Shroud",
@@ -1133,7 +1199,8 @@
       "type": "strength",
       "set": "guns"
     },
-    "spectral_assault": {
+    {
+      "name": "Spectral Assault",
       "rarity": "epic",
       "core_skill": {
         "name": "Rapid Fire",
@@ -1144,7 +1211,8 @@
       "type": "strength",
       "set": "guns"
     },
-    "sentinel_barrage": {
+    {
+      "name": "Sentinel Barrage",
       "rarity": "epic",
       "core_skill": {
         "name": "Sentinel Barrage",
@@ -1155,7 +1223,8 @@
       "type": "strength",
       "set": "guns"
     },
-    "bulwark_core": {
+    {
+      "name": "Bulwark Core",
       "rarity": "epic",
       "core_skill": {
         "name": "Shield Slam",
@@ -1166,7 +1235,8 @@
       "type": "strength",
       "set": "mace"
     },
-    "ripper's_grasp": {
+    {
+      "name": "Ripper's Grasp",
       "rarity": "epic",
       "core_skill": {
         "name": "Grappling Strike",
@@ -1177,7 +1247,8 @@
       "type": "strength",
       "set": "mace"
     },
-    "voidbreaker": {
+    {
+      "name": "Voidbreaker",
       "rarity": "epic",
       "core_skill": {
         "name": "Void Slam",
@@ -1188,7 +1259,8 @@
       "type": "strength",
       "set": "mace"
     },
-    "gravity_hammer": {
+    {
+      "name": "Gravity Hammer",
       "rarity": "epic",
       "core_skill": {
         "name": "Pulverizing Slam",
@@ -1199,7 +1271,8 @@
       "type": "strength",
       "set": "mace"
     },
-    "cyclone_cleave": {
+    {
+      "name": "Cyclone Cleave",
       "rarity": "epic",
       "core_skill": {
         "name": "Vortex Toss",
@@ -1210,7 +1283,8 @@
       "type": "strength",
       "set": "axes"
     },
-    "bonefang_reaper": {
+    {
+      "name": "Bonefang Reaper",
       "rarity": "epic",
       "core_skill": {
         "name": "Bonecrusher Leap",
@@ -1221,7 +1295,8 @@
       "type": "strength",
       "set": "axes"
     },
-    "ravager's_cleave": {
+    {
+      "name": "Ravager's Cleave",
       "rarity": "epic",
       "core_skill": {
         "name": "Execution",
@@ -1232,7 +1307,8 @@
       "type": "strength",
       "set": "axes"
     },
-    "emerald_edge": {
+    {
+      "name": "Emerald Edge",
       "rarity": "epic",
       "core_skill": {
         "name": "Runic Rebound",
@@ -1243,7 +1319,8 @@
       "type": "strength",
       "set": "axes"
     },
-    "titan's_spineblade": {
+    {
+      "name": "Titan's Spineblade",
       "rarity": "epic",
       "core_skill": {
         "name": "Titan's Stride",
@@ -1254,7 +1331,8 @@
       "type": "strength",
       "set": "swords"
     },
-    "lordbreaker": {
+    {
+      "name": "Lordbreaker",
       "rarity": "epic",
       "core_skill": {
         "name": "Sovereign Strike",
@@ -1265,7 +1343,8 @@
       "type": "strength",
       "set": "swords"
     },
-    "voidblade": {
+    {
+      "name": "Voidblade",
       "rarity": "epic",
       "core_skill": {
         "name": "Force Pierce",
@@ -1276,7 +1355,8 @@
       "type": "strength",
       "set": "swords"
     },
-    "hellcore_cleaver": {
+    {
+      "name": "Hellcore Cleaver",
       "rarity": "epic",
       "core_skill": {
         "name": "Overload Slash",
@@ -1287,7 +1367,8 @@
       "type": "strength",
       "set": "swords"
     },
-    "shattercoil": {
+    {
+      "name": "Shattercoil",
       "rarity": "rare",
       "core_skill": {
         "name": "Scatterblast",
@@ -1298,7 +1379,8 @@
       "type": "strength",
       "set": "guns"
     },
-    "breaker's_resolve": {
+    {
+      "name": "Breaker's Resolve",
       "rarity": "rare",
       "core_skill": {
         "name": "Unyielding Smash",
@@ -1309,7 +1391,8 @@
       "type": "strength",
       "set": "mace"
     },
-    "berserker's_fury": {
+    {
+      "name": "Berserker's Fury",
       "rarity": "rare",
       "core_skill": {
         "name": "Whirlwind Slash",
@@ -1320,7 +1403,8 @@
       "type": "strength",
       "set": "axes"
     },
-    "storm_cleaver": {
+    {
+      "name": "Storm Cleaver",
       "rarity": "rare",
       "core_skill": {
         "name": "Tempest Slash",
@@ -1331,7 +1415,8 @@
       "type": "strength",
       "set": "swords"
     },
-    "novice_cleaver": {
+    {
+      "name": "Novice Cleaver",
       "rarity": "common",
       "core_skill": {
         "name": "Tempest Slash",
@@ -1342,7 +1427,8 @@
       "type": "strength",
       "set": "swords"
     },
-    "sanctuary_of_growth": {
+    {
+      "name": "Sanctuary of Growth",
       "rarity": "legendary",
       "core_skill": {
         "name": "Divine Rootfall",
@@ -1353,7 +1439,8 @@
       "type": "agility",
       "set": "nature"
     },
-    "spirit's_call": {
+    {
+      "name": "Spirit's Call",
       "rarity": "legendary",
       "core_skill": {
         "name": "Breeze of Resurgence",
@@ -1364,7 +1451,8 @@
       "type": "agility",
       "set": "nature"
     },
-    "scarlet_hunger": {
+    {
+      "name": "Scarlet Hunger",
       "rarity": "legendary",
       "core_skill": {
         "name": "Bloodeye Burst",
@@ -1375,7 +1463,8 @@
       "type": "agility",
       "set": "daggers"
     },
-    "bloodthirst": {
+    {
+      "name": "Bloodthirst",
       "rarity": "legendary",
       "core_skill": {
         "name": "Sanguine Pounce",
@@ -1386,7 +1475,8 @@
       "type": "agility",
       "set": "daggers"
     },
-    "phantom_spear": {
+    {
+      "name": "Phantom Spear",
       "rarity": "legendary",
       "core_skill": {
         "name": "Shadow Dash",
@@ -1397,7 +1487,8 @@
       "type": "agility",
       "set": "spears"
     },
-    "corrosive_piercer": {
+    {
+      "name": "Corrosive Piercer",
       "rarity": "legendary",
       "core_skill": {
         "name": "Blightfall",
@@ -1408,7 +1499,8 @@
       "type": "agility",
       "set": "spears"
     },
-    "eclipse_bow": {
+    {
+      "name": "Eclipse Bow",
       "rarity": "legendary",
       "core_skill": {
         "name": "Shadow Vortex",
@@ -1419,7 +1511,8 @@
       "type": "agility",
       "set": "bows"
     },
-    "mender's_ruin": {
+    {
+      "name": "Mender's Ruin",
       "rarity": "legendary",
       "core_skill": {
         "name": "Severance Shot",
@@ -1430,7 +1523,8 @@
       "type": "agility",
       "set": "bows"
     },
-    "tendril's_grasp": {
+    {
+      "name": "Tendril's Grasp",
       "rarity": "epic",
       "core_skill": {
         "name": "Entangling Growth",
@@ -1441,7 +1535,8 @@
       "type": "agility",
       "set": "nature"
     },
-    "verdant_embrace": {
+    {
+      "name": "Verdant Embrace",
       "rarity": "epic",
       "core_skill": {
         "name": "Healing Bloom",
@@ -1452,7 +1547,8 @@
       "type": "agility",
       "set": "nature"
     },
-    "harmony's_staff": {
+    {
+      "name": "Harmony's Staff",
       "rarity": "epic",
       "core_skill": {
         "name": "Rain of Serenity",
@@ -1463,7 +1559,8 @@
       "type": "agility",
       "set": "nature"
     },
-    "thornward_staff": {
+    {
+      "name": "Thornward Staff",
       "rarity": "epic",
       "core_skill": {
         "name": "Thorn Barrier",
@@ -1474,7 +1571,8 @@
       "type": "agility",
       "set": "nature"
     },
-    "bloodfury_blades": {
+    {
+      "name": "Bloodfury Blades",
       "rarity": "epic",
       "core_skill": {
         "name": "Crimson Frenzy",
@@ -1485,7 +1583,8 @@
       "type": "agility",
       "set": "daggers"
     },
-    "bloodpiercers": {
+    {
+      "name": "Bloodpiercers",
       "rarity": "epic",
       "core_skill": {
         "name": "Rupture Thrust",
@@ -1496,7 +1595,8 @@
       "type": "agility",
       "set": "daggers"
     },
-    "soulfangs": {
+    {
+      "name": "Soulfangs",
       "rarity": "epic",
       "core_skill": {
         "name": "Soul Snare",
@@ -1507,7 +1607,8 @@
       "type": "agility",
       "set": "daggers"
     },
-    "twilight_blades": {
+    {
+      "name": "Twilight Blades",
       "rarity": "epic",
       "core_skill": {
         "name": "Blade Dance",
@@ -1518,7 +1619,8 @@
       "type": "agility",
       "set": "daggers"
     },
-    "drakespike": {
+    {
+      "name": "Drakespike",
       "rarity": "epic",
       "core_skill": {
         "name": "Rapid Thrust",
@@ -1529,7 +1631,8 @@
       "type": "agility",
       "set": "spears"
     },
-    "storm_spear": {
+    {
+      "name": "Storm Spear",
       "rarity": "epic",
       "core_skill": {
         "name": "Sweeping Tempest",
@@ -1540,7 +1643,8 @@
       "type": "agility",
       "set": "spears"
     },
-    "stormfang_lance": {
+    {
+      "name": "Stormfang Lance",
       "rarity": "epic",
       "core_skill": {
         "name": "Surging Throw",
@@ -1551,7 +1655,8 @@
       "type": "agility",
       "set": "spears"
     },
-    "sentinel's_lance": {
+    {
+      "name": "Sentinel's Lance",
       "rarity": "epic",
       "core_skill": {
         "name": "Banner of Justice",
@@ -1562,7 +1667,8 @@
       "type": "agility",
       "set": "spears"
     },
-    "windbreaker": {
+    {
+      "name": "Windbreaker",
       "rarity": "epic",
       "core_skill": {
         "name": "Windrend Splitters",
@@ -1573,7 +1679,8 @@
       "type": "agility",
       "set": "bows"
     },
-    "thunderstrike": {
+    {
+      "name": "Thunderstrike",
       "rarity": "epic",
       "core_skill": {
         "name": "Arcbolt",
@@ -1584,7 +1691,8 @@
       "type": "agility",
       "set": "bows"
     },
-    "kinetic_arc": {
+    {
+      "name": "Kinetic Arc",
       "rarity": "epic",
       "core_skill": {
         "name": "Powershot",
@@ -1595,7 +1703,8 @@
       "type": "agility",
       "set": "bows"
     },
-    "predator's_splitbow": {
+    {
+      "name": "Predator's Splitbow",
       "rarity": "epic",
       "core_skill": {
         "name": "Splintershot",
@@ -1606,7 +1715,8 @@
       "type": "agility",
       "set": "bows"
     },
-    "eclipse_conduit": {
+    {
+      "name": "Eclipse Conduit",
       "rarity": "rare",
       "core_skill": {
         "name": "Crater Surge",
@@ -1617,7 +1727,8 @@
       "type": "agility",
       "set": "nature"
     },
-    "hemoblades": {
+    {
+      "name": "Hemoblades",
       "rarity": "rare",
       "core_skill": {
         "name": "Rend and Reap",
@@ -1628,7 +1739,8 @@
       "type": "agility",
       "set": "daggers"
     },
-    "shardspike": {
+    {
+      "name": "Shardspike",
       "rarity": "rare",
       "core_skill": {
         "name": "Bloodeye Burst",
@@ -1639,7 +1751,8 @@
       "type": "agility",
       "set": "spears"
     },
-    "hailfire": {
+    {
+      "name": "Hailfire",
       "rarity": "rare",
       "core_skill": {
         "name": "Barrage",
@@ -1650,7 +1763,8 @@
       "type": "agility",
       "set": "bows"
     },
-    "novice_longbow": {
+    {
+      "name": "Novice Longbow",
       "rarity": "common",
       "core_skill": {
         "name": "Barrage",
@@ -1661,9 +1775,10 @@
       "type": "agility",
       "set": "bows"
     }
-  },
-  "helmet": {
-    "sanctum_shroud": {
+  ],
+  "helmet": [
+    {
+      "name": "Sanctum Shroud",
       "rarity": "legendary",
       "core_skill": {
         "name": "Repulsion",
@@ -1673,7 +1788,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCIaXoXOzzmQPwNigqxUdB1eOyCYbWln78fpDF",
       "type": "intelligence"
     },
-    "twilight_mantle": {
+    {
+      "name": "Twilight Mantle",
       "rarity": "legendary",
       "core_skill": {
         "name": "Last Stand",
@@ -1683,7 +1799,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClIzDjH6oygh7mMGDItxK38196fS4eZ2ATUak",
       "type": "intelligence"
     },
-    "mystic_surge": {
+    {
+      "name": "Mystic Surge",
       "rarity": "epic",
       "core_skill": {
         "name": "Overflow",
@@ -1693,7 +1810,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYjdBO3rGRsurykYnU8tjQL0iwWeACKo4E5aZ",
       "type": "intelligence"
     },
-    "healer's_hood": {
+    {
+      "name": "Healer's Hood",
       "rarity": "epic",
       "core_skill": {
         "name": "Swift Aid",
@@ -1703,7 +1821,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCr6SLFO3ZrcpGNj0mROVHQMXP4oWtnswev9gJ",
       "type": "intelligence"
     },
-    "earth_vein_hood": {
+    {
+      "name": "Earth Vein Hood",
       "rarity": "epic",
       "core_skill": {
         "name": "Venom",
@@ -1713,7 +1832,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCH98AULK4EOAC1uZm8KvoQgpyDTSnlbFxk6L5",
       "type": "intelligence"
     },
-    "crimson_breeze": {
+    {
+      "name": "Crimson Breeze",
       "rarity": "epic",
       "core_skill": {
         "name": "Grievous Wounds",
@@ -1723,7 +1843,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYt1xaArGRsurykYnU8tjQL0iwWeACKo4E5aZ",
       "type": "intelligence"
     },
-    "breezeweaver_hood": {
+    {
+      "name": "Breezeweaver Hood",
       "rarity": "rare",
       "core_skill": {
         "name": "Amplify",
@@ -1733,7 +1854,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXYsPcVynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
       "type": "intelligence"
     },
-    "stormveil_mask": {
+    {
+      "name": "Stormveil Mask",
       "rarity": "legendary",
       "core_skill": {
         "name": "Sandstorm",
@@ -1743,7 +1865,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdzDvUZirOfwbCID83Tpm1Hv24gWoyBiFXVxk",
       "type": "strength"
     },
-    "warden's_gaze": {
+    {
+      "name": "Warden's Gaze",
       "rarity": "legendary",
       "core_skill": {
         "name": "Forward Guard",
@@ -1753,7 +1876,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDbWw0WynA1HpuOTqiN0gK7cldavVYGk9WLZ",
       "type": "strength"
     },
-    "ironclad_helm": {
+    {
+      "name": "Ironclad Helm",
       "rarity": "epic",
       "core_skill": {
         "name": "Iron Wall",
@@ -1763,7 +1887,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZWAvMC5Gd5rIR1B8NCZt3wcWfDJgQSipVkE0",
       "type": "strength"
     },
-    "hellfire_visor": {
+    {
+      "name": "Hellfire Visor",
       "rarity": "epic",
       "core_skill": {
         "name": "Flame Star",
@@ -1773,7 +1898,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdafYTfirOfwbCID83Tpm1Hv24gWoyBiFXVxk",
       "type": "strength"
     },
-    "reptilian_helm": {
+    {
+      "name": "Reptilian Hood",
       "rarity": "epic",
       "core_skill": {
         "name": "Scale Armor",
@@ -1783,7 +1909,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJkM9rsUtiPWS4l8JEHns6v3kTN10rCyUZXMo",
       "type": "strength"
     },
-    "savage_helm": {
+    {
+      "name": "Savage Helm",
       "rarity": "epic",
       "core_skill": {
         "name": "EMP Blast",
@@ -1793,7 +1920,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCpjkXYTnl5Y2OXNwHZ403tR8CeJdUmEagVSLf",
       "type": "strength"
     },
-    "furor's_helm": {
+    {
+      "name": "Furor's Helm",
       "rarity": "rare",
       "core_skill": {
         "name": "Enrage",
@@ -1803,7 +1931,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0xymnvGnMSAK5VBw2xylROtGWiDZQcgjTNJE",
       "type": "strength"
     },
-    "ironwill_veil": {
+    {
+      "name": "Ironwill Veil",
       "rarity": "legendary",
       "core_skill": {
         "name": "Defiance",
@@ -1813,7 +1942,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZbsSYQ5Gd5rIR1B8NCZt3wcWfDJgQSipVkE0",
       "type": "agility"
     },
-    "folly_helm": {
+    {
+      "name": "Folly Helm",
       "rarity": "legendary",
       "core_skill": {
         "name": "Break Free",
@@ -1823,7 +1953,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsIdwArZjhbCUk9y6YA2VESc8mnvDqMf5LGu1",
       "type": "agility"
     },
-    "stormcaller's_hood": {
+    {
+      "name": "Stormcaller's Hood",
       "rarity": "epic",
       "core_skill": {
         "name": "Electrified Strike",
@@ -1833,7 +1964,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCoKcrs215DWbhNtFdU6qgYeZKnHE9poiCJ0z2",
       "type": "agility"
     },
-    "shadeveil_mask": {
+    {
+      "name": "Shadeveil Mask",
       "rarity": "epic",
       "core_skill": {
         "name": "Fade Out",
@@ -1843,7 +1975,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOCC0cVRLFieDIdC9aNjtX2G4mY7JVxlbfyuv",
       "type": "agility"
     },
-    "wrathveil_shade": {
+    {
+      "name": "Wrathveil Shade",
       "rarity": "epic",
       "core_skill": {
         "name": "Rage",
@@ -1853,7 +1986,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwDP7fWOhGMgoOJLYrd3qpCvNxRc5QFZ9am6y",
       "type": "agility"
     },
-    "purifier's_shroud": {
+    {
+      "name": "Purifier's Shroud",
       "rarity": "epic",
       "core_skill": {
         "name": "Dodge",
@@ -1863,7 +1997,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSZLmMmwJHd9VeDNGoX6KrO7F2zbawu5I3AU0",
       "type": "agility"
     },
-    "vital_mantle": {
+    {
+      "name": "Vital Mantle",
       "rarity": "rare",
       "core_skill": {
         "name": "Life Flash",
@@ -1873,9 +2008,10 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9If1SD7PCifcs12oSdBru3GbU5JnO6IXZapz",
       "type": "agility"
     }
-  },
-  "chest": {
-    "dreadcloak": {
+  ],
+  "chest": [
+    {
+      "name": "Dreadcloak",
       "rarity": "legendary",
       "core_skill": {
         "name": "Panic",
@@ -1885,7 +2021,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCi4iT5UJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2",
       "type": "intelligence"
     },
-    "warding_shroud": {
+    {
+      "name": "Warding Shroud",
       "rarity": "legendary",
       "core_skill": {
         "name": "Barrier",
@@ -1895,7 +2032,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCeTw1ISqi02s7T6FOxAtHYlBmI8h3odqkzGaJ",
       "type": "intelligence"
     },
-    "archaneweaver": {
+    {
+      "name": "Archaneweaver",
       "rarity": "epic",
       "core_skill": {
         "name": "Mana Font",
@@ -1905,7 +2043,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLTq4vIdNqMVOnfP9XToUGW20hvxp7K6IgYDy",
       "type": "intelligence"
     },
-    "repulsor_mantle": {
+    {
+      "name": "Repulsor Mantle",
       "rarity": "epic",
       "core_skill": {
         "name": "Repulse",
@@ -1915,7 +2054,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCtlo2zhdRK6zgEJNaAl8QbjHpe3GBMqcoSW1",
       "type": "intelligence"
     },
-    "exorcist's_robe": {
+    {
+      "name": "Exorcist's Robe",
       "rarity": "epic",
       "core_skill": {
         "name": "Dispel",
@@ -1925,7 +2065,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCieWIzLJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2",
       "type": "intelligence"
     },
-    "cleansing_robe": {
+    {
+      "name": "Cleansing Robe",
       "rarity": "epic",
       "core_skill": {
         "name": "Purify",
@@ -1935,7 +2076,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOuM0bk2RLFieDIdC9aNjtX2G4mY7JVxlbfyu",
       "type": "intelligence"
     },
-    "vigorcloak": {
+    {
+      "name": "Vigorcloak",
       "rarity": "rare",
       "core_skill": {
         "name": "Heal",
@@ -1945,7 +2087,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCozMBG615DWbhNtFdU6qgYeZKnHE9poiCJ0z2",
       "type": "intelligence"
     },
-    "novice_robe": {
+    {
+      "name": "Novice Robe",
       "rarity": "common",
       "core_skill": {
         "name": "Heal",
@@ -1955,7 +2098,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCozMBG615DWbhNtFdU6qgYeZKnHE9poiCJ0z2",
       "type": "intelligence"
     },
-    "warden's_shell": {
+    {
+      "name": "Warden's Shell",
       "rarity": "legendary",
       "core_skill": {
         "name": "Vulnerability",
@@ -1965,7 +2109,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCWkmAtFVDaGSCpnbx189YilBew0cJzoMPdNAR",
       "type": "strength"
     },
-    "magsurge_armor": {
+    {
+      "name": "Magsurge Armor",
       "rarity": "legendary",
       "core_skill": {
         "name": "Converge",
@@ -1975,7 +2120,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCBaTfNBHxxayJATSI4luXcVpj2MeUKF7r9D5g",
       "type": "strength"
     },
-    "aegis_plate": {
+    {
+      "name": "Aegis Plate",
       "rarity": "epic",
       "core_skill": {
         "name": "Shield",
@@ -1985,7 +2131,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbmNdRKRWbBOnPELSmCrNGjQoAcKtW4k0pX3u",
       "type": "strength"
     },
-    "dazzling_guard": {
+    {
+      "name": "Dazzling Guard",
       "rarity": "epic",
       "core_skill": {
         "name": "Stun",
@@ -1995,7 +2142,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCD9aNKQCTsc4uPVzehvMnktCEqAJKoZQISF65",
       "type": "strength"
     },
-    "tempest_charge": {
+    {
+      "name": "Tempest Charge",
       "rarity": "epic",
       "core_skill": {
         "name": "Charge",
@@ -2005,7 +2153,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbyo1NEWbBOnPELSmCrNGjQoAcKtW4k0pX3uy",
       "type": "strength"
     },
-    "tangle_guard": {
+    {
+      "name": "Tangle Guard",
       "rarity": "epic",
       "core_skill": {
         "name": "Root Grip",
@@ -2015,7 +2164,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyk0ye89J3IVna9mA2PgkFluvzcOS7xYQdGTN",
       "type": "strength"
     },
-    "guardian's_blessing": {
+    {
+      "name": "Guardian's Blessing",
       "rarity": "rare",
       "core_skill": {
         "name": "Block",
@@ -2025,7 +2175,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC3K761JbFGQ0IUDOkSBpMKthngLxwV6sCENTj",
       "type": "strength"
     },
-    "novice_heavy_armor": {
+    {
+      "name": "Novice Heavy Armor",
       "rarity": "common",
       "core_skill": {
         "name": "Block",
@@ -2035,7 +2186,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC3K761JbFGQ0IUDOkSBpMKthngLxwV6sCENTj",
       "type": "strength"
     },
-    "hero's_embrace": {
+    {
+      "name": "Hero's Embrace",
       "rarity": "legendary",
       "core_skill": {
         "name": "Rally",
@@ -2045,7 +2197,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCRP7Hh0AnJqIWpK8HPuraCOUN2mQSd4gxcDYv",
       "type": "agility"
     },
-    "ranger's_hide": {
+    {
+      "name": "Ranger's Hide",
       "rarity": "legendary",
       "core_skill": {
         "name": "Armor Breaker",
@@ -2055,7 +2208,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsFRlC2dZjhbCUk9y6YA2VESc8mnvDqMf5LGu",
       "type": "agility"
     },
-    "beastcaller's_coat": {
+    {
+      "name": "Beastcaller's Coat",
       "rarity": "epic",
       "core_skill": {
         "name": "Snarl",
@@ -2065,7 +2219,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCqBU1jZ0DrPOVUwARFb2Ggj9MuYvQ0JiBK7el",
       "type": "agility"
     },
-    "deathmantle": {
+    {
+      "name": "Deathmantle",
       "rarity": "epic",
       "core_skill": {
         "name": "Finisher",
@@ -2075,7 +2230,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDhf6qNynA1HpuOTqiN0gK7cldavVYGk9WLZ",
       "type": "agility"
     },
-    "retaliation_coat": {
+    {
+      "name": "Retaliation Coat",
       "rarity": "epic",
       "core_skill": {
         "name": "Reflect",
@@ -2085,7 +2241,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQvM5LG7z9VydsAL2D3hoSNGWrlcw7ZuBgfXi",
       "type": "agility"
     },
-    "mistshroud": {
+    {
+      "name": "Mistshroud",
       "rarity": "epic",
       "core_skill": {
         "name": "Smoke Screen",
@@ -2095,7 +2252,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCc5AUOLcsHkruNlYIJ7Uz8OBA3pRwfhmdCoS4",
       "type": "agility"
     },
-    "recovery_vest": {
+    {
+      "name": "Recovery Vest",
       "rarity": "rare",
       "core_skill": {
         "name": "Bandage",
@@ -2105,7 +2263,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgc5ytg9oDsTbni1kQWjq2ZIY9X53xfLVaKF8",
       "type": "agility"
     },
-    "novice_medium_armor": {
+    {
+      "name": "Novice Medium Armor",
       "rarity": "common",
       "core_skill": {
         "name": "Bandage",
@@ -2115,7 +2274,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgc5ytg9oDsTbni1kQWjq2ZIY9X53xfLVaKF8",
       "type": "agility"
     },
-    "scavenger's_vest": {
+    {
+      "name": "Scavenger's Vest",
       "rarity": "rare",
       "core_skill": {
         "name": "Shield",
@@ -2125,9 +2285,10 @@
       "image": "",
       "type": "logistics"
     }
-  },
-  "boots": {
-    "savagefoot_boots": {
+  ],
+  "boots": [
+    {
+      "name": "Savagefoot Boots",
       "rarity": "legendary",
       "core_skill": {
         "name": "Berserk",
@@ -2137,7 +2298,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCjwu88tBPFTRAJm6yIQ43qr1OD7LeK2tWUYab",
       "type": "intelligence"
     },
-    "phantomstep_boots": {
+    {
+      "name": "Phantomstep Boots",
       "rarity": "legendary",
       "core_skill": {
         "name": "Ghost",
@@ -2147,7 +2309,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC5wudPxzF5c2dtDWx1eQAKHl76khLrMiGg9fX",
       "type": "intelligence"
     },
-    "blinkstep_boots": {
+    {
+      "name": "Blinkstep Boots",
       "rarity": "epic",
       "core_skill": {
         "name": "Flash Step",
@@ -2157,7 +2320,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCcAMLBhsHkruNlYIJ7Uz8OBA3pRwfhmdCoS4i",
       "type": "intelligence"
     },
-    "frostwalker_boots": {
+    {
+      "name": "Frostwalker Boots",
       "rarity": "epic",
       "core_skill": {
         "name": "Frost",
@@ -2167,7 +2331,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCcmAi4AsHkruNlYIJ7Uz8OBA3pRwfhmdCoS4i",
       "type": "intelligence"
     },
-    "miasma_stompers": {
+    {
+      "name": "Miasma Stompers",
       "rarity": "epic",
       "core_skill": {
         "name": "Decay",
@@ -2177,7 +2342,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYSBWj5rGRsurykYnU8tjQL0iwWeACKo4E5aZ",
       "type": "intelligence"
     },
-    "shifter's_strides": {
+    {
+      "name": "Shifter's Strides",
       "rarity": "epic",
       "core_skill": {
         "name": "Displacement",
@@ -2187,7 +2353,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCGBSJpaytMHmL1NBfDRpSE6XKr3hOJ9jnoQAW",
       "type": "intelligence"
     },
-    "arcaneflow_boots": {
+    {
+      "name": "Arcaneflow Boots",
       "rarity": "rare",
       "core_skill": {
         "name": "Abundance",
@@ -2197,7 +2364,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC69rECLfXA1L3EneUzdbVD7B49OSsGvWFcaH6",
       "type": "intelligence"
     },
-    "impact_heavy_boots": {
+    {
+      "name": "Impact Heavy Boots",
       "rarity": "legendary",
       "core_skill": {
         "name": "Lunge",
@@ -2207,7 +2375,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCUlrZ6zcQ16DWLsJmnqFyb2XvNroZuiz5flAI",
       "type": "strength"
     },
-    "avalanche_boots": {
+    {
+      "name": "Avalanche Boots",
       "rarity": "legendary",
       "core_skill": {
         "name": "Mountain Crash",
@@ -2217,7 +2386,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCppElbHnl5Y2OXNwHZ403tR8CeJdUmEagVSLf",
       "type": "strength"
     },
-    "wrathstep": {
+    {
+      "name": "Wrathstep",
       "rarity": "epic",
       "core_skill": {
         "name": "Vengeance",
@@ -2227,7 +2397,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCr2Cujs3ZrcpGNj0mROVHQMXP4oWtnswev9gJ",
       "type": "strength"
     },
-    "bulwark_striders": {
+    {
+      "name": "Bulwark Striders",
       "rarity": "epic",
       "core_skill": {
         "name": "Guardian",
@@ -2237,7 +2408,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCxggAwh3TM9kdEWPFiXUfzcS5mwtbKTRDjIYn",
       "type": "strength"
     },
-    "titan_walkers": {
+    {
+      "name": "Titan Walkers",
       "rarity": "epic",
       "core_skill": {
         "name": "Titanic Growth",
@@ -2247,7 +2419,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC1qT9rMcM75luO6aJUWEridRBzN8ILQ4K0hvk",
       "type": "strength"
     },
-    "vanguard's_march": {
+    {
+      "name": "Vanguard's March",
       "rarity": "epic",
       "core_skill": {
         "name": "Vanguard",
@@ -2257,7 +2430,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCl5QUCe6oygh7mMGDItxK38196fS4eZ2ATUak",
       "type": "strength"
     },
-    "energizer_boots": {
+    {
+      "name": "Energizer Boots",
       "rarity": "rare",
       "core_skill": {
         "name": "Vitality",
@@ -2267,7 +2441,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJtVcR2UtiPWS4l8JEHns6v3kTN10rCyUZXMo",
       "type": "strength"
     },
-    "evasion_striders": {
+    {
+      "name": "Evasion Striders",
       "rarity": "legendary",
       "core_skill": {
         "name": "Escape",
@@ -2277,7 +2452,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQaRTh97z9VydsAL2D3hoSNGWrlcw7ZuBgfXi",
       "type": "agility"
     },
-    "exodrift_slippers": {
+    {
+      "name": "Exodrift Slippers",
       "rarity": "legendary",
       "core_skill": {
         "name": "Phase Shift",
@@ -2287,7 +2463,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSChMrZIQHx7HuMjzKPR6SGg1BFUfEidcZ2JoDr",
       "type": "agility"
     },
-    "swiftstride_boots": {
+    {
+      "name": "Swiftstride Boots",
       "rarity": "epic",
       "core_skill": {
         "name": "Attack Speed",
@@ -2297,7 +2474,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCRRan8TAnJqIWpK8HPuraCOUN2mQSd4gxcDYv",
       "type": "agility"
     },
-    "fleeting_steps": {
+    {
+      "name": "Fleeting Steps",
       "rarity": "epic",
       "core_skill": {
         "name": "Grace",
@@ -2307,7 +2485,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCMlizgJLzbs6par1jMWHioyOVkIlgte5vRAf3",
       "type": "agility"
     },
-    "deathwalker_boots": {
+    {
+      "name": "Deathwalker Boots",
       "rarity": "epic",
       "core_skill": {
         "name": "Assassinate",
@@ -2317,7 +2496,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHz8cH1PK4EOAC1uZm8KvoQgpyDTSnlbFxk6L",
       "type": "agility"
     },
-    "shadeveil_slippers": {
+    {
+      "name": "Shadeveil Slippers",
       "rarity": "epic",
       "core_skill": {
         "name": "Vanish",
@@ -2327,7 +2507,8 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCi4NFO8JuLA8ofy7IC6JlZmUbr1WQBsg3SnO2",
       "type": "agility"
     },
-    "rallystep_boots": {
+    {
+      "name": "Rallystep Boots",
       "rarity": "rare",
       "core_skill": {
         "name": "Sidestep",
@@ -2337,45 +2518,53 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCv0fMVUpx4UQA1RsqcaXnj7NfHlgpBFLTCie5",
       "type": "agility"
     }
-  },
+  ],
   "skills": {
     "axes": {
-      "basic_attacks": {
-        "jump_cleave": {
+      "basic_attacks": [
+        {
+          "name": "Jump Cleave",
           "description": "Deals [Damage Rate: 130%] Physical Damage to enemy target. Can cast [Jump Cleave] every 6s. Performs a powerful leap attack, dealing [Damage Rate: 220%] Physical Damage and reducing Armor by 15% for 4s",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCaZGtePgcw3rXNJW4OjAURKLo0dxMTBEhliY1"
         },
-        "cleaving_strike": {
+        {
+          "name": "Cleaving Strike",
           "description": "Deals [Damage Rate: 160%] Physical Damage to enemies in a frontal cone",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCfat4XIeFwJm2B1vRUSOualKLCDGIfT0g4Esp"
         },
-        "cyclone_slash": {
+        {
+          "name": "Cyclone Slash",
           "description": "Deals [Damage Rate: 130%] Physical Damage to enemy target. Can cast [Cyclone Slash] every 5s. Deals [Damage Rate: 240%] Physical Damage to nearby enemies and reduces the healing they receive by 15% for 4s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC69hunDuXA1L3EneUzdbVD7B49OSsGvWFcaH6"
         }
-      },
-      "common_skills": {
-        "tempest_strike": {
+      ],
+      "common_skills": [
+        {
+          "name": "Tempest Strike",
           "description": "Channels for 3s. Damage Resistance is increased by 25% while channeling. Deals [Damage Rate: 90%] Physical Damage to players ([Damage Rate: 135%] Physical Damage to mobs) every 0.4s. On completion, deals [Damage Rate: 200%] Physical Damage to nearby enemies. Channeling can be ended early to perform the final strike",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCizRIOWJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2"
         },
-        "rock_smash": {
+        {
+          "name": "Rock Smash",
           "description": "Swings a giant axe to perform Rock Smash, dealing Damage Rate: 150%] Physical Damage and 1.2s Stunning enemies before the caster. Stones deal [Damage Rate: 50%] Physical Damage to those hit and [Damage Rate: 150%] Physical Damage on landing, also inflicting 30% Slow for 4s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCSpkDMhdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
         },
-        "primal_rush": {
+        {
+          "name": "Primal Rush",
           "description": "Charges forward to deal [Damage Rate: 30%] Physical Damage to up to 5 enemies hit, continuously knocking them back. The final impact deals [Damage Rate: 160%] Physical Damage to enemies in range. Fury",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZT8ASw5Gd5rIR1B8NCZt3wcWfDJgQSipVkE0"
         },
-        "axehook": {
+        {
+          "name": "Axehook",
           "description": "Swings an axehook forward to pull up to 5 enemies to the caster, also deals [Damage Rate: 200%] Physical Damage and inflicts 50% Slow for 4s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSGpqF5wJHd9VeDNGoX6KrO7F2zbawu5I3AU0"
         },
-        "rage": {
+        {
+          "name": "Rage",
           "description": "Removes control effects and increases Attack Speed by 40%, damage by 15%, and Movement Speed by 30% for 6s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCy5TMEG9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
         }
-      },
+      ],
       "passive_skill": {
         "name": "Bloodthrist",
         "description": "Against marked targets restore 6% of missing HP, deal +5% extra damage, while also granting +10% Attack Speed and +8% Movement Speed for 4s. Stacks up to 3 times. Consumes Bloodthirst Mark when triggered.",
@@ -2383,42 +2572,50 @@
       }
     },
     "bows": {
-      "basic_attacks": {
-        "split_arrow": {
+      "basic_attacks": [
+        {
+          "name": "Split Arrow",
           "description": "Replaces Basic Attack with [Split Arrow].\nDeals [Damage Rate: 80%] Physical Damage to up to 5\nenemies in a frontal cone",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCp75pf4nl5Y2OXNwHZ403tR8CeJdUmEagVSLf"
         },
-        "piercing_arrow": {
+        {
+          "name": "Piercing Arrow",
           "description": "Fires an arrow forward, dealing [Damage Rate: 170%]\nPhysical Damage and reducing Armor by 10% for 4s to all\nenemies hit.\nRange increases with charge time",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCe7nHiWqi02s7T6FOxAtHYlBmI8h3odqkzGaJ"
         },
-        "venom_arrow": {
+        {
+          "name": "Venom Arrow",
           "description": "Deals [Damage Rate: 80%] Physical\nDamage to the target.\n\nEvery 6th Basic Attack becomes [Venom Arrow].\nDeals [Damage Rate: 100%] Physical Damage and inflicts\nVenom.\n\n[Venom]\nDeals [Damage Rate: 15%] Magic Damage every second\nfor 6s. Stacks up to 3 times",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCcaxmchdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
         }
-      },
-      "common_skills": {
-        "blast_arrow": {
+      ],
+      "common_skills": [
+        {
+          "name": "Blast Arrow",
           "description": "Gains 10 explosive arrows for 12s.\nWhen Basic Attacks or skill arrows hit enemies, deal\n[Damage Rate: 40%] Physical Damage to up to 5 nearby\nenemies",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYKOl0wrGRsurykYnU8tjQL0iwWeACKo4E5aZ"
         },
-        "frost_arrow": {
+        {
+          "name": "Frost Arrow",
           "description": "Gains 10 frost arrows for 12s.\nBasic Attacks and skill arrows deal [Damage Rate: 50%]\nadditional Physical Damage and inflict 40% Slow for 2s\non hit.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCToZowdEatISq1hbFsvaBAxlu3r4fejycwL2U"
         },
-        "sleep_arrow": {
+        {
+          "name": "Sleep Arrow",
           "description": "Fires a sleep arrow forward while self-knockback 14m. Deals [Damage Rate:\n200%] Physical Damage on first enemy hit and applies Sleep for 5 seconds.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCenJeU9qi02s7T6FOxAtHYlBmI8h3odqkzGaJ"
         },
-        "silencing_arrow": {
+        {
+          "name": "Silencing Arrow",
           "description": "Fires a silencing arrow forward. The first enemy hit takes\n[Damage Rate: 100%] Physical Damage. After 2s, the\narrow inflicts [Damage Rate: 180%] additional Magic\nDamage and applies Silence for 3s to enemies within 5m.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLgP0WbdNqMVOnfP9XToUGW20hvxp7K6IgYDy"
         },
-        "binding_arrow": {
+        {
+          "name": "Binding Arrow",
           "description": "Fires three binding arrows forward. The first player hit by\neach takes [Damage Rate: 100%] Physical Damage\n([Damage Rate: 150%] Physical Damage to mobs) and is\nImmobilized for 1.5s.\nGains 1 charge every 14s, up to 2 charges.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKAe2WZIWoRmwnVDpPJKx9SMZFLG1TkAQU2eE"
         }
-      },
+      ],
       "passive_skill": {
         "name": "Target Mark",
         "description": "When dealing weapon skill damage, applies [Target Mark]\nfor 8s. After dealing Basic Attack Damage 3 times to a\nmarked target, deals [Damage Rate: 90%] additional\nPhysical Damage, inflicts 25% Slow for 2s, and increases\nMovement Speed by 25% for 2s, also grants the next 2\nBasic Attacks +60% Attack Speed for 6s. Basic Attack\nDamage Bonuses affect damage and basic attack critical\nhits can cause the damage to crit.\nRemoves [Target Mark] after triggering.",
@@ -2426,42 +2623,50 @@
       }
     },
     "curse": {
-      "basic_attacks": {
-        "touch_of_plague": {
+      "basic_attacks": [
+        {
+          "name": "Touch of Plague",
           "description": "Deals [Damage Rate: 90%] Magic Damage and applies\n[Plague].",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgphvwZoDsTbni1kQWjq2ZIY9X53xfLVaKF8G"
         },
-        "plague_strike": {
+        {
+          "name": "Plague Strike",
           "description": "Casts for 1.2s, releasing a shockwave in the target\ndirection; deals [Damage Rate: 100%] Magic Damage to\nenemies in its path and applies [Plague].",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCW8BzpQOVDaGSCpnbx189YilBew0cJzoMPdNA"
         },
-        "venom_pool": {
+        {
+          "name": "Venom Pool",
           "description": "Throws a pool of venom at the target location, lasting 3s,\nslowing enemies inside by 20% and inflicting [Plague]\nevery second.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCUa4s2wQ16DWLsJmnqFyb2XvNroZuiz5flAIC"
         }
-      },
-      "common_skills": {
-        "scourge": {
+      ],
+      "common_skills": [
+        {
+          "name": "Scourge",
           "description": "Deals [Damage Rate: 125%] Magic Damage to target every\n0.7s, inflicts [Plague], and restores [Healing Rate: 25%]\nHP\nCannot move while channeling.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSChqGqdgHx7HuMjzKPR6SGg1BFUfEidcZ2JoDr"
         },
-        "plague_surge": {
+        {
+          "name": "Plague Surge",
           "description": "Releases a plague surge in target direction, dealing\n[Damage Rate: 160%] Magic Damage to enemies hit,\ninflicting 2 stacks of [Plague] and reducing Speed by 30%\nfor 4s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC66u3xxXA1L3EneUzdbVD7B49OSsGvWFcaH6P"
         },
-        "spread_plague": {
+        {
+          "name": "Spread Plague",
           "description": "While active, consumes 15 MP every 3s and inflicts\n[Plague] to nearby enemies. Basic Attacks have a 30%\nchance to miss for 9s.\nUse again to deactivate. Automatically deactivates when\nMP is insufficient.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdUEIu2FirOfwbCID83Tpm1Hv24gWoyBiFXVx"
         },
-        "exhaustion": {
+        {
+          "name": "Exhaustion",
           "description": "Summons a draining field at the target location, lasting\n6s. Slows enemies inside by 30% and inflicts [Exhaustion]\nevery 1s for 6s, stacking up to 6 times.\n\n[Exhaustion]\nDamage Boost: -6% (-6% per stack, can stack)\nHealing Bonus: -6% (-6% per stack, can stack)\nAttack Speed: -6% (-6% per stack, can stack)",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgc1AFYWoDsTbni1kQWjq2ZIY9X53xfLVaKF8"
         },
-        "toxic_matter": {
+        {
+          "name": "Toxic Matter",
           "description": "Casts for 0.5s, launching Toxic Matter at the target. Upon\nhitting an enemy, it bounces to other enemies within 7m\nup to 9 times. Each target can be hit up to 2 times.\nEach hit deals [Damage Rate: 100%] Magic Damage and\ninflicts 1 stack of Plague and reduces Magic Resistance\nby 15% for 4s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCrRFWbH3ZrcpGNj0mROVHQMXP4oWtnswev9gJ"
         }
-      },
+      ],
       "passive_skill": {
         "name": "Plague Outbreak",
         "description": "[Plague]: Deals [Damage Rate: 20%] Magic Damage every\n3s for 13s. Stacks up to 10 times.\nWhen a target affected by [Plague] dies, deals \n[Damage Rate: 120%] Magic Damage to up to 5 other nearby\nenemies.",
@@ -2469,42 +2674,50 @@
       }
     },
     "daggers": {
-      "basic_attacks": {
-        "bleeding_thrust": {
+      "basic_attacks": [
+        {
+          "name": "Bleeding Thrust",
           "description": "Deals [Damage Rate: 100%] Physical\nDamage and applies 1 stack of [Bleed].\n\nCan cast [Bleeding Thrust] every 6s.\nDash toward an enemy target, dealing [Damage Rate:\n160%] Physical Damage and inflicting 2 stacks of [Bleed]",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyeko8v9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
         },
-        "ricocheting_blades": {
+        {
+          "name": "Ricocheting Blades",
           "description": "Deals [Damage Rate: 100%] Physical\nDamage and applies 1 stack of [Bleed].\n\nCan cast [Ricochet] every 6s.\nThrows a blade at the target that deals [Damage Rate:\n120%] Physical Damage, inflicts 1 stack of [Bleed], and\nreduces their Movement Speed by 40% for 2s. After which\nit bounces to 1 enemy behind up to 4 times",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLp30ejdNqMVOnfP9XToUGW20hvxp7K6IgYDy"
         },
-        "armor_breaker": {
+        {
+          "name": "Armor Breaker",
           "description": "Deals [Damage Rate: 100%] Physical\nDamage and applies 1 stack of [Bleed].\n\nCan cast [Armor Breaker] every 5s.\nDeals [Damage Rate: 200%] Physical Damage to nearby\nenemies, inflicting 1 stack of [Bleed], and reducing their\nArmor by 15% for 4s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDbilKqCTsc4uPVzehvMnktCEqAJKoZQISF65"
         }
-      },
-      "common_skills": {
-        "whirling_blades": {
+      ],
+      "common_skills": [
+        {
+          "name": "Whirling Blades",
           "description": "Throws 3 blades forward. Each blade deals \n[Damage Rate: 80%] Physical Damage to all enemies hit. Upon\nreaching max range, the blades return, dealing \n[Damage Rate: 80%] Physical Damage to those hit and inflicting 1\nstack of [Bleed]\nMultiple blade hits on the same target beyond the first\ndeal 30% reduced damage",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnGJNjMfGe93BVSk5hzTrQ6UPaMygj2Nq4Cdi"
         },
-        "phase_blade": {
+        {
+          "name": "Phase Blade",
           "description": "Dashes 3m backward while firing a Phase Blade forward\nthat deals [Damage Rate: 100%] Physical Damage to the\nfirst enemy hit, inflicting 1 stack of [Bleed] and Stunning\nfor 0.75s, while also marking them for 5s.\nRecast the skill within 15m while a mark exists to\ninstantly appear behind the target, dealing [Damage Rate:\n160%] Physical Damage and gaining +30% Attack Speed\nfor 5s",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC79cuMAlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p"
         },
-        "crippling_strike": {
+        {
+          "name": "Crippling Strike",
           "description": "Strike an enemy twice, dealing [Damage Rate: 180%]\nPhysical Damage, applying 1 stack of [Bleed] and\nDisarming them for 4s. Increases Basic Attack Damage by\n25% for 5s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCRCWOBuAnJqIWpK8HPuraCOUN2mQSd4gxcDYv"
         },
-        "smoke_grenade": {
+        {
+          "name": "Smoke Grenade",
           "description": "Throws a smoke grenade to create a smoke screen for 6s.\nEnemies inside are Slowed by 40% and have a 55% chance\nto miss Basic Attacks. Also deals [Damage Rate: 25%]\nPhysical Damage every second",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXOiQMxynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
         },
-        "shadow_move": {
+        {
+          "name": "Shadow Move",
           "description": "Instantly removes control effects and enters Stealth.\nWhile in Stealth, gains immunity to movement-limiting\neffects (Slow, Immobilize) for 2s. Also increases damage\nby 7% for 6s, stacking up to 2 times.\nCan be recast once within 6s, but doing so will not remove\ncontrol effects again.\nUsing a skill, dealing damage or inflicting healing breaks\nStealth",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7XEtyJvlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4"
         }
-      },
+      ],
       "passive_skill": {
         "name": "Bleed",
         "description": "Dealing damage inflicts [Bleed], dealing [Damage Rate:\n30%] Physical Damage every second for 8s, stacking up to\n6 times (stacks do not boost damage).\nAt max stacks, triggers Hemorrhage, dealing \n[Damage Rate: 100%] Physical Damage + True Damage equal to 4%\nof the target's current HP and removes all [Bleed] stacks.\nBasic Attack Damage Bonuses affect the base damage\nand basic attack critical hits can cause the damage to\ncrit.",
@@ -2512,42 +2725,50 @@
       }
     },
     "fire": {
-      "basic_attacks": {
-        "magma_burst": {
+      "basic_attacks": [
+        {
+          "name": "Magma Burst",
           "description": "Deals [Damage Rate: 120%] Magic Damage and applies 1\nstack of [Burn].",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0joE9TLGnMSAK5VBw2xylROtGWiDZQcgjTNJ"
         },
-        "scorching_shard": {
+        {
+          "name": "Scorching Shard",
           "description": "After 1.2s cast, fires 3 scorching shards in the target\ndirection, dealing [Damage Rate: 120%] Magic Damage to\nenemies hit and inflicting 1 stack of [Burn]. When multiple\nshards hit the same target, additional shards deal 25%\nless damage to the original damage.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCoi9mLC15DWbhNtFdU6qgYeZKnHE9poiCJ0z2"
         },
-        "wildfire_shard": {
+        {
+          "name": "Wildfire Shard",
           "description": "After 2s cast, fires a wildfire shard at the target location\nthat bounces forward twice. Explodes on contact with\nenemies, dealing [Damage Rate: 120%] Magic Damage\nand inflicting 1 stack of [Burn] to enemies in range",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCv0AA2fpx4UQA1RsqcaXnj7NfHlgpBFLTCie5"
         }
-      },
-      "common_skills": {
-        "inferno_blast": {
+      ],
+      "common_skills": [
+        {
+          "name": "Inferno Blast",
           "description": "Continuously channels flames in target direction for 3s,\ndealing [Damage Rate: 50%] Magic Damage and inflicting\nBurn] to all enemies in range every 0.5s.\nCan rotate but cannot move while channeling\n75% Increased Damage against Monsters",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwAAJNi3OhGMgoOJLYrd3qpCvNxRc5QFZ9am6"
         },
-        "molten_orb": {
+        {
+          "name": "Molten Orb",
           "description": "Channels for 0.5s and then launches a molten orb in\ntarget direction that sticks to the first enemy hit, lasting\n5s and dealing [Damage Rate: 110%] Magic Damage to\nenemies within 5m every 2s while inflicting 1 stack of\n[Burn].",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9m8hnkD7PCifcs12oSdBru3GbU5JnO6IXZap"
         },
-        "blast_jump": {
+        {
+          "name": "Blast Jump",
           "description": "Jumps in target direction, dealing [Damage Rate: 250%]\nMagic Damage and inflicting 2 stacks of [Burn] to nearby\nenemies upon takeoff.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCz82McbEqOA7HxjVDm05p8UIgRTs6lBdvNGSt"
         },
-        "oil_blast": {
+        {
+          "name": "Oil Blast",
           "description": "Sprays oil lasting 8s in front, inflicting [Oil Coating] to\nenemies who enter.\n[Oil Coating]: Reduces Movement Speed by 50% for 4s.\nWhen affected by [Burn], [Oil Coating] is replaced with\n[Volatile Burn] and cannot be inflicted again for 6s.\n[Volatile Burn]: Causes Fear and deals [Damage Rate:\n56%] Magic Damage every 0.5s for 1.5s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6Z0DuQXA1L3EneUzdbVD7B49OSsGvWFcaH6P"
         },
-        "overdrive_mode": {
+        {
+          "name": "Overdrive Mode",
           "description": "Activates Overdrive Mode, increasing Casting Speed by\n60% and Magic Damage by 20%.\nConsumes 5 MP every second.\nUse skill again to deactivate Overdrive. Automatically\ndeactivates when MP is insufficient",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDVp5BBynA1HpuOTqiN0gK7cldavVYGk9WLZ"
         }
-      },
+      ],
       "passive_skill": {
         "name": "Burst",
         "description": "Damage dealt inflicts [Burn], dealing [Damage Rate: 25%]\nMagic Damage every second for 8s, stacking up to 6 times\n(stacks do not boost damage).\nWhen [Burn] reaches max stacks, deals [Damage Rate:\n80%] Magic Damage to up to 5 enemies near the carrier\nand removes all [Burn] stacks.",
@@ -2555,42 +2776,50 @@
       }
     },
     "frost": {
-      "basic_attacks": {
-        "ice_burst": {
+      "basic_attacks": [
+        {
+          "name": "Ice Burst",
           "description": "Deals [Damage Rate: 90%] Magic Damage.\n\nCan cast [Ice Burst] every 5s.\nDeals [Damage Rate: 150%] Magic Damage to the target\nand Immobilizes them for 1.5s",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6zBrRaXA1L3EneUzdbVD7B49OSsGvWFcaH6P"
         },
-        "frostbite_zone": {
+        {
+          "name": "Frostbite Zone",
           "description": "Creates a zone of deep frost in the target direction,\ndealing [Damage Rate: 130%] Magic Damage to enemies\nin range and reducing their Movement Speed by 25% for\n4s",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCEw4TyEYw01AKmPBrlgjRL2yDc3ZvtVMXJNh6"
         },
-        "frost_burst": {
+        {
+          "name": "Frost Burst",
           "description": "Launches three frost shards in the target direction after a\ndelay, each dealing [Damage Rate: 110%] Magic Damage\nto enemies hit. The damage from shards beyond the first\nis reduced by 25%.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwAJnlPpOhGMgoOJLYrd3qpCvNxRc5QFZ9am6"
         }
-      },
-      "common_skills": {
-        "frost_beam": {
+      ],
+      "common_skills": [
+        {
+          "name": "Frost Beam",
           "description": "Channels for 3s, continuously firing a frost beam in the\ntarget direction that deals [Damage Rate: 60%] Magic\nDamage to players ([Damage Rate: 120%] Magic Damage\nto mobs) every 0.5s to those hit and inflicts [Frost Beam\nSlow] for 3s, stacking up to 5 times.\n\n[Frost Beam Slow]\nMovement Speed Bonus: -8% (-8% per stack, can stack)",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHNXEL4K4EOAC1uZm8KvoQgpyDTSnlbFxk6L5"
         },
-        "crystal_frost": {
+        {
+          "name": "Crystal Frost",
           "description": "Launches crystalline frost in the target direction. Upon\nhitting the first enemy, it explodes to deal [Damage Rate:\n250%] Magic Damage and Immobilize enemies in range\nfor 2s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDHKuiiPCTsc4uPVzehvMnktCEqAJKoZQISF6"
         },
-        "frost": {
+        {
+          "name": "Frost",
           "description": "Deals [Damage Rate: 200%] Magic Damage to nearby\nenemies and Freezes them for 0.5s, then blinks in the\ntarget direction.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCpeaQQMNnl5Y2OXNwHZ403tR8CeJdUmEagVSL"
         },
-        "frost_wall": {
+        {
+          "name": "Frost Wall",
           "description": "Creates a frost wall before the caster that lasts 8s.\nEnemies inside are Slowed by 70%, take [Damage Rate:\n50%] Magic Damage every second, and gain [Chill] stacks.\nStacks up to 2 times.\n[Chill]: At max stacks, targets are Frozen for 1.5s and\nbecome immune to [Chill] for 6s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDEq6GVynA1HpuOTqiN0gK7cldavVYGk9WLZ"
         },
-        "frost_roar": {
+        {
+          "name": "Frost Roar",
           "description": "Unleashes a freezing roar in the target direction, dealing\n[Damage Rate: 200%] Magic Damage and knocking\nenemies back 10m. Reduces Movement Speed by 30% and\nAttack Speed by 30% for 4s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYhm7UArGRsurykYnU8tjQL0iwWeACKo4E5aZ"
         }
-      },
+      ],
       "passive_skill": {
         "name": "Passive",
         "description": "After not taking damage for 15s, gains [Target-based Max\nHP 20%] Shield. When hit by Basic Attacks, applies [Frost]\nto the attacker.\n[Frost]: Reduces Attack Speed and Movement Speed by\n40% for 4s, gradually weakening over time.",
@@ -2598,42 +2827,50 @@
       }
     },
     "guns": {
-      "basic_attacks": {
-        "headshot": {
+      "basic_attacks": [
+        {
+          "name": "Headshot",
           "description": "Deals [Damage Rate: 60%] Physical Damage to the target. Every 4th Basic Attack becomes [Headshot]. Deals [Damage Rate: 112%] Physical Damage and always crits",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiQKv1mQJuLA8ofy7IC6JlZmUbr1WQBsg3SnO"
         },
-        "ricochet": {
+        {
+          "name": "Ricochet",
           "description": "Deals [Damage Rate: 60%] Physical Damage to the target. Can cast [Ricochet] every 6s. Deals [Damage Rate: 130%] Physical Damage and applies 30% Slow for 4s. Bounces to 1 enemy behind the target up to 4 times",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXZfM2FynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
         },
-        "armor_break": {
+        {
+          "name": "Armor Break",
           "description": "Deals [Damage Rate: 60%] Physical Damage to the target. Can cast [Armor Break] every 7s. Deals [Damage Rate: 180%] Physical Damage and reduces Armor by 10% for 4s to all enemies hit",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsAf8C4ZjhbCUk9y6YA2VESc8mnvDqMf5LGu1"
         }
-      },
-      "common_skills": {
-        "trap": {
+      ],
+      "common_skills": [
+        {
+          "name": "Trap",
           "description": "Places a trap at the target location that lasts 150s. When enemies enter its range, reveals Stealth for 2s and grants a [Target-based Max HP 15%] Shield for 4s. Creates a slowing field, reducing enemy Speed by 35%. After 2s, explodes to deal [Damage Rate: 180%] Physical Damage to players ([Damage Rate: 270%] Physical Damage to mobs). Gains 1 charge every 15s, up to 2 charges",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXMZxzUynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
         },
-        "quick_load": {
+        {
+          "name": "Quick Load",
           "description": "Steps 6m in the target direction. The next 4 Basic Attacks gain +80% Attack Speed and +25% damage for 6s. Loads 1 bullet. Gains 1 charge every 16s, up to 2 charges.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbBzQozWbBOnPELSmCrNGjQoAcKtW4k0pX3uy"
         },
-        "concussion_grenade": {
+        {
+          "name": "Concussion Grenade",
           "description": "Throws a powerful grenade at the target location, dealing [Damage Rate: 180%] Physical Damage and knocking enemies back 6m from the center. Reduces Attack Speed by 30% and Movement Speed by 40% for 4s. If within blast radius, the user is pushed back 6m",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCX34gDTynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
         },
-        "blinding_flash": {
+        {
+          "name": "Blinding Flash",
           "description": "Throws a flash grenade to the target location, dealing [Damage Rate: 200%] Physical Damage to enemies in range, revealing Stealth, and giving Basic Attacks a 45% chance to miss for 6s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCd0k2BAirOfwbCID83Tpm1Hv24gWoyBiFXVxk"
         },
-        "aim": {
+        {
+          "name": "Aim",
           "description": "Enters Aim mode. Increases Basic Attack Damage by 40% and range by 6m. Reduces Movement Speed by 65%. Use again to exit Aim mode",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYwXafwrGRsurykYnU8tjQL0iwWeACKo4E5aZ"
         }
-      },
+      ],
       "passive_skill": {
         "name": "Reload",
         "description": "Gun holds up to 6 bullets. While not using skills: If at 0 bullets, reload instantly. Otherwise, reload 4s after skill use. Each bullet increases reload time by 0.5s. Cannot interrupt reload",
@@ -2641,42 +2878,50 @@
       }
     },
     "holy": {
-      "basic_attacks": {
-        "holy_feather": {
+      "basic_attacks": [
+        {
+          "name": "Holy Feather",
           "description": "Deals [Damage Rate: 90%] Magic Damage.\n\nCan cast [Holy Feather] every 5s.\nDeals [Damage Rate: 150%] Magic Damage to the target\nand heals [Healing Rate: 75%] HP for up to 3 allies within\n14m",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCffcqvEeFwJm2B1vRUSOualKLCDGIfT0g4Esp"
         },
-        "holy_smite": {
+        {
+          "name": "Holy Smite",
           "description": "After a 0.5s cast, calls down holy smite at the target\nlocation, dealing [Damage Rate: 80%] Magic Damage to\nall players ([Damage Rate: 160%] Magic Damage to\nmobs). Heals the caster for [Healing Rate: 48%] HP if\nhitting at least one enemy.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiMc4QQJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2"
         },
-        "holy_heal": {
+        {
+          "name": "Holy Heal",
           "description": "After a 1.5s cast, performs holy healing at the target\nlocation, restoring [Healing Rate: 90%] HP allies in range.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClBDnGc6oygh7mMGDItxK38196fS4eZ2ATUak"
         }
-      },
-      "common_skills": {
-        "holy_wave": {
+      ],
+      "common_skills": [
+        {
+          "name": "Holy Wave",
           "description": "Projects a holy wave in the target direction, dealing\n[Damage Rate: 200%] Magic Damage to all players\n([Damage Rate: 300%] Magic Damage to mobs) in its\npath. The wave automatically returns when reaching max\nrange, healing up to 5 nearby allies for [Healing Rate:\n75%] HP.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCvPefJhdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
         },
-        "divine_link": {
+        {
+          "name": "Divine Link",
           "description": "Channels divine link on target for 6s, also granting the\ncaster [Target-based Max HP 15%] Shield for 4s. Can\nmove slowly while channeling.\nWhen targeting an ally, heals them for [Healing Rate:\n100%] HP every second.\nWhen targeting an enemy, deals [Damage Rate: 100%]\nMagic Damage every second.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCFhnEHcSY0xU7AZSWvtlJFd3OmV2ub1ajiEye"
         },
-        "holy_energy": {
+        {
+          "name": "Holy Energy",
           "description": "Projects holy energy at the target location. On impact,\nrestores [Healing Rate: 75%] HP and grants a\n[Target-based Max HP 20%] shield for 4s to allies in\nrange.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHzvqpj5K4EOAC1uZm8KvoQgpyDTSnlbFxk6L"
         },
-        "holy_wall": {
+        {
+          "name": "Holy Wall",
           "description": "Creates multiple holy walls in front. Enemies who touch\nthem take [Damage Rate: 150%] Magic Damage and are\nstunned for 1.5s, while the caster gains \n[Target-based Max HP 12%] Shield for 6s, stacking up to 4 times.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC1PRJPecM75luO6aJUWEridRBzN8ILQ4K0hvk"
         },
-        "holy_baptism": {
+        {
+          "name": "Holy Baptism",
           "description": "Cleanses all Slow and Immobilize effects and 2 Debuff\neffects from the caster and up to 20 nearby allies and\nrestores [Healing Rate: 100%] HP. Also prevents the next 3\nImmobilize and Immune to Slow effects within 4s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC65U9r4XA1L3EneUzdbVD7B49OSsGvWFcaH6P"
         }
-      },
+      ],
       "passive_skill": {
         "name": "Divine Ward",
         "description": "Increases the resistances of allies within 9m by 15%",
@@ -2684,42 +2929,50 @@
       }
     },
     "mace": {
-      "basic_attacks": {
-        "swing": {
+      "basic_attacks": [
+        {
+          "name": "Swing",
           "description": "Deals [Damage Rate: 120%] Physical Damage to enemy target. Can cast [Swing] every 4s. Deals [Damage Rate: 240%] Physical Damage to all players ([Damage Rate: 480%] Physical Damage to mobs) in a frontal cone",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCvVN2drpx4UQA1RsqcaXnj7NfHlgpBFLTCie5"
         },
-        "smash": {
+        {
+          "name": "Smash",
           "description": "Deals [Damage Rate: 120%] Physical Damage to enemy target. Can cast [Smash] every 7s. Deals [Damage Rate: 150%] Physical Damage to enemies in range and restores [Healing Rate: 75%] HP to up to 5 nearby allies. Increases Damage Resistance by 15% for 6s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC3JWWU0bFGQ0IUDOkSBpMKthngLxwV6sCENTj"
         },
-        "crushing_smash": {
+        {
+          "name": "Crushing Smash",
           "description": "Deals [Damage Rate: 120%] Physical Damage to enemy target. Can cast [Crushing Smash] every 6s. Charges toward target, dealing [Damage Rate: 160%] Physical Damage to enemies in range and inflicting Slow 35% for 3s",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKfPqw8IWoRmwnVDpPJKx9SMZFLG1TkAQU2eE"
         }
-      },
-      "common_skills": {
-        "frenzied_smash": {
+      ],
+      "common_skills": [
+        {
+          "name": "Frenzied Smash",
           "description": "Smashes the ground 4 times. The first three hits deal [Damage Rate: 120%] Physical Damage to players ([Damage Rate: 180%] Physical Damage to mobs). The final hit deals [Damage Rate: 200%] Physical Damage to players ([Damage Rate: 300%] Physical Damage to mobs) and Knocks Up for 0.5s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9sVETjD7PCifcs12oSdBru3GbU5JnO6IXZap"
         },
-        "binding_smash": {
+        {
+          "name": "Binding Smash",
           "description": "Leaps to the target location, dealing [Damage Rate: 200%] Physical Damage and inflicting Immobilize for 2.5s to enemies in the area.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDzuz0gCTsc4uPVzehvMnktCEqAJKoZQISF65"
         },
-        "guardian_field": {
+        {
+          "name": "Guardian Field",
           "description": "Creates a Guardian Field at the target location that increases allies' Max HP by 25% and grants Immunity to Forced Movement (Pull, Knockback) and Hard Control (Stun, Fear, Freeze, Knockup, Petrify, Sleep). Lasts 5s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSbd17jwJHd9VeDNGoX6KrO7F2zbawu5I3AU0"
         },
-        "field_of_silence": {
+        {
+          "name": "Field of Silence",
           "description": "Deals [Damage Rate: 200%] Magic Damage to enemies in range and creates a Field of Silence, lasting 4s. Enemies in the field are Slowed by 25% and Silenced. Once they leave the area, they become immune to the field's Silence for 6s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6O7Dk1XA1L3EneUzdbVD7B49OSsGvWFcaH6P"
         },
-        "vengeful_thunder": {
+        {
+          "name": "Vengeful Thunder",
           "description": "Applies [Vengeful Thunder] to the caster or an allied target [Vengeful Thunder]: Increases Damage Resistance by 25% for 8s. When taking damage or dealing Basic Attack Damage, calls down lightning at the target location, dealing [Damage Rate: 51%] Physical Damage. (Cooldown: 0.8s)",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC75s6z8lo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p"
         }
-      },
+      ],
       "passive_skill": {
         "name": "Guardian",
         "description": "Guardian Passive Using a weapon skill increases Damage Resistance by 30% and Control Resistance by 35 for 6s.",
@@ -2727,42 +2980,50 @@
       }
     },
     "nature": {
-      "basic_attacks": {
-        "evil_seed": {
+      "basic_attacks": [
+        {
+          "name": "Evil Seed",
           "description": "Deals [Damage Rate: 80%] Magic Damage.\n\nThrows an [Evil Seed] after 5 Basic Attacks.\nThrows an Evil Seed at the target location, creating a\nthorn zone that lasts 5s. The zone deals [Damage Rate:\n40%] Magic Damage every second to up to 5 enemies and\nreduces their Movement Speed by 25%.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCo2q3qF15DWbhNtFdU6qgYeZKnHE9poiCJ0z2"
         },
-        "soothing_mist": {
+        {
+          "name": "Soothing Mist",
           "description": "Releases Soothing Mist in the target direction, dealing\n[Damage Rate: 70%] Magic Damage to enemies hit, while\napplying 1 stack of [Recovery] to allies.\n[Recovery]: Restores HP every second for 12s, stacking up\nto 3 times.\nHP recovery at 1 | 2 | 3 stacks:\n[Healing Rate: 10%] | [Healing Rate: 15%] | [Healing Rate:\n20%]",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCLeZSahdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
         },
-        "healing_seed": {
+        {
+          "name": "Healing Seed",
           "description": "Throws a healing seed at the target location that blooms,\nhealing nearby allies for [Healing Rate: 55%] HP and\napplying 1 stack of [Recovery]\n[Recovery]: Restores HP every second for 12s, stacking up\nto 3 times.\nHP recovery at 1 | 2 | 3 stacks:\n[Healing Rate: 10%] | [Healing Rate: 15%] | [Healing Rate:\n20%]",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCeGapD0Wqi02s7T6FOxAtHYlBmI8h3odqkzGa"
         }
-      },
-      "common_skills": {
-        "winding_vines": {
+      ],
+      "common_skills": [
+        {
+          "name": "Winding Vines",
           "description": "After a brief delay, creates an entangling zone lasting 4s.\nDeals [Damage Rate: 90%] Magic Damage every second\nand immobilizes enemies that enter for 1.5s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLDzCoPdNqMVOnfP9XToUGW20hvxp7K6IgYDy"
         },
-        "energize": {
+        {
+          "name": "Energize",
           "description": "Creates an energizing aura around the caster, lasting 5s.\nRestores [Healing Rate: 39%] HP and 12 MP every second\nto up to 10 nearby allies.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCC0ZUC2hdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
         },
-        "vitality_seed": {
+        {
+          "name": "Vitality Seed",
           "description": "Applies Vitality Seeds to up to 5 nearby allies, healing for\n[Healing Rate: 80%] HP and applying 1 stack of\n[Recovery].\nVitality Seeds increase Cast Speed by 40% and\nAttack Speed by 25% for 6s.\n[Recovery]: Restores HP every second for 12s, stacking up\nto 3 times\nHP recovery at 1 | 2 | 3 stacks:\n[Healing Rate: 10%] | [Healing Rate: 15%] | [Healing Rate: 20%]",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCvfjIdZ6px4UQA1RsqcaXnj7NfHlgpBFLTCie"
         },
-        "freshness": {
+        {
+          "name": "Freshness",
           "description": "Cleanses all Hard Control (Stun, Fear, Freeze, Knockup,\nPetrify, Sleep), Silence, and 2 DoT effects on the caster\nand up to 20 nearby allies. Also heals for [Healing Rate:\n60%] HP, applies 1 stack of [Recovery], and prevents the\nnext 3 Hard Control or Silence effects. The effect lasts 4s.\nCan be used while skills are disabled.\n[Recovery]: Restores HP every second for 12s, stacking up\nto 3 times.\nHP recovery at 1 | 2 | 3 stacks\n[Healing Rate: 10%] | [Healing Rate: 15%] | [Healing Rate: 20%]",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7ijn2Zlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p"
         },
-        "regenerate": {
+        {
+          "name": "Regenerate",
           "description": "Releases restorative energy at the target location, healing\nallies. Healing amount increases based on target's\n[Recovery] stacks.\n[Recovery] stacks: 0|1 |2|3\nRecovers HP: [Healing Rate: 75%] | [Healing Rate: 95%] |\n[Healing Rate: 115%] | [Healing Rate: 135%]",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCFjHaLmSY0xU7AZSWvtlJFd3OmV2ub1ajiEye"
         }
-      },
+      ],
       "passive_skill": {
         "name": "Natural Armor",
         "description": "Gains 1 stack of Natural Armor every 5s, stacking up to 4\ntimes. Each stack increases Damage Resistance by 8%. 1\nstack is lost for each instance of damage taken.",
@@ -2770,42 +3031,50 @@
       }
     },
     "spears": {
-      "basic_attacks": {
-        "leap_strike": {
+      "basic_attacks": [
+        {
+          "name": "Leap Strike",
           "description": "Deals [Damage Rate: 100%] Physical\nDamage to the target.\n\nCan cast [Leap Strike] every 5s.\nCharges toward the enemy target, dealing [Damage Rate:\n170%] Physical Damage and increasing Attack Speed by\n20% for 4s",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyWy3Xk9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
         },
-        "javelin_throw": {
+        {
+          "name": "Javelin Throw",
           "description": "Deals [Damage Rate: 80%] Physical\nDamage to the target.\n\nPerforms a [Surging Throw] after 5 Basic Attacks.\nDeals [Damage Rate: 180%] Physical Damage and\nincreases Movement Speed by 20% for 2s",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9hVu1W5D7PCifcs12oSdBru3GbU5JnO6IXZa"
         },
-        "sweeping_strike": {
+        {
+          "name": "Sweeping Strike",
           "description": "Deals [Damage Rate: 100%] Physical\nDamage to the target.\n\nCan cast [Sweeping Strike] every 5s.\nDeals [Damage Rate: 240%] Physical Damage to enemies\nin range. Gains 6% Damage Resistance for every enemy\nhit, lasting 4s. Stacks up to 5 times.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9a5fSLD7PCifcs12oSdBru3GbU5JnO6IXZap"
         }
-      },
-      "common_skills": {
-        "lance_thrust": {
+      ],
+      "common_skills": [
+        {
+          "name": "Lance Thrust",
           "description": "Repeatedly thrusts at enemies in a frontal cone, dealing\n[Damage Rate: 60%] Physical Damage per hit, then\nslashes forward to deal [Damage Rate: 130%] Physical\nDamage to enemies in range.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCX5SAC4ynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
         },
-        "lance_impale": {
+        {
+          "name": "Lance Impale",
           "description": "Throws a lance at the target location, dealing [Damage Rate: 160%] Physical Damage and reducing Movement\nSpeed by 25% for 3s to enemies in range.\nThe lance remains at the target location for 6s. Moving to\nits location allows retrieval, granting 20% Movement\nSpeed and 20% Attack Speed for 4s.\nGains 1 charge every 12s, up to 2 charges",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCosFoXWj15DWbhNtFdU6qgYeZKnHE9poiCJ0z"
         },
-        "warding_flourish": {
+        {
+          "name": "Warding Flourish",
           "description": "Channels for 4s, gaining Control Immunity and 60%\nDamage Resistance. While channeling, reflects 80%\nPhysical Damage back to attackers when taking damage.\nDeals [Damage Rate: 40%] Physical Damage to nearby\nenemies every 0.5s.\nRecast again while channeling to charge forward, dealing\n[Damage Rate: 150%] Physical Damage to enemies hit\nand reducing their Armor by 20% for 4s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXprF6ZynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
         },
-        "skyward_lance": {
+        {
+          "name": "Skyward Lance",
           "description": "Deals [Damage Rate: 150%] Physical Damage to enemies\nin front and inflicts Knockup for 1s.\nCan be recast within 6s to slam down, dealing [Damage Rate: 150%] Physical Damage to enemies in range and\nreducing their Movement Speed by 45% for 3s",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCIZem3ozzmQPwNigqxUdB1eOyCYbWln78fpDF"
         },
-        "lance_recall": {
+        {
+          "name": "Lance Recall",
           "description": "Instantly removes Control effects, deals [Damage Rate: 280%] Physical Damage to enemies in front, and leaps\nback 8m. Increases Movement Speed by 30% for 4s.\nCan be used while skills are disabled",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCqtS5Xyp0DrPOVUwARFb2Ggj9MuYvQ0JiBK7e"
         }
-      },
+      ],
       "passive_skill": {
         "name": "Spear Scar",
         "description": "Using a weapon skill grants [Spear Scar]: The next 4 Basic\nAttacks gain +60% Attack Speed, +2.5m range, and +30%\nLifesteal. This effect lasts 6s.\nAlso has a 35% chance to grant [Target-based Max HP\n15%] Shield for 2s.",
@@ -2813,42 +3082,50 @@
       }
     },
     "swords": {
-      "basic_attacks": {
-        "sword_slash": {
+      "basic_attacks": [
+        {
+          "name": "Sword Slash",
           "description": "Deals [Damage Rate: 130%] Physical Damage to enemy target. Can cast [Sword Slash] every 6s. Charges toward an enemy target to deal [Damage Rate: 180%] Physical Damage and inflict 40% Slow for 2s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQbnxzg7z9VydsAL2D3hoSNGWrlcw7ZuBgfXi"
         },
-        "sword_cleave": {
+        {
+          "name": "Sword Cleave",
           "description": "Deals [Damage Rate: 130%] Physical Damage to enemy target. Can cast [Sword Cleave] every 5. Deals [Damage Rate: 220%] Physical Damage to surrounding enemies. Grants [Target-based Max HP 3%] Shield for each enemy hit, lasting 4s. Stacks up to 5 times.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJXJlAYUtiPWS4l8JEHns6v3kTN10rCyUZXMo"
         },
-        "sword_energy": {
+        {
+          "name": "Sword Energy",
           "description": "Deals [Damage Rate: 130%] Physical Damage to enemy target. Can cast [Sword Energy] every 6s. Unleashes sword energy forward, dealing [Damage Rate: 140%] Physical Damage to enemies hit. Increases Movement Speed by 25% for 2s if at least 1 enemy is hit.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyy4x7G9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
         }
-      },
-      "common_skills": {
-        "vacuum_slash": {
+      ],
+      "common_skills": [
+        {
+          "name": "Vacuum Slash",
           "description": "Performs 4 forward slashes, each dealing [Damage Rate: 60%] Physical Damage to players ([Damage Rate: 90%] Physical Damage to mobs). The final hit unleashes sword energy forward, dealing [Damage Rate: 150%] Physical Damage to all enemies hit.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSChTh46kHx7HuMjzKPR6SGg1BFUfEidcZ2JoDr"
         },
-        "crippling_strike": {
+        {
+          "name": "Crippling Strike",
           "description": "Leaps to the target location, dealing [Damage Rate: 200%] Physical Damage and inflicting 50% Slow for 3s to nearby enemies upon landing. Gains [Target-based Max HP 20%] Shield for 4s when hitting at least 1 enemy",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0mxffyGnMSAK5VBw2xylROtGWiDZQcgjTNJE"
         },
-        "power_slash": {
+        {
+          "name": "Power Slash",
           "description": "Hold to charge with control immunity and gain +20% Damage Resistance. While charging: Deals [Damage Rate: 150%] Physical Damage and Stuns enemies for 0.5s. After charging for 1.5s, deals [Damage Rate: 200%] Physical Damage, Stuns fpr 1.5s and creates a ground wave that deals [Damage Rate: 150%] Physical Damage and inflicts 40% Slow for 4s.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCla1YcB6oygh7mMGDItxK38196fS4eZ2ATUak"
         },
-        "defensive_slash": {
+        {
+          "name": "Defensive Slash",
           "description": "Begins Blocking for 3s. While Blocking, reduces Movement Speed but gains control immunity and +70% Damage Resistance. Afterward, deals [Damage Rate: 320%] Physical Damage to nearby enemies and reduces their Armor by 20% for 4s. Block can be canceled early",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnqBqiF6fGe93BVSk5hzTrQ6UPaMygj2Nq4Cd"
         },
-        "heart_of_steel": {
+        {
+          "name": "Heart of Steel",
           "description": "Immediately removes all control effects, gains 1 stack of [Sword Momentum], increases Damage Resistance by 25%, and the Attack Speed of the next 3 Basic Attacks by 80% for 8s. Can be used while skills are disabled.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCGBBHEFOtMHmL1NBfDRpSE6XKr3hOJ9jnoQAW"
         }
-      },
+      ],
       "passive_skill": {
         "name": "Aura and Blade",
         "description": "Gains 1 stack of [Momentum] every second while in combat and 2 stacks when dealing damage with Basic Attacks, 4 stacks on Critical Hit, 1 stack when taking Basic Attack Damage, and 2 stacks when taking Skill Damage. At 10 [Momentum] stacks, increases Sword Momentum by 1 level. Momentum lasts 20s. [Sword Momentum]: Each level grants +3% Damage, +4% Attack Speed, and +4% Damage Resistance. Lasts 8s. Grants up to 6 stacks, decaying over time.",

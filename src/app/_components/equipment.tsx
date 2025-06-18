@@ -42,7 +42,7 @@ const Equipment = ({
       image: string;
     };
     type: string;
-    set: string;
+    set?: string;
     image: string;
   };
 
@@ -52,12 +52,9 @@ const Equipment = ({
   if (formData?.builds[activeBuildIndex]?.data.equipment) {
     const equipmentKey =
       formData.builds[activeBuildIndex]?.data.equipment[slot];
-    equipmentData =
-      equipmentKey && equipmentKey in data[slot]
-        ? (data[slot][
-            equipmentKey as keyof (typeof data)[typeof slot]
-          ] as EquipmentData)
-        : undefined;
+    equipmentData = data[slot].find(
+      (equipment) => equipment.name === equipmentKey,
+    );
 
     if (equipmentData) {
       skillData = data.skills[equipmentData?.set as keyof typeof data.skills];
@@ -172,25 +169,21 @@ const Equipment = ({
             <option value="" hidden>
               {slot.charAt(0).toUpperCase() + slot.slice(1)}
             </option>
-            {filteredData.map(([equipmentKey, equipment]) => (
+            {filteredData.map(([i, equipment]) => (
               <option
-                key={equipmentKey}
-                value={equipmentKey}
+                key={i}
+                value={equipment.name}
                 className={`${
                   formData?.builds?.some(
                     (build) =>
-                      build.data.equipment[slot] === equipmentKey &&
+                      build.data.equipment[slot] === equipment.name &&
                       build.id !== formData.builds[activeBuildIndex]?.id,
                   )
                     ? "text-neutral-500"
                     : "text-white"
                 } ${equipment.rarity === "legendary" ? "bg-yellow-600/20" : `${equipment.rarity === "epic" ? "bg-purple-600/20" : `${equipment.rarity === "rare" ? "bg-blue-600/20" : `${equipment.rarity === "common" ? "bg-green-600/20" : ""}`}`}`}`}
               >
-                {equipmentKey.charAt(0).toUpperCase() +
-                  equipmentKey
-                    .slice(1)
-                    .replace(/_/g, " ")
-                    .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
+                {equipment.name}
               </option>
             ))}
           </select>
@@ -248,55 +241,52 @@ const Equipment = ({
                     <div className="flex flex-col">
                       <h3 className="text-sm">Basic Attacks</h3>
                       <div className="flex flex-wrap gap-2">
-                        {skillData &&
-                          Object.entries(skillData.basic_attacks).map(
-                            ([key, skill]) => {
-                              return (
-                                <button
-                                  key={key}
-                                  onClick={() => {
-                                    let newSkill = key;
-                                    if (
-                                      newSkill ===
-                                      formData?.builds?.[activeBuildIndex]?.data
-                                        ?.skills?.basic
-                                    )
-                                      newSkill = "";
-                                    setFormData((prev) => {
-                                      if (!prev) return prev;
-                                      return {
-                                        ...prev,
-                                        builds: prev.builds.map((b, idx) =>
-                                          idx === activeBuildIndex
-                                            ? {
-                                                ...b,
-                                                data: {
-                                                  ...b.data,
-                                                  skills: {
-                                                    ...b.data.skills,
-                                                    basic: newSkill,
-                                                  },
-                                                },
-                                              }
-                                            : b,
-                                        ),
-                                      };
-                                    });
-                                  }}
-                                  className={`flex h-12 w-12 cursor-pointer flex-col items-center justify-center overflow-hidden rounded bg-neutral-800 ${key === formData?.builds?.[activeBuildIndex]?.data?.skills?.basic ? "border-2 border-green-300" : "border border-neutral-600"} shadow-sm shadow-black`}
-                                >
-                                  {skill.image ? (
-                                    <ImageHelper
-                                      src={skill.image}
-                                      width={256}
-                                      height={256}
-                                      alt={key}
-                                    />
-                                  ) : null}
-                                </button>
-                              );
-                            },
-                          )}
+                        {skillData?.basic_attacks.map((skill, i) => {
+                          return (
+                            <button
+                              key={i}
+                              onClick={() => {
+                                let newSkill = skill.name;
+                                if (
+                                  newSkill ===
+                                  formData?.builds?.[activeBuildIndex]?.data
+                                    ?.skills?.basic
+                                )
+                                  newSkill = "";
+                                setFormData((prev) => {
+                                  if (!prev) return prev;
+                                  return {
+                                    ...prev,
+                                    builds: prev.builds.map((b, idx) =>
+                                      idx === activeBuildIndex
+                                        ? {
+                                            ...b,
+                                            data: {
+                                              ...b.data,
+                                              skills: {
+                                                ...b.data.skills,
+                                                basic: newSkill,
+                                              },
+                                            },
+                                          }
+                                        : b,
+                                    ),
+                                  };
+                                });
+                              }}
+                              className={`flex h-12 w-12 cursor-pointer flex-col items-center justify-center overflow-hidden rounded bg-neutral-800 ${skill.name === formData?.builds?.[activeBuildIndex]?.data?.skills?.basic ? "border-2 border-green-300" : "border border-neutral-600"} shadow-sm shadow-black`}
+                            >
+                              {skill.image ? (
+                                <ImageHelper
+                                  src={skill.image}
+                                  width={256}
+                                  height={256}
+                                  alt={skill.name}
+                                />
+                              ) : null}
+                            </button>
+                          );
+                        })}
                         {formData?.builds?.[activeBuildIndex]?.data?.skills
                           ?.basic ? (
                           <div className="flex items-center rounded bg-neutral-800 p-2">
@@ -314,19 +304,13 @@ const Equipment = ({
                         ?.basic ? (
                         <div className="mt-1 grow rounded bg-neutral-800 p-2">
                           <p className="h-full text-sm whitespace-pre-wrap">
-                            {(skillData &&
-                              formData?.builds?.[activeBuildIndex]?.data?.skills
-                                ?.basic &&
-                              (
-                                skillData.basic_attacks as Record<
-                                  string,
-                                  { description: string }
-                                >
-                              )[
-                                formData.builds[activeBuildIndex].data.skills
-                                  .basic
-                              ]?.description) ??
-                              "No description available."}
+                            {
+                              skillData?.basic_attacks.find(
+                                (skill) =>
+                                  formData?.builds?.[activeBuildIndex]?.data
+                                    ?.skills?.basic === skill.name,
+                              )?.description
+                            }
                           </p>
                         </div>
                       ) : null}
@@ -334,55 +318,52 @@ const Equipment = ({
                     <div className="flex flex-col">
                       <h3 className="text-sm">Skill 1</h3>
                       <div className="flex flex-wrap gap-2">
-                        {skillData &&
-                          Object.entries(skillData.common_skills).map(
-                            ([key, skill]) => {
-                              return (
-                                <button
-                                  key={key}
-                                  onClick={() => {
-                                    let newSkill = key;
-                                    if (
-                                      newSkill ===
-                                      formData?.builds?.[activeBuildIndex]?.data
-                                        ?.skills?.common
-                                    )
-                                      newSkill = "";
-                                    setFormData((prev) => {
-                                      if (!prev) return prev;
-                                      return {
-                                        ...prev,
-                                        builds: prev.builds.map((b, idx) =>
-                                          idx === activeBuildIndex
-                                            ? {
-                                                ...b,
-                                                data: {
-                                                  ...b.data,
-                                                  skills: {
-                                                    ...b.data.skills,
-                                                    common: newSkill,
-                                                  },
-                                                },
-                                              }
-                                            : b,
-                                        ),
-                                      };
-                                    });
-                                  }}
-                                  className={`flex h-12 w-12 cursor-pointer flex-col items-center justify-center overflow-hidden rounded ${key === formData?.builds?.[activeBuildIndex]?.data?.skills?.common ? "border-2 border-green-300" : "border border-neutral-600"} bg-neutral-800 shadow-sm shadow-black`}
-                                >
-                                  {skill.image ? (
-                                    <ImageHelper
-                                      src={skill.image}
-                                      width={256}
-                                      height={256}
-                                      alt={key}
-                                    />
-                                  ) : null}
-                                </button>
-                              );
-                            },
-                          )}
+                        {skillData?.common_skills.map((skill, i) => {
+                          return (
+                            <button
+                              key={i}
+                              onClick={() => {
+                                let newSkill = skill.name;
+                                if (
+                                  newSkill ===
+                                  formData?.builds?.[activeBuildIndex]?.data
+                                    ?.skills?.common
+                                )
+                                  newSkill = "";
+                                setFormData((prev) => {
+                                  if (!prev) return prev;
+                                  return {
+                                    ...prev,
+                                    builds: prev.builds.map((b, idx) =>
+                                      idx === activeBuildIndex
+                                        ? {
+                                            ...b,
+                                            data: {
+                                              ...b.data,
+                                              skills: {
+                                                ...b.data.skills,
+                                                common: newSkill,
+                                              },
+                                            },
+                                          }
+                                        : b,
+                                    ),
+                                  };
+                                });
+                              }}
+                              className={`flex h-12 w-12 cursor-pointer flex-col items-center justify-center overflow-hidden rounded ${skill.name === formData?.builds?.[activeBuildIndex]?.data?.skills?.common ? "border-2 border-green-300" : "border border-neutral-600"} bg-neutral-800 shadow-sm shadow-black`}
+                            >
+                              {skill.image ? (
+                                <ImageHelper
+                                  src={skill.image}
+                                  width={256}
+                                  height={256}
+                                  alt={skill.name}
+                                />
+                              ) : null}
+                            </button>
+                          );
+                        })}
                         {formData?.builds?.[activeBuildIndex]?.data?.skills
                           ?.common ? (
                           <div className="flex items-center rounded bg-neutral-800 p-2">
@@ -400,19 +381,13 @@ const Equipment = ({
                         ?.common ? (
                         <div className="mt-1 grow rounded bg-neutral-800 p-2">
                           <p className="h-full text-sm whitespace-pre-wrap">
-                            {(skillData &&
-                              formData?.builds?.[activeBuildIndex]?.data?.skills
-                                ?.common &&
-                              (
-                                skillData.common_skills as Record<
-                                  string,
-                                  { description: string }
-                                >
-                              )[
-                                formData.builds[activeBuildIndex].data.skills
-                                  .common
-                              ]?.description) ??
-                              "No description available."}
+                            {
+                              skillData?.common_skills.find(
+                                (skill) =>
+                                  formData?.builds?.[activeBuildIndex]?.data
+                                    ?.skills?.common === skill.name,
+                              )?.description
+                            }
                           </p>
                         </div>
                       ) : null}

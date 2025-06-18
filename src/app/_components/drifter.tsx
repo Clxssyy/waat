@@ -18,8 +18,8 @@ const Drifter = ({
   const [activeFilter, setActiveFilter] = useState<ActiveFilter>("all");
   const selectInput = useRef<HTMLSelectElement>(null);
 
-  const drifters = data.drifter;
-  const filteredDrifters = Object.entries(drifters).filter(([, drifter]) => {
+  const drifters = data.drifters;
+  const filteredDrifters = drifters.filter((drifter) => {
     if (activeFilter === "all") return true;
     if (activeFilter === drifter.type) return true;
     return false;
@@ -28,10 +28,7 @@ const Drifter = ({
   let drifterData;
   if (formData?.builds[activeBuildIndex]?.data.drifter) {
     const drifterKey = formData.builds[activeBuildIndex]?.data.drifter;
-    drifterData =
-      drifterKey && drifterKey in data.drifter
-        ? data.drifter[drifterKey as keyof typeof data.drifter]
-        : undefined;
+    drifterData = data.drifters.find((drifter) => drifter.name === drifterKey);
   }
 
   return (
@@ -121,25 +118,21 @@ const Drifter = ({
             <option value="" hidden>
               Drifter
             </option>
-            {filteredDrifters.map(([drifterKey]) => (
+            {filteredDrifters.map((drifter, i) => (
               <option
-                key={drifterKey}
-                value={drifterKey}
+                key={drifter.name + "_" + i}
+                value={drifter.name}
                 className={`${
                   formData?.builds?.some(
                     (build) =>
-                      build.data.drifter === drifterKey &&
+                      build.data.drifter === drifter.name &&
                       build.id !== formData.builds[activeBuildIndex]?.id,
                   )
                     ? "text-neutral-500"
                     : "text-white"
                 }`}
               >
-                {drifterKey.charAt(0).toUpperCase() +
-                  drifterKey
-                    .slice(1)
-                    .replace(/_/g, " ")
-                    .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
+                {drifter.name}
               </option>
             ))}
           </select>

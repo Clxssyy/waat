@@ -10,12 +10,8 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
 
   const drifterData = character.builds.map((build) => {
     const buildData = build.data as BuildData;
-    return {
-      drifter: buildData?.drifter,
-      data: Object.entries(data.drifter).find(
-        ([key]) => key === buildData?.drifter,
-      ),
-    };
+
+    return data.drifters.find((drifter) => drifter.name === buildData?.drifter);
   });
 
   const totalRating = character.ratings.reduce(
@@ -39,17 +35,13 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
           {character.builds.length} / 3 Drifters
         </p>
         <div className="flex gap-1 text-sm">
-          {Object.entries(drifterData).map(([key, entry]) =>
-            entry.drifter !== "" ? (
+          {drifterData.map((drifter, i) =>
+            drifter?.name ? (
               <div
-                key={key + entry.drifter}
-                className={`rounded border p-1 ${entry.data?.[1].type === "strength" ? "border-red-400 bg-red-400/20" : `${entry.data?.[1].type === "agility" ? "border-green-400 bg-green-400/20" : `${entry.data?.[1].type === "intelligence" ? "border-blue-400 bg-blue-400/20" : `${entry.data?.[1].type === "logistics" ? "border-yellow-400 bg-yellow-400/20" : "border-neutral-700 bg-neutral-800"}`}`}`}`}
+                key={character.id + "_" + drifter?.name + "_" + i}
+                className={`rounded border p-1 ${drifter?.type === "strength" ? "border-red-400 bg-red-400/20" : `${drifter?.type === "agility" ? "border-green-400 bg-green-400/20" : `${drifter?.type === "intelligence" ? "border-blue-400 bg-blue-400/20" : `${drifter?.type === "logistics" ? "border-yellow-400 bg-yellow-400/20" : "border-neutral-700 bg-neutral-800"}`}`}`}`}
               >
-                {entry.drifter.charAt(0).toUpperCase() +
-                  entry.drifter
-                    .slice(1)
-                    .replace(/_/g, " ")
-                    .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
+                {drifter?.name}
               </div>
             ) : null,
           )}
