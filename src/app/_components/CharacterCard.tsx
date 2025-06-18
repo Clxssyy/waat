@@ -64,10 +64,7 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
         <div className="flex flex-col">
           <div className="flex items-center gap-2">
             <Image
-              src={
-                character.createdBy.image ??
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1024px-Default_pfp.svg.png"
-              }
+              src={character.createdBy.image ?? "/default-avatar.jpg"}
               width={100}
               height={100}
               alt="creator pfp"

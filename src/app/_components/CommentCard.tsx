@@ -147,10 +147,7 @@ const CommentCard = ({ comment }: { comment: CommentWithReplies }) => {
         <div className="flex items-center gap-2">
           <div className="flex items-center gap-1">
             <Image
-              src={
-                comment?.user.image ??
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1024px-Default_pfp.svg.png"
-              }
+              src={comment?.user.image ?? "/default-avatar.jpg"}
               alt="User profile picture"
               width={100}
               height={100}

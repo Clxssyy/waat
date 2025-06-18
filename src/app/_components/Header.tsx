@@ -49,10 +49,7 @@ const Header = async () => {
         {session ? (
           <div className="group relative">
             <Image
-              src={
-                session.user.image ??
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1024px-Default_pfp.svg.png"
-              }
+              src={session.user.image ?? "/default-avatar.jpg"}
               alt="User profile picture"
               width={100}
               height={100}

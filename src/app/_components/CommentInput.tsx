@@ -33,10 +33,7 @@ const CommentInput = ({
     <div className="flex flex-col gap-2">
       <div className="flex items-center gap-1">
         <Image
-          src={
-            session.data?.user?.image ??
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1024px-Default_pfp.svg.png"
-          }
+          src={session.data?.user?.image ?? "/default-avatar.jpg"}
           alt="User profile picture"
           width={100}
           height={100}

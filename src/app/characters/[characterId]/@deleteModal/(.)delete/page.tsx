@@ -35,7 +35,7 @@ const DeleteModal = () => {
           <div className="flex h-20 w-20 items-center justify-center rounded-full bg-red-500/30">
             <ImWarning className="text-5xl text-red-400" />
           </div>
-          <h2 className="text-lg font-bold">
+          <h2 className="text-center text-lg font-bold">
             Are you sure you want to delete this character?
           </h2>
           <div className="flex gap-2">

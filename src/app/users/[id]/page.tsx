@@ -37,10 +37,7 @@ const User = async ({
       <main className="flex w-4/5 grow gap-2 bg-gray-700/10 p-2">
         <aside className="mr-2 flex min-w-1/5 flex-col items-center gap-2 p-2">
           <Image
-            src={
-              user?.image ??
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1024px-Default_pfp.svg.png"
-            }
+            src={user?.image ?? "/default-avatar.jpg"}
             alt="User profile picture"
             width={100}
             height={100}

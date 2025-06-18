@@ -23,3 +23,8 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.not-found {
+  background: url("/tile_background.png");
+  background-size: cover;
+}
