@@ -182,7 +182,7 @@ const Drifter = ({
                 <div className="grid grid-cols-2 gap-2">
                   <div className="flex flex-col">
                     <h3 className="text-sm">Active Skill</h3>
-                    <div className="flex gap-2">
+                    <div className="flex flex-wrap gap-2">
                       <div className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black">
                         {drifterData?.activeSkill.image ? (
                           <ImageHelper
@@ -194,21 +194,22 @@ const Drifter = ({
                         ) : null}
                       </div>
                       <div className="flex items-center rounded bg-neutral-800 p-2">
-                        <p className="text-sm">
+                        <p className="text-sm wrap-anywhere">
                           {drifterData?.activeSkill.name}
                         </p>
                       </div>
                     </div>
                     <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                      <p className="h-full text-sm whitespace-pre-wrap">
-                        {drifterData?.activeSkill.description ??
-                          "No description available."}
+                      <p className="h-full text-sm wrap-anywhere whitespace-pre-wrap">
+                        {drifterData?.activeSkill.description != ""
+                          ? drifterData?.activeSkill.description
+                          : "No description available."}
                       </p>
                     </div>
                   </div>
                   <div className="flex flex-col">
                     <h3 className="text-sm">Passive Skill</h3>
-                    <div className="flex gap-2">
+                    <div className="flex flex-wrap gap-2">
                       <div className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black">
                         {drifterData?.passiveSkill.image ? (
                           <ImageHelper
@@ -220,13 +221,13 @@ const Drifter = ({
                         ) : null}
                       </div>
                       <div className="flex items-center rounded bg-neutral-800 p-2">
-                        <p className="text-sm">
+                        <p className="text-sm wrap-anywhere">
                           {drifterData?.passiveSkill.name}
                         </p>
                       </div>
                     </div>
                     <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                      <p className="h-full text-sm whitespace-pre-wrap">
+                      <p className="h-full text-sm wrap-anywhere whitespace-pre-wrap">
                         {drifterData?.passiveSkill.description ??
                           "No description available."}
                       </p>
@@ -265,7 +266,7 @@ const Drifter = ({
                 {TIER_LEVELS.map((tier) => (
                   <div
                     key={tier}
-                    className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2"
+                    className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 p-2"
                   >
                     <span>{tier}</span>
                   </div>

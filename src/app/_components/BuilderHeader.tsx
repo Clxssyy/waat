@@ -24,7 +24,7 @@ const BuilderHeader = () => {
   return (
     <div
       id="header"
-      className="mx-12 mt-2 flex min-h-16 items-center justify-between"
+      className="mx-12 mt-2 flex min-h-16 items-center justify-between not-sm:flex-col"
     >
       <div className="flex h-full items-center gap-2">
         <h1 className="truncate text-2xl">{character.name}</h1>

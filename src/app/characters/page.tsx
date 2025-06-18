@@ -35,7 +35,7 @@ export default async function Characters({
       <main className="flex w-4/5 grow flex-col divide-y divide-neutral-700 bg-gray-700/10">
         <div className="flex h-96 flex-col items-center justify-center gap-8">
           <div className="flex flex-col items-center gap-2">
-            <h1 className="text-5xl font-bold text-shadow-black text-shadow-sm">
+            <h1 className="text-center text-5xl font-bold text-shadow-black text-shadow-sm">
               Character Builds
             </h1>
             <p className="w-1/2 text-sm text-neutral-400">
@@ -64,7 +64,7 @@ export default async function Characters({
           <h2 className="text-lg font-bold">Builds</h2>
           {characters.length >= 1 ? (
             <>
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid gap-2 not-sm:grid-cols-1 sm:grid-cols-3">
                 {characters.map((character) => (
                   <CharacterCard key={character.id} character={character} />
                 ))}

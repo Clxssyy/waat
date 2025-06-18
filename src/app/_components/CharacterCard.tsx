@@ -47,7 +47,7 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
           )}
         </div>
       </div>
-      <div className="flex justify-between">
+      <div className="flex flex-wrap justify-between">
         <div className="flex items-end gap-2">
           {character.role ? (
             <span className="rounded border border-neutral-700 bg-neutral-800 p-1">

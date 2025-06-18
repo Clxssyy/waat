@@ -40,9 +40,9 @@ const Search = () => {
   return (
     <div className="flex justify-center">
       <form className="flex w-3/5 flex-col gap-2 p-4">
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <select
-            className="w-1/5 cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg"
+            className="w-fit cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg"
             value={role}
             onChange={(e) => setRole(e.target.value)}
             aria-label="Role Filter"
@@ -68,7 +68,7 @@ const Search = () => {
           <button
             type="reset"
             aria-label="Clear Filters"
-            className="cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40"
+            className="aspect-square cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 not-sm:hidden hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40"
             disabled={!drifter && !q && !role}
             onClick={clearAll}
           >

@@ -290,12 +290,11 @@ const Equipment = ({
                         {formData?.builds?.[activeBuildIndex]?.data?.skills
                           ?.basic ? (
                           <div className="flex items-center rounded bg-neutral-800 p-2">
-                            <p className="text-sm">
-                              {formData.builds?.[
-                                activeBuildIndex
-                              ].data.skills.basic
-                                ?.replace(/_/g, " ")
-                                .replace(/\b\w/g, (c) => c.toUpperCase())}
+                            <p className="text-sm wrap-anywhere">
+                              {
+                                formData.builds?.[activeBuildIndex].data.skills
+                                  .basic
+                              }
                             </p>
                           </div>
                         ) : null}
@@ -303,7 +302,7 @@ const Equipment = ({
                       {formData?.builds?.[activeBuildIndex]?.data?.skills
                         ?.basic ? (
                         <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                          <p className="h-full text-sm whitespace-pre-wrap">
+                          <p className="h-full text-sm wrap-anywhere whitespace-pre-wrap">
                             {
                               skillData?.basic_attacks.find(
                                 (skill) =>
@@ -367,12 +366,11 @@ const Equipment = ({
                         {formData?.builds?.[activeBuildIndex]?.data?.skills
                           ?.common ? (
                           <div className="flex items-center rounded bg-neutral-800 p-2">
-                            <p className="text-sm">
-                              {formData.builds?.[
-                                activeBuildIndex
-                              ].data.skills.common
-                                ?.replace(/_/g, " ")
-                                .replace(/\b\w/g, (c) => c.toUpperCase())}
+                            <p className="text-sm wrap-anywhere">
+                              {
+                                formData.builds?.[activeBuildIndex].data.skills
+                                  .common
+                              }
                             </p>
                           </div>
                         ) : null}
@@ -380,7 +378,7 @@ const Equipment = ({
                       {formData?.builds?.[activeBuildIndex]?.data?.skills
                         ?.common ? (
                         <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                          <p className="h-full text-sm whitespace-pre-wrap">
+                          <p className="h-full text-sm wrap-anywhere whitespace-pre-wrap">
                             {
                               skillData?.common_skills.find(
                                 (skill) =>
@@ -406,13 +404,13 @@ const Equipment = ({
                           ) : null}
                         </div>
                         <div className="flex items-center rounded bg-neutral-800 p-2">
-                          <p className="text-sm">
+                          <p className="text-sm wrap-anywhere">
                             {equipmentData?.core_skill.name}
                           </p>
                         </div>
                       </div>
                       <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                        <p className="h-full text-sm whitespace-pre-wrap">
+                        <p className="h-full text-sm wrap-anywhere whitespace-pre-wrap">
                           {equipmentData?.core_skill.description ??
                             "No description available."}
                         </p>
@@ -432,13 +430,13 @@ const Equipment = ({
                           ) : null}
                         </div>
                         <div className="flex items-center rounded bg-neutral-800 p-2">
-                          <p className="text-sm">
+                          <p className="text-sm wrap-anywhere">
                             {skillData?.passive_skill.name}
                           </p>
                         </div>
                       </div>
                       <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                        <p className="h-full text-sm whitespace-pre-wrap">
+                        <p className="h-full text-sm wrap-anywhere whitespace-pre-wrap">
                           {skillData
                             ? skillData.passive_skill.description
                             : "No description available."}
@@ -463,13 +461,13 @@ const Equipment = ({
                         ) : null}
                       </div>
                       <div className="flex items-center rounded bg-neutral-800 p-2">
-                        <p className="text-sm">
+                        <p className="text-sm wrap-anywhere">
                           {equipmentData?.core_skill.name}
                         </p>
                       </div>
                     </div>
                     <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                      <p className="h-full text-sm whitespace-pre-wrap">
+                      <p className="h-full text-sm wrap-anywhere whitespace-pre-wrap">
                         {equipmentData?.core_skill.description != ""
                           ? equipmentData?.core_skill.description
                           : "No description available."}
@@ -504,40 +502,38 @@ const Equipment = ({
               </button>
             </div>
           </div>
-          <div className="flex gap-2">
-            <div className="flex w-full flex-col gap-2">
-              <div className="flex grow flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-                <h2 className="text-lg">Tier</h2>
-                <div className="flex flex-wrap justify-center gap-2">
-                  {TIER_LEVELS.map((tier) => (
-                    <div
-                      key={tier}
-                      className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 p-2 text-lg"
-                    >
-                      <span>{tier}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="flex grow flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-                <h2 className="text-lg">Battle Infusion</h2>
-                <div className="flex items-center justify-center gap-2">
-                  <button className="cursor-pointer">
-                    <FaMinus />
-                  </button>
-                  <span>0</span>
-                  <button className="cursor-pointer">
-                    <FaPlus />
-                  </button>
-                </div>
+          <div className="flex w-full flex-col gap-2">
+            <div className="flex grow flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+              <h2 className="text-lg">Tier</h2>
+              <div className="flex flex-wrap justify-center gap-2">
+                {TIER_LEVELS.map((tier) => (
+                  <div
+                    key={tier}
+                    className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 p-2 text-lg"
+                  >
+                    <span>{tier}</span>
+                  </div>
+                ))}
               </div>
             </div>
-            {equipmentData?.rarity !== "legendary" ? (
-              <div className="grow rounded border-neutral-600 bg-neutral-700 p-2">
-                <h2 className="text-lg">Hypercharge</h2>
+            <div className="flex grow flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+              <h2 className="text-lg">Battle Infusion</h2>
+              <div className="flex items-center justify-center gap-2">
+                <button className="cursor-pointer">
+                  <FaMinus />
+                </button>
+                <span>0</span>
+                <button className="cursor-pointer">
+                  <FaPlus />
+                </button>
               </div>
-            ) : null}
+            </div>
           </div>
+          {equipmentData?.rarity !== "legendary" ? (
+            <div className="grow rounded border-neutral-600 bg-neutral-700 p-2">
+              <h2 className="text-lg">Hypercharge</h2>
+            </div>
+          ) : null}
           <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
             <h2 className="text-lg">Mods</h2>
             <div className="flex gap-2">
