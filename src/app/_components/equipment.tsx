@@ -21,6 +21,7 @@ const Equipment = ({
   const { formData, setFormData } = useBuildForm();
   const [activeFilter, setActiveFilter] = useState<ActiveFilter>("all");
   const selectInput = useRef<HTMLSelectElement>(null);
+  const custom_mastery_equipment = useRef<HTMLInputElement>(null);
   const [dataPool, setDataPool] = useState(data[slot]);
   const filteredData = Object.entries(dataPool).filter(([, equipment]) => {
     if (activeFilter === "all") return true;
@@ -200,7 +201,7 @@ const Equipment = ({
           </select>
         </div>
         <button
-          className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700 hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40`}
+          className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700 transition-all hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40`}
           aria-label={`Clear`}
           disabled={
             !formData?.builds?.[activeBuildIndex]?.data?.equipment[slot]
@@ -493,21 +494,157 @@ const Equipment = ({
             <h2 className="text-lg">Mastery</h2>
             <div className="flex flex-wrap gap-2">
               {MASTERY_OPTIONS.map((option) => (
-                <div
+                <button
                   key={option}
-                  className={
-                    "flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 p-2"
-                  }
+                  className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 p-2 ${(formData?.builds?.[activeBuildIndex]?.data?.equipment[slot].mastery ?? 0) === Number(option) ? "border-2 border-green-300" : ""}`}
+                  onClick={() => {
+                    setFormData((prev) => {
+                      if (!prev) return prev;
+                      return {
+                        ...prev,
+                        builds: prev.builds.map((b, idx) =>
+                          idx === activeBuildIndex
+                            ? {
+                                ...b,
+                                data: {
+                                  ...b.data,
+                                  equipment: {
+                                    ...b.data.equipment,
+                                    [slot]: {
+                                      ...b.data.equipment[slot],
+                                      mastery: Number(option),
+                                    },
+                                  },
+                                },
+                              }
+                            : b,
+                        ),
+                      };
+                    });
+                  }}
                 >
-                  <span>{option}</span>
-                </div>
+                  {option}
+                </button>
               ))}
-              <div className="flex h-12 grow cursor-pointer items-center justify-center rounded bg-neutral-800 p-2">
-                Custom
+              <div className="flex h-12 grow items-center justify-center rounded bg-neutral-800">
+                <input
+                  type="number"
+                  placeholder="Custom"
+                  ref={custom_mastery_equipment}
+                  className={`h-full w-full rounded text-center outline-none ${
+                    MASTERY_OPTIONS.find(
+                      (option) =>
+                        Number(option) ===
+                        formData?.builds?.[activeBuildIndex]?.data?.equipment[
+                          slot
+                        ].mastery,
+                    )
+                      ? ""
+                      : "border-2 border-green-300"
+                  }`}
+                  max={50}
+                  min={0}
+                  value={
+                    MASTERY_OPTIONS.find(
+                      (option) =>
+                        Number(option) ===
+                        formData?.builds?.[activeBuildIndex]?.data?.equipment[
+                          slot
+                        ].mastery,
+                    )
+                      ? ""
+                      : formData?.builds?.[activeBuildIndex]?.data?.equipment[
+                          slot
+                        ].mastery
+                  }
+                  onChange={(e) => {
+                    if (Number(e.target.value) > 50) {
+                      e.target.value = "";
+                      setFormData((prev) => {
+                        if (!prev) return prev;
+                        return {
+                          ...prev,
+                          builds: prev.builds.map((b, idx) =>
+                            idx === activeBuildIndex
+                              ? {
+                                  ...b,
+                                  data: {
+                                    ...b.data,
+                                    equipment: {
+                                      ...b.data.equipment,
+                                      [slot]: {
+                                        ...b.data.equipment[slot],
+                                        mastery: 0,
+                                      },
+                                    },
+                                  },
+                                }
+                              : b,
+                          ),
+                        };
+                      });
+                      return;
+                    }
+                    setFormData((prev) => {
+                      if (!prev) return prev;
+                      return {
+                        ...prev,
+                        builds: prev.builds.map((b, idx) =>
+                          idx === activeBuildIndex
+                            ? {
+                                ...b,
+                                data: {
+                                  ...b.data,
+                                  equipment: {
+                                    ...b.data.equipment,
+                                    [slot]: {
+                                      ...b.data.equipment[slot],
+                                      mastery: Number(e.target.value),
+                                    },
+                                  },
+                                },
+                              }
+                            : b,
+                        ),
+                      };
+                    });
+                  }}
+                />
               </div>
               <button
-                className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 hover:text-red-500"
-                disabled
+                className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 transition-all hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40`}
+                disabled={
+                  (formData?.builds?.[activeBuildIndex]?.data?.equipment[slot]
+                    .mastery ?? 0) === 0
+                }
+                onClick={() => {
+                  if (custom_mastery_equipment.current) {
+                    custom_mastery_equipment.current.value = "";
+                  }
+                  setFormData((prev) => {
+                    if (!prev) return prev;
+                    return {
+                      ...prev,
+                      builds: prev.builds.map((b, idx) =>
+                        idx === activeBuildIndex
+                          ? {
+                              ...b,
+                              data: {
+                                ...b.data,
+                                equipment: {
+                                  ...b.data.equipment,
+                                  [slot]: {
+                                    ...b.data.equipment[slot],
+                                    mastery: 0,
+                                  },
+                                },
+                              },
+                            }
+                          : b,
+                      ),
+                    };
+                  });
+                }}
               >
                 <IoClose className="h-6 w-6" />
               </button>
