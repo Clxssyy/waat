@@ -38,7 +38,7 @@ export default async function Characters({
             <h1 className="text-center text-5xl font-bold text-shadow-black text-shadow-sm">
               Character Builds
             </h1>
-            <p className="w-1/2 text-sm text-neutral-400">
+            <p className="w-1/2 text-center text-sm text-pretty text-neutral-300">
               Create and share your character builds with the community or
               browse through existing builds to find some inspiration!
             </p>

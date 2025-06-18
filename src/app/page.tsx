@@ -15,7 +15,7 @@ export default async function Home() {
                 ? `Welcome ${session.user.name}!`
                 : "Login to get started"}
             </h1>
-            <p className="w-1/2 text-sm text-neutral-300">
+            <p className="w-1/2 text-center text-sm text-pretty text-neutral-300">
               Create and share character builds, keep up to date with the latest
               news, or view guides from creators!
             </p>
