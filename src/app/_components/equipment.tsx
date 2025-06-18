@@ -49,9 +49,9 @@ const Equipment = ({
   let equipmentData: EquipmentData | undefined;
   let skillData;
 
-  if (formData?.builds[activeBuildIndex]?.data.equipment) {
+  if (formData?.builds[activeBuildIndex]?.data.equipment[slot].name) {
     const equipmentKey =
-      formData.builds[activeBuildIndex]?.data.equipment[slot];
+      formData.builds[activeBuildIndex].data.equipment[slot].name;
     equipmentData = data[slot].find(
       (equipment) => equipment.name === equipmentKey,
     );
@@ -115,7 +115,8 @@ const Equipment = ({
             <ImageHelper
               src={equipmentData.image}
               alt={
-                formData.builds?.[activeBuildIndex]?.data?.equipment[slot] ?? ""
+                formData.builds?.[activeBuildIndex]?.data?.equipment[slot]
+                  .name ?? ""
               }
               width={800}
               height={800}
@@ -127,7 +128,9 @@ const Equipment = ({
             className="h-full w-full cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg"
             aria-label={slot}
             ref={selectInput}
-            value={formData.builds?.[activeBuildIndex]?.data?.equipment[slot]}
+            value={
+              formData.builds?.[activeBuildIndex]?.data?.equipment[slot].name
+            }
             onChange={(e) => {
               setFormData((prev) => {
                 if (!prev) return prev;
@@ -142,7 +145,11 @@ const Equipment = ({
                               ...b.data,
                               equipment: {
                                 ...b.data.equipment,
-                                [slot]: e.target.value,
+                                [slot]: {
+                                  name: e.target.value,
+                                  mastery: 0,
+                                  tier: "",
+                                },
                               },
                               skills: {
                                 basic: "",
@@ -156,7 +163,11 @@ const Equipment = ({
                               ...b.data,
                               equipment: {
                                 ...b.data.equipment,
-                                [slot]: e.target.value,
+                                [slot]: {
+                                  name: e.target.value,
+                                  mastery: 0,
+                                  tier: "",
+                                },
                               },
                             },
                           }
@@ -176,7 +187,7 @@ const Equipment = ({
                 className={`${
                   formData?.builds?.some(
                     (build) =>
-                      build.data.equipment[slot] === equipment.name &&
+                      build.data.equipment[slot].name === equipment.name &&
                       build.id !== formData.builds[activeBuildIndex]?.id,
                   )
                     ? "text-neutral-500"
@@ -220,7 +231,7 @@ const Equipment = ({
           <IoClose className="h-6 w-6" />
         </button>
       </div>
-      {formData?.builds?.[activeBuildIndex]?.data?.equipment[slot] && (
+      {formData?.builds?.[activeBuildIndex]?.data?.equipment[slot].name && (
         <>
           <hr className="border-neutral-700" />
           <div className="flex flex-col gap-2">

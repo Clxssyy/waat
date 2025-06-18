@@ -26,8 +26,8 @@ const Drifter = ({
   });
 
   let drifterData;
-  if (formData?.builds[activeBuildIndex]?.data.drifter) {
-    const drifterKey = formData.builds[activeBuildIndex]?.data.drifter;
+  if (formData?.builds[activeBuildIndex]?.data.drifter.name) {
+    const drifterKey = formData.builds[activeBuildIndex]?.data.drifter.name;
     drifterData = data.drifters.find((drifter) => drifter.name === drifterKey);
   }
 
@@ -77,12 +77,14 @@ const Drifter = ({
       </div>
       <div className="flex gap-2">
         <div
-          className={`flex h-12 w-12 items-center rounded border border-neutral-600 ${formData?.builds[activeBuildIndex]?.data.drifter ? "bg-radial from-neutral-700 from-10% to-black/30" : "bg-neutral-700"}`}
+          className={`flex h-12 w-12 items-center rounded border border-neutral-600 ${formData?.builds[activeBuildIndex]?.data.drifter.name ? "bg-radial from-neutral-700 from-10% to-black/30" : "bg-neutral-700"}`}
         >
           {drifterData?.image ? (
             <ImageHelper
               src={drifterData.image}
-              alt={formData?.builds?.[activeBuildIndex]?.data?.drifter ?? ""}
+              alt={
+                formData?.builds?.[activeBuildIndex]?.data?.drifter.name ?? ""
+              }
               width={2436}
               height={1440}
             />
@@ -90,11 +92,11 @@ const Drifter = ({
         </div>
         <div className="h-12 grow rounded bg-neutral-700">
           <select
-            className="h-full w-full rounded border border-neutral-600 bg-neutral-700 px-2 text-lg"
+            className="h-full w-full cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg"
             id={"drifter"}
             name={"drifter"}
             ref={selectInput}
-            value={formData?.builds?.[activeBuildIndex]?.data?.drifter}
+            value={formData?.builds?.[activeBuildIndex]?.data?.drifter.name}
             onChange={(e) => {
               setFormData((prev) => {
                 if (!prev) return prev;
@@ -106,7 +108,11 @@ const Drifter = ({
                           ...b,
                           data: {
                             ...b.data,
-                            drifter: e.target.value,
+                            drifter: {
+                              name: e.target.value,
+                              mastery: 0,
+                              tier: "",
+                            },
                             stats: {
                               agility: 0,
                               strength: 0,
@@ -130,7 +136,7 @@ const Drifter = ({
                 className={`${
                   formData?.builds?.some(
                     (build) =>
-                      build.data.drifter === drifter.name &&
+                      build.data.drifter.name === drifter.name &&
                       build.id !== formData.builds[activeBuildIndex]?.id,
                   )
                     ? "text-neutral-500"
@@ -144,7 +150,7 @@ const Drifter = ({
         </div>
         <button
           className={`flex h-12 w-12 items-center justify-center rounded border border-neutral-600 bg-neutral-700 hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40`}
-          disabled={!formData?.builds?.[activeBuildIndex]?.data?.drifter}
+          disabled={!formData?.builds?.[activeBuildIndex]?.data?.drifter.name}
           onClick={() => {
             setFormData((prev) => {
               if (!prev) return prev;
@@ -156,7 +162,11 @@ const Drifter = ({
                         ...b,
                         data: {
                           ...b.data,
-                          drifter: "",
+                          drifter: {
+                            name: "",
+                            mastery: 0,
+                            tier: "",
+                          },
                         },
                       }
                     : b,
@@ -168,7 +178,7 @@ const Drifter = ({
           <IoClose className="h-6 w-6" />
         </button>
       </div>
-      {formData?.builds?.[activeBuildIndex]?.data?.drifter && (
+      {formData?.builds?.[activeBuildIndex]?.data?.drifter.name && (
         <>
           <hr className="border-neutral-700" />
           <div className="flex flex-col gap-2">

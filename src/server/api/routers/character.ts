@@ -28,17 +28,37 @@ export const characterRouter = createTRPCRouter({
                 characterId: character.id,
                 data: {
                   equipment: {
-                    helmet: "",
-                    chest: "",
-                    boots: "",
-                    weapon: "",
+                    helmet: {
+                      name: "",
+                      mastery: 0,
+                      tier: "",
+                    },
+                    chest: {
+                      name: "",
+                      mastery: 0,
+                      tier: "",
+                    },
+                    boots: {
+                      name: "",
+                      mastery: 0,
+                      tier: "",
+                    },
+                    weapon: {
+                      name: "",
+                      mastery: 0,
+                      tier: "",
+                    },
                   },
                   stats: {
                     strength: 0,
                     agility: 0,
                     intelligence: 0,
                   },
-                  drifter: "",
+                  drifter: {
+                    name: "",
+                    mastery: 0,
+                    tier: "",
+                  },
                 },
               },
             })
@@ -59,17 +79,37 @@ export const characterRouter = createTRPCRouter({
             characterId: input.characterId,
             data: {
               equipment: {
-                helmet: "",
-                chest: "",
-                boots: "",
-                weapon: "",
+                helmet: {
+                  name: "",
+                  mastery: 0,
+                  tier: "",
+                },
+                chest: {
+                  name: "",
+                  mastery: 0,
+                  tier: "",
+                },
+                boots: {
+                  name: "",
+                  mastery: 0,
+                  tier: "",
+                },
+                weapon: {
+                  name: "",
+                  mastery: 0,
+                  tier: "",
+                },
               },
               stats: {
                 strength: 0,
                 agility: 0,
                 intelligence: 0,
               },
-              drifter: "",
+              drifter: {
+                name: "",
+                mastery: 0,
+                tier: "",
+              },
             },
           },
         })

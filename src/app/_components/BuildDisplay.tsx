@@ -39,11 +39,13 @@ const BuildDisplay = () => {
 
   if (!character) notFound();
 
-  const bootsKey = formData.builds[activeBuildIndex]?.data.equipment.boots;
-  const helmetKey = formData.builds[activeBuildIndex]?.data.equipment.helmet;
-  const chestKey = formData.builds[activeBuildIndex]?.data.equipment.chest;
-  const weaponKey = formData.builds[activeBuildIndex]?.data.equipment.weapon;
-  const drifterKey = formData.builds[activeBuildIndex]?.data.drifter;
+  const bootsKey = formData.builds[activeBuildIndex]?.data.equipment.boots.name;
+  const helmetKey =
+    formData.builds[activeBuildIndex]?.data.equipment.helmet.name;
+  const chestKey = formData.builds[activeBuildIndex]?.data.equipment.chest.name;
+  const weaponKey =
+    formData.builds[activeBuildIndex]?.data.equipment.weapon.name;
+  const drifterKey = formData.builds[activeBuildIndex]?.data.drifter.name;
 
   const drifterData = data.drifters.find(
     (drifter) => drifter.name === drifterKey,
@@ -82,17 +84,37 @@ const BuildDisplay = () => {
                           characterId: prev.id,
                           data: {
                             equipment: {
-                              helmet: "",
-                              chest: "",
-                              boots: "",
-                              weapon: "",
+                              helmet: {
+                                name: "",
+                                mastery: 0,
+                                tier: "",
+                              },
+                              chest: {
+                                name: "",
+                                mastery: 0,
+                                tier: "",
+                              },
+                              boots: {
+                                name: "",
+                                mastery: 0,
+                                tier: "",
+                              },
+                              weapon: {
+                                name: "",
+                                mastery: 0,
+                                tier: "",
+                              },
                             },
                             stats: {
                               strength: 0,
                               agility: 0,
                               intelligence: 0,
                             },
-                            drifter: "",
+                            drifter: {
+                              name: "",
+                              mastery: 0,
+                              tier: "",
+                            },
                           },
                         },
                       ],
@@ -113,9 +135,9 @@ const BuildDisplay = () => {
           <div className="relative h-82 w-32">
             {formData?.builds?.some(
               (build) =>
-                build.data.equipment.weapon === weaponKey &&
+                build.data.equipment.weapon.name === weaponKey &&
                 build.id !== formData.builds[activeBuildIndex]?.id &&
-                build.data.equipment.weapon !== "",
+                build.data.equipment.weapon.name !== "",
             ) ? (
               <div className="absolute top-2 right-2 z-20 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
                 <span className="text-sm">!</span>
@@ -157,9 +179,9 @@ const BuildDisplay = () => {
             <div className="relative h-26 w-26">
               {formData?.builds?.some(
                 (build) =>
-                  build.data.equipment.helmet === helmetKey &&
+                  build.data.equipment.helmet.name === helmetKey &&
                   build.id !== formData.builds[activeBuildIndex]?.id &&
-                  build.data.equipment.helmet !== "",
+                  build.data.equipment.helmet.name !== "",
               ) ? (
                 <div className="absolute top-2 right-2 z-20 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
                   <span className="text-sm">!</span>
@@ -202,9 +224,9 @@ const BuildDisplay = () => {
             <div className="relative h-26 w-26">
               {formData?.builds?.some(
                 (build) =>
-                  build.data.equipment.chest === chestKey &&
+                  build.data.equipment.chest.name === chestKey &&
                   build.id !== formData.builds[activeBuildIndex]?.id &&
-                  build.data.equipment.chest !== "",
+                  build.data.equipment.chest.name !== "",
               ) ? (
                 <div className="absolute top-2 right-2 z-20 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
                   <span className="text-sm">!</span>
@@ -247,9 +269,9 @@ const BuildDisplay = () => {
             <div className="relative h-26 w-26">
               {formData?.builds?.some(
                 (build) =>
-                  build.data.equipment.boots === bootsKey &&
+                  build.data.equipment.boots.name === bootsKey &&
                   build.id !== formData.builds[activeBuildIndex]?.id &&
-                  build.data.equipment.boots !== "",
+                  build.data.equipment.boots.name !== "",
               ) ? (
                 <div className="absolute top-2 right-2 z-20 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
                   <span className="text-sm">!</span>
@@ -294,9 +316,9 @@ const BuildDisplay = () => {
         <div className="relative h-24 w-60">
           {formData?.builds?.some(
             (build) =>
-              build.data.drifter === drifterKey &&
+              build.data.drifter.name === drifterKey &&
               build.id !== formData.builds[activeBuildIndex]?.id &&
-              build.data.drifter !== "",
+              build.data.drifter.name !== "",
           ) ? (
             <div className="absolute top-2 right-2 z-20 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
               <span className="text-sm">!</span>

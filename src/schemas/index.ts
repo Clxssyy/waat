@@ -2,10 +2,26 @@ import { z } from "zod";
 
 export const buildDataSchema = z.object({
   equipment: z.object({
-    helmet: z.string(),
-    chest: z.string(),
-    boots: z.string(),
-    weapon: z.string(),
+    helmet: z.object({
+      name: z.string(),
+      mastery: z.number().max(50),
+      tier: z.string(),
+    }),
+    chest: z.object({
+      name: z.string(),
+      mastery: z.number().max(50),
+      tier: z.string(),
+    }),
+    boots: z.object({
+      name: z.string(),
+      mastery: z.number().max(50),
+      tier: z.string(),
+    }),
+    weapon: z.object({
+      name: z.string(),
+      mastery: z.number().max(50),
+      tier: z.string(),
+    }),
   }),
   stats: z.object({
     strength: z.number(),
@@ -18,7 +34,11 @@ export const buildDataSchema = z.object({
       common: z.string().optional(),
     })
     .optional(),
-  drifter: z.string(),
+  drifter: z.object({
+    name: z.string(),
+    mastery: z.number().max(50),
+    tier: z.string(),
+  }),
 });
 
 export const buildSchema = z.object({
