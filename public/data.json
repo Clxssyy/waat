@@ -6,6 +6,9 @@
       "strBonus": 2,
       "agiBonus": 1,
       "intBonus": 1.1,
+      "strBase": 30,
+      "agiBase": 15,
+      "intBase": 15,
       "activeSkill": {
         "name": "Frozen Maelstorm",
         "description": "After a brief charge-up, unleash a Frozen Maelstrom\nforward, dealing [Damage Rate: 200%] Magic Damage\nto enemies in the area, applying Slow by 40%% and\nreducing Attack Speed by 40%%, lasting 6s. The punch\nalso deals [Damage Rate: 300%] additional Magic\nDamage to enemies directly in front and applies Frozen\nfor 3s.",
@@ -32,6 +35,9 @@
       "strBonus": 2.4,
       "agiBonus": 1.5,
       "intBonus": 0.8,
+      "strBase": 25,
+      "agiBase": 20,
+      "intBase": 15,
       "activeSkill": {
         "name": "Magma Slam",
         "description": "Leaps to the target location. Gains immunity to control\nduring leap. Deals[Damage Rate: 350%] Physical\nDamage and knocks enemies in the area up for 1.5s.",
@@ -58,6 +64,9 @@
       "strBonus": 2.5,
       "agiBonus": 1,
       "intBonus": 1,
+      "strBase": 30,
+      "agiBase": 10,
+      "intBase": 20,
       "activeSkill": {
         "name": "Sandstorm Dominion",
         "description": "Creates a Sandstorm around the caster, pushing all\nenemies outside. Channels for 6s with +45% Damage\nResistance and control immunity. Enemies touching the\nfield take [Damage Rate: 300%] Physical Damage,\nSlowed by 60% for 4s and dispelled from all buffs. Also knocks them\nback 11m from center. The Sandstorm applies 60% Slow.",
@@ -84,6 +93,9 @@
       "strBonus": 2.4,
       "agiBonus": 0.7,
       "intBonus": 1,
+      "strBase": 35,
+      "agiBase": 11,
+      "intBase": 14,
       "activeSkill": {
         "name": "Protector's Radiance",
         "description": "Channel for 6s, gaining immunity to control. Allies on the\nfield gain +40% Max HP and immunity to Forced\nMovement (Pull, Knockback). Each 5000 total damage\ntaken by allies grants 1 Energy stack, up to 5.\nUse again within 12s of starting the channeling to\nunleash absorbed energy, dealing [Damage Rate:\n350%]-[Damage Rate: 700%] Magic Damage based on\nstacks and reducing Movement Speed by 30% for 4s.",
@@ -110,6 +122,9 @@
       "strBonus": 2.4,
       "agiBonus": 1,
       "intBonus": 1.1,
+      "strBase": 25,
+      "agiBase": 11,
+      "intBase": 24,
       "activeSkill": {
         "name": "Shackled Grip",
         "description": "Channel for 4s with control immunity and 30% increased\nMovement Speed. On hit, deals [Damage Rate: 215%]\nPhysical Damage and creates a chain link (max 5 chains).\nChains break at range limit. After the channeling ends,\npull all chained targets to deal [Damage Rate: 215%]\nPhysical Damage and Stun them for 1.5s.",
@@ -136,6 +151,9 @@
       "strBonus": 1.8,
       "agiBonus": 1.5,
       "intBonus": 0.8,
+      "strBase": 25,
+      "agiBase": 25,
+      "intBase": 10,
       "activeSkill": {
         "name": "Cannonade",
         "description": "Transform into a turret for 25s. Basic Attacks become\nartillery strikes, firing projectiles at targets beyond 8m,\ndealing [Damage Rate: 250%] Physical Damage.\nArtillery Critical Damage is 150%.\n While in turret form gain increased Magic Resistance",
@@ -162,6 +180,9 @@
       "strBonus": 2.2,
       "agiBonus": 0.5,
       "intBonus": 1.4,
+      "strBase": 30,
+      "agiBase": 15,
+      "intBase": 15,
       "activeSkill": {
         "name": "Shield of Conviction",
         "description": "Grants Shield of Conviction to up to 5 allies around the\ncaster for 6s. Allies with Shield of Conviction gain\n[Target-based Max HP 30%] Shield effect, and 30% of\ndamage dealt will be converted into shield value, up to\n[Target-based Max HP 15%] additional Shield. After 6s, if\nthe shield remains unbroken, deals [Damage Rate: 300%]\nMagic Damage to nearby enemies. Subsequent\nexplosions deal reduced damage (15%).",
@@ -188,6 +209,9 @@
       "strBonus": 2.1,
       "agiBonus": 0.7,
       "intBonus": 1.3,
+      "strBase": 30,
+      "agiBase": 9,
+      "intBase": 21,
       "activeSkill": {
         "name": "Skyward Leap",
         "description": "Creates a protection zone at the target location that\ngrants allies within +30% Damage Resistance, +40%\nHealing Received, +40% Dodge and heals for \n[Healing Rate: 50%] HP every second. Then leaps to the target\nlocation, dealing [Damage Rate: 250%] Physical Damage\nto those hit and knocking them up for 1s.\nImmune to control during prep and leap.",
@@ -214,6 +238,9 @@
       "strBonus": 3.1,
       "agiBonus": 0.5,
       "intBonus": 0.5,
+      "strBase": 35,
+      "agiBase": 5,
+      "intBase": 20,
       "activeSkill": {
         "name": "Acid Blast",
         "description": "Sprays ooze for 4s, creating 4 ooze zones every second\nthat last 8.5s. Enemies in ooze zones are Slowed by 50%.\nEnemies entering ooze zones gain [Acid Blast].\n\n[Acid Blast]\nReduces Damage by 40% and cancels Stealth. Takes\n[Damage Rate: 20%] Magic Damage every 1s per stack for\n6s. Stacks up to 3 times.",
@@ -240,6 +267,9 @@
       "strBonus": 1.5,
       "agiBonus": 1.8,
       "intBonus": 0.8,
+      "strBase": 20,
+      "agiBase": 27,
+      "intBase": 13,
       "activeSkill": {
         "name": "Flamecore Rampage",
         "description": "Removes all current shield values, dealing \n[Damage Rate: 250%] Physical Damage to nearby enemies, while\nalso gaining 55% Attack Speed, 30% Movement Speed,\nand 30% Critical Rate, and becoming Immune to Control\nEffects for 6s.\n Can't be dispelled.",
@@ -266,9 +296,12 @@
       "strBonus": 1,
       "agiBonus": 2.4,
       "intBonus": 0.7,
+      "strBase": 12,
+      "agiBase": 33,
+      "intBase": 15,
       "activeSkill": {
         "name": "Tempest Slash",
-        "description": "",
+        "description": "Launches a flurry of slashes at the target and nearby enemies, each dealing [Damage Rate: 120%] Physical Damage. Damage reduces by 50% after the first hit on the same target. Flurry for 4s with Immune to control effects and Damage Immunity. Damage is affected by Basic Attack Damage Boost and can Critical Hit based on Basic Attack Crit Rate. Higher Attack Speed increases the number of slashes. Cooldown: 30s.",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXe5EjzynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
       },
       "passiveSkill": {
@@ -292,6 +325,9 @@
       "strBonus": 1,
       "agiBonus": 2,
       "intBonus": 1.1,
+      "strBase": 17,
+      "agiBase": 25,
+      "intBase": 18,
       "activeSkill": {
         "name": "Spectral Disquise",
         "description": "Creates a Spectral Disguise granting Stealth to the caster\nand up to 15 nearby allies, increasing Damage Resistance\nby 25% for 8s\nUsing a skill, dealing damage or inflicting healing breaks\nStealth for 4s before reapplying",
@@ -318,6 +354,9 @@
       "strBonus": 1,
       "agiBonus": 2.2,
       "intBonus": 0.9,
+      "strBase": 10,
+      "agiBase": 30,
+      "intBase": 20,
       "activeSkill": {
         "name": "Storm Pulse",
         "description": "Activate an Electric Device for 8s.\nElectric Device hits up to 5 enemies every 0.5s for\n[Damage Rate: 40%] Physical Damage, reducing Armor by\n8% for 8s. Stacks up to 10 times.",
@@ -344,6 +383,9 @@
       "strBonus": 1.2,
       "agiBonus": 2,
       "intBonus": 0.9,
+      "strBase": 16,
+      "agiBase": 22,
+      "intBase": 12,
       "activeSkill": {
         "name": "Null Pulse",
         "description": "Releases a Null Pulse in the target direction, dealing\n [Damage Rate: 50%] Physical Damage to enemies in\nrange, knocking them back 12m, and applying Silence and\n40% Slow for 3s.",
@@ -370,6 +412,9 @@
       "strBonus": 1,
       "agiBonus": 2.1,
       "intBonus": 1,
+      "strBase": 15,
+      "agiBase": 25,
+      "intBase": 20,
       "activeSkill": {
         "name": "Soul Feast",
         "description": "Creates a void field lasting 8s that envelops the caster\nand up to 5 enemies, dealing 192[Damage Rate: 50%]\nMagic Damage to enemies within. Enemies in the void are\nimmune to Physical Damage, cannot perform basic\nattacks, are slowed for 30%, and have their Magic\nResistance reduced by 30%. The caster can still perform\nbasic attacks and gain 35% Basic Attack Lifesteal, while\nalso ignoring the Physical Damage immunity of enemies\nin the void.",
@@ -396,6 +441,9 @@
       "strBonus": 0.6,
       "agiBonus": 2.3,
       "intBonus": 0.8,
+      "strBase": 5,
+      "agiBase": 35,
+      "intBase": 20,
       "activeSkill": {
         "name": "Shadow Dive",
         "description": "Enters Stealth, gaining [Spectral Shield] and the ability\n[Phantom Bind], lasting 9s.\nSpectral Shield: Grants [Target-based Max HP 25%] shield\neffect; if the Spectral Shield fades out, the Phantom Bind\neffect ends prematurely.\nPhantom Bind: Summon phantoms that track enemies in\nrange, dealing [Damage Rate: 183%] Magic Damage\nand replenishing [Target-based Max HP 5%] Spectral\nShield.\nDoesn't break Phantom Clone Stealth ..\nUsing any skill other than Phantom Bind, or dealing direct\nhealing or damage, reveals you for 2s before re-entering\nStealth.\nRecovers 6% HP every 2s while in Stealth.",
@@ -422,6 +470,9 @@
       "strBonus": 1.2,
       "agiBonus": 2.2,
       "intBonus": 0.7,
+      "strBase": 12,
+      "agiBase": 25,
+      "intBase": 23,
       "activeSkill": {
         "name": "Hemophage",
         "description": "Activates Crimson Vortex for 6s.\nCrimson Vortex deals [Damage Rate: 75%] Magical Damage to up to 5 enemies every second, healing the caster for 60% of damage dealt against players,\n 30% versus monsters.\nDamage increases up to [Damage Rate: 150%] as HP drops.",
@@ -448,6 +499,9 @@
       "strBonus": 0.8,
       "agiBonus": 2.3,
       "intBonus": 1,
+      "strBase": 15,
+      "agiBase": 25,
+      "intBase": 20,
       "activeSkill": {
         "name": "Shadow Rift",
         "description": "Creates a field around the caster, lasting 20s. Then\nscatter 8 Shadow Clones, each dealing [Damage Rate:\n200%] Physical Damage to those hit. Damage reduces to\n15% for subsequent hits on the same target. While in the\nfield, skill changes to [Shadow Swap]. Touching a\nShadow Clone reduces Shadow Swap's cooldown by 5s,\ngrants [Target-based Max HP 10%] Shield and +20%\nMovement Speed for 4s.\nField disappears when leaving range.\n[Shadow Swap]: Dash forward and increase the Attack\nSpeed of the next 5 basic attacks within 6s by 60%.",
@@ -475,6 +529,9 @@
       "strBonus": 1,
       "agiBonus": 0.7,
       "intBonus": 2.4,
+      "strBase": 23,
+      "agiBase": 12,
+      "intBase": 25,
       "activeSkill": {
         "name": "Twinlance Infusion",
         "description": "Creates a Lunar Domain and channels for 8s. Enemies\nwithin are struck by starlight on skill use, taking \n[Damage Rate: 200%] Magic Damage and losing 20 MP. Allies\nwithin recover 8 MP every second and gain \n[Target-based Max HP 15%] Shield lasting 4s.\nSkill cannot be interrupted. +20% Movement Speed while\nchanneling.",
@@ -501,6 +558,9 @@
       "strBonus": 0.5,
       "agiBonus": 0.5,
       "intBonus": 3.1,
+      "strBase": 15,
+      "agiBase": 10,
+      "intBase": 35,
       "activeSkill": {
         "name": "Shadow Cascade",
         "description": "Channel void energy for 5s and send forth 37 Void Orbs,\neach dealing [Damage Rate: 35%] Magic Damage and\ninflicting [Void Toxin]\nSkill cannot be interrupted.\n[Void Toxin]: Deals [Damage Rate: 10%] Magic Damage\nevery second (increases based on stacks) for 12s,\nstacking up to 5 times. [Void Toxin] from different sources\nshare stacks.",
@@ -527,6 +587,9 @@
       "strBonus": 1.1,
       "agiBonus": 1,
       "intBonus": 2,
+      "strBase": 20,
+      "agiBase": 10,
+      "intBase": 30,
       "activeSkill": {
         "name": "Abyssal Sovereignty",
         "description": "Removes all control effects and gains [Submerge] for\n2.5s\n[Submerge]: Dives underground, becoming immune to all\ndamage and control effects. Increases Movement Speed\nby 40% and recovers[Healing Rate: 49%] HP every\nsecond.\nPress skill again to exit [Submerge] early.\nUpon exiting [Submerge], deals [Damage Rate: 200%]\nMagic Damage to nearby enemies.\nCan be used while skills are disabled",
@@ -553,6 +616,9 @@
       "strBonus": 1.2,
       "agiBonus": 0.8,
       "intBonus": 2.1,
+      "strBase": 20,
+      "agiBase": 10,
+      "intBase": 30,
       "activeSkill": {
         "name": "Raven's Gaze",
         "description": "Select an enemy target to summon ravens. After 2\nseconds, ravens dive to attack, dealing [Damage Rate:\n210%] Magic Damage to up to 10 enemies in range,\ndispelling all buffs, shields, and HoT effects. Applies 50%\nSlow and reduces damage dealt by 50% for 6s. Targets\ncannot gain buffs, shields, or HoT effects during this time.",
@@ -579,6 +645,9 @@
       "strBonus": 1,
       "agiBonus": 0.8,
       "intBonus": 2.3,
+      "strBase": 12,
+      "agiBase": 23,
+      "intBase": 25,
       "activeSkill": {
         "name": "Genetic Cascade",
         "description": "Creates a Genetic Cascade link with the target, lasting\n15s.\nFor allied targets: Restores [Healing Rate: 25%] HP every\nsecond and increases damage dealt by 3% for 5s. Stacks\nup to 10 times.\nFor enemy targets: Deals [Damage Rate: 50%] Magic\nDamage every second and reduces damage dealt by 3%\nfor 5s. Stacks up to 10 times.\nCan link to another target of a different type while a link is\nactive.\nLink breaks if the target moves over 25m away.",
@@ -605,6 +674,9 @@
       "strBonus": 1,
       "agiBonus": 0.7,
       "intBonus": 2.1,
+      "strBase": 14,
+      "agiBase": 14,
+      "intBase": 32,
       "activeSkill": {
         "name": "Serpent's Whisper",
         "description": "Applies Serpent's Whisper to the caster or an allied target,\npreventing movement and skill usage for 4s and granting\nimmunity to damage and control. Deals [Damage Rate:\n58%] Magic Damage to nearby enemies every 0.5s and\napplies [Creeping Stone]\n[Creeping Stone]: Lasts 1s, stacking up to 4 times. Target\nis Petrified and has their Armor reduced by 25% for 2 at\nmax stacks (cannot gain [Creeping Stone] for 6)\nCan be used while skills are disabled. Serpent's Whisper\ncannot be dispelled.",
@@ -631,6 +703,9 @@
       "strBonus": 1,
       "agiBonus": 1.1,
       "intBonus": 2,
+      "strBase": 15,
+      "agiBase": 15,
+      "intBase": 30,
       "activeSkill": {
         "name": "Bond of Light",
         "description": "Links to 8 targets within 10m around the caster,\nchanneling for 4s. Restores [Healing Rate: 40%] HP to the\ncaster and linked allies every 0.5s, while dealing \n[Damage Rate: 70%] Magic Damage to linked enemies.\nCannot be interrupted while channeling.",
@@ -657,6 +732,9 @@
       "strBonus": 0.8,
       "agiBonus": 1,
       "intBonus": 2.3,
+      "strBase": 25,
+      "agiBase": 10,
+      "intBase": 25,
       "activeSkill": {
         "name": "Sanctification",
         "description": "Creates an expanding Sanctification Field at the target\nlocation and channels for 5s.\nCannot be interrupted while channeling.\nCleanses control effects every 0.5s, all debuffs, and 2 DoT\neffects, from up to 20 allies in the field and restores\n[Healing Rate: 25%] HP.",
@@ -683,6 +761,9 @@
       "strBonus": 1,
       "agiBonus": 1,
       "intBonus": 2.1,
+      "strBase": 20,
+      "agiBase": 12,
+      "intBase": 28,
       "activeSkill": {
         "name": "Astral Gate",
         "description": "Creates an astral field beneath the caster. After 3s,\nteleports up to 15 teammates in range to the target\nlocation. Upon arrival, deals [Damage Rate: 200%] Magic\nDamage to surrounding enemies and Stuns them for 1s.\nAllies gain [Target-based Max HP 20%] Shield, +30%\nMovement Speed effects for 4s.\nIf there's unpassable terrain in the teleportation path,\nteleport to that position instead ..\n Target cannot be teleported by Astral Gate for 10 seconds after teleportation.",
@@ -709,9 +790,12 @@
       "strBonus": 1.3,
       "agiBonus": 1.3,
       "intBonus": 1.3,
+      "strBase": 20,
+      "agiBase": 20,
+      "intBase": 20,
       "activeSkill": {
         "name": "Mole's Escape",
-        "description": "Escape and trap enemy targets.",
+        "description": "Throws a robot in the target direction, dealing [Damage Rate: 110%] Magic Damage to the first enemy hit and binding them in place. Bound enemies are pulled to the center when attempting to leave.",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQ6HO92W7z9VydsAL2D3hoSNGWrlcw7ZuBgfX"
       },
       "passiveSkill": {
@@ -2805,7 +2889,7 @@
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDHKuiiPCTsc4uPVzehvMnktCEqAJKoZQISF6"
         },
         {
-          "name": "Frost",
+          "name": "Frost Blink",
           "description": "Deals [Damage Rate: 200%] Magic Damage to nearby\nenemies and Freezes them for 0.5s, then blinks in the\ntarget direction.",
           "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCpeaQQMNnl5Y2OXNwHZ403tR8CeJdUmEagVSL"
         },
@@ -2821,7 +2905,7 @@
         }
       ],
       "passive_skill": {
-        "name": "Passive",
+        "name": "Frost Armor",
         "description": "After not taking damage for 15s, gains [Target-based Max\nHP 20%] Shield. When hit by Basic Attacks, applies [Frost]\nto the attacker.\n[Frost]: Reduces Attack Speed and Movement Speed by\n40% for 4s, gradually weakening over time.",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCehXwA6qi02s7T6FOxAtHYlBmI8h3odqkzGaJ"
       }

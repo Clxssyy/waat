@@ -107,6 +107,11 @@ const Drifter = ({
                           data: {
                             ...b.data,
                             drifter: e.target.value,
+                            stats: {
+                              agility: 0,
+                              strength: 0,
+                              intelligence: 0,
+                            },
                           },
                         }
                       : b,
@@ -201,9 +206,8 @@ const Drifter = ({
                     </div>
                     <div className="mt-1 grow rounded bg-neutral-800 p-2">
                       <p className="h-full text-sm wrap-anywhere whitespace-pre-wrap">
-                        {drifterData?.activeSkill.description != ""
-                          ? drifterData?.activeSkill.description
-                          : "No description available."}
+                        {drifterData?.activeSkill.description ??
+                          "No description available."}
                       </p>
                     </div>
                   </div>

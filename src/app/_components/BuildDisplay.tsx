@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import data from "public/data.json";
 import ImageHelper from "./ImageHelper";
 import type { ActiveBuildIndex } from "~/types";
+import { useEffect, useState } from "react";
 
 const BuildDisplay = () => {
   const {
@@ -19,6 +20,22 @@ const BuildDisplay = () => {
     activeTab,
     setActiveTab,
   } = useBuildForm();
+  const [statPoints, setStatPoints] = useState<number>(
+    100 -
+      ((formData.builds[activeBuildIndex]?.data.stats.agility ?? 0) +
+        (formData.builds[activeBuildIndex]?.data.stats.strength ?? 0) +
+        (formData.builds[activeBuildIndex]?.data.stats.intelligence ?? 0)),
+  );
+
+  useEffect(() => {
+    setStatPoints(
+      () =>
+        100 -
+        ((formData.builds[activeBuildIndex]?.data.stats.agility ?? 0) +
+          (formData.builds[activeBuildIndex]?.data.stats.strength ?? 0) +
+          (formData.builds[activeBuildIndex]?.data.stats.intelligence ?? 0)),
+    );
+  }, [formData.builds, activeBuildIndex]);
 
   if (!character) notFound();
 
@@ -319,7 +336,7 @@ const BuildDisplay = () => {
         </div>
         <div className="flex w-60 grow flex-col gap-2 border border-neutral-600 bg-neutral-700 p-2">
           <h2 className="w-full text-center">
-            Stats <span className="text-neutral-400">(100)</span>
+            Stats <span className="text-neutral-400">({statPoints})</span>
           </h2>
           <div className="flex w-full grow flex-col gap-2">
             <div className="mx-4 flex flex-col gap-1 rounded-lg bg-neutral-800 p-2 text-center">
@@ -334,8 +351,10 @@ const BuildDisplay = () => {
                     setFormData((prev) => {
                       if (!prev) return prev;
                       if (
-                        formData?.builds[activeBuildIndex]?.data.stats
-                          .strength === 0
+                        (formData?.builds[activeBuildIndex]?.data.stats
+                          .strength ?? 0) +
+                          (drifterData?.strBase ?? 0) ===
+                        (drifterData?.strBase ?? 0)
                       )
                         return prev;
                       return {
@@ -363,7 +382,8 @@ const BuildDisplay = () => {
                   <FaMinus />
                 </button>
                 <p>
-                  {formData?.builds?.[activeBuildIndex]?.data?.stats?.strength}
+                  {(formData?.builds?.[activeBuildIndex]?.data?.stats
+                    ?.strength ?? 0) + (drifterData?.strBase ?? 0)}
                 </p>
                 <button
                   aria-label="Increase Strength"
@@ -371,6 +391,7 @@ const BuildDisplay = () => {
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
+                      if (statPoints === 0) return prev;
                       return {
                         ...prev,
                         builds: prev.builds.map((b, idx) =>
@@ -409,8 +430,10 @@ const BuildDisplay = () => {
                     setFormData((prev) => {
                       if (!prev) return prev;
                       if (
-                        formData?.builds[activeBuildIndex]?.data.stats
-                          .agility === 0
+                        (formData?.builds[activeBuildIndex]?.data.stats
+                          .agility ?? 0) +
+                          (drifterData?.agiBase ?? 0) ===
+                        (drifterData?.agiBase ?? 0)
                       )
                         return prev;
                       return {
@@ -438,7 +461,8 @@ const BuildDisplay = () => {
                   <FaMinus />
                 </button>
                 <p>
-                  {formData?.builds?.[activeBuildIndex]?.data?.stats?.agility}
+                  {(formData?.builds?.[activeBuildIndex]?.data?.stats
+                    ?.agility ?? 0) + (drifterData?.agiBase ?? 0)}
                 </p>
                 <button
                   aria-label="Increase Agility"
@@ -446,6 +470,7 @@ const BuildDisplay = () => {
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
+                      if (statPoints === 0) return prev;
                       return {
                         ...prev,
                         builds: prev.builds.map((b, idx) =>
@@ -484,8 +509,10 @@ const BuildDisplay = () => {
                     setFormData((prev) => {
                       if (!prev) return prev;
                       if (
-                        formData?.builds[activeBuildIndex]?.data.stats
-                          .intelligence === 0
+                        (formData?.builds[activeBuildIndex]?.data.stats
+                          .intelligence ?? 0) +
+                          (drifterData?.intBase ?? 0) ===
+                        (drifterData?.intBase ?? 0)
                       )
                         return prev;
                       return {
@@ -513,10 +540,8 @@ const BuildDisplay = () => {
                   <FaMinus />
                 </button>
                 <p>
-                  {
-                    formData?.builds?.[activeBuildIndex]?.data?.stats
-                      ?.intelligence
-                  }
+                  {(formData?.builds?.[activeBuildIndex]?.data?.stats
+                    ?.intelligence ?? 0) + (drifterData?.intBase ?? 0)}
                 </p>
                 <button
                   className="cursor-pointer"
@@ -524,6 +549,7 @@ const BuildDisplay = () => {
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
+                      if (statPoints === 0) return prev;
                       return {
                         ...prev,
                         builds: prev.builds.map((b, idx) =>
