@@ -231,23 +231,23 @@ const Equipment = ({
         <>
           <hr className="border-neutral-700" />
           <div className="flex flex-col gap-2">
-            <div className="flex gap-2">
-              <div className="flex flex-1 flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-                <h2 className="text-lg">Details</h2>
-                <div className="flex grow items-center justify-center rounded bg-neutral-800 p-2">
-                  <p className="text-center text-sm">
-                    WIP - All build features are not complete and will not
-                    reflect the stats in-game.
-                  </p>
-                </div>
+            <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+              <h2 className="text-lg">Details</h2>
+              <div className="flex justify-center rounded bg-neutral-800 p-2">
+                <p className="text-sm">
+                  WIP - All build features are not complete and may not reflect
+                  the stats in-game.
+                </p>
               </div>
-              <div className="flex flex-1 flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-                <h2 className="text-lg">Skills</h2>
+            </div>
+            <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+              <h2 className="text-lg">Skills</h2>
+              <div className="grid grid-cols-2 gap-2">
                 {slot === "weapon" ? (
                   <>
                     <div className="flex flex-col">
                       <h3 className="text-sm">Basic Attacks</h3>
-                      <div className="flex gap-2">
+                      <div className="flex flex-wrap gap-2">
                         {skillData &&
                           Object.entries(skillData.basic_attacks).map(
                             ([key, skill]) => {
@@ -297,23 +297,43 @@ const Equipment = ({
                               );
                             },
                           )}
+                        {formData?.builds?.[activeBuildIndex]?.data?.skills
+                          ?.basic ? (
+                          <div className="flex items-center rounded bg-neutral-800 p-2">
+                            <p className="text-sm">
+                              {formData.builds?.[
+                                activeBuildIndex
+                              ].data.skills.basic
+                                ?.replace(/_/g, " ")
+                                .replace(/\b\w/g, (c) => c.toUpperCase())}
+                            </p>
+                          </div>
+                        ) : null}
                       </div>
                       {formData?.builds?.[activeBuildIndex]?.data?.skills
                         ?.basic ? (
-                        <div className="mt-1 flex items-center rounded bg-neutral-800 p-2">
-                          <p className="text-sm">
-                            {formData.builds?.[
-                              activeBuildIndex
-                            ].data.skills.basic
-                              ?.replace(/_/g, " ")
-                              .replace(/\b\w/g, (c) => c.toUpperCase())}
+                        <div className="mt-1 grow rounded bg-neutral-800 p-2">
+                          <p className="h-full text-sm whitespace-pre-wrap">
+                            {(skillData &&
+                              formData?.builds?.[activeBuildIndex]?.data?.skills
+                                ?.basic &&
+                              (
+                                skillData.basic_attacks as Record<
+                                  string,
+                                  { description: string }
+                                >
+                              )[
+                                formData.builds[activeBuildIndex].data.skills
+                                  .basic
+                              ]?.description) ??
+                              "No description available."}
                           </p>
                         </div>
                       ) : null}
                     </div>
                     <div className="flex flex-col">
                       <h3 className="text-sm">Skill 1</h3>
-                      <div className="flex gap-2">
+                      <div className="flex flex-wrap gap-2">
                         {skillData &&
                           Object.entries(skillData.common_skills).map(
                             ([key, skill]) => {
@@ -363,23 +383,43 @@ const Equipment = ({
                               );
                             },
                           )}
+                        {formData?.builds?.[activeBuildIndex]?.data?.skills
+                          ?.common ? (
+                          <div className="flex items-center rounded bg-neutral-800 p-2">
+                            <p className="text-sm">
+                              {formData.builds?.[
+                                activeBuildIndex
+                              ].data.skills.common
+                                ?.replace(/_/g, " ")
+                                .replace(/\b\w/g, (c) => c.toUpperCase())}
+                            </p>
+                          </div>
+                        ) : null}
                       </div>
                       {formData?.builds?.[activeBuildIndex]?.data?.skills
                         ?.common ? (
-                        <div className="mt-1 flex items-center rounded bg-neutral-800 p-2">
-                          <p className="text-sm">
-                            {formData.builds?.[
-                              activeBuildIndex
-                            ].data.skills.common
-                              ?.replace(/_/g, " ")
-                              .replace(/\b\w/g, (c) => c.toUpperCase())}
+                        <div className="mt-1 grow rounded bg-neutral-800 p-2">
+                          <p className="h-full text-sm whitespace-pre-wrap">
+                            {(skillData &&
+                              formData?.builds?.[activeBuildIndex]?.data?.skills
+                                ?.common &&
+                              (
+                                skillData.common_skills as Record<
+                                  string,
+                                  { description: string }
+                                >
+                              )[
+                                formData.builds[activeBuildIndex].data.skills
+                                  .common
+                              ]?.description) ??
+                              "No description available."}
                           </p>
                         </div>
                       ) : null}
                     </div>
                     <div className="flex flex-col">
                       <h3 className="text-sm">Skill 2 (Weapon Skill)</h3>
-                      <div className="flex gap-2">
+                      <div className="flex flex-wrap gap-2">
                         <div className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black">
                           {equipmentData?.core_skill.image ? (
                             <ImageHelper
@@ -396,10 +436,16 @@ const Equipment = ({
                           </p>
                         </div>
                       </div>
+                      <div className="mt-1 grow rounded bg-neutral-800 p-2">
+                        <p className="h-full text-sm whitespace-pre-wrap">
+                          {equipmentData?.core_skill.description ??
+                            "No description available."}
+                        </p>
+                      </div>
                     </div>
                     <div className="flex flex-col">
                       <h3 className="text-sm">Passive Skill</h3>
-                      <div className="flex gap-2">
+                      <div className="flex flex-wrap gap-2">
                         <div className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black">
                           {skillData?.passive_skill.image ? (
                             <ImageHelper
@@ -416,6 +462,13 @@ const Equipment = ({
                           </p>
                         </div>
                       </div>
+                      <div className="mt-1 grow rounded bg-neutral-800 p-2">
+                        <p className="h-full text-sm whitespace-pre-wrap">
+                          {skillData
+                            ? skillData.passive_skill.description
+                            : "No description available."}
+                        </p>
+                      </div>
                     </div>
                   </>
                 ) : (
@@ -423,7 +476,7 @@ const Equipment = ({
                     <h3 className="text-sm">
                       {slot.charAt(0).toUpperCase() + slot.slice(1)} Skill
                     </h3>
-                    <div className="flex gap-2">
+                    <div className="flex flex-wrap gap-2">
                       <div className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black">
                         {equipmentData?.core_skill.image ? (
                           <ImageHelper
@@ -440,96 +493,103 @@ const Equipment = ({
                         </p>
                       </div>
                     </div>
+                    <div className="mt-1 grow rounded bg-neutral-800 p-2">
+                      <p className="h-full text-sm whitespace-pre-wrap">
+                        {equipmentData?.core_skill.description != ""
+                          ? equipmentData?.core_skill.description
+                          : "No description available."}
+                      </p>
+                    </div>
                   </div>
                 )}
               </div>
             </div>
-            <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-              <h2>Mastery</h2>
-              <div className="flex flex-wrap gap-2">
-                {MASTERY_OPTIONS.map((option) => (
-                  <div
-                    key={option}
-                    className={
-                      "flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg"
-                    }
-                  >
-                    <span>{option}</span>
-                  </div>
-                ))}
-                <div className="flex h-12 grow items-center justify-center rounded bg-neutral-800 p-2 text-lg">
-                  Custom
-                </div>
-                <button
-                  className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 hover:text-red-500"
-                  disabled
-                >
-                  <IoClose className="h-6 w-6" />
-                </button>
-              </div>
-            </div>
-            <div className="flex gap-2">
-              <div className="flex flex-col gap-2">
-                <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-                  <h2>Tier</h2>
-                  <div className="flex flex-wrap gap-2">
-                    {TIER_LEVELS.map((tier) => (
-                      <div
-                        key={tier}
-                        className="flex h-12 w-12 items-center justify-center rounded bg-neutral-800 p-2 text-lg"
-                      >
-                        <span>{tier}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-                  <h2>Battle Infusion</h2>
-                  <div className="flex items-center justify-center gap-2">
-                    <button>
-                      <FaMinus />
-                    </button>
-                    <p>0</p>
-                    <button>
-                      <FaPlus />
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="grow rounded border-neutral-600 bg-neutral-700 p-2">
-                <h2>Hypercharge</h2>
-              </div>
-            </div>
-            <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-              <h2>Mods</h2>
-              <div className="flex gap-2">
-                <div className="h-12 w-12 rounded bg-neutral-800"></div>
-                <select
-                  className="h-12 grow rounded bg-neutral-800 px-2 text-lg"
-                  disabled
-                >
-                  <option value="">Mod</option>
-                </select>
-                <button
-                  className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 hover:text-red-500"
-                  disabled
-                >
-                  <IoClose className="h-6 w-6" />
-                </button>
-              </div>
-            </div>
-            {modPlaceholder && (
-              <>
-                <hr className="border-neutral-700" />
-                <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-                  <h2>Details</h2>
-                  <div className="rounded bg-neutral-800 p-2">
-                    Coming soon...
-                  </div>
-                </div>
-              </>
-            )}
           </div>
+          <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+            <h2 className="text-lg">Mastery</h2>
+            <div className="flex flex-wrap gap-2">
+              {MASTERY_OPTIONS.map((option) => (
+                <div
+                  key={option}
+                  className={
+                    "flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 p-2"
+                  }
+                >
+                  <span>{option}</span>
+                </div>
+              ))}
+              <div className="flex h-12 grow cursor-pointer items-center justify-center rounded bg-neutral-800 p-2">
+                Custom
+              </div>
+              <button
+                className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 hover:text-red-500"
+                disabled
+              >
+                <IoClose className="h-6 w-6" />
+              </button>
+            </div>
+          </div>
+          <div className="flex gap-2">
+            <div className="flex w-full flex-col gap-2">
+              <div className="flex grow flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+                <h2 className="text-lg">Tier</h2>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {TIER_LEVELS.map((tier) => (
+                    <div
+                      key={tier}
+                      className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 p-2 text-lg"
+                    >
+                      <span>{tier}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="flex grow flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+                <h2 className="text-lg">Battle Infusion</h2>
+                <div className="flex items-center justify-center gap-2">
+                  <button className="cursor-pointer">
+                    <FaMinus />
+                  </button>
+                  <span>0</span>
+                  <button className="cursor-pointer">
+                    <FaPlus />
+                  </button>
+                </div>
+              </div>
+            </div>
+            {equipmentData?.rarity !== "legendary" ? (
+              <div className="grow rounded border-neutral-600 bg-neutral-700 p-2">
+                <h2 className="text-lg">Hypercharge</h2>
+              </div>
+            ) : null}
+          </div>
+          <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+            <h2 className="text-lg">Mods</h2>
+            <div className="flex gap-2">
+              <div className="h-12 w-12 rounded bg-neutral-800"></div>
+              <select
+                className="h-12 grow rounded bg-neutral-800 px-2 text-lg"
+                disabled
+              >
+                <option value="">Mod</option>
+              </select>
+              <button
+                className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 hover:text-red-500"
+                disabled
+              >
+                <IoClose className="h-6 w-6" />
+              </button>
+            </div>
+          </div>
+          {modPlaceholder && (
+            <>
+              <hr className="border-neutral-700" />
+              <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+                <h2 className="text-lg">Details</h2>
+                <div className="rounded bg-neutral-800 p-2">Coming soon...</div>
+              </div>
+            </>
+          )}
         </>
       )}
     </div>

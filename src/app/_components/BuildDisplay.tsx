@@ -343,6 +343,7 @@ const BuildDisplay = () => {
               <div className="flex items-center justify-center gap-2">
                 <button
                   aria-label="Decrease Strength"
+                  className="cursor-pointer"
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
@@ -380,6 +381,7 @@ const BuildDisplay = () => {
                 </p>
                 <button
                   aria-label="Increase Strength"
+                  className="cursor-pointer"
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
@@ -416,6 +418,7 @@ const BuildDisplay = () => {
               <div className="flex items-center justify-center gap-2">
                 <button
                   aria-label="Decrease Agility"
+                  className="cursor-pointer"
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
@@ -453,6 +456,7 @@ const BuildDisplay = () => {
                 </p>
                 <button
                   aria-label="Increase Agility"
+                  className="cursor-pointer"
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
@@ -489,6 +493,7 @@ const BuildDisplay = () => {
               <div className="flex items-center justify-center gap-2">
                 <button
                   aria-label="Decrease Intelligence"
+                  className="cursor-pointer"
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
@@ -528,6 +533,7 @@ const BuildDisplay = () => {
                   }
                 </p>
                 <button
+                  className="cursor-pointer"
                   aria-label="Increase Intelligence"
                   onClick={() => {
                     setFormData((prev) => {

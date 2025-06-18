@@ -99,7 +99,7 @@ const BuildEditor = () => {
             </button>
           </div>
         </div>
-        <div className="h-fit w-full rounded border border-neutral-700 bg-neutral-800 break-all">
+        <div className="h-fit w-full rounded border border-neutral-700 bg-neutral-800">
           {activeTab === "equipment" && (
             <Equipment
               slot={activeSlot as Exclude<ActiveSlots, "drifter">}

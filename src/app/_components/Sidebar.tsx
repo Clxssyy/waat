@@ -45,7 +45,7 @@ const Sidebar = () => {
     >
       <div className="hidden-scrollbar flex flex-col divide-y divide-neutral-700 overflow-y-scroll">
         <button
-          onClick={() => router.back()}
+          onClick={() => router.push("/characters")}
           type="button"
           aria-label="Return to previous page"
           className="flex cursor-pointer items-center bg-neutral-800 p-4 text-lg not-sm:justify-center hover:brightness-125 sm:justify-between"
