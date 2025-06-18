@@ -17,7 +17,7 @@ export default async function Home() {
             </h1>
             <p className="w-1/2 text-sm text-neutral-300">
               Create and share character builds, keep up to date with the latest
-              news, or view the latest guides from creators!
+              news, or view guides from creators!
             </p>
           </div>
           <div className="flex gap-2">
