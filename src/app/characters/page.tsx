@@ -40,8 +40,7 @@ export default async function Characters({
             </h1>
             <p className="w-1/2 text-sm text-neutral-400">
               Create and share your character builds with the community or
-              browse through the builds of others to find inspiration for your
-              own character!
+              browse through existing builds to find some inspiration!
             </p>
           </div>
           <div className="flex gap-2">
