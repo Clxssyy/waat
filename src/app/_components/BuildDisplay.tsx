@@ -80,7 +80,7 @@ const BuildDisplay = () => {
                       builds: [
                         ...prev.builds,
                         {
-                          id: "",
+                          id: "temp" + i,
                           characterId: prev.id,
                           data: {
                             equipment: {

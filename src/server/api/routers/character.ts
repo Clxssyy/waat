@@ -334,7 +334,7 @@ export const characterRouter = createTRPCRouter({
           description: input.description,
           builds: {
             create: input.builds
-              .filter((b) => b.id === "")
+              .filter((b) => b.id.includes("temp"))
               .map((build) => ({
                 data: {
                   characterId: input.id,
@@ -344,7 +344,7 @@ export const characterRouter = createTRPCRouter({
                 },
               })),
             update: input.builds
-              .filter((b) => b.id !== "")
+              .filter((b) => !b.id.includes("temp"))
               .map((build) => ({
                 where: { id: build.id },
                 data: {
