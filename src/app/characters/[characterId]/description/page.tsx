@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useBuildForm } from "~/app/_components/buildFormContext";
 
 const Description = () => {
-  const { formData, setFormData } = useBuildForm();
+  const { formData, setFormData, character } = useBuildForm();
   const pathname = usePathname();
   console.log(formData.description);
   return (
@@ -28,7 +28,7 @@ const Description = () => {
         />
       ) : (
         <p className="m-2 rounded border border-neutral-600 bg-neutral-700 p-1 whitespace-pre-wrap">
-          {formData.description}
+          {character?.description}
         </p>
       )}
     </div>
