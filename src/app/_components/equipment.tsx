@@ -8,6 +8,7 @@ import type { ActiveFilter, ActiveBuildIndex, ActiveSlots } from "~/types";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { MASTERY_OPTIONS, TIER_LEVELS } from "~/utils";
 import ImageHelper from "./ImageHelper";
+import DescriptionParser from "./DescriptionParser";
 
 type slots = Exclude<ActiveSlots, "drifter">;
 
@@ -314,15 +315,15 @@ const Equipment = ({
                       {formData?.builds?.[activeBuildIndex]?.data?.skills
                         ?.basic ? (
                         <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                          <p className="h-full text-sm wrap-anywhere whitespace-pre-wrap">
-                            {
+                          <DescriptionParser
+                            description={
                               skillData?.basic_attacks.find(
                                 (skill) =>
                                   formData?.builds?.[activeBuildIndex]?.data
                                     ?.skills?.basic === skill.name,
-                              )?.description
+                              )?.description ?? "No description available."
                             }
-                          </p>
+                          />
                         </div>
                       ) : null}
                     </div>
@@ -390,15 +391,15 @@ const Equipment = ({
                       {formData?.builds?.[activeBuildIndex]?.data?.skills
                         ?.common ? (
                         <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                          <p className="h-full text-sm wrap-anywhere whitespace-pre-wrap">
-                            {
+                          <DescriptionParser
+                            description={
                               skillData?.common_skills.find(
                                 (skill) =>
                                   formData?.builds?.[activeBuildIndex]?.data
                                     ?.skills?.common === skill.name,
-                              )?.description
+                              )?.description ?? "No description available."
                             }
-                          </p>
+                          />
                         </div>
                       ) : null}
                     </div>
@@ -422,10 +423,12 @@ const Equipment = ({
                         </div>
                       </div>
                       <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                        <p className="h-full text-sm wrap-anywhere whitespace-pre-wrap">
-                          {equipmentData?.core_skill.description ??
-                            "No description available."}
-                        </p>
+                        <DescriptionParser
+                          description={
+                            equipmentData?.core_skill.description ??
+                            "No description available."
+                          }
+                        />
                       </div>
                     </div>
                     <div className="flex flex-col">
@@ -448,11 +451,13 @@ const Equipment = ({
                         </div>
                       </div>
                       <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                        <p className="h-full text-sm wrap-anywhere whitespace-pre-wrap">
-                          {skillData
-                            ? skillData.passive_skill.description
-                            : "No description available."}
-                        </p>
+                        <DescriptionParser
+                          description={
+                            skillData
+                              ? skillData.passive_skill.description
+                              : "No description available."
+                          }
+                        />
                       </div>
                     </div>
                   </>
@@ -479,11 +484,13 @@ const Equipment = ({
                       </div>
                     </div>
                     <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                      <p className="h-full text-sm wrap-anywhere whitespace-pre-wrap">
-                        {equipmentData?.core_skill.description != ""
-                          ? equipmentData?.core_skill.description
-                          : "No description available."}
-                      </p>
+                      <DescriptionParser
+                        description={
+                          equipmentData?.core_skill.description != ""
+                            ? equipmentData!.core_skill.description
+                            : "No description available."
+                        }
+                      />
                     </div>
                   </div>
                 )}
