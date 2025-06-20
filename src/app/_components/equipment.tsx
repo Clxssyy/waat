@@ -8,7 +8,7 @@ import type { ActiveFilter, ActiveBuildIndex, ActiveSlots } from "~/types";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { MASTERY_OPTIONS, TIER_LEVELS } from "~/utils";
 import ImageHelper from "./ImageHelper";
-import DescriptionParser from "./DescriptionParser";
+import SkillDescriptionParser from "./SkillDescriptionParser";
 
 type slots = Exclude<ActiveSlots, "drifter">;
 
@@ -315,7 +315,7 @@ const Equipment = ({
                       {formData?.builds?.[activeBuildIndex]?.data?.skills
                         ?.basic ? (
                         <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                          <DescriptionParser
+                          <SkillDescriptionParser
                             description={
                               skillData?.basic_attacks.find(
                                 (skill) =>
@@ -391,7 +391,7 @@ const Equipment = ({
                       {formData?.builds?.[activeBuildIndex]?.data?.skills
                         ?.common ? (
                         <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                          <DescriptionParser
+                          <SkillDescriptionParser
                             description={
                               skillData?.common_skills.find(
                                 (skill) =>
@@ -423,7 +423,7 @@ const Equipment = ({
                         </div>
                       </div>
                       <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                        <DescriptionParser
+                        <SkillDescriptionParser
                           description={
                             equipmentData?.core_skill.description ??
                             "No description available."
@@ -451,7 +451,7 @@ const Equipment = ({
                         </div>
                       </div>
                       <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                        <DescriptionParser
+                        <SkillDescriptionParser
                           description={
                             skillData
                               ? skillData.passive_skill.description
@@ -484,7 +484,7 @@ const Equipment = ({
                       </div>
                     </div>
                     <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                      <DescriptionParser
+                      <SkillDescriptionParser
                         description={
                           equipmentData?.core_skill.description != ""
                             ? equipmentData!.core_skill.description

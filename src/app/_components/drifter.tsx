@@ -8,7 +8,7 @@ import type { ActiveBuildIndex, ActiveFilter } from "~/types";
 import { MASTERY_OPTIONS, TIER_LEVELS } from "~/utils";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import ImageHelper from "./ImageHelper";
-import DescriptionParser from "./DescriptionParser";
+import SkillDescriptionParser from "./SkillDescriptionParser";
 
 const Drifter = ({
   activeBuildIndex,
@@ -222,7 +222,7 @@ const Drifter = ({
                       </div>
                     </div>
                     <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                      <DescriptionParser
+                      <SkillDescriptionParser
                         description={
                           drifterData?.activeSkill.description ??
                           "No description available."
@@ -250,7 +250,7 @@ const Drifter = ({
                       </div>
                     </div>
                     <div className="mt-1 grow rounded bg-neutral-800 p-2">
-                      <DescriptionParser
+                      <SkillDescriptionParser
                         description={
                           drifterData?.passiveSkill.description ??
                           "No description available."
