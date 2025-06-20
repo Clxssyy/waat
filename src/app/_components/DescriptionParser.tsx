@@ -16,7 +16,7 @@ export default function DescriptionParser({ description }: Props) {
 
           if (inner.includes("healing")) {
             color = "text-green-400";
-          } else if (inner.includes("damage")) {
+          } else if (inner.includes("damage rate")) {
             color = "text-red-400";
           } else if (inner.includes("target-based max hp")) {
             color = "text-blue-400";
