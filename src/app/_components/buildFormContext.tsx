@@ -82,7 +82,8 @@ export const BuildFormProvider = ({
     router.replace(`${pathname}?${next.toString()}`);
   }, [activeBuildIndex, raw, searchParams, pathname, router]);
 
-  const [activeTab, setActiveTab] = useState<ActiveTab>("equipment");
+  const initialTab = isCreator ? "equipment" : "description";
+  const [activeTab, setActiveTab] = useState<ActiveTab>(initialTab);
   const [activeSlot, setActiveSlot] = useState<ActiveSlots>("weapon");
 
   const { data: session } = useSession();

@@ -55,7 +55,7 @@ const Description = () => {
             </div>
           </div>
           <textarea
-            className="grow rounded bg-neutral-800 p-1 outline-none"
+            className="grow rounded bg-neutral-800 p-2 outline-none"
             value={formData.description}
             placeholder="Add a description here."
             spellCheck={false}
