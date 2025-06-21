@@ -534,7 +534,7 @@
       "intBase": 25,
       "activeSkill": {
         "name": "Twinlance Infusion",
-        "description": "Creates a Lunar Domain and channels for 8s. Enemies within are struck by starlight on skill use, taking [Damage Rate: 200%] Magic Damage and losing 20 MP. Allies within recover 8 MP every second and gain  [Target-based Max HP 15%] Shield lasting 4s.\n\nSkill cannot be interrupted. +20% Movement Speed while channeling.",
+        "description": "Creates a Lunar Domain and channels for 8s. Enemies within are struck by starlight on skill use, taking [Damage Rate: 200%] Magic Damage and losing 20 MP. Allies within recover 8 MP every second and gain  [Target-based Max HP 15%] Shield lasting 4s.\n\nSkill cannot be interrupted.\n\n+20% Movement Speed while channeling.",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdgbxHfirOfwbCID83Tpm1Hv24gWoyBiFXVxk"
       },
       "passiveSkill": {

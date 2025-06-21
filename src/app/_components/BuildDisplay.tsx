@@ -404,12 +404,14 @@ const BuildDisplay = () => {
                   <FaMinus />
                 </button>
                 <p>
-                  {(formData?.builds?.[activeBuildIndex]?.data?.stats
-                    ?.strength ?? 0) +
-                    (drifterData?.strBase ?? 0) +
-                    (drifterData?.strBonus ?? 0) *
-                      (formData?.builds?.[activeBuildIndex]?.data?.drifter
-                        .mastery ?? 0)}
+                  {Math.floor(
+                    (formData?.builds?.[activeBuildIndex]?.data?.stats
+                      ?.strength ?? 0) +
+                      (drifterData?.strBase ?? 0) +
+                      (drifterData?.strBonus ?? 0) *
+                        (formData?.builds?.[activeBuildIndex]?.data?.drifter
+                          .mastery ?? 0),
+                  )}
                 </p>
                 <button
                   aria-label="Increase Strength"
@@ -487,12 +489,14 @@ const BuildDisplay = () => {
                   <FaMinus />
                 </button>
                 <p>
-                  {(formData?.builds?.[activeBuildIndex]?.data?.stats
-                    ?.agility ?? 0) +
-                    (drifterData?.agiBase ?? 0) +
-                    (drifterData?.agiBonus ?? 0) *
-                      (formData?.builds?.[activeBuildIndex]?.data?.drifter
-                        .mastery ?? 0)}
+                  {Math.floor(
+                    (formData?.builds?.[activeBuildIndex]?.data?.stats
+                      ?.agility ?? 0) +
+                      (drifterData?.agiBase ?? 0) +
+                      (drifterData?.agiBonus ?? 0) *
+                        (formData?.builds?.[activeBuildIndex]?.data?.drifter
+                          .mastery ?? 0),
+                  )}
                 </p>
                 <button
                   aria-label="Increase Agility"
@@ -570,12 +574,14 @@ const BuildDisplay = () => {
                   <FaMinus />
                 </button>
                 <p>
-                  {(formData?.builds?.[activeBuildIndex]?.data?.stats
-                    ?.intelligence ?? 0) +
-                    (drifterData?.intBase ?? 0) +
-                    (drifterData?.intBonus ?? 0) *
-                      (formData?.builds?.[activeBuildIndex]?.data?.drifter
-                        .mastery ?? 0)}
+                  {Math.floor(
+                    (formData?.builds?.[activeBuildIndex]?.data?.stats
+                      ?.intelligence ?? 0) +
+                      (drifterData?.intBase ?? 0) +
+                      (drifterData?.intBonus ?? 0) *
+                        (formData?.builds?.[activeBuildIndex]?.data?.drifter
+                          .mastery ?? 0),
+                  )}
                 </p>
                 <button
                   className="cursor-pointer"
