@@ -137,9 +137,7 @@ const Drifter = ({
                 value={drifter.name}
                 className={`${
                   formData?.builds?.some(
-                    (build) =>
-                      build.data.drifter.name === drifter.name &&
-                      build.id !== formData.builds[activeBuildIndex]?.id,
+                    (build) => build.data.drifter.name === drifter.name,
                   )
                     ? "text-neutral-500"
                     : "text-white"

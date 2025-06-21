@@ -189,8 +189,7 @@ const Equipment = ({
                 className={`${
                   formData?.builds?.some(
                     (build) =>
-                      build.data.equipment[slot].name === equipment.name &&
-                      build.id !== formData.builds[activeBuildIndex]?.id,
+                      build.data.equipment[slot].name === equipment.name,
                   )
                     ? "text-neutral-500"
                     : "text-white"
