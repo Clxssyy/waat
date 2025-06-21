@@ -164,7 +164,7 @@ const Sidebar = () => {
               Cloned from
             </Link>
           ) : (
-            <p className="text-xs break-all text-neutral-700 not-lg:hidden">
+            <p className="text-xs break-all text-neutral-600 not-lg:hidden">
               {characterId}
             </p>
           )}

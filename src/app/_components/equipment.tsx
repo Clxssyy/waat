@@ -202,8 +202,8 @@ const Equipment = ({
           </select>
         </div>
         <button
-          className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700 transition-all hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40`}
-          aria-label={`Clear`}
+          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700 transition-all hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40"
+          aria-label="Clear equipment"
           disabled={
             !formData?.builds?.[activeBuildIndex]?.data?.equipment[slot]
           }
@@ -503,6 +503,7 @@ const Equipment = ({
               {MASTERY_OPTIONS.map((option) => (
                 <button
                   key={option}
+                  aria-label={"Set mastery level to " + option}
                   className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 p-2 ${(formData?.builds?.[activeBuildIndex]?.data?.equipment[slot].mastery ?? 0) === Number(option) ? "border-2 border-green-300" : ""}`}
                   onClick={() => {
                     setFormData((prev) => {
@@ -619,6 +620,7 @@ const Equipment = ({
                 />
               </div>
               <button
+                aria-label="Clear mastery level"
                 className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 transition-all hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40`}
                 disabled={
                   (formData?.builds?.[activeBuildIndex]?.data?.equipment[slot]
@@ -674,11 +676,17 @@ const Equipment = ({
             <div className="flex grow flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
               <h2 className="text-lg">Battle Infusion</h2>
               <div className="flex items-center justify-center gap-2">
-                <button className="cursor-pointer">
+                <button
+                  className="cursor-pointer"
+                  aria-label="Decrease battle infusion"
+                >
                   <FaMinus />
                 </button>
                 <span>0</span>
-                <button className="cursor-pointer">
+                <button
+                  className="cursor-pointer"
+                  aria-label="Increase battle infusion"
+                >
                   <FaPlus />
                 </button>
               </div>
@@ -694,6 +702,7 @@ const Equipment = ({
             <div className="flex gap-2">
               <div className="h-12 w-12 rounded bg-neutral-800"></div>
               <select
+                aria-label="Select equipment mod"
                 className="h-12 grow rounded bg-neutral-800 px-2 text-lg"
                 disabled
               >
@@ -701,6 +710,7 @@ const Equipment = ({
               </select>
               <button
                 className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 hover:text-red-500"
+                aria-label="Clear mod selection"
                 disabled
               >
                 <IoClose className="h-6 w-6" />

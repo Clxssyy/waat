@@ -356,12 +356,16 @@ const BuildDisplay = () => {
             )}
           </button>
         </div>
-        <div className="flex w-60 grow flex-col gap-2 border border-neutral-600 bg-neutral-700 p-2">
-          <h2 className="w-full text-center">
+        <div className="flex w-60 justify-between border border-neutral-600 bg-neutral-700 p-2">
+          <span>Power</span>
+          <span>#</span>
+        </div>
+        <div className="flex w-60 flex-col gap-2 border border-neutral-600 bg-neutral-700 p-2">
+          <h2 className="text-center">
             Stats <span className="text-neutral-400">({statPoints})</span>
           </h2>
-          <div className="flex w-full grow flex-col gap-2">
-            <div className="mx-4 flex flex-col gap-1 rounded-lg bg-neutral-800 p-2 text-center">
+          <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1 rounded-lg bg-neutral-800 p-2 text-center">
               <h3 className="text-sm">
                 Strength <span>({drifterData?.strBonus ?? "0.0"})</span>
               </h3>
@@ -403,7 +407,7 @@ const BuildDisplay = () => {
                 >
                   <FaMinus />
                 </button>
-                <p>
+                <p className="text-sm">
                   {Math.floor(
                     (formData?.builds?.[activeBuildIndex]?.data?.stats
                       ?.strength ?? 0) +
@@ -411,7 +415,13 @@ const BuildDisplay = () => {
                       (drifterData?.strBonus ?? 0) *
                         (formData?.builds?.[activeBuildIndex]?.data?.drifter
                           .mastery ?? 0),
-                  )}
+                  )}{" "}
+                  <span className="text-neutral-400">
+                    (
+                    {formData?.builds?.[activeBuildIndex]?.data?.stats
+                      ?.strength ?? 0}
+                    )
+                  </span>
                 </p>
                 <button
                   aria-label="Increase Strength"
@@ -446,7 +456,7 @@ const BuildDisplay = () => {
                 </button>
               </div>
             </div>
-            <div className="mx-4 flex flex-col gap-1 rounded-lg bg-neutral-800 p-2 text-center">
+            <div className="flex flex-col gap-1 rounded-lg bg-neutral-800 p-2 text-center">
               <h3 className="text-sm">
                 Agility <span>({drifterData?.agiBonus ?? "0.0"})</span>
               </h3>
@@ -488,7 +498,7 @@ const BuildDisplay = () => {
                 >
                   <FaMinus />
                 </button>
-                <p>
+                <p className="text-sm">
                   {Math.floor(
                     (formData?.builds?.[activeBuildIndex]?.data?.stats
                       ?.agility ?? 0) +
@@ -496,7 +506,13 @@ const BuildDisplay = () => {
                       (drifterData?.agiBonus ?? 0) *
                         (formData?.builds?.[activeBuildIndex]?.data?.drifter
                           .mastery ?? 0),
-                  )}
+                  )}{" "}
+                  <span className="text-neutral-400">
+                    (
+                    {formData?.builds?.[activeBuildIndex]?.data?.stats
+                      ?.agility ?? 0}
+                    )
+                  </span>
                 </p>
                 <button
                   aria-label="Increase Agility"
@@ -531,7 +547,7 @@ const BuildDisplay = () => {
                 </button>
               </div>
             </div>
-            <div className="mx-4 flex flex-col gap-1 rounded-lg bg-neutral-800 p-2 text-center">
+            <div className="flex flex-col gap-1 rounded-lg bg-neutral-800 p-2 text-center">
               <h3 className="text-sm">
                 Intelligence <span>({drifterData?.intBonus ?? "0.0"})</span>
               </h3>
@@ -573,7 +589,7 @@ const BuildDisplay = () => {
                 >
                   <FaMinus />
                 </button>
-                <p>
+                <p className="text-sm">
                   {Math.floor(
                     (formData?.builds?.[activeBuildIndex]?.data?.stats
                       ?.intelligence ?? 0) +
@@ -581,7 +597,13 @@ const BuildDisplay = () => {
                       (drifterData?.intBonus ?? 0) *
                         (formData?.builds?.[activeBuildIndex]?.data?.drifter
                           .mastery ?? 0),
-                  )}
+                  )}{" "}
+                  <span className="text-neutral-400">
+                    (
+                    {formData?.builds?.[activeBuildIndex]?.data?.stats
+                      ?.intelligence ?? 0}
+                    )
+                  </span>
                 </p>
                 <button
                   className="cursor-pointer"
@@ -616,6 +638,15 @@ const BuildDisplay = () => {
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="flex w-60 grow flex-col gap-2 border border-neutral-600 bg-neutral-700 p-2">
+          <h2 className="text-center">Details</h2>
+          <div className="grid grid-cols-2">
+            <span>HP</span>
+            <span className="text-right">#</span>
+            <span>MP</span>
+            <span className="text-right">#</span>
           </div>
         </div>
       </div>
