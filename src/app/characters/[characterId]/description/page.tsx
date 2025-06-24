@@ -71,8 +71,8 @@ const Description = () => {
             <div className="grow rounded bg-neutral-800 p-2">
               <DescriptionParser
                 description={
-                  character?.description != ""
-                    ? character!.description
+                  formData?.description != ""
+                    ? formData!.description
                     : "No description."
                 }
               />
