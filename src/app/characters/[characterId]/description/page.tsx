@@ -72,7 +72,7 @@ const Description = () => {
               <DescriptionParser
                 description={
                   formData?.description != ""
-                    ? formData!.description
+                    ? formData.description
                     : "No description."
                 }
               />
