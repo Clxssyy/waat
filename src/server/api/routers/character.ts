@@ -19,6 +19,7 @@ export const characterRouter = createTRPCRouter({
             builds: {},
             private: false,
             description: "No description.",
+            support: Array.from({ length: 5 }, () => ""),
           },
         })
         .then((character) => {
@@ -357,6 +358,7 @@ export const characterRouter = createTRPCRouter({
                 },
               })),
           },
+          support: input.support,
         },
         include: {
           builds: true,
@@ -376,6 +378,7 @@ export const characterRouter = createTRPCRouter({
           description: input.description,
           userId: ctx.session.user.id,
           clonedFrom: input.id,
+          support: input.support,
           builds: {
             create: input.builds.map((build) => ({
               data: {

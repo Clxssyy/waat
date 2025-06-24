@@ -132,218 +132,26 @@ const BuildDisplay = () => {
           ))}
         </div>
         <div className="flex flex-wrap justify-center gap-2">
-          <div className="relative h-82 w-32">
-            {formData?.builds?.some(
-              (build) =>
-                build.data.equipment.weapon.name === weaponKey &&
-                build.id !== formData.builds[activeBuildIndex]?.id &&
-                build.data.equipment.weapon.name !== "",
-            ) ? (
-              <div className="absolute top-2 right-2 z-20 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
-                <span className="text-sm">!</span>
-              </div>
-            ) : null}
-            <button
-              className={`active:scale-[98%] ${weaponData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${weaponData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${weaponData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${weaponData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-full w-full cursor-pointer items-center justify-center border transition-all ${activeSlot === "weapon" ? `border-2 ${weaponData?.rarity === "legendary" ? "border-yellow-600" : `${weaponData?.rarity === "epic" ? "border-purple-600" : `${weaponData?.rarity === "rare" ? "border-blue-600" : `${weaponData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
-              aria-label="Weapon Slot"
-              onClick={() => {
-                if (activeSlot != "weapon") setActiveSlot("weapon");
-                if (activeTab != "equipment") setActiveTab("equipment");
-              }}
-            >
-              {weaponKey ? (
-                weaponData?.image ? (
-                  <ImageHelper
-                    src={weaponData.image}
-                    alt={weaponKey}
-                    width={800}
-                    height={800}
-                  />
-                ) : (
-                  <div className="truncate p-1 text-sm text-wrap">
-                    {weaponKey.charAt(0).toUpperCase() +
-                      weaponKey
-                        .slice(1)
-                        .replace(/_/g, " ")
-                        .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
-                  </div>
-                )
-              ) : (
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
-                  <FaPlus />
-                </div>
-              )}
-            </button>
-          </div>
-          <div className="flex flex-col gap-2">
-            <div className="relative h-26 w-26">
-              {formData?.builds?.some(
-                (build) =>
-                  build.data.equipment.helmet.name === helmetKey &&
-                  build.id !== formData.builds[activeBuildIndex]?.id &&
-                  build.data.equipment.helmet.name !== "",
-              ) ? (
-                <div className="absolute top-2 right-2 z-20 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
-                  <span className="text-sm">!</span>
-                </div>
-              ) : null}
-              <button
-                className={`active:scale-95 ${helmetData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${helmetData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${helmetData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${helmetData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-full w-full cursor-pointer items-center justify-center border transition-all ${activeSlot === "helmet" ? `border-2 ${helmetData?.rarity === "legendary" ? "border-yellow-600" : `${helmetData?.rarity === "epic" ? "border-purple-600" : `${helmetData?.rarity === "rare" ? "border-blue-600" : `${helmetData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
-                aria-label="Helmet Slot"
-                onClick={() => {
-                  if (activeSlot != "helmet") setActiveSlot("helmet");
-                  if (activeTab != "equipment") setActiveTab("equipment");
-                }}
-              >
-                {helmetKey ? (
-                  helmetData?.image ? (
-                    <ImageHelper
-                      src={helmetData.image}
-                      alt={helmetKey}
-                      width={800}
-                      height={800}
-                    />
-                  ) : (
-                    <div className="truncate p-1 text-sm text-wrap">
-                      {helmetKey.charAt(0).toUpperCase() +
-                        helmetKey
-                          .slice(1)
-                          .replace(/_/g, " ")
-                          .replace(/(\s[a-z])/g, (match) =>
-                            match.toUpperCase(),
-                          )}
-                    </div>
-                  )
-                ) : (
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
-                    <FaPlus />
-                  </div>
-                )}
-              </button>
-            </div>
-            <div className="relative h-26 w-26">
-              {formData?.builds?.some(
-                (build) =>
-                  build.data.equipment.chest.name === chestKey &&
-                  build.id !== formData.builds[activeBuildIndex]?.id &&
-                  build.data.equipment.chest.name !== "",
-              ) ? (
-                <div className="absolute top-2 right-2 z-20 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
-                  <span className="text-sm">!</span>
-                </div>
-              ) : null}
-              <button
-                className={`active:scale-95 ${chestData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${chestData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${chestData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${chestData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-full w-full cursor-pointer items-center justify-center border transition-all ${activeSlot === "chest" ? `border-2 ${chestData?.rarity === "legendary" ? "border-yellow-600" : `${chestData?.rarity === "epic" ? "border-purple-600" : `${chestData?.rarity === "rare" ? "border-blue-600" : `${chestData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
-                aria-label="Chest Slot"
-                onClick={() => {
-                  if (activeSlot != "chest") setActiveSlot("chest");
-                  if (activeTab != "equipment") setActiveTab("equipment");
-                }}
-              >
-                {chestKey ? (
-                  chestData?.image ? (
-                    <ImageHelper
-                      src={chestData.image}
-                      alt={chestKey}
-                      width={800}
-                      height={800}
-                    />
-                  ) : (
-                    <div className="truncate p-1 text-sm text-wrap">
-                      {chestKey.charAt(0).toUpperCase() +
-                        chestKey
-                          .slice(1)
-                          .replace(/_/g, " ")
-                          .replace(/(\s[a-z])/g, (match) =>
-                            match.toUpperCase(),
-                          )}
-                    </div>
-                  )
-                ) : (
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
-                    <FaPlus />
-                  </div>
-                )}
-              </button>
-            </div>
-            <div className="relative h-26 w-26">
-              {formData?.builds?.some(
-                (build) =>
-                  build.data.equipment.boots.name === bootsKey &&
-                  build.id !== formData.builds[activeBuildIndex]?.id &&
-                  build.data.equipment.boots.name !== "",
-              ) ? (
-                <div className="absolute top-2 right-2 z-20 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
-                  <span className="text-sm">!</span>
-                </div>
-              ) : null}
-              <button
-                className={`active:scale-95 ${bootsData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${bootsData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${bootsData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${bootsData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-full w-full cursor-pointer items-center justify-center border transition-all ${activeSlot === "boots" ? `border-2 ${bootsData?.rarity === "legendary" ? "border-yellow-600" : `${bootsData?.rarity === "epic" ? "border-purple-600" : `${bootsData?.rarity === "rare" ? "border-blue-600" : `${bootsData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
-                aria-label="Boots Slot"
-                onClick={() => {
-                  if (activeSlot != "boots") setActiveSlot("boots");
-                  if (activeTab != "equipment") setActiveTab("equipment");
-                }}
-              >
-                {bootsKey ? (
-                  bootsData?.image ? (
-                    <ImageHelper
-                      src={bootsData.image}
-                      alt={bootsKey}
-                      width={800}
-                      height={800}
-                    />
-                  ) : (
-                    <div className="truncate p-1 text-sm text-wrap">
-                      {bootsKey.charAt(0).toUpperCase() +
-                        bootsKey
-                          .slice(1)
-                          .replace(/_/g, " ")
-                          .replace(/(\s[a-z])/g, (match) =>
-                            match.toUpperCase(),
-                          )}
-                    </div>
-                  )
-                ) : (
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
-                    <FaPlus />
-                  </div>
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="relative h-24 w-60">
-          {formData?.builds?.some(
-            (build) =>
-              build.data.drifter.name === drifterKey &&
-              build.id !== formData.builds[activeBuildIndex]?.id &&
-              build.data.drifter.name !== "",
-          ) ? (
-            <div className="absolute top-2 right-2 z-20 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
-              <span className="text-sm">!</span>
-            </div>
-          ) : null}
           <button
-            className={`${drifterKey ? "bg-radial from-neutral-700 from-10% to-black/30" : ""} relative flex h-24 w-60 cursor-pointer items-center justify-center overflow-hidden border bg-neutral-700 transition-all hover:border-cyan-600 active:scale-95 ${activeSlot === "drifter" ? "border-2 border-cyan-600" : "border-neutral-600"}`}
-            aria-label="Drifter Slot"
+            className={`active:scale-[98%] ${weaponData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${weaponData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${weaponData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${weaponData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-82 w-32 cursor-pointer items-center justify-center border transition-all ${activeSlot === "weapon" ? `border-2 ${weaponData?.rarity === "legendary" ? "border-yellow-600" : `${weaponData?.rarity === "epic" ? "border-purple-600" : `${weaponData?.rarity === "rare" ? "border-blue-600" : `${weaponData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
+            aria-label="Weapon Slot"
             onClick={() => {
-              if (activeSlot != "drifter") setActiveSlot("drifter");
-              if (activeTab != "drifter") setActiveTab("drifter");
+              if (activeSlot != "weapon") setActiveSlot("weapon");
+              if (activeTab != "equipment") setActiveTab("equipment");
             }}
           >
-            {drifterKey ? (
-              drifterData?.image ? (
+            {weaponKey ? (
+              weaponData?.image ? (
                 <ImageHelper
-                  src={drifterData.image}
-                  alt={drifterKey}
-                  width={2436}
-                  height={1440}
+                  src={weaponData.image}
+                  alt={weaponKey}
+                  width={800}
+                  height={800}
                 />
               ) : (
                 <div className="truncate p-1 text-sm text-wrap">
-                  {drifterKey.charAt(0).toUpperCase() +
-                    drifterKey
+                  {weaponKey.charAt(0).toUpperCase() +
+                    weaponKey
                       .slice(1)
                       .replace(/_/g, " ")
                       .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
@@ -354,8 +162,189 @@ const BuildDisplay = () => {
                 <FaPlus />
               </div>
             )}
+            {formData?.builds?.some(
+              (build) =>
+                build.data.equipment.weapon.name === weaponKey &&
+                build.id !== formData.builds[activeBuildIndex]?.id &&
+                build.data.equipment.weapon.name !== "",
+            ) ? (
+              <div className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
+                <span className="text-sm">!</span>
+              </div>
+            ) : null}
           </button>
+          <div className="flex flex-col gap-2">
+            <button
+              className={`active:scale-95 ${helmetData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${helmetData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${helmetData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${helmetData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all ${activeSlot === "helmet" ? `border-2 ${helmetData?.rarity === "legendary" ? "border-yellow-600" : `${helmetData?.rarity === "epic" ? "border-purple-600" : `${helmetData?.rarity === "rare" ? "border-blue-600" : `${helmetData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
+              aria-label="Helmet Slot"
+              onClick={() => {
+                if (activeSlot != "helmet") setActiveSlot("helmet");
+                if (activeTab != "equipment") setActiveTab("equipment");
+              }}
+            >
+              {helmetKey ? (
+                helmetData?.image ? (
+                  <ImageHelper
+                    src={helmetData.image}
+                    alt={helmetKey}
+                    width={800}
+                    height={800}
+                  />
+                ) : (
+                  <div className="truncate p-1 text-sm text-wrap">
+                    {helmetKey.charAt(0).toUpperCase() +
+                      helmetKey
+                        .slice(1)
+                        .replace(/_/g, " ")
+                        .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
+                  </div>
+                )
+              ) : (
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
+                  <FaPlus />
+                </div>
+              )}
+              {formData?.builds?.some(
+                (build) =>
+                  build.data.equipment.helmet.name === helmetKey &&
+                  build.id !== formData.builds[activeBuildIndex]?.id &&
+                  build.data.equipment.helmet.name !== "",
+              ) ? (
+                <div className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
+                  <span className="text-sm">!</span>
+                </div>
+              ) : null}
+            </button>
+
+            <button
+              className={`active:scale-95 ${chestData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${chestData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${chestData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${chestData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all ${activeSlot === "chest" ? `border-2 ${chestData?.rarity === "legendary" ? "border-yellow-600" : `${chestData?.rarity === "epic" ? "border-purple-600" : `${chestData?.rarity === "rare" ? "border-blue-600" : `${chestData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
+              aria-label="Chest Slot"
+              onClick={() => {
+                if (activeSlot != "chest") setActiveSlot("chest");
+                if (activeTab != "equipment") setActiveTab("equipment");
+              }}
+            >
+              {chestKey ? (
+                chestData?.image ? (
+                  <ImageHelper
+                    src={chestData.image}
+                    alt={chestKey}
+                    width={800}
+                    height={800}
+                  />
+                ) : (
+                  <div className="truncate p-1 text-sm text-wrap">
+                    {chestKey.charAt(0).toUpperCase() +
+                      chestKey
+                        .slice(1)
+                        .replace(/_/g, " ")
+                        .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
+                  </div>
+                )
+              ) : (
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
+                  <FaPlus />
+                </div>
+              )}
+              {formData?.builds?.some(
+                (build) =>
+                  build.data.equipment.chest.name === chestKey &&
+                  build.id !== formData.builds[activeBuildIndex]?.id &&
+                  build.data.equipment.chest.name !== "",
+              ) ? (
+                <div className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
+                  <span className="text-sm">!</span>
+                </div>
+              ) : null}
+            </button>
+            <button
+              className={`active:scale-95 ${bootsData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${bootsData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${bootsData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${bootsData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all ${activeSlot === "boots" ? `border-2 ${bootsData?.rarity === "legendary" ? "border-yellow-600" : `${bootsData?.rarity === "epic" ? "border-purple-600" : `${bootsData?.rarity === "rare" ? "border-blue-600" : `${bootsData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
+              aria-label="Boots Slot"
+              onClick={() => {
+                if (activeSlot != "boots") setActiveSlot("boots");
+                if (activeTab != "equipment") setActiveTab("equipment");
+              }}
+            >
+              {bootsKey ? (
+                bootsData?.image ? (
+                  <ImageHelper
+                    src={bootsData.image}
+                    alt={bootsKey}
+                    width={800}
+                    height={800}
+                  />
+                ) : (
+                  <div className="truncate p-1 text-sm text-wrap">
+                    {bootsKey.charAt(0).toUpperCase() +
+                      bootsKey
+                        .slice(1)
+                        .replace(/_/g, " ")
+                        .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
+                  </div>
+                )
+              ) : (
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
+                  <FaPlus />
+                </div>
+              )}
+              {formData?.builds?.some(
+                (build) =>
+                  build.data.equipment.boots.name === bootsKey &&
+                  build.id !== formData.builds[activeBuildIndex]?.id &&
+                  build.data.equipment.boots.name !== "",
+              ) ? (
+                <div className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
+                  <span className="text-sm">!</span>
+                </div>
+              ) : null}
+            </button>
+          </div>
         </div>
+        <button
+          className={`${drifterKey ? "bg-radial from-neutral-700 from-10% to-black/30" : ""} relative flex h-24 w-60 cursor-pointer items-center justify-center border bg-neutral-700 transition-all hover:border-cyan-600 active:scale-95 ${activeSlot === "drifter" ? "border-2 border-cyan-600" : "border-neutral-600"}`}
+          aria-label="Drifter Slot"
+          onClick={() => {
+            if (activeSlot != "drifter") setActiveSlot("drifter");
+            if (activeTab != "drifter") setActiveTab("drifter");
+          }}
+        >
+          {drifterKey ? (
+            drifterData?.image ? (
+              <ImageHelper
+                src={drifterData.image}
+                alt={drifterKey}
+                width={2436}
+                height={1440}
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <div className="truncate p-1 text-sm text-wrap">
+                {drifterKey.charAt(0).toUpperCase() +
+                  drifterKey
+                    .slice(1)
+                    .replace(/_/g, " ")
+                    .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
+              </div>
+            )
+          ) : (
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
+              <FaPlus />
+            </div>
+          )}
+          {formData?.builds?.some(
+            (build) =>
+              build.data.drifter.name === drifterKey &&
+              build.id !== formData.builds[activeBuildIndex]?.id &&
+              build.data.drifter.name !== "",
+          ) ||
+          formData.support.some(
+            (support) => support === drifterKey && support !== "",
+          ) ? (
+            <div className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
+              <span className="text-sm">!</span>
+            </div>
+          ) : null}
+        </button>
         <div className="flex w-60 justify-between border border-neutral-600 bg-neutral-700 p-2">
           <span>Power</span>
           <span>#</span>

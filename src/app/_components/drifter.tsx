@@ -89,6 +89,7 @@ const Drifter = ({
               }
               width={2436}
               height={1440}
+              className="h-full object-cover"
             />
           ) : null}
         </div>
@@ -138,7 +139,8 @@ const Drifter = ({
                 className={`${
                   formData?.builds?.some(
                     (build) => build.data.drifter.name === drifter.name,
-                  )
+                  ) ||
+                  formData.support.some((support) => support === drifter.name)
                     ? "text-neutral-500"
                     : "text-white"
                 }`}

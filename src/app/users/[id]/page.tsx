@@ -35,7 +35,7 @@ const User = async ({
   return (
     <>
       <main className="flex w-4/5 grow gap-2 bg-gray-700/10 p-2">
-        <aside className="mr-2 flex min-w-1/5 flex-col items-center gap-2 p-2">
+        <aside className="mr-2 flex min-w-1/5 flex-col items-center gap-2">
           <Image
             src={user?.image ?? "/default-avatar.jpg"}
             alt="User profile picture"
@@ -45,10 +45,10 @@ const User = async ({
             className="h-60 w-60 rounded-full border-2 border-white"
           />
           <h1 className="text-4xl font-bold">{user?.name}</h1>
-          <div className="rounded bg-neutral-900 p-2">
-            <h3 className="text-center font-bold text-neutral-300">About</h3>
-            <p className="rounded bg-white/5 p-1">
-              Details about the user will be displayed here.
+          <div className="w-full rounded bg-neutral-900 p-2">
+            <h3 className="text-center">About</h3>
+            <p className="rounded bg-neutral-800 p-1 text-sm">
+              Joined: {user?.createdAt.toLocaleDateString()}
             </p>
           </div>
         </aside>

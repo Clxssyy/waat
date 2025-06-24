@@ -7,9 +7,16 @@ type Props = {
   alt: string;
   width: number;
   height: number;
+  className?: string;
 };
 
-export default function ImageHelper({ src, alt, width, height }: Props) {
+export default function ImageHelper({
+  src,
+  alt,
+  width,
+  height,
+  className,
+}: Props) {
   const [loaded, setLoaded] = useState(false);
   const [key, setKey] = useState(0);
 
@@ -19,7 +26,7 @@ export default function ImageHelper({ src, alt, width, height }: Props) {
   }, [src]);
 
   return (
-    <div className="relative flex w-full items-center justify-center">
+    <div className="relative flex h-full w-full items-center justify-center">
       {!loaded && (
         <div className="absolute z-10 flex w-full items-center justify-center text-white">
           <span className="animate-spin">
@@ -34,7 +41,7 @@ export default function ImageHelper({ src, alt, width, height }: Props) {
         alt={alt}
         width={width}
         height={height}
-        className={`transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"}`}
+        className={`transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"} ${className ?? ""}`}
         onLoad={() => setLoaded(true)}
       />
     </div>

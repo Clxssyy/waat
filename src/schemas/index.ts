@@ -60,6 +60,7 @@ export const characterSchema = z.object({
   private: z.boolean(),
   clonedFrom: z.string().nullish(),
   builds: z.array(buildSchema).max(3),
+  support: z.array(z.string()).max(5),
   createdBy: z.object({
     name: z.string().nullish(),
     id: z.string(),

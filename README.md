@@ -1,5 +1,4 @@
 # WAAT
 
-- [ ] Add additional logic to characters
-- [ ] Add support station option
+- [ ] Add additional missing logic to characters
 - [ ] Potentially add a equipment tree view
