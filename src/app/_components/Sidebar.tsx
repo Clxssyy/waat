@@ -41,7 +41,7 @@ const Sidebar = () => {
   return (
     <div
       id="sidebar"
-      className="flex w-1/6 flex-col justify-between border-r border-neutral-700 bg-neutral-800"
+      className="flex min-w-1/6 flex-col justify-between border-r border-neutral-700 bg-neutral-800"
     >
       <div className="hidden-scrollbar flex flex-col divide-y divide-neutral-700 overflow-y-scroll">
         <button

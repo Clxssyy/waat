@@ -15,7 +15,7 @@ const Description = () => {
       {pathname.includes("/description") ? (
         <>
           <div className="flex items-center justify-between">
-            <div className="flex gap-1">
+            <div className="flex items-center gap-1">
               <h1 className="text-2xl font-bold">Description</h1>
               <div className="group relative flex cursor-help items-center rounded-full border border-neutral-600 bg-neutral-800/40 p-2">
                 <FaQuestion className="text-neutral-400" />
@@ -58,7 +58,7 @@ const Description = () => {
                 </div>
               </div>
             </div>
-            <div className="flex gap-1">
+            <div className="flex items-center gap-1">
               <p>Preview:</p>
               <input
                 type="checkbox"
@@ -68,7 +68,7 @@ const Description = () => {
             </div>
           </div>
           {previewMode ? (
-            <div className="grow rounded bg-neutral-800 p-2">
+            <div className="grow overflow-auto rounded bg-neutral-800 p-2">
               <DescriptionParser
                 description={
                   formData?.description != ""
@@ -81,6 +81,8 @@ const Description = () => {
             <textarea
               className="grow rounded bg-neutral-800 p-2 outline-none"
               value={formData.description}
+              id="description_input"
+              name="description input"
               placeholder="Add a description here."
               spellCheck={false}
               maxLength={3000}

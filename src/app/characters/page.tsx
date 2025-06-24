@@ -33,17 +33,15 @@ export default async function Characters({
   return (
     <>
       <main className="flex w-4/5 grow flex-col divide-y divide-neutral-700 bg-gray-700/10">
-        <div className="flex h-96 flex-col items-center justify-center gap-8">
-          <div className="flex flex-col items-center gap-2">
-            <h1 className="text-center text-5xl font-bold text-shadow-black text-shadow-sm">
-              Character Builds
-            </h1>
-            <p className="w-1/2 text-center text-sm text-pretty text-neutral-300">
-              Create and share your character builds with the community or
-              browse through existing builds to find some inspiration!
-            </p>
-          </div>
-          <div className="flex gap-2">
+        <div className="flex h-96 flex-col items-center justify-center gap-2">
+          <h1 className="text-center text-5xl font-bold text-shadow-black text-shadow-sm">
+            Character Builds
+          </h1>
+          <p className="w-1/4 text-center text-sm text-pretty text-neutral-300">
+            Create and share your character builds with the community or browse
+            through existing builds to find some inspiration!
+          </p>
+          <div className="mt-2 flex gap-2">
             <Link
               href={session ? "/characters/create" : "/api/auth/signin"}
               className="rounded border border-green-600 bg-green-700 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-105 hover:brightness-125 active:scale-95"

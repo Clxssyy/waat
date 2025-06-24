@@ -36,8 +36,8 @@ const RateModal = () => {
           <IoClose className="text-2xl hover:text-red-400" />
         </button>
         <div className="flex flex-col items-center gap-2">
-          <h2 className="text-2xl font-bold">Rate this build</h2>
-          <p className="w-4/5 text-center text-pretty text-neutral-400">
+          <h2 className="text-center text-2xl font-bold">Rate this build</h2>
+          <p className="w-4/5 text-center text-wrap text-neutral-400">
             Help the community see builds by boosting it in the search results
             and providing feedback to the creator!
           </p>
