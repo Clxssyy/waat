@@ -29,7 +29,7 @@ export default async function BuildLayout({
 
   return (
     <>
-      <SessionProvider>
+      <SessionProvider session={session}>
         <BuildFormProvider character={character} isCreator={isCreator}>
           {deleteModal}
           {rateModal}

@@ -88,7 +88,7 @@ const Header = async () => {
           </Link>
         )}
       </div>
-      <SessionProvider>
+      <SessionProvider session={session}>
         <HamburgerToggle />
       </SessionProvider>
     </header>
