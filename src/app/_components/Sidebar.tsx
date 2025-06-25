@@ -39,7 +39,7 @@ const Sidebar = () => {
   const averageRating = totalRating / character._count.ratings;
 
   return (
-    <aside className="flex min-w-1/8 flex-col justify-between border-r border-neutral-700 bg-neutral-800">
+    <aside className="flex w-1/8 shrink-0 flex-col justify-between border-r border-neutral-700 bg-neutral-800">
       <div className="hidden-scrollbar flex flex-col divide-y divide-neutral-700 overflow-y-scroll">
         <button
           onClick={() => router.push("/characters")}

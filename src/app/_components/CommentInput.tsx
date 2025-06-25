@@ -14,7 +14,7 @@ const CommentInput = ({
   parentId: string | null;
   onSubmit?: () => void;
 }) => {
-  const session = useSession();
+  const { data: session } = useSession();
   const router = useRouter();
   const [newComment, setNewComment] = useState<string>();
   const { formData } = useBuildForm();
@@ -33,7 +33,7 @@ const CommentInput = ({
     <div className="flex flex-col gap-2">
       <div className="flex items-center gap-1">
         <Image
-          src={session.data?.user?.image ?? "/default-avatar.jpg"}
+          src={session?.user.image ?? "/default-avatar.jpg"}
           alt="User profile picture"
           width={100}
           height={100}
@@ -52,8 +52,7 @@ const CommentInput = ({
             if (e.key === "Enter" && !e.shiftKey) {
               e.preventDefault();
 
-              if (!session.data?.user.id)
-                return router.push("/api/auth/signin");
+              if (!session?.user.id) return router.push("/api/auth/signin");
               if (!newComment) return;
 
               addComment.mutate({
@@ -70,7 +69,7 @@ const CommentInput = ({
           className="cursor-pointer place-self-end rounded border border-neutral-600 bg-neutral-700 px-3 py-1 text-sm hover:brightness-110 disabled:opacity-40"
           disabled={addComment.isPending}
           onClick={() => {
-            if (!session.data?.user.id) return router.push("/api/auth/signin");
+            if (!session?.user.id) return router.push("/api/auth/signin");
             if (!newComment) return;
 
             addComment.mutate({
