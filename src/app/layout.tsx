@@ -8,7 +8,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 
 export const metadata: Metadata = {
   title: "WAAT",
-  description: "Warborne Above Ashes Tools: Character Creator",
+  description: "Warborne Above Ashes Tools: Character Creator, Guides, & News",
   icons: [{ rel: "icon", url: "/WT_Favicon.ico" }],
 };
 
@@ -24,9 +24,11 @@ export default function RootLayout({
     <html lang="en" className={`${geist.variable}`}>
       <body>
         <TRPCReactProvider>
-          <div className="scrollbar flex h-screen flex-col items-center overflow-auto bg-neutral-800 text-white">
+          <div className="relative flex h-screen flex-col">
             <Header />
-            {children}
+            <div className="scrollbar flex flex-1 flex-col items-center overflow-y-auto">
+              {children}
+            </div>
           </div>
         </TRPCReactProvider>
       </body>

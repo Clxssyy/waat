@@ -345,11 +345,11 @@ const BuildDisplay = () => {
             </div>
           ) : null}
         </button>
-        <div className="flex w-60 justify-between border border-neutral-600 bg-neutral-700 p-2">
+        <div className="flex w-full justify-between border border-neutral-600 bg-neutral-700 p-2">
           <span>Power</span>
           <span>#</span>
         </div>
-        <div className="flex w-60 flex-col gap-2 border border-neutral-600 bg-neutral-700 p-2">
+        <div className="flex w-full flex-col gap-2 border border-neutral-600 bg-neutral-700 p-2">
           <h2 className="text-center">
             Stats <span className="text-neutral-400">({statPoints})</span>
           </h2>
@@ -629,7 +629,7 @@ const BuildDisplay = () => {
             </div>
           </div>
         </div>
-        <div className="flex w-60 grow flex-col gap-2 border border-neutral-600 bg-neutral-700 p-2">
+        <div className="flex w-full grow flex-col gap-2 border border-neutral-600 bg-neutral-700 p-2">
           <h2 className="text-center">Details</h2>
           <div className="grid grid-cols-2">
             <span>HP</span>

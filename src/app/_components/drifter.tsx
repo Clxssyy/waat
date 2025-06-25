@@ -37,7 +37,7 @@ const Drifter = ({
     <div className="flex flex-col gap-2 p-2">
       <div className="flex flex-wrap gap-2">
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-125 ${activeFilter === "all" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "all" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
           onClick={() => {
             setActiveFilter("all");
           }}
@@ -45,7 +45,7 @@ const Drifter = ({
           All
         </button>
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-125 ${activeFilter === "strength" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "strength" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
           onClick={() => {
             setActiveFilter("strength");
           }}
@@ -53,7 +53,7 @@ const Drifter = ({
           Strength
         </button>
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-125 ${activeFilter === "agility" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "agility" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
           onClick={() => {
             setActiveFilter("agility");
           }}
@@ -61,7 +61,7 @@ const Drifter = ({
           Agility
         </button>
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-125 ${activeFilter === "intelligence" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "intelligence" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
           onClick={() => {
             setActiveFilter("intelligence");
           }}
@@ -69,7 +69,7 @@ const Drifter = ({
           Intelligence
         </button>
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-125 ${activeFilter === "logistics" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "logistics" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
           onClick={() => {
             setActiveFilter("logistics");
           }}
@@ -151,7 +151,7 @@ const Drifter = ({
           </select>
         </div>
         <button
-          className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700 transition-all hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40`}
+          className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700 transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40`}
           disabled={!formData?.builds?.[activeBuildIndex]?.data?.drifter.name}
           onClick={() => {
             setFormData((prev) => {
@@ -203,7 +203,7 @@ const Drifter = ({
                 <h2 className="text-lg">Skills</h2>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="flex flex-col">
-                    <h3 className="text-sm">Active Skill</h3>
+                    <h3>Active Skill</h3>
                     <div className="flex flex-wrap gap-2">
                       <div className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black">
                         {drifterData?.activeSkill.image ? (
@@ -215,7 +215,7 @@ const Drifter = ({
                           />
                         ) : null}
                       </div>
-                      <div className="flex items-center rounded bg-neutral-800 p-2">
+                      <div className="flex grow items-center justify-center rounded bg-neutral-800 p-2">
                         <p className="text-sm wrap-anywhere">
                           {drifterData?.activeSkill.name}
                         </p>
@@ -231,7 +231,7 @@ const Drifter = ({
                     </div>
                   </div>
                   <div className="flex flex-col">
-                    <h3 className="text-sm">Passive Skill</h3>
+                    <h3>Passive Skill</h3>
                     <div className="flex flex-wrap gap-2">
                       <div className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black">
                         {drifterData?.passiveSkill.image ? (
@@ -243,7 +243,7 @@ const Drifter = ({
                           />
                         ) : null}
                       </div>
-                      <div className="flex items-center rounded bg-neutral-800 p-2">
+                      <div className="flex grow items-center justify-center rounded bg-neutral-800 p-2">
                         <p className="text-sm wrap-anywhere">
                           {drifterData?.passiveSkill.name}
                         </p>
@@ -371,7 +371,7 @@ const Drifter = ({
                   />
                 </div>
                 <button
-                  className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 transition-all hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40`}
+                  className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40`}
                   disabled={
                     (formData?.builds?.[activeBuildIndex]?.data?.drifter
                       .mastery ?? 0) === 0

@@ -28,3 +28,7 @@
   background: url("/tile_background.png");
   background-size: cover;
 }
+
+body {
+  @apply bg-neutral-800 text-white;
+}

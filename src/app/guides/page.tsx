@@ -5,8 +5,8 @@ import PlaceholderCard from "../_components/PlaceholderCard";
 const Guides = () => {
   return (
     <>
-      <main className="flex w-4/5 grow flex-col divide-y divide-neutral-700 bg-gray-700/10">
-        <div className="p-2">
+      <main className="flex w-full flex-1 flex-col divide-y divide-neutral-700 bg-gray-700/10 sm:w-4/5">
+        <div className="flex h-32 flex-col justify-center p-2">
           <h1 className="text-center text-2xl font-bold text-shadow-black text-shadow-sm">
             Guides
           </h1>

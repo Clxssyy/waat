@@ -67,7 +67,7 @@ const Equipment = ({
     <div className="flex flex-col gap-2 rounded p-2">
       <div className="flex flex-wrap gap-2">
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-125 ${activeFilter === "all" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "all" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
           onClick={() => {
             setActiveFilter("all");
           }}
@@ -75,7 +75,7 @@ const Equipment = ({
           All
         </button>
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-125 ${activeFilter === "strength" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "strength" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
           onClick={() => {
             setActiveFilter("strength");
           }}
@@ -83,7 +83,7 @@ const Equipment = ({
           Strength
         </button>
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-125 ${activeFilter === "agility" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "agility" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
           onClick={() => {
             setActiveFilter("agility");
           }}
@@ -91,7 +91,7 @@ const Equipment = ({
           Agility
         </button>
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-125 ${activeFilter === "intelligence" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "intelligence" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
           onClick={() => {
             setActiveFilter("intelligence");
           }}
@@ -100,7 +100,7 @@ const Equipment = ({
         </button>
         {slot === "chest" && (
           <button
-            className={`cursor-pointer rounded border px-3 py-1 hover:brightness-125 ${activeFilter === "logistics" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+            className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "logistics" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
             onClick={() => {
               setActiveFilter("logistics");
             }}
@@ -201,7 +201,7 @@ const Equipment = ({
           </select>
         </div>
         <button
-          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700 transition-all hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40"
+          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700 transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
           aria-label="Clear equipment"
           disabled={
             !formData?.builds?.[activeBuildIndex]?.data?.equipment[slot]
@@ -251,7 +251,7 @@ const Equipment = ({
                 {slot === "weapon" ? (
                   <>
                     <div className="flex flex-col">
-                      <h3 className="text-sm">Basic Attacks</h3>
+                      <h3>Basic Attacks</h3>
                       <div className="flex flex-wrap gap-2">
                         {skillData?.basic_attacks.map((skill, i) => {
                           return (
@@ -301,7 +301,7 @@ const Equipment = ({
                         })}
                         {formData?.builds?.[activeBuildIndex]?.data?.skills
                           ?.basic ? (
-                          <div className="flex items-center rounded bg-neutral-800 p-2">
+                          <div className="flex grow items-center justify-center rounded bg-neutral-800 p-2">
                             <p className="text-sm wrap-anywhere">
                               {
                                 formData.builds?.[activeBuildIndex].data.skills
@@ -327,7 +327,7 @@ const Equipment = ({
                       ) : null}
                     </div>
                     <div className="flex flex-col">
-                      <h3 className="text-sm">Skill 1</h3>
+                      <h3>Skill 1</h3>
                       <div className="flex flex-wrap gap-2">
                         {skillData?.common_skills.map((skill, i) => {
                           return (
@@ -377,7 +377,7 @@ const Equipment = ({
                         })}
                         {formData?.builds?.[activeBuildIndex]?.data?.skills
                           ?.common ? (
-                          <div className="flex items-center rounded bg-neutral-800 p-2">
+                          <div className="flex grow items-center justify-center rounded bg-neutral-800 p-2">
                             <p className="text-sm wrap-anywhere">
                               {
                                 formData.builds?.[activeBuildIndex].data.skills
@@ -403,7 +403,7 @@ const Equipment = ({
                       ) : null}
                     </div>
                     <div className="flex flex-col">
-                      <h3 className="text-sm">Skill 2 (Weapon Skill)</h3>
+                      <h3>Skill 2 (Weapon Skill)</h3>
                       <div className="flex flex-wrap gap-2">
                         <div className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black">
                           {equipmentData?.core_skill.image ? (
@@ -415,7 +415,7 @@ const Equipment = ({
                             />
                           ) : null}
                         </div>
-                        <div className="flex items-center rounded bg-neutral-800 p-2">
+                        <div className="flex grow items-center justify-center rounded bg-neutral-800 p-2">
                           <p className="text-sm wrap-anywhere">
                             {equipmentData?.core_skill.name}
                           </p>
@@ -431,7 +431,7 @@ const Equipment = ({
                       </div>
                     </div>
                     <div className="flex flex-col">
-                      <h3 className="text-sm">Passive Skill</h3>
+                      <h3>Passive Skill</h3>
                       <div className="flex flex-wrap gap-2">
                         <div className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black">
                           {skillData?.passive_skill.image ? (
@@ -443,7 +443,7 @@ const Equipment = ({
                             />
                           ) : null}
                         </div>
-                        <div className="flex items-center rounded bg-neutral-800 p-2">
+                        <div className="flex grow items-center justify-center rounded bg-neutral-800 p-2">
                           <p className="text-sm wrap-anywhere">
                             {skillData?.passive_skill.name}
                           </p>
@@ -462,7 +462,7 @@ const Equipment = ({
                   </>
                 ) : (
                   <div className="flex flex-col">
-                    <h3 className="text-sm">
+                    <h3>
                       {slot.charAt(0).toUpperCase() + slot.slice(1)} Skill
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -476,7 +476,7 @@ const Equipment = ({
                           />
                         ) : null}
                       </div>
-                      <div className="flex items-center rounded bg-neutral-800 p-2">
+                      <div className="flex grow items-center justify-center rounded bg-neutral-800 p-2">
                         <p className="text-sm wrap-anywhere">
                           {equipmentData?.core_skill.name}
                         </p>
@@ -620,7 +620,7 @@ const Equipment = ({
               </div>
               <button
                 aria-label="Clear mastery level"
-                className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 transition-all hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40`}
+                className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40`}
                 disabled={
                   (formData?.builds?.[activeBuildIndex]?.data?.equipment[slot]
                     .mastery ?? 0) === 0

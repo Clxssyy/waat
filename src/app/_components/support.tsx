@@ -130,7 +130,7 @@ const Support = () => {
             </select>
           </div>
           <button
-            className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700 transition-all hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40`}
+            className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700 transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40`}
             disabled={!formData.support[activeSupport]}
             onClick={() => {
               setFormData((prev) => {
@@ -150,8 +150,8 @@ const Support = () => {
       )}
       <div className="flex flex-col">
         <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-          <div className="flex justify-between">
-            <h2 className="text-xl">Support Bonuses</h2>
+          <div className="flex justify-between text-lg">
+            <h2>Support Bonuses</h2>
             <span>
               {formData.support.filter((support) => support != "").length +
                 "/5"}

@@ -67,7 +67,7 @@ const CommentInput = ({
           autoFocus
         />
         <button
-          className="cursor-pointer place-self-end rounded border border-neutral-600 bg-neutral-700 px-3 py-1 text-sm hover:brightness-125 disabled:opacity-40"
+          className="cursor-pointer place-self-end rounded border border-neutral-600 bg-neutral-700 px-3 py-1 text-sm hover:brightness-110 disabled:opacity-40"
           disabled={addComment.isPending}
           onClick={() => {
             if (!session.data?.user.id) return router.push("/api/auth/signin");

@@ -3,22 +3,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaRegUser } from "react-icons/fa6";
 import { FiLogIn, FiLogOut } from "react-icons/fi";
+import HamburgerToggle from "./HamburgerMenu";
+import { SessionProvider } from "next-auth/react";
 
 const Header = async () => {
   const session = await auth();
 
   return (
-    <header className="flex min-h-16 w-full justify-center border-b border-neutral-800 bg-neutral-900">
-      <div className="flex w-4/5 items-center justify-between bg-neutral-900 px-5">
+    <header className="sticky top-0 z-40 flex h-16 shrink-0 items-center justify-center border-b border-neutral-800 bg-neutral-900">
+      <div className="flex w-4/5 items-center justify-between">
         <h1>
           <Link
             href="/"
-            className="text-2xl font-bold transition-colors hover:text-neutral-100"
+            className="text-2xl font-bold transition-colors hover:text-neutral-200"
           >
             WAAT
           </Link>
         </h1>
-        <nav aria-label="Main Navigation">
+        <nav aria-label="Main Navigation" className="hidden sm:block">
           <ul className="flex gap-4">
             <li>
               <Link
@@ -47,7 +49,7 @@ const Header = async () => {
           </ul>
         </nav>
         {session ? (
-          <div className="group relative">
+          <div className="group relative hidden sm:block">
             <Image
               src={session.user.image ?? "/default-avatar.jpg"}
               alt="User profile picture"
@@ -57,7 +59,7 @@ const Header = async () => {
             />
             <nav className="absolute right-0 hidden translate-2 rounded border-1 border-neutral-700 transition-colors group-hover:block before:absolute before:-top-4 before:h-4 before:w-full">
               <ul>
-                <li className="bg-neutral-800 hover:brightness-125">
+                <li className="bg-neutral-800 hover:brightness-110">
                   <Link
                     href={`/users/${session.user.id}`}
                     className="flex items-center gap-2 px-4 py-2 text-sm"
@@ -65,7 +67,7 @@ const Header = async () => {
                     <FaRegUser className="text-lg" /> Profile
                   </Link>
                 </li>
-                <li className="bg-neutral-800 hover:brightness-125">
+                <li className="bg-neutral-800 hover:brightness-110">
                   <Link
                     href={"/api/auth/signout"}
                     className="flex items-center gap-2 px-4 py-2 text-sm"
@@ -80,12 +82,15 @@ const Header = async () => {
         ) : (
           <Link
             href={"/api/auth/signin"}
-            className="flex items-center gap-2 rounded px-2 py-1 transition-colors hover:bg-white/10"
+            className="hidden items-center gap-2 rounded px-2 py-1 transition-colors hover:bg-white/10 sm:flex"
           >
             Sign In <FiLogIn className="text-lg" />
           </Link>
         )}
       </div>
+      <SessionProvider>
+        <HamburgerToggle />
+      </SessionProvider>
     </header>
   );
 };

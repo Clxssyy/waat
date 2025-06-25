@@ -32,25 +32,23 @@ export default async function Characters({
 
   return (
     <>
-      <main className="flex w-4/5 grow flex-col divide-y divide-neutral-700 bg-gray-700/10">
-        <div className="flex h-96 flex-col items-center justify-center gap-2">
-          <h1 className="text-center text-5xl font-bold text-shadow-black text-shadow-sm">
-            Character Builds
-          </h1>
-          <p className="w-1/4 text-center text-sm text-pretty text-neutral-300">
+      <main className="flex w-full flex-1 flex-col divide-y divide-neutral-700 bg-gray-700/10 sm:w-4/5">
+        <div className="flex h-96 flex-col items-center justify-center gap-2 px-4 text-center">
+          <h1 className="text-5xl font-bold text-wrap">Character Builds</h1>
+          <p className="text-sm text-pretty text-neutral-300">
             Create and share your character builds with the community or browse
-            through existing builds to find some inspiration!
+            through existing ones to find some inspiration!
           </p>
           <div className="mt-2 flex gap-2">
             <Link
               href={session ? "/characters/create" : "/api/auth/signin"}
-              className="rounded border border-green-600 bg-green-700 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-105 hover:brightness-125 active:scale-95"
+              className="rounded border border-green-500 bg-green-600 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
             >
               Create
             </Link>
             <Link
               href={session ? `/users/${session.user.id}` : "/api/auth/signin"}
-              className="rounded border border-neutral-600 bg-neutral-700 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-105 hover:brightness-125 active:scale-95"
+              className="rounded border border-neutral-600 bg-neutral-700 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
             >
               Your Builds
             </Link>
@@ -75,7 +73,7 @@ export default async function Characters({
                       ...(drifter ? { drifter } : {}),
                       page: (currentPage - 1).toString(),
                     }).toString()}`}
-                    className="rounded border border-neutral-700 bg-neutral-800 p-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95"
+                    className="rounded border border-neutral-700 bg-neutral-800 p-1 transition-all hover:scale-105 hover:brightness-110 active:scale-95"
                   >
                     <IoChevronBack />
                   </Link>

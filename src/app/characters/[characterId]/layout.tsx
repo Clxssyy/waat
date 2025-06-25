@@ -33,11 +33,9 @@ export default async function BuildLayout({
         <BuildFormProvider character={character} isCreator={isCreator}>
           {deleteModal}
           {rateModal}
-          <main className="flex w-full grow overflow-hidden">
-            <div className="flex w-full grow overflow-hidden bg-neutral-950">
-              <Sidebar />
-              {children}
-            </div>
+          <main className="flex w-full grow overflow-hidden bg-neutral-950">
+            <Sidebar />
+            {children}
           </main>
         </BuildFormProvider>
       </SessionProvider>

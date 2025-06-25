@@ -8,7 +8,7 @@ const SettingsPage = () => {
   const { formData, setFormData, isCreator } = useBuildForm();
 
   return (
-    <div className="m-2 flex grow flex-col gap-4 rounded border border-neutral-600 bg-neutral-700 p-2">
+    <div className="m-2 flex flex-1 flex-col gap-4 rounded border border-neutral-600 bg-neutral-700 p-2">
       <h1 className="text-2xl font-bold">Settings</h1>
       <div className="flex flex-col gap-2">
         <div>
@@ -82,7 +82,7 @@ const SettingsPage = () => {
             </div>
             <div className="flex justify-center">
               <Link
-                className="flex cursor-pointer items-center justify-center gap-1 rounded border border-red-400 bg-red-500 p-2 font-bold transition-all hover:scale-105 hover:brightness-125 active:scale-95"
+                className="flex cursor-pointer items-center justify-center gap-1 rounded border border-red-400 bg-red-500 p-2 font-bold transition-all hover:scale-105 hover:brightness-110 active:scale-95"
                 href={`/characters/${formData.id}/delete`}
               >
                 <FaTrash />

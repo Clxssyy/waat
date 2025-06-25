@@ -21,8 +21,8 @@ const Create = () => {
   });
 
   return (
-    <div className="absolute z-20 flex h-full w-full items-center justify-center bg-black/70">
-      <div className="relative w-1/4 rounded border border-neutral-700 bg-neutral-800 p-4">
+    <div className="absolute top-0 z-20 flex h-full w-full items-center justify-center bg-black/70">
+      <div className="relative rounded border border-neutral-700 bg-neutral-800 p-4 sm:w-1/4">
         <button
           onClick={() => {
             router.back();
@@ -32,7 +32,7 @@ const Create = () => {
           <IoClose className="text-2xl hover:text-red-400" />
         </button>
         <div className="flex flex-col items-center gap-2">
-          <h2 className="text-lg font-bold">Create Character</h2>
+          <h2 className="text-center text-lg font-bold">Create Character</h2>
           <div className="flex w-full flex-col">
             <label htmlFor="name_input" className="text-sm text-neutral-200">
               Character Name
@@ -52,7 +52,7 @@ const Create = () => {
               Role <span className="text-neutral-400">(Optional)</span>
             </label>
             <select
-              className="grow rounded border border-neutral-600 bg-neutral-700 px-2 py-1"
+              className="grow cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 py-1"
               id="role_input"
               value={roleInput}
               onChange={(e) => setRoleInput(e.target.value as characterRoles)}
@@ -64,7 +64,7 @@ const Create = () => {
             </select>
           </div>
           <button
-            className="w-full cursor-pointer rounded border border-green-600 bg-green-700 px-2 py-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95 disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40"
+            className="w-full cursor-pointer rounded border border-green-600 bg-green-700 px-2 py-1 transition-all hover:scale-[102%] hover:brightness-110 active:scale-[98%] disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40"
             onClick={() => {
               characterCreate.mutate({
                 name: nameInput,

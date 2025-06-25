@@ -68,7 +68,7 @@ const Search = () => {
           <button
             type="reset"
             aria-label="Clear Filters"
-            className="aspect-square cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 not-sm:hidden hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40"
+            className="aspect-square cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 not-sm:hidden hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
             disabled={!drifter && !q && !role}
             onClick={clearAll}
           >

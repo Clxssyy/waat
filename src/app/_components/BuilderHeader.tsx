@@ -22,14 +22,11 @@ const BuilderHeader = () => {
   if (!character) notFound();
 
   return (
-    <div
-      id="header"
-      className="mx-12 mt-2 flex min-h-16 items-center justify-between not-sm:flex-col"
-    >
-      <div className="flex h-full items-center gap-2">
+    <header className="mx-12 mt-2 flex min-h-16 items-center justify-center sm:justify-between">
+      <div className="flex items-center gap-2">
         <h1 className="truncate text-2xl">{character.name}</h1>
         <select
-          className="cursor-pointer rounded border border-neutral-700 bg-neutral-800 px-2 py-1"
+          className="hidden cursor-pointer rounded border border-neutral-700 bg-neutral-800 px-2 py-1 sm:block"
           aria-label="Role"
           value={formData?.role ?? ""}
           onChange={(e) => {
@@ -42,9 +39,9 @@ const BuilderHeader = () => {
           <option value="tank">Tank</option>
         </select>
       </div>
-      <div className="flex h-full items-center gap-2">
+      <div className="hidden items-center gap-2 sm:flex">
         <button
-          className={`cursor-pointer rounded border px-2 py-1 transition-all hover:brightness-125 not-disabled:hover:scale-105 not-disabled:active:scale-95 disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40 ${hasChanges && isCreator && "border-green-600 bg-green-700"} ${!isCreator && "border-cyan-500 bg-cyan-600"}`}
+          className={`cursor-pointer rounded border px-2 py-1 transition-all hover:brightness-110 not-disabled:hover:scale-105 not-disabled:active:scale-95 disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40 ${hasChanges && isCreator && "border-green-600 bg-green-700"} ${!isCreator && "border-cyan-500 bg-cyan-600"}`}
           onClick={
             isCreator
               ? () => {
@@ -61,7 +58,7 @@ const BuilderHeader = () => {
           ""
         ) : (
           <Link
-            className="flex cursor-pointer items-center justify-center gap-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1 transition-all hover:scale-105 hover:brightness-125 active:scale-95"
+            className="flex cursor-pointer items-center justify-center gap-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1 transition-all hover:scale-105 hover:brightness-110 active:scale-95"
             href={`/characters/${character.id}/rate`}
           >
             <IoIosStarOutline />
@@ -69,7 +66,7 @@ const BuilderHeader = () => {
           </Link>
         )}
         <button
-          className="flex cursor-pointer items-center justify-center rounded border border-neutral-700 bg-neutral-800 p-1 transition-all hover:brightness-125 active:scale-95"
+          className="flex aspect-square h-[34px] cursor-pointer items-center justify-center rounded border border-neutral-700 bg-neutral-800 transition-all hover:brightness-110 active:scale-95"
           aria-label="Share"
           onClick={async () => {
             await navigator.clipboard.writeText(window.location.href);
@@ -78,7 +75,7 @@ const BuilderHeader = () => {
           <IoMdShare />
         </button>
       </div>
-    </div>
+    </header>
   );
 };
 

@@ -160,7 +160,7 @@ const CommentCard = ({ comment }: { comment: CommentWithReplies }) => {
         </div>
         <div ref={ellipsisMenu}>
           <button
-            className="cursor-pointer rounded bg-neutral-800 p-1 hover:brightness-125"
+            className="cursor-pointer rounded bg-neutral-800 p-1 hover:brightness-110"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <FaEllipsisVertical />
@@ -170,7 +170,7 @@ const CommentCard = ({ comment }: { comment: CommentWithReplies }) => {
           >
             {isAuthor ? (
               <button
-                className="cursor-pointer bg-neutral-700 px-2 py-0.5 text-sm transition-all hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40"
+                className="cursor-pointer bg-neutral-700 px-2 py-0.5 text-sm transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
                 onClick={() => deleteComment.mutate({ id: comment.id })}
                 disabled={deleteComment.isPending || deleteComment.isSuccess}
               >
@@ -178,7 +178,7 @@ const CommentCard = ({ comment }: { comment: CommentWithReplies }) => {
               </button>
             ) : null}
             <button
-              className="cursor-pointer bg-neutral-700 px-2 py-0.5 text-sm transition-all hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40"
+              className="cursor-pointer bg-neutral-700 px-2 py-0.5 text-sm transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
               onClick={() => setIsMenuOpen(false)}
             >
               Report

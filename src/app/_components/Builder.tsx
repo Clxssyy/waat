@@ -4,9 +4,9 @@ import BuildEditor from "./BuildEditor";
 
 const Builder = () => {
   return (
-    <div className="scrollbar flex w-5/6 flex-col gap-2 overflow-x-hidden overflow-y-scroll bg-neutral-950">
+    <div className="scrollbar flex flex-1 flex-col gap-2 overflow-x-hidden overflow-y-scroll bg-neutral-950">
       <BuilderHeader />
-      <div className="mb-2 flex grow gap-12 bg-neutral-950 not-lg:flex-col not-lg:place-items-center lg:mx-12">
+      <div className="mx-12 mb-2 flex grow flex-col gap-12 bg-neutral-950 lg:flex-row">
         <BuildDisplay />
         <BuildEditor />
       </div>

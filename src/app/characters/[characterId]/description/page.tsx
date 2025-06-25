@@ -11,7 +11,7 @@ const Description = () => {
   const pathname = usePathname();
   const [previewMode, setPreviewMode] = useState<boolean>(false);
   return (
-    <div className="m-2 flex grow flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+    <div className="m-2 flex flex-1 flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
       {pathname.includes("/description") ? (
         <>
           <div className="flex items-center justify-between">

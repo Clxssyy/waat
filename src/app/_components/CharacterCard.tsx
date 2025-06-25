@@ -26,7 +26,7 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
   return (
     <Link
       href={`/characters/${character.id}`}
-      className="flex h-48 flex-col justify-between gap-2 rounded border border-neutral-800 bg-neutral-900 p-2 transition-all hover:scale-[102%] hover:brightness-125 active:scale-[98%]"
+      className="flex h-full min-h-48 flex-col justify-between gap-2 rounded border border-neutral-800 bg-neutral-900 p-2 transition-all hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
     >
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
@@ -36,7 +36,7 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
         <p className="rounded border border-neutral-700 bg-neutral-800 p-1">
           {character.builds.length} / 3 Drifters
         </p>
-        <div className="flex gap-1 text-sm">
+        <div className="flex flex-wrap gap-1 text-sm">
           {drifterData.map((drifter, i) =>
             drifter?.name ? (
               <div
