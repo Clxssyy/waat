@@ -204,7 +204,7 @@ const Equipment = ({
           className="flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700 transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
           aria-label="Clear equipment"
           disabled={
-            !formData?.builds?.[activeBuildIndex]?.data?.equipment[slot]
+            !formData?.builds?.[activeBuildIndex]?.data?.equipment[slot].name
           }
           onClick={() => {
             setFormData((prev) => {
@@ -219,7 +219,11 @@ const Equipment = ({
                           ...b.data,
                           equipment: {
                             ...b.data.equipment,
-                            [slot]: "",
+                            [slot]: {
+                              name: "",
+                              mastery: 0,
+                              tier: "",
+                            },
                           },
                         },
                       }
