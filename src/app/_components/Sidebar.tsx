@@ -51,10 +51,10 @@ const Sidebar = () => {
           <IoMdArrowRoundBack />
         </button>
         <Link
-          className="flex cursor-pointer items-center justify-center gap-4 bg-neutral-800 p-4 text-lg not-2xl:flex-col hover:brightness-125"
+          className="flex cursor-pointer items-center justify-center gap-4 bg-neutral-800 p-4 not-2xl:flex-col hover:brightness-125"
           href={isCreator ? "" : `/characters/${character.id}/rate`}
         >
-          <div className="hidden text-2xl lg:flex">
+          <div className="hidden text-xl lg:flex">
             {Array.from({ length: 5 }).map((_, index) => {
               if (averageRating > index && averageRating < index + 1) {
                 return (
@@ -76,7 +76,7 @@ const Sidebar = () => {
               );
             })}
           </div>
-          <p className="hidden text-center text-neutral-400 lg:block">
+          <p className="hidden text-center text-sm text-neutral-400 lg:block">
             <span className="text-white">{averageRating || 0}</span> out of 5 (
             {character._count.ratings})
           </p>
