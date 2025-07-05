@@ -248,7 +248,7 @@ export const characterRouter = createTRPCRouter({
           ? {
               some: {
                 data: {
-                  path: ["drifter"],
+                  path: ["drifter", "name"],
                   equals: input.drifter || undefined,
                 },
               },
