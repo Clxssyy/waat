@@ -26,45 +26,47 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
   return (
     <Link
       href={`/characters/${character.id}`}
-      className="flex h-full min-h-48 flex-col justify-between gap-2 rounded border border-neutral-800 bg-neutral-900 p-2 transition-all hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
+      className="flex h-full min-h-40 flex-col justify-between gap-2 rounded border border-neutral-700 bg-gradient-to-br from-neutral-800 via-neutral-900 to-neutral-950 p-2 transition-all hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
     >
-      <div className="flex flex-col gap-2">
-        <div className="flex items-center justify-between">
-          <h3 className="truncate">{character.name}</h3>
-          {character.private ? <FaEyeSlash className="h-5 w-5" /> : null}
-        </div>
-        <p className="rounded border border-neutral-700 bg-neutral-800 p-1">
-          {character.builds.length} / 3 Drifters
-        </p>
-        <div className="flex flex-wrap gap-1 text-sm">
-          {drifterData.map((drifter, i) =>
-            drifter?.name ? (
-              <div
-                key={character.id + "_" + drifter?.name + "_" + i}
-                className={`rounded border p-1 ${drifter?.type === "strength" ? "border-red-400 bg-red-400/20" : `${drifter?.type === "agility" ? "border-green-400 bg-green-400/20" : `${drifter?.type === "intelligence" ? "border-blue-400 bg-blue-400/20" : `${drifter?.type === "logistics" ? "border-yellow-400 bg-yellow-400/20" : "border-neutral-700 bg-neutral-800"}`}`}`}`}
-              >
-                {drifter?.name}
-              </div>
-            ) : null,
-          )}
-        </div>
-      </div>
-      <div className="flex flex-wrap justify-between">
-        <div className="flex items-end gap-2">
+      <div className="flex flex-col gap-1">
+        <div className="flex justify-between gap-1">
+          <div className="flex items-center gap-1 overflow-hidden">
+            <h3 className="grow truncate text-lg font-bold">
+              {character.name}
+            </h3>
+            {character.private ? (
+              <FaEyeSlash className="text-lg text-neutral-400" />
+            ) : null}
+          </div>
           {character.role ? (
-            <span className="rounded border border-neutral-700 bg-neutral-800 p-1">
+            <span className="w-fit rounded border border-neutral-700 bg-neutral-800 p-1">
               {character.role === "dps"
                 ? character.role.toUpperCase()
                 : character.role.charAt(0).toUpperCase() +
                   character.role.slice(1)}
             </span>
           ) : null}
-          <span className="text-xs">
-            {character.createdAt.toLocaleDateString()}
-          </span>
         </div>
+        <div className="flex flex-wrap gap-1">
+          {drifterData.map((drifter, i) =>
+            drifter?.name ? (
+              <span
+                key={character.id + "_" + drifter?.name + "_" + i}
+                className={`rounded border px-2 py-1 text-sm ${drifter?.type === "strength" ? "border-red-400 bg-red-400/20" : `${drifter?.type === "agility" ? "border-green-400 bg-green-400/20" : `${drifter?.type === "intelligence" ? "border-blue-400 bg-blue-400/20" : `${drifter?.type === "logistics" ? "border-yellow-400 bg-yellow-400/20" : "border-neutral-700 bg-neutral-800"}`}`}`}`}
+              >
+                {drifter?.name}
+              </span>
+            ) : null,
+          )}
+        </div>
+      </div>
+      <div className="flex flex-wrap items-end justify-between">
+        <span className="text-xs">
+          {character.createdAt.toLocaleDateString()}
+        </span>
         <div className="flex flex-col">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center justify-end gap-2">
+            <h4 className="text-sm">{character.createdBy.name}</h4>
             <Image
               src={character.createdBy.image ?? "/default-avatar.jpg"}
               width={100}
@@ -72,13 +74,12 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
               alt="creator pfp"
               className="h-6 w-6 rounded-full"
             />
-            <h4 className="text-sm">{character.createdBy.name}</h4>
           </div>
           <div className="flex items-center gap-1">
             <span className="text-sm text-neutral-400">
               ({character._count.ratings})
             </span>
-            <div className="flex text-lg">
+            <div className="flex">
               {Array.from({ length: 5 }).map((_, index) => {
                 if (averageRating > index && averageRating < index + 1) {
                   return (
