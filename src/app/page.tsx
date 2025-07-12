@@ -2,9 +2,16 @@ import Link from "next/link";
 import { auth } from "~/server/auth";
 import Footer from "./_components/Footer";
 import PlaceholderCard from "./_components/PlaceholderCard";
+import { api } from "~/trpc/server";
+import CharacterCard from "./_components/CharacterCard";
 
 export default async function Home() {
   const session = await auth();
+  const [characterCount, userCount, featuredBuilds] = await Promise.all([
+    api.character.getCharacterCount(),
+    api.character.getUserCount(),
+    api.character.getFeaturedBuildCards(),
+  ]);
 
   return (
     <>
@@ -42,12 +49,12 @@ export default async function Home() {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col gap-2 p-4">
+        <div className="flex flex-col gap-4 p-4">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-lg font-bold">News</h2>
               <p className="text-sm text-neutral-300">
-                Check out the latest updates!
+                Check out the latest updates from developers!
               </p>
             </div>
             <Link
@@ -63,12 +70,40 @@ export default async function Home() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col gap-2 p-4">
+        <div className="flex flex-col gap-4 p-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-lg font-bold">
+                Builds{" "}
+                <span className="text-neutral-400">
+                  (<span className="text-green-500">{characterCount}</span>)
+                </span>
+              </h2>
+              <p className="text-sm text-neutral-300">
+                Check out the latest builds from our growing community of{" "}
+                <span className="text-green-500">{userCount}</span>{" "}
+                {false ? "user" : "users"}!
+              </p>
+            </div>
+            <Link
+              href={"/guides"}
+              className="h-fit rounded border border-neutral-600 bg-neutral-700 px-3 py-1 font-semibold shadow-2xs shadow-black transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
+            >
+              View All
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+            {featuredBuilds.map((build, i) => (
+              <CharacterCard key={i} character={build} />
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-col gap-4 p-4">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-lg font-bold">Guides</h2>
               <p className="text-sm text-neutral-300">
-                Check out the latest guides from players!
+                Expand your skill set with guides from experienced players!
               </p>
             </div>
             <Link

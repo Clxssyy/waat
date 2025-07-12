@@ -26,7 +26,7 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
   return (
     <Link
       href={`/characters/${character.id}`}
-      className="flex h-full min-h-40 flex-col justify-between gap-2 rounded border border-neutral-700 bg-gradient-to-br from-neutral-800 via-neutral-900 to-neutral-950 p-2 transition-all hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
+      className="flex h-full min-h-40 flex-col justify-between gap-2 rounded bg-gradient-to-br from-neutral-900 to-neutral-950 p-2 transition-all hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
     >
       <div className="flex flex-col gap-1">
         <div className="flex justify-between gap-1">

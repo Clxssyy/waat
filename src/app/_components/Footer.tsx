@@ -7,7 +7,7 @@ const Footer = async () => {
         <Link href={"/"} className="text-neutral-300">
           WAAT
         </Link>
-        <p className="text-xs text-neutral-300">
+        <p className="text-center text-xs text-neutral-300">
           Not affiliated with or endorsed by Qooland Games
         </p>
       </div>

@@ -487,4 +487,56 @@ export const characterRouter = createTRPCRouter({
         },
       });
     }),
+
+  getCharacterCount: publicProcedure.query(async ({ ctx }) => {
+    return ctx.db.character.count();
+  }),
+
+  getUserCount: publicProcedure.query(async ({ ctx }) => {
+    return ctx.db.user.count();
+  }),
+
+  getFeaturedBuildCards: publicProcedure.query(async ({ ctx }) => {
+    return ctx.db.character.findMany({
+      where: {
+        createdBy: {
+          name: "Classy",
+        },
+        private: false,
+      },
+      select: {
+        id: true,
+        createdAt: true,
+        name: true,
+        private: true,
+        role: true,
+        ratings: {
+          select: {
+            value: true,
+          },
+        },
+        builds: {
+          select: {
+            data: true,
+          },
+        },
+        createdBy: {
+          select: {
+            name: true,
+            image: true,
+          },
+        },
+        _count: {
+          select: {
+            ratings: true,
+            builds: true,
+          },
+        },
+      },
+      take: 4,
+      orderBy: {
+        updatedAt: "desc",
+      },
+    });
+  }),
 });
