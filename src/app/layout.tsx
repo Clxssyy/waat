@@ -26,7 +26,7 @@ export default function RootLayout({
         <TRPCReactProvider>
           <div className="relative flex h-screen flex-col">
             <Header />
-            <div className="scrollbar flex flex-1 flex-col items-center overflow-y-auto">
+            <div className="flex flex-1 flex-col items-center overflow-y-scroll">
               {children}
             </div>
           </div>

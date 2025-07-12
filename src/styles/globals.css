@@ -11,10 +11,6 @@
   appearance: none;
 }
 
-.scrollbar {
-  scrollbar-color: rgb(90, 90, 90) transparent;
-}
-
 .hidden-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -39,14 +35,14 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-select::-webkit-scrollbar {
+::-webkit-scrollbar {
   @apply w-1;
 }
 
-select::-webkit-scrollbar-thumb {
-  @apply rounded bg-neutral-600;
+::-webkit-scrollbar-thumb {
+  @apply rounded bg-neutral-500;
 }
 
-select::-webkit-scrollbar-track {
-  @apply bg-neutral-800;
+::-webkit-scrollbar-track {
+  @apply bg-neutral-900;
 }
