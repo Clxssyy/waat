@@ -312,6 +312,7 @@ export const characterRouter = createTRPCRouter({
         characters,
         totalPages,
         currentPage: page,
+        totalCount,
       };
     }),
 
@@ -489,7 +490,11 @@ export const characterRouter = createTRPCRouter({
     }),
 
   getCharacterCount: publicProcedure.query(async ({ ctx }) => {
-    return ctx.db.character.count();
+    return ctx.db.character.count({
+      where: {
+        private: false,
+      },
+    });
   }),
 
   getUserCount: publicProcedure.query(async ({ ctx }) => {

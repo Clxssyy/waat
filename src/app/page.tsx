@@ -86,7 +86,7 @@ export default async function Home() {
               </p>
             </div>
             <Link
-              href={"/guides"}
+              href={"/characters"}
               className="h-fit rounded border border-neutral-600 bg-neutral-700 px-3 py-1 font-semibold shadow-2xs shadow-black transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
             >
               View All

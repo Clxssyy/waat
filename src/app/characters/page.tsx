@@ -56,7 +56,12 @@ export default async function Characters({
         </div>
         <Search />
         <div className="flex grow flex-col gap-2 p-4">
-          <h2 className="text-lg font-bold">Builds</h2>
+          <h2 className="text-lg font-bold">
+            Builds{" "}
+            <span className="text-neutral-400">
+              (<span className="text-green-500">{cardInfo.totalCount}</span>)
+            </span>
+          </h2>
           {characters.length >= 1 ? (
             <>
               <div className="grid gap-2 not-sm:grid-cols-1 sm:grid-cols-3">
