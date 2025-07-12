@@ -435,20 +435,19 @@ const BuildDisplay = () => {
               <h3 className="text-sm">
                 Strength <span>({drifterData?.strBonus ?? "0.0"})</span>
               </h3>
-              <div className="flex items-center justify-center gap-2">
+              <div className="grid grid-cols-4 items-center justify-center gap-2">
                 <button
                   aria-label="Decrease Strength"
-                  className="cursor-pointer"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  disabled={
+                    (formData?.builds[activeBuildIndex]?.data.stats.strength ??
+                      0) +
+                      (drifterData?.strBase ?? 0) ===
+                    (drifterData?.strBase ?? 0)
+                  }
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
-                      if (
-                        (formData?.builds[activeBuildIndex]?.data.stats
-                          .strength ?? 0) +
-                          (drifterData?.strBase ?? 0) ===
-                        (drifterData?.strBase ?? 0)
-                      )
-                        return prev;
                       return {
                         ...prev,
                         builds: prev.builds.map((b, idx) =>
@@ -459,7 +458,7 @@ const BuildDisplay = () => {
                                   ...b.data,
                                   stats: {
                                     ...b.data.stats,
-                                    ["strength"]:
+                                    strength:
                                       (formData?.builds[activeBuildIndex]?.data
                                         .stats.strength ?? 0) - 1,
                                   },
@@ -473,7 +472,7 @@ const BuildDisplay = () => {
                 >
                   <FaMinus />
                 </button>
-                <p className="text-sm">
+                <p className="col-span-2 text-sm">
                   {Math.floor(
                     (formData?.builds?.[activeBuildIndex]?.data?.stats
                       ?.strength ?? 0) +
@@ -491,11 +490,11 @@ const BuildDisplay = () => {
                 </p>
                 <button
                   aria-label="Increase Strength"
-                  className="cursor-pointer"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  disabled={statPoints === 0}
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
-                      if (statPoints === 0) return prev;
                       return {
                         ...prev,
                         builds: prev.builds.map((b, idx) =>
@@ -506,7 +505,7 @@ const BuildDisplay = () => {
                                   ...b.data,
                                   stats: {
                                     ...b.data.stats,
-                                    ["strength"]:
+                                    strength:
                                       (formData?.builds[activeBuildIndex]?.data
                                         .stats.strength ?? 0) + 1,
                                   },
@@ -526,20 +525,19 @@ const BuildDisplay = () => {
               <h3 className="text-sm">
                 Agility <span>({drifterData?.agiBonus ?? "0.0"})</span>
               </h3>
-              <div className="flex items-center justify-center gap-2">
+              <div className="grid grid-cols-4 items-center justify-center gap-2">
                 <button
                   aria-label="Decrease Agility"
-                  className="cursor-pointer"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  disabled={
+                    (formData?.builds[activeBuildIndex]?.data.stats.agility ??
+                      0) +
+                      (drifterData?.agiBase ?? 0) ===
+                    (drifterData?.agiBase ?? 0)
+                  }
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
-                      if (
-                        (formData?.builds[activeBuildIndex]?.data.stats
-                          .agility ?? 0) +
-                          (drifterData?.agiBase ?? 0) ===
-                        (drifterData?.agiBase ?? 0)
-                      )
-                        return prev;
                       return {
                         ...prev,
                         builds: prev.builds.map((b, idx) =>
@@ -550,7 +548,7 @@ const BuildDisplay = () => {
                                   ...b.data,
                                   stats: {
                                     ...b.data.stats,
-                                    ["agility"]:
+                                    agility:
                                       (formData?.builds[activeBuildIndex]?.data
                                         .stats.agility ?? 0) - 1,
                                   },
@@ -564,7 +562,7 @@ const BuildDisplay = () => {
                 >
                   <FaMinus />
                 </button>
-                <p className="text-sm">
+                <p className="col-span-2 text-sm">
                   {Math.floor(
                     (formData?.builds?.[activeBuildIndex]?.data?.stats
                       ?.agility ?? 0) +
@@ -582,11 +580,11 @@ const BuildDisplay = () => {
                 </p>
                 <button
                   aria-label="Increase Agility"
-                  className="cursor-pointer"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  disabled={statPoints === 0}
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
-                      if (statPoints === 0) return prev;
                       return {
                         ...prev,
                         builds: prev.builds.map((b, idx) =>
@@ -597,7 +595,7 @@ const BuildDisplay = () => {
                                   ...b.data,
                                   stats: {
                                     ...b.data.stats,
-                                    ["agility"]:
+                                    agility:
                                       (formData?.builds[activeBuildIndex]?.data
                                         .stats.agility ?? 0) + 1,
                                   },
@@ -617,20 +615,19 @@ const BuildDisplay = () => {
               <h3 className="text-sm">
                 Intelligence <span>({drifterData?.intBonus ?? "0.0"})</span>
               </h3>
-              <div className="flex items-center justify-center gap-2">
+              <div className="grid grid-cols-4 items-center justify-center gap-2">
                 <button
                   aria-label="Decrease Intelligence"
-                  className="cursor-pointer"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  disabled={
+                    (formData?.builds[activeBuildIndex]?.data.stats
+                      .intelligence ?? 0) +
+                      (drifterData?.intBase ?? 0) ===
+                    (drifterData?.intBase ?? 0)
+                  }
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
-                      if (
-                        (formData?.builds[activeBuildIndex]?.data.stats
-                          .intelligence ?? 0) +
-                          (drifterData?.intBase ?? 0) ===
-                        (drifterData?.intBase ?? 0)
-                      )
-                        return prev;
                       return {
                         ...prev,
                         builds: prev.builds.map((b, idx) =>
@@ -641,7 +638,7 @@ const BuildDisplay = () => {
                                   ...b.data,
                                   stats: {
                                     ...b.data.stats,
-                                    ["intelligence"]:
+                                    intelligence:
                                       (formData?.builds[activeBuildIndex]?.data
                                         .stats.intelligence ?? 0) - 1,
                                   },
@@ -655,7 +652,7 @@ const BuildDisplay = () => {
                 >
                   <FaMinus />
                 </button>
-                <p className="text-sm">
+                <p className="col-span-2 text-sm">
                   {Math.floor(
                     (formData?.builds?.[activeBuildIndex]?.data?.stats
                       ?.intelligence ?? 0) +
@@ -672,12 +669,12 @@ const BuildDisplay = () => {
                   </span>
                 </p>
                 <button
-                  className="cursor-pointer"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   aria-label="Increase Intelligence"
+                  disabled={statPoints === 0}
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
-                      if (statPoints === 0) return prev;
                       return {
                         ...prev,
                         builds: prev.builds.map((b, idx) =>
@@ -688,7 +685,7 @@ const BuildDisplay = () => {
                                   ...b.data,
                                   stats: {
                                     ...b.data.stats,
-                                    ["intelligence"]:
+                                    intelligence:
                                       (formData?.builds[activeBuildIndex]?.data
                                         .stats.intelligence ?? 0) + 1,
                                   },
@@ -704,6 +701,42 @@ const BuildDisplay = () => {
                 </button>
               </div>
             </div>
+            <button
+              className="w-full cursor-pointer rounded-lg bg-neutral-800 p-0.5 text-sm transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-80"
+              aria-label="Clear stat points"
+              disabled={
+                formData?.builds?.[activeBuildIndex]?.data?.stats
+                  ?.intelligence === 0 &&
+                formData?.builds?.[activeBuildIndex]?.data?.stats?.strength ===
+                  0 &&
+                formData?.builds?.[activeBuildIndex]?.data?.stats?.agility === 0
+              }
+              onClick={() => {
+                setFormData((prev) => {
+                  if (!prev) return prev;
+                  return {
+                    ...prev,
+                    builds: prev.builds.map((b, idx) =>
+                      idx === activeBuildIndex
+                        ? {
+                            ...b,
+                            data: {
+                              ...b.data,
+                              stats: {
+                                intelligence: 0,
+                                strength: 0,
+                                agility: 0,
+                              },
+                            },
+                          }
+                        : b,
+                    ),
+                  };
+                });
+              }}
+            >
+              Clear
+            </button>
           </div>
         </div>
         <div className="flex w-full grow flex-col gap-2 border border-neutral-600 bg-neutral-700 p-2">
