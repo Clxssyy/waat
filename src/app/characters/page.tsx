@@ -42,13 +42,13 @@ export default async function Characters({
           <div className="mt-2 flex gap-2">
             <Link
               href={session ? "/characters/create" : "/api/auth/signin"}
-              className="rounded border border-green-500 bg-green-600 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
+              className="rounded border border-green-500 bg-green-600 px-4 py-2 font-semibold transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
             >
               Create
             </Link>
             <Link
               href={session ? `/users/${session.user.id}` : "/api/auth/signin"}
-              className="rounded border border-neutral-600 bg-neutral-700 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
+              className="rounded border border-neutral-600 bg-neutral-700 px-4 py-2 font-semibold transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
             >
               Your Builds
             </Link>

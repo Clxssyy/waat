@@ -9,6 +9,7 @@ import { MASTERY_OPTIONS, TIER_LEVELS } from "~/utils";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import ImageHelper from "./ImageHelper";
 import SkillDescriptionParser from "./SkillDescriptionParser";
+import clsx from "clsx";
 
 const Drifter = ({
   activeBuildIndex,
@@ -21,7 +22,7 @@ const Drifter = ({
   const custom_mastery_drifter = useRef<HTMLInputElement>(null);
 
   const drifters = data.drifters;
-  const filteredDrifters = drifters.filter((drifter) => {
+  const filteredData = drifters.filter((drifter) => {
     if (activeFilter === "all") return true;
     if (activeFilter === drifter.type) return true;
     return false;
@@ -32,6 +33,30 @@ const Drifter = ({
     const drifterKey = formData.builds[activeBuildIndex]?.data.drifter.name;
     drifterData = data.drifters.find((drifter) => drifter.name === drifterKey);
   }
+
+  const typeHighlight = clsx(
+    "border-2 bg-radial from-neutral-800 from-10%",
+    drifterData?.type === "strength" && "border-red-400 to-red-400/60",
+    drifterData?.type === "intelligence" && "border-blue-400 to-blue-400/60",
+    drifterData?.type === "agility" && "border-green-400 to-green-400/60",
+    drifterData?.type === "logistics" && "border-yellow-400 to-yellow-400/60",
+  );
+
+  function getTypeOptionHighlight(drifterData: (typeof drifters)[number]) {
+    return clsx(
+      drifterData?.type === "strength" && "bg-red-400/20",
+      drifterData?.type === "intelligence" && "bg-blue-400/20",
+      drifterData?.type === "agility" && "bg-green-400/20",
+      drifterData?.type === "logistics" && "bg-yellow-400/20",
+    );
+  }
+
+  const typeTextColor = clsx(
+    drifterData?.type === "strength" && "text-red-400",
+    drifterData?.type === "intelligence" && "text-blue-400",
+    drifterData?.type === "agility" && "text-green-400",
+    drifterData?.type === "logistics" && "text-yellow-400",
+  );
 
   return (
     <div className="flex flex-col gap-2 p-2">
@@ -95,7 +120,15 @@ const Drifter = ({
         </div>
         <div className="h-12 grow rounded bg-neutral-700">
           <select
-            className="h-full w-full cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg"
+            className={clsx(
+              "h-full w-full cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg",
+              !drifterData ||
+                !filteredData.some(
+                  (drifter) => drifter.name === drifterData.name,
+                )
+                ? "text-white"
+                : typeTextColor,
+            )}
             id={"drifter"}
             name={"drifter"}
             ref={selectInput}
@@ -114,7 +147,7 @@ const Drifter = ({
                             drifter: {
                               name: e.target.value,
                               mastery: 0,
-                              tier: "",
+                              tier: "I",
                             },
                             stats: {
                               agility: 0,
@@ -132,18 +165,19 @@ const Drifter = ({
             <option value="" hidden>
               Drifter
             </option>
-            {filteredDrifters.map((drifter, i) => (
+            {filteredData.map((drifter, i) => (
               <option
                 key={drifter.name + "_" + i}
                 value={drifter.name}
-                className={`${
+                className={clsx(
                   formData?.builds?.some(
                     (build) => build.data.drifter.name === drifter.name,
                   ) ||
-                  formData.support.some((support) => support === drifter.name)
+                    formData.support.some((support) => support === drifter.name)
                     ? "text-neutral-500"
-                    : "text-white"
-                }`}
+                    : "text-white",
+                  getTypeOptionHighlight(drifter),
+                )}
               >
                 {drifter.name}
               </option>
@@ -267,7 +301,13 @@ const Drifter = ({
                 {MASTERY_OPTIONS.map((option) => (
                   <button
                     key={option}
-                    className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 p-2 ${(formData?.builds?.[activeBuildIndex]?.data?.drifter.mastery ?? 0) === Number(option) ? "border-2 border-green-300" : ""}`}
+                    className={clsx(
+                      "flex h-12 w-12 cursor-pointer items-center justify-center rounded p-2",
+                      (formData?.builds?.[activeBuildIndex]?.data?.drifter
+                        .mastery ?? 0) === Number(option)
+                        ? typeHighlight
+                        : "bg-neutral-800",
+                    )}
                     onClick={() => {
                       setFormData((prev) => {
                         if (!prev) return prev;
@@ -299,16 +339,17 @@ const Drifter = ({
                     type="number"
                     placeholder="Custom"
                     ref={custom_mastery_drifter}
-                    className={`h-full w-full rounded text-center outline-none ${
+                    className={clsx(
+                      "flex h-12 grow rounded text-center outline-none",
                       MASTERY_OPTIONS.find(
                         (option) =>
                           Number(option) ===
                           formData?.builds?.[activeBuildIndex]?.data?.drifter
                             .mastery,
                       )
-                        ? ""
-                        : "border-2 border-green-300"
-                    }`}
+                        ? "bg-neutral-800"
+                        : typeHighlight,
+                    )}
                     max={50}
                     min={0}
                     value={
@@ -410,12 +451,44 @@ const Drifter = ({
               <h2 className="text-lg">Tier</h2>
               <div className="flex flex-wrap justify-center gap-2">
                 {TIER_LEVELS.map((tier) => (
-                  <div
+                  <button
                     key={tier}
-                    className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 p-2"
+                    aria-label={"Set tier level to " + tier}
+                    className={clsx(
+                      "flex h-12 w-12 cursor-pointer items-center justify-center rounded p-2",
+                      (formData?.builds?.[activeBuildIndex]?.data?.drifter
+                        .tier !== ""
+                        ? formData?.builds?.[activeBuildIndex]?.data?.drifter
+                            .tier
+                        : "I") === String(tier)
+                        ? typeHighlight
+                        : "bg-neutral-800",
+                    )}
+                    onClick={() => {
+                      setFormData((prev) => {
+                        if (!prev) return prev;
+                        return {
+                          ...prev,
+                          builds: prev.builds.map((b, idx) =>
+                            idx === activeBuildIndex
+                              ? {
+                                  ...b,
+                                  data: {
+                                    ...b.data,
+                                    drifter: {
+                                      ...b.data.drifter,
+                                      tier: String(tier),
+                                    },
+                                  },
+                                }
+                              : b,
+                          ),
+                        };
+                      });
+                    }}
                   >
-                    <span>{tier}</span>
-                  </div>
+                    {tier}
+                  </button>
                 ))}
               </div>
             </div>

@@ -6,6 +6,7 @@ import data from "public/data.json";
 import { useBuildForm } from "./buildFormContext";
 import { IoClose } from "react-icons/io5";
 import ImageHelper from "./ImageHelper";
+import clsx from "clsx";
 
 const Support = () => {
   const [activeSupport, setActiveSupport] = useState<number>();
@@ -25,6 +26,43 @@ const Support = () => {
       });
   }, []);
 
+  function getTypeOptionHighlight(drifterData: (typeof drifters)[number]) {
+    return clsx(
+      drifterData?.type === "strength" && "bg-red-400/20",
+      drifterData?.type === "intelligence" && "bg-blue-400/20",
+      drifterData?.type === "agility" && "bg-green-400/20",
+      drifterData?.type === "logistics" && "bg-yellow-400/20",
+    );
+  }
+
+  function getTypeTextColor(drifterData: (typeof drifters)[number]) {
+    return clsx(
+      drifterData?.type === "strength" && "text-red-400",
+      drifterData?.type === "intelligence" && "text-blue-400",
+      drifterData?.type === "agility" && "text-green-400",
+      drifterData?.type === "logistics" && "text-yellow-400",
+    );
+  }
+
+  function getTypeOutline(drifterData: (typeof drifters)[number]) {
+    return clsx(
+      "border-2",
+      drifterData?.type === "strength" && "border-red-400",
+      drifterData?.type === "intelligence" && "border-blue-400",
+      drifterData?.type === "agility" && "border-green-400",
+      drifterData?.type === "logistics" && "border-yellow-400",
+    );
+  }
+
+  function getTypeHover(drifterData: (typeof drifters)[number]) {
+    return clsx(
+      drifterData?.type === "strength" && "hover:border-red-400",
+      drifterData?.type === "intelligence" && "hover:border-blue-400",
+      drifterData?.type === "agility" && "hover:border-green-400",
+      drifterData?.type === "logistics" && "hover:border-yellow-400",
+    );
+  }
+
   return (
     <div className="flex flex-col gap-2 p-2">
       <div className="flex flex-wrap justify-center gap-2">
@@ -37,7 +75,20 @@ const Support = () => {
           return (
             <button
               key={i}
-              className={`relative flex h-60 w-32 cursor-pointer items-center justify-center border bg-neutral-700 transition-all hover:border-cyan-600 active:scale-[98%] ${activeSupport === i ? "scale-[102%] border-2 border-cyan-600" : "border-neutral-600"} ${formData?.support[i] ? "bg-radial from-neutral-700 from-10% to-black/30" : "bg-neutral-700"}`}
+              className={clsx(
+                "relative flex h-60 w-32 cursor-pointer items-center justify-center border bg-neutral-700 bg-radial from-neutral-700 from-10% to-black/30 transition-all active:scale-[98%]",
+                activeSupport === i
+                  ? clsx(
+                      "scale-[102%] border-2",
+                      drifterData[i]
+                        ? getTypeOutline(drifterData[i])
+                        : "border-cyan-400",
+                    )
+                  : "border-neutral-600",
+                drifterData[i]
+                  ? getTypeHover(drifterData[i])
+                  : "hover:border-cyan-400",
+              )}
               onClick={() => {
                 if (activeSupport === i) setActiveSupport(undefined);
                 else setActiveSupport(i);
@@ -94,7 +145,12 @@ const Support = () => {
           </div>
           <div className="h-12 grow rounded bg-neutral-700">
             <select
-              className="h-full w-full cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg"
+              className={clsx(
+                "h-full w-full cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg",
+                !drifterData[activeSupport]
+                  ? "text-white"
+                  : getTypeTextColor(drifterData[activeSupport]),
+              )}
               value={formData?.support[activeSupport]}
               onChange={(e) => {
                 setFormData((prev) => {
@@ -115,14 +171,17 @@ const Support = () => {
                 <option
                   key={drifter.name + "_" + i}
                   value={drifter.name}
-                  className={`${
+                  className={clsx(
                     formData?.builds?.some(
                       (build) => build.data.drifter.name === drifter.name,
                     ) ||
-                    formData.support.some((support) => support === drifter.name)
+                      formData.support.some(
+                        (support) => support === drifter.name,
+                      )
                       ? "text-neutral-500"
-                      : "text-white"
-                  }`}
+                      : "text-white",
+                    getTypeOptionHighlight(drifter),
+                  )}
                 >
                   {drifter.name}
                 </option>

@@ -7,6 +7,7 @@ import data from "public/data.json";
 import ImageHelper from "./ImageHelper";
 import type { ActiveBuildIndex } from "~/types";
 import { useEffect, useState } from "react";
+import clsx from "clsx";
 
 const BuildDisplay = () => {
   const {
@@ -58,6 +59,50 @@ const BuildDisplay = () => {
   const helmetData = data.helmet.find((helmet) => helmet.name === helmetKey);
 
   const bootsData = data.boots.find((boots) => boots.name === bootsKey);
+
+  const typeOutline = clsx(
+    "border-2",
+    drifterData?.type === "strength" && "border-red-400",
+    drifterData?.type === "intelligence" && "border-blue-400",
+    drifterData?.type === "agility" && "border-green-400",
+    drifterData?.type === "logistics" && "border-yellow-400",
+    !drifterData?.type && "border-cyan-400",
+  );
+
+  const typeHover = clsx(
+    drifterData?.type === "strength" && "hover:border-red-400",
+    drifterData?.type === "intelligence" && "hover:border-blue-400",
+    drifterData?.type === "agility" && "hover:border-green-400",
+    drifterData?.type === "logistics" && "hover:border-yellow-400",
+    !drifterData?.type && "hover:border-cyan-400",
+  );
+
+  function getEquipmentOutline(
+    data: typeof weaponData | typeof bootsData,
+  ): string {
+    return clsx(
+      "border-2",
+      data?.rarity === "legendary" && "border-yellow-600",
+      data?.rarity === "epic" && "border-purple-600",
+      data?.rarity === "rare" && "border-blue-600",
+      data?.rarity === "common" && "border-green-600",
+      !data?.rarity && "border-cyan-400",
+    );
+  }
+
+  function getEquipmentBackground(
+    data: typeof weaponData | typeof bootsData,
+  ): string {
+    return clsx(
+      "bg-radial from-neutral-700 from-10%",
+      data?.rarity === "legendary" &&
+        "to-yellow-600/30 hover:border-yellow-600",
+      data?.rarity === "epic" && "to-purple-600/30 hover:border-purple-600",
+      data?.rarity === "rare" && "to-blue-600/30 hover:border-blue-600",
+      data?.rarity === "common" && "to-green-600/30 hover:border-green-600",
+      !data?.rarity && "hover:border-cyan-400",
+    );
+  }
 
   return (
     <div id="display" className="min-w-1/3">
@@ -133,7 +178,15 @@ const BuildDisplay = () => {
         </div>
         <div className="flex flex-wrap justify-center gap-2">
           <button
-            className={`active:scale-[98%] ${weaponData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${weaponData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${weaponData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${weaponData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-82 w-32 cursor-pointer items-center justify-center border transition-all ${activeSlot === "weapon" ? `border-2 ${weaponData?.rarity === "legendary" ? "border-yellow-600" : `${weaponData?.rarity === "epic" ? "border-purple-600" : `${weaponData?.rarity === "rare" ? "border-blue-600" : `${weaponData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
+            className={clsx(
+              "relative flex h-82 w-32 cursor-pointer items-center justify-center border transition-all active:scale-[98%]",
+              clsx(
+                getEquipmentBackground(weaponData),
+                activeSlot === "weapon"
+                  ? getEquipmentOutline(weaponData)
+                  : "border-neutral-600",
+              ),
+            )}
             aria-label="Weapon Slot"
             onClick={() => {
               if (activeSlot != "weapon") setActiveSlot("weapon");
@@ -175,7 +228,13 @@ const BuildDisplay = () => {
           </button>
           <div className="flex flex-col gap-2">
             <button
-              className={`active:scale-95 ${helmetData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${helmetData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${helmetData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${helmetData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all ${activeSlot === "helmet" ? `border-2 ${helmetData?.rarity === "legendary" ? "border-yellow-600" : `${helmetData?.rarity === "epic" ? "border-purple-600" : `${helmetData?.rarity === "rare" ? "border-blue-600" : `${helmetData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
+              className={clsx(
+                "relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all active:scale-[98%]",
+                getEquipmentBackground(helmetData),
+                activeSlot === "helmet"
+                  ? getEquipmentOutline(helmetData)
+                  : "border-neutral-600",
+              )}
               aria-label="Helmet Slot"
               onClick={() => {
                 if (activeSlot != "helmet") setActiveSlot("helmet");
@@ -217,7 +276,13 @@ const BuildDisplay = () => {
             </button>
 
             <button
-              className={`active:scale-95 ${chestData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${chestData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${chestData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${chestData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all ${activeSlot === "chest" ? `border-2 ${chestData?.rarity === "legendary" ? "border-yellow-600" : `${chestData?.rarity === "epic" ? "border-purple-600" : `${chestData?.rarity === "rare" ? "border-blue-600" : `${chestData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
+              className={clsx(
+                "relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all active:scale-[98%]",
+                getEquipmentBackground(chestData),
+                activeSlot === "chest"
+                  ? getEquipmentOutline(chestData)
+                  : "border-neutral-600",
+              )}
               aria-label="Chest Slot"
               onClick={() => {
                 if (activeSlot != "chest") setActiveSlot("chest");
@@ -258,7 +323,13 @@ const BuildDisplay = () => {
               ) : null}
             </button>
             <button
-              className={`active:scale-95 ${bootsData?.rarity === "legendary" ? "bg-radial from-neutral-700 from-10% to-yellow-600/30 hover:border-yellow-600" : `${bootsData?.rarity === "rare" ? "bg-radial from-neutral-700 from-10% to-blue-600/30 hover:border-blue-600" : `${bootsData?.rarity === "common" ? "bg-radial from-neutral-700 from-10% to-green-600/30 hover:border-green-600" : `${bootsData?.rarity === "epic" ? "bg-radial from-neutral-700 from-10% to-purple-600/30 hover:border-purple-600" : "bg-neutral-700 hover:border-cyan-600"}`}`}`} relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all ${activeSlot === "boots" ? `border-2 ${bootsData?.rarity === "legendary" ? "border-yellow-600" : `${bootsData?.rarity === "epic" ? "border-purple-600" : `${bootsData?.rarity === "rare" ? "border-blue-600" : `${bootsData?.rarity === "common" ? "border-green-600" : "border-cyan-600"}`}`}`}` : "border-neutral-600"}`}
+              className={clsx(
+                "relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all active:scale-[98%]",
+                getEquipmentBackground(bootsData),
+                activeSlot === "boots"
+                  ? getEquipmentOutline(bootsData)
+                  : "border-neutral-600",
+              )}
               aria-label="Boots Slot"
               onClick={() => {
                 if (activeSlot != "boots") setActiveSlot("boots");
@@ -301,7 +372,11 @@ const BuildDisplay = () => {
           </div>
         </div>
         <button
-          className={`${drifterKey ? "bg-radial from-neutral-700 from-10% to-black/30" : ""} relative flex h-24 w-60 cursor-pointer items-center justify-center border bg-neutral-700 transition-all hover:border-cyan-600 active:scale-95 ${activeSlot === "drifter" ? "border-2 border-cyan-600" : "border-neutral-600"}`}
+          className={clsx(
+            "relative flex h-24 w-60 cursor-pointer items-center justify-center border bg-neutral-700 bg-radial from-neutral-700 from-10% to-black/30 transition-all active:scale-95",
+            typeHover,
+            activeSlot === "drifter" ? typeOutline : "border-neutral-600",
+          )}
           aria-label="Drifter Slot"
           onClick={() => {
             if (activeSlot != "drifter") setActiveSlot("drifter");

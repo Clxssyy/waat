@@ -13,7 +13,7 @@ export default async function Home() {
           <h1 className="text-5xl font-bold text-wrap">
             {session ? (
               <>
-                Welcome{" "}
+                Welcome,{" "}
                 <span className="bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent">
                   {session.user.name}
                 </span>
@@ -30,13 +30,13 @@ export default async function Home() {
           <div className="mt-2 flex gap-2">
             <Link
               href={"/characters"}
-              className="rounded border border-green-500 bg-green-600 px-4 py-2 font-bold transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
+              className="rounded border border-green-500 bg-green-600 px-4 py-2 font-semibold transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
             >
               Get Started
             </Link>
             <Link
               href={"/guides"}
-              className="rounded border border-neutral-600 bg-neutral-700 px-4 py-2 font-bold transition-all text-shadow-2xs text-shadow-black hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
+              className="rounded border border-neutral-600 bg-neutral-700 px-4 py-2 font-semibold transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
             >
               Explore
             </Link>
@@ -52,7 +52,7 @@ export default async function Home() {
             </div>
             <Link
               href={"/news"}
-              className="h-fit rounded border border-neutral-600 bg-neutral-700 px-3 py-1 font-bold transition-all text-shadow-2xs text-shadow-black hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
+              className="h-fit rounded border border-neutral-600 bg-neutral-700 px-3 py-1 font-semibold shadow-2xs shadow-black transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
             >
               View All
             </Link>
@@ -73,7 +73,7 @@ export default async function Home() {
             </div>
             <Link
               href={"/guides"}
-              className="h-fit rounded border border-neutral-600 bg-neutral-700 px-3 py-1 font-bold transition-all text-shadow-2xs text-shadow-black hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
+              className="h-fit rounded border border-neutral-600 bg-neutral-700 px-3 py-1 font-semibold shadow-2xs shadow-black transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
             >
               View All
             </Link>

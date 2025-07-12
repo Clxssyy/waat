@@ -9,6 +9,7 @@ import { FaMinus, FaPlus } from "react-icons/fa6";
 import { MASTERY_OPTIONS, TIER_LEVELS } from "~/utils";
 import ImageHelper from "./ImageHelper";
 import SkillDescriptionParser from "./SkillDescriptionParser";
+import clsx from "clsx";
 
 type slots = Exclude<ActiveSlots, "drifter">;
 
@@ -37,6 +38,7 @@ const Equipment = ({
 
   const modPlaceholder = true;
   type EquipmentData = {
+    name: string;
     rarity: string;
     core_skill: {
       name: string;
@@ -63,11 +65,49 @@ const Equipment = ({
     }
   }
 
+  const rarityHighlight = clsx(
+    "border-2 bg-radial from-neutral-800 from-10%",
+    equipmentData?.rarity === "legendary" &&
+      "border-yellow-600 to-yellow-600/60",
+    equipmentData?.rarity === "epic" && "border-purple-600 to-purple-600/60",
+    equipmentData?.rarity === "rare" && "border-blue-600 to-blue-600/60",
+    equipmentData?.rarity === "common" && "border-green-600 to-green-600/60",
+  );
+
+  const rarityOutline = clsx(
+    "border-2",
+    equipmentData?.rarity === "legendary" && "border-yellow-600",
+    equipmentData?.rarity === "epic" && "border-purple-600",
+    equipmentData?.rarity === "rare" && "border-blue-600",
+    equipmentData?.rarity === "common" && "border-green-600",
+  );
+
+  function getRarityOptionHighlight(equipmentData: EquipmentData): string {
+    return clsx(
+      equipmentData?.rarity === "legendary" && "bg-yellow-600/20",
+      equipmentData?.rarity === "epic" && "bg-purple-600/20",
+      equipmentData?.rarity === "rare" && "bg-blue-600/20",
+      equipmentData?.rarity === "common" && "bg-green-600/20",
+    );
+  }
+
+  const rarityTextColor = clsx(
+    equipmentData?.rarity === "legendary" && "text-yellow-600",
+    equipmentData?.rarity === "epic" && "text-purple-600",
+    equipmentData?.rarity === "rare" && "text-blue-600",
+    equipmentData?.rarity === "common" && "text-green-600",
+  );
+
   return (
     <div className="flex flex-col gap-2 rounded p-2">
       <div className="flex flex-wrap gap-2">
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "all" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={clsx(
+            "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
+            activeFilter === "all"
+              ? "border-neutral-600 bg-neutral-700"
+              : "border-neutral-500 bg-neutral-600",
+          )}
           onClick={() => {
             setActiveFilter("all");
           }}
@@ -75,7 +115,12 @@ const Equipment = ({
           All
         </button>
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "strength" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={clsx(
+            "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
+            activeFilter === "strength"
+              ? "border-neutral-600 bg-neutral-700"
+              : "border-neutral-500 bg-neutral-600",
+          )}
           onClick={() => {
             setActiveFilter("strength");
           }}
@@ -83,7 +128,12 @@ const Equipment = ({
           Strength
         </button>
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "agility" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={clsx(
+            "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
+            activeFilter === "agility"
+              ? "border-neutral-600 bg-neutral-700"
+              : "border-neutral-500 bg-neutral-600",
+          )}
           onClick={() => {
             setActiveFilter("agility");
           }}
@@ -91,7 +141,12 @@ const Equipment = ({
           Agility
         </button>
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "intelligence" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={clsx(
+            "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
+            activeFilter === "intelligence"
+              ? "border-neutral-600 bg-neutral-700"
+              : "border-neutral-500 bg-neutral-600",
+          )}
           onClick={() => {
             setActiveFilter("intelligence");
           }}
@@ -100,7 +155,12 @@ const Equipment = ({
         </button>
         {slot === "chest" && (
           <button
-            className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "logistics" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+            className={clsx(
+              "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
+              activeFilter === "logistics"
+                ? "border-neutral-600 bg-neutral-700"
+                : "border-neutral-500 bg-neutral-600",
+            )}
             onClick={() => {
               setActiveFilter("logistics");
             }}
@@ -127,7 +187,15 @@ const Equipment = ({
         </div>
         <div className="h-12 grow rounded bg-neutral-700">
           <select
-            className="h-full w-full cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg"
+            className={clsx(
+              "h-full w-full cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg",
+              !equipmentData ||
+                !filteredData.some(
+                  ([, equipment]) => equipment.name === equipmentData.name,
+                )
+                ? "text-white"
+                : rarityTextColor,
+            )}
             aria-label={slot}
             ref={selectInput}
             value={
@@ -150,7 +218,7 @@ const Equipment = ({
                                 [slot]: {
                                   name: e.target.value,
                                   mastery: 0,
-                                  tier: "",
+                                  tier: "I",
                                 },
                               },
                               skills: {
@@ -168,7 +236,7 @@ const Equipment = ({
                                 [slot]: {
                                   name: e.target.value,
                                   mastery: 0,
-                                  tier: "",
+                                  tier: "I",
                                 },
                               },
                             },
@@ -186,14 +254,15 @@ const Equipment = ({
               <option
                 key={i}
                 value={equipment.name}
-                className={`${
+                className={clsx(
                   formData?.builds?.some(
                     (build) =>
                       build.data.equipment[slot].name === equipment.name,
                   )
                     ? "text-neutral-500"
-                    : "text-white"
-                } ${equipment.rarity === "legendary" ? "bg-yellow-600/20" : `${equipment.rarity === "epic" ? "bg-purple-600/20" : `${equipment.rarity === "rare" ? "bg-blue-600/20" : `${equipment.rarity === "common" ? "bg-green-600/20" : ""}`}`}`}`}
+                    : "text-white",
+                  getRarityOptionHighlight(equipment),
+                )}
               >
                 {equipment.name}
               </option>
@@ -290,7 +359,14 @@ const Equipment = ({
                                   };
                                 });
                               }}
-                              className={`flex h-12 w-12 cursor-pointer flex-col items-center justify-center overflow-hidden rounded bg-neutral-800 ${skill.name === formData?.builds?.[activeBuildIndex]?.data?.skills?.basic ? "border-2 border-green-300" : "border border-neutral-600"} shadow-sm shadow-black`}
+                              className={clsx(
+                                "flex h-12 w-12 cursor-pointer flex-col items-center justify-center overflow-hidden rounded bg-neutral-800 shadow-sm shadow-black",
+                                skill.name ===
+                                  formData?.builds?.[activeBuildIndex]?.data
+                                    ?.skills?.basic
+                                  ? rarityOutline
+                                  : "border border-neutral-600",
+                              )}
                             >
                               {skill.image ? (
                                 <ImageHelper
@@ -366,7 +442,14 @@ const Equipment = ({
                                   };
                                 });
                               }}
-                              className={`flex h-12 w-12 cursor-pointer flex-col items-center justify-center overflow-hidden rounded ${skill.name === formData?.builds?.[activeBuildIndex]?.data?.skills?.common ? "border-2 border-green-300" : "border border-neutral-600"} bg-neutral-800 shadow-sm shadow-black`}
+                              className={clsx(
+                                "flex h-12 w-12 cursor-pointer flex-col items-center justify-center overflow-hidden rounded bg-neutral-800 shadow-sm shadow-black",
+                                skill.name ===
+                                  formData?.builds?.[activeBuildIndex]?.data
+                                    ?.skills?.common
+                                  ? rarityOutline
+                                  : "border border-neutral-600",
+                              )}
                             >
                               {skill.image ? (
                                 <ImageHelper
@@ -507,7 +590,13 @@ const Equipment = ({
                 <button
                   key={option}
                   aria-label={"Set mastery level to " + option}
-                  className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 p-2 ${(formData?.builds?.[activeBuildIndex]?.data?.equipment[slot].mastery ?? 0) === Number(option) ? "border-2 border-green-300" : ""}`}
+                  className={clsx(
+                    "flex h-12 w-12 cursor-pointer items-center justify-center rounded p-2",
+                    (formData?.builds?.[activeBuildIndex]?.data?.equipment[slot]
+                      .mastery ?? 0) === Number(option)
+                      ? rarityHighlight
+                      : "bg-neutral-800",
+                  )}
                   onClick={() => {
                     setFormData((prev) => {
                       if (!prev) return prev;
@@ -537,65 +626,40 @@ const Equipment = ({
                   {option}
                 </button>
               ))}
-              <div className="flex h-12 grow items-center justify-center rounded bg-neutral-800">
-                <input
-                  type="number"
-                  placeholder="Custom"
-                  ref={custom_mastery_equipment}
-                  className={`h-full w-full rounded text-center outline-none ${
-                    MASTERY_OPTIONS.find(
-                      (option) =>
-                        Number(option) ===
-                        formData?.builds?.[activeBuildIndex]?.data?.equipment[
-                          slot
-                        ].mastery,
-                    )
-                      ? ""
-                      : "border-2 border-green-300"
-                  }`}
-                  max={50}
-                  min={0}
-                  value={
-                    MASTERY_OPTIONS.find(
-                      (option) =>
-                        Number(option) ===
-                        formData?.builds?.[activeBuildIndex]?.data?.equipment[
-                          slot
-                        ].mastery,
-                    )
-                      ? ""
-                      : formData?.builds?.[activeBuildIndex]?.data?.equipment[
-                          slot
-                        ].mastery
-                  }
-                  onChange={(e) => {
-                    if (Number(e.target.value) > 50) {
-                      e.target.value = "";
-                      setFormData((prev) => {
-                        if (!prev) return prev;
-                        return {
-                          ...prev,
-                          builds: prev.builds.map((b, idx) =>
-                            idx === activeBuildIndex
-                              ? {
-                                  ...b,
-                                  data: {
-                                    ...b.data,
-                                    equipment: {
-                                      ...b.data.equipment,
-                                      [slot]: {
-                                        ...b.data.equipment[slot],
-                                        mastery: 0,
-                                      },
-                                    },
-                                  },
-                                }
-                              : b,
-                          ),
-                        };
-                      });
-                      return;
-                    }
+              <input
+                type="number"
+                placeholder="Custom"
+                ref={custom_mastery_equipment}
+                className={clsx(
+                  "flex h-12 grow rounded text-center outline-none",
+                  MASTERY_OPTIONS.find(
+                    (option) =>
+                      Number(option) ===
+                      formData?.builds?.[activeBuildIndex]?.data?.equipment[
+                        slot
+                      ].mastery,
+                  )
+                    ? "bg-neutral-800"
+                    : rarityHighlight,
+                )}
+                max={50}
+                min={0}
+                value={
+                  MASTERY_OPTIONS.find(
+                    (option) =>
+                      Number(option) ===
+                      formData?.builds?.[activeBuildIndex]?.data?.equipment[
+                        slot
+                      ].mastery,
+                  )
+                    ? ""
+                    : formData?.builds?.[activeBuildIndex]?.data?.equipment[
+                        slot
+                      ].mastery
+                }
+                onChange={(e) => {
+                  if (Number(e.target.value) > 50) {
+                    e.target.value = "";
                     setFormData((prev) => {
                       if (!prev) return prev;
                       return {
@@ -610,7 +674,7 @@ const Equipment = ({
                                     ...b.data.equipment,
                                     [slot]: {
                                       ...b.data.equipment[slot],
-                                      mastery: Number(e.target.value),
+                                      mastery: 0,
                                     },
                                   },
                                 },
@@ -619,9 +683,33 @@ const Equipment = ({
                         ),
                       };
                     });
-                  }}
-                />
-              </div>
+                    return;
+                  }
+                  setFormData((prev) => {
+                    if (!prev) return prev;
+                    return {
+                      ...prev,
+                      builds: prev.builds.map((b, idx) =>
+                        idx === activeBuildIndex
+                          ? {
+                              ...b,
+                              data: {
+                                ...b.data,
+                                equipment: {
+                                  ...b.data.equipment,
+                                  [slot]: {
+                                    ...b.data.equipment[slot],
+                                    mastery: Number(e.target.value),
+                                  },
+                                },
+                              },
+                            }
+                          : b,
+                      ),
+                    };
+                  });
+                }}
+              />
               <button
                 aria-label="Clear mastery level"
                 className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40`}
@@ -667,12 +755,49 @@ const Equipment = ({
               <h2 className="text-lg">Tier</h2>
               <div className="flex flex-wrap justify-center gap-2">
                 {TIER_LEVELS.map((tier) => (
-                  <div
+                  <button
                     key={tier}
-                    className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 p-2 text-lg"
+                    aria-label={"Set tier level to " + tier}
+                    className={clsx(
+                      "flex h-12 w-12 cursor-pointer items-center justify-center rounded p-2",
+                      (formData?.builds?.[activeBuildIndex]?.data?.equipment[
+                        slot
+                      ].tier !== ""
+                        ? formData?.builds?.[activeBuildIndex]?.data?.equipment[
+                            slot
+                          ].tier
+                        : "I") === String(tier)
+                        ? rarityHighlight
+                        : "bg-neutral-800",
+                    )}
+                    onClick={() => {
+                      setFormData((prev) => {
+                        if (!prev) return prev;
+                        return {
+                          ...prev,
+                          builds: prev.builds.map((b, idx) =>
+                            idx === activeBuildIndex
+                              ? {
+                                  ...b,
+                                  data: {
+                                    ...b.data,
+                                    equipment: {
+                                      ...b.data.equipment,
+                                      [slot]: {
+                                        ...b.data.equipment[slot],
+                                        tier: String(tier),
+                                      },
+                                    },
+                                  },
+                                }
+                              : b,
+                          ),
+                        };
+                      });
+                    }}
                   >
-                    <span>{tier}</span>
-                  </div>
+                    {tier}
+                  </button>
                 ))}
               </div>
             </div>

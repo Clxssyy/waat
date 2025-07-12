@@ -32,3 +32,21 @@
 body {
   @apply bg-neutral-800 text-white;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+select::-webkit-scrollbar {
+  @apply w-1;
+}
+
+select::-webkit-scrollbar-thumb {
+  @apply rounded bg-neutral-600;
+}
+
+select::-webkit-scrollbar-track {
+  @apply bg-neutral-800;
+}
