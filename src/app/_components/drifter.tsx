@@ -28,7 +28,7 @@ const Drifter = ({
     return false;
   });
 
-  let drifterData;
+  let drifterData: (typeof drifters)[number] | undefined;
   if (formData?.builds[activeBuildIndex]?.data.drifter.name) {
     const drifterKey = formData.builds[activeBuildIndex]?.data.drifter.name;
     drifterData = data.drifters.find((drifter) => drifter.name === drifterKey);
