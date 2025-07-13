@@ -42,6 +42,14 @@ const Drifter = ({
     drifterData?.type === "logistics" && "border-yellow-400 to-yellow-400/60",
   );
 
+  const typeBorderColor = clsx(
+    drifterData?.type === "strength" && "border-red-400",
+    drifterData?.type === "intelligence" && "border-blue-400",
+    drifterData?.type === "agility" && "border-green-400",
+    drifterData?.type === "logistics" && "border-yellow-400",
+    !drifterData?.type && "border-cyan-400",
+  );
+
   function getTypeOptionHighlight(drifterData: (typeof drifters)[number]) {
     return clsx(
       drifterData?.type === "strength" && "bg-red-400/20",
@@ -62,7 +70,12 @@ const Drifter = ({
     <div className="flex flex-col gap-2 p-2">
       <div className="flex flex-wrap gap-2">
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "all" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={clsx(
+            "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
+            activeFilter === "all"
+              ? clsx("bg-neutral-700", typeBorderColor)
+              : "border-neutral-500 bg-neutral-600",
+          )}
           onClick={() => {
             setActiveFilter("all");
           }}
@@ -70,7 +83,12 @@ const Drifter = ({
           All
         </button>
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "strength" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={clsx(
+            "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
+            activeFilter === "strength"
+              ? clsx("bg-neutral-700", typeBorderColor)
+              : "border-neutral-500 bg-neutral-600",
+          )}
           onClick={() => {
             setActiveFilter("strength");
           }}
@@ -78,7 +96,12 @@ const Drifter = ({
           Strength
         </button>
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "agility" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={clsx(
+            "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
+            activeFilter === "agility"
+              ? clsx("bg-neutral-700", typeBorderColor)
+              : "border-neutral-500 bg-neutral-600",
+          )}
           onClick={() => {
             setActiveFilter("agility");
           }}
@@ -86,7 +109,12 @@ const Drifter = ({
           Agility
         </button>
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "intelligence" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={clsx(
+            "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
+            activeFilter === "intelligence"
+              ? clsx("bg-neutral-700", typeBorderColor)
+              : "border-neutral-500 bg-neutral-600",
+          )}
           onClick={() => {
             setActiveFilter("intelligence");
           }}
@@ -94,7 +122,12 @@ const Drifter = ({
           Intelligence
         </button>
         <button
-          className={`cursor-pointer rounded border px-3 py-1 hover:brightness-110 ${activeFilter === "logistics" ? "border-neutral-600 bg-neutral-700" : "border-neutral-500 bg-neutral-600"}`}
+          className={clsx(
+            "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
+            activeFilter === "logistics"
+              ? clsx("bg-neutral-700", typeBorderColor)
+              : "border-neutral-500 bg-neutral-600",
+          )}
           onClick={() => {
             setActiveFilter("logistics");
           }}
@@ -121,7 +154,7 @@ const Drifter = ({
         <div className="h-12 grow rounded bg-neutral-700">
           <select
             className={clsx(
-              "h-full w-full cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg",
+              "h-full w-full cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg outline-none",
               !drifterData ||
                 !filteredData.some(
                   (drifter) => drifter.name === drifterData.name,
@@ -165,6 +198,9 @@ const Drifter = ({
             <option value="" hidden>
               Drifter
             </option>
+            <option value="" className="text-white">
+              None
+            </option>
             {filteredData.map((drifter, i) => (
               <option
                 key={drifter.name + "_" + i}
@@ -185,8 +221,9 @@ const Drifter = ({
           </select>
         </div>
         <button
-          className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700 transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40`}
+          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700 transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
           disabled={!formData?.builds?.[activeBuildIndex]?.data?.drifter.name}
+          aria-label="Clear drifter"
           onClick={() => {
             setFormData((prev) => {
               if (!prev) return prev;
@@ -214,6 +251,7 @@ const Drifter = ({
                 ),
               };
             });
+            setActiveFilter("all");
           }}
         >
           <IoClose className="h-6 w-6" />
@@ -412,7 +450,8 @@ const Drifter = ({
                   />
                 </div>
                 <button
-                  className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40`}
+                  className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
+                  aria-label="Clear drifter mastery"
                   disabled={
                     (formData?.builds?.[activeBuildIndex]?.data?.drifter
                       .mastery ?? 0) === 0
@@ -494,12 +533,20 @@ const Drifter = ({
             </div>
             <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
               <h2 className="text-lg">Battle Infusion</h2>
-              <div className="flex items-center justify-center gap-2">
-                <button className="cursor-pointer">
+              <div className="grid grid-cols-4 items-center justify-center gap-2 rounded-lg bg-neutral-800 p-2">
+                <button
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  aria-label="Decrease battle infusion"
+                >
                   <FaMinus />
                 </button>
-                <span>0</span>
-                <button className="cursor-pointer">
+                <span className="col-span-2 text-center">
+                  <span className={typeTextColor}>+</span> 0
+                </span>
+                <button
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  aria-label="Increase battle infusion"
+                >
                   <FaPlus />
                 </button>
               </div>

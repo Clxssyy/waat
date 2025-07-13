@@ -33,21 +33,33 @@ export const characterRouter = createTRPCRouter({
                       name: "",
                       mastery: 0,
                       tier: "",
+                      mod: {
+                        name: "",
+                      },
                     },
                     chest: {
                       name: "",
                       mastery: 0,
                       tier: "",
+                      mod: {
+                        name: "",
+                      },
                     },
                     boots: {
                       name: "",
                       mastery: 0,
                       tier: "",
+                      mod: {
+                        name: "",
+                      },
                     },
                     weapon: {
                       name: "",
                       mastery: 0,
                       tier: "",
+                      mod: {
+                        name: "",
+                      },
                     },
                   },
                   stats: {
@@ -84,21 +96,33 @@ export const characterRouter = createTRPCRouter({
                   name: "",
                   mastery: 0,
                   tier: "",
+                  mod: {
+                    name: "",
+                  },
                 },
                 chest: {
                   name: "",
                   mastery: 0,
                   tier: "",
+                  mod: {
+                    name: "",
+                  },
                 },
                 boots: {
                   name: "",
                   mastery: 0,
                   tier: "",
+                  mod: {
+                    name: "",
+                  },
                 },
                 weapon: {
                   name: "",
                   mastery: 0,
                   tier: "",
+                  mod: {
+                    name: "",
+                  },
                 },
               },
               stats: {

@@ -1,32 +1,42 @@
 import { z } from "zod";
 
+export const modSchema = z
+  .object({
+    name: z.string().default(""),
+  })
+  .optional();
+
 export const buildDataSchema = z.object({
   equipment: z.object({
     helmet: z.object({
-      name: z.string(),
-      mastery: z.number().max(50),
-      tier: z.string(),
+      name: z.string().default(""),
+      mastery: z.number().max(50).default(0),
+      tier: z.string().default(""),
+      mod: modSchema,
     }),
     chest: z.object({
-      name: z.string(),
-      mastery: z.number().max(50),
-      tier: z.string(),
+      name: z.string().default(""),
+      mastery: z.number().max(50).default(0),
+      tier: z.string().default(""),
+      mod: modSchema,
     }),
     boots: z.object({
-      name: z.string(),
-      mastery: z.number().max(50),
-      tier: z.string(),
+      name: z.string().default(""),
+      mastery: z.number().max(50).default(0),
+      tier: z.string().default(""),
+      mod: modSchema,
     }),
     weapon: z.object({
-      name: z.string(),
-      mastery: z.number().max(50),
-      tier: z.string(),
+      name: z.string().default(""),
+      mastery: z.number().max(50).default(0),
+      tier: z.string().default(""),
+      mod: modSchema,
     }),
   }),
   stats: z.object({
-    strength: z.number(),
-    agility: z.number(),
-    intelligence: z.number(),
+    strength: z.number().default(0),
+    agility: z.number().default(0),
+    intelligence: z.number().default(0),
   }),
   skills: z
     .object({
@@ -35,9 +45,9 @@ export const buildDataSchema = z.object({
     })
     .optional(),
   drifter: z.object({
-    name: z.string(),
-    mastery: z.number().max(50),
-    tier: z.string(),
+    name: z.string().default(""),
+    mastery: z.number().max(50).default(0),
+    tier: z.string().default(""),
   }),
 });
 

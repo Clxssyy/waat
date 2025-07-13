@@ -4,6 +4,7 @@ import { IoIosStarOutline, IoMdShare } from "react-icons/io";
 import { useBuildForm } from "./buildFormContext";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import clsx from "clsx";
 
 const BuilderHeader = () => {
   const {
@@ -26,7 +27,7 @@ const BuilderHeader = () => {
       <div className="flex items-center gap-2">
         <h1 className="truncate text-2xl">{character.name}</h1>
         <select
-          className="hidden cursor-pointer rounded border border-neutral-700 bg-neutral-800 px-2 py-1 sm:block"
+          className="hidden cursor-pointer rounded border border-neutral-700 bg-neutral-800 px-2 py-1 outline-none sm:block"
           aria-label="Role"
           value={formData?.role ?? ""}
           onChange={(e) => {
@@ -41,7 +42,11 @@ const BuilderHeader = () => {
       </div>
       <div className="hidden items-center gap-2 sm:flex">
         <button
-          className={`cursor-pointer rounded border px-2 py-1 transition-all hover:brightness-110 not-disabled:hover:scale-105 not-disabled:active:scale-95 disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40 ${hasChanges && isCreator && "border-green-600 bg-green-700"} ${!isCreator && "border-cyan-500 bg-cyan-600"}`}
+          className={clsx(
+            "cursor-pointer rounded border px-2 py-1 transition-all hover:brightness-110 not-disabled:hover:scale-105 not-disabled:active:scale-95 disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40",
+            hasChanges && isCreator && "border-green-600 bg-green-700",
+            !isCreator && "border-cyan-500 bg-cyan-600",
+          )}
           onClick={
             isCreator
               ? () => {

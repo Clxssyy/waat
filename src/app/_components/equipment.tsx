@@ -36,7 +36,6 @@ const Equipment = ({
     setActiveFilter("all");
   }, [slot]);
 
-  const modPlaceholder = true;
   type EquipmentData = {
     name: string;
     rarity: string;
@@ -74,12 +73,12 @@ const Equipment = ({
     equipmentData?.rarity === "common" && "border-green-600 to-green-600/60",
   );
 
-  const rarityOutline = clsx(
-    "border-2",
+  const rarityBorderColor = clsx(
     equipmentData?.rarity === "legendary" && "border-yellow-600",
     equipmentData?.rarity === "epic" && "border-purple-600",
     equipmentData?.rarity === "rare" && "border-blue-600",
     equipmentData?.rarity === "common" && "border-green-600",
+    !equipmentData?.rarity && "border-cyan-400",
   );
 
   function getRarityOptionHighlight(equipmentData: EquipmentData): string {
@@ -105,7 +104,7 @@ const Equipment = ({
           className={clsx(
             "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
             activeFilter === "all"
-              ? "border-neutral-600 bg-neutral-700"
+              ? clsx("bg-neutral-700", rarityBorderColor)
               : "border-neutral-500 bg-neutral-600",
           )}
           onClick={() => {
@@ -118,7 +117,7 @@ const Equipment = ({
           className={clsx(
             "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
             activeFilter === "strength"
-              ? "border-neutral-600 bg-neutral-700"
+              ? clsx("bg-neutral-700", rarityBorderColor)
               : "border-neutral-500 bg-neutral-600",
           )}
           onClick={() => {
@@ -131,7 +130,7 @@ const Equipment = ({
           className={clsx(
             "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
             activeFilter === "agility"
-              ? "border-neutral-600 bg-neutral-700"
+              ? clsx("bg-neutral-700", rarityBorderColor)
               : "border-neutral-500 bg-neutral-600",
           )}
           onClick={() => {
@@ -144,7 +143,7 @@ const Equipment = ({
           className={clsx(
             "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
             activeFilter === "intelligence"
-              ? "border-neutral-600 bg-neutral-700"
+              ? clsx("bg-neutral-700", rarityBorderColor)
               : "border-neutral-500 bg-neutral-600",
           )}
           onClick={() => {
@@ -158,7 +157,7 @@ const Equipment = ({
             className={clsx(
               "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
               activeFilter === "logistics"
-                ? "border-neutral-600 bg-neutral-700"
+                ? clsx("bg-neutral-700", rarityBorderColor)
                 : "border-neutral-500 bg-neutral-600",
             )}
             onClick={() => {
@@ -188,7 +187,7 @@ const Equipment = ({
         <div className="h-12 grow rounded bg-neutral-700">
           <select
             className={clsx(
-              "h-full w-full cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg",
+              "h-full w-full cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg outline-none",
               !equipmentData ||
                 !filteredData.some(
                   ([, equipment]) => equipment.name === equipmentData.name,
@@ -219,6 +218,9 @@ const Equipment = ({
                                   name: e.target.value,
                                   mastery: 0,
                                   tier: "I",
+                                  mod: {
+                                    name: "",
+                                  },
                                 },
                               },
                               skills: {
@@ -249,6 +251,9 @@ const Equipment = ({
           >
             <option value="" hidden>
               {slot.charAt(0).toUpperCase() + slot.slice(1)}
+            </option>
+            <option value="" className="text-white">
+              None
             </option>
             {filteredData.map(([i, equipment]) => (
               <option
@@ -300,6 +305,7 @@ const Equipment = ({
                 ),
               };
             });
+            setActiveFilter("all");
           }}
         >
           <IoClose className="h-6 w-6" />
@@ -364,7 +370,7 @@ const Equipment = ({
                                 skill.name ===
                                   formData?.builds?.[activeBuildIndex]?.data
                                     ?.skills?.basic
-                                  ? rarityOutline
+                                  ? clsx(rarityBorderColor, "border-2")
                                   : "border border-neutral-600",
                               )}
                             >
@@ -447,7 +453,7 @@ const Equipment = ({
                                 skill.name ===
                                   formData?.builds?.[activeBuildIndex]?.data
                                     ?.skills?.common
-                                  ? rarityOutline
+                                  ? clsx(rarityBorderColor, "border-2")
                                   : "border border-neutral-600",
                               )}
                             >
@@ -712,7 +718,7 @@ const Equipment = ({
               />
               <button
                 aria-label="Clear mastery level"
-                className={`flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40`}
+                className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
                 disabled={
                   (formData?.builds?.[activeBuildIndex]?.data?.equipment[slot]
                     .mastery ?? 0) === 0
@@ -803,16 +809,18 @@ const Equipment = ({
             </div>
             <div className="flex grow flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
               <h2 className="text-lg">Battle Infusion</h2>
-              <div className="flex items-center justify-center gap-2">
+              <div className="grid grid-cols-4 items-center justify-center gap-2 rounded-lg bg-neutral-800 p-2">
                 <button
-                  className="cursor-pointer"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   aria-label="Decrease battle infusion"
                 >
                   <FaMinus />
                 </button>
-                <span>0</span>
+                <span className="col-span-2 text-center">
+                  <span className={rarityTextColor}>+</span> 0
+                </span>
                 <button
-                  className="cursor-pointer"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   aria-label="Increase battle infusion"
                 >
                   <FaPlus />
@@ -831,29 +839,97 @@ const Equipment = ({
               <div className="h-12 w-12 rounded bg-neutral-800"></div>
               <select
                 aria-label="Select equipment mod"
-                className="h-12 grow rounded bg-neutral-800 px-2 text-lg"
-                disabled
+                className="h-12 grow cursor-pointer rounded bg-neutral-800 px-2 text-lg outline-none"
+                value={
+                  formData?.builds[activeBuildIndex]?.data.equipment[slot].mod
+                    ?.name ?? ""
+                }
+                onChange={(e) => {
+                  setFormData((prev) => {
+                    if (!prev) return prev;
+                    return {
+                      ...prev,
+                      builds: prev.builds.map((b, idx) =>
+                        idx === activeBuildIndex
+                          ? {
+                              ...b,
+                              data: {
+                                ...b.data,
+                                equipment: {
+                                  ...b.data.equipment,
+                                  [slot]: {
+                                    ...b.data.equipment[slot],
+                                    mod: {
+                                      name: e.target.value,
+                                    },
+                                  },
+                                },
+                              },
+                            }
+                          : b,
+                      ),
+                    };
+                  });
+                }}
               >
-                <option value="">Mod</option>
+                <option value="" hidden>
+                  Mod
+                </option>
+                <option value="">None</option>
+                <option value="placeholder">Placeholder</option>
               </select>
               <button
-                className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 hover:text-red-500"
+                className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
                 aria-label="Clear mod selection"
-                disabled
+                disabled={
+                  formData?.builds[activeBuildIndex]?.data.equipment[slot].mod
+                    ?.name === ""
+                }
+                onClick={() => {
+                  setFormData((prev) => {
+                    if (!prev) return prev;
+                    return {
+                      ...prev,
+                      builds: prev.builds.map((b, idx) =>
+                        idx === activeBuildIndex
+                          ? {
+                              ...b,
+                              data: {
+                                ...b.data,
+                                equipment: {
+                                  ...b.data.equipment,
+                                  [slot]: {
+                                    ...b.data.equipment[slot],
+                                    mod: {
+                                      name: "",
+                                    },
+                                  },
+                                },
+                              },
+                            }
+                          : b,
+                      ),
+                    };
+                  });
+                }}
               >
                 <IoClose className="h-6 w-6" />
               </button>
             </div>
           </div>
-          {modPlaceholder && (
-            <>
-              <hr className="border-neutral-700" />
-              <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-                <h2 className="text-lg">Details</h2>
-                <div className="rounded bg-neutral-800 p-2">Coming soon...</div>
-              </div>
-            </>
-          )}
+          {formData?.builds[activeBuildIndex]?.data.equipment[slot].mod
+            ?.name !== "" &&
+            formData?.builds[activeBuildIndex]?.data.equipment[slot].mod && (
+              <>
+                <hr className="border-neutral-700" />
+                <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+                  <h2 className="text-lg">Details</h2>
+                  <div className="rounded bg-neutral-800 p-2">
+                    Coming soon...
+                  </div>
+                </div>
+              </>
+            )}
         </>
       )}
     </div>

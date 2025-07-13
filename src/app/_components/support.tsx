@@ -146,7 +146,7 @@ const Support = () => {
           <div className="h-12 grow rounded bg-neutral-700">
             <select
               className={clsx(
-                "h-full w-full cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg",
+                "h-full w-full cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg outline-none",
                 !drifterData[activeSupport]
                   ? "text-white"
                   : getTypeTextColor(drifterData[activeSupport]),

@@ -1,6 +1,6 @@
 "use client";
 
-import { FaMinus, FaPlus } from "react-icons/fa6";
+import { FaDiamond, FaMinus, FaPlus } from "react-icons/fa6";
 import { useBuildForm } from "./buildFormContext";
 import { notFound } from "next/navigation";
 import data from "public/data.json";
@@ -60,7 +60,7 @@ const BuildDisplay = () => {
 
   const bootsData = data.boots.find((boots) => boots.name === bootsKey);
 
-  const typeOutline = clsx(
+  const typeOutlineColor = clsx(
     "border-2",
     drifterData?.type === "strength" && "border-red-400",
     drifterData?.type === "intelligence" && "border-blue-400",
@@ -69,7 +69,7 @@ const BuildDisplay = () => {
     !drifterData?.type && "border-cyan-400",
   );
 
-  const typeHover = clsx(
+  const typeHoverColor = clsx(
     drifterData?.type === "strength" && "hover:border-red-400",
     drifterData?.type === "intelligence" && "hover:border-blue-400",
     drifterData?.type === "agility" && "hover:border-green-400",
@@ -104,6 +104,24 @@ const BuildDisplay = () => {
     );
   }
 
+  const totalStrength =
+    (formData?.builds?.[activeBuildIndex]?.data?.stats?.strength ?? 0) +
+    (drifterData?.strBase ?? 0) +
+    (drifterData?.strBonus ?? 0) *
+      (formData?.builds?.[activeBuildIndex]?.data?.drifter.mastery ?? 0);
+
+  const totalAgility =
+    (formData?.builds?.[activeBuildIndex]?.data?.stats?.agility ?? 0) +
+    (drifterData?.agiBase ?? 0) +
+    (drifterData?.agiBonus ?? 0) *
+      (formData?.builds?.[activeBuildIndex]?.data?.drifter.mastery ?? 0);
+
+  const totalIntelligence =
+    (formData?.builds?.[activeBuildIndex]?.data?.stats?.intelligence ?? 0) +
+    (drifterData?.intBase ?? 0) +
+    (drifterData?.intBonus ?? 0) *
+      (formData?.builds?.[activeBuildIndex]?.data?.drifter.mastery ?? 0);
+
   return (
     <div id="display" className="min-w-1/3">
       <div className="flex flex-col items-center gap-2 rounded border border-neutral-700 bg-neutral-800 p-2">
@@ -133,21 +151,33 @@ const BuildDisplay = () => {
                                 name: "",
                                 mastery: 0,
                                 tier: "",
+                                mod: {
+                                  name: "",
+                                },
                               },
                               chest: {
                                 name: "",
                                 mastery: 0,
                                 tier: "",
+                                mod: {
+                                  name: "",
+                                },
                               },
                               boots: {
                                 name: "",
                                 mastery: 0,
                                 tier: "",
+                                mod: {
+                                  name: "",
+                                },
                               },
                               weapon: {
                                 name: "",
                                 mastery: 0,
                                 tier: "",
+                                mod: {
+                                  name: "",
+                                },
                               },
                             },
                             stats: {
@@ -170,212 +200,376 @@ const BuildDisplay = () => {
                   setActiveTab("equipment");
                 }
               }}
-              className={`h-4 w-4 cursor-pointer rounded-full hover:outline-2 hover:outline-cyan-600 ${activeBuildIndex === i ? "outline-2 outline-cyan-600" : ""} ${
-                formData.builds[i] ? "bg-cyan-400" : "bg-neutral-800"
-              } ${!character.builds[i] && formData.builds[i] ? "animate-pulse" : ""}`}
+              className={clsx(
+                "h-4 w-4 cursor-pointer rounded-full hover:outline-2 hover:outline-cyan-600",
+                activeBuildIndex === i && "outline-2 outline-cyan-600",
+                formData.builds[i] ? "bg-cyan-400" : "bg-neutral-800",
+                !character.builds[i] && formData.builds[i] && "animate-pulse",
+              )}
             />
           ))}
         </div>
         <div className="flex flex-wrap justify-center gap-2">
-          <button
-            className={clsx(
-              "relative flex h-82 w-32 cursor-pointer items-center justify-center border transition-all active:scale-[98%]",
-              clsx(
-                getEquipmentBackground(weaponData),
-                activeSlot === "weapon"
-                  ? getEquipmentOutline(weaponData)
-                  : "border-neutral-600",
-              ),
-            )}
-            aria-label="Weapon Slot"
-            onClick={() => {
-              if (activeSlot != "weapon") setActiveSlot("weapon");
-              if (activeTab != "equipment") setActiveTab("equipment");
-            }}
-          >
-            {weaponKey ? (
-              weaponData?.image ? (
-                <ImageHelper
-                  src={weaponData.image}
-                  alt={weaponKey}
-                  width={800}
-                  height={800}
-                />
+          <div className="relative">
+            <button
+              className={clsx(
+                "relative flex h-82 w-32 cursor-pointer items-center justify-center border transition-all active:scale-[98%]",
+                clsx(
+                  getEquipmentBackground(weaponData),
+                  activeSlot === "weapon"
+                    ? getEquipmentOutline(weaponData)
+                    : "border-neutral-600",
+                ),
+              )}
+              aria-label="Weapon Slot"
+              onClick={() => {
+                if (activeSlot != "weapon") setActiveSlot("weapon");
+                if (activeTab != "equipment") setActiveTab("equipment");
+              }}
+            >
+              {weaponKey ? (
+                weaponData?.image ? (
+                  <ImageHelper
+                    src={weaponData.image}
+                    alt={weaponKey}
+                    width={800}
+                    height={800}
+                  />
+                ) : (
+                  <div className="truncate p-1 text-sm text-wrap">
+                    {weaponKey.charAt(0).toUpperCase() +
+                      weaponKey
+                        .slice(1)
+                        .replace(/_/g, " ")
+                        .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
+                  </div>
+                )
               ) : (
-                <div className="truncate p-1 text-sm text-wrap">
-                  {weaponKey.charAt(0).toUpperCase() +
-                    weaponKey
-                      .slice(1)
-                      .replace(/_/g, " ")
-                      .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
+                  <FaPlus />
                 </div>
-              )
-            ) : (
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
-                <FaPlus />
-              </div>
-            )}
-            {formData?.builds?.some(
-              (build) =>
-                build.data.equipment.weapon.name === weaponKey &&
-                build.id !== formData.builds[activeBuildIndex]?.id &&
-                build.data.equipment.weapon.name !== "",
-            ) ? (
-              <div className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
-                <span className="text-sm">!</span>
-              </div>
-            ) : null}
-          </button>
+              )}
+              {formData?.builds?.some(
+                (build) =>
+                  build.data.equipment.weapon.name === weaponKey &&
+                  build.id !== formData.builds[activeBuildIndex]?.id &&
+                  build.data.equipment.weapon.name !== "",
+              ) ? (
+                <div
+                  id="weapon-conflict-display"
+                  className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400"
+                >
+                  <span className="text-sm">!</span>
+                </div>
+              ) : null}
+              {formData.builds[activeBuildIndex]?.data.equipment.weapon.name !==
+              "" ? (
+                <div
+                  id="weapon-tier-display"
+                  className="absolute right-0 bottom-0 w-2/5 border-t border-l border-neutral-600 bg-neutral-700 text-sm"
+                >
+                  {formData.builds[activeBuildIndex]?.data.equipment.weapon
+                    .tier === ""
+                    ? "I"
+                    : formData.builds[activeBuildIndex]?.data.equipment.weapon
+                        .tier}
+                </div>
+              ) : null}
+            </button>
+            <button
+              id="weapon-mod-display"
+              aria-label="Weapon Slot"
+              className={clsx(
+                "absolute top-1/2 -left-14 hidden h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700",
+                "before:absolute before:-right-4 before:bottom-2 before:h-0.5 before:w-3 before:rotate-[30deg] before:rounded before:bg-neutral-700",
+                "after:absolute after:top-2 after:-right-4 after:h-0.5 after:w-3 after:-rotate-[30deg] after:rounded after:bg-neutral-700",
+                "not-lg:sm:flex 2xl:flex",
+              )}
+              onClick={() => {
+                if (activeSlot != "weapon") setActiveSlot("weapon");
+                if (activeTab != "equipment") setActiveTab("equipment");
+                scrollTo();
+              }}
+            >
+              {formData.builds[activeBuildIndex]?.data.equipment.weapon.mod &&
+              formData?.builds[activeBuildIndex]?.data.equipment.weapon.mod
+                ?.name !== "" ? (
+                <FaDiamond className="text-neutral-500" />
+              ) : null}
+            </button>
+          </div>
           <div className="flex flex-col gap-2">
-            <button
-              className={clsx(
-                "relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all active:scale-[98%]",
-                getEquipmentBackground(helmetData),
-                activeSlot === "helmet"
-                  ? getEquipmentOutline(helmetData)
-                  : "border-neutral-600",
-              )}
-              aria-label="Helmet Slot"
-              onClick={() => {
-                if (activeSlot != "helmet") setActiveSlot("helmet");
-                if (activeTab != "equipment") setActiveTab("equipment");
-              }}
-            >
-              {helmetKey ? (
-                helmetData?.image ? (
-                  <ImageHelper
-                    src={helmetData.image}
-                    alt={helmetKey}
-                    width={800}
-                    height={800}
-                  />
+            <div className="relative">
+              <button
+                className={clsx(
+                  "relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all active:scale-[98%]",
+                  getEquipmentBackground(helmetData),
+                  activeSlot === "helmet"
+                    ? getEquipmentOutline(helmetData)
+                    : "border-neutral-600",
+                )}
+                aria-label="Helmet Slot"
+                onClick={() => {
+                  if (activeSlot != "helmet") setActiveSlot("helmet");
+                  if (activeTab != "equipment") setActiveTab("equipment");
+                }}
+              >
+                {helmetKey ? (
+                  helmetData?.image ? (
+                    <ImageHelper
+                      src={helmetData.image}
+                      alt={helmetKey}
+                      width={800}
+                      height={800}
+                    />
+                  ) : (
+                    <div className="truncate p-1 text-sm text-wrap">
+                      {helmetKey.charAt(0).toUpperCase() +
+                        helmetKey
+                          .slice(1)
+                          .replace(/_/g, " ")
+                          .replace(/(\s[a-z])/g, (match) =>
+                            match.toUpperCase(),
+                          )}
+                    </div>
+                  )
                 ) : (
-                  <div className="truncate p-1 text-sm text-wrap">
-                    {helmetKey.charAt(0).toUpperCase() +
-                      helmetKey
-                        .slice(1)
-                        .replace(/_/g, " ")
-                        .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
+                    <FaPlus />
                   </div>
-                )
-              ) : (
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
-                  <FaPlus />
-                </div>
-              )}
-              {formData?.builds?.some(
-                (build) =>
-                  build.data.equipment.helmet.name === helmetKey &&
-                  build.id !== formData.builds[activeBuildIndex]?.id &&
-                  build.data.equipment.helmet.name !== "",
-              ) ? (
-                <div className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
-                  <span className="text-sm">!</span>
-                </div>
-              ) : null}
-            </button>
-
-            <button
-              className={clsx(
-                "relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all active:scale-[98%]",
-                getEquipmentBackground(chestData),
-                activeSlot === "chest"
-                  ? getEquipmentOutline(chestData)
-                  : "border-neutral-600",
-              )}
-              aria-label="Chest Slot"
-              onClick={() => {
-                if (activeSlot != "chest") setActiveSlot("chest");
-                if (activeTab != "equipment") setActiveTab("equipment");
-              }}
-            >
-              {chestKey ? (
-                chestData?.image ? (
-                  <ImageHelper
-                    src={chestData.image}
-                    alt={chestKey}
-                    width={800}
-                    height={800}
-                  />
+                )}
+                {formData?.builds?.some(
+                  (build) =>
+                    build.data.equipment.helmet.name === helmetKey &&
+                    build.id !== formData.builds[activeBuildIndex]?.id &&
+                    build.data.equipment.helmet.name !== "",
+                ) ? (
+                  <div
+                    id="helmet-conflict-display"
+                    className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400"
+                  >
+                    <span className="text-sm">!</span>
+                  </div>
+                ) : null}
+                {formData.builds[activeBuildIndex]?.data.equipment.helmet
+                  .name !== "" ? (
+                  <div
+                    id="helmet-tier-display"
+                    className="absolute right-0 bottom-0 w-2/5 border-t border-l border-neutral-600 bg-neutral-700 text-sm"
+                  >
+                    {formData.builds[activeBuildIndex]?.data.equipment.helmet
+                      .tier === ""
+                      ? "I"
+                      : formData.builds[activeBuildIndex]?.data.equipment.helmet
+                          .tier}
+                  </div>
+                ) : null}
+              </button>
+              <button
+                id="helmet-mod-display"
+                aria-label="Helmet Slot"
+                className={clsx(
+                  "absolute top-1/2 -right-14 hidden h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700",
+                  "before:absolute before:bottom-2 before:-left-4 before:h-0.5 before:w-3 before:-rotate-[30deg] before:rounded before:bg-neutral-700",
+                  "after:absolute after:top-2 after:-left-4 after:h-0.5 after:w-3 after:rotate-[30deg] after:rounded after:bg-neutral-700",
+                  "not-lg:sm:flex 2xl:flex",
+                )}
+                onClick={() => {
+                  if (activeSlot != "helmet") setActiveSlot("helmet");
+                  if (activeTab != "equipment") setActiveTab("equipment");
+                  scrollTo();
+                }}
+              >
+                {formData.builds[activeBuildIndex]?.data.equipment.helmet.mod &&
+                formData?.builds[activeBuildIndex]?.data.equipment.helmet.mod
+                  ?.name !== "" ? (
+                  <FaDiamond className="text-neutral-500" />
+                ) : null}
+              </button>
+            </div>
+            <div className="relative">
+              <button
+                className={clsx(
+                  "relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all active:scale-[98%]",
+                  getEquipmentBackground(chestData),
+                  activeSlot === "chest"
+                    ? getEquipmentOutline(chestData)
+                    : "border-neutral-600",
+                )}
+                aria-label="Chest Slot"
+                onClick={() => {
+                  if (activeSlot != "chest") setActiveSlot("chest");
+                  if (activeTab != "equipment") setActiveTab("equipment");
+                }}
+              >
+                {chestKey ? (
+                  chestData?.image ? (
+                    <ImageHelper
+                      src={chestData.image}
+                      alt={chestKey}
+                      width={800}
+                      height={800}
+                    />
+                  ) : (
+                    <div className="truncate p-1 text-sm text-wrap">
+                      {chestKey.charAt(0).toUpperCase() +
+                        chestKey
+                          .slice(1)
+                          .replace(/_/g, " ")
+                          .replace(/(\s[a-z])/g, (match) =>
+                            match.toUpperCase(),
+                          )}
+                    </div>
+                  )
                 ) : (
-                  <div className="truncate p-1 text-sm text-wrap">
-                    {chestKey.charAt(0).toUpperCase() +
-                      chestKey
-                        .slice(1)
-                        .replace(/_/g, " ")
-                        .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
+                    <FaPlus />
                   </div>
-                )
-              ) : (
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
-                  <FaPlus />
-                </div>
-              )}
-              {formData?.builds?.some(
-                (build) =>
-                  build.data.equipment.chest.name === chestKey &&
-                  build.id !== formData.builds[activeBuildIndex]?.id &&
-                  build.data.equipment.chest.name !== "",
-              ) ? (
-                <div className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
-                  <span className="text-sm">!</span>
-                </div>
-              ) : null}
-            </button>
-            <button
-              className={clsx(
-                "relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all active:scale-[98%]",
-                getEquipmentBackground(bootsData),
-                activeSlot === "boots"
-                  ? getEquipmentOutline(bootsData)
-                  : "border-neutral-600",
-              )}
-              aria-label="Boots Slot"
-              onClick={() => {
-                if (activeSlot != "boots") setActiveSlot("boots");
-                if (activeTab != "equipment") setActiveTab("equipment");
-              }}
-            >
-              {bootsKey ? (
-                bootsData?.image ? (
-                  <ImageHelper
-                    src={bootsData.image}
-                    alt={bootsKey}
-                    width={800}
-                    height={800}
-                  />
+                )}
+                {formData?.builds?.some(
+                  (build) =>
+                    build.data.equipment.chest.name === chestKey &&
+                    build.id !== formData.builds[activeBuildIndex]?.id &&
+                    build.data.equipment.chest.name !== "",
+                ) ? (
+                  <div
+                    id="chest-conflict-display"
+                    className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400"
+                  >
+                    <span className="text-sm">!</span>
+                  </div>
+                ) : null}
+                {formData.builds[activeBuildIndex]?.data.equipment.chest
+                  .name !== "" ? (
+                  <div
+                    id="chest-tier-display"
+                    className="absolute right-0 bottom-0 w-2/5 border-t border-l border-neutral-600 bg-neutral-700 text-sm"
+                  >
+                    {formData.builds[activeBuildIndex]?.data.equipment.chest
+                      .tier === ""
+                      ? "I"
+                      : formData.builds[activeBuildIndex]?.data.equipment.chest
+                          .tier}
+                  </div>
+                ) : null}
+              </button>
+              <button
+                id="chest-mod-display"
+                aria-label="Chest Slot"
+                className={clsx(
+                  "absolute top-1/2 -right-14 hidden h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700",
+                  "before:absolute before:bottom-2 before:-left-4 before:h-0.5 before:w-3 before:-rotate-[30deg] before:rounded before:bg-neutral-700",
+                  "after:absolute after:top-2 after:-left-4 after:h-0.5 after:w-3 after:rotate-[30deg] after:rounded after:bg-neutral-700",
+                  "not-lg:sm:flex 2xl:flex",
+                )}
+                onClick={() => {
+                  if (activeSlot != "chest") setActiveSlot("chest");
+                  if (activeTab != "equipment") setActiveTab("equipment");
+                  scrollTo();
+                }}
+              >
+                {formData.builds[activeBuildIndex]?.data.equipment.chest.mod &&
+                formData?.builds[activeBuildIndex]?.data.equipment.chest.mod
+                  ?.name !== "" ? (
+                  <FaDiamond className="text-neutral-500" />
+                ) : null}
+              </button>
+            </div>
+            <div className="relative">
+              <button
+                className={clsx(
+                  "relative flex h-26 w-26 cursor-pointer items-center justify-center border transition-all active:scale-[98%]",
+                  getEquipmentBackground(bootsData),
+                  activeSlot === "boots"
+                    ? getEquipmentOutline(bootsData)
+                    : "border-neutral-600",
+                )}
+                aria-label="Boots Slot"
+                onClick={() => {
+                  if (activeSlot != "boots") setActiveSlot("boots");
+                  if (activeTab != "equipment") setActiveTab("equipment");
+                }}
+              >
+                {bootsKey ? (
+                  bootsData?.image ? (
+                    <ImageHelper
+                      src={bootsData.image}
+                      alt={bootsKey}
+                      width={800}
+                      height={800}
+                    />
+                  ) : (
+                    <div className="truncate p-1 text-sm text-wrap">
+                      {bootsKey.charAt(0).toUpperCase() +
+                        bootsKey
+                          .slice(1)
+                          .replace(/_/g, " ")
+                          .replace(/(\s[a-z])/g, (match) =>
+                            match.toUpperCase(),
+                          )}
+                    </div>
+                  )
                 ) : (
-                  <div className="truncate p-1 text-sm text-wrap">
-                    {bootsKey.charAt(0).toUpperCase() +
-                      bootsKey
-                        .slice(1)
-                        .replace(/_/g, " ")
-                        .replace(/(\s[a-z])/g, (match) => match.toUpperCase())}
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
+                    <FaPlus />
                   </div>
-                )
-              ) : (
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-neutral-500 shadow-md">
-                  <FaPlus />
-                </div>
-              )}
-              {formData?.builds?.some(
-                (build) =>
-                  build.data.equipment.boots.name === bootsKey &&
-                  build.id !== formData.builds[activeBuildIndex]?.id &&
-                  build.data.equipment.boots.name !== "",
-              ) ? (
-                <div className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
-                  <span className="text-sm">!</span>
-                </div>
-              ) : null}
-            </button>
+                )}
+                {formData?.builds?.some(
+                  (build) =>
+                    build.data.equipment.boots.name === bootsKey &&
+                    build.id !== formData.builds[activeBuildIndex]?.id &&
+                    build.data.equipment.boots.name !== "",
+                ) ? (
+                  <div
+                    id="boots-conflict-display"
+                    className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400"
+                  >
+                    <span className="text-sm">!</span>
+                  </div>
+                ) : null}
+                {formData.builds[activeBuildIndex]?.data.equipment.boots
+                  .name !== "" ? (
+                  <div
+                    id="boots-tier-display"
+                    className="absolute right-0 bottom-0 w-2/5 border-t border-l border-neutral-600 bg-neutral-700 text-sm"
+                  >
+                    {formData.builds[activeBuildIndex]?.data.equipment.boots
+                      .tier === ""
+                      ? "I"
+                      : formData.builds[activeBuildIndex]?.data.equipment.boots
+                          .tier}
+                  </div>
+                ) : null}
+              </button>
+              <button
+                id="boots-mod-display"
+                aria-label="Boots Slot"
+                className={clsx(
+                  "absolute top-1/2 -right-14 hidden h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700",
+                  "before:absolute before:bottom-2 before:-left-4 before:h-0.5 before:w-3 before:-rotate-[30deg] before:rounded before:bg-neutral-700",
+                  "after:absolute after:top-2 after:-left-4 after:h-0.5 after:w-3 after:rotate-[30deg] after:rounded after:bg-neutral-700",
+                  "not-lg:sm:flex 2xl:flex",
+                )}
+                onClick={() => {
+                  if (activeSlot != "boots") setActiveSlot("boots");
+                  if (activeTab != "equipment") setActiveTab("equipment");
+                  scrollTo();
+                }}
+              >
+                {formData.builds[activeBuildIndex]?.data.equipment.boots.mod &&
+                formData?.builds[activeBuildIndex]?.data.equipment.boots.mod
+                  ?.name !== "" ? (
+                  <FaDiamond className="text-neutral-500" />
+                ) : null}
+              </button>
+            </div>
           </div>
         </div>
         <button
           className={clsx(
-            "relative flex h-24 w-60 cursor-pointer items-center justify-center border bg-neutral-700 bg-radial from-neutral-700 from-10% to-black/30 transition-all active:scale-95",
-            typeHover,
-            activeSlot === "drifter" ? typeOutline : "border-neutral-600",
+            "relative flex h-24 w-60 cursor-pointer items-center justify-center border bg-neutral-700 bg-radial from-neutral-700 from-10% to-black/30 transition-all active:scale-[98%]",
+            typeHoverColor,
+            activeSlot === "drifter" ? typeOutlineColor : "border-neutral-600",
           )}
           aria-label="Drifter Slot"
           onClick={() => {
@@ -419,6 +613,13 @@ const BuildDisplay = () => {
               <span className="text-sm">!</span>
             </div>
           ) : null}
+          {formData.builds[activeBuildIndex]?.data.drifter.name !== "" ? (
+            <div className="absolute right-0 bottom-0 w-1/5 border-t border-l border-neutral-600 bg-neutral-700 text-sm">
+              {formData.builds[activeBuildIndex]?.data.drifter.tier === ""
+                ? "I"
+                : formData.builds[activeBuildIndex]?.data.drifter.tier}
+            </div>
+          ) : null}
         </button>
         <div className="flex w-full justify-between border border-neutral-600 bg-neutral-700 p-2">
           <p className="flex w-full justify-between">
@@ -431,7 +632,7 @@ const BuildDisplay = () => {
             Stats <span className="text-neutral-400">({statPoints})</span>
           </h2>
           <div className="flex flex-col gap-2">
-            <div className="flex flex-col gap-1 rounded-lg bg-neutral-800 p-2 text-center">
+            <div className="flex flex-col gap-2 rounded-lg bg-neutral-800 p-2 text-center">
               <h3 className="text-sm">
                 Strength <span>({drifterData?.strBonus ?? "0.0"})</span>
               </h3>
@@ -441,9 +642,7 @@ const BuildDisplay = () => {
                   className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   disabled={
                     (formData?.builds[activeBuildIndex]?.data.stats.strength ??
-                      0) +
-                      (drifterData?.strBase ?? 0) ===
-                    (drifterData?.strBase ?? 0)
+                      0) === 0
                   }
                   onClick={() => {
                     setFormData((prev) => {
@@ -473,14 +672,7 @@ const BuildDisplay = () => {
                   <FaMinus />
                 </button>
                 <p className="col-span-2 text-sm">
-                  {Math.floor(
-                    (formData?.builds?.[activeBuildIndex]?.data?.stats
-                      ?.strength ?? 0) +
-                      (drifterData?.strBase ?? 0) +
-                      (drifterData?.strBonus ?? 0) *
-                        (formData?.builds?.[activeBuildIndex]?.data?.drifter
-                          .mastery ?? 0),
-                  )}{" "}
+                  {Math.floor(totalStrength)}{" "}
                   <span className="text-neutral-400">
                     (
                     {formData?.builds?.[activeBuildIndex]?.data?.stats
@@ -520,8 +712,56 @@ const BuildDisplay = () => {
                   <FaPlus />
                 </button>
               </div>
+              <div
+                id="strength-stat-source-display"
+                className="flex h-1 rounded bg-neutral-700/40 transition-all"
+              >
+                <div
+                  id="strength-base"
+                  className="h-full rounded bg-neutral-500"
+                  style={{
+                    width:
+                      totalStrength === 0
+                        ? 0
+                        : String(
+                            ((drifterData?.strBase ?? 0) / totalStrength) * 100,
+                          ) + "%",
+                  }}
+                />
+                <div
+                  id="strength-mastery-bonus"
+                  className="h-full rounded bg-cyan-400"
+                  style={{
+                    width:
+                      totalStrength === 0
+                        ? 0
+                        : String(
+                            (((drifterData?.strBonus ?? 0) *
+                              (formData?.builds?.[activeBuildIndex]?.data
+                                ?.drifter.mastery ?? 0)) /
+                              totalStrength) *
+                              100,
+                          ) + "%",
+                  }}
+                />
+                <div
+                  id="strength-added-stats"
+                  className="h-full rounded bg-purple-400"
+                  style={{
+                    width:
+                      totalStrength === 0
+                        ? 0
+                        : String(
+                            ((formData?.builds?.[activeBuildIndex]?.data?.stats
+                              ?.strength ?? 0) /
+                              totalStrength) *
+                              100,
+                          ) + "%",
+                  }}
+                />
+              </div>
             </div>
-            <div className="flex flex-col gap-1 rounded-lg bg-neutral-800 p-2 text-center">
+            <div className="flex flex-col gap-2 rounded-lg bg-neutral-800 p-2 text-center">
               <h3 className="text-sm">
                 Agility <span>({drifterData?.agiBonus ?? "0.0"})</span>
               </h3>
@@ -531,9 +771,7 @@ const BuildDisplay = () => {
                   className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   disabled={
                     (formData?.builds[activeBuildIndex]?.data.stats.agility ??
-                      0) +
-                      (drifterData?.agiBase ?? 0) ===
-                    (drifterData?.agiBase ?? 0)
+                      0) === 0
                   }
                   onClick={() => {
                     setFormData((prev) => {
@@ -563,14 +801,7 @@ const BuildDisplay = () => {
                   <FaMinus />
                 </button>
                 <p className="col-span-2 text-sm">
-                  {Math.floor(
-                    (formData?.builds?.[activeBuildIndex]?.data?.stats
-                      ?.agility ?? 0) +
-                      (drifterData?.agiBase ?? 0) +
-                      (drifterData?.agiBonus ?? 0) *
-                        (formData?.builds?.[activeBuildIndex]?.data?.drifter
-                          .mastery ?? 0),
-                  )}{" "}
+                  {Math.floor(totalAgility)}{" "}
                   <span className="text-neutral-400">
                     (
                     {formData?.builds?.[activeBuildIndex]?.data?.stats
@@ -610,8 +841,56 @@ const BuildDisplay = () => {
                   <FaPlus />
                 </button>
               </div>
+              <div
+                id="agility-stat-source-display"
+                className="flex h-1 rounded bg-neutral-700/40 transition-all"
+              >
+                <div
+                  id="agility-base"
+                  className="h-full rounded bg-neutral-500"
+                  style={{
+                    width:
+                      totalAgility === 0
+                        ? 0
+                        : String(
+                            ((drifterData?.agiBase ?? 0) / totalAgility) * 100,
+                          ) + "%",
+                  }}
+                />
+                <div
+                  id="agility-mastery-bonus"
+                  className="h-full rounded bg-cyan-400"
+                  style={{
+                    width:
+                      totalAgility === 0
+                        ? 0
+                        : String(
+                            (((drifterData?.agiBonus ?? 0) *
+                              (formData?.builds?.[activeBuildIndex]?.data
+                                ?.drifter.mastery ?? 0)) /
+                              totalAgility) *
+                              100,
+                          ) + "%",
+                  }}
+                />
+                <div
+                  id="agility-added-stats"
+                  className="h-full rounded bg-purple-400"
+                  style={{
+                    width:
+                      totalAgility === 0
+                        ? 0
+                        : String(
+                            ((formData?.builds?.[activeBuildIndex]?.data?.stats
+                              ?.agility ?? 0) /
+                              totalAgility) *
+                              100,
+                          ) + "%",
+                  }}
+                />
+              </div>
             </div>
-            <div className="flex flex-col gap-1 rounded-lg bg-neutral-800 p-2 text-center">
+            <div className="flex flex-col gap-2 rounded-lg bg-neutral-800 p-2 text-center">
               <h3 className="text-sm">
                 Intelligence <span>({drifterData?.intBonus ?? "0.0"})</span>
               </h3>
@@ -621,9 +900,7 @@ const BuildDisplay = () => {
                   className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   disabled={
                     (formData?.builds[activeBuildIndex]?.data.stats
-                      .intelligence ?? 0) +
-                      (drifterData?.intBase ?? 0) ===
-                    (drifterData?.intBase ?? 0)
+                      .intelligence ?? 0) === 0
                   }
                   onClick={() => {
                     setFormData((prev) => {
@@ -653,14 +930,7 @@ const BuildDisplay = () => {
                   <FaMinus />
                 </button>
                 <p className="col-span-2 text-sm">
-                  {Math.floor(
-                    (formData?.builds?.[activeBuildIndex]?.data?.stats
-                      ?.intelligence ?? 0) +
-                      (drifterData?.intBase ?? 0) +
-                      (drifterData?.intBonus ?? 0) *
-                        (formData?.builds?.[activeBuildIndex]?.data?.drifter
-                          .mastery ?? 0),
-                  )}{" "}
+                  {Math.floor(totalIntelligence)}{" "}
                   <span className="text-neutral-400">
                     (
                     {formData?.builds?.[activeBuildIndex]?.data?.stats
@@ -699,6 +969,55 @@ const BuildDisplay = () => {
                 >
                   <FaPlus />
                 </button>
+              </div>
+              <div
+                id="intelligence-stat-source-display"
+                className="flex h-1 rounded bg-neutral-700/40 transition-all"
+              >
+                <div
+                  id="intelligence-base"
+                  className="h-full rounded bg-neutral-500"
+                  style={{
+                    width:
+                      totalIntelligence === 0
+                        ? 0
+                        : String(
+                            ((drifterData?.intBase ?? 0) / totalIntelligence) *
+                              100,
+                          ) + "%",
+                  }}
+                />
+                <div
+                  id="intelligence-mastery-bonus"
+                  className="h-full rounded bg-cyan-400"
+                  style={{
+                    width:
+                      totalIntelligence === 0
+                        ? 0
+                        : String(
+                            (((drifterData?.intBonus ?? 0) *
+                              (formData?.builds?.[activeBuildIndex]?.data
+                                ?.drifter.mastery ?? 0)) /
+                              totalIntelligence) *
+                              100,
+                          ) + "%",
+                  }}
+                />
+                <div
+                  id="intelligence-added-stats"
+                  className="h-full rounded bg-purple-400"
+                  style={{
+                    width:
+                      totalIntelligence === 0
+                        ? 0
+                        : String(
+                            ((formData?.builds?.[activeBuildIndex]?.data?.stats
+                              ?.intelligence ?? 0) /
+                              totalIntelligence) *
+                              100,
+                          ) + "%",
+                  }}
+                />
               </div>
             </div>
             <button
