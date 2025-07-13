@@ -183,8 +183,8 @@ const Drifter = ({
                               tier: "I",
                             },
                             stats: {
-                              agility: 0,
                               strength: 0,
+                              agility: 0,
                               intelligence: 0,
                             },
                           },
@@ -241,8 +241,8 @@ const Drifter = ({
                             tier: "",
                           },
                           stats: {
-                            agility: 0,
                             strength: 0,
+                            agility: 0,
                             intelligence: 0,
                           },
                         },
