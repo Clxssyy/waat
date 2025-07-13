@@ -27,12 +27,12 @@ export default async function Home() {
                 !
               </>
             ) : (
-              "Login to get started"
+              "Warborne Above Ashes Tools"
             )}
           </h1>
           <p className="text-sm text-pretty text-neutral-300">
             Create and share character builds, keep up to date with the latest
-            news, or view guides from creators!
+            news, or view guides from experienced players!
           </p>
           <div className="mt-2 flex gap-2">
             <Link

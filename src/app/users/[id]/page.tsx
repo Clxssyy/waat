@@ -46,7 +46,7 @@ const User = async ({
             width={100}
             height={100}
             quality={100}
-            className="aspect-square w-48 rounded-full border-2 border-white"
+            className="aspect-square w-48 rounded-full border-2 border-green-500"
           />
           <h1 className="text-4xl font-bold">{user?.name}</h1>
           <div className="w-full rounded bg-neutral-900 p-2">
@@ -56,11 +56,12 @@ const User = async ({
             </p>
           </div>
         </div>
-        <div className="flex grow flex-col gap-2 divide-y divide-neutral-700">
-          <h2 className="text-3xl font-bold">
+        <div className="flex grow flex-col gap-4 divide-y divide-neutral-700">
+          <h2 className="text-2xl font-bold">
             Characters{" "}
             <span className="text-neutral-400">
-              ({user?.characters.length})
+              (<span className="text-green-500">{user?.characters.length}</span>
+              )
             </span>
           </h2>
           {characters.length >= 1 ? (
