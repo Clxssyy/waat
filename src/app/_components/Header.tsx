@@ -55,7 +55,7 @@ const Header = async () => {
               alt="User profile picture"
               width={100}
               height={100}
-              className="h-8 w-8 rounded-full outline-2 group-hover:outline-green-500"
+              className="h-8 w-8 rounded-full outline-2 group-hover:outline-cyan-400"
             />
             <nav className="absolute right-0 hidden translate-2 rounded border-1 border-neutral-700 transition-colors group-hover:block before:absolute before:-top-4 before:h-4 before:w-full">
               <ul>

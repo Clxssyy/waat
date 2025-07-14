@@ -21,7 +21,7 @@ export default async function Home() {
             {session ? (
               <>
                 Welcome,{" "}
-                <span className="bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-cyan-300 to-cyan-400 bg-clip-text text-transparent">
                   {session.user.name}
                 </span>
                 !
@@ -37,7 +37,7 @@ export default async function Home() {
           <div className="mt-2 flex gap-2">
             <Link
               href={"/characters"}
-              className="rounded border border-green-500 bg-green-600 px-4 py-2 font-semibold transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
+              className="rounded border border-cyan-300 bg-cyan-400 px-4 py-2 font-semibold transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
             >
               Get Started
             </Link>
@@ -76,12 +76,12 @@ export default async function Home() {
               <h2 className="text-lg font-bold">
                 Builds{" "}
                 <span className="text-neutral-400">
-                  (<span className="text-green-500">{characterCount}</span>)
+                  (<span className="text-cyan-400">{characterCount}</span>)
                 </span>
               </h2>
               <p className="text-sm text-neutral-300">
                 Check out the latest builds from our growing community of{" "}
-                <span className="text-green-500">{userCount}</span>{" "}
+                <span className="text-cyan-400">{userCount}</span>{" "}
                 {false ? "user" : "users"}!
               </p>
             </div>

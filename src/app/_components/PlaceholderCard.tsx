@@ -35,7 +35,7 @@ const PlaceholderCard = () => {
           </div>
           <div className="flex justify-between gap-2">
             <div className="h-2 w-1/8 rounded-full bg-gradient-to-br from-neutral-400 to-neutral-500"></div>
-            <div className="h-2 w-1/5 rounded-full bg-gradient-to-br from-green-400 to-green-500"></div>
+            <div className="h-2 w-1/5 rounded-full bg-gradient-to-br from-cyan-300 to-cyan-400"></div>
           </div>
         </div>
       </div>

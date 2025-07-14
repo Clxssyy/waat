@@ -201,8 +201,9 @@ const BuildDisplay = () => {
                 }
               }}
               className={clsx(
-                "h-4 w-4 cursor-pointer rounded-full hover:outline-2 hover:outline-cyan-600",
-                activeBuildIndex === i && "outline-2 outline-cyan-600",
+                "h-4 w-4 cursor-pointer rounded-full hover:outline-2 hover:outline-cyan-300",
+                activeBuildIndex === i &&
+                  "bg-cyan-500 outline-2 outline-cyan-300",
                 formData.builds[i] ? "bg-cyan-400" : "bg-neutral-800",
                 !character.builds[i] && formData.builds[i] && "animate-pulse",
               )}
@@ -281,14 +282,16 @@ const BuildDisplay = () => {
               aria-label="Weapon Slot"
               className={clsx(
                 "absolute top-1/2 -left-14 hidden h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700",
-                "before:absolute before:-right-4 before:bottom-2 before:h-0.5 before:w-3 before:rotate-[30deg] before:rounded before:bg-neutral-700",
-                "after:absolute after:top-2 after:-right-4 after:h-0.5 after:w-3 after:-rotate-[30deg] after:rounded after:bg-neutral-700",
+                "before:absolute before:-right-4 before:bottom-2 before:h-0.5 before:w-3 before:rotate-[30deg] before:cursor-default before:rounded before:bg-neutral-700",
+                "after:absolute after:top-2 after:-right-4 after:h-0.5 after:w-3 after:-rotate-[30deg] after:cursor-default after:rounded after:bg-neutral-700",
                 "not-lg:sm:flex 2xl:flex",
               )}
               onClick={() => {
                 if (activeSlot != "weapon") setActiveSlot("weapon");
                 if (activeTab != "equipment") setActiveTab("equipment");
-                scrollTo();
+                const element = document.getElementById("equipment-mod-select");
+
+                if (element) element.scrollIntoView();
               }}
             >
               {formData.builds[activeBuildIndex]?.data.equipment.weapon.mod &&
@@ -370,14 +373,18 @@ const BuildDisplay = () => {
                 aria-label="Helmet Slot"
                 className={clsx(
                   "absolute top-1/2 -right-14 hidden h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700",
-                  "before:absolute before:bottom-2 before:-left-4 before:h-0.5 before:w-3 before:-rotate-[30deg] before:rounded before:bg-neutral-700",
-                  "after:absolute after:top-2 after:-left-4 after:h-0.5 after:w-3 after:rotate-[30deg] after:rounded after:bg-neutral-700",
+                  "before:absolute before:bottom-2 before:-left-4 before:h-0.5 before:w-3 before:-rotate-[30deg] before:cursor-default before:rounded before:bg-neutral-700",
+                  "after:absolute after:top-2 after:-left-4 after:h-0.5 after:w-3 after:rotate-[30deg] after:cursor-default after:rounded after:bg-neutral-700",
                   "not-lg:sm:flex 2xl:flex",
                 )}
                 onClick={() => {
                   if (activeSlot != "helmet") setActiveSlot("helmet");
                   if (activeTab != "equipment") setActiveTab("equipment");
-                  scrollTo();
+                  const element = document.getElementById(
+                    "equipment-mod-select",
+                  );
+
+                  if (element) element.scrollIntoView();
                 }}
               >
                 {formData.builds[activeBuildIndex]?.data.equipment.helmet.mod &&
@@ -458,14 +465,18 @@ const BuildDisplay = () => {
                 aria-label="Chest Slot"
                 className={clsx(
                   "absolute top-1/2 -right-14 hidden h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700",
-                  "before:absolute before:bottom-2 before:-left-4 before:h-0.5 before:w-3 before:-rotate-[30deg] before:rounded before:bg-neutral-700",
-                  "after:absolute after:top-2 after:-left-4 after:h-0.5 after:w-3 after:rotate-[30deg] after:rounded after:bg-neutral-700",
+                  "before:absolute before:bottom-2 before:-left-4 before:h-0.5 before:w-3 before:-rotate-[30deg] before:cursor-default before:rounded before:bg-neutral-700",
+                  "after:absolute after:top-2 after:-left-4 after:h-0.5 after:w-3 after:rotate-[30deg] after:cursor-default after:rounded after:bg-neutral-700",
                   "not-lg:sm:flex 2xl:flex",
                 )}
                 onClick={() => {
                   if (activeSlot != "chest") setActiveSlot("chest");
                   if (activeTab != "equipment") setActiveTab("equipment");
-                  scrollTo();
+                  const element = document.getElementById(
+                    "equipment-mod-select",
+                  );
+
+                  if (element) element.scrollIntoView();
                 }}
               >
                 {formData.builds[activeBuildIndex]?.data.equipment.chest.mod &&
@@ -546,14 +557,18 @@ const BuildDisplay = () => {
                 aria-label="Boots Slot"
                 className={clsx(
                   "absolute top-1/2 -right-14 hidden h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700",
-                  "before:absolute before:bottom-2 before:-left-4 before:h-0.5 before:w-3 before:-rotate-[30deg] before:rounded before:bg-neutral-700",
-                  "after:absolute after:top-2 after:-left-4 after:h-0.5 after:w-3 after:rotate-[30deg] after:rounded after:bg-neutral-700",
+                  "before:absolute before:bottom-2 before:-left-4 before:h-0.5 before:w-3 before:-rotate-[30deg] before:cursor-default before:rounded before:bg-neutral-700",
+                  "after:absolute after:top-2 after:-left-4 after:h-0.5 after:w-3 after:rotate-[30deg] after:cursor-default after:rounded after:bg-neutral-700",
                   "not-lg:sm:flex 2xl:flex",
                 )}
                 onClick={() => {
                   if (activeSlot != "boots") setActiveSlot("boots");
                   if (activeTab != "equipment") setActiveTab("equipment");
-                  scrollTo();
+                  const element = document.getElementById(
+                    "equipment-mod-select",
+                  );
+
+                  if (element) element.scrollIntoView();
                 }}
               >
                 {formData.builds[activeBuildIndex]?.data.equipment.boots.mod &&
@@ -629,22 +644,39 @@ const BuildDisplay = () => {
         </div>
         <div className="flex w-full flex-col gap-2 border border-neutral-600 bg-neutral-700 p-2">
           <h2 className="text-center">
-            Stats <span className="text-neutral-400">({statPoints})</span>
+            Stats{" "}
+            <span className="text-neutral-400">
+              ( <span className="text-cyan-400">{statPoints}</span> )
+            </span>
           </h2>
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-2 rounded-lg bg-neutral-800 p-2 text-center">
               <h3 className="text-sm">
-                Strength <span>({drifterData?.strBonus ?? "0.0"})</span>
+                Strength{" "}
+                <span className="text-neutral-400">
+                  ({" "}
+                  <span className="text-purple-400">
+                    {drifterData?.strBonus ?? "0.0"}
+                  </span>{" "}
+                  )
+                </span>
               </h3>
               <div className="grid grid-cols-4 items-center justify-center gap-2">
                 <button
                   aria-label="Decrease Strength"
-                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   disabled={
                     (formData?.builds[activeBuildIndex]?.data.stats.strength ??
                       0) === 0
                   }
-                  onClick={() => {
+                  onClick={(e) => {
+                    const amount = e.shiftKey
+                      ? (formData?.builds[activeBuildIndex]?.data.stats
+                          .strength ?? 0) >= 5
+                        ? 5
+                        : (formData?.builds[activeBuildIndex]?.data.stats
+                            .strength ?? 0)
+                      : 1;
                     setFormData((prev) => {
                       if (!prev) return prev;
                       return {
@@ -659,7 +691,7 @@ const BuildDisplay = () => {
                                     ...b.data.stats,
                                     strength:
                                       (formData?.builds[activeBuildIndex]?.data
-                                        .stats.strength ?? 0) - 1,
+                                        .stats.strength ?? 0) - amount,
                                   },
                                 },
                               }
@@ -674,17 +706,24 @@ const BuildDisplay = () => {
                 <p className="col-span-2 text-sm">
                   {Math.floor(totalStrength)}{" "}
                   <span className="text-neutral-400">
-                    (
-                    {formData?.builds?.[activeBuildIndex]?.data?.stats
-                      ?.strength ?? 0}
+                    ({" "}
+                    <span className="text-cyan-400">
+                      {formData?.builds?.[activeBuildIndex]?.data?.stats
+                        ?.strength ?? 0}{" "}
+                    </span>
                     )
                   </span>
                 </p>
                 <button
                   aria-label="Increase Strength"
-                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   disabled={statPoints === 0}
-                  onClick={() => {
+                  onClick={(e) => {
+                    const amount = e.shiftKey
+                      ? statPoints >= 5
+                        ? 5
+                        : statPoints
+                      : 1;
                     setFormData((prev) => {
                       if (!prev) return prev;
                       return {
@@ -699,7 +738,7 @@ const BuildDisplay = () => {
                                     ...b.data.stats,
                                     strength:
                                       (formData?.builds[activeBuildIndex]?.data
-                                        .stats.strength ?? 0) + 1,
+                                        .stats.strength ?? 0) + amount,
                                   },
                                 },
                               }
@@ -730,7 +769,7 @@ const BuildDisplay = () => {
                 />
                 <div
                   id="strength-mastery-bonus"
-                  className="h-full rounded bg-cyan-400"
+                  className="h-full rounded bg-purple-400"
                   style={{
                     width:
                       totalStrength === 0
@@ -746,7 +785,7 @@ const BuildDisplay = () => {
                 />
                 <div
                   id="strength-added-stats"
-                  className="h-full rounded bg-purple-400"
+                  className="h-full rounded bg-cyan-400"
                   style={{
                     width:
                       totalStrength === 0
@@ -763,17 +802,31 @@ const BuildDisplay = () => {
             </div>
             <div className="flex flex-col gap-2 rounded-lg bg-neutral-800 p-2 text-center">
               <h3 className="text-sm">
-                Agility <span>({drifterData?.agiBonus ?? "0.0"})</span>
+                Agility{" "}
+                <span className="text-neutral-400">
+                  ({" "}
+                  <span className="text-purple-400">
+                    {drifterData?.agiBonus ?? "0.0"}{" "}
+                  </span>
+                  )
+                </span>
               </h3>
               <div className="grid grid-cols-4 items-center justify-center gap-2">
                 <button
                   aria-label="Decrease Agility"
-                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   disabled={
                     (formData?.builds[activeBuildIndex]?.data.stats.agility ??
                       0) === 0
                   }
-                  onClick={() => {
+                  onClick={(e) => {
+                    const amount = e.shiftKey
+                      ? (formData?.builds[activeBuildIndex]?.data.stats
+                          .strength ?? 0) >= 5
+                        ? 5
+                        : (formData?.builds[activeBuildIndex]?.data.stats
+                            .strength ?? 0)
+                      : 1;
                     setFormData((prev) => {
                       if (!prev) return prev;
                       return {
@@ -788,7 +841,7 @@ const BuildDisplay = () => {
                                     ...b.data.stats,
                                     agility:
                                       (formData?.builds[activeBuildIndex]?.data
-                                        .stats.agility ?? 0) - 1,
+                                        .stats.agility ?? 0) - amount,
                                   },
                                 },
                               }
@@ -803,17 +856,24 @@ const BuildDisplay = () => {
                 <p className="col-span-2 text-sm">
                   {Math.floor(totalAgility)}{" "}
                   <span className="text-neutral-400">
-                    (
-                    {formData?.builds?.[activeBuildIndex]?.data?.stats
-                      ?.agility ?? 0}
+                    ({" "}
+                    <span className="text-cyan-400">
+                      {formData?.builds?.[activeBuildIndex]?.data?.stats
+                        ?.agility ?? 0}
+                    </span>{" "}
                     )
                   </span>
                 </p>
                 <button
                   aria-label="Increase Agility"
-                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   disabled={statPoints === 0}
-                  onClick={() => {
+                  onClick={(e) => {
+                    const amount = e.shiftKey
+                      ? statPoints >= 5
+                        ? 5
+                        : statPoints
+                      : 1;
                     setFormData((prev) => {
                       if (!prev) return prev;
                       return {
@@ -828,7 +888,7 @@ const BuildDisplay = () => {
                                     ...b.data.stats,
                                     agility:
                                       (formData?.builds[activeBuildIndex]?.data
-                                        .stats.agility ?? 0) + 1,
+                                        .stats.agility ?? 0) + amount,
                                   },
                                 },
                               }
@@ -859,7 +919,7 @@ const BuildDisplay = () => {
                 />
                 <div
                   id="agility-mastery-bonus"
-                  className="h-full rounded bg-cyan-400"
+                  className="h-full rounded bg-purple-400"
                   style={{
                     width:
                       totalAgility === 0
@@ -875,7 +935,7 @@ const BuildDisplay = () => {
                 />
                 <div
                   id="agility-added-stats"
-                  className="h-full rounded bg-purple-400"
+                  className="h-full rounded bg-cyan-400"
                   style={{
                     width:
                       totalAgility === 0
@@ -892,17 +952,31 @@ const BuildDisplay = () => {
             </div>
             <div className="flex flex-col gap-2 rounded-lg bg-neutral-800 p-2 text-center">
               <h3 className="text-sm">
-                Intelligence <span>({drifterData?.intBonus ?? "0.0"})</span>
+                Intelligence{" "}
+                <span className="text-neutral-400">
+                  ({" "}
+                  <span className="text-purple-400">
+                    {drifterData?.intBonus ?? "0.0"}
+                  </span>{" "}
+                  )
+                </span>
               </h3>
               <div className="grid grid-cols-4 items-center justify-center gap-2">
                 <button
                   aria-label="Decrease Intelligence"
-                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   disabled={
                     (formData?.builds[activeBuildIndex]?.data.stats
                       .intelligence ?? 0) === 0
                   }
-                  onClick={() => {
+                  onClick={(e) => {
+                    const amount = e.shiftKey
+                      ? (formData?.builds[activeBuildIndex]?.data.stats
+                          .strength ?? 0) >= 5
+                        ? 5
+                        : (formData?.builds[activeBuildIndex]?.data.stats
+                            .strength ?? 0)
+                      : 1;
                     setFormData((prev) => {
                       if (!prev) return prev;
                       return {
@@ -917,7 +991,7 @@ const BuildDisplay = () => {
                                     ...b.data.stats,
                                     intelligence:
                                       (formData?.builds[activeBuildIndex]?.data
-                                        .stats.intelligence ?? 0) - 1,
+                                        .stats.intelligence ?? 0) - amount,
                                   },
                                 },
                               }
@@ -932,17 +1006,24 @@ const BuildDisplay = () => {
                 <p className="col-span-2 text-sm">
                   {Math.floor(totalIntelligence)}{" "}
                   <span className="text-neutral-400">
-                    (
-                    {formData?.builds?.[activeBuildIndex]?.data?.stats
-                      ?.intelligence ?? 0}
+                    ({" "}
+                    <span className="text-cyan-400">
+                      {formData?.builds?.[activeBuildIndex]?.data?.stats
+                        ?.intelligence ?? 0}{" "}
+                    </span>
                     )
                   </span>
                 </p>
                 <button
-                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   aria-label="Increase Intelligence"
                   disabled={statPoints === 0}
-                  onClick={() => {
+                  onClick={(e) => {
+                    const amount = e.shiftKey
+                      ? statPoints >= 5
+                        ? 5
+                        : statPoints
+                      : 1;
                     setFormData((prev) => {
                       if (!prev) return prev;
                       return {
@@ -957,7 +1038,7 @@ const BuildDisplay = () => {
                                     ...b.data.stats,
                                     intelligence:
                                       (formData?.builds[activeBuildIndex]?.data
-                                        .stats.intelligence ?? 0) + 1,
+                                        .stats.intelligence ?? 0) + amount,
                                   },
                                 },
                               }
@@ -989,7 +1070,7 @@ const BuildDisplay = () => {
                 />
                 <div
                   id="intelligence-mastery-bonus"
-                  className="h-full rounded bg-cyan-400"
+                  className="h-full rounded bg-purple-400"
                   style={{
                     width:
                       totalIntelligence === 0
@@ -1005,7 +1086,7 @@ const BuildDisplay = () => {
                 />
                 <div
                   id="intelligence-added-stats"
-                  className="h-full rounded bg-purple-400"
+                  className="h-full rounded bg-cyan-400"
                   style={{
                     width:
                       totalIntelligence === 0
@@ -1042,9 +1123,9 @@ const BuildDisplay = () => {
                             data: {
                               ...b.data,
                               stats: {
-                                intelligence: 0,
                                 strength: 0,
                                 agility: 0,
+                                intelligence: 0,
                               },
                             },
                           }

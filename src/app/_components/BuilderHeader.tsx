@@ -44,8 +44,8 @@ const BuilderHeader = () => {
         <button
           className={clsx(
             "cursor-pointer rounded border px-2 py-1 transition-all hover:brightness-110 not-disabled:hover:scale-105 not-disabled:active:scale-95 disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40",
-            hasChanges && isCreator && "border-green-600 bg-green-700",
-            !isCreator && "border-cyan-500 bg-cyan-600",
+            hasChanges && isCreator && "border-green-500 bg-green-600",
+            !isCreator && "border-cyan-300 bg-cyan-400",
           )}
           onClick={
             isCreator

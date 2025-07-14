@@ -838,6 +838,7 @@ const Equipment = ({
             <div className="flex gap-2">
               <div className="h-12 w-12 rounded bg-neutral-800"></div>
               <select
+                id="equipment-mod-select"
                 aria-label="Select equipment mod"
                 className="h-12 grow cursor-pointer rounded bg-neutral-800 px-2 text-lg outline-none"
                 value={

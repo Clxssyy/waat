@@ -110,7 +110,7 @@ const Sidebar = () => {
         </div>
         <div className="flex justify-center p-2">
           <button
-            className={`flex w-full cursor-pointer items-center justify-center gap-1 rounded border p-2 transition-all hover:brightness-125 not-disabled:hover:scale-[102%] not-disabled:active:scale-[98%] disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40 lg:w-full ${(hasChanges && isCreator && "border-green-600 bg-green-700") || ""} ${(!isCreator && "border-cyan-500 bg-cyan-600") || ""}`}
+            className={`flex w-full cursor-pointer items-center justify-center gap-1 rounded border p-2 transition-all hover:brightness-125 not-disabled:hover:scale-[102%] not-disabled:active:scale-[98%] disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40 lg:w-full ${(hasChanges && isCreator && "border-green-500 bg-green-600") || ""} ${(!isCreator && "border-cyan-300 bg-cyan-400") || ""}`}
             onClick={
               isCreator
                 ? () => {

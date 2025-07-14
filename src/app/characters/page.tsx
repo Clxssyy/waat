@@ -42,7 +42,7 @@ export default async function Characters({
           <div className="mt-2 flex gap-2">
             <Link
               href={session ? "/characters/create" : "/api/auth/signin"}
-              className="rounded border border-green-500 bg-green-600 px-4 py-2 font-semibold transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
+              className="rounded border border-cyan-300 bg-cyan-400 px-4 py-2 font-semibold transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
             >
               Create
             </Link>
@@ -59,7 +59,7 @@ export default async function Characters({
           <h2 className="text-lg font-bold">
             Builds{" "}
             <span className="text-neutral-400">
-              (<span className="text-green-500">{cardInfo.totalCount}</span>)
+              (<span className="text-cyan-400">{cardInfo.totalCount}</span>)
             </span>
           </h2>
           {characters.length >= 1 ? (
