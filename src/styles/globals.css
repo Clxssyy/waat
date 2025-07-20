@@ -40,9 +40,9 @@ input::-webkit-inner-spin-button {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply rounded bg-neutral-500;
+  @apply rounded bg-neutral-600;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-neutral-900;
+  @apply bg-transparent;
 }
