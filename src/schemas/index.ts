@@ -4,52 +4,55 @@ export const modSchema = z
   .object({
     name: z.string().default(""),
   })
-  .optional();
+  .default({});
 
-export const buildDataSchema = z.object({
-  equipment: z.object({
-    helmet: z.object({
-      name: z.string().default(""),
-      mastery: z.number().max(50).default(0),
-      tier: z.string().default(""),
-      mod: modSchema,
-    }),
-    chest: z.object({
-      name: z.string().default(""),
-      mastery: z.number().max(50).default(0),
-      tier: z.string().default(""),
-      mod: modSchema,
-    }),
-    boots: z.object({
-      name: z.string().default(""),
-      mastery: z.number().max(50).default(0),
-      tier: z.string().default(""),
-      mod: modSchema,
-    }),
-    weapon: z.object({
-      name: z.string().default(""),
-      mastery: z.number().max(50).default(0),
-      tier: z.string().default(""),
-      mod: modSchema,
-    }),
-  }),
-  stats: z.object({
+export const equipmentSchema = z
+  .object({
+    name: z.string().default(""),
+    mastery: z.number().max(50).default(0),
+    tier: z.string().default("I"),
+    mod: modSchema,
+  })
+  .default({});
+
+export const statsSchema = z
+  .object({
     strength: z.number().default(0),
     agility: z.number().default(0),
     intelligence: z.number().default(0),
-  }),
-  skills: z
-    .object({
-      basic: z.string().optional(),
-      common: z.string().optional(),
-    })
-    .optional(),
-  drifter: z.object({
+  })
+  .default({});
+
+export const skillsSchema = z
+  .object({
+    basic: z.string().default(""),
+    common: z.string().default(""),
+  })
+  .default({});
+
+export const drifterSchema = z
+  .object({
     name: z.string().default(""),
     mastery: z.number().max(50).default(0),
-    tier: z.string().default(""),
-  }),
-});
+    tier: z.string().default("I"),
+  })
+  .default({});
+
+export const buildDataSchema = z
+  .object({
+    equipment: z
+      .object({
+        helmet: equipmentSchema,
+        chest: equipmentSchema,
+        boots: equipmentSchema,
+        weapon: equipmentSchema,
+      })
+      .default({}),
+    stats: statsSchema,
+    skills: skillsSchema,
+    drifter: drifterSchema,
+  })
+  .default({});
 
 export const buildSchema = z.object({
   id: z.string(),

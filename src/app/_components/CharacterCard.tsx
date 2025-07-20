@@ -10,9 +10,8 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
 
   const drifterData = character.builds.map((build) => {
     const buildData = build.data as BuildData;
-
     return data.drifters.find(
-      (drifter) => drifter.name === buildData?.drifter.name,
+      (drifter) => drifter.name === buildData.drifter.name,
     );
   });
 
@@ -20,7 +19,6 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
     (prev, rate) => prev + rate.value,
     0,
   );
-
   const averageRating = totalRating / character._count.ratings;
 
   return (

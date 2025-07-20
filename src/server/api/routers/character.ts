@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { formDataSchema } from "~/schemas";
+import { buildDataSchema, formDataSchema } from "~/schemas";
 import {
   createTRPCRouter,
   protectedProcedure,
@@ -27,52 +27,7 @@ export const characterRouter = createTRPCRouter({
             .create({
               data: {
                 characterId: character.id,
-                data: {
-                  equipment: {
-                    helmet: {
-                      name: "",
-                      mastery: 0,
-                      tier: "",
-                      mod: {
-                        name: "",
-                      },
-                    },
-                    chest: {
-                      name: "",
-                      mastery: 0,
-                      tier: "",
-                      mod: {
-                        name: "",
-                      },
-                    },
-                    boots: {
-                      name: "",
-                      mastery: 0,
-                      tier: "",
-                      mod: {
-                        name: "",
-                      },
-                    },
-                    weapon: {
-                      name: "",
-                      mastery: 0,
-                      tier: "",
-                      mod: {
-                        name: "",
-                      },
-                    },
-                  },
-                  stats: {
-                    strength: 0,
-                    agility: 0,
-                    intelligence: 0,
-                  },
-                  drifter: {
-                    name: "",
-                    mastery: 0,
-                    tier: "",
-                  },
-                },
+                data: buildDataSchema.parse({}),
               },
             })
             .then((build) => build);
@@ -90,52 +45,7 @@ export const characterRouter = createTRPCRouter({
         .create({
           data: {
             characterId: input.characterId,
-            data: {
-              equipment: {
-                helmet: {
-                  name: "",
-                  mastery: 0,
-                  tier: "",
-                  mod: {
-                    name: "",
-                  },
-                },
-                chest: {
-                  name: "",
-                  mastery: 0,
-                  tier: "",
-                  mod: {
-                    name: "",
-                  },
-                },
-                boots: {
-                  name: "",
-                  mastery: 0,
-                  tier: "",
-                  mod: {
-                    name: "",
-                  },
-                },
-                weapon: {
-                  name: "",
-                  mastery: 0,
-                  tier: "",
-                  mod: {
-                    name: "",
-                  },
-                },
-              },
-              stats: {
-                strength: 0,
-                agility: 0,
-                intelligence: 0,
-              },
-              drifter: {
-                name: "",
-                mastery: 0,
-                tier: "",
-              },
-            },
+            data: buildDataSchema.parse({}),
           },
         })
         .then((build) => build);
@@ -183,6 +93,7 @@ export const characterRouter = createTRPCRouter({
           _count: {
             select: {
               ratings: true,
+              comments: true,
             },
           },
           createdBy: true,

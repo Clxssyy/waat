@@ -25,3 +25,10 @@ export const MASTERY_OPTIONS = [
   "49",
   "50",
 ];
+
+export const rarityOrder = {
+  legendary: 0,
+  epic: 1,
+  rare: 2,
+  common: 3,
+};

@@ -16,8 +16,8 @@ const CommentInput = ({
 }) => {
   const { data: session } = useSession();
   const router = useRouter();
-  const [newComment, setNewComment] = useState<string>();
-  const { formData } = useBuildForm();
+  const [newComment, setNewComment] = useState("");
+  const { characterData } = useBuildForm();
 
   const addComment = api.character.addComment.useMutation({
     onSuccess: () => {
@@ -57,7 +57,7 @@ const CommentInput = ({
 
               addComment.mutate({
                 content: newComment,
-                characterId: formData.id,
+                characterId: characterData.id,
                 parentId: parentId,
               });
               setNewComment("");
@@ -74,7 +74,7 @@ const CommentInput = ({
 
             addComment.mutate({
               content: newComment,
-              characterId: formData.id,
+              characterId: characterData.id,
               parentId: parentId,
             });
             setNewComment("");

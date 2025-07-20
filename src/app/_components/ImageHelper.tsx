@@ -34,7 +34,6 @@ export default function ImageHelper({
           </span>
         </div>
       )}
-
       <Image
         key={key}
         src={src}

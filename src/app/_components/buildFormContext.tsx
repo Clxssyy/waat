@@ -16,8 +16,8 @@ type Character = inferRouterOutputs<AppRouter>["character"]["getById"];
 type FormDataCharacter = z.infer<typeof formDataSchema>;
 
 type BuildFormContextType = {
-  formData: FormDataCharacter;
-  setFormData: React.Dispatch<React.SetStateAction<FormDataCharacter>>;
+  characterData: FormDataCharacter;
+  setCharacterData: React.Dispatch<React.SetStateAction<FormDataCharacter>>;
   save: () => void;
   isSaving: boolean;
   character: Character;
@@ -32,6 +32,8 @@ type BuildFormContextType = {
   setActiveSlot: React.Dispatch<React.SetStateAction<ActiveSlots>>;
   activeTab: ActiveTab;
   setActiveTab: React.Dispatch<React.SetStateAction<ActiveTab>>;
+  activeSupport: number | undefined;
+  setActiveSupport: React.Dispatch<React.SetStateAction<number | undefined>>;
 };
 
 const BuildFormContext = createContext<BuildFormContextType | null>(null);
@@ -53,15 +55,16 @@ export const BuildFormProvider = ({
   const pathname = usePathname();
   const router = useRouter();
 
-  const [formData, setFormData] = useState<FormDataCharacter>(
+  const [characterData, setCharacterData] = useState<FormDataCharacter>(
     formDataSchema.parse(character),
   );
+  const [activeSupport, setActiveSupport] = useState<number | undefined>();
 
   const raw = searchParams.get("build");
   const initialBuildIndex = parseInt(raw ?? "0", 10);
 
   const validIndex =
-    initialBuildIndex >= 0 && initialBuildIndex < formData.builds.length
+    initialBuildIndex >= 0 && initialBuildIndex < characterData.builds.length
       ? (initialBuildIndex as ActiveBuildIndex)
       : 0;
 
@@ -89,21 +92,27 @@ export const BuildFormProvider = ({
   const { data: session } = useSession();
 
   const [hasChanges, setHasChanges] = useState<boolean>(
-    JSON.stringify(formData) !==
+    JSON.stringify(characterData) !==
       JSON.stringify(formDataSchema.parse(character)),
   );
 
   useEffect(() => {
     if (hasChanges) return;
-    setFormData(formDataSchema.parse(character));
+    setCharacterData(formDataSchema.parse(character));
   }, [character]);
 
   useEffect(() => {
+    setActiveSupport(undefined);
+  }, [activeTab]);
+
+  useEffect(() => {
+    console.log("1", JSON.stringify(characterData));
+    console.log("2", JSON.stringify(formDataSchema.parse(character)));
     setHasChanges(
-      JSON.stringify(formData) !==
+      JSON.stringify(characterData) !==
         JSON.stringify(formDataSchema.parse(character)),
     );
-  }, [formData]);
+  }, [characterData]);
 
   const { mutate: saveMutation, status: saveStatus } =
     api.character.update.useMutation({
@@ -117,9 +126,9 @@ export const BuildFormProvider = ({
     });
 
   const save = () => {
-    if (!formData) return;
+    if (!characterData) return;
     if (!session?.user.id) return;
-    saveMutation(formDataSchema.parse(formData));
+    saveMutation(formDataSchema.parse(characterData));
   };
 
   const { mutate: cloneMutation, status: cloneStatus } =
@@ -134,12 +143,12 @@ export const BuildFormProvider = ({
     });
 
   const clone = () => {
-    if (!formData) return;
+    if (!characterData) return;
     if (!session?.user.id) {
       router.push("/api/auth/signin");
       return;
     }
-    cloneMutation(formDataSchema.parse(formData));
+    cloneMutation(formDataSchema.parse(characterData));
   };
 
   const isSaving = saveStatus === "pending";
@@ -148,8 +157,8 @@ export const BuildFormProvider = ({
   return (
     <BuildFormContext.Provider
       value={{
-        formData,
-        setFormData,
+        characterData,
+        setCharacterData,
         save,
         isSaving,
         character,
@@ -164,6 +173,8 @@ export const BuildFormProvider = ({
         setActiveSlot,
         activeTab,
         setActiveTab,
+        activeSupport,
+        setActiveSupport,
       }}
     >
       {children}

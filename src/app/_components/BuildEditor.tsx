@@ -1,25 +1,18 @@
 "use client";
 
-import type { ActiveSlots } from "~/types";
 import { useBuildForm } from "./buildFormContext";
 import Equipment from "./equipment";
 import Support from "./support";
 import Drifter from "./drifter";
 import Description from "../characters/[characterId]/description/page";
 import CommentSection from "./CommentSection";
-import { GiAbdominalArmor } from "react-icons/gi";
-import { IoPerson } from "react-icons/io5";
+import { LuSwords, LuUser } from "react-icons/lu";
 import { MdOutlineDescription, MdOutlineHealthAndSafety } from "react-icons/md";
 import { FaRegComments } from "react-icons/fa6";
 
 const BuildEditor = () => {
-  const {
-    activeTab,
-    setActiveTab,
-    activeSlot,
-    setActiveSlot,
-    activeBuildIndex,
-  } = useBuildForm();
+  const { activeTab, setActiveTab, activeSlot, setActiveSlot, character } =
+    useBuildForm();
 
   return (
     <div id="editor" className="flex-1">
@@ -29,30 +22,30 @@ const BuildEditor = () => {
             className={`flex h-full w-full cursor-pointer items-center justify-center gap-1 rounded-t-lg border border-b-0 border-neutral-700 transition-all hover:brightness-110 ${activeTab === "equipment" ? "scale-105 border-neutral-700 bg-neutral-800" : "border-neutral-800 bg-neutral-900"}`}
             aria-label="Equipment Tab"
             onClick={() => {
-              if (activeTab != "equipment") setActiveTab("equipment");
-              if (activeSlot === "drifter" || activeSlot === undefined)
+              if (activeTab !== "equipment") setActiveTab("equipment");
+              if (activeSlot === "drifters" || activeSlot === undefined)
                 setActiveSlot("weapon");
             }}
           >
-            <GiAbdominalArmor />
+            <LuSwords />
             <p className="hidden xl:block">Equipment</p>
           </button>
           <button
-            className={`flex h-full w-full cursor-pointer items-center justify-center gap-1 rounded-t-lg border border-b-0 border-neutral-700 transition-all hover:brightness-110 ${activeTab === "drifter" ? "scale-105 border-neutral-700 bg-neutral-800" : "border-neutral-800 bg-neutral-900"}`}
+            className={`flex h-full w-full cursor-pointer items-center justify-center gap-1 rounded-t-lg border border-b-0 border-neutral-700 transition-all hover:brightness-110 ${activeTab === "drifters" ? "scale-105 border-neutral-700 bg-neutral-800" : "border-neutral-800 bg-neutral-900"}`}
             aria-label="Drifter Tab"
             onClick={() => {
-              if (activeTab != "drifter") setActiveTab("drifter");
-              if (activeSlot != "drifter") setActiveSlot("drifter");
+              if (activeTab !== "drifters") setActiveTab("drifters");
+              if (activeSlot !== "drifters") setActiveSlot("drifters");
             }}
           >
-            <IoPerson />
+            <LuUser />
             <p className="hidden xl:block">Drifter</p>
           </button>
           <button
             className={`flex h-full w-full cursor-pointer items-center justify-center gap-1 rounded-t-lg border border-b-0 border-neutral-700 transition-all hover:brightness-110 ${activeTab === "support" ? "scale-105 border-neutral-700 bg-neutral-800" : "border-neutral-800 bg-neutral-900"}`}
             aria-label="Support Tab"
             onClick={() => {
-              if (activeTab != "support") setActiveTab("support");
+              if (activeTab !== "support") setActiveTab("support");
             }}
           >
             <MdOutlineHealthAndSafety />
@@ -62,7 +55,7 @@ const BuildEditor = () => {
             className={`flex h-full w-full cursor-pointer items-center justify-center gap-1 rounded-t-lg border border-b-0 border-neutral-700 transition-all hover:brightness-110 ${activeTab === "description" ? "scale-105 border-neutral-700 bg-neutral-800" : "border-neutral-800 bg-neutral-900"}`}
             aria-label="Description Tab"
             onClick={() => {
-              if (activeTab != "description") setActiveTab("description");
+              if (activeTab !== "description") setActiveTab("description");
             }}
           >
             <MdOutlineDescription />
@@ -72,23 +65,18 @@ const BuildEditor = () => {
             className={`flex h-full w-full cursor-pointer items-center justify-center gap-1 rounded-t-lg border border-b-0 border-neutral-700 transition-all hover:brightness-110 ${activeTab === "comments" ? "scale-105 border-neutral-700 bg-neutral-800" : "border-neutral-800 bg-neutral-900"}`}
             aria-label="Comments Tab"
             onClick={() => {
-              if (activeTab != "comments") setActiveTab("comments");
+              if (activeTab !== "comments") setActiveTab("comments");
             }}
           >
             <FaRegComments />
-            <p className="hidden xl:block">Comments</p>
+            <p className="hidden xl:block">
+              Comments ({character?._count.comments})
+            </p>
           </button>
         </div>
         <div className="h-fit w-full rounded border border-neutral-700 bg-neutral-800">
-          {activeTab === "equipment" && (
-            <Equipment
-              slot={activeSlot as Exclude<ActiveSlots, "drifter">}
-              activeBuildIndex={activeBuildIndex}
-            />
-          )}
-          {activeTab === "drifter" && (
-            <Drifter activeBuildIndex={activeBuildIndex} />
-          )}
+          {activeTab === "equipment" && <Equipment />}
+          {activeTab === "drifters" && <Drifter />}
           {activeTab === "support" && <Support />}
           {activeTab === "description" && <Description />}
           {activeTab === "comments" && <CommentSection />}

@@ -1,79 +1,64 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useBuildForm } from "./buildFormContext";
 import data from "public/data.json";
 import { IoClose } from "react-icons/io5";
-import type { ActiveBuildIndex, ActiveFilter } from "~/types";
+import type { ActiveFilter } from "~/types";
 import { MASTERY_OPTIONS, TIER_LEVELS } from "~/utils";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import ImageHelper from "./ImageHelper";
 import SkillDescriptionParser from "./SkillDescriptionParser";
 import clsx from "clsx";
+import {
+  getBackgroundColor,
+  getBorderBackgroundOffsetColor,
+  getBorderColor,
+  getTextColor,
+} from "~/styles";
+import SelectMenu from "./SelectMenu";
+import { statsSchema } from "~/schemas";
+import { notFound } from "next/navigation";
+import { RiResetLeftFill } from "react-icons/ri";
 
-const Drifter = ({
-  activeBuildIndex,
-}: {
-  activeBuildIndex: ActiveBuildIndex;
-}) => {
-  const { formData, setFormData } = useBuildForm();
+const Drifter = () => {
+  const { characterData, setCharacterData, activeSlot, activeBuildIndex } =
+    useBuildForm();
   const [activeFilter, setActiveFilter] = useState<ActiveFilter>("all");
-  const selectInput = useRef<HTMLSelectElement>(null);
   const custom_mastery_drifter = useRef<HTMLInputElement>(null);
 
-  const drifters = data.drifters;
-  const filteredData = drifters.filter((drifter) => {
-    if (activeFilter === "all") return true;
-    if (activeFilter === drifter.type) return true;
-    return false;
-  });
-
-  let drifterData: (typeof drifters)[number] | undefined;
-  if (formData?.builds[activeBuildIndex]?.data.drifter.name) {
-    const drifterKey = formData.builds[activeBuildIndex]?.data.drifter.name;
-    drifterData = data.drifters.find((drifter) => drifter.name === drifterKey);
-  }
-
-  const typeHighlight = clsx(
-    "border-2 bg-radial from-neutral-800 from-10%",
-    drifterData?.type === "strength" && "border-red-400 to-red-400/60",
-    drifterData?.type === "intelligence" && "border-blue-400 to-blue-400/60",
-    drifterData?.type === "agility" && "border-green-400 to-green-400/60",
-    drifterData?.type === "logistics" && "border-yellow-400 to-yellow-400/60",
+  const filteredOptions = useMemo(
+    () =>
+      data.drifters.filter(
+        (item) => item.type === activeFilter || activeFilter === "all",
+      ),
+    [activeFilter],
   );
 
-  const typeBorderColor = clsx(
-    drifterData?.type === "strength" && "border-red-400",
-    drifterData?.type === "intelligence" && "border-blue-400",
-    drifterData?.type === "agility" && "border-green-400",
-    drifterData?.type === "logistics" && "border-yellow-400",
-    !drifterData?.type && "border-cyan-400",
-  );
+  if (!characterData) notFound();
+  if (!characterData.builds[activeBuildIndex]) notFound();
 
-  function getTypeOptionHighlight(drifterData: (typeof drifters)[number]) {
-    return clsx(
-      drifterData?.type === "strength" && "bg-red-400/20",
-      drifterData?.type === "intelligence" && "bg-blue-400/20",
-      drifterData?.type === "agility" && "bg-green-400/20",
-      drifterData?.type === "logistics" && "bg-yellow-400/20",
-    );
-  }
-
-  const typeTextColor = clsx(
-    drifterData?.type === "strength" && "text-red-400",
-    drifterData?.type === "intelligence" && "text-blue-400",
-    drifterData?.type === "agility" && "text-green-400",
-    drifterData?.type === "logistics" && "text-yellow-400",
+  const drifterData = data.drifters.find(
+    (drifter) =>
+      drifter.name ===
+      characterData.builds[activeBuildIndex]?.data.drifter.name,
   );
 
   return (
-    <div className="flex flex-col gap-2 p-2">
+    <div className="flex flex-col gap-2 rounded p-2">
       <div className="flex flex-wrap gap-2">
         <button
           className={clsx(
-            "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
+            "w-12 cursor-pointer rounded border px-3 py-1 transition-all hover:brightness-110",
             activeFilter === "all"
-              ? clsx("bg-neutral-700", typeBorderColor)
+              ? clsx(
+                  drifterData
+                    ? clsx(
+                        getBorderBackgroundOffsetColor(drifterData.type),
+                        getBackgroundColor(drifterData.type),
+                      )
+                    : "border-cyan-300 bg-cyan-400",
+                )
               : "border-neutral-500 bg-neutral-600",
           )}
           onClick={() => {
@@ -84,9 +69,16 @@ const Drifter = ({
         </button>
         <button
           className={clsx(
-            "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
+            "cursor-pointer rounded border px-3 py-1 transition-all hover:brightness-110",
             activeFilter === "strength"
-              ? clsx("bg-neutral-700", typeBorderColor)
+              ? clsx(
+                  drifterData
+                    ? clsx(
+                        getBorderBackgroundOffsetColor(drifterData.type),
+                        getBackgroundColor(drifterData.type),
+                      )
+                    : "border-cyan-300 bg-cyan-400",
+                )
               : "border-neutral-500 bg-neutral-600",
           )}
           onClick={() => {
@@ -97,9 +89,16 @@ const Drifter = ({
         </button>
         <button
           className={clsx(
-            "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
+            "cursor-pointer rounded border px-3 py-1 transition-all hover:brightness-110",
             activeFilter === "agility"
-              ? clsx("bg-neutral-700", typeBorderColor)
+              ? clsx(
+                  drifterData
+                    ? clsx(
+                        getBorderBackgroundOffsetColor(drifterData.type),
+                        getBackgroundColor(drifterData.type),
+                      )
+                    : "border-cyan-300 bg-cyan-400",
+                )
               : "border-neutral-500 bg-neutral-600",
           )}
           onClick={() => {
@@ -110,9 +109,16 @@ const Drifter = ({
         </button>
         <button
           className={clsx(
-            "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
+            "cursor-pointer rounded border px-3 py-1 transition-all hover:brightness-110",
             activeFilter === "intelligence"
-              ? clsx("bg-neutral-700", typeBorderColor)
+              ? clsx(
+                  drifterData
+                    ? clsx(
+                        getBorderBackgroundOffsetColor(drifterData.type),
+                        getBackgroundColor(drifterData.type),
+                      )
+                    : "border-cyan-300 bg-cyan-400",
+                )
               : "border-neutral-500 bg-neutral-600",
           )}
           onClick={() => {
@@ -123,9 +129,16 @@ const Drifter = ({
         </button>
         <button
           className={clsx(
-            "cursor-pointer rounded border px-3 py-1 hover:brightness-110",
+            "cursor-pointer rounded border px-3 py-1 transition-all hover:brightness-110",
             activeFilter === "logistics"
-              ? clsx("bg-neutral-700", typeBorderColor)
+              ? clsx(
+                  drifterData
+                    ? clsx(
+                        getBorderBackgroundOffsetColor(drifterData.type),
+                        getBackgroundColor(drifterData.type),
+                      )
+                    : "border-cyan-300 bg-cyan-400",
+                )
               : "border-neutral-500 bg-neutral-600",
           )}
           onClick={() => {
@@ -135,129 +148,36 @@ const Drifter = ({
           Logistics
         </button>
       </div>
-      <div className="flex gap-2">
-        <div
-          className={`flex h-12 w-12 items-center rounded border border-neutral-600 ${formData?.builds[activeBuildIndex]?.data.drifter.name ? "bg-radial from-neutral-700 from-10% to-black/30" : "bg-neutral-700"}`}
-        >
-          {drifterData?.image ? (
-            <ImageHelper
-              src={drifterData.image}
-              alt={
-                formData?.builds?.[activeBuildIndex]?.data?.drifter.name ?? ""
-              }
-              width={2436}
-              height={1440}
-              className="h-full object-cover"
-            />
-          ) : null}
-        </div>
-        <div className="h-12 grow rounded bg-neutral-700">
-          <select
-            className={clsx(
-              "h-full w-full cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-2 text-lg outline-none",
-              !drifterData ||
-                !filteredData.some(
-                  (drifter) => drifter.name === drifterData.name,
-                )
-                ? "text-white"
-                : typeTextColor,
-            )}
-            id={"drifter"}
-            name={"drifter"}
-            ref={selectInput}
-            value={formData?.builds?.[activeBuildIndex]?.data?.drifter.name}
-            onChange={(e) => {
-              setFormData((prev) => {
-                if (!prev) return prev;
-                return {
-                  ...prev,
-                  builds: prev.builds.map((b, idx) =>
-                    idx === activeBuildIndex
-                      ? {
-                          ...b,
-                          data: {
-                            ...b.data,
-                            drifter: {
-                              name: e.target.value,
-                              mastery: 0,
-                              tier: "I",
-                            },
-                            stats: {
-                              strength: 0,
-                              agility: 0,
-                              intelligence: 0,
-                            },
-                          },
-                        }
-                      : b,
-                  ),
-                };
-              });
-            }}
-          >
-            <option value="" hidden>
-              Drifter
-            </option>
-            <option value="" className="text-white">
-              None
-            </option>
-            {filteredData.map((drifter, i) => (
-              <option
-                key={drifter.name + "_" + i}
-                value={drifter.name}
-                className={clsx(
-                  formData?.builds?.some(
-                    (build) => build.data.drifter.name === drifter.name,
-                  ) ||
-                    formData.support.some((support) => support === drifter.name)
-                    ? "text-neutral-500"
-                    : "text-white",
-                  getTypeOptionHighlight(drifter),
-                )}
-              >
-                {drifter.name}
-              </option>
-            ))}
-          </select>
-        </div>
-        <button
-          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700 transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
-          disabled={!formData?.builds?.[activeBuildIndex]?.data?.drifter.name}
-          aria-label="Clear drifter"
-          onClick={() => {
-            setFormData((prev) => {
-              if (!prev) return prev;
-              return {
-                ...prev,
-                builds: prev.builds.map((b, idx) =>
-                  idx === activeBuildIndex
-                    ? {
-                        ...b,
-                        data: {
-                          ...b.data,
-                          drifter: {
-                            name: "",
-                            mastery: 0,
-                            tier: "",
-                          },
-                          stats: {
-                            strength: 0,
-                            agility: 0,
-                            intelligence: 0,
-                          },
+      <SelectMenu
+        options={filteredOptions}
+        allOptions={data.drifters}
+        placeholder={activeSlot[0]?.toUpperCase() + activeSlot.slice(1)}
+        value={characterData.builds[activeBuildIndex].data.drifter.name}
+        onChange={(val) =>
+          setCharacterData((prev) => {
+            return {
+              ...prev,
+              builds: prev.builds.map((b, idx) =>
+                idx === activeBuildIndex
+                  ? {
+                      ...b,
+                      data: {
+                        ...b.data,
+                        drifter: {
+                          name: val,
+                          mastery: 0,
+                          tier: "I",
                         },
-                      }
-                    : b,
-                ),
-              };
-            });
-            setActiveFilter("all");
-          }}
-        >
-          <IoClose className="h-6 w-6" />
-        </button>
-      </div>
-      {formData?.builds?.[activeBuildIndex]?.data?.drifter.name && (
+                        stats: statsSchema.parse({}),
+                      },
+                    }
+                  : b,
+              ),
+            };
+          })
+        }
+      />
+      {characterData.builds[activeBuildIndex].data.drifter.name && (
         <>
           <hr className="border-neutral-700" />
           <div className="flex flex-col gap-2">
@@ -277,7 +197,12 @@ const Drifter = ({
                   <div className="flex flex-col">
                     <h3>Active Skill</h3>
                     <div className="flex flex-wrap gap-2">
-                      <div className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black">
+                      <div
+                        className={clsx(
+                          "flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border-2 bg-neutral-800 shadow-sm shadow-black",
+                          getBorderColor(drifterData?.type),
+                        )}
+                      >
                         {drifterData?.activeSkill.image ? (
                           <ImageHelper
                             src={drifterData.activeSkill.image}
@@ -305,7 +230,12 @@ const Drifter = ({
                   <div className="flex flex-col">
                     <h3>Passive Skill</h3>
                     <div className="flex flex-wrap gap-2">
-                      <div className="flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border border-neutral-600 bg-neutral-800 shadow-sm shadow-black">
+                      <div
+                        className={clsx(
+                          "flex h-12 w-12 flex-col items-center justify-center overflow-hidden rounded border-2 bg-neutral-800 shadow-sm shadow-black",
+                          getBorderColor(drifterData?.type),
+                        )}
+                      >
                         {drifterData?.passiveSkill.image ? (
                           <ImageHelper
                             src={drifterData.passiveSkill.image}
@@ -341,13 +271,17 @@ const Drifter = ({
                     key={option}
                     className={clsx(
                       "flex h-12 w-12 cursor-pointer items-center justify-center rounded p-2",
-                      (formData?.builds?.[activeBuildIndex]?.data?.drifter
-                        .mastery ?? 0) === Number(option)
-                        ? typeHighlight
-                        : "bg-neutral-800",
+                      characterData.builds[activeBuildIndex]?.data.drifter
+                        .mastery === Number(option)
+                        ? clsx(
+                            getBorderBackgroundOffsetColor(drifterData?.type),
+                            "border hover:brightness-110",
+                            getBackgroundColor(drifterData?.type),
+                          )
+                        : "bg-neutral-800 hover:brightness-125",
                     )}
                     onClick={() => {
-                      setFormData((prev) => {
+                      setCharacterData((prev) => {
                         if (!prev) return prev;
                         return {
                           ...prev,
@@ -382,11 +316,15 @@ const Drifter = ({
                       MASTERY_OPTIONS.find(
                         (option) =>
                           Number(option) ===
-                          formData?.builds?.[activeBuildIndex]?.data?.drifter
+                          characterData.builds[activeBuildIndex]?.data.drifter
                             .mastery,
                       )
-                        ? "bg-neutral-800"
-                        : typeHighlight,
+                        ? "bg-neutral-800 hover:brightness-125"
+                        : clsx(
+                            getBorderBackgroundOffsetColor(drifterData?.type),
+                            "border hover:brightness-110",
+                            getBackgroundColor(drifterData?.type),
+                          ),
                     )}
                     max={50}
                     min={0}
@@ -394,39 +332,16 @@ const Drifter = ({
                       MASTERY_OPTIONS.find(
                         (option) =>
                           Number(option) ===
-                          formData?.builds?.[activeBuildIndex]?.data?.drifter
+                          characterData.builds[activeBuildIndex]?.data.drifter
                             .mastery,
                       )
                         ? ""
-                        : formData?.builds?.[activeBuildIndex]?.data?.drifter
+                        : characterData.builds[activeBuildIndex]?.data.drifter
                             .mastery
                     }
                     onChange={(e) => {
-                      if (Number(e.target.value) > 50) {
-                        e.target.value = "";
-                        setFormData((prev) => {
-                          if (!prev) return prev;
-                          return {
-                            ...prev,
-                            builds: prev.builds.map((b, idx) =>
-                              idx === activeBuildIndex
-                                ? {
-                                    ...b,
-                                    data: {
-                                      ...b.data,
-                                      drifter: {
-                                        ...b.data.drifter,
-                                        mastery: 0,
-                                      },
-                                    },
-                                  }
-                                : b,
-                            ),
-                          };
-                        });
-                        return;
-                      }
-                      setFormData((prev) => {
+                      if (Number(e.target.value) > 50) e.target.value = "";
+                      setCharacterData((prev) => {
                         if (!prev) return prev;
                         return {
                           ...prev,
@@ -438,7 +353,10 @@ const Drifter = ({
                                     ...b.data,
                                     drifter: {
                                       ...b.data.drifter,
-                                      mastery: Number(e.target.value),
+                                      mastery:
+                                        Number(e.target.value) > 50
+                                          ? 0
+                                          : Number(e.target.value),
                                     },
                                   },
                                 }
@@ -450,18 +368,16 @@ const Drifter = ({
                   />
                 </div>
                 <button
-                  className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 transition-all hover:text-red-500 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="flex h-12 w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 transition-all hover:text-red-500 hover:brightness-125 disabled:cursor-not-allowed disabled:opacity-40"
                   aria-label="Clear drifter mastery"
                   disabled={
-                    (formData?.builds?.[activeBuildIndex]?.data?.drifter
-                      .mastery ?? 0) === 0
+                    characterData.builds[activeBuildIndex]?.data.drifter
+                      .mastery === 0
                   }
                   onClick={() => {
-                    if (custom_mastery_drifter.current) {
+                    if (custom_mastery_drifter.current)
                       custom_mastery_drifter.current.value = "";
-                    }
-                    setFormData((prev) => {
-                      if (!prev) return prev;
+                    setCharacterData((prev) => {
                       return {
                         ...prev,
                         builds: prev.builds.map((b, idx) =>
@@ -488,24 +404,24 @@ const Drifter = ({
             </div>
             <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
               <h2 className="text-lg">Tier</h2>
-              <div className="flex flex-wrap justify-center gap-2">
+              <div className="grid grid-cols-3 gap-2 md:grid-cols-6 2xl:grid-cols-12">
                 {TIER_LEVELS.map((tier) => (
                   <button
                     key={tier}
                     aria-label={"Set tier level to " + tier}
                     className={clsx(
-                      "flex h-12 w-12 cursor-pointer items-center justify-center rounded p-2",
-                      (formData?.builds?.[activeBuildIndex]?.data?.drifter
-                        .tier !== ""
-                        ? formData?.builds?.[activeBuildIndex]?.data?.drifter
-                            .tier
-                        : "I") === String(tier)
-                        ? typeHighlight
-                        : "bg-neutral-800",
+                      "flex h-12 min-w-12 cursor-pointer items-center justify-center rounded p-2",
+                      characterData.builds[activeBuildIndex]?.data.drifter
+                        .tier === tier
+                        ? clsx(
+                            getBorderBackgroundOffsetColor(drifterData?.type),
+                            "border hover:brightness-110",
+                            getBackgroundColor(drifterData?.type),
+                          )
+                        : "bg-neutral-800 hover:brightness-125",
                     )}
                     onClick={() => {
-                      setFormData((prev) => {
-                        if (!prev) return prev;
+                      setCharacterData((prev) => {
                         return {
                           ...prev,
                           builds: prev.builds.map((b, idx) =>
@@ -516,7 +432,7 @@ const Drifter = ({
                                     ...b.data,
                                     drifter: {
                                       ...b.data.drifter,
-                                      tier: String(tier),
+                                      tier: tier,
                                     },
                                   },
                                 }
@@ -529,6 +445,35 @@ const Drifter = ({
                     {tier}
                   </button>
                 ))}
+                <button
+                  aria-label={"Set tier level to default."}
+                  className={clsx(
+                    "flex h-12 min-w-12 cursor-pointer items-center justify-center rounded bg-neutral-800 p-2 hover:brightness-125",
+                  )}
+                  onClick={() => {
+                    setCharacterData((prev) => {
+                      return {
+                        ...prev,
+                        builds: prev.builds.map((b, idx) =>
+                          idx === activeBuildIndex
+                            ? {
+                                ...b,
+                                data: {
+                                  ...b.data,
+                                  drifter: {
+                                    ...b.data.drifter,
+                                    tier: "I",
+                                  },
+                                },
+                              }
+                            : b,
+                        ),
+                      };
+                    });
+                  }}
+                >
+                  <RiResetLeftFill />
+                </button>
               </div>
             </div>
             <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
@@ -541,7 +486,7 @@ const Drifter = ({
                   <FaMinus />
                 </button>
                 <span className="col-span-2 text-center">
-                  <span className={typeTextColor}>+</span> 0
+                  <span className={getTextColor(drifterData?.type)}>+</span> 0
                 </span>
                 <button
                   className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
@@ -554,9 +499,7 @@ const Drifter = ({
             <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
               <h2 className="text-lg">Support Bonuses</h2>
               <div className="flex justify-between gap-2">
-                {drifterData?.supportEffects.negative.name === "None" ? (
-                  ""
-                ) : (
+                {drifterData?.supportEffects.negative.name === "None" ? null : (
                   <div className="flex flex-1 justify-center gap-2 rounded bg-neutral-800 p-2">
                     <span className="text-red-400">-</span>
                     <span>{drifterData?.supportEffects.negative.name}</span>

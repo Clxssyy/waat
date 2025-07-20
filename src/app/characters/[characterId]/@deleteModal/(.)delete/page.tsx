@@ -7,7 +7,7 @@ import { useBuildForm } from "~/app/_components/buildFormContext";
 import { api } from "~/trpc/react";
 
 const DeleteModal = () => {
-  const { formData } = useBuildForm();
+  const { characterData: formData } = useBuildForm();
   const router = useRouter();
   const deleteCharacter = api.character.delete.useMutation({
     onSuccess: () => {

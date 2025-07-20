@@ -5,7 +5,7 @@ import { FaTrash } from "react-icons/fa6";
 import { useBuildForm } from "~/app/_components/buildFormContext";
 
 const SettingsPage = () => {
-  const { formData, setFormData, isCreator } = useBuildForm();
+  const { characterData, setCharacterData, isCreator } = useBuildForm();
 
   return (
     <div className="m-2 flex flex-1 flex-col gap-4 rounded border border-neutral-600 bg-neutral-700 p-2">
@@ -17,10 +17,10 @@ const SettingsPage = () => {
             type="text"
             placeholder="Name"
             id="name_input"
-            value={formData?.name}
+            value={characterData?.name}
             maxLength={30}
             onChange={(e) => {
-              setFormData((prev) =>
+              setCharacterData((prev) =>
                 prev
                   ? {
                       ...prev,
@@ -39,9 +39,9 @@ const SettingsPage = () => {
           <select
             className="w-full rounded bg-neutral-800 p-2"
             id="role_select"
-            value={formData?.role ?? ""}
+            value={characterData?.role ?? ""}
             onChange={(e) => {
-              setFormData((prev) =>
+              setCharacterData((prev) =>
                 prev
                   ? {
                       ...prev,
@@ -64,9 +64,9 @@ const SettingsPage = () => {
               <select
                 className="w-full rounded bg-neutral-800 p-2"
                 id="privacy_select"
-                value={formData?.private.toString()}
+                value={characterData?.private.toString()}
                 onChange={(e) => {
-                  setFormData((prev) =>
+                  setCharacterData((prev) =>
                     prev
                       ? {
                           ...prev,
@@ -83,7 +83,7 @@ const SettingsPage = () => {
             <div className="flex justify-center">
               <Link
                 className="flex cursor-pointer items-center justify-center gap-1 rounded border border-red-400 bg-red-500 p-2 font-bold transition-all hover:scale-105 hover:brightness-110 active:scale-95"
-                href={`/characters/${formData.id}/delete`}
+                href={`/characters/${characterData.id}/delete`}
               >
                 <FaTrash />
                 Delete

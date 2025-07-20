@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { notFound, usePathname, useRouter } from "next/navigation";
 import { FaCog, FaSave } from "react-icons/fa";
 import { FaClone, FaHammer, FaPencil } from "react-icons/fa6";
 import { IoIosStar, IoIosStarHalf, IoMdArrowRoundBack } from "react-icons/io";
 import { useBuildForm } from "./buildFormContext";
+import clsx from "clsx";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -25,9 +26,7 @@ const Sidebar = () => {
     setHasChanges,
   } = useBuildForm();
 
-  if (!character) {
-    return <div>Character not found.</div>;
-  }
+  if (!character) notFound();
 
   const creator = character.createdBy;
 
@@ -85,7 +84,10 @@ const Sidebar = () => {
         <div className="flex flex-col gap-2 p-2">
           <Link
             href={`/characters/${characterId}`}
-            className={`flex cursor-pointer items-center gap-2 rounded bg-neutral-800 p-2 not-lg:justify-center hover:brightness-125 ${activePage === undefined ? "brightness-125" : ""}`}
+            className={clsx(
+              "flex cursor-pointer items-center gap-2 rounded bg-neutral-800 p-2 not-lg:justify-center hover:brightness-125",
+              activePage === undefined && "brightness-125",
+            )}
             replace
           >
             <FaHammer />
@@ -93,7 +95,10 @@ const Sidebar = () => {
           </Link>
           <Link
             href={`/characters/${characterId}/description`}
-            className={`flex cursor-pointer items-center gap-2 rounded bg-neutral-800 p-2 not-lg:justify-center hover:brightness-125 ${activePage === "description" ? "brightness-125" : ""}`}
+            className={clsx(
+              "flex cursor-pointer items-center gap-2 rounded bg-neutral-800 p-2 not-lg:justify-center hover:brightness-125",
+              activePage === "description" && "brightness-125",
+            )}
             replace
           >
             <FaPencil />
@@ -101,7 +106,10 @@ const Sidebar = () => {
           </Link>
           <Link
             href={`/characters/${characterId}/settings`}
-            className={`flex cursor-pointer items-center gap-2 rounded bg-neutral-800 p-2 not-lg:justify-center hover:brightness-125 ${activePage === "settings" ? "brightness-125" : ""}`}
+            className={clsx(
+              "flex cursor-pointer items-center gap-2 rounded bg-neutral-800 p-2 not-lg:justify-center hover:brightness-125",
+              activePage === "settings" && "brightness-125",
+            )}
             replace
           >
             <FaCog />
@@ -110,7 +118,11 @@ const Sidebar = () => {
         </div>
         <div className="flex justify-center p-2">
           <button
-            className={`flex w-full cursor-pointer items-center justify-center gap-1 rounded border p-2 transition-all hover:brightness-125 not-disabled:hover:scale-[102%] not-disabled:active:scale-[98%] disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40 lg:w-full ${(hasChanges && isCreator && "border-green-500 bg-green-600") || ""} ${(!isCreator && "border-cyan-300 bg-cyan-400") || ""}`}
+            className={clsx(
+              "flex w-full cursor-pointer items-center justify-center gap-1 rounded border p-2 transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40 lg:w-full",
+              hasChanges && isCreator && "border-green-500 bg-green-600",
+              !isCreator && "border-cyan-300 bg-cyan-400",
+            )}
             onClick={
               isCreator
                 ? () => {
@@ -133,10 +145,10 @@ const Sidebar = () => {
       <div className="flex h-16 items-center justify-center gap-2 border-t border-neutral-700 p-2">
         <Link
           href={`/users/${creator.id}`}
-          className="flex cursor-pointer items-center"
+          className="flex min-w-10 cursor-pointer items-center"
         >
           <Image
-            src={character?.createdBy.image ?? "/default-avatar.jpg"}
+            src={character.createdBy.image ?? "/default-avatar.jpg"}
             width={100}
             height={100}
             alt="creator pfp"
@@ -148,7 +160,7 @@ const Sidebar = () => {
             href={`/users/${creator.id}`}
             className="text-sm hover:underline"
           >
-            By {character?.createdBy.name}
+            By {character.createdBy.name}
           </Link>
           {character.clonedFrom ? (
             <Link

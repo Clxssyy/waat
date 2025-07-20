@@ -7,7 +7,7 @@ import { useBuildForm } from "~/app/_components/buildFormContext";
 import DescriptionParser from "~/app/_components/DescriptionParser";
 
 const Description = () => {
-  const { formData, setFormData, character } = useBuildForm();
+  const { characterData, setCharacterData, character } = useBuildForm();
   const pathname = usePathname();
   const [previewMode, setPreviewMode] = useState<boolean>(false);
   return (
@@ -71,8 +71,8 @@ const Description = () => {
             <div className="grow overflow-auto rounded bg-neutral-800 p-2">
               <DescriptionParser
                 description={
-                  formData?.description != ""
-                    ? formData.description
+                  characterData?.description != ""
+                    ? characterData.description
                     : "No description."
                 }
               />
@@ -80,14 +80,14 @@ const Description = () => {
           ) : (
             <textarea
               className="grow rounded bg-neutral-800 p-2 outline-none"
-              value={formData.description}
+              value={characterData.description}
               id="description_input"
               name="description input"
               placeholder="Add a description here."
               spellCheck={false}
               maxLength={3000}
               onChange={(e) => {
-                setFormData((prev) => {
+                setCharacterData((prev) => {
                   if (!prev) return prev;
                   return {
                     ...prev,

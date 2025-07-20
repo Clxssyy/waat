@@ -3,7 +3,6 @@ type Props = {
 };
 
 export default function SkillDescriptionParser({ description }: Props) {
-  // RegEx to find bracketed segments
   const parts = description.split(/(\[[^\]]+\])/g);
 
   return (
@@ -12,7 +11,7 @@ export default function SkillDescriptionParser({ description }: Props) {
         if (part.startsWith("[") && part.endsWith("]")) {
           const inner = part.slice(1, -1).toLowerCase();
 
-          let color = "text-white"; // default
+          let color = "text-white";
 
           if (inner.includes("healing")) {
             color = "text-green-400";
@@ -29,7 +28,6 @@ export default function SkillDescriptionParser({ description }: Props) {
           );
         }
 
-        // Normal text
         return <span key={index}>{part}</span>;
       })}
     </p>
