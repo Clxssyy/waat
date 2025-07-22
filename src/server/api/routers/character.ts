@@ -156,7 +156,7 @@ export const characterRouter = createTRPCRouter({
       }),
     )
     .query(async ({ ctx, input }) => {
-      const page = parseInt(input.page, 10);
+      const page = parseInt(input.page === "" ? "1" : input.page, 10);
       const pageSize = 18;
       const skip = (page - 1) * pageSize;
       const where: {
