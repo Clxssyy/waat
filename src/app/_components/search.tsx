@@ -32,7 +32,6 @@ const Search = () => {
       if (page) next.set("page", page);
       if ((q || role || drifter) && !page) next.set("page", "1");
       startTransition(() => {
-        console.log(currentPath);
         if (params.toString() === next.toString()) return;
         router.replace(`/characters?${next.toString()}`);
       });
