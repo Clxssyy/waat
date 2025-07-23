@@ -16,7 +16,6 @@ export const characterRouter = createTRPCRouter({
             name: input.name || "Default Character",
             role: input.role,
             userId: ctx.session.user.id,
-            builds: {},
             private: false,
             description: "No description.",
             support: Array.from({ length: 5 }, () => ""),
@@ -28,48 +27,11 @@ export const characterRouter = createTRPCRouter({
               data: {
                 characterId: character.id,
                 data: buildDataSchema.parse({}),
+                position: 0,
               },
             })
             .then((build) => build);
         });
-    }),
-
-  addBuild: protectedProcedure
-    .input(
-      z.object({
-        characterId: z.string(),
-      }),
-    )
-    .mutation(async ({ ctx, input }) => {
-      return ctx.db.build
-        .create({
-          data: {
-            characterId: input.characterId,
-            data: buildDataSchema.parse({}),
-          },
-        })
-        .then((build) => build);
-    }),
-
-  getByBuildId: publicProcedure
-    .input(
-      z.object({
-        buildId: z.string(),
-      }),
-    )
-    .query(async ({ ctx, input }) => {
-      return ctx.db.character.findFirst({
-        where: {
-          builds: {
-            some: {
-              id: input.buildId,
-            },
-          },
-        },
-        include: {
-          builds: true,
-        },
-      });
     }),
 
   getById: publicProcedure
@@ -85,9 +47,14 @@ export const characterRouter = createTRPCRouter({
         },
         include: {
           builds: {
-            orderBy: {
-              createdAt: "asc",
-            },
+            orderBy: [
+              {
+                position: "asc",
+              },
+              {
+                createdAt: "asc",
+              },
+            ],
           },
           ratings: true,
           _count: {
@@ -106,39 +73,6 @@ export const characterRouter = createTRPCRouter({
               createdAt: "desc",
             },
           },
-        },
-      });
-    }),
-
-  getAll: publicProcedure.query(async ({ ctx }) => {
-    return ctx.db.character.findMany({
-      where: {
-        private: false,
-      },
-      include: {
-        builds: true,
-        createdBy: true,
-      },
-      orderBy: {
-        createdAt: "desc",
-      },
-    });
-  }),
-
-  getAllByUserId: publicProcedure
-    .input(
-      z.object({
-        userId: z.string(),
-      }),
-    )
-    .query(async ({ ctx, input }) => {
-      return ctx.db.character.findMany({
-        where: {
-          userId: input.userId,
-        },
-        include: {
-          builds: true,
-          createdBy: true,
         },
       });
     }),
@@ -216,6 +150,14 @@ export const characterRouter = createTRPCRouter({
             select: {
               data: true,
             },
+            orderBy: [
+              {
+                position: "asc",
+              },
+              {
+                createdAt: "asc",
+              },
+            ],
           },
           createdBy: {
             select: {
@@ -257,44 +199,40 @@ export const characterRouter = createTRPCRouter({
       const character = await ctx.db.character.findUnique({
         where: { id: input.id },
       });
+
       if (!character) {
         throw new Error("Character not found");
       }
+
       return ctx.db.character.update({
-        where: {
-          id: input.id,
-        },
+        where: { id: input.id },
         data: {
           name: input.name || "Default Character",
           role: input.role,
           private: input.private,
           description: input.description,
+          support: input.support,
           builds: {
+            // Split builds based on temp ID but keep original index for position
             create: input.builds
-              .filter((b) => b.id.includes("temp"))
+              .map((build, index) => ({ ...build, position: index }))
+              .filter((b) => b.id.includes("temp-"))
               .map((build) => ({
-                data: {
-                  characterId: input.id,
-                  equipment: build.data.equipment,
-                  stats: build.data.stats,
-                  drifter: build.data.drifter,
-                },
+                data: build.data,
+                position: build.position,
               })),
+
             update: input.builds
-              .filter((b) => !b.id.includes("temp"))
+              .map((build, index) => ({ ...build, position: index }))
+              .filter((b) => !b.id.includes("temp-"))
               .map((build) => ({
                 where: { id: build.id },
                 data: {
-                  data: {
-                    equipment: build.data.equipment,
-                    stats: build.data.stats,
-                    drifter: build.data.drifter,
-                    skills: build.data.skills,
-                  },
+                  data: build.data,
+                  position: build.position,
                 },
               })),
           },
-          support: input.support,
         },
         include: {
           builds: true,
@@ -316,13 +254,9 @@ export const characterRouter = createTRPCRouter({
           clonedFrom: input.id,
           support: input.support,
           builds: {
-            create: input.builds.map((build) => ({
-              data: {
-                equipment: build.data.equipment,
-                stats: build.data.stats,
-                drifter: build.data.drifter,
-                skills: build.data.skills,
-              },
+            create: input.builds.map((build, index) => ({
+              data: build.data,
+              position: index,
             })),
           },
         },
@@ -459,6 +393,7 @@ export const characterRouter = createTRPCRouter({
           select: {
             data: true,
           },
+          orderBy: [{ position: "asc" }, { createdAt: "asc" }],
         },
         createdBy: {
           select: {

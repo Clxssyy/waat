@@ -63,6 +63,7 @@ model Build {
     updatedAt DateTime @updatedAt
     characterId String
     data     Json
+    position Int?
 
     character Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
 }

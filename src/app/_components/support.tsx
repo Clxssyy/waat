@@ -7,20 +7,23 @@ import ImageHelper from "./ImageHelper";
 import clsx from "clsx";
 import SelectMenu from "./SelectMenu";
 import { getBorderColor, getBorderHoverColor } from "~/styles";
+import { useEffect } from "react";
 
 const Support = () => {
   const { characterData, setCharacterData, activeSupport, setActiveSupport } =
     useBuildForm();
   const drifterData: ((typeof data.drifters)[number] | undefined)[] = [];
 
-  if (characterData.support.length !== 5)
-    setCharacterData((prev) => {
-      const newSupport = Array.from({ length: 5 }, () => "");
-      return {
-        ...prev,
-        support: newSupport,
-      };
-    });
+  useEffect(() => {
+    if (characterData.support.length !== 5)
+      setCharacterData((prev) => {
+        const newSupport = Array.from({ length: 5 }, () => "");
+        return {
+          ...prev,
+          support: newSupport,
+        };
+      });
+  }, []);
 
   return (
     <div className="flex flex-col gap-2 p-2">

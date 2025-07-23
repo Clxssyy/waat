@@ -100,9 +100,10 @@ const BuildDisplay = () => {
                       builds: [
                         ...prev.builds,
                         {
-                          id: "temp" + i,
+                          id: "temp-" + crypto.randomUUID(),
                           characterId: prev.id,
                           data: buildDataSchema.parse({}),
+                          position: i,
                         },
                       ],
                     };

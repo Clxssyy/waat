@@ -8,12 +8,19 @@ import { IoIosStar, IoIosStarHalf } from "react-icons/io";
 const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
   if (!character) return null;
 
-  const drifterData = character.builds.map((build) => {
-    const buildData = build.data as BuildData;
-    return data.drifters.find(
-      (drifter) => drifter.name === buildData.drifter.name,
-    );
-  });
+  const drifterData: ((typeof data.drifters)[number] | null)[] = Array.from(
+    { length: 3 },
+    (_, i) => {
+      const build = character.builds[i];
+      if (!build) return null;
+
+      const buildData = build.data as BuildData;
+      const match = data.drifters.find(
+        (drifter) => drifter.name === buildData.drifter.name,
+      );
+      return match ?? null;
+    },
+  );
 
   const totalRating = character.ratings.reduce(
     (prev, rate) => prev + rate.value,
@@ -24,37 +31,42 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
   return (
     <Link
       href={`/characters/${character.id}`}
-      className="flex h-full min-h-40 flex-col justify-between gap-2 rounded bg-gradient-to-br from-neutral-900 to-neutral-950 p-2 transition-all hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
+      className="flex h-full min-h-45 flex-col justify-between gap-2 rounded bg-gradient-to-br from-neutral-900 to-neutral-950 p-2 transition-all hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
     >
-      <div className="flex flex-col gap-1">
-        <div className="flex justify-between gap-1">
-          <div className="flex items-center gap-1 overflow-hidden">
-            <h3 className="grow truncate text-lg font-bold">
-              {character.name}
-            </h3>
-            {character.private ? (
-              <FaEyeSlash className="text-lg text-neutral-400" />
-            ) : null}
-          </div>
-          {character.role ? (
-            <span className="w-fit rounded border border-neutral-700 bg-neutral-800 p-1">
-              {character.role === "dps"
-                ? character.role.toUpperCase()
-                : character.role.charAt(0).toUpperCase() +
-                  character.role.slice(1)}
-            </span>
+      <div className="flex grow flex-col gap-1">
+        <div className="flex items-center justify-between gap-1">
+          {character.private ? (
+            <FaEyeSlash className="text-neutral-400" />
           ) : null}
+          <h3 className="grow truncate text-lg font-bold">{character.name}</h3>
+          {character.role && (
+            <div className="h-full place-content-center rounded border border-neutral-700 bg-neutral-800 px-2">
+              <p className="text-xs">
+                {character.role === "dps"
+                  ? character.role.toUpperCase()
+                  : character.role.charAt(0).toUpperCase() +
+                    character.role.slice(1)}
+              </p>
+            </div>
+          )}
         </div>
         <div className="flex flex-wrap gap-1">
           {drifterData.map((drifter, i) =>
             drifter?.name ? (
-              <span
+              <p
                 key={character.id + "_" + drifter?.name + "_" + i}
-                className={`rounded border px-2 py-1 text-sm ${drifter?.type === "strength" ? "border-red-400 bg-red-400/20" : `${drifter?.type === "agility" ? "border-green-400 bg-green-400/20" : `${drifter?.type === "intelligence" ? "border-blue-400 bg-blue-400/20" : `${drifter?.type === "logistics" ? "border-yellow-400 bg-yellow-400/20" : "border-neutral-700 bg-neutral-800"}`}`}`}`}
+                className={`h-[30px] grow basis-0 rounded border px-2 py-1 text-center text-sm ${drifter.type === "strength" ? "border-red-400 bg-red-400/20" : `${drifter.type === "agility" ? "border-green-400 bg-green-400/20" : `${drifter.type === "intelligence" ? "border-blue-400 bg-blue-400/20" : `${drifter.type === "logistics" ? "border-yellow-400 bg-yellow-400/20" : "border-neutral-700 bg-neutral-800"}`}`}`}`}
               >
-                {drifter?.name}
-              </span>
-            ) : null,
+                {drifter.name}
+              </p>
+            ) : (
+              <p
+                key={character.id + "_" + i}
+                className="h-[30px] grow basis-0 rounded border border-neutral-700 bg-neutral-700/20 px-2 py-1 text-center text-sm text-neutral-700"
+              >
+                Empty
+              </p>
+            ),
           )}
         </div>
       </div>

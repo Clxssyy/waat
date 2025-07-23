@@ -60,6 +60,7 @@ export const buildSchema = z.object({
   updatedAt: z.date(),
   characterId: z.string(),
   data: buildDataSchema,
+  position: z.number().nullish(),
 });
 
 export const characterSchema = z.object({

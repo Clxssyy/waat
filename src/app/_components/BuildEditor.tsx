@@ -70,7 +70,10 @@ const BuildEditor = () => {
           >
             <FaRegComments />
             <p className="hidden xl:block">
-              Comments ({character?._count.comments})
+              Comments{" "}
+              <span className="not-2xl:hidden">
+                ({character?._count.comments})
+              </span>
             </p>
           </button>
         </div>
