@@ -85,7 +85,7 @@ const CharacterCard = ({ character }: { character: CharacterCardInfo }) => {
               className="h-6 w-6 rounded-full"
             />
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center justify-end gap-1">
             <span className="text-sm text-neutral-400">
               ({character._count.ratings})
             </span>
