@@ -665,7 +665,7 @@ const BuildDisplay = () => {
                 className="rounded bg-neutral-700/40"
               >
                 <div
-                  className="flex h-1 rounded transition-all"
+                  className="flex h-1 gap-0.5 rounded transition-all"
                   style={{
                     width:
                       totalStrength === 0
@@ -679,50 +679,59 @@ const BuildDisplay = () => {
                           ) + "%",
                   }}
                 >
-                  <div
-                    id="strength-base"
-                    className="h-full rounded bg-neutral-500"
-                    style={{
-                      width:
-                        totalStrength === 0
-                          ? 0
-                          : String(
-                              ((drifterData?.strBase ?? 0) / totalStrength) *
-                                100,
-                            ) + "%",
-                    }}
-                  />
-                  <div
-                    id="strength-mastery-bonus"
-                    className="h-full rounded bg-purple-400"
-                    style={{
-                      width:
-                        totalStrength === 0
-                          ? 0
-                          : String(
-                              (((drifterData?.strBonus ?? 0) *
-                                characterData.builds[activeBuildIndex].data
-                                  .drifter.mastery) /
-                                totalStrength) *
-                                100,
-                            ) + "%",
-                    }}
-                  />
-                  <div
-                    id="strength-added-stats"
-                    className="h-full rounded bg-cyan-400"
-                    style={{
-                      width:
-                        totalStrength === 0
-                          ? 0
-                          : String(
-                              (characterData.builds[activeBuildIndex].data.stats
-                                .strength /
-                                totalStrength) *
-                                100,
-                            ) + "%",
-                    }}
-                  />
+                  {drifterData && (
+                    <div
+                      id="strength-base"
+                      className="h-full rounded bg-gradient-to-r from-neutral-500 to-neutral-400"
+                      style={{
+                        width:
+                          totalStrength === 0
+                            ? 0
+                            : String(
+                                ((drifterData?.strBase ?? 0) / totalStrength) *
+                                  100,
+                              ) + "%",
+                      }}
+                    />
+                  )}
+                  {drifterData &&
+                    characterData.builds[activeBuildIndex].data.drifter
+                      .mastery > 0 && (
+                      <div
+                        id="strength-mastery-bonus"
+                        className="h-full rounded bg-gradient-to-r from-purple-500 to-purple-400"
+                        style={{
+                          width:
+                            totalStrength === 0
+                              ? 0
+                              : String(
+                                  (((drifterData?.strBonus ?? 0) *
+                                    characterData.builds[activeBuildIndex].data
+                                      .drifter.mastery) /
+                                    totalStrength) *
+                                    100,
+                                ) + "%",
+                        }}
+                      />
+                    )}
+                  {characterData.builds[activeBuildIndex].data.stats.strength >
+                    0 && (
+                    <div
+                      id="strength-added-stats"
+                      className="h-full rounded bg-gradient-to-r from-cyan-500 to-cyan-400"
+                      style={{
+                        width:
+                          totalStrength === 0
+                            ? 0
+                            : String(
+                                (characterData.builds[activeBuildIndex].data
+                                  .stats.strength /
+                                  totalStrength) *
+                                  100,
+                              ) + "%",
+                      }}
+                    />
+                  )}
                 </div>
               </div>
             </div>
@@ -828,7 +837,7 @@ const BuildDisplay = () => {
                 className="rounded bg-neutral-700/40"
               >
                 <div
-                  className="flex h-1 rounded transition-all"
+                  className="flex h-1 gap-0.5 rounded transition-all"
                   style={{
                     width:
                       totalAgility === 0
@@ -842,50 +851,59 @@ const BuildDisplay = () => {
                           ) + "%",
                   }}
                 >
-                  <div
-                    id="agility-base"
-                    className="h-full rounded bg-neutral-500"
-                    style={{
-                      width:
-                        totalAgility === 0
-                          ? 0
-                          : String(
-                              ((drifterData?.agiBase ?? 0) / totalAgility) *
-                                100,
-                            ) + "%",
-                    }}
-                  />
-                  <div
-                    id="agility-mastery-bonus"
-                    className="h-full rounded bg-purple-400"
-                    style={{
-                      width:
-                        totalAgility === 0
-                          ? 0
-                          : String(
-                              (((drifterData?.agiBonus ?? 0) *
-                                characterData.builds[activeBuildIndex].data
-                                  .drifter.mastery) /
-                                totalAgility) *
-                                100,
-                            ) + "%",
-                    }}
-                  />
-                  <div
-                    id="agility-added-stats"
-                    className="h-full rounded bg-cyan-400"
-                    style={{
-                      width:
-                        totalAgility === 0
-                          ? 0
-                          : String(
-                              (characterData.builds[activeBuildIndex].data.stats
-                                .agility /
-                                totalAgility) *
-                                100,
-                            ) + "%",
-                    }}
-                  />
+                  {drifterData && (
+                    <div
+                      id="agility-base"
+                      className="h-full rounded bg-gradient-to-r from-neutral-500 to-neutral-400"
+                      style={{
+                        width:
+                          totalAgility === 0
+                            ? 0
+                            : String(
+                                ((drifterData?.strBase ?? 0) / totalAgility) *
+                                  100,
+                              ) + "%",
+                      }}
+                    />
+                  )}
+                  {drifterData &&
+                    characterData.builds[activeBuildIndex].data.drifter
+                      .mastery > 0 && (
+                      <div
+                        id="agility-mastery-bonus"
+                        className="h-full rounded bg-gradient-to-r from-purple-500 to-purple-400"
+                        style={{
+                          width:
+                            totalAgility === 0
+                              ? 0
+                              : String(
+                                  (((drifterData?.strBonus ?? 0) *
+                                    characterData.builds[activeBuildIndex].data
+                                      .drifter.mastery) /
+                                    totalAgility) *
+                                    100,
+                                ) + "%",
+                        }}
+                      />
+                    )}
+                  {characterData.builds[activeBuildIndex].data.stats.agility >
+                    0 && (
+                    <div
+                      id="agility-added-stats"
+                      className="h-full rounded bg-gradient-to-r from-cyan-500 to-cyan-400"
+                      style={{
+                        width:
+                          totalAgility === 0
+                            ? 0
+                            : String(
+                                (characterData.builds[activeBuildIndex].data
+                                  .stats.agility /
+                                  totalAgility) *
+                                  100,
+                              ) + "%",
+                      }}
+                    />
+                  )}
                 </div>
               </div>
             </div>
@@ -993,7 +1011,7 @@ const BuildDisplay = () => {
                 className="rounded bg-neutral-700/40"
               >
                 <div
-                  className="flex h-1 rounded transition-all"
+                  className="flex h-1 gap-0.5 rounded transition-all"
                   style={{
                     width:
                       totalIntelligence === 0
@@ -1007,51 +1025,60 @@ const BuildDisplay = () => {
                           ) + "%",
                   }}
                 >
-                  <div
-                    id="intelligence-base"
-                    className="h-full rounded bg-neutral-500"
-                    style={{
-                      width:
-                        totalIntelligence === 0
-                          ? 0
-                          : String(
-                              ((drifterData?.intBase ?? 0) /
-                                totalIntelligence) *
-                                100,
-                            ) + "%",
-                    }}
-                  />
-                  <div
-                    id="intelligence-mastery-bonus"
-                    className="h-full rounded bg-purple-400"
-                    style={{
-                      width:
-                        totalIntelligence === 0
-                          ? 0
-                          : String(
-                              (((drifterData?.intBonus ?? 0) *
-                                characterData.builds[activeBuildIndex].data
-                                  .drifter.mastery) /
-                                totalIntelligence) *
-                                100,
-                            ) + "%",
-                    }}
-                  />
-                  <div
-                    id="intelligence-added-stats"
-                    className="h-full rounded bg-cyan-400"
-                    style={{
-                      width:
-                        totalIntelligence === 0
-                          ? 0
-                          : String(
-                              (characterData.builds[activeBuildIndex].data.stats
-                                .intelligence /
-                                totalIntelligence) *
-                                100,
-                            ) + "%",
-                    }}
-                  />
+                  {drifterData && (
+                    <div
+                      id="intelligence-base"
+                      className="h-full rounded bg-gradient-to-r from-neutral-500 to-neutral-400"
+                      style={{
+                        width:
+                          totalIntelligence === 0
+                            ? 0
+                            : String(
+                                ((drifterData?.strBase ?? 0) /
+                                  totalIntelligence) *
+                                  100,
+                              ) + "%",
+                      }}
+                    />
+                  )}
+                  {drifterData &&
+                    characterData.builds[activeBuildIndex].data.drifter
+                      .mastery > 0 && (
+                      <div
+                        id="intelligence-mastery-bonus"
+                        className="h-full rounded bg-gradient-to-r from-purple-500 to-purple-400"
+                        style={{
+                          width:
+                            totalIntelligence === 0
+                              ? 0
+                              : String(
+                                  (((drifterData?.strBonus ?? 0) *
+                                    characterData.builds[activeBuildIndex].data
+                                      .drifter.mastery) /
+                                    totalIntelligence) *
+                                    100,
+                                ) + "%",
+                        }}
+                      />
+                    )}
+                  {characterData.builds[activeBuildIndex].data.stats
+                    .intelligence > 0 && (
+                    <div
+                      id="intelligence-added-stats"
+                      className="h-full rounded bg-gradient-to-r from-cyan-500 to-cyan-400"
+                      style={{
+                        width:
+                          totalIntelligence === 0
+                            ? 0
+                            : String(
+                                (characterData.builds[activeBuildIndex].data
+                                  .stats.intelligence /
+                                  totalIntelligence) *
+                                  100,
+                              ) + "%",
+                      }}
+                    />
+                  )}
                 </div>
               </div>
             </div>
