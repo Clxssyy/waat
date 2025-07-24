@@ -26,7 +26,7 @@ export default function ImageHelper({
   }, [src]);
 
   return (
-    <div className="relative flex h-full w-full items-center justify-center">
+    <div className="relative flex size-full items-center justify-center after:absolute after:size-full">
       {!loaded && (
         <div className="absolute z-10 flex w-full items-center justify-center text-white">
           <span className="animate-spin">

@@ -38,7 +38,7 @@ const User = async ({
 
   return (
     <>
-      <main className="flex w-full flex-1 flex-col gap-2 bg-gray-700/10 p-2 sm:w-4/5 sm:flex-row">
+      <main className="container flex flex-1 flex-col gap-2 bg-gray-700/10 p-2 sm:flex-row">
         <div className="flex min-w-1/5 flex-col items-center gap-2 sm:mr-2">
           <Image
             src={user?.image ?? "/default-avatar.jpg"}

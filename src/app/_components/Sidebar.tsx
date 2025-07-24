@@ -38,19 +38,19 @@ const Sidebar = () => {
   const averageRating = totalRating / character._count.ratings;
 
   return (
-    <aside className="flex w-1/8 shrink-0 flex-col justify-between border-r border-neutral-700 bg-neutral-800">
-      <div className="hidden-scrollbar flex flex-col divide-y divide-neutral-700 overflow-y-scroll">
+    <aside className="flex w-1/8 shrink-0 flex-col justify-between border-r border-neutral-800 bg-neutral-900">
+      <div className="hidden-scrollbar flex flex-col divide-y divide-neutral-800 overflow-y-scroll">
         <button
           onClick={() => router.push("/characters")}
           type="button"
           aria-label="Return to previous page"
-          className="flex cursor-pointer items-center justify-center bg-neutral-800 p-4 text-lg hover:brightness-125 lg:justify-between"
+          className="flex cursor-pointer items-center justify-center bg-neutral-900 p-4 text-lg hover:brightness-125 lg:justify-between"
         >
           <p className="hidden lg:block">Return</p>
           <IoMdArrowRoundBack />
         </button>
         <Link
-          className="flex cursor-pointer items-center justify-center gap-4 bg-neutral-800 p-4 not-2xl:flex-col hover:brightness-125"
+          className="flex cursor-pointer items-center justify-center gap-4 bg-neutral-900 p-4 not-2xl:flex-col hover:brightness-125"
           href={isCreator ? "" : `/characters/${character.id}/rate`}
         >
           <div className="hidden text-xl lg:flex">
@@ -85,7 +85,7 @@ const Sidebar = () => {
           <Link
             href={`/characters/${characterId}`}
             className={clsx(
-              "flex cursor-pointer items-center gap-2 rounded bg-neutral-800 p-2 not-lg:justify-center hover:brightness-125",
+              "flex cursor-pointer items-center gap-2 rounded bg-neutral-900 p-2 not-lg:justify-center hover:brightness-125",
               activePage === undefined && "brightness-125",
             )}
             replace
@@ -96,7 +96,7 @@ const Sidebar = () => {
           <Link
             href={`/characters/${characterId}/description`}
             className={clsx(
-              "flex cursor-pointer items-center gap-2 rounded bg-neutral-800 p-2 not-lg:justify-center hover:brightness-125",
+              "flex cursor-pointer items-center gap-2 rounded bg-neutral-900 p-2 not-lg:justify-center hover:brightness-125",
               activePage === "description" && "brightness-125",
             )}
             replace
@@ -107,7 +107,7 @@ const Sidebar = () => {
           <Link
             href={`/characters/${characterId}/settings`}
             className={clsx(
-              "flex cursor-pointer items-center gap-2 rounded bg-neutral-800 p-2 not-lg:justify-center hover:brightness-125",
+              "flex cursor-pointer items-center gap-2 rounded bg-neutral-900 p-2 not-lg:justify-center hover:brightness-125",
               activePage === "settings" && "brightness-125",
             )}
             replace
@@ -142,7 +142,7 @@ const Sidebar = () => {
           </button>
         </div>
       </div>
-      <div className="flex h-16 items-center justify-center gap-2 border-t border-neutral-700 p-2">
+      <div className="flex h-16 items-center justify-center gap-2 border-t border-neutral-800 p-2">
         <Link
           href={`/users/${creator.id}`}
           className="flex min-w-10 cursor-pointer items-center"

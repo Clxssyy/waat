@@ -32,7 +32,7 @@ export default async function Characters({
 
   return (
     <>
-      <main className="flex w-full flex-1 flex-col divide-y divide-neutral-700 bg-gray-700/10 sm:w-4/5">
+      <main className="container flex flex-1 flex-col divide-y divide-neutral-700 bg-gray-700/10">
         <div className="flex h-96 flex-col items-center justify-center gap-2 px-4 text-center">
           <h1 className="text-5xl font-bold text-wrap">Character Builds</h1>
           <p className="text-sm text-pretty text-neutral-300">

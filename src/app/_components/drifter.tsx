@@ -209,6 +209,7 @@ const Drifter = () => {
                             width={256}
                             height={256}
                             alt={drifterData.activeSkill.name}
+                            className="size-full"
                           />
                         ) : null}
                       </div>
@@ -242,6 +243,7 @@ const Drifter = () => {
                             width={256}
                             height={256}
                             alt={drifterData.passiveSkill.name}
+                            className="size-full"
                           />
                         ) : null}
                       </div>

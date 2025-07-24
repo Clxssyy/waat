@@ -156,6 +156,7 @@ const BuildDisplay = () => {
                     alt={weaponData.name}
                     width={800}
                     height={800}
+                    className="size-full object-contain"
                   />
                 ) : (
                   <div className="truncate p-1 text-sm text-wrap">
@@ -246,6 +247,7 @@ const BuildDisplay = () => {
                       alt={helmetData.name}
                       width={800}
                       height={800}
+                      className="size-full object-contain"
                     />
                   ) : (
                     <div className="truncate p-1 text-sm text-wrap">
@@ -335,6 +337,7 @@ const BuildDisplay = () => {
                       alt={chestData.name}
                       width={800}
                       height={800}
+                      className="size-full object-contain"
                     />
                   ) : (
                     <div className="truncate p-1 text-sm text-wrap">
@@ -424,6 +427,7 @@ const BuildDisplay = () => {
                       alt={bootsData.name}
                       width={800}
                       height={800}
+                      className="size-full object-contain"
                     />
                   ) : (
                     <div className="truncate p-1 text-sm text-wrap">
@@ -514,7 +518,7 @@ const BuildDisplay = () => {
                 alt={drifterData.name}
                 width={2436}
                 height={1440}
-                className="h-full w-full object-cover"
+                className="size-full object-cover"
               />
             ) : (
               <div className="truncate p-1 text-sm text-wrap">

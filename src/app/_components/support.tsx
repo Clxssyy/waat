@@ -63,7 +63,7 @@ const Support = () => {
                     alt={characterData?.support[i] ?? ""}
                     width={2436}
                     height={1440}
-                    className="h-full object-cover"
+                    className="size-full object-cover"
                   />
                 ) : (
                   <span>{drifterData[i]?.name}</span>

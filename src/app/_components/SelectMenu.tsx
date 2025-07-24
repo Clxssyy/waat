@@ -96,7 +96,7 @@ const SelectMenu = ({
     <div className="flex gap-2">
       <div
         className={clsx(
-          "relative h-12 w-12 min-w-12 rounded",
+          "h-12 w-12 min-w-12 rounded",
           current
             ? clsx(
                 "border-2",
@@ -113,7 +113,7 @@ const SelectMenu = ({
             alt={current.name}
             width={current && "rarity" in current ? 800 : 2436}
             height={current && "rarity" in current ? 800 : 1440}
-            className="h-full object-cover"
+            className="size-full object-cover"
           />
         ) : null}
       </div>

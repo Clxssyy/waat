@@ -287,6 +287,7 @@ const Equipment = () => {
                                 width={256}
                                 height={256}
                                 alt={skill.name}
+                                className="size-full"
                               />
                             ) : null}
                           </button>
@@ -371,6 +372,7 @@ const Equipment = () => {
                                 width={256}
                                 height={256}
                                 alt={skill.name}
+                                className="size-full"
                               />
                             ) : null}
                           </button>
@@ -418,6 +420,7 @@ const Equipment = () => {
                             width={256}
                             height={256}
                             alt={equipmentData.core_skill.name}
+                            className="size-full"
                           />
                         ) : null}
                       </div>
@@ -451,6 +454,7 @@ const Equipment = () => {
                             width={256}
                             height={256}
                             alt={skillData.passive_skill.name}
+                            className="size-full"
                           />
                         ) : null}
                       </div>
