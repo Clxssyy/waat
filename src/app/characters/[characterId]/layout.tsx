@@ -28,17 +28,15 @@ export default async function BuildLayout({
   const isCreator = character.createdBy.id === session?.user.id;
 
   return (
-    <>
-      <SessionProvider session={session}>
-        <BuildFormProvider character={character} isCreator={isCreator}>
-          {deleteModal}
-          {rateModal}
-          <main className="flex w-full grow overflow-hidden bg-neutral-950">
-            <Sidebar />
-            {children}
-          </main>
-        </BuildFormProvider>
-      </SessionProvider>
-    </>
+    <SessionProvider session={session}>
+      <BuildFormProvider character={character} isCreator={isCreator}>
+        {deleteModal}
+        {rateModal}
+        <main className="flex w-full grow overflow-hidden bg-neutral-950">
+          <Sidebar />
+          {children}
+        </main>
+      </BuildFormProvider>
+    </SessionProvider>
   );
 }

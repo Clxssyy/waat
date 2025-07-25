@@ -11,8 +11,14 @@ import { MdOutlineDescription, MdOutlineHealthAndSafety } from "react-icons/md";
 import { FaRegComments } from "react-icons/fa6";
 
 const BuildEditor = () => {
-  const { activeTab, setActiveTab, activeSlot, setActiveSlot, character } =
-    useBuildForm();
+  const {
+    activeTab,
+    setActiveTab,
+    activeSlot,
+    setActiveSlot,
+    character,
+    setActiveSupport,
+  } = useBuildForm();
 
   return (
     <div id="editor" className="flex-1">
@@ -45,7 +51,10 @@ const BuildEditor = () => {
             className={`flex h-full w-full cursor-pointer items-center justify-center gap-1 rounded-t-lg border border-b-0 border-neutral-700 transition-all hover:brightness-110 ${activeTab === "support" ? "scale-105 border-neutral-700 bg-neutral-800" : "border-neutral-800 bg-neutral-900"}`}
             aria-label="Support Tab"
             onClick={() => {
-              if (activeTab !== "support") setActiveTab("support");
+              if (activeTab !== "support") {
+                setActiveTab("support");
+                setActiveSupport(undefined);
+              }
             }}
           >
             <MdOutlineHealthAndSafety />

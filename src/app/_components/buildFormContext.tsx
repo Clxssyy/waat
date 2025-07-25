@@ -102,10 +102,6 @@ export const BuildFormProvider = ({
   }, [character]);
 
   useEffect(() => {
-    setActiveSupport(undefined);
-  }, [activeTab]);
-
-  useEffect(() => {
     setHasChanges(
       JSON.stringify(characterData) !==
         JSON.stringify(formDataSchema.parse(character)),
