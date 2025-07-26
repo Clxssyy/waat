@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "WAAT",
   description: "Warborne Above Ashes Tools: Character Creator, Guides, & News",
   icons: [{ rel: "icon", url: "/WT_Favicon.ico" }],
+  verification: {
+    google: "iKQeYxSVm9-txUM3mrvNnt6yrYO8nAHwKxiZm6tYvP0",
+  },
 };
 
 const geist = Geist({
