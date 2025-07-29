@@ -51,7 +51,7 @@ const Search = () => {
       <form className="flex w-3/5 flex-col gap-2 p-4">
         <div className="flex flex-wrap gap-2">
           <select
-            className="w-fit cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg"
+            className="w-fit cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg outline-none"
             value={role}
             onChange={(e) => {
               setRole(e.target.value);
@@ -65,7 +65,7 @@ const Search = () => {
             <option value="tank">Tank</option>
           </select>
           <select
-            className="grow cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg"
+            className="grow cursor-pointer rounded border border-neutral-600 bg-neutral-700 px-4 py-1 text-lg outline-none"
             value={drifter}
             onChange={(e) => {
               setDrifter(e.target.value);

@@ -41,7 +41,7 @@
 - [ ] Add additional missing logic to characters
   - [ ] Research tab? (static stat point boosts / equipment power boost)
   - [ ] Drifter links / link info
-- [ ] Potentially add a equipment tree view
+- [ ] Potentially add an equipment tree view
 - [ ] Pipe Discord announcements / game updates into news
 - [ ] Create / add guides
   - [ ] Potentially a way for people to submit guides for posting
