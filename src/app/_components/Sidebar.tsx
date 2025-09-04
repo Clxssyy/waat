@@ -44,13 +44,13 @@ const Sidebar = () => {
           onClick={() => router.push("/characters")}
           type="button"
           aria-label="Return to previous page"
-          className="flex cursor-pointer items-center justify-center bg-neutral-900 p-4 text-lg hover:brightness-125 lg:justify-between"
+          className="flex h-16 cursor-pointer items-center justify-center bg-neutral-900 p-4 text-lg hover:brightness-125 lg:justify-between"
         >
           <p className="hidden lg:block">Return</p>
           <IoMdArrowRoundBack />
         </button>
         <Link
-          className="flex cursor-pointer items-center justify-center gap-4 bg-neutral-900 p-4 not-2xl:flex-col hover:brightness-125"
+          className="flex h-14 cursor-pointer items-center justify-center gap-4 bg-neutral-900 p-4 not-2xl:flex-col hover:brightness-125"
           href={isCreator ? "" : `/characters/${character.id}/rate`}
         >
           <div className="hidden text-xl lg:flex">
@@ -142,7 +142,7 @@ const Sidebar = () => {
           </button>
         </div>
       </div>
-      <div className="flex h-16 items-center justify-center gap-2 border-t border-neutral-800 p-2">
+      <div className="flex h-14 items-center justify-center gap-2 border-t border-neutral-800 p-2">
         <Link
           href={`/users/${creator.id}`}
           className="flex min-w-10 cursor-pointer items-center"
@@ -169,9 +169,7 @@ const Sidebar = () => {
             >
               Cloned from
             </Link>
-          ) : (
-            <p className="text-xs break-all text-neutral-600">{characterId}</p>
-          )}
+          ) : null}
         </div>
       </div>
     </aside>

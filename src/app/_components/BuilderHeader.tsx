@@ -23,9 +23,9 @@ const BuilderHeader = () => {
   if (!character) notFound();
 
   return (
-    <header className="mx-10 mt-2 flex min-h-16 items-center justify-center sm:justify-between">
-      <div className="flex items-center gap-2">
-        <h1 className="truncate text-2xl">{character.name}</h1>
+    <header className="mx-2 flex h-16 shrink-0 items-center gap-2">
+      <h1 className="max-w-1/4 truncate text-2xl">{character.name}</h1>
+      <div className="flex grow justify-between">
         <select
           className="hidden cursor-pointer rounded border border-neutral-700 bg-neutral-800 px-2 py-1 outline-none sm:block"
           aria-label="Role"
@@ -39,46 +39,46 @@ const BuilderHeader = () => {
           <option value="healer">Healer</option>
           <option value="tank">Tank</option>
         </select>
-      </div>
-      <div className="hidden items-center gap-2 sm:flex">
-        <button
-          className={clsx(
-            "cursor-pointer rounded border px-2 py-1 transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40",
-            hasChanges && isCreator && "border-green-500 bg-green-600",
-            !isCreator && "border-cyan-300 bg-cyan-400",
-          )}
-          onClick={
-            isCreator
-              ? () => {
-                  setHasChanges(!hasChanges);
-                  save();
-                }
-              : clone
-          }
-          disabled={isSaving || isCloning || (!hasChanges && isCreator)}
-        >
-          {isCreator ? `Save` : `${isCloning ? "Cloning..." : "Clone"}`}
-        </button>
-        {isCreator ? (
-          ""
-        ) : (
-          <Link
-            className="flex cursor-pointer items-center justify-center gap-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1 transition-all hover:brightness-125"
-            href={`/characters/${character.id}/rate`}
+        <div className="hidden items-center gap-2 sm:flex">
+          <button
+            className={clsx(
+              "cursor-pointer rounded border px-2 py-1 transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:border-neutral-600 disabled:bg-neutral-700 disabled:opacity-40",
+              hasChanges && isCreator && "border-green-500 bg-green-600",
+              !isCreator && "border-cyan-300 bg-cyan-400",
+            )}
+            onClick={
+              isCreator
+                ? () => {
+                    setHasChanges(!hasChanges);
+                    save();
+                  }
+                : clone
+            }
+            disabled={isSaving || isCloning || (!hasChanges && isCreator)}
           >
-            <IoIosStarOutline />
-            Rate
-          </Link>
-        )}
-        <button
-          className="flex aspect-square h-[34px] cursor-pointer items-center justify-center rounded border border-neutral-700 bg-neutral-800 transition-all hover:brightness-125"
-          aria-label="Share"
-          onClick={async () => {
-            await navigator.clipboard.writeText(window.location.href);
-          }}
-        >
-          <IoMdShare />
-        </button>
+            {isCreator ? `Save` : `${isCloning ? "Cloning..." : "Clone"}`}
+          </button>
+          {isCreator ? (
+            ""
+          ) : (
+            <Link
+              className="flex cursor-pointer items-center justify-center gap-1 rounded border border-neutral-700 bg-neutral-800 px-2 py-1 transition-all hover:brightness-125"
+              href={`/characters/${character.id}/rate`}
+            >
+              <IoIosStarOutline />
+              Rate
+            </Link>
+          )}
+          <button
+            className="flex aspect-square h-[34px] cursor-pointer items-center justify-center rounded border border-neutral-700 bg-neutral-800 transition-all hover:brightness-125"
+            aria-label="Share"
+            onClick={async () => {
+              await navigator.clipboard.writeText(window.location.href);
+            }}
+          >
+            <IoMdShare />
+          </button>
+        </div>
       </div>
     </header>
   );

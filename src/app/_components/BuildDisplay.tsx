@@ -81,48 +81,48 @@ const BuildDisplay = () => {
   );
 
   return (
-    <div id="display" className="min-w-1/3">
-      <div className="flex flex-col items-center gap-2 rounded border border-neutral-700 bg-neutral-800 p-2">
-        <div className="relative flex gap-1 rounded-full border border-neutral-600 bg-neutral-700 p-2">
-          {Array.from({ length: 3 }, (_, i) => (
-            <button
-              key={i}
-              aria-label={`Build ${i + 1}`}
-              onClick={() => {
-                if (activeBuildIndex !== i && characterData.builds[i]) {
-                  setActiveBuildIndex(i as ActiveBuildIndex);
-                  setActiveSlot("weapon");
-                  setActiveTab("equipment");
-                } else if (!characterData.builds[i]) {
-                  setCharacterData((prev) => {
-                    return {
-                      ...prev,
-                      builds: [
-                        ...prev.builds,
-                        {
-                          id: "temp-" + crypto.randomUUID(),
-                          characterId: prev.id,
-                          data: buildDataSchema.parse({}),
-                          position: i,
-                        },
-                      ],
-                    };
-                  });
-                  setActiveBuildIndex(i as ActiveBuildIndex);
-                  setActiveSlot("weapon");
-                  setActiveTab("equipment");
-                }
-              }}
-              className={clsx(
-                "h-4 w-4 cursor-pointer rounded-full hover:outline-2 hover:outline-cyan-300",
-                activeBuildIndex === i &&
-                  "bg-cyan-500 outline-2 outline-cyan-300",
-                characterData.builds[i] ? "bg-cyan-400" : "bg-neutral-800",
-                characterData.builds[i]?.id.includes("temp") && "animate-pulse",
-              )}
-            />
-          ))}
-        </div>
+    <div className="flex min-w-1/4 flex-col items-center">
+      <div className="flex h-10 items-center gap-1">
+        {Array.from({ length: 3 }, (_, i) => (
+          <button
+            key={i}
+            aria-label={`Build ${i + 1}`}
+            onClick={() => {
+              if (activeBuildIndex !== i && characterData.builds[i]) {
+                setActiveBuildIndex(i as ActiveBuildIndex);
+                setActiveSlot("weapon");
+                setActiveTab("equipment");
+              } else if (!characterData.builds[i]) {
+                setCharacterData((prev) => {
+                  return {
+                    ...prev,
+                    builds: [
+                      ...prev.builds,
+                      {
+                        id: "temp-" + crypto.randomUUID(),
+                        characterId: prev.id,
+                        data: buildDataSchema.parse({}),
+                        position: i,
+                      },
+                    ],
+                  };
+                });
+                setActiveBuildIndex(i as ActiveBuildIndex);
+                setActiveSlot("weapon");
+                setActiveTab("equipment");
+              }
+            }}
+            className={clsx(
+              "size-6 cursor-pointer rounded-full hover:outline-2 hover:outline-cyan-300",
+              activeBuildIndex === i &&
+                "bg-cyan-500 outline-2 outline-cyan-300",
+              characterData.builds[i] ? "bg-cyan-400" : "bg-neutral-800",
+              characterData.builds[i]?.id.includes("temp") && "animate-pulse",
+            )}
+          />
+        ))}
+      </div>
+      <div className="flex flex-col gap-2">
         <div className="flex flex-wrap justify-center gap-2">
           <div className="relative">
             <button
@@ -174,19 +174,13 @@ const BuildDisplay = () => {
                   build.id !== characterData.builds[activeBuildIndex]?.id &&
                   build.data.equipment.weapon.name !== "",
               ) ? (
-                <div
-                  id="weapon-conflict-display"
-                  className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400"
-                >
+                <div className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
                   <span className="text-sm">!</span>
                 </div>
               ) : null}
               {characterData.builds[activeBuildIndex].data.equipment.weapon
                 .name !== "" ? (
-                <div
-                  id="weapon-tier-display"
-                  className="absolute right-0 bottom-0 w-2/5 border-t border-l border-neutral-600 bg-neutral-700 text-sm"
-                >
+                <div className="absolute right-0 bottom-0 w-2/5 border-t border-l border-neutral-600 bg-neutral-700 text-xs">
                   {
                     characterData.builds[activeBuildIndex].data.equipment.weapon
                       .tier
@@ -195,7 +189,6 @@ const BuildDisplay = () => {
               ) : null}
             </button>
             <button
-              id="weapon-mod-display"
               aria-label="Weapon Slot"
               className={clsx(
                 "absolute top-1/2 -left-14 hidden h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700",
@@ -265,19 +258,13 @@ const BuildDisplay = () => {
                     build.id !== characterData.builds[activeBuildIndex]?.id &&
                     build.data.equipment.helmet.name !== "",
                 ) ? (
-                  <div
-                    id="helmet-conflict-display"
-                    className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400"
-                  >
+                  <div className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
                     <span className="text-sm">!</span>
                   </div>
                 ) : null}
                 {characterData.builds[activeBuildIndex].data.equipment.helmet
                   .name !== "" ? (
-                  <div
-                    id="helmet-tier-display"
-                    className="absolute right-0 bottom-0 w-2/5 border-t border-l border-neutral-600 bg-neutral-700 text-sm"
-                  >
+                  <div className="absolute right-0 bottom-0 w-2/5 border-t border-l border-neutral-600 bg-neutral-700 text-xs">
                     {
                       characterData.builds[activeBuildIndex].data.equipment
                         .helmet.tier
@@ -286,7 +273,6 @@ const BuildDisplay = () => {
                 ) : null}
               </button>
               <button
-                id="helmet-mod-display"
                 aria-label="Helmet Slot"
                 className={clsx(
                   "absolute top-1/2 -right-14 hidden h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700",
@@ -355,19 +341,13 @@ const BuildDisplay = () => {
                     build.id !== characterData.builds[activeBuildIndex]?.id &&
                     build.data.equipment.chest.name !== "",
                 ) ? (
-                  <div
-                    id="chest-conflict-display"
-                    className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400"
-                  >
+                  <div className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
                     <span className="text-sm">!</span>
                   </div>
                 ) : null}
                 {characterData.builds[activeBuildIndex].data.equipment.chest
                   .name !== "" ? (
-                  <div
-                    id="chest-tier-display"
-                    className="absolute right-0 bottom-0 w-2/5 border-t border-l border-neutral-600 bg-neutral-700 text-sm"
-                  >
+                  <div className="absolute right-0 bottom-0 w-2/5 border-t border-l border-neutral-600 bg-neutral-700 text-xs">
                     {
                       characterData.builds[activeBuildIndex].data.equipment
                         .chest.tier
@@ -376,7 +356,6 @@ const BuildDisplay = () => {
                 ) : null}
               </button>
               <button
-                id="chest-mod-display"
                 aria-label="Chest Slot"
                 className={clsx(
                   "absolute top-1/2 -right-14 hidden h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700",
@@ -445,19 +424,13 @@ const BuildDisplay = () => {
                     build.id !== characterData.builds[activeBuildIndex]?.id &&
                     build.data.equipment.boots.name !== "",
                 ) ? (
-                  <div
-                    id="boots-conflict-display"
-                    className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400"
-                  >
+                  <div className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full border border-red-400 bg-red-500/50 font-bold text-red-400">
                     <span className="text-sm">!</span>
                   </div>
                 ) : null}
                 {characterData.builds[activeBuildIndex].data.equipment.boots
                   .name !== "" ? (
-                  <div
-                    id="boots-tier-display"
-                    className="absolute right-0 bottom-0 w-2/5 border-t border-l border-neutral-600 bg-neutral-700 text-sm"
-                  >
+                  <div className="absolute right-0 bottom-0 w-2/5 border-t border-l border-neutral-600 bg-neutral-700 text-xs">
                     {
                       characterData.builds[activeBuildIndex].data.equipment
                         .boots.tier
@@ -466,7 +439,6 @@ const BuildDisplay = () => {
                 ) : null}
               </button>
               <button
-                id="boots-mod-display"
                 aria-label="Boots Slot"
                 className={clsx(
                   "absolute top-1/2 -right-14 hidden h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded border border-neutral-600 bg-neutral-700",
@@ -544,20 +516,14 @@ const BuildDisplay = () => {
             </div>
           ) : null}
           {characterData.builds[activeBuildIndex].data.drifter.name !== "" ? (
-            <div className="absolute right-0 bottom-0 w-1/5 border-t border-l border-neutral-600 bg-neutral-700 text-sm">
+            <div className="absolute right-0 bottom-0 w-1/5 border-t border-l border-neutral-600 bg-neutral-700 text-xs">
               {characterData.builds[activeBuildIndex].data.drifter.tier}
             </div>
           ) : null}
         </button>
-        <div className="flex w-full justify-between border border-neutral-600 bg-neutral-700 p-2">
-          <p className="flex w-full justify-between">
-            <span>Power</span>
-            <span>#</span>
-          </p>
-        </div>
-        <div className="flex w-full flex-col gap-2 border border-neutral-600 bg-neutral-700 p-2">
+        <div className="flex w-60 flex-col gap-2 border border-neutral-600 bg-neutral-700 p-2">
           <h2 className="text-center">
-            Stats{" "}
+            Attributes{" "}
             <span className="text-neutral-400">
               ( <span className="text-cyan-400">{statPoints}</span> )
             </span>
@@ -577,7 +543,7 @@ const BuildDisplay = () => {
               <div className="grid grid-cols-4 items-center justify-center gap-2">
                 <button
                   aria-label="Decrease Strength"
-                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   disabled={
                     characterData.builds[activeBuildIndex].data.stats
                       .strength === 0
@@ -628,7 +594,7 @@ const BuildDisplay = () => {
                 </p>
                 <button
                   aria-label="Increase Strength"
-                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   disabled={statPoints === 0}
                   onClick={(e) => {
                     const amount = e.shiftKey
@@ -660,28 +626,18 @@ const BuildDisplay = () => {
                   <FaPlus />
                 </button>
               </div>
-              <div
-                id="strength-stat-source-display"
-                className="rounded bg-neutral-700/40"
-              >
+              <div className="rounded bg-neutral-700/40">
                 <div
-                  className="flex h-1 gap-0.5 rounded transition-all"
+                  className="flex h-1 gap-0.5 rounded"
                   style={{
                     width:
                       totalStrength === 0
                         ? 0
-                        : String(
-                            (totalStrength /
-                              (totalStrength +
-                                totalAgility +
-                                totalIntelligence)) *
-                              100,
-                          ) + "%",
+                        : String((totalStrength / 350) * 100) + "%",
                   }}
                 >
                   {drifterData && (
                     <div
-                      id="strength-base"
                       className="h-full rounded bg-gradient-to-r from-neutral-500 to-neutral-400"
                       style={{
                         width:
@@ -698,7 +654,6 @@ const BuildDisplay = () => {
                     characterData.builds[activeBuildIndex].data.drifter
                       .mastery > 0 && (
                       <div
-                        id="strength-mastery-bonus"
                         className="h-full rounded bg-gradient-to-r from-purple-500 to-purple-400"
                         style={{
                           width:
@@ -717,7 +672,6 @@ const BuildDisplay = () => {
                   {characterData.builds[activeBuildIndex].data.stats.strength >
                     0 && (
                     <div
-                      id="strength-added-stats"
                       className="h-full rounded bg-gradient-to-r from-cyan-500 to-cyan-400"
                       style={{
                         width:
@@ -749,7 +703,7 @@ const BuildDisplay = () => {
               <div className="grid grid-cols-4 items-center justify-center gap-2">
                 <button
                   aria-label="Decrease Agility"
-                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   disabled={
                     characterData.builds[activeBuildIndex].data.stats
                       .agility === 0
@@ -800,7 +754,7 @@ const BuildDisplay = () => {
                 </p>
                 <button
                   aria-label="Increase Agility"
-                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   disabled={statPoints === 0}
                   onClick={(e) => {
                     const amount = e.shiftKey
@@ -832,28 +786,18 @@ const BuildDisplay = () => {
                   <FaPlus />
                 </button>
               </div>
-              <div
-                id="agility-stat-source-display"
-                className="rounded bg-neutral-700/40"
-              >
+              <div className="rounded bg-neutral-700/40">
                 <div
-                  className="flex h-1 gap-0.5 rounded transition-all"
+                  className="flex h-1 gap-0.5 rounded"
                   style={{
                     width:
                       totalAgility === 0
                         ? 0
-                        : String(
-                            (totalAgility /
-                              (totalStrength +
-                                totalAgility +
-                                totalIntelligence)) *
-                              100,
-                          ) + "%",
+                        : String((totalAgility / 350) * 100) + "%",
                   }}
                 >
                   {drifterData && (
                     <div
-                      id="agility-base"
                       className="h-full rounded bg-gradient-to-r from-neutral-500 to-neutral-400"
                       style={{
                         width:
@@ -870,7 +814,6 @@ const BuildDisplay = () => {
                     characterData.builds[activeBuildIndex].data.drifter
                       .mastery > 0 && (
                       <div
-                        id="agility-mastery-bonus"
                         className="h-full rounded bg-gradient-to-r from-purple-500 to-purple-400"
                         style={{
                           width:
@@ -889,7 +832,6 @@ const BuildDisplay = () => {
                   {characterData.builds[activeBuildIndex].data.stats.agility >
                     0 && (
                     <div
-                      id="agility-added-stats"
                       className="h-full rounded bg-gradient-to-r from-cyan-500 to-cyan-400"
                       style={{
                         width:
@@ -921,7 +863,7 @@ const BuildDisplay = () => {
               <div className="grid grid-cols-4 items-center justify-center gap-2">
                 <button
                   aria-label="Decrease Intelligence"
-                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   disabled={
                     characterData.builds[activeBuildIndex].data.stats
                       .intelligence === 0
@@ -972,7 +914,7 @@ const BuildDisplay = () => {
                   </span>
                 </p>
                 <button
-                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 transition-all outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="cursor-pointer place-items-center rounded-full bg-neutral-700/40 p-0.5 outline-none hover:brightness-125 active:bg-neutral-700/60 disabled:cursor-not-allowed disabled:opacity-40"
                   aria-label="Increase Intelligence"
                   disabled={statPoints === 0}
                   onClick={(e) => {
@@ -1006,28 +948,18 @@ const BuildDisplay = () => {
                   <FaPlus />
                 </button>
               </div>
-              <div
-                id="intelligence-stat-source-display"
-                className="rounded bg-neutral-700/40"
-              >
+              <div className="rounded bg-neutral-700/40">
                 <div
-                  className="flex h-1 gap-0.5 rounded transition-all"
+                  className="flex h-1 gap-0.5 rounded"
                   style={{
                     width:
                       totalIntelligence === 0
                         ? 0
-                        : String(
-                            (totalIntelligence /
-                              (totalStrength +
-                                totalAgility +
-                                totalIntelligence)) *
-                              100,
-                          ) + "%",
+                        : String((totalIntelligence / 350) * 100) + "%",
                   }}
                 >
                   {drifterData && (
                     <div
-                      id="intelligence-base"
                       className="h-full rounded bg-gradient-to-r from-neutral-500 to-neutral-400"
                       style={{
                         width:
@@ -1045,7 +977,6 @@ const BuildDisplay = () => {
                     characterData.builds[activeBuildIndex].data.drifter
                       .mastery > 0 && (
                       <div
-                        id="intelligence-mastery-bonus"
                         className="h-full rounded bg-gradient-to-r from-purple-500 to-purple-400"
                         style={{
                           width:
@@ -1064,7 +995,6 @@ const BuildDisplay = () => {
                   {characterData.builds[activeBuildIndex].data.stats
                     .intelligence > 0 && (
                     <div
-                      id="intelligence-added-stats"
                       className="h-full rounded bg-gradient-to-r from-cyan-500 to-cyan-400"
                       style={{
                         width:
@@ -1083,7 +1013,7 @@ const BuildDisplay = () => {
               </div>
             </div>
             <button
-              className="w-full cursor-pointer rounded-lg bg-neutral-800 p-0.5 text-sm transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-80"
+              className="w-full cursor-pointer rounded-lg bg-neutral-800 p-0.5 text-sm hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-80"
               aria-label="Clear stat points"
               disabled={
                 !Object.values(
@@ -1115,31 +1045,6 @@ const BuildDisplay = () => {
             >
               Clear
             </button>
-          </div>
-        </div>
-        <div className="flex w-full grow flex-col gap-2 border border-neutral-600 bg-neutral-700 p-2">
-          <h2 className="text-center">Details</h2>
-          <div className="flex flex-col text-sm">
-            <p className="flex justify-between px-2 py-1 odd:bg-neutral-800">
-              <span>HP</span>
-              <span>#</span>
-            </p>
-            <p className="flex justify-between px-2 py-1 odd:bg-neutral-800">
-              <span>MP</span>
-              <span>#</span>
-            </p>
-            <p className="flex justify-between px-2 py-1 odd:bg-neutral-800">
-              <span>Attack Power</span>
-              <span>#</span>
-            </p>
-            <p className="flex justify-between px-2 py-1 odd:bg-neutral-800">
-              <span>Armor</span>
-              <span>#</span>
-            </p>
-            <p className="flex justify-between px-2 py-1 odd:bg-neutral-800">
-              <span>Magic Resistance</span>
-              <span>#</span>
-            </p>
           </div>
         </div>
       </div>

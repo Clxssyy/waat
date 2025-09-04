@@ -183,15 +183,6 @@ const Drifter = () => {
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-2">
               <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
-                <h2 className="text-lg">Details</h2>
-                <div className="flex grow items-center justify-center rounded bg-neutral-800 p-2">
-                  <p className="text-center text-sm">
-                    WIP - All build features are not complete and may not
-                    reflect the stats in-game.
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
                 <h2 className="text-lg">Skills</h2>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="flex flex-col">

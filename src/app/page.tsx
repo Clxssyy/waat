@@ -52,27 +52,6 @@ export default async function Home() {
         <div className="flex flex-col gap-4 p-4">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-lg font-bold">News</h2>
-              <p className="text-sm text-neutral-300">
-                Check out the latest updates from developers!
-              </p>
-            </div>
-            <Link
-              href={"/news"}
-              className="h-fit rounded border border-neutral-600 bg-neutral-700 px-3 py-1 font-semibold shadow-2xs shadow-black transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
-            >
-              View All
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-            {Array.from({ length: 4 }).map((_, i) => (
-              <PlaceholderCard key={i} />
-            ))}
-          </div>
-        </div>
-        <div className="flex flex-col gap-4 p-4">
-          <div className="flex items-center justify-between">
-            <div>
               <h2 className="text-lg font-bold">
                 Builds{" "}
                 <span className="text-neutral-400">
@@ -95,6 +74,27 @@ export default async function Home() {
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             {featuredBuilds.map((build, i) => (
               <CharacterCard key={i} character={build} />
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-col gap-4 p-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-lg font-bold">News</h2>
+              <p className="text-sm text-neutral-300">
+                Check out the latest updates from developers!
+              </p>
+            </div>
+            <Link
+              href={"/news"}
+              className="h-fit rounded border border-neutral-600 bg-neutral-700 px-3 py-1 font-semibold shadow-2xs shadow-black transition-all text-shadow-black text-shadow-xs hover:scale-[102%] hover:brightness-110 active:scale-[98%]"
+            >
+              View All
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <PlaceholderCard key={i} />
             ))}
           </div>
         </div>
