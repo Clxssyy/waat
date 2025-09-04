@@ -7,7 +7,7 @@ import { Geist } from "next/font/google";
 import { TRPCReactProvider } from "~/trpc/react";
 
 export const metadata: Metadata = {
-  title: "WAAT",
+  title: { absolute: "WAAT", template: "WAAT | %s" },
   description: "Warborne Above Ashes Tools: Character Creator, Guides, & News",
   icons: [{ rel: "icon", url: "/WT_Favicon.ico" }],
   verification: {

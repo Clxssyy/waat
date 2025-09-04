@@ -5,6 +5,20 @@ import { auth } from "~/server/auth";
 import { BuildFormProvider } from "~/app/_components/buildFormContext";
 import Sidebar from "~/app/_components/Sidebar";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { characterId: string };
+}): Promise<Metadata> {
+  const { characterId } = params;
+  const character = await api.character.getById({ id: characterId });
+  if (!character) return {};
+  return {
+    title: character.name,
+  };
+}
 
 export default async function BuildLayout({
   children,
