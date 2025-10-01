@@ -11,12 +11,15 @@
       "intBase": 15,
       "activeSkill": {
         "name": "Frozen Maelstorm",
-        "description": "After a brief charge-up, unleash a Frozen Maelstrom forward, dealing [Damage Rate: 200%] Magic Damage to enemies in the area, applying Slow by 40%% and reducing Attack Speed by 40%%, lasting 6s. The punch also deals [Damage Rate: 300%] additional Magic Damage to enemies directly in front and applies Frozen for 3s.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCTeArWhdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
+        "description": "After a brief charge-up, unleash a Frozen Maelstrom forward, dealing [Damage Rate: 200%] Magic Damage to enemies in the area, applying Slow by 40%% and reducing Attack Speed by 40%, lasting 6s. The punch also deals [Damage Rate: 300%] additional Magic Damage to enemies directly in front and applies Frozen for 3s.",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCTeArWhdRK6zgEJNaAl8QbjHpe3GBMqcoSW1",
+        "mpCost": 27,
+        "cooldown": 27,
+        "castingRange": 10
       },
       "passiveSkill": {
         "name": "Fractured Ice",
-        "description": "Gains 25% Damage Resistance if damage is dealt within 5, lasts for 6s. When taking damage during this time, sends forth freezing air in all directions, dealing [Damage Rate: 80%] Magic Damage to targets within range, reducing Attack Speed by 30% and Movement Speed by 30% for 4s. Minimum interval of 1s.\n(Cooldown: 20s)",
+        "description": "After castikng the skill, if damage is dealt within 5 seconds, increases Damage Resistance by 25% for 6s, while emitting cold mist around itself, dealing [Damage Rate: 80%] Magic Damage and reducing Attack Speed by 30% and Movement Speed by 30% per second for 4s. (Cooldown: 20s)",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCb3KkXQWbBOnPELSmCrNGjQoAcKtW4k0pX3uy"
       },
       "type": "strength",
@@ -32,8 +35,8 @@
     {
       "name": "Varnax",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCK3ETKoIWoRmwnVDpPJKx9SMZFLG1TkAQU2eE",
-      "strBonus": 2.4,
-      "agiBonus": 1.5,
+      "strBonus": 2.2,
+      "agiBonus": 1.3,
       "intBonus": 0.8,
       "strBase": 25,
       "agiBase": 20,
@@ -41,11 +44,14 @@
       "activeSkill": {
         "name": "Magma Slam",
         "description": "Leaps to the target location. Gains immunity to control during leap. Deals [Damage Rate: 350%] Physical Damage and knocks enemies in the area up for 1.5s.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCxggIumFTM9kdEWPFiXUfzcS5mwtbKTRDjIYn"
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCxggIumFTM9kdEWPFiXUfzcS5mwtbKTRDjIYn",
+        "mpCost": 23,
+        "cooldown": 18,
+        "castingRange": 10
       },
       "passiveSkill": {
         "name": "Seismic Impact",
-        "description": "When inflicting Immobilize or Hard Control (Stun, Fear, Freeze, Knockup, Petrify), drops a meteor after 1s, dealing [Damage Rate: 150%] Physical Damage and 30% Slow for 3s.\n(Cooldown: 5s)",
+        "description": "When inflicting Immobilize or Hard Control (Stun, Fear, Freeze, Knockup, Petrify), drops a meteor after 1s, dealing [Damage Rate: 150%] Physical Damage and 30% Slow for 3s. (Cooldown: 5s)",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCa3RsI1gcw3rXNJW4OjAURKLo0dxMTBEhliY1"
       },
       "type": "strength",
@@ -63,18 +69,21 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCUZiArcQ16DWLsJmnqFyb2XvNroZuiz5flAIC",
       "strBonus": 2.5,
       "agiBonus": 1,
-      "intBonus": 1,
+      "intBonus": 0.8,
       "strBase": 30,
       "agiBase": 10,
       "intBase": 20,
       "activeSkill": {
         "name": "Sandstorm Dominion",
-        "description": "Creates a Sandstorm around the caster, pushing all enemies outside. Channels for 6s with +45% Damage Resistance and control immunity. Enemies touching the field take [Damage Rate: 300%] Physical Damage, Slowed by 60% for 4s and dispelled from all buffs. Also knocks them back 11m from center. The Sandstorm applies 60% Slow.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCqtxfkUv0DrPOVUwARFb2Ggj9MuYvQ0JiBK7e"
+        "description": "Creates a Sandstorm around the caster, pushing all enemies outside. Channels for 6s with +45% Damage Resistance and control immunity. Enemies touching the field take [Damage Rate: 300%] Physical Damage, have thier buffs dispelled, and are Slowed by 60% for 4s. Also knocks them back 11m from center.",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCqtxfkUv0DrPOVUwARFb2Ggj9MuYvQ0JiBK7e",
+        "mpCost": 27,
+        "cooldown": 27,
+        "castingRange": 8
       },
       "passiveSkill": {
         "name": "Sand Veil",
-        "description": "Creates a circular storm field around the caster for 4s when causing Forced Movement (Pull, Knockback). Deals [Damage Rate: 100%] Physical Damage to enemies in field, inflicting Silence and a 40% chance to miss Basic Attacks for 3s.\n(Cooldown: 20s)",
+        "description": "Creates a circular storm field around the caster for 4s when causing Forced Movement (Pull, Knockback). Deals [Damage Rate: 100%] Physical Damage to enemies in field, inflicting Silence and a 40% chance to miss Basic Attacks for 3s. (Cooldown: 20s)",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC69DlWI0XA1L3EneUzdbVD7B49OSsGvWFcaH6"
       },
       "type": "strength",
@@ -98,12 +107,15 @@
       "intBase": 14,
       "activeSkill": {
         "name": "Protector's Radiance",
-        "description": "Channel for 6s, gaining immunity to control. Allies on the field gain +40% Max HP and immunity to Forced Movement (Pull, Knockback). Each 5000 total damage taken by allies grants 1 Energy stack, up to 5. Use again within 12s of starting the channeling to unleash absorbed energy, dealing [Damage Rate: 350%] - [Damage Rate: 700%] Magic Damage based on stacks and reducing Movement Speed by 30% for 4s.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCaVIHCegcw3rXNJW4OjAURKLo0dxMTBEhliY1"
+        "description": "Creates a Guardian Field and channels for 6s, gaining immunity to control. Allies on the field gain +40% Max HP and immunity to Forced Movement (Pull, Knockback). Each 5000 total damage taken by allies grants 1 Energy stack, up to 5\nUse Again within 12s of starting the channeling to unleash absorbed energy, dealing [Damage Rate: 350%]-[Damage Rate: 700%] Magic Damage based on stacks and reducing Movement Speed by 30% for 4s",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCaVIHCegcw3rXNJW4OjAURKLo0dxMTBEhliY1",
+        "mpCost": 30,
+        "cooldown": 41,
+        "castingRange": 10
       },
       "passiveSkill": {
         "name": "Reflective Shield",
-        "description": "Taking damage equal to 10% of Max HP within 5s after skill cast grants 25% Damage Resistance for 6s. During this time, reflect Magic Damage equal to 65% + 1.5% of Max HP to the attacker.\n(Cooldown: 25s)",
+        "description": "Taking damage equal to 10% of Max HP within 5s after skill cast grants 25% Damage Resistance for 6s. During this time, reflect Magic Damage equal to 65% + 1.5% of Max HP to the attacker. (Cooldown: 25s)",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCrs10Zv3ZrcpGNj0mROVHQMXP4oWtnswev9gJ"
       },
       "type": "strength",
@@ -119,7 +131,7 @@
     {
       "name": "Draknor",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9ywJWtD7PCifcs12oSdBru3GbU5JnO6IXZap",
-      "strBonus": 2.4,
+      "strBonus": 2.2,
       "agiBonus": 1,
       "intBonus": 1.1,
       "strBase": 25,
@@ -127,12 +139,15 @@
       "intBase": 24,
       "activeSkill": {
         "name": "Shackled Grip",
-        "description": "Channel for 4s with control immunity and 30% increased Movement Speed. On hit, deals [Damage Rate: 215%] Physical Damage and creates a chain link (max 5 chains). Chains break at range limit. After the channeling ends, pull all chained targets to deal [Damage Rate: 215%] Physical Damage and Stun them for 1.5s.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7BDeUrlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p"
+        "description": "Channel for 4s with control immunity, 40% increased Damage Resistance, and 30% increased Movement Speed. Chains extend outward, creating a chain link (max 5 chains) on hit. Chains break at range limit.\nAfter the channeling ends, pull all chained targets to deal [Damage Rate: 150%] Physical Damage and Stun them for 1.5s.\nJumping during channeling ends it early, dealing [Damage Rate: 300%] Physical Damage to enemies in range",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7BDeUrlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p",
+        "mpCost": 27,
+        "cooldown": 27,
+        "castingRange": 4
       },
       "passiveSkill": {
         "name": "Imprisonment",
-        "description": "When inflicting Forced Movement (Pull, Knockback) on enemies, creates a circular prison lasting 4s. Enemies touching the prison take [Damage Rate: 100%] Magic Damage and are Immobilized until the prison ends.\n(Cooldown: 20s)",
+        "description": "When inflicting Forced Movement (Pull, Knockback) on enemies, creates a circular prison lasting 4s. Enemies touching the prison take [Damage Rate: 100%] Magic Damage and are Immobilized until the prison ends. (Cooldown: 20s)",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyY0gEI9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
       },
       "type": "strength",
@@ -146,7 +161,7 @@
       }
     },
     {
-      "name": "Firestorm",
+      "name": "Mad Barrel",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCevHiGNqi02s7T6FOxAtHYlBmI8h3odqkzGaJ",
       "strBonus": 1.8,
       "agiBonus": 1.5,
@@ -155,13 +170,16 @@
       "agiBase": 25,
       "intBase": 10,
       "activeSkill": {
-        "name": "Cannonade",
-        "description": "Transform into a turret for 25s. Basic Attacks become artillery strikes, firing projectiles at targets beyond 8m, dealing [Damage Rate: 250%] Physical Damage. Artillery Critical Damage is 150%.  While in turret form gain increased Magic Resistance.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCTo1f2ANatISq1hbFsvaBAxlu3r4fejycwL2U"
+        "name": "Cannonade Mode",
+        "description": "Transform into a Cannon Form for 25 seconds. During this time, Magic Resistance is increased by 80, can move slowly, and Basic Attack becomes Bombardment.\n\n[Bombardment]:\nFire projectiles at targets beyond 8m that explode and deals [Damage Rate: 230%] Physical Damage to enemies hit.",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCTo1f2ANatISq1hbFsvaBAxlu3r4fejycwL2U",
+        "mpCost": 25,
+        "cooldown": 9,
+        "castingRange": 30
       },
       "passiveSkill": {
         "name": "Resolve",
-        "description": "While standing still, gain 1 stack of [Steadfast] every second.\n\n[Steadfast]: +2% Critical Rate, +1.5% damage for 3s. Stacks up to 15 times",
+        "description": "While standing still, gain 1 stack of [Steadfast] every second.\n\n[Steadfast]: +2% Critical Rate, +2% Damage Resistance for 2s. Stacks up to 15 times",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6nnB3HXA1L3EneUzdbVD7B49OSsGvWFcaH6P"
       },
       "type": "strength",
@@ -185,12 +203,15 @@
       "intBase": 15,
       "activeSkill": {
         "name": "Shield of Conviction",
-        "description": "Grants Shield of Conviction to up to 5 allies around the caster for 6s. Allies with Shield of Conviction gain [Target-based Max HP 30%] Shield effect, and 30% of damage dealt will be converted into shield value, up to [Target-based Max HP 15%] additional Shield. After 6s, if the shield remains unbroken, deals [Damage Rate: 300%] Magic Damage to nearby enemies. Subsequent explosions deal reduced damage (15%).",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClyIg5Tv6oygh7mMGDItxK38196fS4eZ2ATUa"
+        "description": "Grants Shield of Conviction to up to 5 allies around the caster for 6s. Allies with Shield of Conviction gain [Target-based Max HP 30%] Shield effect, and 30% of damage dealt will be converted into shield value, up to [Target-based Max HP 15%] additional Shield value. After 6s, if the shield remains unbroken, deals [Damage Rate: 300%] Magic Damage to nearby enemies. Subsequent explosions deal reduced damage (15%)",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClyIg5Tv6oygh7mMGDItxK38196fS4eZ2ATUa",
+        "mpCost": 30,
+        "cooldown": 40,
+        "castingRange": 7
       },
       "passiveSkill": {
         "name": "Defiant Resolve",
-        "description": "Gains immunity to control effects and 20% Damage Resistance whenever gaining shield for as long as the shield remains.\n(Cooldown: 20s)",
+        "description": "Gains immunity to control effects and 20% Damage Resistance whenever gaining shield for as long as the shield remains. (Cooldown: 20s)",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC90OSzbD7PCifcs12oSdBru3GbU5JnO6IXZap"
       },
       "type": "strength",
@@ -214,12 +235,15 @@
       "intBase": 21,
       "activeSkill": {
         "name": "Skyward Leap",
-        "description": "Creates a protection zone at the target location that grants allies within +30% Damage Resistance, +40% Healing Received, +40% Dodge and heals for  [Healing Rate: 50%] HP every second. Then leaps to the target location, dealing [Damage Rate: 250%] Physical Damage to those hit and knocking them up for 1s. Immune to control during prep and leap.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJzBdkwUtiPWS4l8JEHns6v3kTN10rCyUZXMo"
+        "description": "Creates a protection zone at the target location that grants allies within +30% Damage Resistance, +40% Healing Received, +40% Dodge and heals for  [Healing Rate: 60%] HP every second. Then leaps to the target location, dealing [Damage Rate: 250%] Physical Damage to those hit and knocking them up for 1s.\nImmune to control during prep and leap.",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJzBdkwUtiPWS4l8JEHns6v3kTN10rCyUZXMo",
+        "mpCost": 30,
+        "cooldown": 40,
+        "castingRange": 16
       },
       "passiveSkill": {
         "name": "Healing Guardian",
-        "description": "Gains 25% Damage Resistance for 1s if HP is below 75%. Sends healing radiation waves in all directions, healing allies in range for [Healing Rate: 50%] HP and granting [Target-based Max HP 5%] Shield every 1s for 4s.\n(Cooldown: 20s)",
+        "description": "Gains 25% Damage Resistance for 6s if HP is below 75%. Sends healing radiation waves in all directions, healing allies in range for [Healing Rate: 60%] HP. (Cooldown: 20s)",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCt8CTHJjhOKtpPs7M4Sir1gLFqkd2GlRWUDjf"
       },
       "type": "strength",
@@ -243,8 +267,11 @@
       "intBase": 20,
       "activeSkill": {
         "name": "Acid Blast",
-        "description": "Sprays ooze for 4s, creating 4 ooze zones every second that last 8.5s. Enemies in ooze zones are Slowed by 50%. Enemies entering ooze zones gain [Acid Blast].\n\n[Acid Blast] Reduces Damage by 40% and cancels Stealth. Takes [Damage Rate: 20%] Magic Damage every 1s per stack for 6s. Stacks up to 3 times.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6GHsycXA1L3EneUzdbVD7B49OSsGvWFcaH6P"
+        "description": "Sprays acid for 4s, releasing 4 random splatters of acid per second to form an Acid Zone that lasts 8.5s. Enemies inside are Slowed by 50%. Enemies entering the Acid Zone gain [Acid Blast].\n\n[Acid Blast] Reduces Damage by 40%, cancels Stealth, and each stack deals [Damage Rate: 20%] Magic Damage every second for 6s. Stacks up to 3 times.",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6GHsycXA1L3EneUzdbVD7B49OSsGvWFcaH6P",
+        "mpCost": 30,
+        "cooldown": 40,
+        "castingRange": 7
       },
       "passiveSkill": {
         "name": "Corrosion Barrier",
@@ -272,12 +299,15 @@
       "intBase": 13,
       "activeSkill": {
         "name": "Flamecore Rampage",
-        "description": "Removes all current shield values, dealing  [Damage Rate: 250%] Physical Damage to nearby enemies, while also gaining 55% Attack Speed, 30% Movement Speed, and 30% Critical Rate, and becoming Immune to Control Effects for 6s.\n\nCan't be dispelled.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0Q7jWBGnMSAK5VBw2xylROtGWiDZQcgjTNJE"
+        "description": "Removes all current Plating values, dealing [Damage Rate: 100%] Physical Damage to nearby enemies and inflicting Hell Salvo, while also gaining 55% Attack Speed, 30% Movement Speed, and 30% Critical Rate, and becoming Immune to Control Effects for 6s (this state cannot be dispelled).\n\n[Hell Salvo]:\nDeals [Damage Rate: 50%] Physical Damage every second for 4s",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0Q7jWBGnMSAK5VBw2xylROtGWiDZQcgjTNJE",
+        "mpCost": 27,
+        "cooldown": 27,
+        "castingRange": 7
       },
       "passiveSkill": {
         "name": "Hell Salvo's Embrace",
-        "description": "While without Armor, gains 5 Energy per second, and gains 5 Energy on Basic Attack Crit. When Energy reaches 100, restores [Target-based Max HP 15%] Armor.\n\nWhile with Armor, gains [Target-based Max HP 3%] Armor on Basic Attack Crit. Armor restored cannot exceed [Target-based Max HP 25%].\n(Trigger Interval: 1s)",
+        "description": "While without Plating, gains 5 Energy per second, and gains 5 Energy on Basic Attack Crit. When Energy reaches 100, restores [Target-based Max HP 15%] Plating values.\nWhile with Plating, gains [Target-based Max HP 3%] Plating values on Basic Attack Crit. Plating restored cannot exceed [Target-based Max HP 25%]. (Trigger Interval: 1s)",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHbyL85K4EOAC1uZm8KvoQgpyDTSnlbFxk6L5"
       },
       "type": "agility",
@@ -286,12 +316,12 @@
           "name": "Critical Rate"
         },
         "negative": {
-          "name": "Critical Damage"
+          "name": "Basic Attack Critical Damage"
         }
       }
     },
     {
-      "name": "Stormblade",
+      "name": "Blade",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCFmvvtoSY0xU7AZSWvtlJFd3OmV2ub1ajiEye",
       "strBonus": 1,
       "agiBonus": 2.4,
@@ -301,12 +331,15 @@
       "intBase": 15,
       "activeSkill": {
         "name": "Tempest Slash",
-        "description": "Launches a flurry of slashes at the target and nearby enemies, each dealing [Damage Rate: 120%] Physical Damage. Damage reduces by 50% after the first hit on the same target. Flurry for 4s with Immune to control effects and Damage Immunity.\n\nDamage is affected by Basic Attack Damage Boost and can Critical Hit based on Basic Attack Crit Rate.\n\nHigher Attack Speed increases the number of slashes.\n(Cooldown: 30s)",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXe5EjzynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
+        "description": "Launches a flurry of slashes at the target and nearby enemies, each dealing [Damage Rate: 120%] Physical Damage.\nDamage reduces to 50% after the first hit on the same target.\nFlurry for 4s with control immunity and damage immunity.\nCan Critical Hit. Higher Attack Speed increases attack count.",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXe5EjzynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
+        "mpCost": 27,
+        "cooldown": 24,
+        "castingRange": 8
       },
       "passiveSkill": {
         "name": "Cyclone Reap",
-        "description": "On Critical Hit, deals [Damage Rate: 70%] Physical Damage to nearby enemies, while also reducing their Armor by 15% for 4s.\n(Cooldown: 1.3s)",
+        "description": "On Critical Hit, heals [Healing Rate: 42%] HP and deals [Damage Rate: 70%] Physical Damage to nearby enemies, while also reducing their Armor by 15% for 4s. (Cooldown: 1.3s)",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCEl28MjYw01AKmPBrlgjRL2yDc3ZvtVMXJNh6"
       },
       "type": "agility",
@@ -330,12 +363,15 @@
       "intBase": 18,
       "activeSkill": {
         "name": "Spectral Disquise",
-        "description": "Creates a Spectral Disguise granting Stealth to the caster and up to 15 nearby allies, increasing Damage Resistance by 25% for 8s.\n\nUsing a skill, dealing damage or inflicting healing breaks Stealth for 4s before reapplying.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKEY8xDwIWoRmwnVDpPJKx9SMZFLG1TkAQU2e"
+        "description": "Creates a Spectral Disguise granting Stealth to the caster and up to 15 nearby allies, increasing Damage Resistance by 25% for 8s.\nUsing a skill, dealing damage or direct healing breaks Stealth for 4s before reapplying",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKEY8xDwIWoRmwnVDpPJKx9SMZFLG1TkAQU2e",
+        "mpCost": 31,
+        "cooldown": 45,
+        "castingRange": 8
       },
       "passiveSkill": {
         "name": "Echo Reflection",
-        "description": "Skill and Basic Attack hits from the rear deal  [Damage Rate: 60%] additional Physical Damage (Cooldown: 0.3s).\n\nBasic Attack Damage Bonuses affect damage and basic attack critical hits can cause the damage to crit.",
+        "description": "Skill and Basic Attack hits from the rear deal [Damage Rate: 60%] additional Physical Damage (Cooldown: 0.3s).\nBasic Attack Damage Bonuses affect damage and basic attack critical hits can cause the damage to crit",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQTm4fc7z9VydsAL2D3hoSNGWrlcw7ZuBgfXi"
       },
       "type": "agility",
@@ -359,8 +395,11 @@
       "intBase": 20,
       "activeSkill": {
         "name": "Storm Pulse",
-        "description": "Activate an Electric Device for 8s. Electric Device hits up to 5 enemies every 0.5s for [Damage Rate: 40%] Physical Damage, reducing Armor by 8% for 8s. Stacks up to 10 times.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyqCRsA9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
+        "description": "Activate an Electric Device for 8s.\nElectric Device hits up to 5 enemies every 0.5s for [Damage Rate: 40%] Physical Damage, reducing Armor by 8% for 8s.\nStacks up to 10 times.",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyqCRsA9J3IVna9mA2PgkFluvzcOS7xYQdGTN",
+        "mpCost": 29,
+        "cooldown": 36,
+        "castingRange": 7
       },
       "passiveSkill": {
         "name": "Static Overdrive",
@@ -389,11 +428,14 @@
       "activeSkill": {
         "name": "Null Pulse",
         "description": "Releases a Null Pulse in the target direction, dealing [Damage Rate: 50%] Physical Damage to enemies in range, knocking them back 12m, and applying Silence and 40% Slow for 3s.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClalM096oygh7mMGDItxK38196fS4eZ2ATUak"
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClalM096oygh7mMGDItxK38196fS4eZ2ATUak",
+        "mpCost": 23,
+        "cooldown": 18,
+        "castingRange": 9
       },
       "passiveSkill": {
         "name": "Overclocking Reflex",
-        "description": "Has a 35% chance to dodge Basic Attack damage.",
+        "description": "Has a 35% chance to dodge Basic Attack damage",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSRu11BVwJHd9VeDNGoX6KrO7F2zbawu5I3AU"
       },
       "type": "agility",
@@ -417,12 +459,12 @@
       "intBase": 20,
       "activeSkill": {
         "name": "Soul Feast",
-        "description": "Creates a void field lasting 8s that envelops the caster and up to 5 enemies, dealing 192[Damage Rate: 50%] Magic Damage to enemies within. Enemies in the void are immune to Physical Damage, cannot perform basic attacks, are slowed for 30%, and have their Magic Resistance reduced by 30%.\n\nThe caster can still perform basic attacks and gain 35% Basic Attack Lifesteal, while also ignoring the Physical Damage immunity of enemies in the void.",
+        "description": "Creates a void field lasting 8s that envelops the caster and up to 5 enemies, dealing [Damage Rate: 50%] Magic Damage to enemies within every second. Enemies in the void have their Magic Resistance reduceed by 30%, are slowed by 30%, are immune to Physical Damage, and cannot perform Basic Attaccks. The caster is immune to Physcial Damage, can still perform Basic Attacks, and gain 35% Basic Attack Lifesteal, while also ignoring the Physical Damage immunity of enemies in the void\nThe caster's void state cannot be dispelled",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQZ92457z9VydsAL2D3hoSNGWrlcw7ZuBgfXi"
       },
       "passiveSkill": {
-        "name": "Void Construct",
-        "description": "Converts Physical Damage from Basic Attacks into Magic Damage. Each time an attack deals damage, it reduces the target's Magic Resistance by 4%, for 4s, stacking up to 10.",
+        "name": "Voidshape",
+        "description": "Converts Basic Attack Damage from Physical to Magic. Basic Attacks also reduce the enemy's Magic Resistance by 4% for 4s, stacking up to 10 times",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyFMLYw9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
       },
       "type": "agility",
@@ -438,20 +480,23 @@
     {
       "name": "Vryssia",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9h8rCU3D7PCifcs12oSdBru3GbU5JnO6IXZa",
-      "strBonus": 0.6,
-      "agiBonus": 2.3,
+      "strBonus": 1,
+      "agiBonus": 2.1,
       "intBonus": 0.8,
-      "strBase": 5,
-      "agiBase": 35,
-      "intBase": 20,
+      "strBase": 10,
+      "agiBase": 25,
+      "intBase": 25,
       "activeSkill": {
-        "name": "Shadow Dive",
-        "description": "Enters Stealth, gaining [Spectral Shield] and the ability [Phantom Bind], lasting 9s.\n\n[Spectral Shield]:\nGrants [Target-based Max HP 25%] shield effect; if the Spectral Shield fades out, the Phantom Bind effect ends prematurely.\n\n[Phantom Bind]:\nSummon phantoms that track enemies in range, dealing [Damage Rate: 183%] Magic Damage and replenishing [Target-based Max HP 5%] Spectral Shield. Doesn't break Phantom Clone Stealth.\n\nUsing any skill other than Phantom Bind, or dealing direct healing or damage, reveals you for 2s before re-entering Stealth.\n\nRecovers 6% HP every 2s while in Stealth.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCX6pVnCynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
+        "name": "Engulfing Shadows",
+        "description": "Enters Stealth and gains [Shadow Ward] and the skill [Phantom Bind] for 9 seconds.\n\n[Shadow Ward]: Grants [Target-based Max HP 25%] Shield. If the Shadow Ward is dispelled, the Phantom Bind effect ends prematurely.\n\n[Phantom Bind]:\nSummon phantoms that track enemies in range, dealing [Damage Rate: 183%] Magic Damage and replenishing [Target-based Max HP 5%] Spectral Shield\nDoesn't break Engulfing Shadows Stealth.\nUsing any skill other than Phantom Bind, dealing direct healing or damage, while in Stealth will break invisibility for 2s before re-entering Stealth",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCX6pVnCynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
+        "mpCost": 30,
+        "cooldown": 40,
+        "castingRange": 0
       },
       "passiveSkill": {
         "name": "Healing Bloom Hunter",
-        "description": "Enters Stealth when standing still unhurt and not using skills for a short duration. Damage, skills, or movement breaks Stealth.\n\nWarning when enemies are 7-14m away.\n\nStealth breaks after 3s within 7m.\n\nRecovers 6% HP every 2s while in Stealth",
+        "description": "Enters Stealth when standing still unhurt and not using skills for a short duration. Taking damage, using skills, or moving breaks Stealth.\nWarning appears when enemies are within 7 to 14 meters. Stealth is lost if an enemy remains within 7 meters for over 3 seconds\nGains 3% HP every second while in any Stealth state",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbYFcZfWbBOnPELSmCrNGjQoAcKtW4k0pX3uy"
       },
       "type": "agility",
@@ -475,8 +520,11 @@
       "intBase": 23,
       "activeSkill": {
         "name": "Hemophage",
-        "description": "Activates Crimson Vortex for 6s. Crimson Vortex deals [Damage Rate: 75%] Magical Damage to up to 5 enemies every second, healing the caster for 60% of damage dealt against players, 30% versus monsters. Damage increases up to [Damage Rate: 150%] as HP drops.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCEXSrOdYw01AKmPBrlgjRL2yDc3ZvtVMXJNh6"
+        "description": "Activates Crimson Vortex for 6s.\nCrimson Vortex deals [Damage Rate: 75%] Magical Damage to up to 5 enemies every second, healing the caster for 60% of damage dealt for players (and 30% for Mobs)\nDamage increases up to [Damage Rate: 150%] as HP drops.",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCEXSrOdYw01AKmPBrlgjRL2yDc3ZvtVMXJNh6",
+        "mpCost": 30,
+        "cooldown": 40,
+        "castingRange": 7
       },
       "passiveSkill": {
         "name": "Blood Contract",
@@ -504,12 +552,15 @@
       "intBase": 20,
       "activeSkill": {
         "name": "Shadow Rift",
-        "description": "Creates a field around the caster, lasting 20s. Then scatter 8 Shadow Clones, each dealing [Damage Rate: 200%] Physical Damage to those hit. Damage reduces to 15% for subsequent hits on the same target. While in the field, skill changes to [Shadow Swap]. Touching a Shadow Clone reduces Shadow Swap's cooldown by 5s, grants [Target-based Max HP 10%] Shield and +20% Movement Speed for 4s. Field disappears when leaving range.\n\n[Shadow Swap]:\nDash forward and increase the Attack Speed of the next 5 basic attacks within 6s by 60%.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCx9Wvt6TM9kdEWPFiXUfzcS5mwtbKTRDjIYnV"
+        "description": "Creates a field around the caster, lasting 20s. Then scatter 8 Shadow Clones, each dealing [Damage Rate: 200%] Physical Damage to those hit. Damage reduces to 15% for subsequent hits on the same target. While in the field, skill changes to [Shadow Swap]. Touching a Shadow Clone reduces Shadow Swap's cooldown by 5s, grants [Target-based Max HP 10%] Shield and +20% Movement Speed for 4s.\nField disappears when leaving range\n[Shadow Swap]:\nDash forward and increase the Attack Speed of the next 5 basic attacks within 6s by 60%.",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCx9Wvt6TM9kdEWPFiXUfzcS5mwtbKTRDjIYnV",
+        "mpCost": 29,
+        "cooldown": 36,
+        "castingRange": 15
       },
       "passiveSkill": {
         "name": "Umbra Kinetics",
-        "description": "Grants Basic Attacks a 30% chance to trigger a shadow strike for 6s, dealing [Damage Rate: 100%] Physical Damage\n(Cooldown: 0.8s).\n\nBasic Attack Damage Bonuses affect damage and basic attack critical hits can cause the damage to crit.",
+        "description": "Grants Basic Attacks a 30% chance to trigger a shadow strike for 6s, dealing [Damage Rate: 100%] Physical Damage (Cooldown: 0.8s).\nBasic Attack Damage Bonuses affect damage and basic attack critical hits can cause the damage to crit",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCvfaRNr1px4UQA1RsqcaXnj7NfHlgpBFLTCie"
       },
 
@@ -526,20 +577,23 @@
     {
       "name": "Moonveil",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7X6YHXWlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4",
-      "strBonus": 1,
+      "strBonus": 1.4,
       "agiBonus": 0.7,
-      "intBonus": 2.4,
+      "intBonus": 2,
       "strBase": 23,
       "agiBase": 12,
       "intBase": 25,
       "activeSkill": {
         "name": "Twinlance Infusion",
-        "description": "Creates a Lunar Domain and channels for 8s. Enemies within are struck by starlight on skill use, taking [Damage Rate: 200%] Magic Damage and losing 20 MP. Allies within recover 8 MP every second and gain  [Target-based Max HP 15%] Shield lasting 4s.\n\nSkill cannot be interrupted.\n\n+20% Movement Speed while channeling.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdgbxHfirOfwbCID83Tpm1Hv24gWoyBiFXVxk"
+        "description": "Creates a Lunar Domain and channels for 8s. Enemies within are struck by starlight on skill use, taking [Damage Rate: 200%] Magic Damage and losing 20 MP. Allies within recover 8 MP every second and gain [Target-based Max HP 15%] Shield lasting 4s\nSkill cannot be interrupted. +20% Movement Speed while channeling.",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdgbxHfirOfwbCID83Tpm1Hv24gWoyBiFXVxk",
+        "mpCost": 30,
+        "cooldown": 40,
+        "castingRange": 10
       },
       "passiveSkill": {
         "name": "Lunar Rebirth",
-        "description": "Every 2s restores Moonveil Max MP + 3% MP to other allies within 12m",
+        "description": "Every 2s restores Moonveil Max MP + 1% MP to other allies within 12m",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCjrCzgwBPFTRAJm6yIQ43qr1OD7LeK2tWUYab"
       },
       "type": "intelligence",
@@ -563,12 +617,15 @@
       "intBase": 35,
       "activeSkill": {
         "name": "Shadow Cascade",
-        "description": "Channel void energy for 5s and send forth 37 Void Orbs, each dealing [Damage Rate: 35%] Magic Damage and inflicting [Void Toxin].\n\nSkill cannot be interrupted.\n\n[Void Toxin]:\nDeals [Damage Rate: 10%] Magic Damage every second (increases based on stacks) for 12s, stacking up to 5 times. [Void Toxin] from different sources share stacks.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiCE18uJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2"
+        "description": "Gathers dark energy and channels for 4s, firing 5 dark energy spheres (a total of 25) every 0.8s toward the front. Each sphere deals [Damage Rate: 50%] Magic Damage to enemies, applying [Dark Matter Venom] and reducing Healing Received by 8% for 6s. Stacks up to 5 times\nSkill cannot be interrupted.\n[Dark Matter Venom]:\nEach stack deals [Damage Rate 15%] Magic Damage every 2s (damage increases with stacks), lasting 12s, stacking up to 5 times",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiCE18uJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2",
+        "mpCost": 29,
+        "cooldown": 36,
+        "castingRange": 20
       },
       "passiveSkill": {
         "name": "Umbra Resonance",
-        "description": "Gains 5% Movement Speed for 3s when inflicting an enemy with a DoT effect, stacking up to 6 times.",
+        "description": "Gains 5% Movement Speed for 3s when inflicting an enemy with a DoT effect, stacking up to 6 times",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCGMMkj8tMHmL1NBfDRpSE6XKr3hOJ9jnoQAWF"
       },
       "type": "intelligence",
@@ -592,12 +649,15 @@
       "intBase": 30,
       "activeSkill": {
         "name": "Abyssal Sovereignty",
-        "description": "Removes all control effects and gains [Submerge] for 2.5s\n\n[Submerge]:\nDives underground, becoming immune to all damage and control effects. Increases Movement Speed by 40% and recovers[Healing Rate: 49%] HP every second. Press skill again to exit [Submerge] early. Upon exiting [Submerge], deals [Damage Rate: 200%] Magic Damage to nearby enemies.\n\nCan be used while skills are disabled.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCywHKrw9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
+        "description": "Removes all control effects and gains [Submerge] for 2.5s\n[Submerge]:\nDives underground, becoming immune to all damage and control effects. Increases Movement Speed by 40% and recovers [Healing Rate: 58%] HP every second\nPress skill again to exit [Submerge] early\nUpon exiting [Submerge], deals [Damage Rate: 200%] Magic Damage to nearby enemies\nCan be used while skills are disabled",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCywHKrw9J3IVna9mA2PgkFluvzcOS7xYQdGTN",
+        "mpCost": 31,
+        "cooldown": 45,
+        "castingRange": 5
       },
       "passiveSkill": {
         "name": "Hive Exaltation",
-        "description": "Dealing damage with a skill grants 1 stack of Swarm, restoring [Healing Rate: 7.5%] HP every 2s for 6s (stacks do not boost healing effect). During this time, Damage Resistance increases by 5%, stacking up to 5 times.\n(Cooldown: 0.5s)",
+        "description": "Dealing damage with a skill grants 1 stack of Swarm, restoring [Healing Rate: 9%] HP every 2s for 6s (stacks do not boost healing effect). During this time, Damage Resistance increases by 5%, stacking up to 5 times.\n(Cooldown: 0.5s)",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCMWPYTXLzbs6par1jMWHioyOVkIlgte5vRAf3"
       },
       "type": "intelligence",
@@ -614,19 +674,22 @@
       "name": "Raven",
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwAJM77GOhGMgoOJLYrd3qpCvNxRc5QFZ9am6",
       "strBonus": 1.2,
-      "agiBonus": 0.8,
-      "intBonus": 2.1,
-      "strBase": 20,
-      "agiBase": 10,
-      "intBase": 30,
+      "agiBonus": 1,
+      "intBonus": 1.9,
+      "strBase": 27,
+      "agiBase": 27,
+      "intBase": 14,
       "activeSkill": {
         "name": "Raven's Gaze",
-        "description": "Select an enemy target to summon ravens. After 2 seconds, ravens dive to attack, dealing [Damage Rate: 210%] Magic Damage to up to 10 enemies in range, dispelling all buffs, shields, and HoT effects. Applies 50% Slow and reduces damage dealt by 50% for 6s.\n\nTargets cannot gain buffs, shields, or HoT effects during this time.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOui47CIRLFieDIdC9aNjtX2G4mY7JVxlbfyu"
+        "description": "Select an enemy target to summon ravens. After 2 seconds, ravens dive to attack, dealing [Damage Rate: 210%] Magic Damage to up to 10 enemies in range, dispelling all buffs, shields, and HoT effects. Applies 50% Slow and reduces damage dealt by 50% for 6s. Targets cannot gain buffs, shields, or HoT effects during this time",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOui47CIRLFieDIdC9aNjtX2G4mY7JVxlbfyu",
+        "mpCost": 27,
+        "cooldown": 27,
+        "castingRange": 14
       },
       "passiveSkill": {
         "name": "Summon Raven",
-        "description": "Skills dealing damage grant the caster Raven's Call. At 6 stacks, the next skill damage within 8s that hits an enemy target will summon ravens at the location, dealing [Damage Rate: 120%] Magic Damage to up to 5 enemy targets in range. This effect removes 1 stack of buffs from hit targets and restores [Healing Rate: 60%] HP to self.\n(Trigger Interval: 0.5s)",
+        "description": "Skills dealing damage grant the caster Raven's Call. At 6 stacks, the next skill damage within 8s that hits an enemy target will summon ravens at the location, dealing [Damage Rate: 120%] Magic Damage to up to 5 enemies in range. This effect removes 1 stack of buffs from hit targets and restores [Healing Rate: 72%] HP to self.\n(Stack gain interval: 0.5s; Raven's Call interval: 10s)",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyMLCQz9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
       },
       "type": "intelligence",
@@ -650,12 +713,15 @@
       "intBase": 25,
       "activeSkill": {
         "name": "Genetic Cascade",
-        "description": "Creates a Genetic Cascade link with the target, lasting 15s.\n\nFor allied targets: Restores [Healing Rate: 25%] HP every second and increases damage dealt by 3% for 5s. Stacks up to 10 times.\n\nFor enemy targets: Deals [Damage Rate: 50%] Magic Damage every second and reduces damage dealt by 3% for 5s. Stacks up to 10 times.\n\nCan link to another target of a different type while a link is active.\n\nLink breaks if the target moves over 25m away.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCEPHiEZYw01AKmPBrlgjRL2yDc3ZvtVMXJNh6"
+        "description": "Creates a Genetic Cascade link with the target, lasting 15s\nFor allied targets: Restores [Healing Rate: 30%] HP every second and increases damage dealt by 3% for 5s. Stacks up to 10 times.\nFor enemies: Deals [Damage Rate: 50%] Magic Damage every second and reduces damage dealt by 3% for 5s. Stacks up to 10 times\nCan link to another target of a different type while a link is active\nLink breaks if the target moves over 25m away",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCEPHiEZYw01AKmPBrlgjRL2yDc3ZvtVMXJNh6",
+        "mpCost": 27,
+        "cooldown": 27,
+        "castingRange": 12
       },
       "passiveSkill": {
         "name": "Helical Convergence",
-        "description": "After dealing damage 5 times, creates two Yin Vortexes around the caster that deal [Damage Rate: 100%] Magic Damage to enemies hit and reduce healing received by 5% for 4s. Stacks up to 3 times.\n(Cooldown: 0.5s)\n\nAfter healing 5 times, creates two Yang Vortexes around self that restore [Healing Rate: 50%] HP to allies hit and increase healing received by 5% for 4s. Stacks up to 3 times.\n(Cooldown: 0.5s)",
+        "description": "After dealing damage 5 times, creates two Yin Vortexes around the caster that deal [Damage Rate: 100%] Magic Damage to enemies hit and reduce healing received by 5% for 4s. Stacks up to 3 times. (Cooldown: 0.5s)\nAfter healing 5 times, creates two Yang Vortexes around self that restore [Healing Rate: 60%] HP to allies hit and increase healing received by 5% for 4s. Stacks up to 3 times. (Cooldown: 0.5s)",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCzNOiTtEqOA7HxjVDm05p8UIgRTs6lBdvNGSt"
       },
       "type": "intelligence",
@@ -674,17 +740,20 @@
       "strBonus": 1,
       "agiBonus": 0.7,
       "intBonus": 2.1,
-      "strBase": 14,
+      "strBase": 13,
       "agiBase": 14,
-      "intBase": 32,
+      "intBase": 20,
       "activeSkill": {
         "name": "Serpent's Whisper",
-        "description": "Applies Serpent's Whisper to the caster or an allied target, preventing movement and skill usage for 4s and granting immunity to damage and control. Deals [Damage Rate: 58%] Magic Damage to nearby enemies every 0.5s and applies [Creeping Stone].\n\n[Creeping Stone]:\nLasts 1s, stacking up to 4 times. Target is Petrified and has their Armor reduced by 25% for 2 at max stacks (cannot gain [Creeping Stone] for 6).\n\nCan be used while skills are disabled.\n\nSerpent's Whisper cannot be dispelled.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnq1UylBfGe93BVSk5hzTrQ6UPaMygj2Nq4Cd"
+        "description": "Applies Serpent's Whisper to the caster or an allied target, preventing movement and skill usage for 4s and granting immunity to damage and control. Deals [Damage Rate: 58%] Magic Damage to nearby enemies every 0.5s and applies [Creeping Stone].\n[Creeping Stone]:\nLasts 1s, stacking up to 4 times. Target is Petrified and has their Armor reduced by 25% for 2s at max stacks (cannot gain [Creeping Stone] for 6s).\nCan be used while skills are disabled. Serpent's Whisper cannot be dispelled",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnq1UylBfGe93BVSk5hzTrQ6UPaMygj2Nq4Cd",
+        "mpCost": 31,
+        "cooldown": 45,
+        "castingRange": 14
       },
       "passiveSkill": {
         "name": "Shedskin",
-        "description": "Retains 1 HP upon taking lethal damage, transforming into a spirit serpent, cleansing all negative effects (control, DoT, and debuffs), gaining immunity to control, debuffs and damage for 2s, and +100% Movement Speed, and healing 5% HP every 0.5s.\n(Cooldown: 120s)",
+        "description": "Retains 1 HP upon taking lethal damage, transforming into a spirit serpent, cleansing all negative effects (control, DoT, and debuffs), gaining immunity to control, debuffs and damage for 2s, and +100% Movement Speed, and healing 5% HP every 0.5s. (Cooldown: 120s)",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7X6vnCblo6BUDrlxFQ9LiOPeT8H0CW2hnsR4"
       },
       "type": "intelligence",
@@ -708,12 +777,15 @@
       "intBase": 30,
       "activeSkill": {
         "name": "Bond of Light",
-        "description": "Links to 8 targets within 10m around the caster, channeling for 4s. Restores [Healing Rate: 40%] HP to the caster and linked allies every 0.5s, while dealing  [Damage Rate: 70%] Magic Damage to linked enemies.\n\nCannot be interrupted while channeling.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCX38T9DynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
+        "description": "Links to 8 targets within 10m around the caster, channeling for 4s. Restores [Healing Rate: 48%] HP to the caster and linked allies every 0.5s, while dealing  [Damage Rate: 70%] Magic Damage to linked enemies.\nCannot be interrupted while channeling",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCX38T9DynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
+        "mpCost": 30,
+        "cooldown": 40,
+        "castingRange": 10
       },
       "passiveSkill": {
         "name": "Light's Echo",
-        "description": "Other allies within 12m receive +20% healing.",
+        "description": "Other allies within 12m receive +20% healing",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6QwVy7XA1L3EneUzdbVD7B49OSsGvWFcaH6P"
       },
       "type": "intelligence",
@@ -737,8 +809,11 @@
       "intBase": 25,
       "activeSkill": {
         "name": "Sanctification",
-        "description": "Creates an expanding Sanctification Field at the target location and channels for 5s. Cleanses control effects every 0.5s, all debuffs, and 2 DoT effects, from up to 20 allies in the field and restores [Healing Rate: 25%] HP.\n\nCannot be interrupted while channeling.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXBNZzuynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
+        "description": "Creates an expanding Sanctification Field at the target location and channels for 5s\nCannot be interrupted while channeling.\nCleanses all control effects and debuffs every 0.5s, from up to 20 allies in the field and restores [Healing Rate: 30%] HP",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXBNZzuynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
+        "mpCost": 30,
+        "cooldown": 40,
+        "castingRange": 16
       },
       "passiveSkill": {
         "name": "Holy Covenant",
@@ -766,8 +841,11 @@
       "intBase": 28,
       "activeSkill": {
         "name": "Astral Gate",
-        "description": "Creates an astral field beneath the caster. After 3s, teleports up to 15 teammates in range to the target location. Upon arrival, deals [Damage Rate: 200%] Magic Damage to surrounding enemies and Stuns them for 1s. Allies gain [Target-based Max HP 20%] Shield, +30% Movement Speed effects for 4s. If there's unpassable terrain in the teleportation path, teleport to that position instead.\n\nTarget cannot be teleported by Astral Gate for 10 seconds after teleportation.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsFd2ICuZjhbCUk9y6YA2VESc8mnvDqMf5LGu"
+        "description": "Creates an astral field beneath the caster. After 3s, teleports up to 15 teammates in range to the target location. Upon arrival, deals [Damage Rate: 200%] Magic Damage to surrounding enemies and Stuns them for 1s. Allies gain [Target-based Max HP 20%] Shield, +30% Movement Speed effects for 4s.\nA unit passing through an astral gate cannot do so again for 10s\nIf there's unpassable terrain in the teleportation path, teleport to that position instead",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsFd2ICuZjhbCUk9y6YA2VESc8mnvDqMf5LGu",
+        "mpCost": 35,
+        "cooldown": 90,
+        "castingRange": 40
       },
       "passiveSkill": {
         "name": "Celestial Rotation",
@@ -785,8 +863,41 @@
       }
     },
     {
+      "name": "Vire",
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCxgUfzTM9kdEWPFiXUfzcS5mwtbKTRDjIYnV6",
+      "strBonus": 1.5,
+      "agiBonus": 0.9,
+      "intBonus": 1.8,
+      "strBase": 22,
+      "agiBase": 8,
+      "intBase": 30,
+      "activeSkill": {
+        "name": "Thunderstorm",
+        "description": "Channels for 5s, scattering 8 Blood Seeds (up to 40 total) around the caster every second. Each seed explodes 1.5s after landing, dealing [Damage Rate: 100%] Magic Damage to up to 5 enemies in range. If at least one enemy is hit by the explosion, the caster regenerates [Healing Rate: 15%] Vitality.\nSkill cannot be interrupted. Increases Movement Speed by 30% (decaying over time)",
+        "image": "",
+        "mpCost": 30,
+        "cooldown": 40,
+        "castingTime": 0.66,
+        "castingRange": 7
+      },
+      "passiveSkill": {
+        "name": "Lightning Mark",
+        "description": "Skills and Basic Attacks inflict Blood Curse on those hit for 6s. When the curse ends, 30% of the damage you dealt to the target during the curse explodes as Magic Damage and heals the caster for [Healing Rate: 20%] HP. (Cooldown: 25s)",
+        "image": ""
+      },
+      "type": "intelligence",
+      "supportEffects": {
+        "positive": {
+          "name": "Healing Bonus"
+        },
+        "negative": {
+          "name": "Damage Boost"
+        }
+      }
+    },
+    {
       "name": "Mole",
-      "image": "",
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiqkGMGJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2",
       "strBonus": 1.3,
       "agiBonus": 1.3,
       "intBonus": 1.3,
@@ -795,12 +906,15 @@
       "intBase": 20,
       "activeSkill": {
         "name": "Mole's Escape",
-        "description": "Throws a robot in the target direction, dealing [Damage Rate: 110%] Magic Damage to the first enemy hit and binding them in place. Bound enemies are pulled to the center when attempting to leave.",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQ6HO92W7z9VydsAL2D3hoSNGWrlcw7ZuBgfX"
+        "description": "Jumps backward 6 meters while throwing a robotic grappling hook in the target direction, dealing [Damage Rate: 110%] Magic Damage to the first enemy hit and binding them for 10s Enemies attempting to leave the binding range are pulled back to the center and take [Damage Rate: 142%] Magic Damage.",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQ6HO92W7z9VydsAL2D3hoSNGWrlcw7ZuBgfX",
+        "mpCost": 27,
+        "cooldown": 40,
+        "castingRange": 14
       },
       "passiveSkill": {
         "name": "Survivability Resilience",
-        "description": "Increases carrying weight limit.",
+        "description": "Increases own weight limit by 200",
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQ6rfAqF7z9VydsAL2D3hoSNGWrlcw7ZuBgfX"
       },
       "type": "logistics",
@@ -1008,6 +1122,18 @@
       "set": "holy"
     },
     {
+      "name": "Shard of Fractured Ice",
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Ice Shards",
+        "description": "Removes control effects and summons 6 ice shards to orbit the caster for 10s. While active, gain 40% Casting Speed and +25% Damage Resistance. When other weapon skills deal damage, a shard fires at the target, dealing [Damage Rate: 100%] Magic Damage and reducing their Attack Speed by 10% for 4s. Stacks up to 4 times",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQ0Is6k7z9VydsAL2D3hoSNGWrlcw7ZuBgfXi"
+      },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdC7TXxirOfwbCID83Tpm1Hv24gWoyBiFXVxk",
+      "type": "intelligence",
+      "set": "frost"
+    },
+    {
       "name": "Frozen Conduit",
       "rarity": "epic",
       "core_skill": {
@@ -1025,9 +1151,9 @@
       "core_skill": {
         "name": "Frost Nova",
         "description": "Places a Frost Nova at the target location, lasting 15s. When triggered by an enemy, deals [Damage Rate: 250%] Magic Damage and reduces Movement Speed by 35% and 15% reduced healing for 6s. Gains 1 charge every 15s, up to 3 charges",
-        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQ0Is6k7z9VydsAL2D3hoSNGWrlcw7ZuBgfXi"
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC1okX6AcM75luO6aJUWEridRBzN8ILQ4K0hvk"
       },
-      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdC7TXxirOfwbCID83Tpm1Hv24gWoyBiFXVxk",
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCMXkGI9Lzbs6par1jMWHioyOVkIlgte5vRAf3",
       "type": "intelligence",
       "set": "frost"
     },
@@ -1260,7 +1386,19 @@
       "set": "swords"
     },
     {
-      "name": "Luminet Cannon",
+      "name": "Photonic Rifle",
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Photon Bolt",
+        "description": "Scans enemies in a frontal cone, locking onto a target every 0.3 seconds (prioritizing new ones) up to 6 enemies. Then fires a photon bolt at each locked target, consuming bullets equal to the number of targets locked. Each hit deals [Damage Rate: 175%] Magic Damage, reveals Stealth, and renders their basic attacks a 40% chance to miss for 6s",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnqedh9ZfGe93BVSk5hzTrQ6UPaMygj2Nq4Cd"
+      },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC5IwRQ1F5c2dtDWx1eQAKHl76khLrMiGg9fXy",
+      "type": "strength",
+      "set": "guns"
+    },
+    {
+      "name": "Shadowhunter Rifle",
       "rarity": "epic",
       "core_skill": {
         "name": "Snipe",
@@ -1284,7 +1422,7 @@
       "set": "guns"
     },
     {
-      "name": "Spectral Assault",
+      "name": "Burstfire Rifle",
       "rarity": "epic",
       "core_skill": {
         "name": "Rapid Fire",
@@ -1606,6 +1744,18 @@
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJBfu1YUtiPWS4l8JEHns6v3kTN10rCyUZXMo",
       "type": "agility",
       "set": "bows"
+    },
+    {
+      "name": "Venomstave",
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Toxin Injection",
+        "description": "Injects a natural toxin into the target, dealing [Damage Rate: 80%] Magic Damage every second while reducing Attack Speed by 30% and Movement Speed by 30% for 4s. The toxin's duration refreshes if the caster damages the enemy with a weapon skill",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCIZtNe4zzmQPwNigqxUdB1eOyCYbWln78fpDF"
+      },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC1GsNsDcM75luO6aJUWEridRBzN8ILQ4K0hvk",
+      "type": "agility",
+      "set": "nature"
     },
     {
       "name": "Tendril's Grasp",
@@ -1994,6 +2144,17 @@
       "type": "strength"
     },
     {
+      "name": "Riposte Helm",
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Hardened Guard",
+        "description": "Taking damage from 3 basic attacks within 5s grants 222 Block for 6s\nTrigger Interval: 25s",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCziYOM4EqOA7HxjVDm05p8UIgRTs6lBdvNGSt"
+      },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnmt8mqfGe93BVSk5hzTrQ6UPaMygj2Nq4Cdi",
+      "type": "strength"
+    },
+    {
       "name": "Savage Helm",
       "rarity": "epic",
       "core_skill": {
@@ -2158,6 +2319,17 @@
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7GWiu4lo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p"
       },
       "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCOuM0bk2RLFieDIdC9aNjtX2G4mY7JVxlbfyu",
+      "type": "intelligence"
+    },
+    {
+      "name": "Aegis Robe",
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Warding",
+        "description": "Grants 410 Armor for 6s. While active, any attacker that hits with basic attack or skill damage has thier damage reduced by 40% and Movement Speed by 30% for 4s",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCFH46QSY0xU7AZSWvtlJFd3OmV2ub1ajiEyeD"
+      },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCigI8MKJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2",
       "type": "intelligence"
     },
     {
@@ -2366,7 +2538,7 @@
         "description": "",
         "image": ""
       },
-      "image": "",
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJ79B24GUtiPWS4l8JEHns6v3kTN10rCyUZXM",
       "type": "logistics"
     }
   ],
@@ -2581,6 +2753,17 @@
       "type": "agility"
     },
     {
+      "name": "Whirlwind Boots",
+      "rarity": "epic",
+      "core_skill": {
+        "name": "Cyclone",
+        "description": "Boosts up to 5 nearby allies, increasing Attack Speed by 25%, Casting Speed by 30%, and Movement Speed by 30% for 6s",
+        "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCi66TPuJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2"
+      },
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7FTtmAlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p",
+      "type": "agility"
+    },
+    {
       "name": "Shadeveil Slippers",
       "rarity": "epic",
       "core_skill": {
@@ -2607,46 +2790,67 @@
     "axes": {
       "basic_attacks": [
         {
-          "name": "Jump Cleave",
+          "name": "Jump Slash",
           "description": "Deals [Damage Rate: 130%] Physical Damage to enemy target. Can cast [Jump Cleave] every 6s.\n\n[Jump Cleave]:\nPerforms a powerful leap attack, dealing [Damage Rate: 220%] Physical Damage and reducing Armor by 15% for 4s",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCaZGtePgcw3rXNJW4OjAURKLo0dxMTBEhliY1"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCaZGtePgcw3rXNJW4OjAURKLo0dxMTBEhliY1",
+          "cooldown": 1.1,
+          "castingRange": 7
         },
         {
           "name": "Cleaving Strike",
           "description": "Deals [Damage Rate: 160%] Physical Damage to enemies in a frontal cone",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCfat4XIeFwJm2B1vRUSOualKLCDGIfT0g4Esp"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCfat4XIeFwJm2B1vRUSOualKLCDGIfT0g4Esp",
+          "cooldown": 1.1,
+          "castingRange": 3.5
         },
         {
           "name": "Cyclone Slash",
           "description": "Deals [Damage Rate: 130%] Physical Damage to enemy target. Can cast [Cyclone Slash] every 5s.\n\n[Cyclone Slash]:\nDeals [Damage Rate: 240%] Physical Damage to nearby enemies and reduces the healing they receive by 15% for 4s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC69hunDuXA1L3EneUzdbVD7B49OSsGvWFcaH6"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC69hunDuXA1L3EneUzdbVD7B49OSsGvWFcaH6",
+          "cooldown": 1.1,
+          "castingRange": 3.5
         }
       ],
       "common_skills": [
         {
           "name": "Tempest Strike",
           "description": "Channels for 3s. Damage Resistance is increased by 25% while channeling. Deals [Damage Rate: 90%] Physical Damage to players ([Damage Rate: 135%] Physical Damage to mobs) every 0.4s.\n\nOn completion, deals [Damage Rate: 200%] Physical Damage to nearby enemies. Channeling can be ended early to perform the final strike",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCizRIOWJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCizRIOWJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2",
+          "mpCost": 18,
+          "cooldown": 10,
+          "castingRange": 6
         },
         {
           "name": "Rock Smash",
           "description": "Swings a giant axe to perform Rock Smash, dealing Damage Rate: 150%] Physical Damage and 1.2s Stunning enemies before the caster. Stones deal [Damage Rate: 50%] Physical Damage to those hit and [Damage Rate: 150%] Physical Damage on landing, also inflicting 30% Slow for 4s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCSpkDMhdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCSpkDMhdRK6zgEJNaAl8QbjHpe3GBMqcoSW1",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 6
         },
         {
           "name": "Primal Rush",
           "description": "Charges forward to deal [Damage Rate: 30%] Physical Damage to up to 5 enemies hit, continuously knocking them back. The final impact deals [Damage Rate: 160%] Physical Damage to enemies in range.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZT8ASw5Gd5rIR1B8NCZt3wcWfDJgQSipVkE0"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCZT8ASw5Gd5rIR1B8NCZt3wcWfDJgQSipVkE0",
+          "mpCost": 19,
+          "cooldown": 11,
+          "castingRange": 10
         },
         {
           "name": "Axehook",
           "description": "Swings an axehook forward to pull up to 5 enemies to the caster, also deals [Damage Rate: 200%] Physical Damage and inflicts 50% Slow for 4s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSGpqF5wJHd9VeDNGoX6KrO7F2zbawu5I3AU0"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSGpqF5wJHd9VeDNGoX6KrO7F2zbawu5I3AU0",
+          "mpCost": 19,
+          "cooldown": 11,
+          "castingRange": 8
         },
         {
           "name": "Rage",
           "description": "Removes control effects and increases Attack Speed by 40%, damage by 15%, and Movement Speed by 30% for 6s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCy5TMEG9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCy5TMEG9J3IVna9mA2PgkFluvzcOS7xYQdGTN",
+          "mpCost": 25,
+          "cooldown": 21,
+          "castingRange": 6
         }
       ],
       "passive_skill": {
@@ -2658,46 +2862,67 @@
     "bows": {
       "basic_attacks": [
         {
+          "name": "Venom Arrow",
+          "description": "Deals [Damage Rate: 80%] Physical Damage to the target. Every 6th Basic Attack becomes [Venom Arrow].\n\n[Venom Arrow]:\nDeals [Damage Rate: 100%] Physical Damage and inflicts [Venom].\n\n[Venom]:\nDeals [Damage Rate: 15%] Magic Damage every second for 6s. Stacks up to 3 times",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCcaxmchdRK6zgEJNaAl8QbjHpe3GBMqcoSW1",
+          "cooldown": 0.9,
+          "castingRange": 14
+        },
+        {
           "name": "Split Arrow",
           "description": "Replaces Basic Attack with [Split Arrow].\n\n[Split Arrow]:\nDeals [Damage Rate: 80%] Physical Damage to up to 5 enemies in a frontal cone",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCp75pf4nl5Y2OXNwHZ403tR8CeJdUmEagVSLf"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCp75pf4nl5Y2OXNwHZ403tR8CeJdUmEagVSLf",
+          "cooldown": 0.9,
+          "castingRange": 14
         },
         {
           "name": "Piercing Arrow",
           "description": "Fires an arrow forward, dealing [Damage Rate: 170%] Physical Damage and reducing Armor by 10% for 4s to all enemies hit.\n\nRange increases with charge time.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCe7nHiWqi02s7T6FOxAtHYlBmI8h3odqkzGaJ"
-        },
-        {
-          "name": "Venom Arrow",
-          "description": "Deals [Damage Rate: 80%] Physical Damage to the target. Every 6th Basic Attack becomes [Venom Arrow].\n\n[Venom Arrow]:\nDeals [Damage Rate: 100%] Physical Damage and inflicts [Venom].\n\n[Venom]:\nDeals [Damage Rate: 15%] Magic Damage every second for 6s. Stacks up to 3 times",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCcaxmchdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCe7nHiWqi02s7T6FOxAtHYlBmI8h3odqkzGaJ",
+          "cooldown": 0.9,
+          "castingRange": 9
         }
       ],
       "common_skills": [
         {
+          "name": "Binding Arrow",
+          "description": "Fires three binding arrows forward. The first player hit by each takes [Damage Rate: 100%] Physical Damage ([Damage Rate: 150%] Physical Damage to mobs) and is Immobilized for 1.5s. Gains 1 charge every 14s, up to 2 charges.",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKAe2WZIWoRmwnVDpPJKx9SMZFLG1TkAQU2eE",
+          "mpCost": 20,
+          "cooldown": 1.5,
+          "castingRange": 14
+        },
+        {
+          "name": "Sleeper Arrow",
+          "description": "Fires a sleep arrow forward while self-knockback 14m. Deals [Damage Rate: 200%] Physical Damage on first enemy hit and applies Sleep for 5 seconds.",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCenJeU9qi02s7T6FOxAtHYlBmI8h3odqkzGaJ",
+          "mpCost": 20,
+          "cooldown": 12,
+          "castingRange": 14
+        },
+        {
           "name": "Blast Arrow",
           "description": "Gains 10 explosive arrows for 12s. When Basic Attacks or skill arrows hit enemies, deal [Damage Rate: 40%] Physical Damage to up to 5 nearby enemies.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYKOl0wrGRsurykYnU8tjQL0iwWeACKo4E5aZ"
-        },
-        {
-          "name": "Frost Arrow",
-          "description": "Gains 10 frost arrows for 12s. Basic Attacks and skill arrows deal [Damage Rate: 50%] additional Physical Damage and inflict 40% Slow for 2s on hit.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCToZowdEatISq1hbFsvaBAxlu3r4fejycwL2U"
-        },
-        {
-          "name": "Sleep Arrow",
-          "description": "Fires a sleep arrow forward while self-knockback 14m. Deals [Damage Rate: 200%] Physical Damage on first enemy hit and applies Sleep for 5 seconds.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCenJeU9qi02s7T6FOxAtHYlBmI8h3odqkzGaJ"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYKOl0wrGRsurykYnU8tjQL0iwWeACKo4E5aZ",
+          "mpCost": 19,
+          "cooldown": 11,
+          "castingRange": 6
         },
         {
           "name": "Silencing Arrow",
           "description": "Fires a silencing arrow forward. The first enemy hit takes [Damage Rate: 100%] Physical Damage. After 2s, the arrow inflicts [Damage Rate: 180%] additional Magic Damage and applies Silence for 3s to enemies within 5m.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLgP0WbdNqMVOnfP9XToUGW20hvxp7K6IgYDy"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLgP0WbdNqMVOnfP9XToUGW20hvxp7K6IgYDy",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 16
         },
         {
-          "name": "Binding Arrow",
-          "description": "Fires three binding arrows forward. The first player hit by each takes [Damage Rate: 100%] Physical Damage ([Damage Rate: 150%] Physical Damage to mobs) and is Immobilized for 1.5s. Gains 1 charge every 14s, up to 2 charges.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKAe2WZIWoRmwnVDpPJKx9SMZFLG1TkAQU2eE"
+          "name": "Frost Arrow",
+          "description": "Gains 10 frost arrows for 12s. Basic Attacks and skill arrows deal [Damage Rate: 50%] additional Physical Damage and inflict 40% Slow for 2s on hit.",
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCToZowdEatISq1hbFsvaBAxlu3r4fejycwL2U",
+          "mpCost": 21,
+          "cooldown": 14,
+          "castingRange": 6
         }
       ],
       "passive_skill": {
@@ -2711,44 +2936,68 @@
         {
           "name": "Touch of Plague",
           "description": "Deals [Damage Rate: 90%] Magic Damage and applies [Plague].",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgphvwZoDsTbni1kQWjq2ZIY9X53xfLVaKF8G"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgphvwZoDsTbni1kQWjq2ZIY9X53xfLVaKF8G",
+          "cooldown": 0.45,
+          "castingTime": 0.66,
+          "castingRange": 14
         },
         {
           "name": "Plague Strike",
           "description": "Casts for 1.2s, releasing a shockwave in the target direction; deals [Damage Rate: 100%] Magic Damage to enemies in its path and applies [Plague].",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCW8BzpQOVDaGSCpnbx189YilBew0cJzoMPdNA"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCW8BzpQOVDaGSCpnbx189YilBew0cJzoMPdNA",
+          "cooldown": 0.45,
+          "castingTime": 0.8,
+          "castingRange": 18
         },
         {
           "name": "Venom Pool",
           "description": "Throws a pool of venom at the target location, lasting 3s, slowing enemies inside by 20% and inflicting [Plague] every second.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCUa4s2wQ16DWLsJmnqFyb2XvNroZuiz5flAIC"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCUa4s2wQ16DWLsJmnqFyb2XvNroZuiz5flAIC",
+          "cooldown": 1.8,
+          "castingRange": 16
         }
       ],
       "common_skills": [
         {
           "name": "Scourge",
           "description": "Deals [Damage Rate: 125%] Magic Damage to target every 0.7s, inflicts [Plague], and restores [Healing Rate: 25%] HP Cannot move while channeling.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSChqGqdgHx7HuMjzKPR6SGg1BFUfEidcZ2JoDr"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSChqGqdgHx7HuMjzKPR6SGg1BFUfEidcZ2JoDr",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 12
         },
         {
           "name": "Plague Surge",
           "description": "Releases a plague surge in target direction, dealing [Damage Rate: 160%] Magic Damage to enemies hit, inflicting 2 stacks of [Plague] and reducing Speed by 30% for 4s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC66u3xxXA1L3EneUzdbVD7B49OSsGvWFcaH6P"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC66u3xxXA1L3EneUzdbVD7B49OSsGvWFcaH6P",
+          "mpCost": 17,
+          "cooldown": 9,
+          "castingRange": 18
         },
         {
           "name": "Spread Plague",
           "description": "While active, consumes 15 MP every 3s and inflicts [Plague] to nearby enemies. Basic Attacks have a 30% chance to miss for 9s. Use again to deactivate. Automatically deactivates when MP is insufficient.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdUEIu2FirOfwbCID83Tpm1Hv24gWoyBiFXVx"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCdUEIu2FirOfwbCID83Tpm1Hv24gWoyBiFXVx",
+          "mpCost": 10,
+          "cooldown": 4.5,
+          "castingRange": 9
         },
         {
           "name": "Exhaustion",
           "description": "Summons a draining field at the target location, lasting 6s. Slows enemies inside by 30% and inflicts [Exhaustion] every 1s for 6s, stacking up to 6 times.\n\n[Exhaustion]:\nDamage Boost: -6% (-6% per stack, can stack)\nHealing Bonus: -6% (-6% per stack, can stack)\nAttack Speed: -6% (-6% per stack, can stack)",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgc1AFYWoDsTbni1kQWjq2ZIY9X53xfLVaKF8"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCgc1AFYWoDsTbni1kQWjq2ZIY9X53xfLVaKF8",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 12
         },
         {
           "name": "Toxic Matter",
           "description": "Casts for 0.5s, launching Toxic Matter at the target. Upon hitting an enemy, it bounces to other enemies within 7m up to 9 times. Each target can be hit up to 2 times. Each hit deals [Damage Rate: 100%] Magic Damage and inflicts 1 stack of Plague and reduces Magic Resistance by 15% for 4s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCrRFWbH3ZrcpGNj0mROVHQMXP4oWtnswev9gJ"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCrRFWbH3ZrcpGNj0mROVHQMXP4oWtnswev9gJ",
+          "mpCost": 18,
+          "cooldown": 10,
+          "castingTime": 0.33,
+          "castingRange": 16
         }
       ],
       "passive_skill": {
@@ -2762,44 +3011,65 @@
         {
           "name": "Bleeding Thrust",
           "description": "Deals [Damage Rate: 100%] Physical Damage and applies 1 stack of [Bleed]. Can cast [Bleeding Thrust] every 6s.\n\n[Bleeding Thrust]:\nDash toward an enemy target, dealing [Damage Rate: 160%] Physical Damage and inflicting 2 stacks of [Bleed]",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyeko8v9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyeko8v9J3IVna9mA2PgkFluvzcOS7xYQdGTN",
+          "cooldown": 0.9,
+          "castingRange": 7
         },
         {
           "name": "Ricocheting Blades",
           "description": "Deals [Damage Rate: 100%] Physical Damage and applies 1 stack of [Bleed]. Can cast [Ricochet] every 6s.\n\n[Ricochet]:\nThrows a blade at the target that deals [Damage Rate: 120%] Physical Damage, inflicts 1 stack of [Bleed], and reduces their Movement Speed by 40% for 2s. After which it bounces to 1 enemy behind up to 4 times",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLp30ejdNqMVOnfP9XToUGW20hvxp7K6IgYDy"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLp30ejdNqMVOnfP9XToUGW20hvxp7K6IgYDy",
+          "cooldown": 0.9,
+          "castingRange": 12
         },
         {
           "name": "Armor Breaker",
           "description": "Deals [Damage Rate: 100%] Physical Damage and applies 1 stack of [Bleed]. Can cast [Armor Breaker] every 5s.\n\n[Armor Breaker]:\nDeals [Damage Rate: 200%] Physical Damage to nearby enemies, inflicting 1 stack of [Bleed], and reducing their Armor by 15% for 4s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDbilKqCTsc4uPVzehvMnktCEqAJKoZQISF65"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDbilKqCTsc4uPVzehvMnktCEqAJKoZQISF65",
+          "cooldown": 0.9,
+          "castingRange": 3.5
         }
       ],
       "common_skills": [
         {
           "name": "Whirling Blades",
           "description": "Throws 3 blades forward. Each blade deals  [Damage Rate: 80%] Physical Damage to all enemies hit. Upon reaching max range, the blades return, dealing  [Damage Rate: 80%] Physical Damage to those hit and inflicting 1 stack of [Bleed].\n\nMultiple blade hits on the same target beyond the first deal 30% reduced damage",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnGJNjMfGe93BVSk5hzTrQ6UPaMygj2Nq4Cdi"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnGJNjMfGe93BVSk5hzTrQ6UPaMygj2Nq4Cdi",
+          "mpCost": 15,
+          "cooldown": 8.1,
+          "castingRange": 12
         },
         {
           "name": "Phase Blade",
           "description": "Dashes 3m backward while firing a Phase Blade forward that deals [Damage Rate: 100%] Physical Damage to the first enemy hit, inflicting 1 stack of [Bleed] and Stunning for 0.75s, while also marking them for 5s.\n\nRecast the skill within 15m while a mark exists to instantly appear behind the target, dealing [Damage Rate: 160%] Physical Damage and gaining +30% Attack Speed for 5s",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC79cuMAlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC79cuMAlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 13
         },
         {
           "name": "Crippling Strike",
           "description": "Strike an enemy twice, dealing [Damage Rate: 180%] Physical Damage, applying 1 stack of [Bleed] and Disarming them for 4s.\n\nIncreases Basic Attack Damage by 25% for 5s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCRCWOBuAnJqIWpK8HPuraCOUN2mQSd4gxcDYv"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCRCWOBuAnJqIWpK8HPuraCOUN2mQSd4gxcDYv",
+          "mpCost": 19,
+          "cooldown": 11,
+          "castingRange": 4
         },
         {
           "name": "Smoke Grenade",
           "description": "Throws a smoke grenade to create a smoke screen for 6s. Enemies inside are Slowed by 40% and have a 55% chance to miss Basic Attacks. Also deals [Damage Rate: 25%] Physical Damage every second.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXOiQMxynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXOiQMxynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
+          "mpCost": 21,
+          "cooldown": 14,
+          "castingRange": 8
         },
         {
           "name": "Shadow Move",
           "description": "Instantly removes control effects and enters Stealth. While in Stealth, gains immunity to movement-limiting effects (Slow, Immobilize) for 2s. Also increases damage by 7% for 6s, stacking up to 2 times.\n\nCan be recast once within 6s, but doing so will not remove control effects again.\n\nUsing a skill, dealing damage or inflicting healing breaks Stealth.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7XEtyJvlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7XEtyJvlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4",
+          "mpCost": 25,
+          "cooldown": 21,
+          "castingRange": 6
         }
       ],
       "passive_skill": {
@@ -2813,44 +3083,69 @@
         {
           "name": "Magma Burst",
           "description": "Deals [Damage Rate: 120%] Magic Damage and applies 1 stack of [Burn].",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0joE9TLGnMSAK5VBw2xylROtGWiDZQcgjTNJ"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0joE9TLGnMSAK5VBw2xylROtGWiDZQcgjTNJ",
+          "cooldown": 0.45,
+          "castingTime": 0.8,
+          "castingRange": 14
         },
         {
           "name": "Scorching Shard",
           "description": "After 1.2s cast, fires 3 scorching shards in the target direction, dealing [Damage Rate: 120%] Magic Damage to enemies hit and inflicting 1 stack of [Burn]. When multiple shards hit the same target, additional shards deal 25% less damage to the original damage.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCoi9mLC15DWbhNtFdU6qgYeZKnHE9poiCJ0z2"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCoi9mLC15DWbhNtFdU6qgYeZKnHE9poiCJ0z2",
+          "cooldown": 0.45,
+          "castingTime": 0.8,
+          "castingRange": 14
         },
         {
           "name": "Wildfire Shard",
           "description": "After 2s cast, fires a wildfire shard at the target location that bounces forward twice. Explodes on contact with enemies, dealing [Damage Rate: 120%] Magic Damage and inflicting 1 stack of [Burn] to enemies in range",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCv0AA2fpx4UQA1RsqcaXnj7NfHlgpBFLTCie5"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCv0AA2fpx4UQA1RsqcaXnj7NfHlgpBFLTCie5",
+          "cooldown": 0.45,
+          "castingTime": 1.3,
+          "castingRange": 18
         }
       ],
       "common_skills": [
         {
           "name": "Inferno Blast",
           "description": "Continuously channels flames in target direction for 3s, dealing [Damage Rate: 50%] Magic Damage and inflicting Burn] to all enemies in range every 0.5s. Can rotate but cannot move while channeling 75% Increased Damage against Monsters",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwAAJNi3OhGMgoOJLYrd3qpCvNxRc5QFZ9am6"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwAAJNi3OhGMgoOJLYrd3qpCvNxRc5QFZ9am6",
+          "mpCost": 12,
+          "cooldown": 5.4,
+          "castingRange": 14
         },
         {
           "name": "Molten Orb",
           "description": "Channels for 0.5s and then launches a molten orb in target direction that sticks to the first enemy hit, lasting 5s and dealing [Damage Rate: 110%] Magic Damage to enemies within 5m every 2s while inflicting 1 stack of [Burn].",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9m8hnkD7PCifcs12oSdBru3GbU5JnO6IXZap"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9m8hnkD7PCifcs12oSdBru3GbU5JnO6IXZap",
+          "mpCost": 18,
+          "cooldown": 10,
+          "castingTime": 0.33,
+          "castingRange": 18
         },
         {
           "name": "Blast Jump",
           "description": "Jumps in target direction, dealing [Damage Rate: 250%] Magic Damage and inflicting 2 stacks of [Burn] to nearby enemies upon takeoff.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCz82McbEqOA7HxjVDm05p8UIgRTs6lBdvNGSt"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCz82McbEqOA7HxjVDm05p8UIgRTs6lBdvNGSt",
+          "mpCost": 18,
+          "cooldown": 10,
+          "castingRange": 10
         },
         {
-          "name": "Oil Blast",
+          "name": "Oil Zone",
           "description": "Sprays oil lasting 8s in front, inflicting [Oil Coating] to enemies who enter.\n\n[Oil Coating]:\nReduces Movement Speed by 50% for 4s. When affected by [Burn], [Oil Coating] is replaced with [Volatile Burn] and cannot be inflicted again for 6s.\n\n[Volatile Burn]:\nCauses Fear and deals [Damage Rate: 56%] Magic Damage every 0.5s for 1.5s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6Z0DuQXA1L3EneUzdbVD7B49OSsGvWFcaH6P"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6Z0DuQXA1L3EneUzdbVD7B49OSsGvWFcaH6P",
+          "mpCost": 23,
+          "cooldown": 18,
+          "castingRange": 6
         },
         {
           "name": "Overdrive Mode",
           "description": "Activates Overdrive Mode, increasing Casting Speed by 60% and Magic Damage by 20%. Consumes 5 MP every second. Use skill again to deactivate Overdrive. Automatically deactivates when MP is insufficient",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDVp5BBynA1HpuOTqiN0gK7cldavVYGk9WLZ"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDVp5BBynA1HpuOTqiN0gK7cldavVYGk9WLZ",
+          "mpCost": 10,
+          "cooldown": 4.5,
+          "castingRange": 6
         }
       ],
       "passive_skill": {
@@ -2864,44 +3159,66 @@
         {
           "name": "Ice Burst",
           "description": "Deals [Damage Rate: 90%] Magic Damage. Can cast [Ice Burst] every 5s.\n\n[Ice Burst]:\nDeals [Damage Rate: 150%] Magic Damage to the target and Immobilizes them for 1.5s",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6zBrRaXA1L3EneUzdbVD7B49OSsGvWFcaH6P"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6zBrRaXA1L3EneUzdbVD7B49OSsGvWFcaH6P",
+          "cooldown": 0.45,
+          "castingTime": 0.66,
+          "castingRange": 16
         },
         {
           "name": "Frostbite Zone",
           "description": "Creates a zone of deep frost in the target direction, dealing [Damage Rate: 130%] Magic Damage to enemies in range and reducing their Movement Speed by 25% for 4s",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCEw4TyEYw01AKmPBrlgjRL2yDc3ZvtVMXJNh6"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCEw4TyEYw01AKmPBrlgjRL2yDc3ZvtVMXJNh6",
+          "cooldown": 2.7,
+          "castingRange": 16
         },
         {
           "name": "Frost Burst",
           "description": "Launches three frost shards in the target direction after a delay, each dealing [Damage Rate: 110%] Magic Damage to enemies hit. The damage from shards beyond the first is reduced by 25%.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwAJnlPpOhGMgoOJLYrd3qpCvNxRc5QFZ9am6"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCwAJnlPpOhGMgoOJLYrd3qpCvNxRc5QFZ9am6",
+          "cooldown": 1.3,
+          "castingRange": 16
         }
       ],
       "common_skills": [
         {
           "name": "Frost Beam",
           "description": "Channels for 3s, continuously firing a frost beam in the target direction that deals [Damage Rate: 60%] Magic Damage to players ([Damage Rate: 120%] Magic Damage to mobs) every 0.5s to those hit and inflicts [Frost Beam Slow] for 3s, stacking up to 5 times.\n\n[Frost Beam Slow]:\nMovement Speed Bonus: -8% (-8% per stack, can stack)",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHNXEL4K4EOAC1uZm8KvoQgpyDTSnlbFxk6L5"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHNXEL4K4EOAC1uZm8KvoQgpyDTSnlbFxk6L5",
+          "mpCost": 18,
+          "cooldown": 10,
+          "castingRange": 16
         },
         {
           "name": "Crystal Frost",
           "description": "Launches crystalline frost in the target direction. Upon hitting the first enemy, it explodes to deal [Damage Rate: 250%] Magic Damage and Immobilize enemies in range for 2s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDHKuiiPCTsc4uPVzehvMnktCEqAJKoZQISF6"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDHKuiiPCTsc4uPVzehvMnktCEqAJKoZQISF6",
+          "mpCost": 23,
+          "cooldown": 18,
+          "castingRange": 16
         },
         {
           "name": "Frost Blink",
           "description": "Deals [Damage Rate: 200%] Magic Damage to nearby enemies and Freezes them for 0.5s, then blinks in the target direction.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCpeaQQMNnl5Y2OXNwHZ403tR8CeJdUmEagVSL"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCpeaQQMNnl5Y2OXNwHZ403tR8CeJdUmEagVSL",
+          "mpCost": 18,
+          "cooldown": 10,
+          "castingRange": 10
         },
         {
           "name": "Frost Wall",
           "description": "Creates a frost wall before the caster that lasts 8s. Enemies inside are Slowed by 70%, take [Damage Rate: 50%] Magic Damage every second, and gain [Chill] stacks. Stacks up to 2 times.\n\n[Chill]:\nAt max stacks, targets are Frozen for 1.5s and become immune to [Chill] for 6s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDEq6GVynA1HpuOTqiN0gK7cldavVYGk9WLZ"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXDEq6GVynA1HpuOTqiN0gK7cldavVYGk9WLZ",
+          "mpCost": 23,
+          "cooldown": 18,
+          "castingRange": 6
         },
         {
           "name": "Frost Roar",
           "description": "Unleashes a freezing roar in the target direction, dealing [Damage Rate: 200%] Magic Damage and knocking enemies back 10m. Reduces Movement Speed by 30% and Attack Speed by 30% for 4s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYhm7UArGRsurykYnU8tjQL0iwWeACKo4E5aZ"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYhm7UArGRsurykYnU8tjQL0iwWeACKo4E5aZ",
+          "mpCost": 23,
+          "cooldown": 18,
+          "castingRange": 14
         }
       ],
       "passive_skill": {
@@ -2915,44 +3232,65 @@
         {
           "name": "Headshot",
           "description": "Deals [Damage Rate: 60%] Physical Damage to the target. Every 4th Basic Attack becomes [Headshot].\n\n[Headshot]:\nDeals [Damage Rate: 112%] Physical Damage and always crits",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiQKv1mQJuLA8ofy7IC6JlZmUbr1WQBsg3SnO"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiQKv1mQJuLA8ofy7IC6JlZmUbr1WQBsg3SnO",
+          "cooldown": 1,
+          "castingRange": 22
         },
         {
           "name": "Ricochet",
           "description": "Deals [Damage Rate: 60%] Physical Damage to the target. Can cast [Ricochet] every 6s.\n\n[Ricochet]:\nDeals [Damage Rate: 130%] Physical Damage and applies 30% Slow for 4s. Bounces to 1 enemy behind the target up to 4 times",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXZfM2FynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXZfM2FynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
+          "cooldown": 1,
+          "castingRange": 22
         },
         {
           "name": "Armor Break",
           "description": "Deals [Damage Rate: 60%] Physical Damage to the target. Can cast [Armor Break] every 7s.\n\n[Armor Break]:\nDeals [Damage Rate: 180%] Physical Damage and reduces Armor by 10% for 4s to all enemies hit.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsAf8C4ZjhbCUk9y6YA2VESc8mnvDqMf5LGu1"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCsAf8C4ZjhbCUk9y6YA2VESc8mnvDqMf5LGu1",
+          "cooldown": 1,
+          "castingRange": 22
         }
       ],
       "common_skills": [
         {
           "name": "Trap",
           "description": "Places a trap at the target location that lasts 150s. When enemies enter its range, reveals Stealth for 2s and grants a [Target-based Max HP 15%] Shield for 4s. Creates a slowing field, reducing enemy Speed by 35%. After 2s, explodes to deal [Damage Rate: 180%] Physical Damage to players ([Damage Rate: 270%] Physical Damage to mobs). Gains 1 charge every 15s, up to 2 charges.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXMZxzUynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXMZxzUynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
+          "mpCost": 20,
+          "cooldown": 1.5,
+          "castingRange": 12
         },
         {
           "name": "Quick Load",
           "description": "Steps 6m in the target direction. The next 4 Basic Attacks gain +80% Attack Speed and +25% damage for 6s. Loads 1 bullet. Gains 1 charge every 16s, up to 2 charges.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbBzQozWbBOnPELSmCrNGjQoAcKtW4k0pX3uy"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCbBzQozWbBOnPELSmCrNGjQoAcKtW4k0pX3uy",
+          "mpCost": 21,
+          "cooldown": 1.5,
+          "castingRange": 6
         },
         {
           "name": "Concussion Grenade",
           "description": "Throws a powerful grenade at the target location, dealing [Damage Rate: 180%] Physical Damage and knocking enemies back 6m from the center. Reduces Attack Speed by 30% and Movement Speed by 40% for 4s. If within blast radius, the user is pushed back 6m.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCX34gDTynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCX34gDTynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
+          "mpCost": 22,
+          "cooldown": 16,
+          "castingRange": 10
         },
         {
           "name": "Blinding Flash",
           "description": "Throws a flash grenade to the target location, dealing [Damage Rate: 200%] Physical Damage to enemies in range, revealing Stealth, and giving Basic Attacks a 45% chance to miss for 6s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCd0k2BAirOfwbCID83Tpm1Hv24gWoyBiFXVxk"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCd0k2BAirOfwbCID83Tpm1Hv24gWoyBiFXVxk",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 14
         },
         {
           "name": "Aim",
           "description": "Enters Aim mode. Increases Basic Attack Damage by 40% and range by 6m. Reduces Movement Speed by 65%. Use again to exit Aim mode",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYwXafwrGRsurykYnU8tjQL0iwWeACKo4E5aZ"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCYwXafwrGRsurykYnU8tjQL0iwWeACKo4E5aZ",
+          "mpCost": 16,
+          "cooldown": 4.5,
+          "castingRange": 6
         }
       ],
       "passive_skill": {
@@ -2966,44 +3304,68 @@
         {
           "name": "Holy Feather",
           "description": "Deals [Damage Rate: 90%] Magic Damage. Can cast [Holy Feather] every 5s. Deals [Damage Rate: 150%] Magic Damage to the target and heals [Healing Rate: 75%] HP for up to 3 allies within 14m",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCffcqvEeFwJm2B1vRUSOualKLCDGIfT0g4Esp"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCffcqvEeFwJm2B1vRUSOualKLCDGIfT0g4Esp",
+          "cooldown": 0.45,
+          "castingTime": 0.33,
+          "castingRange": 16
         },
         {
           "name": "Holy Smite",
           "description": "After a 0.5s cast, calls down holy smite at the target location, dealing [Damage Rate: 80%] Magic Damage to all players ([Damage Rate: 160%] Magic Damage to mobs). Heals the caster for [Healing Rate: 48%] HP if hitting at least one enemy.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiMc4QQJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCiMc4QQJuLA8ofy7IC6JlZmUbr1WQBsg3SnO2",
+          "cooldown": 0.45,
+          "castingTime": 0.8,
+          "castingRange": 12
         },
         {
           "name": "Holy Heal",
           "description": "After a 1.5s cast, performs holy healing at the target location, restoring [Healing Rate: 90%] HP allies in range.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClBDnGc6oygh7mMGDItxK38196fS4eZ2ATUak"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSClBDnGc6oygh7mMGDItxK38196fS4eZ2ATUak",
+          "cooldown": 0.45,
+          "castingTime": 1,
+          "castingRange": 14
         }
       ],
       "common_skills": [
         {
           "name": "Holy Wave",
           "description": "Projects a holy wave in the target direction, dealing [Damage Rate: 200%] Magic Damage to all players ([Damage Rate: 300%] Magic Damage to mobs) in its path. The wave automatically returns when reaching max range, healing up to 5 nearby allies for [Healing Rate: 75%] HP.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCvPefJhdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCvPefJhdRK6zgEJNaAl8QbjHpe3GBMqcoSW1",
+          "mpCost": 17,
+          "cooldown": 9,
+          "castingRange": 18
         },
         {
           "name": "Divine Link",
           "description": "Channels divine link on target for 6s, also granting the caster [Target-based Max HP 15%] Shield for 4s.\n\nCan move slowly while channeling.\n\nWhen targeting an ally, heals them for [Healing Rate: 100%] HP every second.\n\nWhen targeting an enemy, deals [Damage Rate: 100%] Magic Damage every second.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCFhnEHcSY0xU7AZSWvtlJFd3OmV2ub1ajiEye"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCFhnEHcSY0xU7AZSWvtlJFd3OmV2ub1ajiEye",
+          "mpCost": 21,
+          "cooldown": 14,
+          "castingRange": 10
         },
         {
           "name": "Holy Energy",
           "description": "Projects holy energy at the target location. On impact, restores [Healing Rate: 75%] HP and grants a [Target-based Max HP 20%] shield for 4s to allies in range.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHzvqpj5K4EOAC1uZm8KvoQgpyDTSnlbFxk6L"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCHzvqpj5K4EOAC1uZm8KvoQgpyDTSnlbFxk6L",
+          "mpCost": 20,
+          "cooldown": 12,
+          "castingRange": 14
         },
         {
           "name": "Holy Wall",
           "description": "Creates multiple holy walls in front. Enemies who touch them take [Damage Rate: 150%] Magic Damage and are stunned for 1.5s, while the caster gains  [Target-based Max HP 12%] Shield for 6s, stacking up to 4 times.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC1PRJPecM75luO6aJUWEridRBzN8ILQ4K0hvk"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC1PRJPecM75luO6aJUWEridRBzN8ILQ4K0hvk",
+          "mpCost": 21,
+          "cooldown": 14,
+          "castingRange": 3
         },
         {
           "name": "Holy Baptism",
           "description": "Cleanses all Slow and Immobilize effects and 2 Debuff effects from the caster and up to 20 nearby allies and restores [Healing Rate: 100%] HP. Also prevents the next 3 Immobilize and Immune to Slow effects within 4s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC65U9r4XA1L3EneUzdbVD7B49OSsGvWFcaH6P"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC65U9r4XA1L3EneUzdbVD7B49OSsGvWFcaH6P",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 14
         }
       ],
       "passive_skill": {
@@ -3017,44 +3379,65 @@
         {
           "name": "Swing",
           "description": "Deals [Damage Rate: 120%] Physical Damage to enemy target. Can cast [Swing] every 4s.\n\n[Swing]:\nDeals [Damage Rate: 240%] Physical Damage to all players ([Damage Rate: 480%] Physical Damage to mobs) in a frontal cone.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCvVN2drpx4UQA1RsqcaXnj7NfHlgpBFLTCie5"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCvVN2drpx4UQA1RsqcaXnj7NfHlgpBFLTCie5",
+          "cooldown": 1,
+          "castingRange": 5
         },
         {
           "name": "Smash",
           "description": "Deals [Damage Rate: 120%] Physical Damage to enemy target. Can cast [Smash] every 7s.\n\n[Smash]:\nDeals [Damage Rate: 150%] Physical Damage to enemies in range and restores [Healing Rate: 75%] HP to up to 5 nearby allies. Increases Damage Resistance by 15% for 6s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC3JWWU0bFGQ0IUDOkSBpMKthngLxwV6sCENTj"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC3JWWU0bFGQ0IUDOkSBpMKthngLxwV6sCENTj",
+          "cooldown": 1,
+          "castingRange": 3.5
         },
         {
           "name": "Crushing Smash",
           "description": "Deals [Damage Rate: 120%] Physical Damage to enemy target. Can cast [Crushing Smash] every 6s.\n\n[Crushing Smash]:\nCharges toward target, dealing [Damage Rate: 160%] Physical Damage to enemies in range and inflicting Slow 35% for 3s",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKfPqw8IWoRmwnVDpPJKx9SMZFLG1TkAQU2eE"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCKfPqw8IWoRmwnVDpPJKx9SMZFLG1TkAQU2eE",
+          "cooldown": 1,
+          "castingRange": 7
         }
       ],
       "common_skills": [
         {
           "name": "Frenzied Smash",
           "description": "Smashes the ground 4 times.\n\nThe first three hits deal [Damage Rate: 120%] Physical Damage to players ([Damage Rate: 180%] Physical Damage to mobs).\n\nThe final hit deals [Damage Rate: 200%] Physical Damage to players ([Damage Rate: 300%] Physical Damage to mobs) and Knocks Up for 0.5s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9sVETjD7PCifcs12oSdBru3GbU5JnO6IXZap"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9sVETjD7PCifcs12oSdBru3GbU5JnO6IXZap",
+          "mpCost": 15,
+          "cooldown": 8.1,
+          "castingRange": 3
         },
         {
           "name": "Binding Smash",
           "description": "Leaps to the target location, dealing [Damage Rate: 200%] Physical Damage and inflicting Immobilize for 2.5s to enemies in the area.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDzuz0gCTsc4uPVzehvMnktCEqAJKoZQISF65"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDzuz0gCTsc4uPVzehvMnktCEqAJKoZQISF65",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 10
         },
         {
           "name": "Guardian Field",
           "description": "Creates a Guardian Field at the target location that increases allies' Max HP by 25% and grants Immunity to Forced Movement (Pull, Knockback) and Hard Control (Stun, Fear, Freeze, Knockup, Petrify, Sleep). Lasts 5s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSbd17jwJHd9VeDNGoX6KrO7F2zbawu5I3AU0"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCSbd17jwJHd9VeDNGoX6KrO7F2zbawu5I3AU0",
+          "mpCost": 17,
+          "cooldown": 9,
+          "castingRange": 12
         },
         {
           "name": "Field of Silence",
           "description": "Deals [Damage Rate: 200%] Magic Damage to enemies in range and creates a Field of Silence, lasting 4s. Enemies in the field are Slowed by 25% and Silenced. Once they leave the area, they become immune to the field's Silence for 6s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6O7Dk1XA1L3EneUzdbVD7B49OSsGvWFcaH6P"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC6O7Dk1XA1L3EneUzdbVD7B49OSsGvWFcaH6P",
+          "mpCost": 15,
+          "cooldown": 8.1,
+          "castingRange": 4
         },
         {
           "name": "Vengeful Thunder",
           "description": "Applies [Vengeful Thunder] to the caster or an allied target.\n\n[Vengeful Thunder]:\nIncreases Damage Resistance by 25% for 8s. When taking damage or dealing Basic Attack Damage, calls down lightning at the target location, dealing [Damage Rate: 51%] Physical Damage.\n(Cooldown: 0.8s)",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC75s6z8lo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC75s6z8lo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 9
         }
       ],
       "passive_skill": {
@@ -3068,44 +3451,67 @@
         {
           "name": "Evil Seed",
           "description": "Deals [Damage Rate: 80%] Magic Damage. Throws an [Evil Seed] after 5 Basic Attacks.\n\n[Evil Seed]:\nThrows an Evil Seed at the target location, creating a thorn zone that lasts 5s. The zone deals [Damage Rate: 40%] Magic Damage every second to up to 5 enemies and reduces their Movement Speed by 25%.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCo2q3qF15DWbhNtFdU6qgYeZKnHE9poiCJ0z2"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCo2q3qF15DWbhNtFdU6qgYeZKnHE9poiCJ0z2",
+
+          "cooldown": 0.45,
+          "castingTime": 0.33,
+          "castingRange": 14
         },
         {
           "name": "Soothing Mist",
           "description": "Releases Soothing Mist in the target direction, dealing [Damage Rate: 70%] Magic Damage to enemies hit, while applying 1 stack of [Recovery] to allies.\n\n[Recovery]:\nRestores HP every second for 12s, stacking up to 3 times.\nHP recovery at 1 | 2 | 3 stacks: [Healing Rate: 10%] | [Healing Rate: 15%] | [Healing Rate: 20%]",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCLeZSahdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCCLeZSahdRK6zgEJNaAl8QbjHpe3GBMqcoSW1",
+          "cooldown": 1.3,
+          "castingRange": 16
         },
         {
           "name": "Healing Seed",
           "description": "Throws a healing seed at the target location that blooms, healing nearby allies for [Healing Rate: 55%] HP and applying 1 stack of [Recovery] to allies.\n\n[Recovery]:\nRestores HP every second for 12s, stacking up to 3 times.\nHP recovery at 1 | 2 | 3 stacks: [Healing Rate: 10%] | [Healing Rate: 15%] | [Healing Rate: 20%]",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCeGapD0Wqi02s7T6FOxAtHYlBmI8h3odqkzGa"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCeGapD0Wqi02s7T6FOxAtHYlBmI8h3odqkzGa",
+          "cooldown": 2.2,
+          "castingRange": 14
         }
       ],
       "common_skills": [
         {
           "name": "Winding Vines",
           "description": "After a brief delay, creates an entangling zone lasting 4s. Deals [Damage Rate: 90%] Magic Damage every second and immobilizes enemies that enter for 1.5s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLDzCoPdNqMVOnfP9XToUGW20hvxp7K6IgYDy"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCLDzCoPdNqMVOnfP9XToUGW20hvxp7K6IgYDy",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 12
         },
         {
           "name": "Energize",
           "description": "Creates an energizing aura around the caster, lasting 5s. Restores [Healing Rate: 39%] HP and 12 MP every second to up to 10 nearby allies.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCC0ZUC2hdRK6zgEJNaAl8QbjHpe3GBMqcoSW1"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCC0ZUC2hdRK6zgEJNaAl8QbjHpe3GBMqcoSW1",
+          "mpCost": 0,
+          "cooldown": 13,
+          "castingRange": 8
         },
         {
           "name": "Vitality Seed",
           "description": "Applies Vitality Seeds to up to 5 nearby allies, healing for [Healing Rate: 80%] HP and applying 1 stack of [Recovery]. Vitality Seeds increase Cast Speed by 40% and Attack Speed by 25% for 6s.\n\n[Recovery]:\nRestores HP every second for 12s, stacking up to 3 times.\nHP recovery at 1 | 2 | 3 stacks: [Healing Rate: 10%] | [Healing Rate: 15%] | [Healing Rate: 20%]",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCvfjIdZ6px4UQA1RsqcaXnj7NfHlgpBFLTCie"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCvfjIdZ6px4UQA1RsqcaXnj7NfHlgpBFLTCie",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 8
         },
         {
           "name": "Freshness",
           "description": "Cleanses all Hard Control (Stun, Fear, Freeze, Knockup, Petrify, Sleep), Silence, and 2 DoT effects on the caster and up to 20 nearby allies. Also heals for [Healing Rate: 60%] HP, applies 1 stack of [Recovery], and prevents the next 3 Hard Control or Silence effects. The effect lasts 4s.\n\nCan be used while skills are disabled.\n\n[Recovery]:\nRestores HP every second for 12s, stacking up to 3 times.\nHP recovery at 1 | 2 | 3 stacks [Healing Rate: 10%] | [Healing Rate: 15%] | [Healing Rate: 20%]",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7ijn2Zlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC7ijn2Zlo6BUDrlxFQ9LiOPeT8H0CW2hnsR4p",
+          "mpCost": 23,
+          "cooldown": 18,
+          "castingRange": 14
         },
         {
           "name": "Regenerate",
           "description": "Releases restorative energy at the target location, healing allies. Healing amount increases based on target's [Recovery] stacks.\n\n[Recovery]:\nStacks: 0 | 1 | 2 | 3\nRecovers HP: [Healing Rate: 75%] | [Healing Rate: 95%] | [Healing Rate: 115%] | [Healing Rate: 135%]",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCFjHaLmSY0xU7AZSWvtlJFd3OmV2ub1ajiEye"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCFjHaLmSY0xU7AZSWvtlJFd3OmV2ub1ajiEye",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 14
         }
       ],
       "passive_skill": {
@@ -3119,44 +3525,65 @@
         {
           "name": "Leap Strike",
           "description": "Deals [Damage Rate: 100%] Physical Damage to the target. Can cast [Leap Strike] every 5s.\n\n[Leap Strike]:\nCharges toward the enemy target, dealing [Damage Rate: 170%] Physical Damage and increasing Attack Speed by 20% for 4s",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyWy3Xk9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyWy3Xk9J3IVna9mA2PgkFluvzcOS7xYQdGTN",
+          "cooldown": 0.9,
+          "castingRange": 7
         },
         {
-          "name": "Javelin Throw",
+          "name": "Piercing Spear",
           "description": "Deals [Damage Rate: 80%] Physical Damage to the target. Performs a [Surging Throw] after 5 Basic Attacks.\n\n[Surging Throw]:\nDeals [Damage Rate: 180%] Physical Damage and increases Movement Speed by 20% for 2s",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9hVu1W5D7PCifcs12oSdBru3GbU5JnO6IXZa"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9hVu1W5D7PCifcs12oSdBru3GbU5JnO6IXZa",
+          "cooldown": 0.9,
+          "castingRange": 14
         },
         {
           "name": "Sweeping Strike",
           "description": "Deals [Damage Rate: 100%] Physical Damage to the target. Can cast [Sweeping Strike] every 5s.\n\n[Sweeping Strike]:\nDeals [Damage Rate: 240%] Physical Damage to enemies in range. Gains 6% Damage Resistance for every enemy hit, lasting 4s. Stacks up to 5 times.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9a5fSLD7PCifcs12oSdBru3GbU5JnO6IXZap"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC9a5fSLD7PCifcs12oSdBru3GbU5JnO6IXZap",
+          "cooldown": 0.9,
+          "castingRange": 4
         }
       ],
       "common_skills": [
         {
           "name": "Lance Thrust",
           "description": "Repeatedly thrusts at enemies in a frontal cone, dealing [Damage Rate: 60%] Physical Damage per hit, then slashes forward to deal [Damage Rate: 130%] Physical Damage to enemies in range.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCX5SAC4ynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCX5SAC4ynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
+          "mpCost": 14,
+          "cooldown": 7.2,
+          "castingRange": 7
         },
         {
           "name": "Lance Impale",
           "description": "Throws a lance at the target location, dealing [Damage Rate: 160%] Physical Damage and reducing Movement Speed by 25% for 3s to enemies in range.\n\nThe lance remains at the target location for 6s. Moving to its location allows retrieval, granting 20% Movement Speed and 20% Attack Speed for 4s. Gains 1 charge every 12s, up to 2 charges",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCosFoXWj15DWbhNtFdU6qgYeZKnHE9poiCJ0z"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCosFoXWj15DWbhNtFdU6qgYeZKnHE9poiCJ0z",
+          "mpCost": 18,
+          "cooldown": 1.5,
+          "castingRange": 12
         },
         {
           "name": "Warding Flourish",
           "description": "Channels for 4s, gaining Control Immunity and 60% Damage Resistance. While channeling, reflects 80% Physical Damage back to attackers when taking damage. Deals [Damage Rate: 40%] Physical Damage to nearby enemies every 0.5s.\n\nRecast again while channeling to charge forward, dealing [Damage Rate: 150%] Physical Damage to enemies hit and reducing their Armor by 20% for 4s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXprF6ZynA1HpuOTqiN0gK7cldavVYGk9WLZ5"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCXprF6ZynA1HpuOTqiN0gK7cldavVYGk9WLZ5",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 4
         },
         {
           "name": "Skyward Lance",
           "description": "Deals [Damage Rate: 150%] Physical Damage to enemies in front and inflicts Knockup for 1s.\n\nCan be recast within 6s to slam down, dealing [Damage Rate: 150%] Physical Damage to enemies in range and reducing their Movement Speed by 45% for 3s",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCIZem3ozzmQPwNigqxUdB1eOyCYbWln78fpDF"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCIZem3ozzmQPwNigqxUdB1eOyCYbWln78fpDF",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 10
         },
         {
           "name": "Lance Recall",
           "description": "Instantly removes Control effects, deals [Damage Rate: 280%] Physical Damage to enemies in front, and leaps back 8m. Increases Movement Speed by 30% for 4s.\n\nCan be used while skills are disabled",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCqtS5Xyp0DrPOVUwARFb2Ggj9MuYvQ0JiBK7e"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCqtS5Xyp0DrPOVUwARFb2Ggj9MuYvQ0JiBK7e",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 6
         }
       ],
       "passive_skill": {
@@ -3170,44 +3597,65 @@
         {
           "name": "Sword Slash",
           "description": "Deals [Damage Rate: 130%] Physical Damage to enemy target. Can cast [Sword Slash] every 6s.\n\n[Sword Slash]:\nCharges toward an enemy target to deal [Damage Rate: 180%] Physical Damage and inflict 40% Slow for 2s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQbnxzg7z9VydsAL2D3hoSNGWrlcw7ZuBgfXi"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCQbnxzg7z9VydsAL2D3hoSNGWrlcw7ZuBgfXi",
+          "cooldown": 1.1,
+          "castingRange": 7
         },
         {
           "name": "Sword Cleave",
           "description": "Deals [Damage Rate: 130%] Physical Damage to enemy target. Can cast [Sword Cleave] every 5.\n\n[Sword Cleave]:\nDeals [Damage Rate: 220%] Physical Damage to surrounding enemies. Grants [Target-based Max HP 3%] Shield for each enemy hit, lasting 4s. Stacks up to 5 times.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJXJlAYUtiPWS4l8JEHns6v3kTN10rCyUZXMo"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJXJlAYUtiPWS4l8JEHns6v3kTN10rCyUZXMo",
+          "cooldown": 1.1,
+          "castingRange": 3.5
         },
         {
           "name": "Sword Energy",
           "description": "Deals [Damage Rate: 130%] Physical Damage to enemy target. Can cast [Sword Energy] every 6s.\n\n[Sword Energy]:\nUnleashes sword energy forward, dealing [Damage Rate: 140%] Physical Damage to enemies hit. Increases Movement Speed by 25% for 2s if at least 1 enemy is hit.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyy4x7G9J3IVna9mA2PgkFluvzcOS7xYQdGTN"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCyy4x7G9J3IVna9mA2PgkFluvzcOS7xYQdGTN",
+          "cooldown": 1.1,
+          "castingRange": 20
         }
       ],
       "common_skills": [
         {
           "name": "Vacuum Slash",
           "description": "Performs 4 forward slashes, each dealing [Damage Rate: 60%] Physical Damage to players ([Damage Rate: 90%] Physical Damage to mobs). The final hit unleashes sword energy forward, dealing [Damage Rate: 150%] Physical Damage to all enemies hit.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSChTh46kHx7HuMjzKPR6SGg1BFUfEidcZ2JoDr"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSChTh46kHx7HuMjzKPR6SGg1BFUfEidcZ2JoDr",
+          "mpCost": 18,
+          "cooldown": 10,
+          "castingRange": 5
         },
         {
           "name": "Crippling Strike",
           "description": "Leaps to the target location, dealing [Damage Rate: 200%] Physical Damage and inflicting 50% Slow for 3s to nearby enemies upon landing. Gains [Target-based Max HP 20%] Shield for 4s when hitting at least 1 enemy",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0mxffyGnMSAK5VBw2xylROtGWiDZQcgjTNJE"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSC0mxffyGnMSAK5VBw2xylROtGWiDZQcgjTNJE",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 10
         },
         {
           "name": "Power Slash",
           "description": "Hold to charge with control immunity and gain +20% Damage Resistance. While charging: Deals [Damage Rate: 150%] Physical Damage and Stuns enemies for 0.5s. After charging for 1.5s, deals [Damage Rate: 200%] Physical Damage, Stuns fpr 1.5s and creates a ground wave that deals [Damage Rate: 150%] Physical Damage and inflicts 40% Slow for 4s.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCla1YcB6oygh7mMGDItxK38196fS4eZ2ATUak"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCla1YcB6oygh7mMGDItxK38196fS4eZ2ATUak",
+          "mpCost": 18,
+          "cooldown": 10,
+          "castingRange": 10
         },
         {
           "name": "Defensive Slash",
           "description": "Begins Blocking for 3s. While Blocking, reduces Movement Speed but gains control immunity and +70% Damage Resistance. Afterward, deals [Damage Rate: 320%] Physical Damage to nearby enemies and reduces their Armor by 20% for 4s. Block can be canceled early",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnqBqiF6fGe93BVSk5hzTrQ6UPaMygj2Nq4Cd"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnqBqiF6fGe93BVSk5hzTrQ6UPaMygj2Nq4Cd",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 6
         },
         {
           "name": "Heart of Steel",
           "description": "Immediately removes all control effects, gains 1 stack of [Sword Momentum], increases Damage Resistance by 25%, and the Attack Speed of the next 3 Basic Attacks by 80% for 8s.\n\nCan be used while skills are disabled.",
-          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCGBBHEFOtMHmL1NBfDRpSE6XKr3hOJ9jnoQAW"
+          "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCGBBHEFOtMHmL1NBfDRpSE6XKr3hOJ9jnoQAW",
+          "mpCost": 20,
+          "cooldown": 13,
+          "castingRange": 6
         }
       ],
       "passive_skill": {
@@ -3216,5 +3664,96 @@
         "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCDfoMJiCTsc4uPVzehvMnktCEqAJKoZQISF65"
       }
     }
-  }
+  },
+  "links": [
+    {
+      "name": "Warden",
+      "drifters": ["Solenne", "Moonveil", "Revelation", "Helix"],
+      "description": "Increases Healing Effect by 4%",
+      "required": 2
+    },
+    {
+      "name": "Orphan",
+      "drifters": ["Izzy", "Zero", "Moonveil"],
+      "description": "Increases Intelligence by 10",
+      "required": 3
+    },
+    {
+      "name": "Strike Team",
+      "drifters": ["Kyra", "Varnax", "Aegis", "Draknor"],
+      "description": "Increases Crowd Control Resistance by 5",
+      "required": 2
+    },
+    {
+      "name": "Vibrant Bloodline",
+      "drifters": ["Kyra", "Sanguor", "Hive Queen"],
+      "description": "Max HP increased by 4%",
+      "required": 3
+    },
+    {
+      "name": "Master of Strategy",
+      "drifters": ["Shadowseer", "Raven", "Veska", "Hive Queen"],
+      "description": "Increases Ranged Damage by 4%",
+      "required": 2
+    },
+    {
+      "name": "Warborne Warrior",
+      "drifters": ["Varnax", "Elektrix", "Solenne"],
+      "description": "Enhancement to Skill Damage and Healing by 2.5%",
+      "required": 3
+    },
+    {
+      "name": "Task Force",
+      "drifters": ["Elektrix", "Vryssia", "Illusarch", "Overdrive"],
+      "description": "Increases Melee Damage by 4%",
+      "required": 2
+    },
+    {
+      "name": "Novice Stargazer",
+      "drifters": ["Astral Magus", "Shadowseer", "Mad Barrel"],
+      "description": "Increases skill Cooldown Speed by 2.5%",
+      "required": 3
+    },
+    {
+      "name": "Force of Nature",
+      "drifters": ["Nyxa", "Vryssia", "Umbra", "Blade"],
+      "description": "Increases Critical Damage of Basic Attack by 8%",
+      "required": 2
+    },
+    {
+      "name": "Iron Will",
+      "drifters": ["Durion", "Sirokos", "Izzy", "Auri"],
+      "description": "Damage Resistance Enhanced by 2%",
+      "required": 2
+    },
+    {
+      "name": "Powerhouse",
+      "drifters": ["Aegis", "Overdrive", "Raven"],
+      "description": "Boosts Agility by 10",
+      "required": 3
+    }
+  ],
+  "mods": [
+    {
+      "name": "Legendary Mod",
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCxg1oFGeTM9kdEWPFiXUfzcS5mwtbKTRDjIYn",
+      "type": "Does nothing.",
+      "rarity": "legendary",
+      "slot": "all"
+    },
+    {
+      "name": "Epic Mod",
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCnPVcxhfGe93BVSk5hzTrQ6UPaMygj2Nq4Cdi",
+      "type": "Does nothing.",
+      "rarity": "epic",
+      "slot": "all"
+    },
+    {
+      "name": "Rare Mod",
+      "image": "https://jv9d42ys1c.ufs.sh/f/Wofjl4VDaGSCJ7Hv90HUtiPWS4l8JEHns6v3kTN10rCyUZXM",
+      "type": "Does nothing.",
+      "rarity": "rare",
+      "slot": "all"
+    }
+  ]
 }
