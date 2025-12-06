@@ -6,7 +6,7 @@ export default function SkillDescriptionParser({ description }: Props) {
   const parts = description.split(/(\[[^\]]+\])/g);
 
   return (
-    <p className="h-full text-sm wrap-anywhere whitespace-pre-wrap">
+    <p className="h-full px-2 py-1 text-sm wrap-anywhere whitespace-pre-wrap odd:bg-white/5">
       {parts.map((part, index) => {
         if (part.startsWith("[") && part.endsWith("]")) {
           const inner = part.slice(1, -1).toLowerCase();

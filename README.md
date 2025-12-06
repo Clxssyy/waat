@@ -52,3 +52,12 @@
 Any issues, ideas, or general feedback is highly appreciated.
 
 With the game being in an unreleased / limited state, keeping things updated to reflect the game mechanics 1 for 1 is difficult. Given that info, if a feature isn't on the platform, there's a good chance that it's because of the information not being readily available so please let us know if you have the info.
+
+Mastery defautlt 1 +
+drifter tier 1, 0 attribute pts (10 per tier after)
+drifter tier 1, power 30 (30 per tier after until 4, tier 5+ 20 per, 2 per mastery)
+power average of 5 equipment / drifter (rounded)
+add remaining stats +
+use extracted data, add images for rest of stuff / mods
+add weapon type filters +
+add links

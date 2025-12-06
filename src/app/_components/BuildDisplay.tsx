@@ -1,6 +1,6 @@
 "use client";
 
-import { FaDiamond, FaMinus, FaPlus } from "react-icons/fa6";
+import { FaMinus, FaPlus } from "react-icons/fa6";
 import { useBuildForm } from "./buildFormContext";
 import { notFound } from "next/navigation";
 import data from "public/data.json";
@@ -13,6 +13,7 @@ import {
   getBorderHoverColor,
 } from "~/styles";
 import { buildDataSchema } from "~/schemas";
+import { getTierValue } from "~/utils";
 
 const BuildDisplay = () => {
   const {
@@ -39,28 +40,55 @@ const BuildDisplay = () => {
       weapon.name ===
       characterData.builds[activeBuildIndex]?.data.equipment.weapon.name,
   );
+  const weaponModData = data.mods.find(
+    (mod) =>
+      mod.name ===
+      characterData.builds[activeBuildIndex]?.data.equipment.weapon.mod.name,
+  );
   const chestData = data.chest.find(
     (chest) =>
       chest.name ===
       characterData.builds[activeBuildIndex]?.data.equipment.chest.name,
+  );
+  const chestModData = data.mods.find(
+    (mod) =>
+      mod.name ===
+      characterData.builds[activeBuildIndex]?.data.equipment.chest.mod.name,
   );
   const helmetData = data.helmet.find(
     (helmet) =>
       helmet.name ===
       characterData.builds[activeBuildIndex]?.data.equipment.helmet.name,
   );
+  const helmetModData = data.mods.find(
+    (mod) =>
+      mod.name ===
+      characterData.builds[activeBuildIndex]?.data.equipment.helmet.mod.name,
+  );
   const bootsData = data.boots.find(
     (boots) =>
       boots.name ===
       characterData.builds[activeBuildIndex]?.data.equipment.boots.name,
   );
+  const bootsModData = data.mods.find(
+    (mod) =>
+      mod.name ===
+      characterData.builds[activeBuildIndex]?.data.equipment.boots.mod.name,
+  );
 
-  const statPoints =
-    100 -
+  const availablePts =
+    (getTierValue(characterData.builds[activeBuildIndex].data.drifter.tier) -
+      1) *
+    10;
+  let statPoints =
+    availablePts -
     Object.values(characterData.builds[activeBuildIndex].data.stats).reduce(
       (sum, val) => sum + val,
       0,
     );
+
+  if (statPoints < 0) statPoints = 0;
+
   const totalStrength = Math.round(
     characterData.builds[activeBuildIndex].data.stats.strength +
       (drifterData?.strBase ?? 0) +
@@ -202,8 +230,14 @@ const BuildDisplay = () => {
               }}
             >
               {characterData.builds[activeBuildIndex].data.equipment.weapon.mod
-                .name !== "" ? (
-                <FaDiamond className="text-neutral-500" />
+                ?.name !== "" && weaponModData?.image ? (
+                <ImageHelper
+                  src={weaponModData.image}
+                  alt={weaponModData.name ?? "weapon mod"}
+                  width={800}
+                  height={800}
+                  className="size-full object-contain"
+                />
               ) : null}
             </button>
           </div>
@@ -286,9 +320,16 @@ const BuildDisplay = () => {
                 }}
               >
                 {characterData.builds[activeBuildIndex].data.equipment.helmet
-                  .mod.name !== "" ? (
-                  <FaDiamond className="text-neutral-500" />
-                ) : null}
+                  .mod.name !== "" &&
+                  helmetModData?.image && (
+                    <ImageHelper
+                      src={helmetModData.image}
+                      alt={"helmet mod"}
+                      width={800}
+                      height={800}
+                      className="size-full object-contain"
+                    />
+                  )}
               </button>
             </div>
             <div className="relative">
@@ -369,9 +410,16 @@ const BuildDisplay = () => {
                 }}
               >
                 {characterData.builds[activeBuildIndex].data.equipment.chest.mod
-                  .name !== "" ? (
-                  <FaDiamond className="text-neutral-500" />
-                ) : null}
+                  .name !== "" &&
+                  chestModData?.image && (
+                    <ImageHelper
+                      src={chestModData.image}
+                      alt={"chest mod"}
+                      width={800}
+                      height={800}
+                      className="size-full object-contain"
+                    />
+                  )}
               </button>
             </div>
             <div className="relative">
@@ -452,9 +500,16 @@ const BuildDisplay = () => {
                 }}
               >
                 {characterData.builds[activeBuildIndex].data.equipment.boots.mod
-                  .name !== "" ? (
-                  <FaDiamond className="text-neutral-500" />
-                ) : null}
+                  .name !== "" &&
+                  bootsModData?.image && (
+                    <ImageHelper
+                      src={bootsModData.image}
+                      alt={"s"}
+                      width={800}
+                      height={800}
+                      className="size-full object-contain"
+                    />
+                  )}
               </button>
             </div>
           </div>
@@ -633,7 +688,13 @@ const BuildDisplay = () => {
                     width:
                       totalStrength === 0
                         ? 0
-                        : String((totalStrength / 350) * 100) + "%",
+                        : String(
+                            (totalStrength /
+                              (totalAgility +
+                                totalIntelligence +
+                                totalStrength)) *
+                              100,
+                          ) + "%",
                   }}
                 >
                   {drifterData && (
@@ -793,7 +854,13 @@ const BuildDisplay = () => {
                     width:
                       totalAgility === 0
                         ? 0
-                        : String((totalAgility / 350) * 100) + "%",
+                        : String(
+                            (totalAgility /
+                              (totalAgility +
+                                totalIntelligence +
+                                totalStrength)) *
+                              100,
+                          ) + "%",
                   }}
                 >
                   {drifterData && (
@@ -955,7 +1022,13 @@ const BuildDisplay = () => {
                     width:
                       totalIntelligence === 0
                         ? 0
-                        : String((totalIntelligence / 350) * 100) + "%",
+                        : String(
+                            (totalIntelligence /
+                              (totalAgility +
+                                totalIntelligence +
+                                totalStrength)) *
+                              100,
+                          ) + "%",
                   }}
                 >
                   {drifterData && (

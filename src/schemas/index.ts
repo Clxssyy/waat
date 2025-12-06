@@ -9,7 +9,7 @@ export const modSchema = z
 export const equipmentSchema = z
   .object({
     name: z.string().default(""),
-    mastery: z.number().max(50).default(0),
+    mastery: z.number().max(50).default(1),
     tier: z.string().default("I"),
     mod: modSchema,
   })

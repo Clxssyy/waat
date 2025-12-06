@@ -4,7 +4,6 @@ import { useMemo, useRef, useState } from "react";
 import { useBuildForm } from "./buildFormContext";
 import data from "public/data.json";
 import { IoClose } from "react-icons/io5";
-import type { ActiveFilter } from "~/types";
 import { MASTERY_OPTIONS, TIER_LEVELS } from "~/utils";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import ImageHelper from "./ImageHelper";
@@ -24,7 +23,7 @@ import { RiResetLeftFill } from "react-icons/ri";
 const Drifter = () => {
   const { characterData, setCharacterData, activeSlot, activeBuildIndex } =
     useBuildForm();
-  const [activeFilter, setActiveFilter] = useState<ActiveFilter>("all");
+  const [activeFilter, setActiveFilter] = useState<string>("all");
   const custom_mastery_drifter = useRef<HTMLInputElement>(null);
 
   const filteredOptions = useMemo(
@@ -47,106 +46,35 @@ const Drifter = () => {
   return (
     <div className="flex flex-col gap-2 rounded p-2">
       <div className="flex flex-wrap gap-2">
-        <button
-          className={clsx(
-            "w-12 cursor-pointer rounded border px-3 py-1 transition-all hover:brightness-110",
-            activeFilter === "all"
-              ? clsx(
-                  drifterData
-                    ? clsx(
-                        getBorderBackgroundOffsetColor(drifterData.type),
-                        getBackgroundColor(drifterData.type),
-                      )
-                    : "border-cyan-300 bg-cyan-400",
-                )
-              : "border-neutral-500 bg-neutral-600",
-          )}
-          onClick={() => {
-            setActiveFilter("all");
-          }}
-        >
-          All
-        </button>
-        <button
-          className={clsx(
-            "cursor-pointer rounded border px-3 py-1 transition-all hover:brightness-110",
-            activeFilter === "strength"
-              ? clsx(
-                  drifterData
-                    ? clsx(
-                        getBorderBackgroundOffsetColor(drifterData.type),
-                        getBackgroundColor(drifterData.type),
-                      )
-                    : "border-cyan-300 bg-cyan-400",
-                )
-              : "border-neutral-500 bg-neutral-600",
-          )}
-          onClick={() => {
-            setActiveFilter("strength");
-          }}
-        >
-          Strength
-        </button>
-        <button
-          className={clsx(
-            "cursor-pointer rounded border px-3 py-1 transition-all hover:brightness-110",
-            activeFilter === "agility"
-              ? clsx(
-                  drifterData
-                    ? clsx(
-                        getBorderBackgroundOffsetColor(drifterData.type),
-                        getBackgroundColor(drifterData.type),
-                      )
-                    : "border-cyan-300 bg-cyan-400",
-                )
-              : "border-neutral-500 bg-neutral-600",
-          )}
-          onClick={() => {
-            setActiveFilter("agility");
-          }}
-        >
-          Agility
-        </button>
-        <button
-          className={clsx(
-            "cursor-pointer rounded border px-3 py-1 transition-all hover:brightness-110",
-            activeFilter === "intelligence"
-              ? clsx(
-                  drifterData
-                    ? clsx(
-                        getBorderBackgroundOffsetColor(drifterData.type),
-                        getBackgroundColor(drifterData.type),
-                      )
-                    : "border-cyan-300 bg-cyan-400",
-                )
-              : "border-neutral-500 bg-neutral-600",
-          )}
-          onClick={() => {
-            setActiveFilter("intelligence");
-          }}
-        >
-          Intelligence
-        </button>
-        <button
-          className={clsx(
-            "cursor-pointer rounded border px-3 py-1 transition-all hover:brightness-110",
-            activeFilter === "logistics"
-              ? clsx(
-                  drifterData
-                    ? clsx(
-                        getBorderBackgroundOffsetColor(drifterData.type),
-                        getBackgroundColor(drifterData.type),
-                      )
-                    : "border-cyan-300 bg-cyan-400",
-                )
-              : "border-neutral-500 bg-neutral-600",
-          )}
-          onClick={() => {
-            setActiveFilter("logistics");
-          }}
-        >
-          Logistics
-        </button>
+        {Array.from([
+          "All",
+          "Strength",
+          "Agility",
+          "Intelligence",
+          "Logistics",
+        ]).map((value, i) => (
+          <button
+            key={i}
+            className={clsx(
+              "cursor-pointer rounded border px-3 py-1 transition-all hover:brightness-110",
+              activeFilter === value.toLowerCase()
+                ? clsx(
+                    drifterData
+                      ? clsx(
+                          getBorderBackgroundOffsetColor(drifterData.type),
+                          getBackgroundColor(drifterData.type),
+                        )
+                      : "border-cyan-300 bg-cyan-400",
+                  )
+                : "border-neutral-500 bg-neutral-600",
+            )}
+            onClick={() => {
+              setActiveFilter(value.toLowerCase());
+            }}
+          >
+            {value}
+          </button>
+        ))}
       </div>
       <SelectMenu
         options={filteredOptions}
@@ -165,7 +93,7 @@ const Drifter = () => {
                         ...b.data,
                         drifter: {
                           name: val,
-                          mastery: 0,
+                          mastery: 1,
                           tier: "I",
                         },
                         stats: statsSchema.parse({}),
@@ -182,11 +110,11 @@ const Drifter = () => {
           <hr className="border-neutral-700" />
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-2">
-              <div className="flex flex-col gap-2 rounded border border-neutral-600 bg-neutral-700 p-2">
+              <div className="flex flex-col rounded border border-neutral-600 bg-neutral-700 p-2">
                 <h2 className="text-lg">Skills</h2>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="flex flex-col">
-                    <h3>Active Skill</h3>
+                    <h3 className="text-sm">Active Skill</h3>
                     <div className="flex flex-wrap gap-2">
                       <div
                         className={clsx(
@@ -210,7 +138,7 @@ const Drifter = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="mt-1 grow rounded bg-neutral-800 p-2">
+                    <div className="mt-1 grow rounded bg-neutral-800 p-1">
                       <SkillDescriptionParser
                         description={
                           drifterData?.activeSkill.description ??
@@ -220,7 +148,7 @@ const Drifter = () => {
                     </div>
                   </div>
                   <div className="flex flex-col">
-                    <h3>Passive Skill</h3>
+                    <h3 className="text-sm">Passive Skill</h3>
                     <div className="flex flex-wrap gap-2">
                       <div
                         className={clsx(
@@ -244,7 +172,7 @@ const Drifter = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="mt-1 grow rounded bg-neutral-800 p-2">
+                    <div className="mt-1 grow rounded bg-neutral-800 p-1">
                       <SkillDescriptionParser
                         description={
                           drifterData?.passiveSkill.description ??
@@ -320,7 +248,7 @@ const Drifter = () => {
                           ),
                     )}
                     max={50}
-                    min={0}
+                    min={1}
                     value={
                       MASTERY_OPTIONS.find(
                         (option) =>
@@ -348,7 +276,7 @@ const Drifter = () => {
                                       ...b.data.drifter,
                                       mastery:
                                         Number(e.target.value) > 50
-                                          ? 0
+                                          ? 1
                                           : Number(e.target.value),
                                     },
                                   },
@@ -365,7 +293,7 @@ const Drifter = () => {
                   aria-label="Clear drifter mastery"
                   disabled={
                     characterData.builds[activeBuildIndex]?.data.drifter
-                      .mastery === 0
+                      .mastery === 1
                   }
                   onClick={() => {
                     if (custom_mastery_drifter.current)
@@ -381,7 +309,7 @@ const Drifter = () => {
                                   ...b.data,
                                   drifter: {
                                     ...b.data.drifter,
-                                    mastery: 0,
+                                    mastery: 1,
                                   },
                                 },
                               }

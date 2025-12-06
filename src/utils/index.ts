@@ -12,8 +12,12 @@ export const TIER_LEVELS = [
   "XI",
 ];
 
+export function getTierValue(tier: string) {
+  return TIER_LEVELS.findIndex((value) => value === tier) + 1;
+}
+
 export const MASTERY_OPTIONS = [
-  "0",
+  "1",
   "10",
   "20",
   "30",
